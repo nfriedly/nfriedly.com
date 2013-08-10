@@ -46,6 +46,10 @@
 			<div class="span3 info">
 				<p>&copy; Nathan Friedly 2013</p>
 				<p>Header photo by <a href="http://twitter.com/pjrvs">Paul Jarvis</a>.</p>
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">node.js</a>.
+				</p>
 			</div>
 		</div>
 	</div>

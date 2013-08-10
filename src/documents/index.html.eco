@@ -18,11 +18,11 @@ scripts: ['/scripts/maizygram.js']
 				<h3>Hi, I'm Nathan and I think you're awesome!</h3>
 				<h4>About me</h4>
 				<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>, we've got the cutest dog in the world, and a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
-				<p>I'm a minister for the Lord Jesus Christ
-				<p>I grew up in Ohio (but not on a farm), <a href="http://nathananderin.com">I'm married to my best friend</a>, and I generally like everyone.</p>
-				<p>I like to be thought of as a decent guy, a hard worker, and a bit of a goofball. <a href="/about">Read more about me...</a></p>
+				<p>I'm a minister for the Lord Jesus Christ, and if you ever need anything, I'd be more than happy to provide prayer and support.</p>
+				<p>I also do a lot of stuff with computers both for work and for fun. More on that in a minute.</p>
+				<p>See my <a href="/about">about page</a> for a little more on my personal life.</p>
 			</div>
-			<div class="span4 maizygram"><p>Loading latest #maizygram...</p></div>
+			<div class="span4 maizygram"><p>Loading the latest #maizygram...</p></div>
 	</div>
 </section>
 
