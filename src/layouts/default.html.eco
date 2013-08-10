@@ -51,7 +51,17 @@
 	</div>
 </footer>
 
-<%- @getBlock("scripts").toHTML() %>
+<% if @getEnvironment() == 'development': %>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore.js"></script>
+<% else: %>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+<% end %>
+
+
+
+<%- @getBlock("scripts").add(@getDocument().get('scripts')).toHTML() %>
 
 </body>
 </html>

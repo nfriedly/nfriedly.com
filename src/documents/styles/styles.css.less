@@ -9,11 +9,32 @@ header {
 	span { padding: 0.25% 0.5%; background: rgba(0,0,0,0.4); }
 	h1 { font-size: 600%; padding-bottom: 5%;}
 	h2 { font-size: 300%; }
+}
+
+.maizygram {
+	height: 306px; width: 306px;
 	
+	p {
+		line-height: 306px;
+		color: #ccc;
+		text-align: center;
+	}
+	
+	img { animation: fadein 1s; }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 footer {
 	.contact ul { margin:0; padding:0; }
-	.contact li { list-style-type: none; display: inline-block; font-size: 200%; }
+	.contact li { 
+		list-style-type: none; 
+		display: inline-block; 
+		font-size: 250%; 
+		a { text-decoration:none; }
+	}
 	
 }

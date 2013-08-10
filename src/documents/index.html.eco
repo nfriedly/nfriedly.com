@@ -1,6 +1,7 @@
 ---
 title: "Nathan Friedly - Husband // Minister // Javascript Ninjaneer"
 layout: "default"
+scripts: ['/scripts/maizygram.js']
 ---
 
 <header>
@@ -16,9 +17,12 @@ layout: "default"
 	 		<div class="span4">
 				<h3>Hi, I'm Nathan and I think you're awesome!</h3>
 				<h4>About me</h4>
+				<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>, we've got the cutest dog in the world, and a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
+				<p>I'm a minister for the Lord Jesus Christ
 				<p>I grew up in Ohio (but not on a farm), <a href="http://nathananderin.com">I'm married to my best friend</a>, and I generally like everyone.</p>
 				<p>I like to be thought of as a decent guy, a hard worker, and a bit of a goofball. <a href="/about">Read more about me...</a></p>
 			</div>
+			<div class="span4 maizygram"><p>Loading latest #maizygram...</p></div>
 	</div>
 </section>
 
