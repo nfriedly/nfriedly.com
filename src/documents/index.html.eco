@@ -1,0 +1,58 @@
+---
+title: "Nathan Friedly - Husband // Minister // Javascript Ninjaneer"
+layout: "default"
+---
+
+<header>
+	<div class="container">
+		<h1><span><a href="/">Nathan Friedly</a></span></h1>
+		<h2><span><a href="#husband">Husband</a> // <a href="#minister">Minister</a> // <a href="#ninjaneer">JavaScript Ninjaneer</a></span></h2>
+	</div>
+</header>
+
+<section id="intro">
+	 <div class="container">
+	 	<div class="row">
+	 		<div class="span4">
+				<h3>Hi, I'm Nathan and I think you're awesome!</h3>
+				<h4>About me</h4>
+				<p>I grew up in Ohio (but not on a farm), <a href="http://nathananderin.com">I'm married to my best friend</a>, and I generally like everyone.</p>
+				<p>I like to be thought of as a decent guy, a hard worker, and a bit of a goofball. <a href="/about">Read more about me...</a></p>
+			</div>
+	</div>
+</section>
+
+<section id="projects">
+	<div class="container">
+		<h3>Projects</h3>
+	</div>
+</section>
+
+<section id="feeds">
+	<div class="container">
+		<div class="row">
+			<div class="span6">
+				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Tech Blog</a></h3>
+				<ul>
+					<li>
+						<a href=""><img src=""></a>
+						<h4><a href=""></a></h4>
+						<p>...</p>
+					</li>
+				</ul>
+			</div>
+			<div class="span3">
+				<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> @nfriedly on Github</a></h3>
+				<ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div>
+			<div class="span3">
+				<h3><a href="https://twitter.com/nfriedly"><i class="icon-twitter"></i> @nfriedly on Twitter</a></h3>
+				<ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
