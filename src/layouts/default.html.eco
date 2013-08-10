@@ -11,7 +11,7 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.min.css" rel="stylesheet">
 <![endif]-->
 
-<%- @getBlock("styles").add(["/styles.css"]).toHTML() %>
+<%- @getBlock("styles").add(["/styles/styles.css"]).toHTML() %>
 
 </head>
 <body>
@@ -27,7 +27,7 @@
 				<ul>
 					<li><a href="https://www.facebook.com/nfriedly"><i class="icon-facebook-sign"></i></a></li>
 					<li><a href="https://github.com/nfriedly"><i class="icon-github-sign"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/nathanfriedly ><i class="icon-linkedin-sign"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="icon-linkedin-sign"></i></a></li>
 					<li><a href="https://twitter.com/nfriedly"><i class="icon-twitter-sign"></i></a></li>
 					<li><a href="https://plus.google.com/108191639873296139181/posts"><i class="icon-google-plus-sign"></i></a></li>
 				</ul>
