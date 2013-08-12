@@ -11,11 +11,11 @@ scripts: ['/scripts/maizygram.js']
 	</div>
 </header>
 
-<section id="intro">
+<section class="intro">
 	 <div class="container">
 	 	<div class="row">
 	 		<div class="span4">
-				<h3>Hi, I'm Nathan and I think you're awesome!</h3>
+				<h3>Hi, I'm Nathan, nice to meet you!</h3>
 				<h4>About me</h4>
 				<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>, we've got the cutest dog in the world, and a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
 				<p>I'm a minister for the Lord Jesus Christ, and if you ever need anything, I'd be more than happy to provide prayer and support.</p>
@@ -26,13 +26,14 @@ scripts: ['/scripts/maizygram.js']
 	</div>
 </section>
 
-<section id="projects">
+<section class="projects">
 	<div class="container">
-		<h3>Projects</h3>
+		<h3>Work</h3>
+		<p>I've been doing websites for the past <%= (new Date()).getFullYear() - 2000 %> years with a primary focus on JavaScript for the past <%= (new Date()).getFullYear() - 2006 %>.</p>
 	</div>
 </section>
 
-<section id="feeds">
+<section class="feeds">
 	<div class="container">
 		<div class="row">
 			<div class="span6">
