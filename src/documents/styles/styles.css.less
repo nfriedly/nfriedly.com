@@ -1,3 +1,12 @@
+@linkColor: #0088CC;
+@hoverLinkColor: #005580;
+
+// todo: boost my base font-size (and line-height) and then shrink the already-boosted stuff back down
+//body { font-size: 120%; }
+
+a { color: @linkColor; }
+a:hover { color: @hoverLinkColor; }
+
 header { 
 	padding:150px 0; 
 	background-image: url('/img/circuit_1400657_22670789.jpg'); // http://bit.ly/1btmh0q'); //http://unsplash.s3.amazonaws.com/batch%208/lighthousemorning.jpg'); // /img/guigou-circly-thing.jpg'); //unsplash-2-10-Paul-Jarvis.jpg'); 
@@ -32,13 +41,25 @@ header {
     to { opacity: 1; }
 }
 
-footer {
+footer { 
 	.contact ul { margin:0; padding:0; }
 	.contact li { 
 		list-style-type: none; 
 		display: inline-block; 
-		font-size: 250%; 
-		a { text-decoration:none; }
+		margin-right: 5px;
+		a { 
+			text-decoration:none; 
+			color: white;
+			background-color: @linkColor;
+			&:hover { background-color: @hoverLinkColor; }
+			
+			display: inline-block; 
+			padding: 2px;
+			width: 33px;
+			text-align: center;
+			font-size: 200%; 
+			border-radius: 10px;
+		}
 	}
 	
 }
