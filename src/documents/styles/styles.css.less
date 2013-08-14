@@ -10,17 +10,23 @@ a:hover { color: @hoverLinkColor; }
 header { 
 	padding:150px 0; 
 	background-image: url('/img/circuit_1400657_22670789.jpg'); // http://bit.ly/1btmh0q'); //http://unsplash.s3.amazonaws.com/batch%208/lighthousemorning.jpg'); // /img/guigou-circly-thing.jpg'); //unsplash-2-10-Paul-Jarvis.jpg'); 
-	background-position: 50% 50%; 
+	//background-position: 50% 50%; 
 	background-repeat: no-repeat; 
-	background-size: 100%; 
+	background-size: cover; 
 	background-attachment: fixed;
+	
+	font-size: 100px;
 
 	span { padding: 0.25% 0.5%; background: rgba(0,0,0,0.8); }
-	h1 { font-size: 600%; padding-bottom: 5%;}
-	h2 { font-size: 300%; }
+	h1 { font-size: 100%; line-height: 150%; span {padding-right: 10px;} }
+	h2 { font-size: 40%;  line-height: 150%; span {padding: 0 5px 0 10px;} }
 	color: #888;
 	a { color: white; }
 	a:hover { color: #ddd; text-decoration:none; }
+}
+
+@media (max-width: 767px) {
+	header { font-size: 40px; padding: 50px 0; background-attachment: scroll; margin-left: -20px; width: 120%; width: calc(100% + 20px);}
 }
 
 .maizygram {
