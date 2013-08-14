@@ -36,24 +36,21 @@ scripts: ['/scripts/maizygram.js']
 <section class="feeds">
 	<div class="container">
 		<div class="row">
-			<div class="span6">
+			<div class="span8">
 				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Tech Blog</a></h3>
 				<ul>
-					<li>
-						<a href=""><img src=""></a>
-						<h4><a href=""></a></h4>
-						<p>...</p>
-					</li>
+					<% for post in @getCollection("techblog").toJSON(): %>
+						<li class="<%= if post.id is @document.id then 'active' else 'inactive' %>">
+							<h4><a href="<%= post.url %>">
+								<%- post.title %>
+							</a></h4>
+							<%- @getPreview(post) %>
+						</li>
+					<% end %>
 				</ul>
 			</div>
-			<div class="span3">
+			<div class="span4">
 				<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> @nfriedly on Github</a></h3>
-				<ul>
-					<li><a href=""></a></li>
-				</ul>
-			</div>
-			<div class="span3">
-				<h3><a href="https://twitter.com/nfriedly"><i class="icon-twitter"></i> @nfriedly on Twitter</a></h3>
 				<ul>
 					<li><a href=""></a></li>
 				</ul>
