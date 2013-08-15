@@ -36,11 +36,12 @@ scripts: ['/scripts/maizygram.js']
 <section class="feeds">
 	<div class="container">
 		<div class="row">
-			<div class="span8">
+			<div class="span8 techblog">
 				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Tech Blog</a></h3>
 				<ul>
 					<% for post in @getCollection("techblog").toJSON(): %>
 						<li class="<%= if post.id is @document.id then 'active' else 'inactive' %>">
+							<%- @getFirstImage(post) %>
 							<h4><a href="<%= post.url %>">
 								<%- post.title %>
 							</a></h4>
