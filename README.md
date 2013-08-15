@@ -20,6 +20,8 @@ Build instructions
 ------------
 This site is built on top of [node.js](http://www.nodejs.org/) and [DocPad](http://docpad.org/). 
 
-# Download and install node.js from http://www.nodejs.org/
-# Install DocPad: http://docpad.org/docs/install
-# Run `docpad run` in this directory
+1. Download and install node.js from http://www.nodejs.org/
+2. Install DocPad: http://docpad.org/docs/install
+3. Run `docpad run` in this directory
+4. Install plugins if necessary (?) - see package.json for a list.
+5. Edit or remove `src/files/CNAME` and then run `docpad deploy-ghpages` to deploy to github
