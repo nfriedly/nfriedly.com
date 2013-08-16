@@ -22,30 +22,29 @@ With this setup, we can quickly run hundreds of [jasmine][6] specs from the comm
 
 To start off, we installed the [jasmine-node][7] and [jsdom][8] NPM modules:
 
-`npm install jasmine-node<br />
-npm install jsdom`
+	npm install jasmine-node
+	npm install jsdom
 
 This is the relevant part of our directory structure, the node_modules folder is top-level:
 
-`
-<pre>
-build/
-node_modules/
- - ...
-test/js/
- - environment/
-   - jasmine_helper.js
- - util/
-   - install_jsdom.sh
- - gallery_spec.js
- - ajax_spec.js
- - etc.
-</pre>
-<p>`
+	build/
+	node_modules/
+	 - ...
+	test/js/
+	 - environment/
+	   - jasmine_helper.js
+	 - util/
+	   - install_jsdom.sh
+	 - gallery_spec.js
+	 - ajax_spec.js
+	 - etc.
+
 
 `environment/jasmine_helper.js` is where most of the magic is:
 
-<pre class="brush: jscript; title: ; notranslate" title="">var jsdom = require("jsdom");
+``` javascript
+var jsdom = require("jsdom");
+
 window = jsdom.jsdom('&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;div id="rondavu_container"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;').createWindow();
 
 if(Object.keys(window).length === 0) {
@@ -55,10 +54,11 @@ if(Object.keys(window).length === 0) {
 }
 
 global.window = window;
+
 global.document = window.document;
 
 var R = global.R = require('../../build/rondavu_test_mode.js');
-</pre>
+```
 
 First we create a jsdom environment and verify that it works. (We&#8217;ll come back to that in a minute). Next we make the `window` and `document` variables global. Finally we include the slightly modified version of our compiled JS and set it in a global variable so that tests can hit it&#8217;s internal methods. Jasmine always runs all helper files before the spec files, so the global variables are guaranteed to exist by the time our tests run.
 
@@ -66,21 +66,37 @@ First we create a jsdom environment and verify that it works. (We&#8217;ll come 
 
 `
 <pre>
+
 #!/bin/bash
 
+
+
 # One of JSDOM's dependencies, contextify, cannot be checked in because it installs differently depending on the OS.
+
 # This script checks for the presence of JSDOM and installs it if it's missing
 
+
+
 # this line searches npm's local repository for jsdom
+
 # 2> /dev/null is becuse NPM likes to complain about missing readme files in third-party packages
+
 # tr removes the blank line that npm puts out if jsdom isn't found
+
 LS_RESULTS=$(npm --parseable ls jsdom 2>/dev/null | tr -d '\n\')
 
+
+
 if [[ -n $LS_RESULTS ]]; then 	# -n tests to see if the argument is non empty
+
 	echo "jsdom is already installed, skipping"
+
 else
+
     npm install jsdom
+
 fi
+
 </pre>
 <p>`
 
@@ -92,48 +108,92 @@ Here&#8217;s a quick example from one of ours:
 
 <pre class="brush: jscript; title: ; notranslate" title="">describe("Gallery", function() {
 
+
+
     var instance;
 
+
+
     beforeEach(function(){
+
         instance = new R.Module.Gallery(getConfig());
+
     });
 
+
+
     afterEach(function(){
+
         instance.destroy();
+
         instance = null;
+
     });
+
+
 
     describe("getTemplateData", function(){
 
+
+
         var data;
+
         beforeEach(function(){
+
            data = {mos: []};
+
         });
+
+
 
         it("should include the current FB user ID", function(){
+
             var USER_ID = "1234";
+
             spyOn(R.FB,"getCurrentUserId").andReturn(USER_ID);
 
+
+
             instance.getTemplateData(data);
+
+
 
             expect(R.FB.getCurrentUserId).toHaveBeenCalled();
+
             expect(data.current_user_id).toBe(USER_ID);
+
         });
+
+
 
         it("should shuffle the mos when Gallery.ShuffleMos is true", function(){
+
             var config = getConfig();
+
             setParam(config, "Gallery.ShuffleMos", true);
+
             spyOn(R.Util, "shuffle");
 
+
+
             instance = new R.Module.Gallery(config);
+
             instance.getTemplateData(data);
 
+
+
             expect(R.Util.shuffle).not.toHaveBeenCalled();
+
         });
+
     });
 
+
+
     // etc.
+
 });
+
 </pre>
 
 Running the tests is easy: 
@@ -147,29 +207,53 @@ The `--forceexit` option cuts a few seconds of idling off the end of the tests. 
 Finally, the process exit code will tell you if the tests passed or not, making it extremely easy to integrate into build systems. Here is our [ant][9] task:
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;target name="js.test" description="builds a slightly modified version of our rondavu.js (skipping the init.js
+
         file and adding a 'module.exports=R;') and then runs all test/js/*_spec.js unit tests."&gt;
 
+
+
         &lt;exec executable="scripts/js_builder/build_js.js" dir="${basedir}" failonerror="true"&gt;
+
             &lt;arg value="--test_mode"/&gt;
+
             &lt;arg value="--outfile"/&gt;
+
             &lt;arg value="build/rondavu_test_mode.js"/&gt;
+
             &lt;arg value="--verbose"/&gt;
+
         &lt;/exec&gt;
 
+
+
         &lt;!-- some of jsdom's dependencies are environment-specific, so we'll install it here if it's not already present --&gt;
+
         &lt;chmod file="test/js/util/install_jsdom.sh" perm="ugo+rx"/&gt;
+
         &lt;exec executable="test/js/util/install_jsdom.sh" failonerror="true"/&gt;
+
+
 
         &lt;mkdir dir="${build.test.unit.output}"/&gt;
 
+
+
         &lt;exec executable="node_modules/jasmine-node/bin/jasmine-node" failonerror="true"&gt;
+
             &lt;arg value="--forceexit"/&gt;
+
             &lt;arg value="test/js/"/&gt;
+
             &lt;arg value="--junitreport"/&gt;
+
             &lt;arg value="--output"/&gt;&lt;arg value="${build.test.unit.output}/TEST-javascript-results.xml"/&gt;
+
         &lt;/exec&gt;
 
+
+
     &lt;/target&gt;
+
 </pre>
 
 And there you have it. Happy testing!

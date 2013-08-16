@@ -12,7 +12,8 @@
     "docpad-plugin-livereload": "~2.5.2",
     "docpad-plugin-marked": "~2.1.1",
     "docpad-plugin-less": "~2.2.0",
-    "docpad-plugin-ghpages": "~2.3.0"
+    "docpad-plugin-ghpages": "~2.3.0",
+    "docpad-plugin-highlightjs": "~2.1.7"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

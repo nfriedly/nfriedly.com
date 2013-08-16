@@ -4,12 +4,28 @@
 // todo: boost my base font-size (and line-height) and then shrink the already-boosted stuff back down
 //body { font-size: 120%; }
 
+// general styles
 a { color: @linkColor; }
 a:hover { color: @hoverLinkColor; }
 
+.right, .alignright {
+    float: right;
+    text-align: right;
+}
+img.right, img.alignright {
+    margin: 0 0 5px 10px;
+}
+.left, .alignleft {
+    float: left;
+    text-align: left;
+}
+img.left, img.alignleft {
+    margin: 0 10px 5px 0;
+}
+
 header { 
 	padding:150px 0; 
-	background-image: url('/img/circuit_1400657_22670789.jpg'); // http://bit.ly/1btmh0q'); //http://unsplash.s3.amazonaws.com/batch%208/lighthousemorning.jpg'); // /img/guigou-circly-thing.jpg'); //unsplash-2-10-Paul-Jarvis.jpg'); 
+	background-image: url('/img/trees.jpg');
 	//background-position: 50% 50%; 
 	background-repeat: no-repeat; 
 	background-size: cover; 
@@ -29,9 +45,14 @@ header {
 	header { font-size: 40px; padding: 50px 0; background-attachment: scroll; margin-left: -20px; width: 120%; width: calc(100% + 20px);}
 }
 
+.post header { font-size: 40px; padding: 50px; margin-bottom: 30px;}
+
+.intro .pic {
+	margin-top: 18px;
+}
+
 .maizygram {
 	height: 306px; width: 306px;
-	margin-top: 18px;
 	
 	p {
 		line-height: 306px;

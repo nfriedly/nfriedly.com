@@ -22,7 +22,8 @@ scripts: ['/scripts/maizygram.js']
 				<p>I also do a lot of stuff with computers both for work and for fun. More on that in a minute.</p>
 				<p>See my <a href="/about">about page</a> for a little more on my personal life.</p>
 			</div>
-			<div class="span4 maizygram"><p>Loading the latest #maizygram...</p></div>
+			<div class="span4 pic "><img src="/img/erin-maizy-nathan-park.jpg" alt="Erin, Maizy, and Nathan in the Tipp City park" /></div>
+			<div class="span4 pic maizygram"><p>Loading the latest #maizygram...</p></div>
 	</div>
 </section>
 
