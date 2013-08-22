@@ -1,19 +1,37 @@
 // 'use strict'; <-- Root of all evil, causes thrown errors on readyOnly props.
 
 /**
- * Simple extend function.
+ * Copy all readable properties from an Object or function and past them on the
+ * object.
  *
- * @param {Object} obj The object we should extend.
+ * @param {Object} obj The object we should paste everything on.
  * @returns {Object} obj
- * @api public
+ * @api private
  */
-function mixin(obj) {
+function copypaste(obj) {
   Array.prototype.slice.call(arguments, 1).forEach(function each(source) {
     if (source) {
       for (var prop in source) {
         obj[prop] = source[prop];
       }
     }
+  });
+
+  return obj;
+}
+
+/**
+ * A proper mixin function that respects getters and setters.
+ *
+ * @param {Object} obj The object that should receive all properties
+ * @returns {Object} obj
+ * @api private
+ */
+function mixin(obj) {
+  Array.prototype.slice.call(arguments, 1).forEach(function forEach(o) {
+    Object.getOwnPropertyNames(o).forEach(function eachAttr(attr) {
+      Object.defineProperty(obj, attr, Object.getOwnPropertyDescriptor(o, attr));
+    });
   });
 
   return obj;
@@ -55,7 +73,7 @@ module.exports = function extend(protoProps, staticProps) {
   if (protoProps) mixin(child.prototype, protoProps);
 
   // Add static properties to the constructor function, if supplied.
-  mixin(child, parent, staticProps);
+  copypaste(child, parent, staticProps);
 
   // Set a convenience property in case the parent's prototype is needed
   // later.
