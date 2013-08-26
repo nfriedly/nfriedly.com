@@ -12,6 +12,7 @@ tags:
   - howto
   - productivity
   - shell
+featured: true
 ---
 [<img src="http://farm8.staticflickr.com/7020/6668518895_0700a12958_m.jpg" width="240" height="160" alt="Apache takeoff" class="right" />][1]I often open a new tab in my Terminal to run an [Ant][2] task, and often as not I forget to `cd` into the correct directory first and so I am greeted with this error:
 
@@ -32,24 +33,43 @@ First you&#8217;ll need to edit your `.profile` file. To do so, run the followin
 Then copy-paste in this code, changing the `DEFAULT_ANT_DIR` to the path to your project (whatever folder has the build.xml file in it):
 
     # make ant commands run in the default directory if
+
     # there is no build.xml in the current directory
+
     
+
     export DEFAULT_ANT_DIR = /path/to/your/projects/folder/
+
     
+
     function magic-ant() {
+
       if [ -e ./build.xml ]
+
         then
+
           ant $@                                                                    
+
         else
+
           pushd DEFAULT_ANT_DIR
+
           ant $@
+
           popd
+
       fi
+
     }
+
     
+
     # reset ant to avoid loops if you ever run `source ~/.profile` again
+
     alias ant=`which ant`
+
     
+
     alias ant="magic-ant"
 
 Press `[Control]-O` then `[Enter]` to save and `[Control]-X` to exit nano.

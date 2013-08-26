@@ -1,7 +1,8 @@
 ---
 title: "Nathan Friedly - Husband // Minister // Javascript Ninjaneer"
-layout: "default"
+layout: "homepage"
 scripts: ['/scripts/maizygram.js']
+referencesOthers: true
 ---
 
 <header>
@@ -19,44 +20,12 @@ scripts: ['/scripts/maizygram.js']
 				<h4>About me</h4>
 				<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>, we've got the cutest dog in the world, and a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
 				<p>I'm a minister for the Lord Jesus Christ, and if you ever need anything, I'd be more than happy to provide prayer and support.</p>
-				<p>I also do a lot of stuff with computers both for work and for fun. More on that in a minute.</p>
-				<p>See my <a href="/about">about page</a> for a little more on my personal life.</p>
+				<p>I also do a lot of stuff with computers both for work and for fun. That mostly entails JavaScript and node.js programing these days. My official job title at <a htef="http://sociablelabs.com/">Sociable Labs</a> is "Principal Engineer", although I got them to put "JavaScript Ninjaneer" on my business cards.</p>
+				<p>See my <a href="/about">about page</a> for a little more on my personal life, or take a look at my <a href="/portfolio">portfolio</a> and my <a href="/techblog">Tech Blog</a> for more work/computer-y stuff.</p>
 			</div>
 			<div class="span4 pic "><img src="/img/erin-maizy-nathan-park.jpg" alt="Erin, Maizy, and Nathan in the Tipp City park" /></div>
 			<div class="span4 pic maizygram"><p>Loading the latest #maizygram...</p></div>
 	</div>
 </section>
 
-<section class="projects">
-	<div class="container">
-		<h3>Work</h3>
-		<p>I've been doing websites for the past <%= (new Date()).getFullYear() - 2000 %> years with a primary focus on JavaScript for the past <%= (new Date()).getFullYear() - 2006 %>.</p>
-	</div>
-</section>
 
-<section class="feeds">
-	<div class="container">
-		<div class="row">
-			<div class="span8 techblog">
-				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Tech Blog</a></h3>
-				<ul>
-					<% for post in @getCollection("techblog").toJSON(): %>
-						<li class="<%= if post.id is @document.id then 'active' else 'inactive' %>">
-							<%- @getFirstImage(post) %>
-							<h4><a href="<%= post.url %>">
-								<%- post.title %>
-							</a></h4>
-							<%- @getPreview(post) %>
-						</li>
-					<% end %>
-				</ul>
-			</div>
-			<div class="span4">
-				<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> @nfriedly on Github</a></h3>
-				<ul>
-					<li><a href=""></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>

@@ -11,6 +11,7 @@ tags:
   - json
   - security
   - twitter
+featured: true
 ---
 <img class="alignleft" title="Breaking javascript - the right way" src="http://www.sxc.hu/pic/m/s/si/simonok/323276_game_of_pool.jpg" alt="" width="141" height="188" />The twitter callback feature is nice &#8211; it makes it extremely easy to to add a twitter feed to a page. But to get the most benefit out of it, you really need to understand what it&#8217;s doing.
 
@@ -43,43 +44,81 @@ Scripts stored on other websites can be included on a page. As long as the scrip
 Here is a very basic page that uses Twitter&#8217;s callback feature and a remotely loaded javascript file to show my twitter status &#8211; remote data &#8211; on my website, by interacting with local javascript.
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
 &lt;html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en-US"&gt;
 
+
+
 &lt;head&gt;
+
 &lt;title&gt;Simple Twitter Status&lt;/title&gt;
 
+
+
 &lt;/head&gt;
+
 &lt;body&gt;
+
+
 
 &lt;h1&gt;My Twitter Status:&lt;/h1&gt;
 
+
+
 &lt;div id="twitter_status"&gt;Loading...&lt;/div&gt;
+
+
 
 &lt;!-- Put scripts down here for speed --&gt;
 
+
+
 &lt;!-- this must come before we load the twitter script --&gt;
+
 &lt;script type="text/javascript"&gt;
+
+
 
 function showStatus(json){
 
+
+
 	json = json[0]; // we only care about the most recent status;
+
+
 
 	var myDiv = document.getElementById('twitter_status');
 
+
+
 	myDiv.innerHTML = '&lt;img src="'
+
 		+ json.user.profile_image_url
+
 		+ '" style="float:left; margin:5px 10px 10px 0"&gt;'
+
 		+ json.text;
+
 }
+
 &lt;/script&gt;
+
+
 
 &lt;!-- now load the twitter file --&gt;
+
 &lt;script type="text/javascript"
+
 src="http://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;callback=showStatus&amp;random=&lt;?php echo time(); ?&gt;" /&gt;
+
 &lt;/script&gt;
 
+
+
 &lt;/body&gt;
+
 &lt;/html&gt;
+
 </pre>
 
 You can see a live copy of this code at <http://nfriedly.com/demos/twitter-extra-simple>.
@@ -89,6 +128,7 @@ You can see a live copy of this code at <http://nfriedly.com/demos/twitter-extra
 Below is a trimmed down example of what Twitter&#8217;s API sends back when we make the request in the example above.
 
 <pre class="brush: jscript; title: ; notranslate" title="">showStatus([{"in_reply_to_screen_name":null,"text":" [ Lots of information that I'm omitting because it's not the point. ] "]);
+
 </pre>
 
 Now, don&#8217;t worry about the jazz in the middle, just look at that showStatus(); that&#8217;s wrapped around it. First of all, how does Twitter even know that we have a function named show status? Because we said so in the url to the file -see how we added `&callback=showStatus`? That&#8217;s where the magic is.  (Ok, technically we said `&amp;` not just `&`, but that was just to pass XHTML validation. )

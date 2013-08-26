@@ -11,6 +11,7 @@ tags:
   - facebook
   - howto
   - javascript
+featured: true
 ---
 <img class="alignleft" alt="" src="http://nfriedly.com/img/portfolio/facebook.png" />I&#8217;ve seen a lot of confusion about this lately, so I thought I&#8217;d make a quick writeup to explain how facebook does it. (I&#8217;ll also give a quick tip on how you can do it yourself.)
 

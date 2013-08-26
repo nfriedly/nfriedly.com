@@ -15,6 +15,7 @@ tags:
   - javascript
   - sharedobject
   - swf
+featured: true
 ---
 <div style="position:relative;">
   <img class="alignright size-full wp-image-295" title="325990_chocolate_chip_cookies_2" src="http://nfriedly.com/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.</p> <p>
@@ -71,14 +72,23 @@ tags:
     </h4>
     
     <pre class="brush: xml; title: ; notranslate" title="">
+
 &lt;!-- This example uses jquery, but SwfStore does not require jquery to work. --&gt;
+
 &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"&gt;&lt;/script&gt;
+
+
 
 &lt;script src="/PATH/TO/swfstore.js"&gt;&lt;/script&gt;
 
+
+
 &lt;input id="dataInput" /&gt; &lt;input id="saveBtn" type="submit" value="Save" /&gt;
 
+
+
 &lt;div id="status"&gt;&lt;/div&gt;
+
 </pre>
     
     <h4>
@@ -87,50 +97,96 @@ tags:
     
     <pre class="brush: jscript; title: ; notranslate" title="">
 
+
+
 // wait until the page has finished loading before starting
+
 $(function(){
 
+
+
 	// first disable things while the swfStore is initializing
+
 	$('input').attr("disabled","disabled");
+
 	$('#status').text('Loading...');
+
+
 
 	var mySwfStore = new SwfStore({
 
+
+
 		// Optional but recommended. Try to choose something unique.
+
 		namespace: 'myExample', 
 
+
+
 		// To work cross-domain, only one of your sites should have the
+
 		// .swf, all other sites should load it from the first one
+
 		swf_url: 'http://site.com/PATH/TO/storage.swf', 
 
+
+
 		// Logs messages to the console if available, a div at the
+
 		// bottom of the page otherwise. 
+
 		debug: true,
 
+
+
 		onready: function(){
+
 			// Now that the swfStore was loaded successfully, re-enable
+
 			$('input').removeAttr("disabled");
 
+
+
 			// Read the existing value (if any)
+
 			$('#dataInput').val(mySwfStore.get('myKey'));
 
+
+
 			// Set up an onclick handler to save the text to the 
+
 			// swfStore whenever the Save button is clicked
+
 			$('#saveBtn').click(function(){
+
 				mySwfStore.set('myKey', $('#dataInput').val() );
+
 				$('#status').text('Saved!')
+
 			});
 
+
+
 			$('#status').text('Loaded');
+
 		},
 
+
+
 		onerror: function(){
+
 			// In case we had an error. (The most common cause is that 
+
 			// the user disabled flash cookies.)
+
 			$('#status').text('Error');
+
 		}
+
 	});
+
 });
+
 </pre>
     
     <h3>

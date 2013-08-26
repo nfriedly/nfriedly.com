@@ -9,6 +9,7 @@ categories:
   - Web Development
 tags:
   - javascript
+featured: true
 ---
 [<img class="alignleft" title="The other kind of array" src="http://farm4.static.flickr.com/3146/2492636763_788774987e_m.jpg" alt="" width="240" height="160" />][1]Javascript `objects` and `arrays` are both incredibly useful. They&#8217;re also incredibly easy to confuse with each other. Mix in a few objects that look like arrays and you&#8217;ve got a recipe for confusion!
 
@@ -21,28 +22,48 @@ We&#8217;re going to see what the differences between objects and arrays are, ho
 A javascript object is a basic data structure:
 
 <pre class="brush: jscript; title: ; notranslate" title="">var basicObj = {}; // an empty object
+
 // {} is a shortcut for "new Object()"
+
+
 
 basicObj.suprise= "cake!";
 
+
+
 basicObj['suprise']; // returns "cake!"
+
 </pre>
 
 Using `{}` instead of `new Object();` is know as &#8220;Object Literal&#8221; syntax.
 
 <pre class="brush: jscript; title: ; notranslate" title="">var fancyObj = {
 
+
+
 	favoriteFood: "pizza",
+
+
 
 	add: function(a, b){
 
+
+
 		return a + b;
+
 	}
+
 };
+
+
 
 fancyObj.add(2,3); // returns 5
 
+
+
 fancyObj['add'](2,3); // ditto.
+
+
 
 </pre>
 
@@ -52,24 +73,44 @@ Everything in javascript is an `object`. Everything. `Arrays`, `functions`, even
 
 <pre class="brush: jscript; title: ; notranslate" title="">// an example of something you probably shouldn't do. Ever. Seriously.
 
+
+
 Number.prototype.addto = function(x){
+
+
 
 	return this + x;
 
+
+
 }
+
+
 
 (8).addto(9); // returns 17
 
+
+
 // other variations:
 
+
+
 8.addto(9);  
+
 // gives a syntax error, because the dot is assumed to be a decimal point
 
+
+
 8['addto'](9);  
+
 // works but is kind of ugly compared to the first method
 
+
+
 var eight = 8;
+
 eight.addto(9);  // works
+
 </pre>
 
 ## What Arrays Are
@@ -78,8 +119,13 @@ Javascript arrays are a type of `object` used for storing multiple values in a s
 
 <pre class="brush: jscript; title: ; notranslate" title="">var arr = [];  // this is a shortcut for new Array();
 
+
+
 arr[0] = "cat";
+
 arr[1] = "mouse";
+
+
 
 </pre>
 
@@ -91,12 +137,21 @@ Arrays have a `length` property that tells how many items are in the array and i
 
 <pre class="brush: jscript; title: ; notranslate" title="">var arr = [];
 
+
+
 arr[0] = "cat"; // this adds to the array
+
 arr[1] = "mouse"; // this adds to the array
+
 arr["favoriteFood"] = "pizza"; // this DOES NOT add to the array
+
 // setting a string parameter adds to the underlying object
 
+
+
 arr.length; // returns 2, not 3
+
+
 
 </pre>
 
@@ -106,12 +161,21 @@ The length property is only modified when you add an item to the array, not the 
 
 <pre class="brush: jscript; title: ; notranslate" title="">var arr = [];
 
+
+
 arr.length; // returns 0;
+
+
 
 arr[100] = "this is the only item in the array";
 
+
+
 arr.length; 
+
 // returns 101, even though there is only 1 object in the array
+
+
 
 </pre>
 
@@ -119,13 +183,22 @@ This is somewhat counter-intuitive. PHP does more what you would expect:
 
 <pre class="brush: php; title: ; notranslate" title="">&lt;?php
 
+
+
 arr = array();
+
+
 
 arr[100] = "php behaves differently";
 
+
+
 sizeof(arr); // returns 1 in PHP
 
+
+
 ?&gt;
+
 </pre>
 
 You can manually set the `length` also. Setting it to 0 is a simple way to empty an array.
@@ -144,11 +217,19 @@ Also included in the category are the HTML node sets returned by `document.getEl
 
 <pre class="brush: jscript; title: ; notranslate" title="">document.forms.length; // returns 1;
 
+
+
 document.forms[0]; // returns a form element.
+
+
 
 document.forms.join(", "); // throws a type error. this is not an array.
 
+
+
 typeof document.forms; // returns "object"
+
+
 
 </pre>
 
@@ -156,22 +237,41 @@ Did you know you can send any number of parameters you want to a javascript func
 
 <pre class="brush: jscript; title: ; notranslate" title="">function takesTwoParams(a, b){
 
+
+
 	// arguments is an  array-like variable inside of all functions
+
 	// arguments.length works great
+
+
 
 	alert ("you gave me "+arguments.length+" parameters");  
 
+
+
 	for(i=0; i&lt; arguments.length; i++){
+
+
 
 		alert("parameter " + i + " = " + arguments[i]); 
 
+
+
 	}
+
 }
 
+
+
 takesTwoParams("one","two","three");
+
 // alerts "you gave me 3 parameter", 
+
 // then "parameter 0 = one" 
+
 // etc. 
+
+
 
 </pre>
 
@@ -179,9 +279,15 @@ This works great. But that&#8217;s about as far as you can go with array-like ob
 
 <pre class="brush: jscript; title: ; notranslate" title="">function takesTwoParams(a, b){
 
+
+
 	alert(" your parameters were " + arguments.join(", ")); 
+
 	// throws a type error because arguments.join doesn't exist
+
 }
+
+
 
 </pre>
 
@@ -197,12 +303,20 @@ The array functions can be called on non-array objects as long as you know where
 
 <pre class="brush: jscript; title: ; notranslate" title="">function takesTwoParams(a, b){
 
+
+
 	var args = Array.prototype.slice.call(arguments);
 
+
+
 	alert(" your parameters were " + args.join(", ")); 
+
 	// yay, this works!
 
+
+
 }
+
 </pre>
 
 Let&#8217;s take a look at that a bit more in-depth:
@@ -222,20 +336,35 @@ And finally, you get a regular `array` back! This works because javascript retur
 First, in Internet Explorer, DOM `NodeLists` are not considered to be javascript objects, so you cannot call `Array.prototype.slice` on them. If you want an array, you&#8217;ll have to loop through it the old fashioned way. Or use a hybrid function that tries it the fast way first, then the slow way if that doesn&#8217;t work. 
 
 <pre class="brush: jscript; title: ; notranslate" title="">function hybridToArray(nodes){
+
 	try{
+
 		// works in every browser except IE
+
 		var arr = Array.prototype.slice.call(nodes);
+
 		return arr;
+
 	} catch(err){
+
 		// slower, but works in IE
+
 		var arr = [],
+
 		    length = nodes.length;
+
 		for(var i=0; i &lt; length; i++){
+
 			arr.push(nodes[i]);
+
 		}
+
 		return arr;
+
 	}
+
 }
+
 </pre>
 
 See an example here: <http://nfriedly.com/demos/ie-nodelist-to-array>.
@@ -244,20 +373,37 @@ Second, arrays are objects, so you can do this, but it can get you some serious 
 
 <pre class="brush: jscript; title: ; notranslate" title="">arr = [];
 
+
+
 arr[0] = "first element"; // adds item to the array
+
+
 
 arr.length; // returns 1
 
+
+
 arr.two = "second element"; // adds an item to the underlying object that array is built on top of.
+
+
 
 arr.length; // still returns 1 !
 
+
+
 // BUT...
+
 for(i in arr){
+
+
 
 	// this will hit both 0 and "two"
 
+
+
 }
+
+
 
 </pre>
 
@@ -268,49 +414,94 @@ This is basically a less efficient method of the array subclassing links I menti
 That said, I wouldn&#8217;t recommend that you use this in most cases due to issues with speed and extra code requirements. It&#8217;s provided here as an example.
 
 <pre class="brush: jscript; title: ; notranslate" title="">// an example of a wrapper for an array.
+
 // not recommended for most situations.
+
+
 
 var ArrayContainer = function(arr){
 
+
+
 	this.arr = arr || [];
+
+
 
 	this.length = this.arr.length;
 
+
+
 };
+
+
 
 ArrayContainer.prototype.add=  function(item){
 
+
+
 	index = this.arr.length;
+
+
 
 	this.arr[index] = item;
 
+
+
 	this.length = this.arr.length;
+
+
 
 	return index;
 
+
+
 };
+
+
 
 ArrayContainer.prototype.get=  function(index){
 
+
+
 	return this.arr[index];
 
+
+
 };
+
+
 
 ArrayContainer.prototype.forEach=  function(fn){
 
+
+
 	if(this.arr.forEach) this.arr.forEach(fn);// use native code if it's there
+
+
 
 	else {
 
+
+
 		for(i in this.arr){
 
+
+
 			fn( i, this.arr[i], this.arr );
+
 		
+
 		}
+
 	}
+
 };
 
+
+
 var mySuperDooperArray = new ArrayContainer();
+
+
 
 </pre>
 

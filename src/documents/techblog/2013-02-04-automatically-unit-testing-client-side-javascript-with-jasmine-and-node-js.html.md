@@ -11,6 +11,7 @@ tags:
   - javascript
   - node.js
   - testing
+featured: true
 ---
 [<img src="http://nfriedly.com/techblog/wp-content/uploads/2013/02/jasmine_flower.png" alt="jasmine_logo" width="91" height="90" class="alignleft left size-full wp-image-478" />][1] At [Sociable Labs][2], we have hundreds JavaScript unit tests that run on every checkin. They output a [JUnit][3]-compatible report that [Bamboo][4] can use to track stats and email us if anything failed. Here&#8217;s how we do it.
 

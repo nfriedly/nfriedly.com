@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><%= @document.title %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- @getBlock("meta").toHTML() %>
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+<![endif]-->
+
+<%- @getBlock("styles").add(["/styles/styles.css"]).toHTML() %>
+
+</head>
+<body>
+
+<%- @content %>
+
+<section class="feeds">
+	<div class="container">
+		<div class="row">
+			<div class="span8 techblog">
+				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Tech Blog</a></h3>
+				<ul>
+					<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 5): %>
+						<% post = model.toJSON(); body = model.getOutContent(); %>
+						<li class="<%= if post.id is @document.id then 'active' else 'inactive' %>">
+							<!-- %- @getFirstImage(post) % -->
+							<h4><a href="<%= post.url %>">
+								<%- post.title %>
+							</a></h4>
+							<%- @getPreview(post) %>
+						</li>
+					<% end %>
+				</ul>
+				<a href="/techblog">More Tech Blog articles...</a>
+			</div>
+			<div class="span4">
+				<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> @nfriedly on Github</a></h3>
+				<ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="span4 contact">
+				<h3>Contact Nathan</h3>
+				<p><i class="icon-envelope"></i> <a id="email">nathan @ (this website)</a></p>
+				<ul>
+					<li><a href="https://github.com/nfriedly"><i class="icon-github"></i></a></li>
+					<li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="icon-stackexchange"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="icon-linkedin"></i></a></li>
+					<li><a href="https://www.facebook.com/nfriedly"><i class="icon-facebook"></i></a></li>
+					<li><a href="https://twitter.com/nfriedly"><i class="icon-twitter"></i></a></li>
+					<li><a href="https://plus.google.com/108191639873296139181/posts"><i class="icon-google-plus"></i></a></li>
+					<li><a href="http://steamcommunity.com/id/nfriedly/games/?tab=all"><i class="icon-gamepad"></i></a></li>
+				</ul>
+			</div>
+			
+			<div class="span5 sitemap">
+				<h3>Site Map</h3>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a herf="/about">About</a></li>
+					<li><a href="/portfolio">Portfolio</a></li>
+					<li><a href="/techblog">Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="span3 info">
+				<p>&copy; Nathan Friedly 2013</p>
+				<p>Header photo by <a href="http://twitter.com/pjrvs">Paul Jarvis</a>.</p>
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<% if @getEnvironment() == 'development': %>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore.js"></script>
+<% else: %>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+<% end %>
+
+
+
+<%- @getBlock("scripts").add(@getDocument().get('scripts')).toHTML() %>
+
+</body>
+</html>
