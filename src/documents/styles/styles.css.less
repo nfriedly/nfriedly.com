@@ -74,13 +74,33 @@ header {
 		list-style-type: none; 
 		clear: left;
 		margin-bottom: 10px;
-		/*img {
-			width: 200px;
-			float: left;
-			margin-right: 10px;
-			margin-bottom: 10px;
-		}*/
+		clear: both;
 	}
+	code { white-space: normal; }
+	.clip {
+		width: 200px;
+		max-height: 150px;
+		overflow: hidden;
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.github {
+	ul { 
+		list-style-type: none;
+	}
+	li { animation: fadein 1s; margin-top: 20px; }
+	i.icon-li { top: 2px; }
+	h4, p { margin-bottom: 5px; }
+}
+
+.muted a {
+	color: inherit
 }
 
 footer { 

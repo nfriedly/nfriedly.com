@@ -3,6 +3,8 @@
 
 var reImages = /<img [^>]+>/g;
 var reHW = /(height|width)="\d+"/g;
+var reClass = /class="[^"]+"/;
+var reHeadings = /<h\d>(.*)<\/h\d>/g;
 
 module.exports = {
 	collections: {
@@ -12,15 +14,15 @@ module.exports = {
 	},
 	templateData: {
 		getFirstImage: function(post) { 
-			var images = post.get('body').match(reImages);
+			var images = post.contentRenderedWithoutLayouts.match(reImages);
 			if (!images) return "";
 			var img = images[0];
-			return img.replace(reHW, '');
+			return img.replace(reHW, '').replace(reClass, '');
 		},
 		getPreview: function(post) {
 			var sections = post.contentRenderedWithoutLayouts.split('<!--more-->');
 			if (sections.length != 2) return "";
-			return sections[0]; //.replace(reImages, '');
+			return sections[0].replace(reImages, '').replace(reHeadings, "<p><b>$1</b></p>");
 		}
 	}
 };

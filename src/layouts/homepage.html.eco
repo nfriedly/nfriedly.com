@@ -18,35 +18,6 @@
 
 <%- @content %>
 
-<section class="feeds">
-	<div class="container">
-		<div class="row">
-			<div class="span8 techblog">
-				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Tech Blog</a></h3>
-				<ul>
-					<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 5): %>
-						<% post = model.toJSON(); body = model.getOutContent(); %>
-						<li class="<%= if post.id is @document.id then 'active' else 'inactive' %>">
-							<!-- %- @getFirstImage(post) % -->
-							<h4><a href="<%= post.url %>">
-								<%- post.title %>
-							</a></h4>
-							<%- @getPreview(post) %>
-						</li>
-					<% end %>
-				</ul>
-				<a href="/techblog">More Tech Blog articles...</a>
-			</div>
-			<div class="span4">
-				<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> @nfriedly on Github</a></h3>
-				<ul>
-					<li><a href=""></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
-
 <footer>
 	<div class="container">
 		<div class="row">
@@ -75,11 +46,10 @@
 			</div>
 			
 			<div class="span3 info">
-				<p>&copy; Nathan Friedly 2013</p>
-				<p>Header photo by <a href="http://twitter.com/pjrvs">Paul Jarvis</a>.</p>
+				<p>&copy; Nathan Friedly <%= (new Date()).getFullYear() %></p>
 				<p>Built with <a href="http://docpad.org">DocPad</a>, 
 					<a href="http://getbootstrap.com/">Bootstrap</a>, 
-					and <a href="http://www.nodejs.org/">node.js</a>.
+					and <a href="http://www.nodejs.org/">Node.js</a>.
 				</p>
 			</div>
 		</div>
@@ -96,7 +66,7 @@
 
 
 
-<%- @getBlock("scripts").add(@getDocument().get('scripts')).toHTML() %>
+<%- @getBlock("scripts").add('/scripts/email.js').add(@getDocument().get('scripts')).toHTML() %>
 
 </body>
 </html>

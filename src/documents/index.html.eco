@@ -1,7 +1,7 @@
 ---
 title: "Nathan Friedly - Husband // Minister // Javascript Ninjaneer"
 layout: "homepage"
-scripts: ['/scripts/maizygram.js']
+scripts: ['/scripts/maizygram.js', '/scripts/github.js']
 referencesOthers: true
 ---
 
@@ -24,8 +24,35 @@ referencesOthers: true
 				<p>See my <a href="/about">about page</a> for a little more on my personal life, or take a look at my <a href="/portfolio">portfolio</a> and my <a href="/techblog">Tech Blog</a> for more work/computer-y stuff.</p>
 			</div>
 			<div class="span4 pic "><img src="/img/erin-maizy-nathan-park.jpg" alt="Erin, Maizy, and Nathan in the Tipp City park" /></div>
-			<div class="span4 pic maizygram"><p>Loading the latest #maizygram...</p></div>
+			<div class="span4 pic maizygram"><p><i class="icon-spinner icon-spin"></i> Loading the latest #maizygram...</p></div>
 	</div>
 </section>
 
-
+<section class="feeds">
+	<div class="container">
+		<div class="row">
+			<div class="span8 techblog">
+				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Latest on the Tech Blog</a></h3>
+				<ul>
+					<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 5): %>
+						<% post = model.toJSON(); body = model.getOutContent(); %>
+						<li class="<%= if post.id is @document.id then 'active' else 'inactive' %>">
+							<div class="clip"><%- @getFirstImage(post) %></div>
+							<h4><a href="<%= post.url %>">
+								<%- post.title %>
+							</a></h4>
+							<%- @getPreview(post) %>
+						</li>
+					<% end %>
+					<li class="archives"><strong><a href="/techblog">More Tech Blog articles <i class="icon-chevron-right"></i></a></strong></li>
+				</ul>
+			</div>
+			<div class="span4 github">
+				<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> Github Activity</a></h3>
+				<ul class="icons-ul">
+					<li class="muted"><i class="icon-li icon-spinner icon-spin"></i> Loading latest Github feed...</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

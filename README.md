@@ -5,16 +5,19 @@ In-progress replacement for my current website.
 
 Todo: 
 
-* Get header looking more like I want
-* More pictures
-* Patch up homepage feeds
-* Build blog archive, make it filterable by tag
+* Clean up homepage images
+* Tweak typography
+* Color Scheme
+* Build blog archive
+* Build portfolio
+* Add portfolio content
+* Create tag filtering options
 * Add "about me" page
-* Add portfolio, make it filterable by tag
-* Re-write work section
 * Set up redirects for old urls
 * Add custom 404 page
-* Fix blog "footnote" links
+* Add post dates
+* Add post custom header support
+* Clean up footer
 
 Build instructions
 ------------
