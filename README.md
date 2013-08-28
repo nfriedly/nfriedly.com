@@ -6,12 +6,11 @@ In-progress replacement for my current website.
 Todo: 
 
 * Clean up homepage images
-* Bootstrap 3 upgrade
 * Tweak typography
 * Color Scheme
-* Add post custom header support
+* Add top menu
 * Header image paralax effect
-* Style up footer
+* Style up footer more
 * Split up portfolio content
 * Clean up "about me" page
 * add portfolio and about me images
@@ -20,6 +19,7 @@ Todo:
 * Add custom 404 page
 * Add post dates
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
+* Use media object bootstrap classes
 
 Build instructions
 ------------

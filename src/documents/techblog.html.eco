@@ -1,13 +1,12 @@
 ---
 title: Tech Blog
-layout: homepage
+layout: main
 icon: fighter-jet
 referencesOthers: true
 ---
 
 <div class="container techblog archives">
 	<div class="row">
-		<h3><a href="/techblog"><i class="icon-fighter-jet"></i> nFriedly Web Development Tech Blog</a></h3>
 		<% for model in @getCollection('techblog').models: %>
 			<% model.getOutContent(); post = model.toJSON(); %>
 			<article>

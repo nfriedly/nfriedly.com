@@ -1,56 +1,49 @@
 ---
-title: "Nathan Friedly - Husband // Minister // Javascript Ninjaneer"
-layout: "homepage"
+title: Nathan Friedly - Husband // Minister // Javascript Ninjaneer
+layout: main
 scripts: ['/scripts/maizygram.js', '/scripts/github.js']
 referencesOthers: true
+heading: Nathan Friedly
+subHeading: <a href="/about">Husband</a> // <a href="/about">Minister</a> // <a href="/portfolio">JavaScript Ninjaneer</a>
+cssClass: homepage
+headerImage: /img/grapes-up.jpg
 ---
 
-<header>
-	<div class="container">
-		<h1><span><a href="/">Nathan Friedly</a></span></h1>
-		<h2><span><a href="#husband">Husband</a> // <a href="#minister">Minister</a> // <a href="#ninjaneer">JavaScript Ninjaneer</a></span></h2>
+<section class="intro row">
+	<div class="col-md-4">
+		<h3>Hi, I'm Nathan, nice to meet you!</h3>
+		<h4>About me</h4>
+		<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>, we've got the cutest dog in the world, and a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
+		<p>I'm a minister for the Lord Jesus Christ, and if you ever need anything, I'd be more than happy to provide prayer and support.</p>
+		<p>I also do a lot of stuff with computers both for work and for fun. That mostly entails JavaScript and node.js programing these days. My official job title at <a htef="http://sociablelabs.com/">Sociable Labs</a> is "Principal Engineer", although I got them to put "JavaScript Ninjaneer" on my business cards.</p>
+		<p>See my <a href="/about">about page</a> for a little more on my personal life, or take a look at my <a href="/portfolio">portfolio</a> and my <a href="/techblog">Tech Blog</a> for more work/computer-y stuff.</p>
 	</div>
-</header>
-
-<section class="intro">
-	 <div class="container">
-	 	<div class="row">
-	 		<div class="span4">
-				<h3>Hi, I'm Nathan, nice to meet you!</h3>
-				<h4>About me</h4>
-				<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>, we've got the cutest dog in the world, and a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
-				<p>I'm a minister for the Lord Jesus Christ, and if you ever need anything, I'd be more than happy to provide prayer and support.</p>
-				<p>I also do a lot of stuff with computers both for work and for fun. That mostly entails JavaScript and node.js programing these days. My official job title at <a htef="http://sociablelabs.com/">Sociable Labs</a> is "Principal Engineer", although I got them to put "JavaScript Ninjaneer" on my business cards.</p>
-				<p>See my <a href="/about">about page</a> for a little more on my personal life, or take a look at my <a href="/portfolio">portfolio</a> and my <a href="/techblog">Tech Blog</a> for more work/computer-y stuff.</p>
-			</div>
-			<div class="span4 pic "><img src="/img/erin-maizy-nathan-park.jpg" alt="Erin, Maizy, and Nathan in the Tipp City park" /></div>
-			<div class="span4 pic maizygram"><p><i class="icon-spinner icon-spin"></i> Loading the latest #maizygram...</p></div>
-	</div>
+			
+	<div class="col-md-4 pic"><img src="/img/erin-maizy-nathan-park.jpg" alt="Erin, Maizy, and Nathan in the Tipp City park" /></div>
+	
+	<div class="col-md-4 pic maizygram"><p><i class="icon-spinner icon-spin"></i> Loading the latest #maizygram...</p>
 </section>
 
-<section class="feeds">
-	<div class="container">
-		<div class="row">
-			<div class="span8 techblog">
-				<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Latest on the Tech Blog</a></h3>
-				<ul>
-					<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 5): %>
-						<% post = model.toJSON(); body = model.getOutContent(); %>
-						<li><a href="<%= post.url %>">
-							<div class="clip"><%- @getFirstImage(post) %></div>
-							<h4><%- post.title %></h4>
-							<%- @getStrippedPreview(post) %>
-						</a></li>
-					<% end %>
-					<li class="archives"><strong><a href="/techblog">More Tech Blog articles <i class="icon-chevron-right"></i></a></strong></li>
-				</ul>
-			</div>
-			<div class="span4 github">
-				<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> Github Activity</a></h3>
-				<ul class="icons-ul">
-					<li class="muted"><i class="icon-li icon-spinner icon-spin"></i> Loading latest Github feed...</li>
-				</ul>
-			</div>
-		</div>
+<section class="feeds row">
+	<div class="col-md-8 techblog">
+		<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Latest on the Tech Blog</a></h3>
+		<ul>
+			<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 5): %>
+				<% post = model.toJSON(); body = model.getOutContent(); %>
+				<li><a href="<%= post.url %>">
+					<div class="clip"><%- @getFirstImage(post) %></div>
+					<h4><%- post.title %></h4>
+					<%- @getStrippedPreview(post) %>
+				</a></li>
+			<% end %>
+			<li class="archives"><strong><a href="/techblog">More Tech Blog articles <i class="icon-chevron-right"></i></a></strong></li>
+		</ul>
+	</div>
+	
+	<div class="col-md-4 github">
+		<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> Github Activity</a></h3>
+		<ul class="icons-ul">
+			<li class="muted"><i class="icon-li icon-spinner icon-spin"></i> Loading latest Github feed...</li>
+		</ul>
 	</div>
 </section>

@@ -1,4 +1,5 @@
 $(function() {
 	var eml = 'nathan' + '@' + 'nfriedly.com';
-	$('#email').text(eml).attr('href', 'mailto:' + eml);
+	$('#email').attr('href', 'mailto:' + eml);
+	$('#email-text').text(eml);
 });
