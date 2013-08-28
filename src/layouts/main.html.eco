@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><%= @document.title %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<%- @getBlock("meta").toHTML() %>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+<![endif]-->
+
+<%- @getBlock("styles").add(["/styles/styles.css"]).toHTML() %>
+
+</head>
+<body class="<%= @document.cssClass %>">
+
+<header class="jumbotron" <%- "style=\"background-image: url(#{@document.headerImage});\"" if @document.headerImage %>>
+	<div class="container">
+		<h1><span><a href="<%= @document.url %>"><%- "<i class=\"icon-#{@document.icon}\"></i>" if @document.icon %> <%= @document.heading || @document.title %></a></span></h1>
+		<% if @document.subHeading: %><h2><span><%- @document.subHeading %></span></h2><% end %>
+	</div>
+</header>
+
+
+<div class="container">
+<%- @content %>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a id="email">
+							<span class="icon-stack">
+								<i class="icon-check-empty icon-stack-base"></i>
+								<i class="icon-envelope"></i> 
+							</span>
+							<span id="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="icon-stack" href="https://github.com/nfriedly">
+							<i class="icon-check-empty icon-stack-base"></i>
+							<i class="icon-github"></i>
+						</a>
+					</li>
+					<li>
+						<a class="icon-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="icon-check-empty icon-stack-base"></i>
+							<i class="icon-stackexchange"></i>
+						</a>
+					</li>
+					<li>
+						<a class="icon-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="icon-check-empty icon-stack-base"></i>
+							<i class="icon-linkedin"></i>
+						</a>
+					</li>
+					<li>
+						<a class="icon-stack" href="https://www.facebook.com/nfriedly">
+							<i class="icon-check-empty icon-stack-base"></i>
+							<i class="icon-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a class="icon-stack" href="https://twitter.com/nfriedly">
+							<i class="icon-check-empty icon-stack-base"></i>
+							<i class="icon-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a class="icon-stack" href="https://plus.google.com/108191639873296139181/posts">
+							<i class="icon-check-empty icon-stack-base"></i>
+							<i class="icon-google-plus"></i>
+						</a>
+					</li>
+					<li>
+						<a class="icon-stack" href="http://steamcommunity.com/id/nfriedly/games/?tab=all">
+							<i class="icon-check-empty icon-stack-base"></i>
+							<i class="icon-gamepad"></i>
+						</a>
+					</li>
+				
+				<!-- 
+					<li><a href="https://github.com/nfriedly"><i class="icon-github"></i></a></li>
+					<li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="icon-stackexchange"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="icon-linkedin"></i></a></li>
+					<li><a href="https://www.facebook.com/nfriedly"><i class="icon-facebook"></i></a></li>
+					<li><a href="https://twitter.com/nfriedly"><i class="icon-twitter"></i></a></li>
+					<li><a href="https://plus.google.com/108191639873296139181/posts"><i class="icon-google-plus"></i></a></li>
+					<li><a href="http://steamcommunity.com/id/nfriedly/games/?tab=all"><i class="icon-gamepad"></i></a></li>
+					-->
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="icons-ul">
+					<li><a href="/"><i class="icon-li icon-rocket"></i> Home</a></li>
+					<li><a herf="/about"><i class="icon-li icon-beaker"></i>About</a></li>
+					<li><a href="/portfolio"><i class="icon-li icon-keyboard"></i>Portfolio</a></li>
+					<li><a href="/techblog"><i class="icon-li icon-fighter-jet"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly <%= (new Date()).getFullYear() %></p>
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<% if @getEnvironment() == 'development': %>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore.js"></script>
+<% else: %>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+<% end %>
+
+
+
+<%- @getBlock("scripts").add('/scripts/email.js').add(@getDocument().get('scripts')).toHTML() %>
+
+</body>
+</html>
