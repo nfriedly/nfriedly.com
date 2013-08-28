@@ -17,10 +17,6 @@ tags:
 
 Even worse, it charged the customers credit card each time, so a persistent customer could wind up with multiple charges which you would need to undo!
 
-<p style="float: left; margin-right: 1ex;">
-  Continue reading for the fix:
-</p>
-
 <!--more-->
 
 <h2 style="clear: both; padding-top: 10px;">

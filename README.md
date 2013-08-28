@@ -10,14 +10,12 @@ Todo:
 * Tweak typography
 * Color Scheme
 * Add post custom header support
-* Shrink header images to reasonable sizes
 * Header image paralax effect
 * Style up footer
-* Build blog archive
-* Build portfolio
-* Add portfolio content
+* Split up portfolio content
+* Clean up "about me" page
+* add portfolio and about me images
 * Create tag filtering options
-* Add "about me" page
 * Set up redirects for old urls
 * Add custom 404 page
 * Add post dates

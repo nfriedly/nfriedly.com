@@ -36,13 +36,11 @@ referencesOthers: true
 				<ul>
 					<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 5): %>
 						<% post = model.toJSON(); body = model.getOutContent(); %>
-						<li class="<%= if post.id is @document.id then 'active' else 'inactive' %>">
+						<li><a href="<%= post.url %>">
 							<div class="clip"><%- @getFirstImage(post) %></div>
-							<h4><a href="<%= post.url %>">
-								<%- post.title %>
-							</a></h4>
-							<%- @getPreview(post) %>
-						</li>
+							<h4><%- post.title %></h4>
+							<%- @getStrippedPreview(post) %>
+						</a></li>
 					<% end %>
 					<li class="archives"><strong><a href="/techblog">More Tech Blog articles <i class="icon-chevron-right"></i></a></strong></li>
 				</ul>

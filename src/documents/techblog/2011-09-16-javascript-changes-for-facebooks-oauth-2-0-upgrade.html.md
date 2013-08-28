@@ -16,6 +16,8 @@ tags:
 
 The upgrade enabled right now, but it gets forced out on October 1st. These two posts should give you all you need to know to get your site ready for Facebook&#8217;s upgrade:
 
+<!--more-->
+
 Part 1: JavaScript - [JavaScript changes for Facebook’s OAuth 2.0 upgrade][1]
 
 Part 2: PHP / Backend &#8211; [Server Side changes for Facebook’s OAuth 2.0 upgrade][2]

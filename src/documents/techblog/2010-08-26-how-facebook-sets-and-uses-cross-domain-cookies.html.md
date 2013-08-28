@@ -17,7 +17,9 @@ featured: true
 
 ### What Facebook Does
 
-Facebook is in a unique position compared to many developers looking to set cross domain cookies: The user visits both facebook.com and the other website. <!--more-->
+Facebook is in a unique position compared to many developers looking to set cross domain cookies: The user visits both facebook.com and the other website.
+
+<!--more-->
 
 Facebook never actually sets cookies cross-domain, they only read cookies cross-domain. They set cookies on facebook.com when the user visits facebook.com and they set cookies on the other example.com (or any other website) when the user visits example.com.<sup><a href="#note-1">1</a></sup>
 
