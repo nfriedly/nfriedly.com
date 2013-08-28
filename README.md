@@ -6,8 +6,13 @@ In-progress replacement for my current website.
 Todo: 
 
 * Clean up homepage images
+* Bootstrap 3 upgrade
 * Tweak typography
 * Color Scheme
+* Add post custom header support
+* Shrink header images to reasonable sizes
+* Header image paralax effect
+* Style up footer
 * Build blog archive
 * Build portfolio
 * Add portfolio content
@@ -16,8 +21,7 @@ Todo:
 * Set up redirects for old urls
 * Add custom 404 page
 * Add post dates
-* Add post custom header support
-* Clean up footer
+* Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 
 Build instructions
 ------------

@@ -3,6 +3,7 @@
 <head>
 <title><%= @document.title %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <%- @getBlock("meta").toHTML() %>
 
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -37,11 +38,11 @@
 			
 			<div class="span5 sitemap">
 				<h3>Site Map</h3>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a herf="/about">About</a></li>
-					<li><a href="/portfolio">Portfolio</a></li>
-					<li><a href="/techblog">Tech blog</a></li>
+				<ul class="icon-ul">
+					<li><a href="/"><i class="icon-li icon-rocket"></i> Home</a></li>
+					<li><a herf="/about"><i class="icon-li icon-beaker"></i>About</a></li>
+					<li><a href="/portfolio"><i class="icon-li icon-keyboard"></i>Portfolio</a></li>
+					<li><a href="/techblog"><i class="icon-li icon-fighter-jet"></i>Tech blog</a></li>
 				</ul>
 			</div>
 			
@@ -51,6 +52,7 @@
 					<a href="http://getbootstrap.com/">Bootstrap</a>, 
 					and <a href="http://www.nodejs.org/">Node.js</a>.
 				</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
 			</div>
 		</div>
 	</div>
