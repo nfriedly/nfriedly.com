@@ -19,7 +19,7 @@ headerImage: /img/grapes-up.jpg
 		<p>See my <a href="/about">about page</a> for a little more on my personal life, or take a look at my <a href="/portfolio">portfolio</a> and my <a href="/techblog">Tech Blog</a> for more work/computer-y stuff.</p>
 	</div>
 			
-	<div class="col-md-4 pic"><img src="/img/erin-maizy-nathan-park.jpg" alt="Erin, Maizy, and Nathan in the Tipp City park" /></div>
+	<div class="col-md-4 pic"><img src="/img/erin-maizy-nathan-park.jpg" alt="Erin, Maizy, and Nathan in the Tipp City park" class="img-responsive img-thumbnail"/></div>
 	
 	<div class="col-md-4 pic maizygram"><p><i class="icon-spinner icon-spin"></i> Loading the latest #maizygram...</p>
 </section>
