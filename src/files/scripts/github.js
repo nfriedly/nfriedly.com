@@ -9,7 +9,9 @@
 		CreateEvent: _.template(icon + '<a href="<%= events[0].repository.url %>">repo created</a>'),
 		IssueCommentEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> issue comment<%= events.length == 1 ? "" : "s"%></a>'),
 		IssuesEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> issue<%= events.length == 1 ? "" : "s"%> created</a>'),
-		'default':  _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> <%= events[0].type.replace("Event", " event") %><%= events.length == 1 ? "" : "s"%></a>')
+		MemberEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> contributor<%= events.length == 1 ? "" : "s"%> added</a>'),
+		PullRequestEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
+		'default':  _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
 	};
 
 	var eventIcons = {
@@ -23,6 +25,7 @@
 		PullRequestReviewCommentEvent: 'icon-comment',
 		WatchEvent: 'icon-eye-open',
 		FollowEvent: 'icon-plane',
+		MemberEvent: 'icon-user',
 		'default':  'icon-gears'
 	
 		// todo: icon-check  for issue closed
