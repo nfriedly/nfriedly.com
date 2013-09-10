@@ -1,4 +1,4 @@
-var renderMaizygram = _.template('<a href="<%= link %>" title="<%= caption.text %>"><img src="<%= images.low_resolution.url %>" class="img-responsive img-thumbnail" alt="Maizygram!"></a>'); 
+var renderMaizygram = _.template('<a href="<%= link %>" title="<%= caption.text %>"><img src="<%= images.low_resolution.url %>" class="img-thumbnail" alt="Maizygram!"></a>'); 
 
 function handleMaizygrams(response) {
 	if(response && response.meta.code == 200) {

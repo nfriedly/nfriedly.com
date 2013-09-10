@@ -58,17 +58,34 @@ header.jumbotron {
 	margin-top: 18px;
 }
 
+@homepageImageHeight: 241px;
+@homepageImageReducedHeight: 197px;
+
+.homepage .pics img, .maizygram {
+	width: auto;
+	height: @homepageImageReducedHeight;
+}
+
 .maizygram {
-	height: 306px; width: 306px;
+	width: @homepageImageReducedHeight; // width = height because this image is always square
+	display: inline-block;
 	
 	p {
-		line-height: 306px;
 		color: #ccc;
 		text-align: center;
 	}
 	
 	img { animation: fadein 1s; }
 }
+
+@media (min-width: 1200px) {
+	.homepage .pics img, .maizygram {
+		height: @homepageImageHeight;
+	}
+	.maizygram {
+		width: @homepageImageHeight; // width = height because this image is always square
+	}
+} 
 
 @keyframes fadein {
     from { opacity: 0; }
