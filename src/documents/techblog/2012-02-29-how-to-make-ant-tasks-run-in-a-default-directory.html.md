@@ -12,7 +12,7 @@ tags:
   - howto
   - productivity
   - shell
-featured: true
+featured: false
 ---
 [<img src="http://farm8.staticflickr.com/7020/6668518895_0700a12958_m.jpg" width="240" height="160" alt="Apache takeoff" class="right" />][1]I often open a new tab in my Terminal to run an [Ant][2] task, and often as not I forget to `cd` into the correct directory first and so I am greeted with this error:
 

@@ -61,7 +61,7 @@ header.jumbotron {
 @homepageImageHeight: 241px;
 @homepageImageReducedHeight: 197px;
 
-.homepage .pics img, .maizygram {
+.homepage .pics img {
 	width: auto;
 	height: @homepageImageReducedHeight;
 }
@@ -79,7 +79,7 @@ header.jumbotron {
 }
 
 @media (min-width: 1200px) {
-	.homepage .pics img, .maizygram {
+	.homepage .pics img {
 		height: @homepageImageHeight;
 	}
 	.maizygram {
@@ -91,6 +91,8 @@ header.jumbotron {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.biblequote { margin-top: 36px; border:0; }
 
 .feeds h3 { margin-bottom: 20px; }
 .feeds ul { padding-left: 0; }
