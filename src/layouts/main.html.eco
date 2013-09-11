@@ -90,7 +90,7 @@ function loadBackupCSS(url) {
 						</a>
 					</li>
 					<li>
-						<a class="icon-stack" href="http://steamcommunity.com/id/nfriedly/games/?tab=all">
+						<a class="icon-stack" href="http://steamcommunity.com/id/nfriedly">
 							<i class="icon-check-empty icon-stack-base"></i>
 							<i class="icon-gamepad"></i>
 						</a>
