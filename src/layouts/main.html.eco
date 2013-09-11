@@ -95,16 +95,6 @@ function loadBackupCSS(url) {
 							<i class="icon-gamepad"></i>
 						</a>
 					</li>
-				
-				<!-- 
-					<li><a href="https://github.com/nfriedly"><i class="icon-github"></i></a></li>
-					<li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="icon-stackexchange"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="icon-linkedin"></i></a></li>
-					<li><a href="https://www.facebook.com/nfriedly"><i class="icon-facebook"></i></a></li>
-					<li><a href="https://twitter.com/nfriedly"><i class="icon-twitter"></i></a></li>
-					<li><a href="https://plus.google.com/108191639873296139181/posts"><i class="icon-google-plus"></i></a></li>
-					<li><a href="http://steamcommunity.com/id/nfriedly/games/?tab=all"><i class="icon-gamepad"></i></a></li>
-					-->
 				</ul>
 			</div>
 			
