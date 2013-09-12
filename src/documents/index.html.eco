@@ -10,6 +10,7 @@ headerImage: /img/grapes-up.jpg
 ---
 
 <section class="intro row">
+	<div>Header height: <span id="headerHeight"></span>. Page width: <span id="pageWidth"></span>.</div>
 	<div class="col-md-4">
 		<h3>Hi, I'm Nathan, nice to meet you!</h3>
 		<h4>About me</h4>
@@ -21,9 +22,9 @@ headerImage: /img/grapes-up.jpg
 	<div class="col-md-8 pics">
 		<img src="/img/home-thumbs/erin-maizy-nathan-park.jpg" alt="Picture of Erin, Maizy, and Nathan in the Tipp City park" class="img-thumbnail"/>
 		<img src="/img/home-thumbs/erin-and-nathan.jpg" class="img-thumbnail" alt="Picture of Erin and Nathan wearing 'I heart my husband' and 'I heart my wife' t-shirts">
-		<img src="/img/home-thumbs/maizy.jpg" class="img-thumbnail" alt="Picture of Maizy, the cutest dog in the world">
+		<img src="/img/home-thumbs/maizy.jpg" class="img-thumbnail portrait" alt="Picture of Maizy, the cutest dog in the world">
 	
-		<img src="/img/home-thumbs/ntree.jpg" class="img-thumbnail" alt="Picture of Nathan leaning against a tree">
+		<img src="/img/home-thumbs/ntree.jpg" class="img-thumbnail portrait" alt="Picture of Nathan leaning against a tree">
 		<img src="/img/home-thumbs/temp-o-matic.jpg" class="img-thumbnail" alt="Picture of the Temp-O-Matic digital thermitor that Nathan Built">
 		<div class="maizygram"><p><i class="icon-spinner icon-spin"></i> Loading the latest #maizygram...</p></div>
 	</div>
