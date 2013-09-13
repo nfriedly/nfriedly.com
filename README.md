@@ -19,6 +19,7 @@ Todo:
 * Add post dates
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * Use media object bootstrap classes
+* cleanup img/ directory
 
 Build instructions
 ------------

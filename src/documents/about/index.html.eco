@@ -24,8 +24,7 @@ I want to be a friend to anyone who is in need of one.</p>
 <p>The <b>best</b> thing I ever did with my life was marrying Erin. More about her in a minute.</p>
 
 <h2>The basics</h2>
-<% age = (new Date).getFullYear() - 1986 - ( (new Date).getMonth() < 8 ? 1 : 0) %>
-<p>I am <%= age %> years old. I was born in Georgia, but I've pretty much grown up in Ohio. </p>
+<p>I am <%= (new Date).getFullYear() - 1986 - ( (new Date).getMonth() < 8 ? 1 : 0) %> years old. I was born in Georgia, but I've pretty much grown up in Ohio. </p>
 <p>I hold degrees in Web Development, Network Engineering, and Software Development from Sinclair CC and the University of Cincinnati.</p>
 
 <h2>Relationships</h2>
