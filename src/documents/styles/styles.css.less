@@ -42,6 +42,28 @@ img.left, img.alignleft {
     margin: 0 10px 5px 0;
 }
 
+.navbar-container {
+	& > .container { height: 0;}
+	.menu-button {
+		z-index: 1200;
+		top: 6px;
+		right: 15px;
+		font-size: 20px;
+		color: #888;
+		.icon-stack-base { color: black; opacity: 0.8; }
+	
+		&:hover { color: white; text-decoration: none; }
+	}
+
+	.navbar {
+		margin: 0;
+		position: absolute;
+		width: 100%;
+		&.collapsing {min-height: 0;}
+	}
+}
+
+
 header.jumbotron {
 	background-image: url(/img/grapes-up.jpg);
 	background-repeat: no-repeat; 

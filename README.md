@@ -5,18 +5,17 @@ In-progress replacement for my current website.
 
 Todo: 
 
-* Clean up homepage images
+* Style up footer more
 * Tweak typography
 * Color Scheme
-* Add top menu
-* Header image paralax effect
-* Style up footer more
-* Split up portfolio content
-* Clean up "about me" page
-* add portfolio and about me images
-* Create tag filtering options
 * Set up redirects for old urls
 * Add custom 404 page
+* Minify and combine stuff
+* Clean up header images
+* Header image paralax effect
+* Split up portfolio content
+* Clean up "about me" page
+* Create tag filtering options
 * Add post dates
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * Use media object bootstrap classes

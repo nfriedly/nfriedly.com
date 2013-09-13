@@ -25,6 +25,27 @@ function loadBackupCSS(url) {
 </head>
 <body class="<%= @document.cssClass %>">
 
+<div class="navbar-container">
+	<div class="container">
+		<a class="icon-stack menu-button pull-right" data-toggle="collapse" data-target="nav" href="#" title="Toggle navigation">
+			<i class="icon-sign-blank icon-stack-base"></i>
+			<i class="icon-reorder"></i>
+			<span class="sr-only">Toggle navigation</span>
+		</a>
+	</div>
+	<nav class="navbar collapse navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+			<ul class="nav navbar-nav">
+				<li><a href="/"><i class="icon-li icon-rocket"></i> Home</a></li>
+				<li><a href="/about"><i class="icon-li icon-beaker"></i> About</a></li>
+				<li><a href="/portfolio"><i class="icon-li icon-keyboard"></i> Portfolio</a></li>
+				<li><a href="/techblog"><i class="icon-li icon-fighter-jet"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
 <header class="jumbotron" <%- "style=\"background-image: url(#{@document.headerImage});\"" if @document.headerImage %>>
 	<div class="container">
 		<h1><span><a href="<%= @document.url %>"><%- "<i class=\"icon-#{@document.icon}\"></i>" if @document.icon %> <%= @document.heading || @document.title %></a></span></h1>
@@ -33,9 +54,9 @@ function loadBackupCSS(url) {
 </header>
 
 
-<div class="container">
+<main class="container">
 <%- @content %>
-</div>
+</main>
 
 <footer>
 	<div class="container">
@@ -102,7 +123,7 @@ function loadBackupCSS(url) {
 				<h3>Site Map</h3>
 				<ul class="icons-ul">
 					<li><a href="/"><i class="icon-li icon-rocket"></i> Home</a></li>
-					<li><a herf="/about"><i class="icon-li icon-beaker"></i>About</a></li>
+					<li><a href="/about"><i class="icon-li icon-beaker"></i>About</a></li>
 					<li><a href="/portfolio"><i class="icon-li icon-keyboard"></i>Portfolio</a></li>
 					<li><a href="/techblog"><i class="icon-li icon-fighter-jet"></i>Tech blog</a></li>
 				</ul>
@@ -124,9 +145,11 @@ function loadBackupCSS(url) {
 
 <% if @getEnvironment() == 'development': %>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js" defer></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore.js"></script>
 <% else: %>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
 <% end %>
 
