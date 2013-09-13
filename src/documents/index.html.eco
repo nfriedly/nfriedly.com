@@ -10,7 +10,7 @@ headerImage: /img/grapes-up.jpg
 ---
 
 <section class="intro row">
-	<div>Header height: <span id="headerHeight"></span>. Page width: <span id="pageWidth"></span>.</div>
+	<!-- div>Header height: <span id="headerHeight"></span>. Page width: <span id="pageWidth"></span>.</div -->
 	<div class="col-md-4">
 		<h3>Hi, I'm Nathan, nice to meet you!</h3>
 		<h4>About me</h4>

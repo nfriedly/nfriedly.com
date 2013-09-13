@@ -24,9 +24,11 @@ $(document).ready(function() {
 	
 	$.getScript(instagramApiUrl);
 	
+	/*
 	$(window).resize(function() {
 		$('#headerHeight').text($('header').height());
 		$('#pageWidth').text($(window).width());
 	}).resize();
+	*/
 	
 });
