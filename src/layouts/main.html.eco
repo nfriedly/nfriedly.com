@@ -19,6 +19,7 @@ function loadBackupCSS(url) {
 <!--[if IE 7]>
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
 <![endif]-->
+<link href="/styles/font-mfizz/font-mfizz.css" rel="stylesheet">
 
 <%- @getBlock("styles").add(["/styles/styles.css"]).toHTML() %>
 
