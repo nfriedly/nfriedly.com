@@ -209,8 +209,20 @@ header.jumbotron {
 @media (min-width: @screen-lg) {
     @footerPadding: 50px;
     @footerHeight: 162px + (@footerPadding * 2);
-	.over-footer { position: relative; background-color: white; z-index: 2; margin-bottom: @footerHeight; padding-bottom: 20px;}
-	footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1; padding-top: @footerPadding; height: @footerHeight; }
+	.over-footer { 
+		position: relative; 
+		background-color: white; 
+		z-index: 2; 
+		margin-bottom: @footerHeight; 
+		padding-bottom: 20px; 
+		box-shadow: 0 18px 18px -12px #444488;
+	}
+	footer { 
+		position: fixed; bottom: 0; left: 0; right: 0; 
+		z-index: 1; 
+		padding-top: @footerPadding; 
+		height: @footerHeight; 
+	}
 }
 
 footer { 
