@@ -26,6 +26,8 @@ function loadBackupCSS(url) {
 </head>
 <body class="<%= @document.cssClass %>">
 
+<div class="over-footer">
+
 <div class="navbar-container">
 	<div class="container">
 		<a class="icon-stack menu-button pull-right" data-toggle="collapse" data-target="nav" href="#" title="Toggle navigation">
@@ -58,6 +60,8 @@ function loadBackupCSS(url) {
 <main class="container">
 <%- @content %>
 </main>
+
+</div> <!-- .over-footer -->
 
 <footer>
 	<div class="container">

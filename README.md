@@ -6,7 +6,6 @@ In-progress replacement for my current website.
 Todo: 
 
 * Fix portfolio lightbox
-* Style up footer more
 * Tweak typography
 * Color Scheme
 * Set up redirects for old urls
