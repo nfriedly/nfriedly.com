@@ -35,9 +35,6 @@ body {font-family: 'Nobile'; }
 	body, body.homepage { font-size: 18px; }
 }
 
-//wierd hack for firefox
-@font-face{font-family:'FontAwesome-webfont';}
-
 a { color: @linkColor; }
 a:hover { color: @hoverLinkColor; }
 
@@ -56,7 +53,8 @@ img.left, img.alignleft {
     margin: 0 10px 5px 0;
 }
 
-.icons-ul {margin:0;}
+.icons-ul {margin-left: 2em;}
+a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 
 .navbar-container {
 	& > .container { height: 0;}
@@ -171,7 +169,7 @@ header.jumbotron {
 		list-style-type: none; 
 		clear: left;
 		clear: both;
-		margin-top: 16px;
+		margin-top: 20px;
 		
 		a { 
 			text-decoration: none;
@@ -185,7 +183,7 @@ header.jumbotron {
 		
 		p { margin: 10px 0 0 0; }
 	}
-	h4 { margin-top: 0; }
+	h3 { margin-top: 0; }
 
 	code { white-space: normal; }
 	.clip {
@@ -216,7 +214,7 @@ header.jumbotron {
 	}
 	li { animation: fadein 1s;  margin-top: 20px; }
 	i.icon-li { top: 2px; }
-	h4, p { margin-bottom: 5px; }
+	h3, p { margin-bottom: 5px; }
 }
 
 .muted a {

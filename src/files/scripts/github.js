@@ -1,7 +1,7 @@
 (function(exports, $) {
 	"use strict";
 
-	var renderGH = _.template('<li><h4><i  class="icon-li <%= icon %>"></i> <a href="<%= url %>"><%= name %></a></h4><p><%= description %></p><%= homepage %><p class="muted"><%= events %></p></li>'); 
+	var renderGH = _.template('<li><h3><i  class="icon-li <%= icon %>"></i> <a href="<%= url %>"><%= name %></a></h3><p><%= description %></p><%= homepage %><p class="muted"><%= events %></p></li>'); 
 
 	var icon = '<i class="<%= icon %>"></i> ';
 	var eventTemplates = {

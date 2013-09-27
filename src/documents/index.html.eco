@@ -37,7 +37,7 @@ headerImage: /img/grapes-up.jpg
 
 <section class="feeds row">
 	<div class="col-md-8 techblog">
-		<h3><a href="/techblog"><i class="icon-fighter-jet"></i> Latest on the Tech Blog</a></h3>
+		<h2><a href="/techblog"><i class="icon-fighter-jet"></i> Latest on the Tech Blog</a></h2>
 		<ul>
 			<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 4): %>
 				<% post = model.toJSON(); body = model.getOutContent(); %>
@@ -52,7 +52,7 @@ headerImage: /img/grapes-up.jpg
 	</div>
 	
 	<div class="col-md-4 github">
-		<h3><a href="https://github.com/nfriedly"><i class="icon-github"></i> Github Activity</a></h3>
+		<h2><a href="https://github.com/nfriedly"><i class="icon-github"></i> Github Activity</a></h2>
 		<ul class="icons-ul">
 			<li class="muted"><i class="icon-li icon-spinner icon-spin"></i> Loading latest Github feed...</li>
 		</ul>
