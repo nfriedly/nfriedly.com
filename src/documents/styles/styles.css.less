@@ -20,10 +20,24 @@
 @screen-sm-max:              (@screen-md - 1);
 @screen-md-max:              (@screen-lg - 1);
 
-// todo: boost my base font-size (and line-height) and then shrink the already-boosted stuff back down
-//body { font-size: 120%; }
-
 // general styles
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Raleway', sans-serif; }
+body {font-family: 'Nobile'; }
+
+// code, pre {font-family: 'Monda'; }
+
+// todo -  download bootstrap and clean this up
+@media (min-width: @screen-md) {
+	body, body.homepage { font-size: 16px; }
+}
+
+@media (min-width: @screen-lg) {
+	body, body.homepage { font-size: 18px; }
+}
+
+//wierd hack for firefox
+@font-face{font-family:'FontAwesome-webfont';}
+
 a { color: @linkColor; }
 a:hover { color: @hoverLinkColor; }
 
@@ -99,13 +113,17 @@ header.jumbotron {
 
 .intro .pic {
 	margin-top: 18px;
+	
 }
 
 @homepageImageHeight: 241px;
 @homepageImageReducedHeight: 197px;
 
-.homepage .pics img { height: auto; width: 100%; }
-.homepage .pics img.portrait { height: auto; width: 49%; }
+.homepage .pics {
+	font-size: 1px; /* keep the spaces between the images from being too large - without having to uglify the HTML */
+	img { height: auto; width: 100%; }
+	img.portrait { height: auto; width: 49%; }
+}
 
 @media (min-width: @screen-xs) {
 	.homepage .pics img, .homepage .pics img.portrait {

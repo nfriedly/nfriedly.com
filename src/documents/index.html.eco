@@ -13,7 +13,6 @@ headerImage: /img/grapes-up.jpg
 	<!-- div>Header height: <span id="headerHeight"></span>. Page width: <span id="pageWidth"></span>.</div -->
 	<div class="col-md-4">
 		<h3>Hi, I'm Nathan, nice to meet you!</h3>
-		<h4>About me</h4>
 		<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>, we've got the cutest dog in the world, and we live on a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
 		<p>I'm a Christian and a minister for the Lord Jesus Christ. If you ever need anything, I'd be more than happy to provide prayer and support.</p>
 		<p>I also do a lot of stuff with computers both for work and for fun. That mostly entails JavaScript and node.js programing these days. My official job title at <a htef="http://sociablelabs.com/">Sociable Labs</a> is "Principal Engineer", although I got them to put "JavaScript Ninjaneer" on my business cards.</p>
@@ -44,7 +43,7 @@ headerImage: /img/grapes-up.jpg
 				<% post = model.toJSON(); body = model.getOutContent(); %>
 				<li><a href="<%= post.url %>">
 					<div class="clip"><%- @getFirstImage(post) %></div>
-					<h4><%- post.title %></h4>
+					<h3><%- post.title %></h3>
 					<%- @getStrippedPreview(post) %>
 				</a></li>
 			<% end %>

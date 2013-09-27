@@ -26,7 +26,7 @@ module.exports = {
 			if (!post.contentRenderedWithoutLayouts) return '';
 			var sections = post.contentRenderedWithoutLayouts.split('<!--more-->');
 			if (sections.length != 2) return "";
-			return sections[0].replace(reHeadings, "<p><b>$1</b></p>");
+			return sections[0].replace(reHeadings, "<p>$1</p>");
 		},
 		getStrippedPreview: function(post) {
 			return this.getPreview(post)
