@@ -41,10 +41,10 @@ function loadBackupCSS(url) {
 		<div class="container">
 			<a class="navbar-brand" href="/">Nathan Friedly</a>
 			<ul class="nav navbar-nav">
-				<li><a href="/"><i class="icon-li icon-rocket"></i> Home</a></li>
-				<li><a href="/about"><i class="icon-li icon-beaker"></i> About</a></li>
-				<li><a href="/portfolio"><i class="icon-li icon-keyboard"></i> Portfolio</a></li>
-				<li><a href="/techblog"><i class="icon-li icon-fighter-jet"></i> Tech blog</a></li>
+				<li><a href="/"><i class="icon-li icon-home"></i> Home</a></li>
+				<li><a href="/about"><i class="icon-li icon-android"></i> About</a></li>
+				<li><a href="/portfolio"><i class="icon-li icon-laptop"></i> Portfolio</a></li>
+				<li><a href="/techblog"><i class="icon-li icon-terminal"></i> Tech blog</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -128,10 +128,10 @@ function loadBackupCSS(url) {
 			<div class="col-md-3 sitemap">
 				<h3>Site Map</h3>
 				<ul class="icons-ul">
-					<li><a href="/"><i class="icon-li icon-rocket"></i> Home</a></li>
-					<li><a href="/about"><i class="icon-li icon-beaker"></i>About</a></li>
-					<li><a href="/portfolio"><i class="icon-li icon-keyboard"></i>Portfolio</a></li>
-					<li><a href="/techblog"><i class="icon-li icon-fighter-jet"></i>Tech blog</a></li>
+					<li><a href="/"><i class="icon-li icon-home"></i> Home</a></li>
+					<li><a href="/about"><i class="icon-li icon-android"></i>About</a></li>
+					<li><a href="/portfolio"><i class="icon-li icon-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog"><i class="icon-li icon-terminal"></i>Tech blog</a></li>
 				</ul>
 			</div>
 			

@@ -5,15 +5,18 @@ In-progress replacement for my current website.
 
 Todo: 
 
+* Finish up color scheme - unify header / footer menu and other content.
 * Fix portfolio lightbox
-* Color Scheme
+* Just use the same header photo everywhere for now
 * Set up redirects for old urls
 * Add custom 404 page
+* Shorten blog titles and add subtitles.
 * Minify and combine stuff
 * Clean up header images
 * Header image paralax effect
 * Split up portfolio content
 * Clean up "about me" page
+* Add instagram feed to about page - maybe just photos tagged @nfriedly
 * Create tag filtering options
 * Add post dates
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />

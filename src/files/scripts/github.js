@@ -32,7 +32,7 @@
 	}
 	
 	var repoIcons = {
-		'nfriedly.com': 'icon-rocket',
+		'nfriedly.com': 'icon-home',
 		'facebook-js-sdk': 'icon-facebook',
 		'node-unblocker': 'icon-globe',
 		'spam-free-php-contact-form': 'icon-envelope-alt',

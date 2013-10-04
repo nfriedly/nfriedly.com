@@ -1,5 +1,5 @@
-@linkColor: #0088CC;
-@hoverLinkColor: #005580;
+@linkColor: lighten(#2B1B28, 15%);
+@hoverLinkColor: @linkColor;
 
 // based on https://github.com/twbs/bootstrap/blob/master/less/variables.less
 @screen-xs:                  480px;
@@ -21,7 +21,7 @@
 @screen-md-max:              (@screen-lg - 1);
 
 // general styles
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Raleway', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; }
 body {font-family: 'Nobile'; }
 
 // code, pre {font-family: 'Monda'; }
@@ -35,8 +35,11 @@ body {font-family: 'Nobile'; }
 	body, body.homepage { font-size: 18px; }
 }
 
-a { color: @linkColor; }
-a:hover { color: @hoverLinkColor; }
+a { color: @linkColor; padding: 3px 1px 0 1px; text-decoration: underline;}
+a:hover { color: white; background-color: @hoverLinkColor; text-decoration: none;  }
+a, a:hover { transition:all 0.5s }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {text-decoration: none;}
 
 .right, .alignright {
     float: right;
@@ -57,6 +60,7 @@ img.left, img.alignleft {
 a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 
 .navbar-container {
+	a { text-decoration: none; }
 	& > .container { height: 0;}
 	.menu-button {
 		z-index: 1200;
@@ -65,7 +69,7 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 		font-size: 20px;
 		text-decoration: none;
 		color: #888;
-		&:hover { color: white; }
+		&:hover { color: white; background-color: inherit; }
 		.icon-stack-base { color: black; opacity: 0.8; }
 	}
 
@@ -74,6 +78,7 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 		position: absolute;
 		width: 100%;
 		&.collapsing {min-height: 0;}
+		background-color: #291822;
 	}
 }
 
@@ -256,7 +261,10 @@ footer {
 		}
 		#email-text {padding-left: 0.5ex;}
 	}
-	.sitemap ul { font-size: 130%; }
+	.sitemap {
+		ul { font-size: 130%; }
+		a { text-decoration: none; }
+	}
 	.info { 
 		padding-top:3ex; 
 		img { padding: 5px 5px 5px 0; }
