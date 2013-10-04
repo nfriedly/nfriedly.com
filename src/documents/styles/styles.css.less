@@ -1,5 +1,9 @@
-@linkColor: lighten(#2B1B28, 15%);
-@hoverLinkColor: @linkColor;
+@darkPurple: #291822;
+@lightPurple: lighten(@darkPurple, 15%);
+@gray: #999999;
+
+@linkColor: @lightPurple;
+@hoverLinkColor: @lightPurple;
 
 // based on https://github.com/twbs/bootstrap/blob/master/less/variables.less
 @screen-xs:                  480px;
@@ -36,7 +40,7 @@ body {font-family: 'Nobile'; }
 }
 
 a { color: @linkColor; padding: 3px 1px 0 1px; text-decoration: underline;}
-a:hover { color: white; background-color: @hoverLinkColor; text-decoration: none;  }
+a:hover, a:hover:before { color: white; background-color: @hoverLinkColor; text-decoration: none;  }
 a, a:hover { transition:all 0.5s }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {text-decoration: none;}
@@ -64,11 +68,11 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 	& > .container { height: 0;}
 	.menu-button {
 		z-index: 1200;
-		top: 6px;
+		top: 3px;
 		right: 15px;
 		font-size: 20px;
 		text-decoration: none;
-		color: #888;
+		color: @gray;
 		&:hover { color: white; background-color: inherit; }
 		.icon-stack-base { color: black; opacity: 0.8; }
 	}
@@ -78,10 +82,9 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 		position: absolute;
 		width: 100%;
 		&.collapsing {min-height: 0;}
-		background-color: #291822;
+		background-color: @darkPurple;
 	}
 }
-
 
 header.jumbotron {
 	background-image: url(/img/grapes-up.jpg);
@@ -114,10 +117,7 @@ header.jumbotron {
 
 .post header { font-size: 40px; padding: 50px; margin-bottom: 30px;}
 
-.intro .pic {
-	margin-top: 18px;
-	
-}
+.intro .pic { margin-top: 18px; }
 
 @homepageImageHeight: 241px;
 @homepageImageReducedHeight: 197px;
@@ -178,15 +178,13 @@ header.jumbotron {
 		
 		a { 
 			text-decoration: none;
-			color: inherit;
 			display: block;
 			padding: 2px;
 		}
-		a:hover {
-			background-color: #ddd;
-		}
 		
-		p { margin: 10px 0 0 0; }
+		
+		p { margin: 10px 0 0 0; color: black; transition: all 0.5s;}
+		a:hover p { color: white; transition: all 0.5s; }
 	}
 	h3 { margin-top: 0; }
 
@@ -220,35 +218,37 @@ header.jumbotron {
 	li { animation: fadein 1s;  margin-top: 20px; }
 	i.icon-li { top: 2px; }
 	h3, p { margin-bottom: 5px; }
+	.muted a { text-decoration: none; }
 }
 
-.muted a {
-	color: inherit
-}
+.muted a { color: inherit; }
+.muted a:hover { color: white; }
 
 
 @media (min-width: @screen-lg) {
     @footerPadding: 50px;
-    @footerHeight: 162px + (@footerPadding * 2);
+    @footerHeight: 271px + (@footerPadding * 2);
 	.over-footer { 
 		position: relative; 
 		background-color: white; 
 		z-index: 2; 
 		margin-bottom: @footerHeight; 
 		padding-bottom: 20px; 
-		box-shadow: 0 18px 18px -12px #444488;
+		box-shadow: 0 18px 18px -12px #310A03;
 	}
 	footer { 
 		position: fixed; bottom: 0; left: 0; right: 0; 
 		z-index: 1; 
-		padding-top: @footerPadding; 
+		padding: @footerPadding 0; 
 		height: @footerHeight; 
 	}
 }
 
 footer { 
-	color: white;
-	background-color: black;
+	color: @gray;
+	background-color: @darkPurple;
+	a { color: @gray; }
+	a:hover { color: white; background-color: inherit; }
 	ul { margin:0; padding:0; }
 	ul.icons-ul { margin-left: 1.5em; }
 	.contact {

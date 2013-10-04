@@ -30,14 +30,14 @@ headerImage: /img/grapes-up.jpg
 </section>
 
 <blockquote class="biblequote row">
-	<i class="icon-book icon-4x pull-left icon-muted"></i>
+	<i class="icon-book icon-4x pull-left"></i>
 	<p>And now, dear brothers and sisters, one final thing. Fix your thoughts on what is true, and honorable, and right, and pure, and lovely, and admirable. Think about things that are excellent and worthy of praise.</p>
 	<cite>Philippians 4:8, New Living Translation</cite>
 </blockquote>
 
 <section class="feeds row">
 	<div class="col-md-8 techblog">
-		<h2><a href="/techblog"><i class="icon-fighter-jet"></i> Latest on the Tech Blog</a></h2>
+		<h2><a href="/techblog"><i class="icon-terminal"></i> Latest on the Tech Blog</a></h2>
 		<ul>
 			<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 4): %>
 				<% post = model.toJSON(); body = model.getOutContent(); %>

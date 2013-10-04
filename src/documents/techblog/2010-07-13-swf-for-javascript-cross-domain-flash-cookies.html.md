@@ -17,13 +17,14 @@ tags:
   - swf
 featured: true
 ---
-<div style="position:relative;">
-  <img class="alignright size-full wp-image-295" title="325990_chocolate_chip_cookies_2" src="http://nfriedly.com/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.</p> <p>
-    However, I was surprisingly unable to find any complete library or how-to guide for connecting flash cookies to javascript. So I dusted off my flash skills and built one, and and now you get to enjoy the fruit of my labor:
+<p style="position:relative;">
+  <img class="alignright size-full wp-image-295" title="325990_chocolate_chip_cookies_2" src="http://nfriedly.com/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.</p>
+  
+  <p>However, I was surprisingly unable to find any complete library or how-to guide for connecting flash cookies to javascript. So I dusted off my flash skills and built one, and and now you get to enjoy the fruit of my labor:
   </p>
   
   <p>
-    <a href="http://github.com/nfriedly/Javascript-Flash-Cookies"><img style="position: absolute; top: 0pt; right: 0pt; border: 0pt none;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a> </div> <p>
+    <a href="http://github.com/nfriedly/Javascript-Flash-Cookies"><img style="position: absolute; top: 0pt; right: 0pt; border: 0pt none;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a> <p>
       <!--more-->
     </p>
     
