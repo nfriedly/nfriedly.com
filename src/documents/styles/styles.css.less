@@ -84,6 +84,14 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 		&.collapsing {min-height: 0;}
 		background-color: @darkPurple;
 	}
+	
+	.nav { 
+		i[class^="icon-"]:before, i[class*=" icon-"]:before { min-width: 1.3em; }
+	} 
+}
+
+@media(max-width: @screen-sm) {
+	.navbar-container .nav { clear: both; margin-left: 0; } // normally the built-in stuff handles this, but it makes it difficult to hide the navbar on desktop.
 }
 
 header.jumbotron {
