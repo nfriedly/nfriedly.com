@@ -31,14 +31,15 @@ We're in the process of abstracting the pieces of bal-util out into their own mo
 
 - [ambi](https://github.com/bevry/ambi) < `balUtilFlow.fireWithOptionalCallback`
 - [eachr](https://github.com/bevry/eachr) < `balUtilFlow.each`
+- [event-emitter-grouped](https://github.com/bevry/event-emitter-grouped) < `balUtilEvents.EventEmitterEnhanced`
 - [extendr](https://github.com/bevry/extendr) < `balUtilFlow.(extend|clone|etc)`
 - [extract-opts](https://github.com/bevry/extract-opts) < `balUtilFlow.extractOptsAndCallback`
 - [getsetdeep](https://github.com/bevry/getsetdeep) < `balUtilFlow.(get|set)Deep`
 - [safecallback](https://github.com/bevry/safecallback) < `balUtilFlow.safeCallback`
 - [safefs](https://github.com/bevry/safefs) < `balUtilPaths.(openFile|closeFile|etc)`
 - [safeps](https://github.com/bevry/safeps) < `balUtilModules`
-- [TaskGroup](https://github.com/bevry/taskgroup) < `balUtilFlow.Group`
-- [typeChecker](https://github.com/bevry/typechecker) < `balUtilTypes`
+- [taskgroup](https://github.com/bevry/taskgroup) < `balUtilFlow.Group`
+- [typechecker](https://github.com/bevry/typechecker) < `balUtilTypes`
 
 
 
