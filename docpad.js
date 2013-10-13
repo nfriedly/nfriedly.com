@@ -9,10 +9,16 @@ var reClass = /class="[^"]+"/;
 var reHeadings = /<h\d>(.*)<\/h\d>/g;
 var reLinks = /<a[^>]+>|<\/a>/g
 
+function notIndex(model, cleanedSearchString) {
+	return model.get('filename').substr(0,6) != 'index.';
+}
+
 module.exports = {
 	collections: {
 		techblog: function() { 
-			return this.getCollection("html").findAllLive({relativeOutDirPath:'techblog'}, [{filename:-1}]);
+			return this.getCollection("html")
+				.findAllLive({relativeOutDirPath:'techblog'}, [{filename:-1}])
+				.setFilter('notIndex', notIndex);
 		}
 	},
 	templateData: {

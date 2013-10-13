@@ -60,7 +60,8 @@ img.left, img.alignleft {
     margin: 0 10px 5px 0;
 }
 
-.icons-ul {margin-left: 2em;}
+.icons-ul {margin-left: 2.142857142857143em;} // I think this changed between bootstrap 2 & 3 and font-awesome hasn't been updated yet
+
 a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 
 .navbar-container {
@@ -98,10 +99,11 @@ header.jumbotron {
 	background-image: url(/img/grapes-up.jpg);
 	background-repeat: no-repeat; 
 	background-size: cover; 
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-position: center center;
 	
-	font-size: 100px;
+	font-size: 40px; 
+	padding: 50px 0; 
 
 	span { padding: 0.25% 0.5%; background: rgba(0,0,0,0.8); }
 	h1 { font-size: 100%; line-height: 150%; span {padding-right: 10px;} }
@@ -113,13 +115,9 @@ header.jumbotron {
 
 @media (min-width: @screen-md) {
 	.homepage .jumbotron, .about .jumbotron { padding: 100px; }
-}
-
-@media (max-width: @screen-xs-max) {
 	header.jumbotron { 
-		font-size: 40px; 
-		padding: 50px 0; 
-		background-attachment: scroll; 
+		font-size: 100px; 
+		background-attachment: fixed; // this messes up background-position:cover. Fixed in js.
 	}
 }
 
@@ -258,7 +256,7 @@ footer {
 	a { color: @gray; }
 	a:hover { color: white; background-color: inherit; }
 	ul { margin:0; padding:0; }
-	ul.icons-ul { margin-left: 1.5em; }
+	ul.icons-ul { margin-left: 1.65em; }
 	.contact {
 		font-size: 160%; 
 		li { 
