@@ -163,25 +163,5 @@ function loadBackupCSS(url) {
 
 <%- @getBlock("scripts").add('/scripts/email.js').add(@getDocument().get('scripts')).toHTML() %>
 
-<script>
-// crappy hack to work around background-size being relative to the 'initial containing block' (viewport) whenever background-position: fixed is used
-// http://www.carsonshold.com/2013/02/css-background-sizecover-doesnt-like-fixed-positioning/
-// This is basically a paralax effect, except with 0 distance between the foreground and background
-$(function() {
-	$win = $(window);
-	$head = $('header');
-	$maxScroll = $head.height();
-	if ($head.css('background-position') ==  'fixed') {
-		$head.css('background-position', 'scroll');
-		$win.scroll(function() {
-			var scrolledY = $win.scrollTop();
-			if ($scrolledY < $maxScroll ) {
-				$head.css('background-position', 'center ' + (scrolledY) + 'px');
-			}
-		});
-	}
-});
-</script>
-
 </body>
 </html>
