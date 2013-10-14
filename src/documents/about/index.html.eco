@@ -3,6 +3,7 @@ title: About Nathan
 layout: main
 headerImage: /img/house.jpg
 cssClass: about
+icon: android
 ---
 
 <h1>About</h1>
