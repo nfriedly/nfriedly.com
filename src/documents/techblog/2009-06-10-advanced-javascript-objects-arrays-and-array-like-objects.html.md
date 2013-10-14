@@ -3,10 +3,6 @@ title: 'Advanced Javascript: Objects, Arrays, and Array-Like objects'
 author: nFriedly
 layout: post
 permalink: /2009/06/advanced-javascript-objects-arrays-and-array-like-objects/
-syntaxhighlighter_encoded:
-  - 1
-categories:
-  - Web Development
 tags:
   - javascript
 featured: true
