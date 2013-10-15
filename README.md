@@ -6,18 +6,13 @@ In-progress replacement for my current website.
 Todo: 
 
 * Fix portfolio lightbox
-* Clean up header image(s)
-* Just use the same header photo everywhere for now
-* Header image paralax effect (?)
 * Set up redirects for old urls
 * Add custom 404 page
-* Shorten blog titles and add subtitles.
 * Minify and combine stuff
 * Split up portfolio content
 * Clean up "about me" page
 * Add instagram feed to about page - maybe just photos tagged @nfriedly
 * Create tag filtering options
-* Add post dates
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * Use media object bootstrap classes
 * cleanup img/ directory
