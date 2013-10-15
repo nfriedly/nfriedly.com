@@ -19,7 +19,6 @@ function setPostOptions(model, cleanedSearchString) {
 	return true;
 }
 
-var out = false;
 module.exports = {
 	collections: {
 		techblog: function() { 

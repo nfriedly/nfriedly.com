@@ -3,8 +3,7 @@ title: Automatically unit testing client-side JavaScript with Jasmine and Node.j
 author: nFriedly
 layout: post
 permalink: /2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/
-categories:
-  - Web Development
+headerImage: http://farm3.staticflickr.com/2376/2243034754_0a9b40d2ff_b.jpg
 tags:
   - howto
   - jasmine
@@ -46,7 +45,7 @@ This is the relevant part of our directory structure, the node_modules folder is
 ``` javascript
 var jsdom = require("jsdom");
 
-window = jsdom.jsdom('&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;div id="rondavu_container"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;').createWindow();
+window = jsdom.jsdom('<html><head></head><body><div id="rondavu_container"></div></body></html>').createWindow();
 
 if(Object.keys(window).length === 0) {
     // this hapens if contextify, one of jsdom's dependencies doesn't install correctly
@@ -65,41 +64,25 @@ First we create a jsdom environment and verify that it works. (We&#8217;ll come 
 
 `util/install_jsdom.sh` is necessary because one of jsdom&#8217;s dependencies, contextify, installs differently on different operating systems. Because of that, we added node_modules/jsdom to the `.gitignore` file and run this script before running the js unit tests:
 
-`
-<pre>
-
+``` bash
 #!/bin/bash
 
-
-
 # One of JSDOM's dependencies, contextify, cannot be checked in because it installs differently depending on the OS.
-
 # This script checks for the presence of JSDOM and installs it if it's missing
-
-
-
 # this line searches npm's local repository for jsdom
-
 # 2> /dev/null is becuse NPM likes to complain about missing readme files in third-party packages
-
 # tr removes the blank line that npm puts out if jsdom isn't found
 
 LS_RESULTS=$(npm --parseable ls jsdom 2>/dev/null | tr -d '\n\')
 
-
-
 if [[ -n $LS_RESULTS ]]; then 	# -n tests to see if the argument is non empty
-
 	echo "jsdom is already installed, skipping"
-
 else
-
     npm install jsdom
-
 fi
+```
 
-</pre>
-<p>`
+Note: the *correct* way to do the above is to check in the source and run `npm rebuild`. However, at the time I put this together, there was a bug that prevented that from working.
 
 Next up, the `*_spec.js` files. Basically, any file that ends in &#8220;_spec.js&#8221; will be run automatically by jasmine-node. These are just basic [jasmine][6] test suites. 
 
@@ -107,95 +90,50 @@ If you already have some jasmine specs written, theres&#8217;s a good chance the
 
 Here&#8217;s a quick example from one of ours:
 
-<pre class="brush: jscript; title: ; notranslate" title="">describe("Gallery", function() {
-
-
-
+``` js
+describe("Gallery", function() {
     var instance;
 
-
-
     beforeEach(function(){
-
         instance = new R.Module.Gallery(getConfig());
-
     });
-
-
 
     afterEach(function(){
-
         instance.destroy();
-
         instance = null;
-
     });
-
-
 
     describe("getTemplateData", function(){
-
-
-
         var data;
-
         beforeEach(function(){
-
            data = {mos: []};
-
         });
-
-
 
         it("should include the current FB user ID", function(){
-
             var USER_ID = "1234";
-
             spyOn(R.FB,"getCurrentUserId").andReturn(USER_ID);
 
-
-
             instance.getTemplateData(data);
-
-
 
             expect(R.FB.getCurrentUserId).toHaveBeenCalled();
-
             expect(data.current_user_id).toBe(USER_ID);
-
         });
-
-
 
         it("should shuffle the mos when Gallery.ShuffleMos is true", function(){
-
             var config = getConfig();
-
             setParam(config, "Gallery.ShuffleMos", true);
-
             spyOn(R.Util, "shuffle");
 
-
-
             instance = new R.Module.Gallery(config);
-
             instance.getTemplateData(data);
 
-
-
             expect(R.Util.shuffle).not.toHaveBeenCalled();
-
         });
-
     });
 
-
-
     // etc.
-
 });
-
-</pre>
+```
 
 Running the tests is easy: 
 
@@ -207,55 +145,31 @@ The `--forceexit` option cuts a few seconds of idling off the end of the tests. 
 
 Finally, the process exit code will tell you if the tests passed or not, making it extremely easy to integrate into build systems. Here is our [ant][9] task:
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;target name="js.test" description="builds a slightly modified version of our rondavu.js (skipping the init.js
+``` xml
+	<target name="js.test" description="builds a slightly modified version of our rondavu.js (skipping the init.js
+        file and adding a 'module.exports=R;') and then runs all test/js/*_spec.js unit tests.">
 
-        file and adding a 'module.exports=R;') and then runs all test/js/*_spec.js unit tests."&gt;
+        <exec executable="scripts/js_builder/build_js.js" dir="${basedir}" failonerror="true">
+            <arg value="--test_mode"/>
+            <arg value="--outfile"/>
+            <arg value="build/rondavu_test_mode.js"/>
+            <arg value="--verbose"/>
+        </exec>
 
+        <!-- some of jsdom's dependencies are environment-specific, so we'll install it here if it's not already present -->
+        <chmod file="test/js/util/install_jsdom.sh" perm="ugo+rx"/>
+        <exec executable="test/js/util/install_jsdom.sh" failonerror="true"/>
 
+        <mkdir dir="${build.test.unit.output}"/>
 
-        &lt;exec executable="scripts/js_builder/build_js.js" dir="${basedir}" failonerror="true"&gt;
-
-            &lt;arg value="--test_mode"/&gt;
-
-            &lt;arg value="--outfile"/&gt;
-
-            &lt;arg value="build/rondavu_test_mode.js"/&gt;
-
-            &lt;arg value="--verbose"/&gt;
-
-        &lt;/exec&gt;
-
-
-
-        &lt;!-- some of jsdom's dependencies are environment-specific, so we'll install it here if it's not already present --&gt;
-
-        &lt;chmod file="test/js/util/install_jsdom.sh" perm="ugo+rx"/&gt;
-
-        &lt;exec executable="test/js/util/install_jsdom.sh" failonerror="true"/&gt;
-
-
-
-        &lt;mkdir dir="${build.test.unit.output}"/&gt;
-
-
-
-        &lt;exec executable="node_modules/jasmine-node/bin/jasmine-node" failonerror="true"&gt;
-
-            &lt;arg value="--forceexit"/&gt;
-
-            &lt;arg value="test/js/"/&gt;
-
-            &lt;arg value="--junitreport"/&gt;
-
-            &lt;arg value="--output"/&gt;&lt;arg value="${build.test.unit.output}/TEST-javascript-results.xml"/&gt;
-
-        &lt;/exec&gt;
-
-
-
-    &lt;/target&gt;
-
-</pre>
+        <exec executable="node_modules/jasmine-node/bin/jasmine-node" failonerror="true">
+            <arg value="--forceexit"/>
+            <arg value="test/js/"/>
+            <arg value="--junitreport"/>
+            <arg value="--output"/><arg value="${build.test.unit.output}/TEST-javascript-results.xml"/>
+        </exec>
+    </target>
+```
 
 And there you have it. Happy testing!
 
@@ -263,6 +177,8 @@ And there you have it. Happy testing!
 
 *<a name="note-1">[1]:</a> It&#8217;s actually a bit more complex that that &#8211; we generate a separate file for each customer with their configuration and whatever features they use. </p> 
 Also, we&#8217;ve recently switched from our custom js build script to [require.js][10] and [jam.js][11], but we&#8217;re still working out the final kinks. Expect a followup post once we&#8217;re fully confident with the new setup <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </i>
+
+<p class="meta"><small class="photocredit"><b>Photo Credits:</b> Header photo by <a href="http://www.flickr.com/photos/calliope/2243034754/">liz west</a>.</small></p>
 
  [1]: automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js
  [2]: http://sociablelabs.com
