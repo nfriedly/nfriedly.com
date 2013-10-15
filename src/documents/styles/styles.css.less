@@ -25,7 +25,7 @@
 @screen-md-max:              (@screen-lg - 1);
 
 // general styles
-h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; line-height: 1.3; }
 body {font-family: 'Nobile'; }
 
 // code, pre {font-family: 'Monda'; }
@@ -59,6 +59,8 @@ img.right, img.alignright {
 img.left, img.alignleft {
     margin: 0 10px 5px 0;
 }
+
+.meta { background-color: #F4F4F4; padding: 4px;}
 
 .icons-ul {margin-left: 2.142857142857143em;} // I think this changed between bootstrap 2 & 3 and font-awesome hasn't been updated yet
 
@@ -121,8 +123,6 @@ header.jumbotron {
 }
 
 // todo: add some cool css (and js?) to make the header fixed in place similar to the footer
-
-.post header { font-size: 40px; padding: 50px; margin-bottom: 30px;}
 
 .intro .pic { margin-top: 18px; }
 
@@ -215,7 +215,11 @@ header.jumbotron {
 		border-bottom: 1px solid grey; 
 		a { text-decoration: none; }
 	}
-	.meta { background-color: #F4F4F4; padding: 4px;}
+}
+
+.post {
+	header { font-size: 80px; }
+	.meta { margin: 50px 0; }
 }
 
 .github {

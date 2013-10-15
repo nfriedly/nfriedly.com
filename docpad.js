@@ -13,12 +13,20 @@ function notIndex(model, cleanedSearchString) {
 	return model.get('filename').substr(0,6) != 'index.';
 }
 
+// an abuse of a filter because we need to make small tweaks to the metadata of all files in this collection
+function setPostOptions(model, cleanedSearchString) {
+	model.set('cssClass', 'post');
+	return true;
+}
+
+var out = false;
 module.exports = {
 	collections: {
 		techblog: function() { 
 			return this.getCollection("html")
 				.findAllLive({relativeOutDirPath:'techblog'}, [{filename:-1}])
-				.setFilter('notIndex', notIndex);
+				.setFilter('notIndex', notIndex)
+				.setFilter('postOptions', setPostOptions);
 		}
 	},
 	templateData: {
