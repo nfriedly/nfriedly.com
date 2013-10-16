@@ -1,6 +1,10 @@
 language: node_js
 node_js:
  - "0.10"
-
-after_success:
- - node_modules/docpad/bin/docpad deploy-ghpages --env static
+before_script:
+ - ./predeploy.sh
+script:
+ - docpad deploy-ghpages --env static
+env:
+  global:
+    - GH_REPO="nfriedly/nfriedly.com"
