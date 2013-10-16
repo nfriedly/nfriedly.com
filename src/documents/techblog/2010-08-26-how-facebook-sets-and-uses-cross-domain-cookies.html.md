@@ -3,8 +3,7 @@ title: How Facebook sets and uses cross-domain cookies
 author: nFriedly
 layout: post
 permalink: /2010/08/how-facebook-sets-and-uses-cross-domain-cookies/
-categories:
-  - Web Development
+headerImage: http://farm9.staticflickr.com/8184/8441826101_551240bc4f_b.jpg
 tags:
   - cookie
   - cross-domain
@@ -21,7 +20,7 @@ Facebook is in a unique position compared to many developers looking to set cros
 
 <!--more-->
 
-Facebook never actually sets cookies cross-domain, they only read cookies cross-domain. They set cookies on facebook.com when the user visits facebook.com and they set cookies on the other example.com (or any other website) when the user visits example.com.<sup><a href="#note-1">1</a></sup>
+<img src="http://farm9.staticflickr.com/8456/7890051894_64a3a7796f.jpg" alt="Picture frames" title="Framed!" class="right" /> Facebook never actually sets cookies cross-domain, they only read cookies cross-domain. They set cookies on facebook.com when the user visits facebook.com and they set cookies on the other example.com (or any other website) when the user visits example.com.<sup><a href="#note-1">1</a></sup>
 
 Doing things this way avoids all of the browser security issues because cookies that were already set when the user visited facebook.com can still be read when example.com loads facebook.com in an iframe. This is worth repeating: **Cookies can be read in an iframe if they were set outside of the iframe**.<sup><a href="#note-2">2</a></sup>
 
@@ -43,7 +42,7 @@ If you need to communicate between domains, [modern browsers][1] allow you to us
 
 If you need to support older browsers, you can include the excellent [easyXDM][4] library for iframe-parent communication. You might need to combine a popup + one or more iframes in some situations.
 
-### An alternate method for of cross-domain cookies: flash
+### An alternate method for of cross-domain cookies: flash <img src="http://farm5.staticflickr.com/4063/4698846940_7043976b6f_n.jpg" alt="THE Flash" class="right">
 
 If you&#8217;re looking for a flash-based method of setting cross-domain cookies, or would otherwise like to avoid popups, you may want to check out my previous article, which includes source code: [.swf for JavaScript cross-domain flash cookies][5]
 
@@ -55,6 +54,11 @@ If you&#8217;re looking for a flash-based method of setting cross-domain cookies
 ## Need a more advanced integration than what Facebook Social Plugins provide?
 
 At [Sociable Labs][8], our Intelligent Social Plugins<sup>TM</sup> increase social sharing by 15x and have shown a ~1% increase in sales. And the best part is that [we do all of the hard work for you!][9]
+
+<p class="meta"><small class="photocredits"><b>Photo Credits:</b> 
+Gorge du Verdon photo by <a href="http://www.flickr.com/photos/73886193@N06/8441826101/in/photostream/">Eksley</a>,
+Picture frames photo by <a href="http://www.flickr.com/photos/elsie/7890051894/">Elsie esq.</a>,
+Flash photo by <a href="http://www.flickr.com/photos/jdhancock/4698846940/">JD Hancock</a></small></p>
 
  [1]: http://caniuse.com/#feat=x-doc-messaging
  [2]: https://developer.mozilla.org/en-US/docs/DOM/window.postMessage
