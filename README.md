@@ -1,7 +1,9 @@
 nfriedly.com
 ============
 
-In-progress replacement for my current website.
+In-progress replacement for my current website. 
+
+Automatic build/deployment status: [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com.png)
 
 Todo: 
 
