@@ -18,8 +18,7 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server",
-    "test": "node_modules/docpad/bin/docpad generate"
+    "start": "node_modules/docpad/bin/docpad-server"
   },
   "license": "MIT"
 }

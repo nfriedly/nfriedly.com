@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# based on https://gist.github.com/bewest/6100033 and https://gist.github.com/bewest/6100033
+# based on https://gist.github.com/bewest/6100033
 
 echo "BUMP HELLO WORLD set up $GH_REPO [via travis] for $GIT_NAME <${GIT_EMAIL}>"
 export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"

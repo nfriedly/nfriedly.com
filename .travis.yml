@@ -1,10 +1,11 @@
 language: node_js
 node_js:
- - "0.10"
+- '0.10'
 before_script:
- - ./predeploy.sh
+- ./predeploy.sh
 script:
- - docpad deploy-ghpages --env static
+- docpad deploy-ghpages --env static
 env:
   global:
-    - GH_REPO="nfriedly/nfriedly.com"
+  - GH_REPO="nfriedly/nfriedly.com"
+  - secure: gRhBxGl0UFmuypAXUJUW9o/+ixLIOPxO6f1p5QozlmnBZq13gPy11OlXGA4/R9i2tBqScMSKLmROeuiDa8mwBUOeKtwWEGy/I8ejvbD3rqBd7Oow/LzAPzIv2mOd/BFT21KSEvsbkeMvLthyCSsRbipTlEgAe2kpoyZOl/HmOKk=
