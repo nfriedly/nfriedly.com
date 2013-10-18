@@ -8,4 +8,4 @@ script:
 env:
   global:
   - GH_REPO="nfriedly/nfriedly.com"
-  - secure: gRhBxGl0UFmuypAXUJUW9o/+ixLIOPxO6f1p5QozlmnBZq13gPy11OlXGA4/R9i2tBqScMSKLmROeuiDa8mwBUOeKtwWEGy/I8ejvbD3rqBd7Oow/LzAPzIv2mOd/BFT21KSEvsbkeMvLthyCSsRbipTlEgAe2kpoyZOl/HmOKk=
+  - secure: fG41sOxkTIPOSgln7QBnWAwng+v/AitVPu+yBkolXbXFj1q9oNbrZP06TFcfcrhQyEhPTnlBx2b6PY6+g9BEm1fwvFAcEZ/lXDpwyuV9OuIt6dOymYa8GO/fWy0Er9Za8DahTmZ8oEXaIiaX2WVq9ONWUBwJATWF2HVCsRel2dw=
