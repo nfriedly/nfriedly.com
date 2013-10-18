@@ -60,6 +60,12 @@ function loadBackupCSS(url) {
 
 <main class="container">
 <%- @content %>
+
+<% if @document.imageCredits: %>
+	<p class="meta"><small class="photocredit"><b>Photo Credits:</b> 
+		<%- @linkPhotoCredits(@document.imageCredits) %>
+	</small></p>
+<% end %>
 </main>
 
 </div> <!-- .over-footer -->

@@ -45,6 +45,8 @@ a, a:hover { transition:all 0.5s }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {text-decoration: none;}
 
+li { margin-top: 1em; }
+
 .right, .alignright {
     float: right;
     text-align: right;
@@ -218,8 +220,11 @@ header.jumbotron {
 }
 
 .post {
-	header { font-size: 80px; }
 	.meta { margin: 50px 0; }
+}
+
+@media (min-width: @screen-md) {
+	.post header { font-size: 80px; }
 }
 
 .github {

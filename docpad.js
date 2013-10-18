@@ -20,6 +20,11 @@ function setPostOptions(model, cleanedSearchString) {
 }
 
 module.exports = {
+	plugins: {
+		ghpages: {
+			quiet: true // otherwise it shows my Github Private Access Token as the username in the public `git push` logs on Travis CI
+		}
+	},
 	collections: {
 		techblog: function() { 
 			return this.getCollection("html")
@@ -52,7 +57,16 @@ module.exports = {
 					return '<a href="#' +  tag + '">' +  tag + '</a>'; 
 				})
 				.join(', ');
-		}
+		},
+		linkPhotoCredits: function(links) {
+			return _.chain(links)
+			.map(function(url, text) {
+				return '<a href="' + url + '">' + text + '</a>';
+			})
+			.values() // turn the object into an array
+			.value() // end the chain and get a regular array back
+			.join(', ')
+		} 
 	}
 };
 
