@@ -3,8 +3,9 @@ title: How AJAX Security and Twitter callbacks work
 author: nFriedly
 layout: post
 permalink: /2009/06/javascript-security-ajax-json-and-twitter-callbacks/
-categories:
-  - Web Development
+headerImage: http://farm5.staticflickr.com/4120/4893939885_ea6c2e08df_b.jpg
+imageCredits: 
+	"8 ball header photo by Steve Kaminski": http://www.flickr.com/photos/tequilashooters/4893939885/
 tags:
   - ajax
   - javascript
@@ -43,83 +44,44 @@ Scripts stored on other websites can be included on a page. As long as the scrip
 
 Here is a very basic page that uses Twitter&#8217;s callback feature and a remotely loaded javascript file to show my twitter status &#8211; remote data &#8211; on my website, by interacting with local javascript.
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+``` html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en-US">
+<head>
+<title>Simple Twitter Status</title>
+</head>
+<body>
 
-&lt;html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en-US"&gt;
+<h1>My Twitter Status:</h1>
 
+<div id="twitter_status">Loading...</div>
 
-
-&lt;head&gt;
-
-&lt;title&gt;Simple Twitter Status&lt;/title&gt;
-
-
-
-&lt;/head&gt;
-
-&lt;body&gt;
+<!-- Put scripts down here for speed -->
 
 
-
-&lt;h1&gt;My Twitter Status:&lt;/h1&gt;
-
-
-
-&lt;div id="twitter_status"&gt;Loading...&lt;/div&gt;
-
-
-
-&lt;!-- Put scripts down here for speed --&gt;
-
-
-
-&lt;!-- this must come before we load the twitter script --&gt;
-
-&lt;script type="text/javascript"&gt;
-
-
+<!-- this must come before we load the twitter script -->
+<script type="text/javascript">
 
 function showStatus(json){
-
-
-
 	json = json[0]; // we only care about the most recent status;
-
-
-
 	var myDiv = document.getElementById('twitter_status');
-
-
-
-	myDiv.innerHTML = '&lt;img src="'
-
+	myDiv.innerHTML = '<img src="'
 		+ json.user.profile_image_url
-
-		+ '" style="float:left; margin:5px 10px 10px 0"&gt;'
-
+		+ '" style="float:left; margin:5px 10px 10px 0">'
 		+ json.text;
-
 }
 
-&lt;/script&gt;
+</script>
 
 
 
-&lt;!-- now load the twitter file --&gt;
+<!-- now load the twitter file -->
 
-&lt;script type="text/javascript"
+<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;callback=showStatus&amp;random=<?php echo time(); ?>" /></script>
 
-src="http://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;callback=showStatus&amp;random=&lt;?php echo time(); ?&gt;" /&gt;
-
-&lt;/script&gt;
-
-
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-</pre>
+</body>
+</html>
+```
 
 You can see a live copy of this code at <http://nfriedly.com/demos/twitter-extra-simple>.
 

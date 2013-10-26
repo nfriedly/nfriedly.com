@@ -3,8 +3,9 @@ title: How to use XSLT to style an RSS feed
 author: nFriedly
 layout: post
 permalink: /2009/06/how-to-use-xslt-to-style-an-rss-feed/
-categories:
-  - Web Development
+headerImage: http://farm3.staticflickr.com/2103/2205813608_e9b0db0c05_b.jpg
+imageCredits:
+	"SOC GX-34 GunBuster photos by GogDog": http://www.flickr.com/photos/gogdog/sets/72157603753867140/with/2240855570/
 tags:
   - css
   - javascript
@@ -57,19 +58,22 @@ Although not practical in most cases currently, I&#8217;ve included an example o
 
 Code for index.php:
 
-<pre class="brush: php; title: ; notranslate" title="">&lt;?php
+``` php
+<?php
 
 // grab the url
 if(isset($_REQUEST['url'])) $url = $_REQUEST['url'];
 else $url = false;
 
 // make sure the url is good (no local files)
-if($url && substr($url,0,7) != "http://") exit("Please start urls with 'http://'");
+if ($url && substr($url,0,7) != "http://") exit("Please start urls with 'http://'");
 
 // make the stylesheet link
 $xsl_file = 'xsl.php';
+
 if($url) $xsl_file .= '?url='.urlencode($url);
-define('XSL_LINK','&lt;?xml-stylesheet href="'.$xsl_file.'" type="text/xsl" ?&gt;');
+
+define('XSL_LINK','<?xml-stylesheet href="'.$xsl_file.'" type="text/xsl" ?>');
 
 // if we don't have a url, use the home page
 if(!$url) $url = "home.xml";
@@ -81,16 +85,17 @@ $rss = file_get_contents($url);
 header('content-type: text/xml');
 
 //echo out the header right away, if there is one
-if(substr($rss,0,6) == '&lt;?xml '){
-	$header_end = strpos($rss,'?&gt;') +2;
+if(substr($rss,0,6) == '<?xml '){
+	$header_end = strpos($rss,'?>') +2;
 	echo substr($rss,0,$header_end);
 	$rss = substr($rss,$header_end);
 }
+
 //otherwise echo a default header:
-else echo '&lt;?xml version="1.0" ?'.'&gt;';
+else echo '<?xml version="1.0" ?'.'>';
 
 // remove any existing stylesheet
-$rss = preg_replace('/&lt;\?xml-stylesheet([^?]|\?(?!&gt;))*\?'.'&gt;/','',$rss);  // uses lookahead
+$rss = preg_replace('/<\?xml-stylesheet([^?]|\?(?!>))*\?'.'>/','',$rss);  // uses lookahead
 
 // add in our stylesheet
 echo "\r\n" . XSL_LINK . "\r\n";
@@ -101,9 +106,8 @@ echo "                                     
 //finally, pass along the content
 echo $rss;
 
-?&gt;
-
-</pre>
+?>
+```
 
 The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source by looking at <http://nfriedly.com/stuff/rss/xsl.php>. You could simply save that as an .xml file and have a working copy.
 

@@ -1,10 +1,11 @@
 ---
-title: 'Search Engine Optimization and Marketing (SEO &#038; SEM)'
+title: 'Search Engine Optimization and Marketing (SEO & SEM)'
 author: nFriedly
 layout: post
 permalink: /2009/06/search-engine-optimization-and-marketing-seo-sem/
-syntaxhighlighter_encoded:
-  - 1
+headerImage: http://farm6.staticflickr.com/5550/9195944224_611dc4dc79_b.jpg
+imageCredits: 
+	"Header crown photo by jason train" : http://www.flickr.com/photos/98004108@N03/9195944224/
 categories:
   - Web Development
 tags:

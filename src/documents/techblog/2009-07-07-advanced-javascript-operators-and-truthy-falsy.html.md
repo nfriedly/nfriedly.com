@@ -24,119 +24,78 @@ In traditional programming, operators such as `&&` and `|| ` returned a boolean 
 
 When javascript is expecting a `boolean` and it&#8217;s given something else, it decides whether the something else is &#8220;truthy&#8221; or &#8220;falsy&#8221;.
 
-An empty string (`''`), the number ``, `null`, `NaN`, a boolean `FALSE`, and `undefined` variables are all &#8220;falsy&#8221;. Everything else is &#8220;truthy&#8221;.
+An empty string (`''`), the number `0`, `null`, `NaN`, a boolean `false`, and `undefined` variables are all &#8220;falsy&#8221;. Everything else is &#8220;truthy&#8221;.
 
-<pre class="brush: jscript; title: ; notranslate" title="">var emptyString = ""; // falsy
-
-
+``` js
+var emptyString = ""; // falsy
 
 var nonEmptyString = "this is text"; // truthy
 
-
-
 var numberZero = 0; // falsy
-
-
 
 var numberOne = 1; // truthy
 
-
-
 var emptyArray = []; // truthy, BUT []==false is true. More below.
-
-
 
 var emptyObject = {}; // truthy
 
-
-
+// NaN is a special javascript object for "Not a Number".
 var notANumber = 5 / "tree"; // falsy
 
-// NaN is a special javascript object for "Not a Number".
-
-
-
 function exampleFunction(){
-
 	alert("Test");
-
 }
 
 // examleFunction is truthy
-
 // BUT exampleFunction() is falsy because it has no return (undefined)
+```
 
-</pre>
+Gotchas to watch out for: the strings `"0"` and `false` are both considered truthy.  You can convert a string to a number with the `parseInt()` and `parseFloat()` functions, or by just multiplying it by `1`.
 
-Gotchas to watch out for: the strings &#8220;0&#8243; and &#8220;false&#8221; are both considered truthy.  You can convert a string to a number with the `parseInt()` and `parseFloat()` functions, or by just multiplying it by 1.
+``` js
+var test = "0"; // this is a string, not a number
 
-<pre class="brush: jscript; title: ; notranslate" title="">var test = "0"; // this is a string, not a number
+var a = (test == false); // a is false, meaning that test is truthy
 
+var b = (test * 1 == false); // b is true, meaning that `test * 1` is falsy
 
+```
 
-(test == false); // returns false, meaning that test is truthy
+`Array`s are particularly weird. If you just test it for truthyness, an empty array is truthy. HOWEVER, if you compare an empty array to a boolean, it becomes falsy:
 
+``` js
+if ( [] == false ) {
+	// this code runs
+}
 
+if ( [] ) {
+	// this code also runs
+}
 
-(test * 1 == false); // returns true, meaning that `test * 1` is falsy
+if ([] == true) {
+	// this code doesn't run
+}
 
-</pre>
+if ( ![] ) {
+	// this code also doesn't run
+}
 
-As one commenter [mentioned][2], arrays are particularly weird. If you just test it for truthyness, an empty array is truthy. HOWEVER, if you compare an empty array to a boolean, it becomes falsy:
+```
+(This is because when you do a comparison, it's elements are turned to `String`s and joined. Since it's empty, it becomes `""` which is then falsy. Yea, [it's weird](https://www.destroyallsoftware.com/talks/wat).)
 
-<pre class="brush: jscript; title: ; notranslate" title="">if([] == false){
-
-    // this code runs
-
-  }
-
-
-
-  if( [] ) {
-
-    // this code also runs
-
-  }
-
-
-
-  if([] == true){
-
-    // this code doesn't run
-
-  }
-
-
-
-  if( ![] ) {
-
-    // this code also doesn't run
-
-  }
-
-
-
-</pre>
-
-Another commenter [pointed out][3] an additional gotcha to watch out for: while javascript evaluates empty arrays as true, PHP evaluates them as false.
+If you write any PHP, then there's an additional gotcha to watch out for: while javascript evaluates empty arrays as true, PHP evaluates them as false.
 
 PHP also evaluates &#8220;0&#8243; as falsy. (However the string &#8220;false&#8221; is evaluated as truthy by both PHP and javascript.)
 
-<pre class="brush: php; title: ; notranslate" title="">&lt;?php
-
-
+``` php
+<?php
 
 $emptyArray = array(); // falsy in PHP
 
-
-
 $stringZero = "0"; // falsy in PHP
 
-
-
-?&gt;
-
-</pre>
+?>
+```
 
 ### How Logical Operators Work
 
@@ -144,130 +103,91 @@ $stringZero = "0"; // falsy in PHP
 
 The logical OR operator, `||`,  is very simple after you understand what it is doing. If the first object is truthy, that gets returned. Otherwise, the second object gets returned.
 
-<pre class="brush: jscript; title: ; notranslate" title="">("test one" || "test two"); // returns "test one"
+``` js
+var a = ("test one" || "test two"); // a is "test one"
 
+var b = ("test one" || ""); // b is "test one"
 
+var c = (0 || "test two"); // c is "Test two"
 
-("test one" || ""); // returns "test one"
+var d = (0 || false); // d is false
 
-
-
-(0 || "test two"); // returns "Test two"
-
-
-
-(0 || false); // returns false
-
-</pre>
+```
 
 Where would you ever use this? The OR operator allows you to easily specify default variables in a function.
 
-<pre class="brush: jscript; title: ; notranslate" title="">function sayHi(name){
-
-
-
+``` js
+function sayHi(name){
 	var name = name || "Dave";
-
-
-
 	alert("Hi " + name);
-
-
-
 }
 
-
-
 sayHi("Nathan"); // alerts "Hi Nathan";
-
-
 
 sayHi(); // alerts "Hi Dave",
 
 // name is set to null when the function is started
 
-</pre>
+```
 
 #### Logical AND, `&&`
 
 The logical AND operator, `&&`,  works similarly.  If the first object is falsy, it returns that object. If it is truthy, it returns the second object.
 
-<pre class="brush: jscript; title: ; notranslate" title="">("test one" && "test two"); // returns "test two"
+``` js
+var a = ("test one" && "test two"); // a is "test two"
 
+var b = ("test one" && ""); // b is ""
 
+var c = (0 && "test two") // c is 0
 
-("test one" && ""); // returns ""
-
-
-
-(0 && "test two") // returns 0
-
-</pre>
+```
 
 The logical AND allows you to make one variable dependent on another.
 
-<pre class="brush: jscript; title: ; notranslate" title="">var checkbox = document.getElementById("agreeToTerms");
-
-
+``` js
+var checkbox = document.getElementById("agreeToTerms");
 
 var name = checkbox.checked && prompt("What is your name");
 
-
-
 // name is either their name, or false if they haven't checked the AgreeToTerms checkbox
 
-
-
-// IMPORTANT NOTE: Internet Explorer 8 breaks the prompt function.
-
-</pre>
+// IMPORTANT NOTE: Internet Explorer 8 breaks the prompt function, so you probably shouldn't use it.
+```
 
 #### Logical NOT, `!`
 
-Unlike `&#038;&#038;` and `||`, the `!` operator DOES turn the value it receives into a boolean. If it receives a truthy value, it returns `false`, and if it receives a falsy value, it returns `true`.
+Unlike `&&` and `||`, the `!` operator DOES turn the value it receives into a boolean. If it receives a truthy value, it returns `false`, and if it receives a falsy value, it returns `true`.
 
-<pre class="brush: jscript; title: ; notranslate" title="">(!"test one" || "test two"); // returns "test two"
-
+``` js
+var a = (!"test one" || "test two"); // a is "test two"
 // ("test one" gets converted to false and skipped)
 
-
-
-(!"test one" && "test two"); // returns false
-
+var b = (!"test one" && "test two"); // b is false
 // ("test one" gets converted to false and returned)
 
-
-
-(!0 || !"test two"); // returns true
-
+var c = (!0 || !"test two"); // c is true
 // (0 gets converted to true and returned)
 
-</pre>
+```
 
 Another useful way to use the `!` operator is to use two of them &#8211; this way you always get a `true` or a `false` no matter what was given to it.
 
-<pre class="brush: jscript; title: ; notranslate" title="">(!!"test"); // returns true
-
+``` js
+var a = (!!"test"); // a is true
 //  "test" is converted to false, then that is converted to true
 
-
-
-(!!""); // returns false
-
+var b = (!!""); // b is false
 // "" is converted to true, and then that true is converted to false
 
-
-
-(!!variableThatDoesntExist); // returns false even though you're checking an undefined variable.
-
-</pre>
+var c = (!!variableThatDoesntExist); // c is false even though you're checking an undefined variable.
+```
 
 ## [Javascript Optimization][4]
 
 Need any help [optimizing the Javascript and AJAX on your website][5]? Get in touch with your friendly neighborhood [javascript expert][4] for ideas on how to optimize your site and a free quote.
 
  [1]: http://www.flickr.com/photos/fleur-design/308974073/
- [2]: #comment-2100
  [3]: http://www.nicollet.net/2009/06/the-truth-of-javascript/
- [4]: http://nfriedly.com/webdev
- [5]: /webdev/javascript
+ [4]: http://nfriedly.com/portfolio
+ [5]: http://nfriedly.com/portfolio#javascript

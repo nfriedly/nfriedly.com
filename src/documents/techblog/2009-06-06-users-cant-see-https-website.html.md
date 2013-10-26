@@ -1,12 +1,11 @@
 ---
-title: 'Why some users can&#8217;t see a https website'
+title: Why some users can't see a https website
 author: nFriedly
 layout: post
 permalink: /2009/06/users-cant-see-https-website/
-syntaxhighlighter_encoded:
-  - 1
-categories:
-  - Web Development
+headerImage: http://farm3.staticflickr.com/2197/2333040774_bb03ca472a_b.jpg
+imageCredits: 
+	"Transparent screen photo by patstip" : http://www.flickr.com/photos/24468787@N05/2333040774/
 tags:
   - bugfix
   - https
@@ -28,16 +27,25 @@ Recently a client of mine made some changes to their secure server in order to c
 
 The rather cryptic error the PCI compliance scan gave was
 
-<pre><strong>Synopsis</strong> : The remote service supports the use of weak SSL ciphers.
-<strong>Description</strong> : The remote host supports the use of SSL ciphers that offer either weak encryption or no encryption at all.
-See also : http://www.openssl.org/docs/apps/ciphers .html
-<strong>Solution</strong>: Reconfigure the affected application if possible to avoid use of weak ciphers.
-<strong>Risk Factor</strong>: Medium  / CVSS
-Base Score : 5.0 (CVSS2#AV:N/AC:L/Au:N/C:P/I:N/A:N)
-Plugin output :
-Here is the list of weak SSL ciphers supported by the remote server :
-Low Strength Ciphers (&lt; 56-bit key) SSLv3 EXP-RC2-CBC-MD5 Kx=RSA(512) Au=RSA Enc=RC2(40) Mac=MD5 export EXP-RC4-MD5 Kx=RSA(512) Au=RSA Enc=RC4(40) Mac=MD5 export
-The fields above are : {OpenSSL ciphername} Kx={key exchange} Au={authentication} Enc={symmetric encryption method} Mac={message authentication code} {export flag}</pre>
+> **Synopsis** : The remote service supports the use of weak SSL ciphers.
+>
+> **Description** : The remote host supports the use of SSL ciphers that offer either weak encryption or no encryption at all.
+>
+> **See also** : http://www.openssl.org/docs/apps/ciphers.html
+>
+> **Solution**: Reconfigure the affected application if possible to avoid use of weak ciphers.
+>
+> **Risk Factor**: Medium  / CVSS
+>
+> **Base Score** : 5.0 (CVSS2#AV:N/AC:L/Au:N/C:P/I:N/A:N)
+>
+> **Plugin output** :
+>
+> Here is the list of weak SSL ciphers supported by the remote server :
+>
+> Low Strength Ciphers (&lt; 56-bit key) SSLv3 EXP-RC2-CBC-MD5 Kx=RSA(512) Au=RSA Enc=RC2(40) Mac=MD5 export EXP-RC4-MD5 Kx=RSA(512) Au=RSA Enc=RC4(40) Mac=MD5 export
+>
+> The fields above are : {OpenSSL ciphername} Kx={key exchange} Au={authentication} Enc={symmetric encryption method} Mac={message authentication code} {export flag}</pre>
 
 They disabled <acronym title="Secure Socket Layer">SSL</acronym> 3.0 and lower in IIS and set it to only accept <acronym title="Transport Layer Security">TLS</acronym> connections. (TLS is essentially SSL 4.0). This allowed them to pass the PCI compliance, but brought on new issues.
 

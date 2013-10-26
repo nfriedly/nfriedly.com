@@ -1,14 +1,13 @@
 ---
-title: 'How to fix Cart 32 &#8220;Bad file name or number Error Number = 52&#8243;'
+title: How to fix Cart 32 "Bad file name or number Error Number = 52"
 author: nFriedly
 layout: post
 permalink: /2009/04/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/
-syntaxhighlighter_encoded:
-  - 0
+headerImage: http://farm9.staticflickr.com/8453/7968029824_1d1eb20771_b.jpg
+imageCredits:
+	"Header shopping cart photo by r. nial bradshaw" : http://www.flickr.com/photos/zionfiction/7968029824/
 lightbox:
   - 1
-categories:
-  - Web Development
 tags:
   - bugfix
   - cart32
@@ -19,9 +18,7 @@ Even worse, it charged the customers credit card each time, so a persistent cust
 
 <!--more-->
 
-<h2 style="clear: both; padding-top: 10px;">
-  The Fix
-</h2>
+## The Fix
 
 <a href="http://nfriedly.com/techblog/wp-content/uploads/2009/11/cart32-fix.png" rel="lightbox"><img class="size-medium wp-image-245 alignright" title="cart32-fix" src="http://nfriedly.com/techblog/wp-content/uploads/2009/11/cart32-fix-300x235.png" alt="cart32-fix" width="300" height="235" /></a>Cart32&#8242;s support was not particularly helpful (both the [Knowledge Base][1] and their phone support), but fortunately the fix was not very hard. The error basically means that it had trouble opening some file.
 
@@ -29,11 +26,10 @@ In our case the name of the file that orders were saved in (**Orders > Order Set
 
 ## Did it work for you?
 
-Please leave comments if you found this helpful. If you have some other website issue, cart 32 related or not, [I may be able to help][2].
+Please let me know if you found this helpful. If you have some other website issue, cart 32 related or not, [I may be able to help][2].
 
-Doing impossible things with [JavaScript and AJAX][3] is my specialty.  Get in touch with me [here][4].
+Doing impossible things with [JavaScript and AJAX][3] is my specialty.  My contact info is in the footer.
 
  [1]: http://www.cart32.com/kb.asp
  [2]: http://nfriedly.com/webdev
  [3]: http://nfriedly.com/webdev/javascript
- [4]: http://nfriedly.com/contact
