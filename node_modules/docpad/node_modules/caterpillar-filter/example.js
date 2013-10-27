@@ -1,6 +1,6 @@
 // Import
-var logger = new (require('caterpillar').Logger)();
-var filter = new (require('./').Filter)({level:6});  // omit log level entries above 6
+var logger = require('caterpillar').createLogger();
+var filter = require('./').createFilter({level:6});  // omit log level entries above 6
 
 // Pipe logger output to filter, then filter output to stdout
 logger.pipe(filter).pipe(process.stdout);

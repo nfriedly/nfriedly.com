@@ -21,8 +21,10 @@ function setPostOptions(model, cleanedSearchString) {
 
 module.exports = {
 	plugins: {
-		ghpages: {
-			quiet: true // otherwise it shows my Github Private Access Token as the username in the public `git push` logs on Travis CI
+		sunny: {
+			// deploy command: NODE_ENV=production docpad generate
+			configFromEnv: true,
+			envPrefixes: ['NF_']
 		}
 	},
 	collections: {

@@ -1,6 +1,6 @@
 // Import
-var logger = new (require('caterpillar').Logger)();
-var human = new (require('./').Human)();
+var logger = new require('caterpillar').createLogger();
+var human = new require('./').createHuman();
 
 // Pipe logger output to our human interface, then our human interface output to stdout
 logger.pipe(human).pipe(process.stdout);

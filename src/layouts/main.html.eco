@@ -165,9 +165,12 @@ function loadBackupCSS(url) {
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
 <% end %>
 
-
-
-<%- @getBlock("scripts").add('/scripts/email.js').add(@getDocument().get('scripts')).toHTML() %>
+<% scripts = @getBlock("scripts") %>
+<% scripts.add('/scripts/email.js') %>
+<% if @getDocument().get('scripts'): %>
+	<% scripts.add(@getDocument().get('scripts')) %>
+<% end %>
+<%- scripts.toHTML() %>
 
 </body>
 </html>
