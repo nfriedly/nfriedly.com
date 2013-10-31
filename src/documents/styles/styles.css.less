@@ -241,8 +241,7 @@ main li { margin-top: 1em; }
 .muted a { color: inherit; }
 .muted a:hover { color: white; }
 
-
-@media (min-width: @screen-lg) {
+@media (min-width: @screen-md) {
     @footerPadding: 50px;
     @footerHeight: 271px + (@footerPadding * 2);
 	.over-footer { 
@@ -252,7 +251,9 @@ main li { margin-top: 1em; }
 		margin-bottom: @footerHeight; 
 		padding-bottom: 20px; 
 		box-shadow: 0 18px 18px -12px #310A03;
+		min-height: calc(~"100% - " @footerHeight);
 	}
+	body,html{ height:100%; } // make the min-height of over-footer work correctly
 	footer { 
 		position: fixed; bottom: 0; left: 0; right: 0; 
 		z-index: 1; 
