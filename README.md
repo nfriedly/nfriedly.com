@@ -16,7 +16,6 @@ Todo:
 * Create tag filtering options
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * cleanup img/ directory
-* add google analytics
 * add https://github.com/docpad/docpad-plugin-sitemap (and robots.txt)
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
 
