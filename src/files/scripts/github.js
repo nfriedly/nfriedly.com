@@ -1,7 +1,8 @@
 (function(exports, $) {
 	"use strict";
 
-	var renderGH = _.template('<li><h3><i  class="icon-li <%= icon %>"></i> <a href="<%= url %>"><%= name %></a></h3><p><%= description %></p><%= homepage %><p class="muted"><%= events %></p></li>'); 
+	var renderRepoSummary = _.template('<li><h3><i class="icon-li <%= icon %>"></i> <a href="<%= url %>"><%= name %></a></h3><p><%= description %></p><%= homepage %><p class="muted"><%= events %></p></li>'); 
+	var renderStar = _.template('<li><h3 title="<%= description %>"><i class="icon-li icon-star"></i> Starred <a href="<%= url %>"><%= name %></a></h3></li>');
 
 	var icon = '<i class="<%= icon %>"></i> ';
 	var eventTemplates = {
@@ -11,6 +12,7 @@
 		IssuesEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> issue<%= events.length == 1 ? "" : "s"%> created</a>'),
 		MemberEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> contributor<%= events.length == 1 ? "" : "s"%> added</a>'),
 		PullRequestEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
+		WatchEvent: _.template(icon + '<a href="<%= events[0].url %>">Starred</a>'),
 		'default':  _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
 	};
 
@@ -23,7 +25,7 @@
 		IssueCommentEvent: 'icon-comment-alt',
 		PullRequestEvent: 'icon-wrench',
 		PullRequestReviewCommentEvent: 'icon-comment',
-		WatchEvent: 'icon-eye-open',
+		WatchEvent: 'icon-star',
 		FollowEvent: 'icon-plane',
 		MemberEvent: 'icon-user',
 		'default':  'icon-gears'
@@ -75,6 +77,7 @@
 			.map(function(repoEvents, name) {
 				// extract the repo data and render a summary of the events 
 				var repo = _(repoEvents).toArray()[0][0].repository;
+				repo.starredOnly = (_.keys(repoEvents).length == 1 && repoEvents['WatchEvent']);
 				repo.events = _.chain(repoEvents).map(renderSumary).toArray().value().reverse().join(', ');
 				var eventType = _(repoEvents).keys()[0];
 				repo.icon = repoIcons[repo.name] || eventIcons[eventType] || eventIcons['default'];
@@ -83,7 +86,8 @@
 			})
 			.each(function(repo) {
 				// render a <li> for each repo that includes the summary from the previous step
-				$(renderGH(repo)).appendTo($list);
+				var html = repo.starredOnly ? renderStar(repo) : renderRepoSummary(repo);
+				$(html).appendTo($list);
 			});
 	}
 

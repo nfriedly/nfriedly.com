@@ -11,7 +11,6 @@ Todo:
 * Set up redirects for old urls
 * Add custom 404 page
 * Minify and combine stuff
-* Rework github watch/star events to take up less space
 * Split up portfolio content
 * Clean up "about me" page
 * Add instagram feed to about page - maybe just photos tagged @nfriedly
