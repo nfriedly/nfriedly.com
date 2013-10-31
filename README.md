@@ -7,16 +7,18 @@ In-progress replacement for my current website.
 
 Todo: 
 
-* Fix portfolio lightbox
-* Set up redirects for old urls
-* Add custom 404 page
-* Minify and combine stuff
+* clean urls - https://github.com/docpad/docpad-plugin-cleanurls/
+* Set up redirects for old urls - might have to write my own plugin for this, base it on https://github.com/docpad/docpad-plugin-cleanurls/
+* Minify and combine stuff - https://github.com/balupton/buildr
 * Split up portfolio content
 * Clean up "about me" page
 * Add instagram feed to about page - maybe just photos tagged @nfriedly
 * Create tag filtering options
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * cleanup img/ directory
+* add google analytics
+* add https://github.com/docpad/docpad-plugin-sitemap (and robots.txt)
+* consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
 
 Build instructions
 ------------

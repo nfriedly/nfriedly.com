@@ -22,7 +22,7 @@ function loadBackupCSS(url) {
 <![endif]-->
 <link href="/styles/font-mfizz/font-mfizz.css" rel="stylesheet">
 
-<%- @getBlock("styles").add(["/styles/styles.css"]).toHTML() %>
+<%- @getBlock("styles").add(["/styles/styles.css"]).add(@getDocument().get('stylesheets') or []).toHTML() %>
 
 </head>
 <body class="<%= @document.cssClass %>">
