@@ -29,6 +29,12 @@ module.exports = {
 		ghpages: {
 			quiet: true
 		},
+        sitemap: {
+            cachetime: 600000,
+            changefreq: 'monthly',
+            priority: 0.5,
+            hostname: 'http://nfriedly.com'
+        }
 	},
 	collections: {
 		techblog: function() { 
@@ -71,7 +77,7 @@ module.exports = {
 			.values() // turn the object into an array
 			.value() // end the chain and get a regular array back
 			.join(', ')
-		} 
+		},
 	}
 };
 

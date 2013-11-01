@@ -7,7 +7,7 @@ heading: Nathan Friedly
 subHeading: <a href="/about">Husband</a> // <a href="/about">Minister</a> // <a href="/portfolio">JavaScript Ninjaneer</a>
 cssClass: homepage
 headerImage: /img/grapes-up.jpg
-url: /
+priority: 1
 ---
 
 <section class="intro row">

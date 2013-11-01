@@ -14,7 +14,8 @@
     "docpad-plugin-less": "~2.2.0",
     "docpad-plugin-highlightjs": "~2.1.8",
     "underscore": "~1.5.2",
-    "docpad-plugin-sunny": "~2.0.12"
+    "docpad-plugin-sunny": "~2.0.12",
+    "docpad-plugin-sitemap": "~2.0.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

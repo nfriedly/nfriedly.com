@@ -5,10 +5,12 @@ In-progress replacement for my current website.
 
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
-Todo: 
+Todo before launching: 
 
 * clean urls - https://github.com/docpad/docpad-plugin-cleanurls/
 * Set up redirects for old urls - might have to write my own plugin for this, base it on https://github.com/docpad/docpad-plugin-cleanurls/
+
+Todo soon:
 * Minify and combine stuff - https://github.com/balupton/buildr
 * Split up portfolio content
 * Clean up "about me" page
@@ -16,7 +18,6 @@ Todo:
 * Create tag filtering options
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * cleanup img/ directory
-* add https://github.com/docpad/docpad-plugin-sitemap (and robots.txt)
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
 
 Build instructions
