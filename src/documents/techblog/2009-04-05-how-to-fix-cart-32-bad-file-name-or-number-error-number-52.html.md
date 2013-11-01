@@ -2,7 +2,7 @@
 title: How to fix Cart 32 "Bad file name or number Error Number = 52"
 author: nFriedly
 layout: post
-permalink: /2009/04/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/
+url: /2009/04/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/
 headerImage: http://farm9.staticflickr.com/8453/7968029824_1d1eb20771_b.jpg
 imageCredits:
 	"Header shopping cart photo by r. nial bradshaw" : http://www.flickr.com/photos/zionfiction/7968029824/

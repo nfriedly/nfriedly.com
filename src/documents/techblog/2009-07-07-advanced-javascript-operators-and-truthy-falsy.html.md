@@ -2,7 +2,7 @@
 title: 'Advanced Javascript: Logical Operators and truthy / falsy'
 author: nFriedly
 layout: post
-permalink: /2009/07/advanced-javascript-operators-and-truthy-falsy/
+url: /2009/07/advanced-javascript-operators-and-truthy-falsy/
 categories:
   - Web Development
 tags:

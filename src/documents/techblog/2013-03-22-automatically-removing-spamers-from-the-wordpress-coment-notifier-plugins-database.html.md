@@ -2,7 +2,7 @@
 title: Automatically removing spamers from the WordPress Coment Notifier Plugin's Database
 author: nFriedly
 layout: post
-permalink: /2013/03/automatically-removing-spamers-from-the-wordpress-coment-notifier-plugins-database/
+url: /2013/03/automatically-removing-spamers-from-the-wordpress-coment-notifier-plugins-database/
 headerImage: http://farm8.staticflickr.com/7195/6873017519_843f1642ef_b.jpg
 tags:
   - antispam

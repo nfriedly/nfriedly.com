@@ -7,7 +7,6 @@ In-progress replacement for my current website.
 
 Todo before launching: 
 
-* clean urls - https://github.com/docpad/docpad-plugin-cleanurls/
 * Set up redirects for old urls - might have to write my own plugin for this, base it on https://github.com/docpad/docpad-plugin-cleanurls/
 
 Todo soon:
@@ -19,6 +18,8 @@ Todo soon:
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * cleanup img/ directory
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
+
+
 
 Build instructions
 ------------
