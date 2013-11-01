@@ -8,6 +8,8 @@ subHeading: <a href="/about">Husband</a> // <a href="/about">Minister</a> // <a 
 cssClass: homepage
 headerImage: /img/grapes-up.jpg
 priority: 1
+urls:
+	- /contact
 ---
 
 <section class="intro row">

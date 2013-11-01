@@ -78,6 +78,7 @@ module.exports = {
 			.value() // end the chain and get a regular array back
 			.join(', ')
 		},
+		site: {url: 'http://nfriedly.com' }
 	}
 };
 

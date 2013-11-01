@@ -4,6 +4,9 @@ layout: main
 headerImage: /img/house.jpg
 cssClass: about
 icon: android
+urls:
+    - /fellowship
+priority: 0.8
 ---
 
 <h1>About</h1>
