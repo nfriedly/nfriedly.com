@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /img
+Disallow: /files
+
+sitemap: http://nfriedly.com/sitemap.xml
