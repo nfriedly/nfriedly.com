@@ -13,6 +13,7 @@ Todo before launching:
 * Copy Resume
 
 Todo soon:
+* Fix active link colors
 * cherry-pick best comments from existing site
 * Minify and combine stuff - https://github.com/balupton/buildr
 * Split up portfolio content
