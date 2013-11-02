@@ -1,22 +1,42 @@
-# ProgressBar
 
-[![NPM version](https://badge.fury.io/js/progressbar.png)](https://npmjs.org/package/progressbar)
-[![Flattr this project](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr)
+<!-- TITLE/ -->
+
+# Progress Bar
+
+<!-- /TITLE -->
+
+
+<!-- BADGES/ -->
+
+[![Build Status](http://img.shields.io/travis-ci/bevry/progressbar.png?branch=master)](http://travis-ci.org/bevry/progressbar "Check this project's build status on TravisCI")
+[![NPM version](http://badge.fury.io/js/progressbar.png)](https://npmjs.org/package/progressbar "View this project on NPM")
+[![Gittip donate button](http://img.shields.io/gittip/bevry.png)](https://www.gittip.com/bevry/ "Donate weekly to this project using Gittip")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+
+<!-- /BADGES -->
+
+
+<!-- DESCRIPTION/ -->
 
 A nice wrapper around [TJ Holowaychuck's](https://github.com/visionmedia) [node-progress](https://github.com/visionmedia/node-progress) with chaining, domains, and steps
 
+<!-- /DESCRIPTION -->
+
+
+<!-- INSTALL/ -->
 
 ## Install
 
-### Backend
+### [Node](http://nodejs.org/), [Browserify](http://browserify.org/)
+- Use: `require('progressbar')`
+- Install: `npm install --save progressbar`
 
-1. [Install Node.js](http://bevry.me/node/install)
-2. `npm install --save progressbar`
+### [Ender](http://ender.jit.su/)
+- Use: `require('progressbar')`
+- Install: `ender add progressbar`
 
-### Frontend
-
-1. [See Browserify](http://browserify.org/)
-
+<!-- /INSTALL -->
 
 
 ## Usage
@@ -48,12 +68,61 @@ progress
 - `finish()` - finish manually, will destroy the progress bar
 
 
+<!-- HISTORY/ -->
 
 ## History
-You can discover the history inside the [History.md](https://github.com/bevry/progressbar/blob/master/History.md#files) file
+[Discover the change history by heading on over to the `History.md` file.](https://github.com/bevry/progressbar/blob/master/History.md#files)
+
+<!-- /HISTORY -->
 
 
+<!-- CONTRIBUTE/ -->
+
+## Contribute
+
+[Discover how you can contribute by heading on over to the `Contributing.md` file.](https://github.com/bevry/progressbar/blob/master/Contributing.md#files)
+
+<!-- /CONTRIBUTE -->
+
+
+<!-- BACKERS/ -->
+
+## Backers
+
+### Maintainers
+
+These amazing people are maintaining this project:
+
+- Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)
+
+### Sponsors
+
+No sponsors yet! Will you be the first?
+
+[![Gittip donate button](http://img.shields.io/gittip/bevry.png)](https://www.gittip.com/bevry/ "Donate weekly to this project using Gittip")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+
+### Contributors
+
+These amazing people have contributed code to this project:
+
+- Benjamin Lupton <b@lupton.cc> (https://github.com/balupton) - [view contributions](https://github.com/bevry/progressbar/commits?author=balupton)
+- timoxley (https://github.com/timoxley) - [view contributions](https://github.com/bevry/progressbar/commits?author=timoxley)
+
+[Become a contributor!](https://github.com/bevry/progressbar/blob/master/Contributing.md#files)
+
+<!-- /BACKERS -->
+
+
+<!-- LICENSE/ -->
 
 ## License
-Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
-<br/>Copyright © 2013+ [Bevry Pty Ltd](http://bevry.me)
+
+Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT license](http://creativecommons.org/licenses/MIT/)
+
+Copyright &copy; 2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)
+
+<!-- /LICENSE -->
+
+

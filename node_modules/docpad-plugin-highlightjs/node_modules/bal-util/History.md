@@ -1,4 +1,8 @@
-## History
+# History
+
+- v2.3.2 November 1, 2013
+	- Can now pass `binary` as the `readFiles` option value to return buffers instead of strings for file contents
+	- Updated dependencies
 
 - v2.3.1 October 27, 2013
 	- Updated dependencies

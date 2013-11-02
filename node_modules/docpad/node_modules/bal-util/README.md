@@ -1,7 +1,7 @@
 
 <!-- TITLE/ -->
 
-# Benjamin Lupton's Utility Functions
+# [Benjamin Lupton's](http://balupton.com) Utility Functions
 
 <!-- /TITLE -->
 
@@ -9,10 +9,10 @@
 <!-- BADGES/ -->
 
 [![Build Status](http://img.shields.io/travis-ci/balupton/bal-util.png?branch=master)](http://travis-ci.org/balupton/bal-util "Check this project's build status on TravisCI")
-[![NPM version](https://badge.fury.io/js/bal-util.png)](https://npmjs.org/package/bal-util "View this project on NPM")
+[![NPM version](http://badge.fury.io/js/bal-util.png)](https://npmjs.org/package/bal-util "View this project on NPM")
 [![Gittip donate button](http://img.shields.io/gittip/balupton.png)](https://www.gittip.com/balupton/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
 
 <!-- /BADGES -->
 
@@ -92,8 +92,8 @@ These amazing people are maintaining this project:
 No sponsors yet! Will you be the first?
 
 [![Gittip donate button](http://img.shields.io/gittip/balupton.png)](https://www.gittip.com/balupton/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
 
 ### Contributors
 
