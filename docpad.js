@@ -34,6 +34,14 @@ module.exports = {
             changefreq: 'monthly',
             priority: 0.5,
             hostname: 'http://nfriedly.com'
+        },
+        redirector: {
+        	redirects: {
+        		"/eoc": "http://folding.extremeoverclocking.com/?nav=IMAGES",
+        		"/pagerank" : "http://pagerank.nfriedly.com",
+        		"/pagerank.js" : "http://pagerank.nfriedly.com",
+        		"stuff/afgame" : "http://air-force-game.nfriedly.com/"
+        	}	
         }
 	},
 	collections: {

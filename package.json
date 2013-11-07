@@ -16,7 +16,8 @@
     "underscore": "~1.5.2",
     "docpad-plugin-sunny": "~2.0.12",
     "docpad-plugin-sitemap": "~2.0.1",
-    "docpad-plugin-cleanurls": "~2.5.1"
+    "docpad-plugin-cleanurls": "~2.5.1",
+    "docpad-plugin-redirector": "~2.0.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

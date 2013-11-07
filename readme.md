@@ -7,10 +7,8 @@ In-progress replacement for my current website.
 
 Todo before launching: 
 
-* Set up redirects for off site urls - might have to write my own plugin for this, base it on https://github.com/docpad/docpad-plugin-cleanurls/
-* Remove font-mfizz, etc from sitemap
 * Copy stuff/ directory
-* Copy Resume
+* Look for additional redirects I need to add
 
 Todo soon:
 * Fix active link colors
