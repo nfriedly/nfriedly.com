@@ -52,6 +52,16 @@ module.exports = {
         		"/stuff/ddgg-da": "http://ddgg.nfriedly.com/",
         		"/stuff/duckduckgoogle": "http://ddgg.nfriedly.com/",
         		"/stuff/rss-xslt": "http://rss-xslt.herokuapp.com/",
+        		"/px": "http://nodeunblocker.com/",
+        		"/px/index.php": "http://nodeunblocker.com/",
+        		"/px/poxy/": "http://nodeunblocker.com/",
+        		"/px/poxy/index.php": "http://nodeunblocker.com/",
+        		"/px/a2/": "http://nodeunblocker.com/",
+        		"/px/a2/index.php": "http://nodeunblocker.com/",
+        		"/px/invisiproxy": "http://nodeunblocker.com/",
+        		"/px/invisiproxy/index.php": "http://nodeunblocker.com/",
+        		"/px/phpr0xi": "http://nodeunblocker.com/",
+        		"/px/phpr0xi/index.php": "http://nodeunblocker.com/",
         	}	
         },
         cleanurls: {
