@@ -6,8 +6,8 @@
     // Github pages will send redirects to live.nfriedly.com, bypassing cloudfront. 
     // This is to catch that and redirect the user back to cloudfront.
     var l = window.location;
-    if (l.hostname == "live.nfriedly.com") {
-        l.hostname = "new.nfriedly.com"; // todo: change me to just nfriedly.com
+    if (l.hostname == "live.nfriedly.com" && (l.href + document.cookie).indexOf('force-live') !=-1) {
+        l.hostname = "nfriedly.com";
     }
 </script>
 

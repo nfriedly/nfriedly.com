@@ -5,48 +5,44 @@ In-progress replacement for my current website.
 
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
-Todo before launching: 
-
-* Copy stuff/ directory
-* Look for additional redirects I need to add
-
 Todo soon:
 * Fix active link colors
 * cherry-pick best comments from existing site
 * Minify and combine stuff - https://github.com/balupton/buildr
+* Rework portfolio intro
 * Split up portfolio content
 * Clean up "about me" page
-* Add instagram feed to about page - maybe just photos tagged @nfriedly
+* Add instagram feed to about page - maybe just photos by or tagged @nfriedly
 * Create tag filtering options
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * cleanup img/ directory
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
-* clean out stuff/ directory
-* Add /scripts/ and /styles/ to robots.txt
 
 
 
 Build instructions
-------------
+------------------
 This site is built on top of [node.js](http://www.nodejs.org/) and [DocPad](http://docpad.org/). 
 
 1. Download and install node.js from http://www.nodejs.org/
 2. Install DocPad: http://docpad.org/docs/install
-3. Run `docpad run` in this directory
-4. Install plugins if necessary (?) - see package.json for a list.
+3. Install plugins if necessary (?) - see package.json for a list
+4. Run `docpad run` in this directory to view the site locally
 5. Edit or remove `src/files/CNAME` and then run `docpad deploy-ghpages` to deploy to github
 
 
 
-Creative Commons Attribution License on content
------------------------------------------------
+Creative Commons Attribution License on my content
+--------------------------------------------------
 
 http://creativecommons.org/licenses/by/3.0/deed.en_US
 
+Note that there are some stock images to which this license does not apply, and there are some images from flickr that are creative commons - appropriate attribution is given on those pages.
 
 
-MIT License on code
--------------------
+
+MIT License on my code
+----------------------
 
 Copyright (c) 2013 Nathan Friedly - http://nfriedly.com/
 
