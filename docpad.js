@@ -42,6 +42,9 @@ module.exports = {
         		"/pagerank.js" : "http://pagerank.nfriedly.com",
         		"stuff/afgame" : "http://air-force-game.nfriedly.com/"
         	}	
+        },
+        cleanurls: {
+        	trailingSlashes: true
         }
 	},
 	collections: {
