@@ -1,0 +1,197 @@
+body {
+	text-align:center;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000066;
+	background:#0000cc url('img/bg.gif') repeat-x;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#000000;
+	overflow:visible;
+	padding:0 0 0 .5em;
+	margin:0 3em .5em 0;
+	line-height:65%;
+	border-bottom:2px solid black;
+}
+h1 {
+	text-align:right;
+	padding:0 .5ex 0 0;
+	margin:0 0 .5em 1em;
+}
+h2 {
+	margin-right:7em;
+}
+h3, h4, h5, h6 {
+	line-height:75%;
+}
+
+p {
+	margin:2ex;
+}
+
+a:link {
+	color:#00cc00;
+	text-decoration:none;
+}
+a:visited {
+	color:#009900;
+	text-decoration:none;
+}
+a:hover {
+	color:#00cc00;
+	text-decoration:underline;
+}
+a:active {
+	color:#00ff00;
+	text-decoration:underline;
+}
+	
+blockquote {
+	background-color: #EDF1F4;
+	border: 1px solid #c09;
+	margin: 40px 20px;
+}
+
+code {
+	color:black;
+}
+
+#container {
+	margin:3em auto;
+	width:720px;
+	text-align:left;
+}
+
+#main {
+	width:520px;
+	float:left;
+	border:2px solid black;
+	background:#fff;
+}
+
+#menu {
+	background:#fff;
+	margin-top:41px;
+	width: 185px;
+	float:left;
+	border-top:2px solid black;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+	background-color:#B8FF7F;
+}
+#menu ul {
+	list-style: none;
+	margin: 1ex 0;
+	padding: 0;
+	border-top:1px dashed #FFCC00;
+}
+#menu li {
+	margin:0;
+	border-bottom:1px dashed #FFCC00;
+}
+#menu a {
+	display:block;
+	padding:.5ex 2ex;
+	color:#000000;
+	text-decoration:none;
+}
+
+#menu a:visited {
+	color:#666666;
+}
+#menu a:hover {
+	background-color:#DBFFBF;
+}
+#menu a:active {
+	background-color:#72FF00;
+}
+
+#steps {
+	margin:5px;
+}
+#steps a {
+	display:block; 
+	height:40px;
+	width:40px;
+	float:left;
+	text-align:center;
+	border:2px solid #c09; 
+	margin:10px;
+	color:#B8FF7F;
+	text-decoration:none;
+	font-size:20px;
+	line-height:40px;
+	background-color:#609;
+}
+#steps a:visited {
+	color:#DBFFBF;
+}
+#steps a:hover, #steps a.current {
+	height:60px;
+	width:60px;
+	margin:0;
+	line-height:60px;
+	color:#72FF00;
+}
+#steps a.current {
+	margin-bottom:10px;
+}
+#steps a:active {
+}
+#step1 {
+	background: #ffffff url('img/step-1.jpg') center;
+}
+#step2 {
+	background: #ffffff url('img/step-2.jpg')	center;
+}
+#step3 {
+	background: #ffffff url('img/step-3.jpg')	center;
+}
+#step4 {
+	background: #ffffff url('img/step-4.jpg')	center;
+}
+#step5 {
+	background: #ffffff url('img/step-5.jpg')	center;
+}
+#step6 {
+	background: #ffffff url('img/step-6.jpg')	center;
+}
+#step7 {
+	background: #ffffff url('img/step-7.jpg')	center;
+}
+#step8 {
+	background: #ffffff url('img/step-8.jpg')	center;
+}
+
+.alert {
+	border: 1px solid #f6682d;
+	margin: 40px 20px;
+	padding:0;
+	width: 478px; /* because internet explorer can't figure this out on it's own.. */
+}
+
+.alert p {
+	background-image: url('img/exc.png');
+	background-position:top left;
+	background-repeat:no-repeat;
+	padding-left:74px;
+}
+
+.next {
+	font-size:large;
+	float:right;
+	margin-right:20px;
+}
+
+#footer {
+	clear:both;
+	color:#DBFFBF;
+	margin:30px 0 10px 20px;
+	padding-top:50px;
+	font-size:small;
+}
+#footer a {
+	color:#B8FF7F;
+}
+

@@ -1,0 +1,212 @@
+/* 
+
+Aftica Design 
+
+by Nathan Friedly 
+http://nfriedly.com
+
+Colors:
+#d0b16e Body Text
+#b1722b Orange Text Highlight - h2
+#ffffff White text highlight - h1
+#4c2a0e Top menu
+#83541c Orange dividers, h3, img borders, etc.
+#1b0b02 Dark brown background
+*/
+
+html, body {
+	margin:0;
+	padding:0;
+}
+
+body {
+	background: #1b0b02 url('africa-header-tall.jpg') repeat-x;
+	color: #d0b16e;
+	text-align:center;
+	font-family: Helvitica, Verdana, Arial, Sans-serif;
+	font-size:11pt;
+}
+
+h1, h2, h3, #menu {
+	font-family: "Times New Roman", Serif;
+	font-weight:100;
+	letter-spacing:2px;
+}
+
+h3 {
+	letter-spacing:1px;
+}
+
+p, li {
+	line-height: 150%;
+}
+
+.clear { clear:both; }
+
+.container  {
+	width:960px;
+	margin:0 auto;
+	text-align:left;
+}
+
+h1 {
+	color:white;
+	letter-spacing:15px;
+	font-size:250%;
+}
+h1 span {
+	color:#d0b16e;
+	font-size:75%;
+	letter-spacing: 3px;
+}
+
+
+h2{
+	margin:30px 0 5px;
+}
+
+h3 {
+	margin:20px 0 5px;
+}
+
+
+h2, h2 a, a {
+	color: #b1722b;
+}
+
+h3, h3 a {
+	color: #83541c;
+}
+
+a:hover {
+	color:white;
+	text-decotation:none;
+}
+
+p{
+	margin:0 0 15px
+}
+
+#header {
+	padding-top:10px;
+}
+
+#menu {
+	border: 1px solid #83541c;
+	padding:5px 0;
+	border-right:none;
+	border-left:none;
+	font-weight:900;
+}
+
+#menu ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+#menu li {
+	float:left;
+	margin:0;
+	padding:0 10px;
+}
+
+#menu li a{
+	display:block;
+	color:#4c2a0e;
+	padding:3px 6px;
+	text-decoration:none;
+}
+
+#menu li a:hover, #menu li a.current{
+	color:white;
+	background-color:#4c2a0e;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px; 
+}
+
+#content  {
+	margin-top:260px;
+	padding-bottom:60px;
+}
+
+#main {
+	width:600px;
+	float:left;
+}
+
+hr {
+	height: 1px;
+	background-color: #4c2a0e; /*83541c;*/
+	color:  #83541c;
+	margin:30px 0px 40px;
+	border:0;
+	/*border-bottom: 1px solid #83541c;*/
+}
+
+.sb { display:none; }
+
+
+
+
+input, textarea {
+	color: #d0b16e;
+	border: 1px solid #4c2a0e;
+	padding:2px;
+	background: #331805;
+}
+
+input:hover, input:focus, textarea:hover, textarea:focus {
+	border-color:  #b1722b;
+	/* background-color:#1b0b02; */
+}
+
+input.name, input.email {
+	width:220px;
+	background: #331805 url(africa-header-tall.jpg) repeat 400px -370px;
+}
+
+input.email{
+	background: #331805 url(africa-header-tall.jpg) repeat -760px -445px;
+}	
+
+textarea {
+	height:180px;
+	width:400px;
+	background: #331805 url(africa-header-tall.jpg) repeat bottom right;
+}
+.sale{
+	padding:3px 6px;
+	text-decoration:none;
+	/*color:white;*/
+	background-color:#4c2a0e;
+	-moz-border-radius: 3px;
+}
+
+#sidebar {
+	width:264px; /* 300 - border + padding */
+	float:right;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px; 
+	border: 6px solid #4c2a0e;
+	background-color: #1b0b02;
+	padding:0 12px 12px;
+}
+
+#sidebar h2 {
+	/* color:white; */
+	margin-top: 24px; /* 20 px - 6 for the border */
+}
+
+#footer {
+	/*background-color:#2e1404;*/
+	background: #331805 url(africa-header-tall.jpg) repeat bottom center;
+	border-top:1px solid #63370c;
+	padding:15px 0;
+	font-size:11pt;
+}
+
+.center, .container.center {
+	text-align:center;
+}
+

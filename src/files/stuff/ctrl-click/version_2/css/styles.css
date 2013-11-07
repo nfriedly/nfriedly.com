@@ -1,0 +1,180 @@
+/* general styles */
+
+html {
+	background: #190601 url(../img/bg.png) top left no-repeat;
+}
+
+body {
+	margin-left:40px;
+	color: #ccbeb6;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+a { 
+	color: #ccbeb6;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#fff;
+}
+
+
+h2, h3 {
+	background-image: url(../img/short-bar.png);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+	color: #fff;
+}
+
+h3 {
+	text-transform:uppercase;
+	line-height:30px;
+	margin-top:15px;
+}
+
+h2 a {
+	font-size:15px;
+	line-height:30px;
+	display:block;
+	color: #fff;
+}
+
+p, cite {
+	margin:12px 0;
+}
+
+
+/* header & navigation section */
+
+#header {
+	margin-top:40px;
+	height: 92px;
+	position:relative;
+}
+
+#header, #welcome {
+	background-image:url(../img/long-bar.png);
+	background-repeat:no-repeat;
+	background-position:left bottom;
+}
+
+#menu {
+	position:absolute;
+	top:14px;
+	left:760px;
+	list-style-type:none;
+}
+#menu li {
+	display:inline;
+}
+
+#menu a {
+	padding:14px 26px 20px 0; /* change to 0 top if it gives any trouble */
+	text-transform:uppercase;
+	font-size:9px;
+}
+
+#menu a.current, #menu a:hover{
+	color:#fff;
+}
+
+/* "extra" content */
+
+#welcome {
+	padding:48px 18px;
+	font-size:16px;
+	color: #fff;
+	margin-bottom:44px;
+}
+
+#about {
+	margin-top:44px;
+	float:left;
+	width:299px;
+}
+
+#about .browse {
+	margin-top:0;
+	line-height:inherit;
+	padding-bottom:15px;
+}
+
+#balls ../img {
+	padding-right:8px;
+}
+
+#about ul {
+	margin: 12px 0;
+}
+
+
+/* keep the right column in line, whatever it is */
+
+.rcol {
+	margin-top:44px;
+	width: 650px;
+	float:left;
+}
+
+/* gallery */
+
+#gallery li {
+	width: 299px;
+	float:left;
+	margin:0 0 22px 18px;
+}
+
+#gallery a img {
+	padding-top: 1px;
+	border-top: 2px solid #9b320d;
+}
+
+#gallery a:hover img {
+	border-top: 2px solid #09937c;
+}
+
+#gallery h2 a:hover {
+	background-image: url(../img/double-arrow.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#gallery p {
+	margin:14px 0 0 0;
+}
+
+
+/* showcase styles */
+
+#showcase img {
+	padding-top: 1px;
+	border-top: 2px solid #9b320d;
+	margin:0 0 18px 18px;
+}
+
+#showcase img:hover {
+	border-top: 2px solid #09937c;
+}
+
+
+
+/* footer */
+
+#footer {
+	clear:both;
+	positon:relative;
+	margin-top:40px;
+	padding:24px 18px;
+	background-image:url(../img/long-bar.png);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+
+#footer #contact {
+	position:absolute;
+	left:692px;
+	width:299px;
+	text-align:right;
+}

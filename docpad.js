@@ -40,7 +40,12 @@ module.exports = {
         		"/eoc": "http://folding.extremeoverclocking.com/?nav=IMAGES",
         		"/pagerank" : "http://pagerank.nfriedly.com",
         		"/pagerank.js" : "http://pagerank.nfriedly.com",
-        		"stuff/afgame" : "http://air-force-game.nfriedly.com/"
+        		"stuff/afgame" : "http://air-force-game.nfriedly.com/",
+        		"stuff/afgame/index.php" : "http://air-force-game.nfriedly.com/",
+        		"stuff/arcade.php" : "http://air-force-game.nfriedly.com/",
+        		"/stuff/ddgg-da": "http://ddgg.nfriedly.com/",
+        		"/stuff/duckduckgoogle": "http://ddgg.nfriedly.com/",
+        		"/stuff/rss-xslt": "http://rss-xslt.herokuapp.com/",
         	}	
         },
         cleanurls: {
