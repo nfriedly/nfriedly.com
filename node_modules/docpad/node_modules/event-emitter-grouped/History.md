@@ -1,4 +1,8 @@
-## History
+# History
+
+- v2.3.2 November 6, 2013
+	- Updated dependencies
+	- Dropped component.io and bower support, just use ender or browserify
 
 - v2.3.1 October 27, 2013
 	- Re-packaged
