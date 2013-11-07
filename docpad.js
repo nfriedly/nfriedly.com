@@ -20,6 +20,12 @@ function setPostOptions(model, cleanedSearchString) {
 }
 
 module.exports = {
+	// the default worked great until I went from 178 to 267 files by adding my "stuff" directory. 
+	// I might yet try and move it off site. 
+	// Until then, this makes dp run locally without hanging on "Watching setup starting..."
+	watchOptions: {
+		preferredMethods: ['watchFile','watch']
+	},
 	plugins: {
 		sunny: {
 			// deploy command: NODE_ENV=production docpad generate
