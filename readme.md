@@ -18,6 +18,7 @@ Todo soon:
 * cleanup img/ directory
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
 * Write a blog post abut building the site - docpad basics, auto-deployment with travis ci, gh-pages + cloudfront, redirector plugin, bug fixing, etc
+* move SwfStore example to a heroku instance with ssl
 
 
 
