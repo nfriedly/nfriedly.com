@@ -158,7 +158,47 @@ Message: $_POST[message]";
 
 The `preg_match()` is there to make sure spammers can&#8217;t abuse your server by injecting extra fields (such as CC and BCC) into the header. Take a look at <http://www.thesitewizard.com/php/protect-script-from-email-injection.shtml> for more info.
 
-Be sure to check the comments below for several other variations.
+## Advanced version 2: Don't send blank emails
+
+``` php
+<?php
+
+// if the url field is empty
+if(isset($_POST['url']) && $_POST['url'] == ''){
+
+    if($_POST["message"] == "" || $_POST["name"] == ""){
+        echo "<p>Please press the back button and fill in all fields</p>";
+    } else {
+        // then send the form to your email
+        mail( 'you@yoursite.com', 'Contact Form', print_r($_POST,true) );
+    }
+}
+
+// otherwise, let the spammer think that they got their message through
+
+?>
+
+<h1>Thanks</h1>
+<p>We'll get back to you as soon as possible</p>
+```
+
+## Advanced version 3: Redirect to a new page
+
+``` php
+<?php
+
+// if the url field is empty 
+if(isset($_POST['url']) && $_POST['url'] == ''){
+ 	// then send the form to your email
+ 	 	mail( 'you@yoursite.com', 'Contact Form', print_r($_POST,true) ); 
+} 
+// otherwise, let the spammer think that they got their message through
+
+header('Location: http://www.mysite.com/thankyou.html');
+exit('Redirecting you to http://www.mysite.com/thankyou.html');
+
+?>
+```
 
 ## Complete Examples
 
