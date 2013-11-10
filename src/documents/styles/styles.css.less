@@ -1,3 +1,7 @@
+---
+standalone: true
+---
+
 @darkPurple: #291822;
 @lightPurple: lighten(@darkPurple, 15%);
 @gray: #999999;
@@ -240,6 +244,31 @@ main li { margin-top: 1em; }
 
 .muted a { color: inherit; }
 .muted a:hover { color: white; }
+
+
+
+@media (min-width: @screen-sm) {
+    .os-list {
+        columns: 2; -webkit-columns: 2; -moz-columns: 2; 
+    }
+}
+
+
+@media (min-width: @screen-md) {
+    .os-list {
+        columns: 3; -webkit-columns: 3; -moz-columns: 3; 
+    }
+}
+
+.os-list {
+    column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
+    //list-style-type: none;
+    margin-top: 1em;
+    li {
+        margin-top: 0;
+        margin-bottom: 1em;
+    }   
+}
 
 @media (min-width: @screen-md) {
     @footerPadding: 50px;
