@@ -66,10 +66,24 @@ document.write('<p><a href="/Nathan-Friedly-Resume.p'+'df"><i class="icon-file-t
 </script>
 
 <hr>
-    <!--
     <h2>Open Source Contributions</h2>
-    <p>I frequently make small improvements to Open 
-    -->
+    <p>I frequently make small improvements to Open Source projects that I work with. Here's a not-quite-comprehensive list:</p>
+    <ul>
+        <li><b><a href="http://awssum.io">AwsSum</a></b>: Added support for streaming uploads to Amazon S3</li>
+        <li><b><a href="https://github.com/chick307/base64codec">base64codec</a></b>: Fixed an error when used client side with jam.js / require.js.</li>
+        <li><b><a href="https://github.com/balor/connect-memcached">connect-memcached</a></b>: Improved documentation.</li>
+        <li><b><a href="docpad.org/">DocPad</a></b>: Fixed a bug in the unit test runner.</li>
+        <li><b><a href="https://github.com/bobobo1618/docpad-plugin-sunny">docpad-plugin-sunny</a></b>: Fixed a concurrency bug, I'm now an ongoing project maintainer.</li>
+        <li><b><a href="http://docpad.org/plugin/cleanurls">docpad-plugin-cleanurls</a></b>: Added support for skipping pages and associated unit tests.</li>
+        <li><b><a href="https://github.com/docpad/docpad-plugin-ghpages">docpad-plugin-ghpages</a></b>: Fixed a security issue when using this plugin on Travis CI.</li>
+        <li><b><a href="https://github.com/shanejonas/grunt-browserify2">grunt-browserify2</a></b>: Improved documentation.</li>
+        <li><b><a href="http://masonry.desandro.com/">Masonry</a></b>: Fixed some accidental global variable references.</li>
+        <li><b><a href="http://nodejs.org/">Node.js</a></b>: Fixed a bug in the REPL, added unit tests.</li>
+        <li><b><a href="https://github.com/mikeal/request">request</a></b>: Fixed a filename/mimetype bug.</li>
+        <li><b><a href="https://github.com/SlexAxton/require-handlebars-plugin">require-handlebars-plugin</a></b>: Modified plugin to be compatible with the jam.js package manager, improved i18n code.</li>
+        <li><b><a href="https://github.com/ekalinin/sitemap.js">sitemap.js</a></b>: Fixed a bug with URLs that contain the string 'http', added unit tests, improved performance by ~4%.</li>
+    </ul>
+    <p>Technologies: Open Source, node.js, JavaScript, Jam.js, Require.js, DocPad, Amazon S3, Memcached, Grunt, Browserify</p>
 
     <h2><a href="https://github.com/nfriedly/docpad-plugin-redirector">Redirector plugin for DocPad</a></h2>
     <p>Creates the static equivalent of 301/302 redirects for static websites (0-second meta refreshes) via configuration.<p>
@@ -77,11 +91,16 @@ document.write('<p><a href="/Nathan-Friedly-Resume.p'+'df"><i class="icon-file-t
     <p>Technologies: DocPad, CoffeeScript, Cake, Travis CI, NPM</p>
 
     <h2><a href="http://nfriedly.com/">nfriedly.com, v5</a></h2>
-    <p>Rebuilt the website from scratch with a state of the art mobile-first design made for speed and usability.</p>
+    <p><a rel="lightbox" href="/img/portfolio/nfriedly.com-v5.jpg"><img class="right" src="/img/portfolio/thumbs/nfriedly.com-v5.jpg" alt="" /></a>Rebuilt the website from scratch with a state of the art mobile-first design made for speed and usability.</p>
     <p>Stands on the shoulders of giants, using DocPad and a collection of plugins for content generation, 
     Bootstrap and LESS for CSS scaffolding and preprocessing; Github, Cloudfront, and Travis CI for hosting and continuous  deployment. Artwork is a combination of photos my own personal library, creative commons photos from flickr, icons by Font Awesome and Font Mfizz.</p>
-    <p>Technologies: HTML5, Bootstrap 3.0, DocPad, Node.js, LESS, CSS, Amazon CloudFront, Travis CI, Github, Font Awesome, Font Mfizz, JavaScript</p>
+    <p>Technologies: HTML5, Bootstrap 3.0, DocPad, Node.js, LESS, CSS, Amazon CloudFront, Travis CI, Github, Font Awesome, Font Mfizz, JavaScript, mobile-first</p>
 
+    <h2><a href="http://js-mini-shell.nfriedly.com/">JS Mini-Shell</a></h2>
+    <p><a rel="lightbox" href="/img/portfolio/js-mini-shell.jpg"><img class="left" src="/img/portfolio/thumbs/js-mini-shell.jpg" alt="" /></a>A super-lightweight interactive JavaScript shell that fits in a bookmarklet and and runs everywhere, including older versions of IE.</p>
+    <p>Buit to help me debug some things in IE 8 where turning on developer tools changes the behavior of the page in subtle ways.</p>
+    <p>Websitel is a mobile-first design that opens with some fun CSS animations if your browser supports them unprefixed.
+    <p>Technologies: JavaScript, CSS Animation, BootStrap, Font Awesome, Font Mfizz, Github</p>
 
 	<h2><a href="http://gemcityjs.com">Tipp JS / Gem City JS</a></h2>
 	<p>
@@ -97,6 +116,16 @@ document.write('<p><a href="/Nathan-Friedly-Resume.p'+'df"><i class="icon-file-t
 	<p>Built on the Twitter Bootstrap CSS foundation and Backbone.js and Browserify for the front-end. Uses node.js Express.js, and Redis for the back-end. Static assets are served through Amazon's CouldFront CDN while the dynamic portions are hosted on Heroku. Uses Stripe used for paid accounts.</p>
 	<p>Technologies: node.js, Backbone.js, Twitter Bootstrap, Redis, grunt.js, Amazon S3, Amazon Cloudfront, Heroku, Browserify, Express 3</p>
 
+    <h2><a href="https://github.com/nfriedly/docpad-plugin-redirector">GET method override middleware for Connect / Express</a></h2>
+    <p>Takes an HTTP GET request such as <code>GET /foo/1234?method=PUT&data=...</code> and causes the rest of the system to treat it as if it were the method named in the querystring (PUT in this case).<p>
+    <p>Technologies: JavaScript, Connect, Express, NPM</p>
+    
+    
+    <h2><a href="http://ip.nfriedly.com/">Whats my IP API</a></h2>
+    <p><a rel="lightbox" href="/img/portfolio/whats-my-ip.jpg"><img class="left" src="/img/portfolio/thumbs/whats-my-ip.jpg" alt="" /></a>Super-simple service I built to inform visitors what their internet-facing IP is. Supports HTML, Text, JSON, JSONP, and CORS (Cross-Origin Resource Sharing).
+    <p>Design and animation were built from scratch, hosted on Heroku.</p>
+    <p>Technologies: Node.js, JSON, CORS, CSS Animation, Heroku.</p>
+
 	<h2><a href="http://picsyncapp.com">PicSync</a></h2>
 	<p>
 		<img class="right" src="/img/portfolio/thumbs/picsync.png" alt="" />
@@ -105,6 +134,9 @@ document.write('<p><a href="/Nathan-Friedly-Resume.p'+'df"><i class="icon-file-t
 	<p>PicSync is still under development and is coming along nicely. Features coming soon include a backup service, Facebook Login, and credit card payments. <a href="http://twitter.com/picsyncapp">Follow the development on twitter.</a></p>
 	<p>Technologies: node.js, Android, Heroku, Amazon S3, Express, Twitter Bootstrap, Font Awesome, LESS, Jade, JavaScript, Java</p>
 	
+	<h2>Sociable Labs encryption and signing examples</h2>
+	<p>We accept signed and/or encrypted data from our customers and we provide example code in a variety of languages. I Wrote example code in C# and Node.js, and also published a <a href="https://github.com/nfriedly/SLSignPageData">SLSignPageData</a> library to NPM to enable easy data signing in node.js projects.</p>
+	<p>Technologies: Encryption, C#, Node.js</p>
 	
 	<h2><a href="http://backyardsports.com/" name="sandlot">Backyard Sports Sandlot Sluggers</a></h2>
 	<p><a rel="lightbox" title=""  href="/img/portfolio/sandlot.jpg"><img src="/img/portfolio/thumbs/sandlot.jpg" alt="" class="left" /></a>
