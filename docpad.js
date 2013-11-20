@@ -13,12 +13,6 @@ function notIndex(model, cleanedSearchString) {
 	return model.get('filename').substr(0,6) != 'index.';
 }
 
-// an abuse of a filter because we need to make small tweaks to the metadata of all files in this collection
-function setPostOptions(model, cleanedSearchString) {
-	model.set('cssClass', 'post');
-	return true;
-}
-
 module.exports = {
 	// the default worked great until I went from 178 to 267 files by adding my "stuff" directory. 
 	// I might yet try and move it off site. 
@@ -73,10 +67,12 @@ module.exports = {
 	},
 	collections: {
 		techblog: function() { 
-			return this.getCollection("html")
+			return this.getCollection("documents")
 				.findAllLive({relativeOutDirPath:'techblog'}, [{filename:-1}])
 				.setFilter('notIndex', notIndex)
-				.setFilter('postOptions', setPostOptions);
+				.on("add", function (model)  {
+                	model.setMetaDefaults({'cssClass': 'post'})
+                });
 		}
 	},
 	templateData: {
