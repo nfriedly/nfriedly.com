@@ -318,6 +318,8 @@ footer {
 	}
 }
 
+/* chrome refuses to honor margin-bottom unless there's something else below the element that's statically positioned. */
+.chromefix { height:1px; background-color: @darkPurple;}
 
 pre.highlighted { border: 0; padding: 0; }
 @import "highlightjs-sunburst.less";

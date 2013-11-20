@@ -170,6 +170,7 @@ function loadBackupCSS(url) {
 		</div>
 	</div>
 </footer>
+<div class="chromefix"></div>
 
 <% if @getEnvironment() == 'development': %>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
