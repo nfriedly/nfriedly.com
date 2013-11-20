@@ -12,7 +12,7 @@ referencesOthers: true
 			<% headerImage = model.get('headerImage') unless headerImage %>
 			<% model.getOutContent(); post = model.toJSON(); %>
 			<article>
-				<h2><a href="<%= post.url %>"><%- post.title %></a></h4>
+				<h2><a href="<%= post.url %>"><%- post.title %></a></h2>
 				<%- @getPreview(post) %>
 				<p><a href="<%= post.url %>">Continue reading...</a></p>
 				<p class="meta">Tagged 
