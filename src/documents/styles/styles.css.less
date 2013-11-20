@@ -255,19 +255,29 @@ main li { margin-top: 1em; }
 
 
 @media (min-width: @screen-md) {
-    .os-list {
+    .open-source-projects ul {
         columns: 3; -webkit-columns: 3; -moz-columns: 3; 
+        column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
     }
 }
 
-.os-list {
-    column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
+
+.open-source-projects ul{
     //list-style-type: none;
     margin-top: 1em;
+    padding: 0;
     li {
         margin-top: 0;
         margin-bottom: 1em;
     }   
+}
+
+
+.portfolio {
+    img.thumb, a.thumb img {
+        max-width: 300px;
+    }
+    article { margin-top: 20px; }
 }
 
 @media (min-width: @screen-md) {

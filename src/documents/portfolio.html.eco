@@ -1,0 +1,101 @@
+---
+title: Portfolio
+layout: main
+icon: laptop
+cssClass: portfolio
+scripts: /scripts/lightbox/lightbox-min.js
+stylesheets: /scripts/lightbox/lightbox.css
+priority: 1
+urls: 
+    - /webdev
+    - /webdev/javascript
+    - /webdev/marketing
+    - /webdev/php
+    - /demos
+    - /demos/twitter
+    - /quote
+    - /estimate
+    - /clients
+    - /blb
+referencesOthers: true
+scripts: 
+    - /scripts/lightbox/lightbox-min.js
+---
+
+<div class="row">
+	<div class="col-sm-3">
+		<h1>Nathan Friedly</h1>
+		<p>Smart, driven web developer with a passion for simplicity and user experience.</p>
+		<p>More than a decade of experience working on hundreds of websites from Sunny-D to Ticketmaster to NFL.</p>
+		<p>Shipped software that runs on millions of computers daily.</p>
+	</div>
+
+	<div class="col-sm-3">
+		<h1><i class="icon-javascript"></i> JavaScript</h1>
+		<p>Primary expertise in JavaScript and node.js:</p> 
+		<ul class="icons-ul">
+			<li><i class="icon-li icon-code-fork icon-2x"></i> Contributed code and unit tests to Node.js core</li>
+			<li><i class="icon-li icon-nodejs icon-2x"></i> Created several NPM modules - <a href="https://npmjs.org/~nfriedly">npmjs.org/~nfriedly</a></li>
+			<li><i class="icon-li icon-trophy icon-2x"></i> Ranked in the top 1% of AJAX developers worldwide by Elance.</li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3">
+		<h1>
+			<i class="icon-java"></i>
+			<i class="icon-php"></i>
+			<i class="icon-csharp"></i>
+			<i class="icon-ruby"></i>
+			<i class="icon-python"></i>
+			<i class="icon-scala"></i>
+		</h1>
+		<p>Significant recent experience with Java including a little bit of Android. Past experience with PHP.</p>
+		<p>Several past projects with Ruby, C#, and Flash/ActionScript.</p>
+		<p>Some familiarity with Python, Go, Scala, and other languages</p>
+	</div>
+
+	<div class="col-sm-3">
+		<h1><i class="icon-aws"></i> DevOps</h1>
+		<p>Experience managing Linux servers on Heroku, EC2, and other providers.</p>
+		<h1><i class="icon-database"></i> Databases</h1>
+		<p>Knowledge of a range of databases and data-stores including PostgreSQL, MySQL, SQLite, MongoDB, Memcache, and Redis.</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+// this is for people, not bots
+document.write('<p><a href="/Nathan-Friedly-Resume.p'+'df"><i class="icon-file-text"></i> Download Nathan\'s Resum&eacute; (PDF)</a></p>');
+</script>
+
+<hr>
+
+<div class="projects">
+<% for project in @getFilesAtPath('projects/').toJSON(): %>
+    <article class="media <%= project.cssClass %>">
+
+        <% if project.picture: %>
+            <a class="thumb pull-left" href="<%= project.picture %>" rel="lightbox"><img src="<%= @getThumbnail(project.picture, { w: 300, h: 300, q: 70 }) %>" alt=""/></a>
+            <% else: %>
+            <% if project.icon: %>
+                <i class="icon icon=<%= project.icon %> icon-4x pull-left"></i>
+            <% end %>
+        <% end %>
+        
+        <div class="media-body">
+            <h2 class="media-heading">
+                <% if project.link: %>
+                    <a href="<%= project.link %>"><%- project.title %></a>
+                <% else: %>
+                    <%- project.title %>
+                <% end %>
+            </h2>
+
+            <%- project.contentRendered %>
+            <p class="meta">Tagged 
+                <%- @linkTags(project.tags) %>
+            </p>
+        </div>
+    </article>
+<% end %>
+</div>

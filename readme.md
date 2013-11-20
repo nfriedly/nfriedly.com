@@ -7,10 +7,8 @@ In-progress replacement for my current website.
 
 Todo soon:
 * Fix active link colors
-* cherry-pick best comments from existing site
 * Minify and combine stuff - https://github.com/balupton/buildr
 * Rework portfolio intro
-* Split up portfolio content
 * Clean up "about me" page
 * Add instagram feed to about page - maybe just photos by or tagged @nfriedly
 * Create tag filtering options
@@ -19,6 +17,8 @@ Todo soon:
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
 * Write a blog post abut building the site - docpad basics, auto-deployment with travis ci, gh-pages + cloudfront, redirector plugin, bug fixing, etc
 * move SwfStore example to a heroku instance with ssl
+* Add something about Pleasant Hill, Ohio somewhere
+* Add keywords meta tag
 
 
 

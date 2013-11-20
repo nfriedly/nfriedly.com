@@ -17,7 +17,8 @@
     "docpad-plugin-sunny": "~2.1.0",
     "docpad-plugin-sitemap": "~2.0.1",
     "docpad-plugin-cleanurls": "~2.5.1",
-    "docpad-plugin-redirector": "~2.0.0"
+    "docpad-plugin-redirector": "~2.0.0",
+    "docpad-plugin-thumbnails": "~2.1.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

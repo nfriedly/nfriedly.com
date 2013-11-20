@@ -29,6 +29,9 @@ module.exports = {
 		ghpages: {
 			quiet: true
 		},
+    	thumbnails: {
+        	imageMagick: true
+        },
         sitemap: {
             cachetime: 600000,
             changefreq: 'monthly',
@@ -96,7 +99,8 @@ module.exports = {
 		linkTags: function(tags) {
 			return _(tags)
 				.map(function(tag) { 
-					return '<a href="#' +  tag + '">' +  tag + '</a>'; 
+					var id = tag.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim().replace(/ +/g, '-')
+					return '<a href="#' +  id + '">' +  tag + '</a>'; 
 				})
 				.join(', ');
 		},
