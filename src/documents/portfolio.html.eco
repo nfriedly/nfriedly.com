@@ -72,30 +72,41 @@ document.write('<p><a href="/Nathan-Friedly-Resume.p'+'df"><i class="icon-file-t
 
 <div class="projects">
 <% for project in @getFilesAtPath('projects/').toJSON(): %>
-    <article class="media <%= project.cssClass %>">
-
-        <% if project.picture: %>
-            <a class="thumb pull-left" href="<%= project.picture %>" rel="lightbox"><img src="<%= @getThumbnail(project.picture, { w: 300, h: 300, q: 70 }) %>" alt=""/></a>
-            <% else: %>
-            <% if project.icon: %>
-                <i class="icon icon=<%= project.icon %> icon-4x pull-left"></i>
-            <% end %>
-        <% end %>
-        
-        <div class="media-body">
-            <h2 class="media-heading">
-                <% if project.link: %>
-                    <a href="<%= project.link %>"><%- project.title %></a>
-                <% else: %>
-                    <%- project.title %>
-                <% end %>
-            </h2>
-
-            <%- project.contentRendered %>
-            <p class="meta">Tagged 
-                <%- @linkTags(project.tags) %>
-            </p>
-        </div>
-    </article>
+    <% if project.picture: %>
+        <article class="row <%= project.cssClass %>">
+            <div class="col-xs-4">
+                <a class="thumb" href="<%= project.picture %>" rel="lightbox"><img src="<%= @getThumbnail(project.picture, { w: 360, h: 500, q: 70 }) %>" alt=""/></a>
+            </div>
+            <div class="col-sm-8">
+                <h2>
+                    <% if project.link: %>
+                        <a href="<%= project.link %>"><%- project.title %></a>
+                    <% else: %>
+                        <%- project.title %>
+                    <% end %>
+                </h2>
+                <%- project.contentRendered %>
+                <p class="meta">Tagged 
+                    <%- @linkTags(project.tags) %>
+                </p>
+            </div>
+        </article>
+    <% else: %>
+        <article class="row <%= project.cssClass %>">
+            <div class="col-xs-12">
+                <h2>
+                    <% if project.link: %>
+                        <a href="<%= project.link %>"><%- project.title %></a>
+                    <% else: %>
+                        <%- project.title %>
+                    <% end %>
+                </h2>
+                <%- project.contentRendered %>
+                <p class="meta">Tagged 
+                    <%- @linkTags(project.tags) %>
+                </p>
+            </div>
+        </article>
+    <% end %>
 <% end %>
 </div>

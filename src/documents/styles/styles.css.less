@@ -246,26 +246,19 @@ main li { margin-top: 1em; }
 .muted a:hover { color: white; }
 
 
+.open-source-projects ul {
 
-@media (min-width: @screen-sm) {
-    .os-list {
+    @media (min-width: @screen-sm) {
+        padding: 0;
         columns: 2; -webkit-columns: 2; -moz-columns: 2; 
+        column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
     }
-}
-
-
-@media (min-width: @screen-md) {
-    .open-source-projects ul {
+    @media (min-width: @screen-md) {
         columns: 3; -webkit-columns: 3; -moz-columns: 3; 
         column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
     }
-}
-
-
-.open-source-projects ul{
     //list-style-type: none;
     margin-top: 1em;
-    padding: 0;
     li {
         margin-top: 0;
         margin-bottom: 1em;
@@ -275,9 +268,10 @@ main li { margin-top: 1em; }
 
 .portfolio {
     img.thumb, a.thumb img {
-        max-width: 300px;
+        width: 100%;
     }
     article { margin-top: 20px; }
+    article h2 { margin-top: 0; }
 }
 
 @media (min-width: @screen-md) {
