@@ -1,12 +1,12 @@
 ---
-title: <a name="bmw">BMW Invoice</a>
+title: "<a name=\"bmw\">BMW Invoice</a>"
 picture: /img/portfolio/bmwinvoice.jpg
 thumbnail: /img/portfolio/thumbs/bmwinvoice.png
-tags:
- - PHP
- - Javascript
- - CodeIgniter
- - &amp; jQuery
+tags: 
+  - PHP
+  - JavaScript
+  - CodeIgniter
+  - jQuery
 write: false
 ---
 

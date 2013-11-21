@@ -1,11 +1,12 @@
 ---
 title: Portfolio for Christopher S.
-link: /stuff/ctrl-click
-picture: /img/portfolio/ctrl-click.jpg
+link: "/stuff/ctrl-click"
+picture: "/img/portfolio/ctrl-click.jpg"
 thumbnail: /img/portfolio/thumbs/skillicorn.png
-tags:
- - XHTML &amp; CSS
- - Photoshop
+tags: 
+  - HTML
+  - CSS
+  - Photoshop
 write: false
 ---
 

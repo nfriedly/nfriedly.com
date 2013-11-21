@@ -1,14 +1,14 @@
 ---
-title: Turtle St. Bed and Breakfast &amp; Extended Stay
-link: http://turtlest.com/
+title: "Turtle St. Bed and Breakfast &amp; Extended Stay"
+link: "http://turtlest.com/"
 picture: /img/portfolio/turtlest.png
 thumbnail: /img/portfolio/thumbs/turtlest.png
-tags:
- - WordPress
- - HTML
- - CSS
- - PHP
- - Google Maps
+tags: 
+  - WordPress
+  - HTML
+  - CSS
+  - PHP
+  - Google Maps API
 write: false
 ---
 

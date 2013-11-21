@@ -2,12 +2,11 @@
 title: Lavish Giving
 picture: /img/portfolio/lavishgiving.png
 thumbnail: /img/portfolio/thumbs/lavishgiving.png
-tags:
- - e-Commerce
- - Pinnacle Cart
- - SEO
- - mod_rewrite
- - WordPress
+tags: 
+  - "e-Commerce"
+  - SEO
+  - Apache
+  - WordPress
 write: false
 ---
 

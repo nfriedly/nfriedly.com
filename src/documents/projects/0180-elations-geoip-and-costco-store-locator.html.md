@@ -1,14 +1,13 @@
 ---
 title: Elations GeoIP and Costco store locator
-link: http://www.elations.com/categories/buy-elations/findcostco.php
+link: "http://www.elations.com/categories/buy-elations/findcostco.php"
 picture: /img/portfolio/elations.jpg
 thumbnail: /img/portfolio/thumbs/elations.jpg
-tags:
- - MaxMind
- - GeoLocation
- - Google Maps API
- - Javascript
- - PHP
+tags: 
+  - GeoLocation
+  - Google Maps API
+  - JavaScript
+  - PHP
 write: false
 ---
 

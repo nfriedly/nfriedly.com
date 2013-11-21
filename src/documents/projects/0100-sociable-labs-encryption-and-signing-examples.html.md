@@ -1,9 +1,9 @@
 ---
 title: Sociable Labs encryption and signing examples
-tags:
- - Encryption
- - C#
- - Node.js
+tags: 
+  - Encryption
+  - "C#"
+  - Node.js
 write: false
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: GET method override middleware for Connect / Express
-link: https://github.com/nfriedly/docpad-plugin-redirector
-tags:
- - JavaScript
- - Connect
- - Express
- - NPM
+link: "https://github.com/nfriedly/docpad-plugin-redirector"
+tags: 
+  - JavaScript
+  - Connect
+  - Express
+  - NPM
 write: false
 ---
 

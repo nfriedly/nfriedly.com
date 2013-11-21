@@ -5,13 +5,11 @@ In-progress replacement for my current website.
 
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
-Todo soon:
-* Fix active link colors
+Todo:
+* Clean up portfolio tags further
 * Minify and combine stuff - https://github.com/balupton/buildr
-* Rework portfolio intro
 * Clean up "about me" page
 * Add instagram feed to about page - maybe just photos by or tagged @nfriedly
-* Create tag filtering options
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * cleanup img/ directory
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog

@@ -1,8 +1,8 @@
 ---
 title: Blue Letter Bible search plugin
 link: /blb/
-tags:
- - OpenSearch
+tags: 
+  - OpenSearch
 write: false
 ---
 

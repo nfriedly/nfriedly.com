@@ -1,14 +1,14 @@
 ---
 title: Wealth Management Partners LLC
-link: http://wmpllc.com
+link: "http://wmpllc.com"
 picture: /img/portfolio/wmpllc.jpg
 thumbnail: /img/portfolio/thumbs/wmp.jpg
-tags:
- - PHP
- - CodeIgniter
- - Javascript
- - Twitter
- - RSS
+tags: 
+  - PHP
+  - CodeIgniter
+  - JavaScript
+  - Twitter
+  - RSS
 write: false
 ---
 

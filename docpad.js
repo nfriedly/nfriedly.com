@@ -97,12 +97,15 @@ module.exports = {
 				.replace(reImages, '');
 		},
 		linkTags: function(tags) {
+			var self = this;
 			return _(tags)
 				.map(function(tag) { 
-					var id = tag.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim().replace(/ +/g, '-')
-					return '<a href="#' +  id + '">' +  tag + '</a>'; 
+					return '<a href="#' +  self.normalizeTag(tag) + '">' +  tag + '</a>'; 
 				})
 				.join(', ');
+		},
+		normalizeTag: function(tag) {
+			return tag.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim().replace(/ +/g, '-')
 		},
 		linkPhotoCredits: function(links) {
 			return _.chain(links)
@@ -112,6 +115,33 @@ module.exports = {
 			.values() // turn the object into an array
 			.value() // end the chain and get a regular array back
 			.join(', ')
+		},
+		generateTagCloud: function(projects) {
+		 	// build a map of name -> usage count
+			var hits = {};
+			_.each(projects, function(project) {
+				_.each(project.tags || [], function(tag) {
+					hits[tag] = hits[tag] || 0;
+					hits[tag]++;
+				});
+			});
+			
+			// figure out our multiplier to get relative sizes
+			var counts = _.values(hits),
+				min = _.min(counts), 
+				max = _.max(counts),
+				multiplier = 1/(max-min);
+				
+ 			// use the multiplier to normalize the counts
+ 			// and convert the map into a list of objects
+ 			var results = []
+ 			_.each(hits, function(count, tag) {
+ 				results.push({tag: tag, relativeFrequency: count * multiplier});
+ 			});
+ 			
+ 			return results.sort(function(a, b) {
+ 				return a.tag == b.tag ? 0 : a.tag > b.tag ? 1 : -1;
+ 			});
 		},
 		site: {url: 'http://nfriedly.com' }
 	}

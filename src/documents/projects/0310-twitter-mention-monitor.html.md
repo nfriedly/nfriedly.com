@@ -1,11 +1,11 @@
 ---
-title: Twitter @Mention Monitor
-link: http://twittermentionmonitor.com/
-tags:
- - Ruby on Rails
- - Twitter
- - OAuth
- - BlueTrip CSS framework
+title: "Twitter @Mention Monitor"
+link: "http://twittermentionmonitor.com/"
+tags: 
+  - Ruby on Rails
+  - Twitter
+  - OAuth
+  - BlueTrip
 write: false
 ---
 

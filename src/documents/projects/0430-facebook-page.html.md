@@ -1,8 +1,8 @@
 ---
 title: Facebook Page
-link: http://www.facebook.com/pages/Cincinnati-OH/nFriedly-Web-Dev/188519495205
-tags:
- - Facebook
+link: "http://www.facebook.com/pages/Cincinnati-OH/nFriedly-Web-Dev/188519495205"
+tags: 
+  - Facebook
 write: false
 ---
 

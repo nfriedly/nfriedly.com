@@ -1,15 +1,15 @@
 ---
-title: Backyard Football '10 Promotion
-link: http://www.backyardsports.com/gamestop
+title: "Backyard Football '10 Promotion"
+link: "http://www.backyardsports.com/gamestop"
 picture: /img/portfolio/bys.png
 thumbnail: /img/portfolio/thumbs/bys.png
-tags:
- - jQuery
- - ThickBox
- - AJAX
- - Javascript
- - PHP
- - MySQL
+tags: 
+  - jQuery
+  - ThickBox
+  - AJAX
+  - JavaScript
+  - PHP
+  - MySQL
 write: false
 ---
 

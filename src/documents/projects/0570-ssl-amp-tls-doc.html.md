@@ -1,11 +1,8 @@
 ---
-title: SSL &amp; TLS (.doc)
+title: "SSL &amp; TLS (.doc)"
 link: /stuff/Nathan_Friedly_SSL_TLS.doc
-tags:
- - SSL 3.0
- - TLS 1.0
- - Network Protocols
- - RFCs
+tags: 
+  - SSL / TLS
 write: false
 ---
 

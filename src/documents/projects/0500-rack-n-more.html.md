@@ -1,10 +1,8 @@
 ---
 title: Rack n More
-tags:
- - e-Commerce
- - SEO
- - Meta Tags
- - Keywords
+tags: 
+  - "e-Commerce"
+  - SEO
 write: false
 ---
 

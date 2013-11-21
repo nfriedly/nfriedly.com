@@ -1,13 +1,13 @@
 ---
-title: USA Benefits Group Agent Back Office & Sales Tracker
-link: http://usabghome.com
-picture: /img/portfolio/USABG-Sales-Reporting.jpg
+title: "USA Benefits Group Agent Back Office & Sales Tracker"
+link: "http://usabghome.com"
+picture: "/img/portfolio/USABG-Sales-Reporting.jpg"
 thumbnail: /img/portfolio/thumbs/usabg.png
-tags:
- - PHP
- - Javascript
- - AJAX
- - YUI
+tags: 
+  - PHP
+  - JavaScript
+  - AJAX
+  - YUI
 write: false
 ---
 

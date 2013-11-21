@@ -1,15 +1,15 @@
 ---
 title: Veryfine Products
-link: http://www.veryfine.com/
+link: "http://www.veryfine.com/"
 picture: /img/portfolio/veryfine.jpg
 thumbnail: /img/portfolio/thumbs/veryfine.jpg
-tags:
- - PHP
- - MySQL
- - jQuery
- - Javascript
- - CSS
- - Flash
+tags: 
+  - PHP
+  - MySQL
+  - jQuery
+  - JavaScript
+  - CSS
+  - Flash / ActionScript
 write: false
 ---
 

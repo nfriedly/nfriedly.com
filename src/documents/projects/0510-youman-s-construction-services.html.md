@@ -1,10 +1,10 @@
 ---
-title: Youman's Construction Services
+title: "Youman's Construction Services"
 picture: /img/portfolio/ycs.png
 thumbnail: /img/portfolio/thumbs/ycs2.png
-tags:
- - email
- - html
+tags: 
+  - email
+  - HTML
 write: false
 ---
 

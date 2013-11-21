@@ -1,8 +1,8 @@
 ---
 title: Fellowlaborers
-link: http://fellowlaborers.org/
-tags:
- - WordPress
+link: "http://fellowlaborers.org/"
+tags: 
+  - WordPress
 write: false
 ---
 

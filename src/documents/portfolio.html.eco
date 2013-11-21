@@ -20,58 +20,38 @@ urls:
 referencesOthers: true
 scripts: 
     - /scripts/lightbox/lightbox-min.js
+    - /scripts/portfolio.js
 ---
 
-<div class="row">
-	<div class="col-sm-3">
-		<h1>Nathan Friedly</h1>
-		<p>Smart, driven web developer with a passion for simplicity and user experience.</p>
-		<p>More than a decade of experience working on hundreds of websites from Sunny-D to Ticketmaster to NFL.</p>
-		<p>Shipped software that runs on millions of computers daily.</p>
-	</div>
+<% projects = @getFilesAtPath('projects/').toJSON() %>
 
-	<div class="col-sm-3">
-		<h1><i class="icon-javascript"></i> JavaScript</h1>
-		<p>Primary expertise in JavaScript and node.js:</p> 
+<div class="row">
+	<div class="col-sm-4">
+		<p><strong>Nathan Friedly is a web developer with a strong focus on JavaScript and node.js.</strong></p>
 		<ul class="icons-ul">
-			<li><i class="icon-li icon-code-fork icon-2x"></i> Contributed code and unit tests to Node.js core</li>
-			<li><i class="icon-li icon-nodejs icon-2x"></i> Created several NPM modules - <a href="https://npmjs.org/~nfriedly">npmjs.org/~nfriedly</a></li>
-			<li><i class="icon-li icon-trophy icon-2x"></i> Ranked in the top 1% of AJAX developers worldwide by Elance.</li>
+		    <li><a href="https://github.com/nfriedly"><i class="icon-github icon-li"></i> GitHub</a></li>
+		    <li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="icon-stackexchange  icon-li fa-stack-exchange"></i> Stack Overflow</a></li>
+		    <li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="icon-linkedin icon-li"></i> LinkedIn</a></li>
+		    <li><a href="/Nathan-Friedly-Resume.pdf" rel="nofollow noindex"><i class="icon-file-text icon-li"></i> Resum&eacute;</a></li>
 		</ul>
 	</div>
-
-	<div class="col-sm-3">
-		<h1>
-			<i class="icon-java"></i>
-			<i class="icon-php"></i>
-			<i class="icon-csharp"></i>
-			<i class="icon-ruby"></i>
-			<i class="icon-python"></i>
-			<i class="icon-scala"></i>
-		</h1>
-		<p>Significant recent experience with Java including a little bit of Android. Past experience with PHP.</p>
-		<p>Several past projects with Ruby, C#, and Flash/ActionScript.</p>
-		<p>Some familiarity with Python, Go, Scala, and other languages</p>
+	<div class="col-sm-8">
+	    <div class="panel panel-default">
+	    <div class="panel-heading">Click a tag to filter the portfolio <a href="#" class="pull-right">Clear Filter [X]</a></div>
+	    <div class="panel-body">
+            <% for ts in @generateTagCloud(projects): %>
+                <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.relativeFrequency %>%"><%= ts.tag %></a>
+            <% end %>
+	    </div>
+	    </div>
 	</div>
-
-	<div class="col-sm-3">
-		<h1><i class="icon-aws"></i> DevOps</h1>
-		<p>Experience managing Linux servers on Heroku, EC2, and other providers.</p>
-		<h1><i class="icon-database"></i> Databases</h1>
-		<p>Knowledge of a range of databases and data-stores including PostgreSQL, MySQL, SQLite, MongoDB, Memcache, and Redis.</p>
-	</div>
-
 </div>
-
-<script type="text/javascript">
-// this is for people, not bots
-document.write('<p><a href="/Nathan-Friedly-Resume.p'+'df"><i class="icon-file-text"></i> Download Nathan\'s Resum&eacute; (PDF)</a></p>');
-</script>
 
 <hr>
 
 <div class="projects">
-<% for project in @getFilesAtPath('projects/').toJSON(): %>
+    <div id="curent-filter"></div>
+<% for project in projects: %>
     <% if project.picture: %>
         <article class="row <%= project.cssClass %>">
             <div class="col-xs-4">

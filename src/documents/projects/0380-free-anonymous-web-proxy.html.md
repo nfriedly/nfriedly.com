@@ -1,11 +1,9 @@
 ---
 title: Free Anonymous Web Proxy
-link: http://screwbeingsingle.com/
-tags:
- - PHP
- - PHProxy
- - cURL
- - Data URI scheme
+link: "http://screwbeingsingle.com/"
+tags: 
+  - PHP
+  - cURL
 write: false
 ---
 

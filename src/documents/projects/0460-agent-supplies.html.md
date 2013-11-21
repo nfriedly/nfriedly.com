@@ -1,16 +1,16 @@
 ---
 title: Agent Supplies
-link: http://agentsupplies.com
+link: "http://agentsupplies.com"
 picture: /img/portfolio/agentsupplies.png
 thumbnail: /img/portfolio/thumbs/agentsupplies.png
-tags:
- - e-Commerce
- - SSL
- - LAMP
- - linux
- - apache
- - windows
- - IIS
+tags: 
+  - "e-Commerce"
+  - SSL / TLS
+  - LAMP
+  - Linux
+  - Apache
+  - Windows
+  - IIS
 write: false
 ---
 

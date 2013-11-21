@@ -1,13 +1,13 @@
 ---
 title: Standard Publishing
-link: http://standardpub.com
+link: "http://standardpub.com"
 picture: /img/portfolio/standardpub.jpg
 thumbnail: /img/portfolio/thumbs/standardpub.png
-tags:
- - jQuery
- - Javascript
- - CSS
- - HTML
+tags: 
+  - jQuery
+  - JavaScript
+  - CSS
+  - HTML
 write: false
 ---
 

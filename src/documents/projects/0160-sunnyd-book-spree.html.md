@@ -1,13 +1,13 @@
 ---
 title: SunnyD Book Spree
-link: http://sunnyd.com/bookspree
+link: "http://sunnyd.com/bookspree"
 picture: /img/portfolio/sunnyd.jpg
 thumbnail: /img/portfolio/thumbs/sunnyd.jpg
-tags:
- - PHP
- - MySQL
- - CSS
- - HTML
+tags: 
+  - PHP
+  - MySQL
+  - CSS
+  - HTML
 write: false
 ---
 

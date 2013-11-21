@@ -3,10 +3,10 @@ title: African Design / Theme
 link: /stuff/africa/
 picture: /img/portfolio/africa.png
 thumbnail: /img/portfolio/thumbs/africa.png
-tags:
- - Photoshop
- - HTML
- - CSS
+tags: 
+  - Photoshop
+  - HTML
+  - CSS
 write: false
 ---
 

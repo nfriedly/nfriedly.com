@@ -1,17 +1,17 @@
 ---
 title: Tipp JS / Gem City JS
-link: http://gemcityjs.com
-picture: /img/tipp-js-large.jpg
-tags:
- - node.js
- - Jasmine
- - RaspberryPi
- - Arduino
- - Express.js
- - Meteor
- - require.js
- - LESS
- - CoffeeScript
+link: "http://gemcityjs.com"
+picture: "/img/tipp-js-large.jpg"
+tags: 
+  - Node.js
+  - Jasmine
+  - RaspberryPi
+  - Arduino
+  - Express
+  - Meteor
+  - Require.js
+  - LESS
+  - CoffeeScript
 write: false
 ---
 

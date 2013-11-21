@@ -44,7 +44,7 @@ body {font-family: 'Nobile'; }
 }
 
 a { color: @linkColor; padding: 3px 1px 0 1px; text-decoration: underline;}
-a:hover, a:hover:before { color: white; background-color: @hoverLinkColor; text-decoration: none;  }
+a:hover, a:hover:before, a:focus, a:active { color: white; background-color: @hoverLinkColor; text-decoration: none;  }
 a, a:hover { transition:all 0.5s }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {text-decoration: none;}
@@ -270,8 +270,23 @@ main li { margin-top: 1em; }
     img.thumb, a.thumb img {
         width: 100%;
     }
-    article { margin-top: 20px; }
-    article h2 { margin-top: 0; }
+    article { 
+        margin-top: 20px; 
+        h2 { margin-top: 0; }
+        opacity: 1;
+        max-height: 3000px;
+        @media(min-width: @screen-sm) {
+            max-height: 600px;
+        }
+        transition: all 1s;
+        overflow: hidden;
+        &.filtered {
+            margin-top: 0;
+            opacity: 0;
+            max-height: 0;
+            transition: all 1s;
+        }
+    }
 }
 
 @media (min-width: @screen-md) {
