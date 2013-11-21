@@ -5,11 +5,7 @@ picture: /img/portfolio/agentsupplies.png
 thumbnail: /img/portfolio/thumbs/agentsupplies.png
 tags: 
   - "e-Commerce"
-  - LAMP
-  - Linux
   - Apache
-  - Windows
-  - IIS
 write: false
 ---
 

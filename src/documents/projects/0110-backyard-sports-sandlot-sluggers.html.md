@@ -6,7 +6,6 @@ thumbnail: /img/portfolio/thumbs/sandlot.jpg
 tags: 
   - Drupal
   - Flash / ActionScript
-  - PHP
 write: false
 ---
 

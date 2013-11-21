@@ -6,11 +6,9 @@ tags:
   - JavaScript
   - Node.js
   - NPM
-  - Jam.js
   - Require.js
   - DocPad
   - Amazon S3
-  - Memcached
   - Grunt
   - Browserify
 write: false

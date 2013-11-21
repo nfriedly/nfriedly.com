@@ -7,7 +7,6 @@ tags:
   - WordPress
   - HTML
   - CSS
-  - PHP
   - Google Maps API
 write: false
 ---

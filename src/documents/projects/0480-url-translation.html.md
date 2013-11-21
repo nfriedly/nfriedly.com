@@ -1,5 +1,5 @@
 ---
-title: URL Translation
+title: ExtremeOverclocking.com Folding@Home signature image proxy
 link: /eoc
 tags: 
   - PHP
@@ -7,6 +7,4 @@ tags:
 write: false
 ---
 
-Proxies folding@home signature images through a modified url so that forums will accept them.
-
-Example:<br /><img src="http://nfriedly.com/eoc/408666/whatever.gif" alt="" />
+Proxies folding@home signature images through a modified url so that forums will accept them. Shut down as it is no longer needed.

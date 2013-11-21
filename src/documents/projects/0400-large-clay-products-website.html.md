@@ -10,7 +10,6 @@ tags:
   - jQuery
   - MySQL
   - Cart32
-  - IIS
   - CodeIgniter
 write: false
 ---

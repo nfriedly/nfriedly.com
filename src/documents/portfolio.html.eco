@@ -36,13 +36,13 @@ scripts:
 		</ul>
 	</div>
 	<div class="col-sm-8">
-	    <div class="panel panel-default">
-	    <div class="panel-heading">Click a tag to filter the portfolio <a href="#" class="pull-right">Clear Filter [X]</a></div>
-	    <div class="panel-body">
-            <% for ts in @generateTagCloud(projects): %>
-                <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.relativeFrequency %>%"><%= ts.tag %></a>
-            <% end %>
-	    </div>
+	    <div class="panel panel-default tag-cloud">
+            <div class="panel-heading">Click a tag to filter the portfolio <a class="clear-tag" href="#">Clear Filter [X]</a></div>
+            <div class="panel-body">
+                <% for ts in @generateTagCloud(projects): %>
+                    <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.relativeFrequency %>%"><%= ts.tag %></a>
+                <% end %>
+            </div>
 	    </div>
 	</div>
 </div>

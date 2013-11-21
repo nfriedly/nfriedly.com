@@ -8,6 +8,7 @@ tags:
 write: false
 ---
 
-This is what I use for my clients. Log in and try it out.
+I built an account management system where clients could log in and see their curent and 
+past invoices and make payments via credit card. 
 
-Username: <b>demo</b><br />Password: <b>demo</b>
+I ensured the site was fully secured and PCI-compliant.

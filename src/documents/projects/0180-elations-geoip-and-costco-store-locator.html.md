@@ -4,7 +4,6 @@ link: "http://www.elations.com/categories/buy-elations/findcostco.php"
 picture: /img/portfolio/elations.jpg
 thumbnail: /img/portfolio/thumbs/elations.jpg
 tags: 
-  - GeoLocation
   - Google Maps API
   - JavaScript
   - PHP

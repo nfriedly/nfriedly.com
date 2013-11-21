@@ -12,7 +12,6 @@ tags:
   - CSS
   - Amazon CloudFront
   - Travis CI
-  - GitHub
   - Font Awesome
   - JavaScript
   - Mobile-First
