@@ -8,7 +8,6 @@ tags:
   - CodeIgniter
   - JavaScript
   - Twitter
-  - RSS
 write: false
 ---
 

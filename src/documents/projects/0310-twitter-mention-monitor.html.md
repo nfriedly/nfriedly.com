@@ -4,7 +4,6 @@ link: "http://twittermentionmonitor.com/"
 tags: 
   - Ruby on Rails
   - Twitter
-  - OAuth
   - BlueTrip
 write: false
 ---

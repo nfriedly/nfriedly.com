@@ -2,7 +2,6 @@
 title: Duck Duck Go + Google Suggest OpenSearch Plugin
 link: "http://ddgg.nfriedly.com/"
 tags: 
-  - Nginx
   - Node.js
   - JavaScript
   - OpenSearch

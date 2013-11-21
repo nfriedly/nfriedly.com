@@ -6,7 +6,6 @@ tags:
   - PHP
   - Prototype.js
   - "e-Commerce"
-  - Paypal
 write: false
 ---
 

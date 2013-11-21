@@ -4,7 +4,7 @@ link: /pagerank
 tags: 
   - PHP
   - JavaScript
-  - PageRank
+  - SEO
   - HTML
   - CSS
   - SQLite

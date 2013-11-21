@@ -4,8 +4,6 @@ link: /stuff/rss/
 picture: "/img/portfolio/rss-xslt.png"
 thumbnail: "/img/portfolio/thumbs/rss-xslt.png"
 tags: 
-  - RSS
-  - XSLT
   - JavaScript
   - CSS
 write: false

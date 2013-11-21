@@ -136,7 +136,7 @@ module.exports = {
  			// and convert the map into a list of objects
  			var results = []
  			_.each(hits, function(count, tag) {
- 				results.push({tag: tag, relativeFrequency: count * multiplier});
+ 				results.push({tag: tag, count: count, relativeFrequency: count * multiplier});
  			});
  			
  			return results.sort(function(a, b) {

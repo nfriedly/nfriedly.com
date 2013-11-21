@@ -4,7 +4,6 @@ link: /stuff/bubblegum/
 picture: /img/portfolio/bubblegum.jpg
 thumbnail: /img/portfolio/thumbs/bubblegum.jpg
 tags: 
-  - YouTube
   - HTML
   - CSS
   - JavaScript
