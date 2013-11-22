@@ -117,8 +117,20 @@ module.exports = {
 			.join(', ')
 		},
 		generateTagCloud: function(projects) {
+		 	// pre-fill the hits collection to emphasize/de-emphasize the items I'd like to do more/less work with
+			var hits = {
+				"Node.js": 5,
+				"Open Source": 4,
+				"Mobile-First": 4,
+				"DocPad": 3,
+				"Jasmine": 3,
+				"Travis CI": 3,
+				"Backbone.js": 2,
+				"Flash / ActionScript": -1,
+				"PHP": -5
+			};
+			
 		 	// build a map of name -> usage count
-			var hits = {};
 			_.each(projects, function(project) {
 				_.each(project.tags || [], function(tag) {
 					hits[tag] = hits[tag] || 0;
@@ -136,7 +148,7 @@ module.exports = {
  			// and convert the map into a list of objects
  			var results = []
  			_.each(hits, function(count, tag) {
- 				results.push({tag: tag, count: count, relativeFrequency: count * multiplier});
+ 				results.push({tag: tag, count: count, size: count * multiplier});
  			});
  			
  			return results.sort(function(a, b) {

@@ -245,19 +245,25 @@ main li { margin-top: 1em; }
 .muted a { color: inherit; }
 .muted a:hover { color: white; }
 
+.2-col {
+    columns: 2; -webkit-columns: 2; -moz-columns: 2; 
+    column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
+}
+
+.3-col {
+    columns: 3; -webkit-columns: 3; -moz-columns: 3; 
+    column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
+}
 
 .open-source-projects ul {
-
     @media (min-width: @screen-sm) {
         padding: 0;
-        columns: 2; -webkit-columns: 2; -moz-columns: 2; 
-        column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
+        list-style-type: none;
+        .2-col;
     }
     @media (min-width: @screen-md) {
-        columns: 3; -webkit-columns: 3; -moz-columns: 3; 
-        column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
+        .3-col;
     }
-    //list-style-type: none;
     margin-top: 1em;
     li {
         margin-top: 0;
@@ -269,12 +275,20 @@ main li { margin-top: 1em; }
     .tag-cloud .clear-tag { float: right; }
 }
 
+.portfolio-intro .links {
+    .2-col;
+    margin: 10px 0 0 0;
+    li {
+        margin: 0 0 5px 0;
+    }
+}
+
 .portfolio {
     img.thumb, a.thumb img {
         width: 100%;
     }
     article { 
-        margin-top: 20px; 
+        padding-top: 20px;
         h2 { margin-top: 0; }
         opacity: 1;
         max-height: 3000px;

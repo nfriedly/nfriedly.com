@@ -5,6 +5,7 @@ icon: laptop
 cssClass: portfolio
 scripts: /scripts/lightbox/lightbox-min.js
 stylesheets: /scripts/lightbox/lightbox.css
+headerImage: /img/temp-o-matic-crop.jpg
 priority: 1
 urls: 
     - /webdev
@@ -26,9 +27,10 @@ scripts:
 <% projects = @getFilesAtPath('projects/').toJSON() %>
 
 <div class="row">
-	<div class="col-sm-4">
-		<p><strong>Nathan Friedly is a web developer with a strong focus on JavaScript and node.js.</strong></p>
-		<ul class="icons-ul">
+	<div class="col-sm-4 portfolio-intro">
+		<p><strong>Nathan Friedly</strong> is a web developer with a strong focus on JavaScript and Node.js.</p>
+		<p>He loves working on open source, automating repetitive tasks, and shipping results.</p>
+		<ul class="icons-ul links">
 		    <li><a href="https://github.com/nfriedly"><i class="icon-github icon-li"></i> GitHub</a></li>
 		    <li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="icon-stackexchange  icon-li fa-stack-exchange"></i> Stack Overflow</a></li>
 		    <li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="icon-linkedin icon-li"></i> LinkedIn</a></li>
@@ -40,7 +42,7 @@ scripts:
             <div class="panel-heading">Click a tag to filter the portfolio <a class="clear-tag" href="#">Clear Filter [X]</a></div>
             <div class="panel-body">
                 <% for ts in @generateTagCloud(projects): %>
-                    <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.relativeFrequency %>%"><%= ts.tag %></a>
+                    <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.size %>%"><%= ts.tag %></a>
                 <% end %>
             </div>
 	    </div>
