@@ -6,7 +6,6 @@ In-progress replacement for my current website.
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
 Todo:
-* Clean up portfolio tags further
 * Minify and combine stuff - https://github.com/balupton/buildr
 * Clean up "about me" page
 * Add instagram feed to about page - maybe just photos by or tagged @nfriedly
@@ -17,7 +16,7 @@ Todo:
 * move SwfStore example to a heroku instance with ssl
 * Add something about Pleasant Hill, Ohio somewhere
 * Add keywords meta tag
-
+* Remove modified dependencies and get back to npm ones
 
 
 Build instructions

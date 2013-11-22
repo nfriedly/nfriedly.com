@@ -5,10 +5,10 @@ picture: /img/portfolio/turtlest.png
 thumbnail: /img/portfolio/thumbs/turtlest.png
 tags: 
   - WordPress
-  - HTML
-  - CSS
-  - Google Maps API
+  - SEO
 write: false
 ---
 
-We launched a WordPress based website for the Turtle St. B &amp; B to use as blog and contact site advertising their Bed and Breakfast and Extended stay offerings as well as other attractions local to Syracuse, NY.
+Launched a WordPress site with a customized template for the Turtle St. B &amp; B to use as blog and contact site advertising their Bed and Breakfast and Extended stay offerings as well as other attractions local to Syracuse, NY.
+
+Site included information for both business and tourists, a Google map with directions to their location, and a blog that receives frequent updates about local events.

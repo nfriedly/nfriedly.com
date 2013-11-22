@@ -3,7 +3,6 @@ title: Credit Card Invoicing System
 link: /client
 tags: 
   - "e-Commerce"
-  - PHP
   - CodeIgniter
 write: false
 ---

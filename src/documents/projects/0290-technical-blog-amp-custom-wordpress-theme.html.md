@@ -5,7 +5,6 @@ picture: /img/portfolio/techblog.png
 thumbnail: /img/portfolio/thumbs/techblog.png
 tags: 
   - WordPress
-  - PHP
   - HTML
   - CSS
 write: false

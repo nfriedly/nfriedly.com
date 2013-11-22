@@ -2,7 +2,6 @@
 title: "Embeddable Twitter & Facebook Posting and Interaction Tool"
 tags: 
   - JavaScript
-  - Facebook
   - Twitter
   - CSS
 write: false

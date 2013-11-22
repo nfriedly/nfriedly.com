@@ -8,6 +8,7 @@ tags:
   - Cake
   - Travis CI
   - NPM
+  - Open Source
 write: false
 ---
 

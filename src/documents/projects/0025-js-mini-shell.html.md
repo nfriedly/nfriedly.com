@@ -5,9 +5,7 @@ picture: "/img/portfolio/js-mini-shell.png"
 thumbnail: "/img/portfolio/thumbs/js-mini-shell.jpg"
 tags: 
   - JavaScript
-  - CSS Animation
-  - BootStrap
-  - Font Awesome
+  - Bootstrap
   - Mobile-First
   - Open Source
 write: false

@@ -5,15 +5,13 @@ picture: "/img/portfolio/nfriedly.com-v5.png"
 thumbnail: "/img/portfolio/thumbs/nfriedly.com-v5.jpg"
 tags: 
   - HTML
-  - BootStrap
+  - Bootstrap
   - DocPad
   - Node.js
   - LESS
   - CSS
-  - CSS Animation
-  - Amazon CloudFront
+  - AWS
   - Travis CI
-  - Font Awesome
   - JavaScript
   - Mobile-First
   - Open Source

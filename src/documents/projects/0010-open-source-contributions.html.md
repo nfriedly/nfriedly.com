@@ -6,10 +6,9 @@ tags:
   - JavaScript
   - Node.js
   - NPM
-  - Require.js
   - DocPad
-  - Amazon S3
-  - Grunt
+  - AWS
+  - Require.js
   - Browserify
 write: false
 cssClass: "open-source-projects tripple"

@@ -4,6 +4,7 @@ link: "http://nfriedly.com/techblog/2010/07/swf-for-javascript-cross-domain-flas
 tags: 
   - JavaScript
   - Flash / ActionScript
+  - Open Source
 write: false
 ---
 

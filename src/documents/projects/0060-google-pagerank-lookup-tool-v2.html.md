@@ -5,16 +5,16 @@ picture: /img/portfolio/pagerank.png
 thumbnail: /img/portfolio/thumbs/pagerank.png
 tags: 
   - Node.js
+  - JavaScript
   - Backbone.js
   - Bootstrap
   - Redis
-  - Grunt
-  - Amazon S3
-  - Amazon CloudFront
+  - AWS
   - Heroku
   - Browserify
   - Express
   - SEO
+  - Open Source
 write: false
 ---
 

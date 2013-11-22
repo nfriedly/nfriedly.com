@@ -12,7 +12,6 @@ tags:
     - jQuery
     - CORS
     - AJAX
-    - Grunt
     - LESS
 write: false
 ---
