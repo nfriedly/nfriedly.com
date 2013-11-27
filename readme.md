@@ -6,16 +6,16 @@ In-progress replacement for my current website.
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
 Todo:
+* Fix various link hover and focus effects - too small on headers, too big on menu button, invisible icons on icon-lists, images in portfolio
+* Add some style to images in portfolio
 * Minify and combine stuff - https://github.com/balupton/buildr
-* Clean up "about me" page
+* Clean up "about me" page - mention bicycling, money, pleasant hill, etc
 * Add instagram feed to about page - maybe just photos by or tagged @nfriedly
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * cleanup img/ directory
 * consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for blog
 * Write a blog post abut building the site - docpad basics, auto-deployment with travis ci, gh-pages + cloudfront, redirector plugin, bug fixing, etc
 * move SwfStore example to a heroku instance with ssl
-* Add something about Pleasant Hill, Ohio somewhere
-* Add keywords meta tag
 * Remove modified dependencies and get back to npm ones
 
 
