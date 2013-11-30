@@ -16,6 +16,6 @@ My second web proxy, this one built in node.js and designed from the ground up t
 
 It modifies the data on the fly instead of downloading the entire page, then parsing it, then passing it along to the user.
 
-Continuos Deployment: Automatically runs tests and deploys to Heroku after each GitHub push courtesy of Travis CI.
+Continuos Deployment: Travis CI automatically runs tests and deploys to Heroku after each GitHub push.
 
 Open Source: <a href="https://github.com/nfriedly/node-unblocker">https://github.com/nfriedly/node-unblocker</a>
