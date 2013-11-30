@@ -57,7 +57,7 @@ scripts:
     <% if project.picture: %>
         <article class="row <%= project.cssClass %>">
             <div class="col-xs-4">
-                <a class="thumb" href="<%= project.picture %>" rel="lightbox"><img src="<%= @getThumbnail(project.picture, { w: 360, h: 500, q: 70 }) %>" alt=""/></a>
+                <a class="thumb" href="<%= project.picture %>" rel="lightbox"><img src="<%= @getThumbnail(project.picture, { w: 360, h: 500, q: 70 }) %>" alt="" class="img-thumbnail" /></a>
             </div>
             <div class="col-sm-8">
                 <h2>
