@@ -68,7 +68,7 @@ function loadBackupCSS(url) {
 
 <header class="jumbotron" <%- "style=\"background-image: url(#{@document.headerImage});\"" if @document.headerImage %>>
 	<div class="container">
-		<h1><span><a href="<%= @document.url %>"><%- "<i class=\"icon-#{@document.icon}\"></i>" if @document.icon %> <%= @document.heading || @document.title %></a></span></h1>
+		<h1><a href="<%= @document.url %>"><%- "<i class=\"icon-#{@document.icon}\"></i>" if @document.icon %> <%= @document.heading || @document.title %></a></h1>
 		<% if @document.subHeading: %><h2><span><%- @document.subHeading %></span></h2><% end %>
 	</div>
 </header>

@@ -8,7 +8,6 @@ Built with [DocPad], [Markdown], [Bootstrap], and [Node.js]. Hosted on [GitHub P
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
 Todo:
-* Fix various link hover and focus effects - too small on headers, too big on menu button, invisible icons on icon-lists, images in portfolio
 * Minify and combine stuff - https://github.com/balupton/buildr
 * Clean up "about me" page - mention bicycling, money, pleasant hill, etc
 * Add instagram feed to about page - maybe just photos by or tagged @nfriedly

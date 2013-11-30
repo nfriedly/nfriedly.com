@@ -80,7 +80,7 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 		font-size: 20px;
 		text-decoration: none;
 		color: @gray;
-		&:hover { color: white; background-color: inherit; }
+		&:hover, &:focus, &:active { color: white; background-color: inherit; }
 		.icon-stack-base { color: black; opacity: 0.8; }
 	}
 
@@ -110,13 +110,15 @@ header.jumbotron {
 	
 	font-size: 40px; 
 	padding: 50px 0; 
+	h1 { font-size: 100%; line-height: 150%;}
+	h2 { font-size: 40%;  line-height: 150%;}
 
-	span { padding: 0.25% 0.5%; background: rgba(0,0,0,0.8); }
-	h1 { font-size: 100%; line-height: 150%; span {padding-right: 10px;} }
-	h2 { font-size: 40%;  line-height: 150%; span {padding: 0 5px 0 10px;} }
-	color: #888;
-	a { color: white; }
-	a:hover { color: #ddd; text-decoration:none; }
+	a, span {background: rgba(0,0,0,0.8); padding-top: 0.25%; padding-bottom: 0.25%}
+	a { color: white;  padding-left: 10px; padding-right: 10px; }
+	
+	span {color: #888; }
+	a:hover { color: #ddd; text-decoration:none;}
+	a:hover, a:active, a:focus { background-color: @hoverLinkColor; }
 }
 
 @media (min-width: @screen-md) {
@@ -281,12 +283,19 @@ main li { margin-top: 1em; }
     li {
         margin: 0 0 5px 0;
     }
+    li i, li:hover i { color: @linkColor; }
 }
+
 
 .portfolio {
     img.thumb, a.thumb img {
         width: 100%;
     }
+    
+    
+    a.thumb:hover { background-color: inherit; }
+    a.thumb:hover img { background-color: @hoverLinkColor; }
+    
     article { 
         padding-top: 20px;
         h2 { margin-top: 0; }
