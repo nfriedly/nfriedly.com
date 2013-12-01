@@ -22,7 +22,7 @@ Recently, I realized that my server was trying to send out several hundred faili
 
 I&#8217;m using the [BackUpWordPress][6] so this happens automatically, but I went and ran an extra backup and downloaded the files to my laptop just to be safe.
 
-## Stem 2: Clean up the old data
+## Step 2: Clean up the old data
 
 This SQL query deletes every email in the `comment_notifier` table that doesn&#8217;t have a corresponding comment. (Most likely because the comment was already deleted as spam.)
 
