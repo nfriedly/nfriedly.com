@@ -21,6 +21,8 @@ I frequently make small improvements to Open Source projects that I work with. H
  - **[base64codec](https://github.com/chick307/base64codec)**: Fixed an error when used client side with jam.js / require.js.
 
  - **[connect-memcached](https://github.com/balor/connect-memcached)**: Improved documentation.
+ 
+ - **[curated-hn-hiring](https://github.com/perspectivezoom/curated-hn-hiring)**: Added source link.
 
  - **[DocPad](docpad.org/)**: Fixed a bug in the unit test runner.
 
@@ -35,6 +37,8 @@ I frequently make small improvements to Open Source projects that I work with. H
  - **[Masonry](http://masonry.desandro.com/)**: Fixed some accidental global variable references.
 
  - **[Node.js](http://nodejs.org/)**: Fixed a bug in the REPL, added unit tests.
+ 
+ - **[node-memwatch](https://github.com/nfriedly/node-memwatch)**: Improved documentation.
 
  - **[request](https://github.com/mikeal/request)**: Fixed a filename/mimetype bug.
 
