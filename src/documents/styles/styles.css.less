@@ -280,11 +280,14 @@ main li { margin-top: 1em; }
 
 .portfolio-intro .links {
     .2-col;
-    margin: 10px 0 0 0;
+    column-gap: 1.5ex; -webkit-column-gap: 1.5ex; -moz-column-gap: 1.5ex;
+    margin: 10px 0 0 1ex;
+    padding: 0;
     li {
         margin: 0 0 5px 0;
+        list-style-type: none;
     }
-    li i, li:hover i { color: @linkColor; }
+    li i { padding-right: 1ex; }
 }
 
 
