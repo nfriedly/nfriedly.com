@@ -17,6 +17,8 @@ Todo:
 * Write a blog post abut building the site - docpad basics, auto-deployment with travis ci, gh-pages + cloudfront, redirector plugin, bug fixing, etc
 * move SwfStore example to a heroku instance with ssl
 * Remove modified dependencies and get back to npm ones
+* Add travis build images to appropriate projects
+* Figure out new project naming / sorting
 
 
 Build instructions

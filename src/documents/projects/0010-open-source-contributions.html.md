@@ -16,7 +16,7 @@ cssClass: "open-source-projects tripple"
 
 I frequently make small improvements to Open Source projects that I work with. Here's a not-quite-comprehensive list:
 
- - **[AwsSum](http://awssum.io)**: Added support for streaming uploads to Amazon S3
+ - **[AwsSum](http://awssum.io)**: Added support for streaming uploads to Amazon S3.
 
  - **[base64codec](https://github.com/chick307/base64codec)**: Fixed an error when used client side with jam.js / require.js.
 
@@ -31,6 +31,8 @@ I frequently make small improvements to Open Source projects that I work with. H
  - **[docpad-plugin-cleanurls](http://docpad.org/plugin/cleanurls)**: Added support for skipping pages and associated unit tests.
 
  - **[docpad-plugin-ghpages](https://github.com/docpad/docpad-plugin-ghpages)**: Fixed a security issue when using this plugin on Travis CI.
+ 
+ - **[Firefox](https://www.mozilla.org/en-US/firefox/new/)**: Supplied bug reports with narrowed-down test cases.
 
  - **[grunt-browserify2](https://github.com/shanejonas/grunt-browserify2)**: Improved documentation.
 
@@ -46,4 +48,4 @@ I frequently make small improvements to Open Source projects that I work with. H
 
  - **[sitemap.js](https://github.com/ekalinin/sitemap.js)**: Fixed a bug with URLs that contain the string 'http', added unit tests, improved performance by ~4%.
 
- - **[string.js](https://github.com/jprichardson/string.js)**: Added suport for padding with numbers and associated unit tests
+ - **[string.js](https://github.com/jprichardson/string.js)**: Added suport for padding with numbers and associated unit tests.

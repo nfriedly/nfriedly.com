@@ -6,9 +6,10 @@ tags:
   - Node.js
   - JavaScript
   - Open Source
-  - Heroku
   - HTML
   - CSS
+  - Heroku
+  - Travis CI
 write: false
 ---
 
@@ -16,6 +17,6 @@ write: false
 
 It also supports encrypted searches, and has a proxy built with node.js that corrects !bang's that Google removes from it's suggestions. 
 
-The proxy originally sat behind a high-performance Nginx server, but has since been moved to heroku.
+The proxy originally sat behind a high-performance Nginx server, but has since been moved to Heroku.
 
 Open Source: https://github.com/nfriedly/node-bang-suggest
