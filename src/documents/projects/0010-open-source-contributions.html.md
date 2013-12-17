@@ -35,6 +35,8 @@ I frequently make small improvements to Open Source projects that I work with. H
  - **[Firefox](https://www.mozilla.org/en-US/firefox/new/)**: Supplied bug reports with narrowed-down test cases.
 
  - **[grunt-browserify2](https://github.com/shanejonas/grunt-browserify2)**: Improved documentation.
+ 
+ - **[Jasmine](http://jasmine.github.io/)**: Improved documentation.
 
  - **[Masonry](http://masonry.desandro.com/)**: Fixed some accidental global variable references.
 
