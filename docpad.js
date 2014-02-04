@@ -49,6 +49,7 @@ module.exports = {
         		"/stuff/ddgg-da": "http://ddgg.nfriedly.com/",
         		"/stuff/duckduckgoogle": "http://ddgg.nfriedly.com/",
         		"/stuff/rss-xslt": "http://rss-xslt.herokuapp.com/",
+        		"/stuff/jquery-requirejs-noconflict-issue/": "https://github.com/nfriedly/nfriedly.com-v4/tree/master/stuff/jquery-requirejs-noconflict-issue",
         		"/px": "http://nodeunblocker.com/",
         		"/px/index.php": "http://nodeunblocker.com/",
         		"/px/poxy/": "http://nodeunblocker.com/",
@@ -59,7 +60,7 @@ module.exports = {
         		"/px/invisiproxy/index.php": "http://nodeunblocker.com/",
         		"/px/phpr0xi": "http://nodeunblocker.com/",
         		"/px/phpr0xi/index.php": "http://nodeunblocker.com/",
-        		
+
         		// onsite, but easier this way
         		"/files/Nathan-Friedly-Resume.pdf" : "http://nfriedly.com/Nathan-Friedly-Resume.pdf",
         	}	
