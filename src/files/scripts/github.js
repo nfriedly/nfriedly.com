@@ -45,7 +45,9 @@
 		'pagerank.nfriedly.com': 'icon-signal',
 		'node-whats-my-ip': 'icon-desktop',
 		'air-force-game': 'icon-fighter-jet',
-		'Twitter-Mention-Monitor': 'icon-twitter'
+		'Twitter-Mention-Monitor': 'icon-twitter',
+		'Coin-Allocator': 'icon-bitcoin',
+		'node-gatling': 'icon-asterisk'
 	}
 
 	function handleGH(response) {
