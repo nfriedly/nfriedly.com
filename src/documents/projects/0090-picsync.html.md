@@ -1,6 +1,5 @@
 ---
 title: PicSync
-link: "http://picsyncapp.com"
 picture: /img/portfolio/picsync.png
 tags: 
   - Node.js
