@@ -47,7 +47,10 @@
 		'air-force-game': 'icon-fighter-jet',
 		'Twitter-Mention-Monitor': 'icon-twitter',
 		'Coin-Allocator': 'icon-bitcoin',
-		'node-gatling': 'icon-asterisk'
+		'node-gatling': 'icon-asterisk',
+		'picsync-android-client': 'icon-android',
+		'picsync-server': 'icon-iphone',
+		'nathananderin.com': 'icon-heart'
 	}
 
 	function handleGH(response) {
