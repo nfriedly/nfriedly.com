@@ -5,7 +5,7 @@ tags:
   - Node.js
   - JavaScript
   - Open Source
-  - Travis CI
+  - Continuos Integration
 write: false
 ---
 
