@@ -50,7 +50,9 @@
 		'node-gatling': 'icon-asterisk',
 		'picsync-android-client': 'icon-android',
 		'picsync-server': 'icon-iphone',
-		'nathananderin.com': 'icon-heart'
+		'nathananderin.com': 'icon-heart',
+		'Meteor-ODB-II': 'icon-dashboard',
+		'ypool-xpm-miner-watcher': 'icon-gears'
 	}
 
 	function handleGH(response) {
