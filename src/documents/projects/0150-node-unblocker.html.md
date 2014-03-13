@@ -11,7 +11,7 @@ tags:
   - Continuos Integration
   - Continuos Deployment
   - Redis
-  - Mobile First
+  - Mobile-First
 write: false
 ---
 
