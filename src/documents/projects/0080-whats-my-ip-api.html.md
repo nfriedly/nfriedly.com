@@ -5,7 +5,6 @@ picture: "/img/portfolio/whats-my-ip.png"
 thumbnail: "/img/portfolio/thumbs/whats-my-ip.jpg"
 tags: 
   - Node.js
-  - JSON
   - CORS
   - Heroku
   - Open Source

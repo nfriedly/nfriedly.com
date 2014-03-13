@@ -9,13 +9,11 @@ tags:
   - JavaScript
   - jQuery
   - AJAX
-  - JSON
-  - Cart32
 write: false
 ---
 
 The automatic setup system I built for iBoomerang. When a customer signs up for a new tool, if they are a current customer, it adds the tool to their account, otherwise it creates them a new account.
 
-The Cart 32 shopping cart system is a closed source system, so the auto-setup system works entirely through javascript in the templates that scrapes the users information and submits it to a PHP API I built.
+The Cart32 shopping cart system is a closed source system, so the auto-setup system works entirely through javascript in the templates that scrapes the users information and submits it to a PHP API I built.
 
 You can see it live, but only if you buy something.

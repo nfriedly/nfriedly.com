@@ -6,7 +6,6 @@ tags:
   - PHP
   - JavaScript
   - AJAX
-  - JSON
   - jQuery
   - CodeIgniter
 write: false

@@ -125,6 +125,7 @@ module.exports = {
 				"Mobile-First": 4,
 				"DocPad": 3,
 				"Jasmine": 3,
+				"Meteor": 3,
 				"Continuos Deployment": 3,
 				"Continuos Integration": 3,
 				"Backbone.js": 2,

@@ -7,7 +7,6 @@ tags:
   - PHP
   - JavaScript
   - AJAX
-  - JSON
   - jQuery
 write: false
 ---
