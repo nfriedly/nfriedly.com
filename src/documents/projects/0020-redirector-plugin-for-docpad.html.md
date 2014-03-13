@@ -6,7 +6,7 @@ tags:
   - DocPad
   - CoffeeScript
   - Cake
-  - Travis CI
+  - Continuos Integration
   - NPM
   - Open Source
 write: false

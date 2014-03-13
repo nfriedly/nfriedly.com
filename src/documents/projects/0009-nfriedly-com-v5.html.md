@@ -11,7 +11,7 @@ tags:
   - LESS
   - CSS
   - AWS
-  - Travis CI
+  - Continuos Deployment
   - JavaScript
   - Mobile-First
   - Open Source

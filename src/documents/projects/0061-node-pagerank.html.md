@@ -6,7 +6,7 @@ tags:
   - JavaScript
   - NPM
   - Open Source
-  - Travis CI
+  - Continuos Integration
 write: false
 ---
 

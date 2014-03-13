@@ -8,7 +8,8 @@ tags:
   - JavaScript
   - Heroku
   - Open Source
-  - Travis CI
+  - Continuos Integration
+  - Continuos Deployment
   - Redis
   - Mobile First
 write: false

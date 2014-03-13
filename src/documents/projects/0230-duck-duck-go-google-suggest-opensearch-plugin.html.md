@@ -9,7 +9,8 @@ tags:
   - HTML
   - CSS
   - Heroku
-  - Travis CI
+  - Continuos Integration
+  - Continuos Deployment
 write: false
 ---
 
