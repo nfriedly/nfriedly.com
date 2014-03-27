@@ -52,7 +52,8 @@
 		'picsync-server': 'icon-iphone',
 		'nathananderin.com': 'icon-heart',
 		'Meteor-ODB-II': 'icon-dashboard',
-		'ypool-xpm-miner-watcher': 'icon-gears'
+		'ypool-xpm-miner-watcher': 'icon-gears',
+		'posture-reminder': 'icon-male'
 	}
 
 	function handleGH(response) {
