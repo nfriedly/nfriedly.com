@@ -53,7 +53,8 @@
 		'nathananderin.com': 'icon-heart',
 		'Meteor-ODB-II': 'icon-dashboard',
 		'ypool-xpm-miner-watcher': 'icon-gears',
-		'posture-reminder': 'icon-male'
+		'posture-reminder': 'icon-male',
+		'facebook-event-updater': 'icon-facebook-sign'
 	}
 
 	function handleGH(response) {
