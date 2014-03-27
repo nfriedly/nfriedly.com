@@ -5,7 +5,7 @@ picture: /img/portfolio/odb-ii.png
 tags:
  - Meteor
  - JavaScript
- - BootStrap
+ - Bootstrap
  - HTML
  - CSS
  - Open Source
