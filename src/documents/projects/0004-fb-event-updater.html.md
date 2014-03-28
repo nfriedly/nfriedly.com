@@ -1,6 +1,6 @@
 ---
 title: Facebook Event Updater
-link: http://nfriedly.github.io/facebook-event-updater/
+link: https://sociablelabs.github.io/facebook-event-updater/
 picture: "/img/portfolio/fb-event-updater.png"
 date: 2014-03-27
 tags:
