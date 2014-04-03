@@ -54,7 +54,9 @@
 		'Meteor-ODB-II': 'icon-dashboard',
 		'ypool-xpm-miner-watcher': 'icon-gears',
 		'posture-reminder': 'icon-male',
-		'facebook-event-updater': 'icon-facebook-sign'
+		'facebook-event-updater': 'icon-facebook-sign',
+		'whatsmyua.com-v1': 'icon-desktop',
+		'whatsmyua.com': 'icon-desktop'
 	}
 
 	function handleGH(response) {
