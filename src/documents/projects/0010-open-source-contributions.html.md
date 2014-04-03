@@ -10,7 +10,9 @@ tags:
   - AWS
   - Require.js
   - Browserify
+  - jQuery
 write: false
+date: 2014-04-02
 cssClass: "open-source-projects tripple"
 ---
 
@@ -37,6 +39,8 @@ I frequently make small improvements to Open Source projects that I work with. H
  - **[grunt-browserify2](https://github.com/shanejonas/grunt-browserify2)**: Improved documentation.
  
  - **[Jasmine](http://jasmine.github.io/)**: Improved documentation.
+ 
+ - **[jQuery.highlightRegex](https://github.com/jbr/jQuery.highlightRegex)**: Fixed bug when plugin is run more than once.
 
  - **[Masonry](http://masonry.desandro.com/)**: Fixed some accidental global variable references.
 

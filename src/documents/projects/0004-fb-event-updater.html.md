@@ -1,6 +1,7 @@
 ---
 title: Facebook Event Updater
 link: https://sociablelabs.github.io/facebook-event-updater/
+source: https://github.com/SociableLabs/facebook-event-updater
 picture: "/img/portfolio/fb-event-updater.png"
 date: 2014-03-27
 tags:
@@ -10,6 +11,7 @@ tags:
  - JavaScript
  - jQuery
  - Mobile First
+ - Open Source
 ---
 Facebook broke part of their website a while back such that app admins could no longer edit events that were created by their apps. We reported this to them and they <a href="https://developers.facebook.com/bugs/494984083903743">admitted it was a bug, but decided not to fix it</a>.
 
