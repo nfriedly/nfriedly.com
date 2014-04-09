@@ -2,7 +2,9 @@
 title: 'Search Engine Optimization and Marketing (SEO & SEM)'
 author: nFriedly
 layout: post
-url: /2009/06/search-engine-optimization-and-marketing-seo-sem/
+url: /techblog/2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/
+urls:
+    - /2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/
 headerImage: http://farm6.staticflickr.com/5550/9195944224_611dc4dc79_b.jpg
 imageCredits: 
 	"Header crown photo by jason train" : http://www.flickr.com/photos/98004108@N03/9195944224/

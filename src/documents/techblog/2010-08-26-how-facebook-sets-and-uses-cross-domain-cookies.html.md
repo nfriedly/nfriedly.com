@@ -2,7 +2,9 @@
 title: How Facebook sets and uses cross-domain cookies
 author: nFriedly
 layout: post
-url: /2010/08/how-facebook-sets-and-uses-cross-domain-cookies/
+url: /techblog/2010/08/how-facebook-sets-and-uses-cross-domain-cookies/
+urls:
+    - /2010/08/how-facebook-sets-and-uses-cross-domain-cookies/
 headerImage: http://farm9.staticflickr.com/8184/8441826101_551240bc4f_b.jpg
 tags:
   - cookie
