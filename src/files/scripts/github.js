@@ -56,7 +56,8 @@
 		'posture-reminder': 'icon-male',
 		'facebook-event-updater': 'icon-facebook-sign',
 		'whatsmyua.com-v1': 'icon-desktop',
-		'whatsmyua.com': 'icon-desktop'
+		'whatsmyua.com': 'icon-desktop',
+		'elance-withdrawal': 'icon-dollar'
 	}
 
 	function handleGH(response) {
