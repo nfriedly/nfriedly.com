@@ -22,6 +22,8 @@ tags:
 featured: true
 ---
 
+<div class="alert alert-danger"><h1>IMPORTANT SECURITY NOTICE</h1><p>Versions 1.9 and older are vulnerable to a XSS attack. Please upgrade to 1.9.1 or newer immediately!</p></div>
+
 <img class="right" title="325990_chocolate_chip_cookies_2" src="http://nfriedly.com/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.
   
 However, I was surprisingly unable to find any complete library or how-to guide for connecting flash cookies to javascript. So I dusted off my flash skills and built one, and and now you get to enjoy the fruit of my labor:
