@@ -57,7 +57,8 @@
 		'facebook-event-updater': 'icon-facebook-sign',
 		'whatsmyua.com-v1': 'icon-desktop',
 		'whatsmyua.com': 'icon-desktop',
-		'elance-withdrawal': 'icon-dollar'
+		'elance-withdrawal': 'icon-dollar',
+		'True-Tile-Site': 'icon-th'
 	}
 
 	function handleGH(response) {
