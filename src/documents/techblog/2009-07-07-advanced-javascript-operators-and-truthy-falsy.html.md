@@ -52,7 +52,7 @@ function exampleFunction(){
 // BUT exampleFunction() is falsy because it has no return (undefined)
 ```
 
-Gotchas to watch out for: the strings `"0"` and `false` are both considered truthy.  You can convert a string to a number with the `parseInt()` and `parseFloat()` functions, or by just multiplying it by `1`.
+Gotchas to watch out for: the strings `"0"` and `"false"` are both considered truthy.  You can convert a string to a number with the `parseInt()` and `parseFloat()` functions, or by just multiplying it by `1`.
 
 ``` js
 var test = "0"; // this is a string, not a number
@@ -120,15 +120,13 @@ Where would you ever use this? The OR operator allows you to easily specify defa
 
 ``` js
 function sayHi(name){
-	var name = name || "Dave";
+	name = name || "Dave";
 	alert("Hi " + name);
 }
 
 sayHi("Nathan"); // alerts "Hi Nathan";
 
-sayHi(); // alerts "Hi Dave",
-
-// name is set to null when the function is started
+sayHi(); // alerts "Hi Dave", name is set to null when the function is started
 
 ```
 
@@ -153,8 +151,6 @@ var checkbox = document.getElementById("agreeToTerms");
 var name = checkbox.checked && prompt("What is your name");
 
 // name is either their name, or false if they haven't checked the AgreeToTerms checkbox
-
-// IMPORTANT NOTE: Internet Explorer 8 breaks the prompt function, so you probably shouldn't use it.
 ```
 
 #### Logical NOT, `!`
