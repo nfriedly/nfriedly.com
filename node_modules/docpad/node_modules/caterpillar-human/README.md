@@ -9,10 +9,13 @@
 <!-- BADGES/ -->
 
 [![Build Status](http://img.shields.io/travis-ci/bevry/caterpillar-human.png?branch=master)](http://travis-ci.org/bevry/caterpillar-human "Check this project's build status on TravisCI")
-[![NPM version](https://badge.fury.io/js/caterpillar-human.png)](https://npmjs.org/package/caterpillar-human "View this project on NPM")
+[![NPM version](http://badge.fury.io/js/caterpillar-human.png)](https://npmjs.org/package/caterpillar-human "View this project on NPM")
+[![Dependency Status](https://david-dm.org/bevry/caterpillar-human.png?theme=shields.io)](https://david-dm.org/bevry/caterpillar-human)
+[![Development Dependency Status](https://david-dm.org/bevry/caterpillar-human/dev-status.png?theme=shields.io)](https://david-dm.org/bevry/caterpillar-human#info=devDependencies)<br/>
 [![Gittip donate button](http://img.shields.io/gittip/bevry.png)](https://www.gittip.com/bevry/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![BitCoin donate button](http://img.shields.io/bitcoin/donate.png?color=yellow)](https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a "Donate once-off to this project using BitCoin")
 
 <!-- /BADGES -->
 
@@ -28,9 +31,14 @@ Turn your [Caterpillar](https://github.com/bevry/caterpillar) logger stream into
 
 ## Install
 
-### [Node](http://nodejs.org/), [Browserify](http://browserify.org/)
+### [Node](http://nodejs.org/)
 - Use: `require('caterpillar-human')`
 - Install: `npm install --save caterpillar-human`
+
+### [Browserify](http://browserify.org/)
+- Use: `require('caterpillar-human')`
+- Install: `npm install --save caterpillar-human`
+- CDN URL: `//wzrd.in/bundle/caterpillar-human@2.1.2`
 
 ### [Ender](http://ender.jit.su/)
 - Use: `require('caterpillar-human')`
@@ -109,7 +117,7 @@ new (require('caterpillar-human').Human)(config)
 <!-- HISTORY/ -->
 
 ## History
-[Discover the change history by heading on over to the `History.md` file.](https://github.com/bevry/caterpillar-human/blob/master/History.md#files)
+[Discover the change history by heading on over to the `HISTORY.md` file.](https://github.com/bevry/caterpillar-human/blob/master/HISTORY.md#files)
 
 <!-- /HISTORY -->
 
@@ -129,16 +137,17 @@ These amazing people are maintaining this project:
 No sponsors yet! Will you be the first?
 
 [![Gittip donate button](http://img.shields.io/gittip/bevry.png)](https://www.gittip.com/bevry/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![BitCoin donate button](http://img.shields.io/bitcoin/donate.png?color=yellow)](https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a "Donate once-off to this project using BitCoin")
 
 ### Contributors
 
 These amazing people have contributed code to this project:
 
-- Benjamin Lupton <b@lupton.cc> (https://github.com/balupton) - [view contributions](https://github.com/bevry/caterpillar-human/commits?author=balupton)
+- [Benjamin Lupton](https://github.com/balupton) <b@lupton.cc> — [view contributions](https://github.com/bevry/caterpillar-human/commits?author=balupton)
 
-[Become a contributor!](https://github.com/bevry/caterpillar-human/blob/master/Contributing.md#files)
+[Become a contributor!](https://github.com/bevry/caterpillar-human/blob/master/CONTRIBUTING.md#files)
 
 <!-- /BACKERS -->
 

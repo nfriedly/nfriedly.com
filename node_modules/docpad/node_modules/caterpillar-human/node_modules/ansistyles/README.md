@@ -2,6 +2,8 @@
 
 Functions that surround a string with ansistyle codes so it prints in style.
 
+In case you need colors, like `red`, have a look at [ansicolors](https://github.com/thlorenz/ansicolors).
+
 ## Installation
 
     npm install ansistyles
