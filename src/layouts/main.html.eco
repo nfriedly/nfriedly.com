@@ -40,6 +40,9 @@ function loadBackupCSS(url) {
 
 <%- @getBlock("styles").add(["/styles/styles.css"]).add(@getDocument().get('stylesheets') or []).toHTML() %>
 
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
 </head>
 <body class="<%= @document.cssClass %>">
 
