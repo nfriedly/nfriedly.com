@@ -77,7 +77,21 @@ module.exports = {
 				.on("add", function (model)  {
                 	model.setMetaDefaults({'cssClass': 'post'})
                 });
-		}
+		},
+        projects: function() {
+            var projects = this.getFilesAtPath('projects/');
+            projects.each(function(project) {
+                project.setMetaDefaults({'write': 'false'});
+            });
+            projects.on("add", function (model)  {
+                model.setMetaDefaults({'write': 'false'})
+            });
+            return projects;
+            /*
+                .findAllLive({relativeOutDirPath:'projects'}, [{filename:-1}])
+                ;
+            */
+        }
 	},
 	templateData: {
 		getFirstImage: function(post) { 

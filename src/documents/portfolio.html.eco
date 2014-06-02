@@ -25,7 +25,7 @@ scripts:
     - /scripts/portfolio.js
 ---
 
-<% projects = @getFilesAtPath('projects/').toJSON() %>
+<% projects = @getCollection('projects').toJSON() %>
 
 <div class="row">
 	<div class="col-sm-4 portfolio-intro">
