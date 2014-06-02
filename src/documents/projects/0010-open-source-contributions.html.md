@@ -1,5 +1,4 @@
 ---
-id: 1234456
 title: Open Source Contributions
 tags: 
   - Open Source

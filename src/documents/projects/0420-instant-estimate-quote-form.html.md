@@ -9,4 +9,4 @@ tags:
 write: false
 ---
 
-<a rel="lightbox" title="<a href='/estimate'>See it live</a>" href="/img/portfolio/Instant-Estimate.png"><img src="/img/portfolio/thumbs/instantestimate.png" class="left" alt="" /></a>Gives you a ballpark price for development services.
+<a rel="lightbox" title="<a href='/estimate'>See it live</a>" href="/img/portfolio/Instant-Estimate.png"><img src="/img/portfolio/instantestimate.png" class="left" alt="" /></a>Gives you a ballpark price for development services.

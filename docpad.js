@@ -135,6 +135,7 @@ module.exports = {
 		 	// pre-fill the hits collection to emphasize/de-emphasize the items I'd like to do more/less work with
 			var hits = {
 				"Node.js": 5,
+				"AngularJS": 5,
 				"Open Source": 4,
 				"Mobile-First": 4,
 				"DocPad": 3,
