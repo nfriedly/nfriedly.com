@@ -6,13 +6,13 @@ tags:
  - Meteor
  - JavaScript
  - Bootstrap
- - HTML
  - CSS
+ - Handlebars.js
  - Open Source
  - Mongo DB
  - Mobile First
- - Continuos Deployment
- - Continuos Integration
+ - Continuous Integration
+ - CasperJS
 ---
 I built this to look up ODB-II diagnostic codes from my phone. (And also because I wanted to learn <a href="http://www.meteor.com/">Meteor</a> a bit better.)
 

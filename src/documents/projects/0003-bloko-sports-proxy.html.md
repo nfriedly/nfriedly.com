@@ -5,9 +5,11 @@ picture: "/img/portfolio/bloko.png"
 date: 2014-04-01
 tags:
  - JavaScript
- - node.js
+ - Node.js
+ - Sails.js
  - Backbone.js
  - AJAX
+ - AWS
 ---
 The Bloko Sports Proxy allows you to browse the internet without fear of "spoilers" telling you the final score of a game you were looking forward to watching later.
 

@@ -323,8 +323,24 @@ main li { margin-top: 1em; }
             transition: all 1s;
         }
     }
-    
-    
+
+    .tag-cloud a {
+      transition: font-size 1s;
+    }
+
+    .hide-small-tags a.small-tag {
+      font-size: 0% !important; // this makes it small, but not completely gone
+      position: absolute; // this makes it not take up any space
+    }
+
+    a.show-small-tags {
+      display: none;
+    }
+    .hide-small-tags a.show-small-tags {
+      display: inline;
+      float:right;
+      cursor: pointer;
+    }
 }
 
 .projects li { margin-top: 3px; }

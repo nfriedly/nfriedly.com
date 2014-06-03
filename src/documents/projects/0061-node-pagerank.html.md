@@ -6,7 +6,7 @@ tags:
   - JavaScript
   - NPM
   - Open Source
-  - Continuos Integration
+  - Continuous Integration
 write: false
 ---
 

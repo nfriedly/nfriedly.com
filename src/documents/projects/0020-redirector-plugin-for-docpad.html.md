@@ -5,7 +5,7 @@ icon: "angle-double-right"
 tags: 
   - DocPad
   - CoffeeScript
-  - Continuos Integration
+  - Continuous Integration
   - NPM
   - Open Source
 write: false

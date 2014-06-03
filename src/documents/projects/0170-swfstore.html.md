@@ -8,7 +8,7 @@ tags:
   - Flash / ActionScript
   - Open Source
   - Jasmine
-  - Continuos Integration
+  - Continuous Integration
 write: false
 ---
 

@@ -5,11 +5,11 @@ tags:
   - Node.js
   - JavaScript
   - Open Source
-  - Continuos Integration
+  - Continuous Integration
 write: false
 ---
 
-I built Gatling to abstract some of the repetitive work I saw myself doing with each Node.js 
+<i class="icon-asterisk pull-right icon-4x"></i> I built Gatling to abstract some of the repetitive work I saw myself doing with each Node.js 
 project I deploy: setting up a cluster server to use all available CPU cores, adding domains 
 to prevent errors in one request from killing other request, setting up monitoring, and a 
 few other small things.

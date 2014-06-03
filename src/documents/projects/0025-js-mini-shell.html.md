@@ -6,7 +6,7 @@ thumbnail: "/img/portfolio/thumbs/js-mini-shell.jpg"
 tags: 
   - JavaScript
   - Bootstrap
-  - Mobile-First
+  - Mobile First
   - Open Source
 write: false
 ---

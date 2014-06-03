@@ -1,11 +1,11 @@
 ---
 title: Sociable Labs
 picture: /img/portfolio/claires_gallery.jpg
+link: http://www.sociablelabs.com/
 tags:
     - JavaScript
     - Java
     - Node.js
-    - Jam.js
     - Require.js
     - Jasmine
     - Handlebars.js
@@ -13,7 +13,8 @@ tags:
     - CORS
     - AJAX
     - LESS
-    - AngularJs
+    - PostgreSQL
+    - Memcached
 write: false
 ---
 
@@ -24,5 +25,3 @@ I implemented the Jam.js / Require.js module bundling system that compiles a uni
 I set up automated unit testing of the front-end code with Jasmine and jasmine-node. as well as code quality and complexity checks with JSHint and js-complexity-viz.
 
 I've also written a fair amount of Java code for our Jetty / RESTEasy / PostgreSQL back-end.
-
-Later on, when Sociable Labs merged with Viral Ninjas, I began working on their node.js / AngularJS application as well.

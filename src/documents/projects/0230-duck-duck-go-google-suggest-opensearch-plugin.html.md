@@ -9,8 +9,7 @@ tags:
   - HTML
   - CSS
   - Heroku
-  - Continuos Integration
-  - Continuos Deployment
+  - Continuous Integration
 write: false
 ---
 

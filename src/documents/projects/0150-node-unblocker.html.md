@@ -8,10 +8,9 @@ tags:
   - JavaScript
   - Heroku
   - Open Source
-  - Continuos Integration
-  - Continuos Deployment
+  - Continuous Integration
   - Redis
-  - Mobile-First
+  - Mobile First
 write: false
 ---
 

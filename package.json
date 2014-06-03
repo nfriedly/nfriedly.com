@@ -7,18 +7,18 @@
     "npm": "1.3"
   },
   "dependencies": {
-    "docpad": "^6.66.0",
-    "docpad-plugin-eco": "^2.0.3",
-    "docpad-plugin-livereload": "^2.6.0",
-    "docpad-plugin-marked": "^2.2.1",
-    "docpad-plugin-less": "^2.4.1",
-    "docpad-plugin-highlightjs": "^2.2.1",
-    "underscore": "~1.5.2",
-    "docpad-plugin-sunny": "^2.1.0",
-    "docpad-plugin-sitemap": "^2.2.0",
-    "docpad-plugin-cleanurls": "^2.7.0",
-    "docpad-plugin-redirector": "^2.0.1",
-    "docpad-plugin-thumbnails": "^2.1.2"
+    "docpad": "~6.68.0",
+    "docpad-plugin-cleanurls": "~2.7.0",
+    "docpad-plugin-eco": "~2.0.3",
+    "docpad-plugin-highlightjs": "~2.2.1",
+    "docpad-plugin-less": "~2.4.1",
+    "docpad-plugin-livereload": "~2.6.0",
+    "docpad-plugin-marked": "~2.2.1",
+    "docpad-plugin-redirector": "~2.0.1",
+    "docpad-plugin-sitemap": "~2.2.0",
+    "docpad-plugin-sunny": "~2.1.0",
+    "docpad-plugin-thumbnails": "~2.1.2",
+    "underscore": "~1.5.2"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

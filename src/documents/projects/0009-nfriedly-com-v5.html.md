@@ -10,9 +10,9 @@ tags:
   - LESS
   - CSS
   - AWS
-  - Continuos Deployment
+  - Continuous Integration
   - JavaScript
-  - Mobile-First
+  - Mobile First
   - Open Source
 write: false
 ---

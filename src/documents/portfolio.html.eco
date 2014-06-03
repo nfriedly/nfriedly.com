@@ -39,12 +39,13 @@ scripts:
 		</ul>
 	</div>
 	<div class="col-sm-8">
-	    <div class="panel panel-default tag-cloud">
+	    <div class="panel panel-default tag-cloud hide-small-tags">
             <div class="panel-heading">Click a tag to filter the portfolio <a class="clear-tag" href="#">Clear Filter [X]</a></div>
             <div class="panel-body">
                 <% for ts in @generateTagCloud(projects): %>
-                    <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.size %>%"><%= ts.tag %></a>
+                    <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.size %>%" <% if ts.count < 5: %>class="small-tag"<% end %>><%= ts.tag %></a>
                 <% end %>
+                <p><a class="show-small-tags">[Show more tags]</a></p>
             </div>
 	    </div>
 	</div>

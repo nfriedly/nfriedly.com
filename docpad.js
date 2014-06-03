@@ -67,6 +67,9 @@ module.exports = {
         },
         cleanurls: {
         	trailingSlashes: true // this is to avoid having github pages redirect users from the cloudfront domain to the github domain just to add the slash to the end of the url.
+        },
+        partials: {
+            performanceFirst: true
         }
 	},
 	collections: {
@@ -79,7 +82,7 @@ module.exports = {
                 });
 		},
         projects: function() {
-            var projects = this.getFilesAtPath('projects/');
+            var projects = this.getFilesAtPath('projects/', [{filename:1}]);
             projects.each(function(project) {
                 project.setMetaDefaults({'write': 'false'});
             });
@@ -87,10 +90,6 @@ module.exports = {
                 model.setMetaDefaults({'write': 'false'})
             });
             return projects;
-            /*
-                .findAllLive({relativeOutDirPath:'projects'}, [{filename:-1}])
-                ;
-            */
         }
 	},
 	templateData: {
@@ -136,16 +135,20 @@ module.exports = {
 			var hits = {
 				"Node.js": 5,
 				"AngularJS": 5,
-				"Open Source": 4,
-				"Mobile-First": 4,
+				"Mobile First": 4,
+                "Backbone.js": 4,
 				"DocPad": 3,
 				"Jasmine": 3,
 				"Meteor": 3,
-				"Continuos Deployment": 3,
-				"Continuos Integration": 3,
-				"Backbone.js": 2,
 				"Flash / ActionScript": -1,
-				"PHP": -5
+				"Twitter": -1,
+				"WordPress": -1,
+				"CodeIgniter": -2,
+				"SEO": -2,
+                "e-Commerce": -4,
+                "CSS": -5,
+                "HTML": -5,
+				"PHP": -13
 			};
 			
 		 	// build a map of name -> usage count

@@ -9,4 +9,8 @@ $(function() {
     }
     $(window).bind( 'hashchange', setFilter);
     setFilter();
+
+    $('a.show-small-tags').click(function() {
+        $('div.tag-cloud').removeClass('hide-small-tags');
+    });
 });
