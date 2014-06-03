@@ -67,9 +67,6 @@ module.exports = {
         },
         cleanurls: {
         	trailingSlashes: true // this is to avoid having github pages redirect users from the cloudfront domain to the github domain just to add the slash to the end of the url.
-        },
-        partials: {
-            performanceFirst: true
         }
 	},
 	collections: {

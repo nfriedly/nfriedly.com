@@ -1,0 +1,26 @@
+---
+title: "Nathan Friedly's Portfolio"
+heading: Portfolio
+layout: main
+icon: laptop
+cssClass: portfolio
+scripts: /scripts/lightbox/lightbox-min.js
+stylesheets: /scripts/lightbox/lightbox.css
+headerImage: /img/temp-o-matic-crop.jpg
+priority: 0
+referencesOthers: true
+scripts:
+    - /scripts/lightbox/lightbox-min.js
+    - /scripts/portfolio.js
+---
+
+<% projects = @getCollection('projects').toJSON() %>
+
+<h1>Portfolio Part 2</h1>
+<p><a><i class="icon-double-angle-left"></i> Back to part 1</a></p>
+
+<hr>
+
+<div class="projects" id="projects2">
+    <%- @partial('projects', {projects: projects.slice(20)}) %>
+</div>

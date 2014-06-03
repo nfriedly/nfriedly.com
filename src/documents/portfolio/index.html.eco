@@ -54,43 +54,9 @@ scripts:
 <hr>
 
 <div class="projects">
-    <div id="curent-filter"></div>
-<% for project in projects: %>
-    <% if project.picture: %>
-        <article class="row <%= project.cssClass %>">
-            <div class="col-xs-4">
-                <a class="thumb" href="<%= project.picture %>" rel="lightbox"><img src="<%= @getThumbnail(project.picture, { w: 360, h: 500, q: 70 }) %>" alt="" class="img-thumbnail" /></a>
-            </div>
-            <div class="col-sm-8">
-                <h2>
-                    <% if project.link: %>
-                        <a href="<%= project.link %>"><%- project.title %></a>
-                    <% else: %>
-                        <%- project.title %>
-                    <% end %>
-                </h2>
-                <%- project.contentRendered %>
-                <p class="meta">Tagged 
-                    <%- @linkTags(project.tags) %>
-                </p>
-            </div>
-        </article>
-    <% else: %>
-        <article class="row <%= project.cssClass %>">
-            <div class="col-xs-12">
-                <h2>
-                    <% if project.link: %>
-                        <a href="<%= project.link %>"><%- project.title %></a>
-                    <% else: %>
-                        <%- project.title %>
-                    <% end %>
-                </h2>
-                <%- project.contentRendered %>
-                <p class="meta">Tagged 
-                    <%- @linkTags(project.tags) %>
-                </p>
-            </div>
-        </article>
-    <% end %>
-<% end %>
+    <%- @partial('projects', {projects: projects.slice(0, 20)}) %>
+    <div id="more-projects">
+        <p class="link"><a href="2/">Load more...</a></p>
+        <p class="loading"><i class="icon-spinner icon-spin"></i> Loading...</p>
+    </div>
 </div>
