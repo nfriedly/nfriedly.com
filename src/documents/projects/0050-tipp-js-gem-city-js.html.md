@@ -11,6 +11,7 @@ tags:
   - Require.js
   - LESS
   - CoffeeScript
+  - DocPad
 write: false
 ---
 

@@ -9,7 +9,6 @@ tags:
  - MySQL
  - Open Source
 github: https://github.com/nfriedly/BiblePeople
-write: false
 ---
 
 My Senior Project at the University of Cincinnati, Bible People is a website that indexes people in the bible and generates family trees. 

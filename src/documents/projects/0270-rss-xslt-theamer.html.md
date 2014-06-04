@@ -1,12 +1,11 @@
 ---
 title: RSS XSLT Theamer
-link: /stuff/rss/
+link: https://github.com/nfriedly/rss-xslt
 picture: "/img/portfolio/rss-xslt.png"
-thumbnail: "/img/portfolio/thumbs/rss-xslt.png"
 tags: 
   - JavaScript
   - CSS
-write: false
+  - PHP
 ---
 
 I researched how different browsers handle RSS feeds and found work-arounds to display RSS with XSLT stylesheets in Firefox and Internet Explorer.

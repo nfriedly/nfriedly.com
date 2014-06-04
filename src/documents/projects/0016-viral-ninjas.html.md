@@ -10,6 +10,7 @@ tags:
     - Browserify
     - CORS
     - AJAX
+    - email
 date: 2014-03-01
 ---
 
