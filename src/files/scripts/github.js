@@ -6,7 +6,7 @@
 
 	var icon = '<i class="<%= icon %>"></i> ';
 	var eventTemplates = {
-		PushEvent: _.template(icon + '<a href="<%= events[0].repository.url %>/commits?author=nfriedly"><%= events.length %> code pushe<%= events.length == 1 ? "" : "s"%></a>'),
+		PushEvent: _.template(icon + '<a href="<%= events[0].repository.url %>/commits?author=nfriedly"><%= events.length %> code push<%= events.length == 1 ? "" : "es"%></a>'),
 		CreateEvent: _.template(icon + '<a href="<%= events[0].repository.url %>">repo created</a>'),
 		IssueCommentEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> issue comment<%= events.length == 1 ? "" : "s"%></a>'),
 		IssuesEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> issue<%= events.length == 1 ? "" : "s"%> created</a>'),
