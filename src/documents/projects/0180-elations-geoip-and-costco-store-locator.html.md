@@ -9,4 +9,4 @@ tags:
 write: false
 ---
 
-I worked with the MaxMind GeoIP service to customize the Elations home page based on your location. Also buit a store locator that integrates with Google Maps.
+I worked with the MaxMind GeoIP service to customize the Elations home page based on your location. Also built a store locator that integrates with Google Maps.

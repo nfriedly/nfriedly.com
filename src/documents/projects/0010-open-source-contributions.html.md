@@ -39,7 +39,7 @@ I frequently make small improvements to Open Source projects that I work with. H
  
  - **[Jasmine](http://jasmine.github.io/)**: Improved documentation.
  
- - **[jQuery.highlightRegex](https://github.com/jbr/jQuery.highlightRegex)**: Fixed bug when plugin is run more than once.
+ - **[jQuery.highlightRegex](https://github.com/jbr/jQuery.highlightRegex)**: Fixed a couple of bugs to allow it to work cross-browser and support multiple runs on the same text.
 
  - **[Masonry](http://masonry.desandro.com/)**: Fixed some accidental global variable references.
 
