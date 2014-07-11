@@ -18,7 +18,7 @@ featured: true
 
 <!--more-->
 
-Our JavaScript &#8220;build&#8221; process is basically a script that concatenated all of our JS files into a single big file.<sup><a href="#note-1">[1]</a></sup> We added a flag to that process that would skip the `init.js` file and instead add a `module.exports` statement for easy inclusion in [node.js][5].
+Our JavaScript &#8220;build&#8221; process is basically a script that concatenated all of our JS files into a single big file.<sup>[[1]](#note-1)</sup> We added a flag to that process that would skip the `init.js` file and instead add a `module.exports` statement for easy inclusion in [node.js][5].
 
 With this setup, we can quickly run hundreds of [jasmine][6] specs from the command line in any environment we need &#8211; no browser necessary. Our full suite currently takes about 5 seconds to run.
 
@@ -177,12 +177,11 @@ And there you have it. Happy testing!
 
 <hr style="margin: 30px 0;" />
 
-*<a name="note-1">[1]:</a> It&#8217;s actually a bit more complex that that &#8211; we generate a separate file for each customer with their configuration and whatever features they use. </p> 
+<sup id="note-1">[1]</sup> It&#8217;s actually a bit more complex that that &#8211; we generate a separate file for each customer with their configuration and whatever features they use. </p> 
 Also, we&#8217;ve recently switched from our custom js build script to [require.js][10] and [jam.js][11], but we&#8217;re still working out the final kinks. Expect a followup post once we&#8217;re fully confident with the new setup <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </i>
 
 <p class="meta"><small class="photocredit"><b>Photo Credits:</b> Header photo by <a href="http://www.flickr.com/photos/calliope/2243034754/">liz west</a>.</small></p>
 
- [1]: automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js
  [2]: http://sociablelabs.com
  [3]: http://www.junit.org/
  [4]: https://www.atlassian.com/software/bamboo/overview
