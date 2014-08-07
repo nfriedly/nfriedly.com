@@ -58,7 +58,8 @@
 		'whatsmyua.com-v1': 'icon-desktop',
 		'whatsmyua.com': 'icon-desktop',
 		'elance-withdrawal': 'icon-dollar',
-		'True-Tile-Site': 'icon-th'
+		'True-Tile-Site': 'icon-th',
+		'Arduino-Fan-Controler': 'icon-asterisk icon-spin' // :D
 	}
 
 	function handleGH(response) {
