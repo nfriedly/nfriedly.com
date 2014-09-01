@@ -1,7 +1,7 @@
 ---
 title: JavaScript library and .swf for cross-domain flash cookies
 author: nFriedly
-layout: post
+
 url: /techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/
 urls:
     - /2010/07/swf-for-javascript-cross-domain-flash-cookies/

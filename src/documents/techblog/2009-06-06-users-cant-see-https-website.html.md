@@ -1,7 +1,7 @@
 ---
 title: Why some users can't see a https website
 author: nFriedly
-layout: post
+
 url: /techblog/2009/06/users-cant-see-https-website/
 urls:
     - /2009/06/users-cant-see-https-website/

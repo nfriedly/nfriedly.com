@@ -1,7 +1,7 @@
 ---
 title: How to get your apps ready for Facebook's OAuth 2.0 upgrade
 author: nFriedly
-layout: post
+
 url: /techblog/2011/09/javascript-changes-for-facebooks-oauth-2-0-upgrade/
 urls:
     - /2011/09/javascript-changes-for-facebooks-oauth-2-0-upgrade/

@@ -1,7 +1,7 @@
 ---
 title: Automatically unit testing client-side JavaScript with Jasmine and Node.js
 author: nFriedly
-layout: post
+
 url: /techblog/2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/
 urls:
     - /2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/

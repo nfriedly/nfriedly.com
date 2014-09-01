@@ -1,7 +1,7 @@
 ---
 title: 'Search Engine Optimization and Marketing (SEO & SEM)'
 author: nFriedly
-layout: post
+
 url: /techblog/2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/
 urls:
     - /2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/

@@ -1,7 +1,7 @@
 ---
 title: How to use XSLT to style an RSS feed
 author: nFriedly
-layout: post
+
 url: /techblog/2009/06/how-to-use-xslt-to-style-an-rss-feed/
 urls:
     - /2009/06/how-to-use-xslt-to-style-an-rss-feed/
