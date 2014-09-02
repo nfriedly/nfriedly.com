@@ -30,7 +30,7 @@ standalone: true
 
 // general styles
 h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; line-height: 1.3; }
-body {font-family: 'Nobile'; }
+body {font-family: 'Nobile', sans-serif; }
 
 // code, pre {font-family: 'Monda'; }
 
@@ -40,7 +40,7 @@ body {font-family: 'Nobile'; }
 }
 
 @media (min-width: @screen-lg) {
-	body, body.homepage { font-size: 18px; }
+	body, body.homepage { font-size: 17.4px; } /*18px looks really funky in ie 11 :( */
 }
 
 a { color: @linkColor; padding: 3px 1px 0 1px; text-decoration: underline;}
