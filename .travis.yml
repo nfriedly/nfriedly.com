@@ -4,7 +4,7 @@ node_js:
 before_script:
 - ./predeploy.sh
 script:
-- ./node_modules/.bin/docpad deploy-ghpages --env static
+- $TRAVIS_BUILD_DIR/node_modules/.bin/docpad deploy-ghpages --env static
 env:
   global:
   - GH_REPO="nfriedly/nfriedly.com"
