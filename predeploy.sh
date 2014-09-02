@@ -26,3 +26,5 @@ test -d out && (
   git config user.name
 
 ) || echo "fresh build, no out directory"
+
+export PATH=$TRAVIS_BUILD_DIR/node_modules/.bin:$PATH
