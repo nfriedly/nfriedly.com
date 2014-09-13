@@ -3,23 +3,27 @@ $(document).ready(function() {
 
 	var render = _.template('<a href="<%= link %>" title="<%= caption.text %>" target="_blank"><img src="<%= images.low_resolution.url %>" class="img-thumbnail" alt="instagram"></a>'); 
 	
+	// returns the chosen picture (instagram object)
 	function renderWithFirst(pics, tag) {
-		var mg = _.find(pics, function(pic) {
+		var pic = _.find(pics, function(pic) {
 			return _.contains(pic.tags, tag);
 		});
-		//console.log(mg);
-		if (!mg) return;
+		//console.log(pic);
+		if (!pic) return null;
 		var i = $('<img/>');
 		i.on('load', function() {
-			$('div.' + tag).html(render(mg));
+			$('div.' + tag).html(render(pic));
 		});
-		i.attr('src', mg.images.low_resolution.url);
+		i.attr('src', pic.images.low_resolution.url);
+		
+		return pic;
 	}
 
 	function handleInstagrams(response) {
 		if(response && response.meta.code == 200) {
-			renderWithFirst(response.data, 'nathanothniel');
-			renderWithFirst(response.data, 'maizygram');
+			var pic = renderWithFirst(response.data, 'nathanothniel');
+			var remainders = _.without(response.data, pic);
+			renderWithFirst(remainders, 'maizygram');
 		}
 	}
 	
