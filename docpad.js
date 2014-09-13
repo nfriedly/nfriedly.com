@@ -75,7 +75,7 @@ module.exports = {
 				.findAllLive({relativeOutDirPath:'techblog'}, [{filename:-1}])
 				.setFilter('notIndex', notIndex)
 				.on("add", function (model)  {
-                	model.setMetaDefaults({'cssClass': 'post'})
+                	model.setMetaDefaults({'cssClass': 'post', layout: 'main'})
                 });
 		},
         projects: function() {
