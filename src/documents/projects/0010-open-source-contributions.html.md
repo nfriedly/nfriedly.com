@@ -10,6 +10,7 @@ tags:
   - Require.js
   - Browserify
   - jQuery
+  - Ruby
 write: false
 date: 2014-04-02
 cssClass: "open-source-projects tripple"
@@ -46,6 +47,8 @@ I frequently make small improvements to Open Source projects that I work with. H
  - **[Node.js](http://nodejs.org/)**: Fixed a bug in the REPL, added unit tests.
  
  - **[node-memwatch](https://github.com/nfriedly/node-memwatch)**: Improved documentation.
+ 
+ - **[Prism](http://prismjs.com/)**: Added Ruby support to the File Highlighter plugin.
 
  - **[request](https://github.com/mikeal/request)**: Fixed a filename/mimetype bug.
 
