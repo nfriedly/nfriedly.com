@@ -27,4 +27,6 @@ test -d out && (
 
 ) || echo "fresh build, no out directory"
 
-export PATH=$TRAVIS_BUILD_DIR/node_modules/.bin:$PATH
+#export PATH=$TRAVIS_BUILD_DIR/node_modules/.bin:$PATH
+# since that doesn't seem to work any more, lets try this the wrong way...
+npm install -g docpad
