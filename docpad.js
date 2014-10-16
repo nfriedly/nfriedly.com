@@ -79,7 +79,7 @@ module.exports = {
                 });
 		},
         projects: function() {
-            var projects = this.getFilesAtPath('projects/', [{filename:1}]);
+            var projects = this.getFilesAtPath('projects', [{filename:1}]);
             projects.each(function(project) {
                 project.setMetaDefaults({'write': 'false'});
             });
