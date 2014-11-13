@@ -1,35 +1,15 @@
-<% for project in @.projects: %>
+<% for project in @projects: %>
     <article class="row <%= project.cssClass %>">
         <% if project.picture: %>
             <div class="col-xs-4">
                 <a class="thumb" href="<%= project.picture %>" rel="lightbox"><img src="<%= @getThumbnail(project.picture, { w: 360, h: 500, q: 70 }) %>" alt="" class="img-thumbnail" /></a>
             </div>
             <div class="col-sm-8">
-                <h2>
-                    <% if project.link: %>
-                        <a href="<%= project.link %>"><%- project.title %></a>
-                    <% else: %>
-                        <%- project.title %>
-                    <% end %>
-                </h2>
-                <%- project.contentRendered %>
-                <p class="meta">Tagged 
-                    <%- @linkTags(project.tags) %>
-                </p>
+                <%- @partial('project-core', {project: project}) %>
             </div>
         <% else: %>
             <div class="col-xs-12">
-                <h2>
-                    <% if project.link: %>
-                        <a href="<%= project.link %>"><%- project.title %></a>
-                    <% else: %>
-                        <%- project.title %>
-                    <% end %>
-                </h2>
-                <%- project.contentRendered %>
-                <p class="meta">Tagged 
-                    <%- @linkTags(project.tags) %>
-                </p>
+                <%- @partial('project-core', {project: project}) %>
             </div>
         <% end %>
     </article>

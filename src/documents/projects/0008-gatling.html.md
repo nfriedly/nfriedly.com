@@ -1,6 +1,9 @@
 ---
 title: Gatling: Node.js app server
 link: "https://github.com/nfriedly/node-gatling"
+npm: gatling
+travis: node-gatling
+github: node-gatling
 tags: 
   - Node.js
   - JavaScript
@@ -17,4 +20,4 @@ few other small things.
 It's designed to play nice with Connect / Express-style apps as well as simple 
 `http.createServer(myServer)` sort of applications.
 
-Runs a Mocha-based suite of unit tests on every git push: [![Build Status](https://travis-ci.org/nfriedly/node-gatling.png?branch=master)](https://travis-ci.org/nfriedly/node-gatling)
+Runs a Mocha-based suite of unit tests on every git push.

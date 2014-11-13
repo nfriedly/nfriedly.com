@@ -26,7 +26,7 @@ I frequently make small improvements to Open Source projects that I work with. H
  
  - **[curated-hn-hiring](https://github.com/perspectivezoom/curated-hn-hiring)**: Added source link.
 
- - **[DocPad](docpad.org/)**: Fixed a bug in the unit test runner.
+ - **[DocPad](docpad.org/)**: Several bug fixes and documentation improvements.
 
  - **[docpad-plugin-sunny](https://github.com/bobobo1618/docpad-plugin-sunny)**: Fixed a concurrency bug, I'm now an ongoing project maintainer.
 
@@ -34,7 +34,15 @@ I frequently make small improvements to Open Source projects that I work with. H
 
  - **[docpad-plugin-ghpages](https://github.com/docpad/docpad-plugin-ghpages)**: Fixed a security issue when using this plugin on Travis CI.
  
+ - **[docpad-plugin-minicms](https://github.com/jeremyfa/docpad-plugin-minicms)**: Fixed bugs with middleware and newer DocPad version compatibility.
+
+ - **[docpad-plugin-multiplelayouts](https://github.com/docpad/docpad-plugin-multiplelayouts)**: Fixed bug when docs have defined URLgit st
+ 
+ - **[ejs-mate](https://github.com/JacksonTian/ejs-mate)**: Added support for blocks and improved the documentation.
+ 
  - **[Firefox](https://www.mozilla.org/en-US/firefox/new/)**: Supplied bug reports with narrowed-down test cases.
+ 
+ - **[generator-node (Yeoman)](https://github.com/yeoman/generator-node)**: Fixed a bug when generating CLI modules.
 
  - **[grunt-browserify2](https://github.com/shanejonas/grunt-browserify2)**: Improved documentation.
  
@@ -57,3 +65,5 @@ I frequently make small improvements to Open Source projects that I work with. H
  - **[sitemap.js](https://github.com/ekalinin/sitemap.js)**: Fixed a bug with URLs that contain the string 'http', added unit tests, improved performance by ~4%.
 
  - **[string.js](https://github.com/jprichardson/string.js)**: Added suport for padding with numbers and associated unit tests.
+
+<!-- todo: add https://github.com/jking90/docpad-plugin-coffeelint https://github.com/mikeumus/docpad-plugin-basicauth and  https://github.com/jking90/docpad-plugin-jshint -->

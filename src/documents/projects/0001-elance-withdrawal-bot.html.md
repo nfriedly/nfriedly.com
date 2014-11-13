@@ -1,11 +1,13 @@
 ---
 title: Elance Automatic Withdrawal Bot
 link: https://github.com/nfriedly/elance-withdrawal
+npm: elance-withdrawal
 tags: 
     - JavaScript
     - CasperJS
     - Heroku
     - Open Source
+    - NPM
 ---
 
 <i class="icon-dollar pull-right icon-4x"></i> I occasionally <a href="https://www.elance.com/s/nfriedly/">take on side projects via Elance</a>, and their payment system is really great at reliably getting funds into my Elance account.

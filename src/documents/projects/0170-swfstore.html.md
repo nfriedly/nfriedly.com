@@ -1,14 +1,16 @@
 ---
 title: "SwfStore - a JavaScript Library for Cross-Domain Flash-Cookies"
 link: "http://nfriedly.com/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/"
-github: nfriedly/Javascript-Flash-Cookies
-travis: nfriedly/Javascript-Flash-Cookies
+github: Javascript-Flash-Cookies
+travis: Javascript-Flash-Cookies
+bower: javascript-flash-cookies
 tags: 
   - JavaScript
   - Flash / ActionScript
   - Open Source
   - Jasmine
   - Continuous Integration
+  - Bower
 write: false
 ---
 
@@ -19,5 +21,3 @@ We needed this for one of my projects and I was surprised to find that no such l
 Runs a suite of Jasmine-based tests on more than a dozen browsers after every GitHub push via Travis CI and Selenium:
 
 [![Selenium Test Status](https://saucelabs.com/browser-matrix/jsfc.svg)](https://saucelabs.com/u/jsfc)
-
-Open Source: <a href="http://github.com/nfriedly/Javascript-Flash-Cookies">http://github.com/nfriedly/Javascript-Flash-Cookies</a>

@@ -1,0 +1,27 @@
+<% project = @project %>
+<h2>
+    <% if project.link: %>
+        <a href="<%= project.link %>"><%- project.title %></a>
+    <% else: %>
+        <%- project.title %>
+    <% end %>
+</h2>
+<%- project.contentRendered %>
+<p class="meta">
+    <% if project.github or project.link and project.link.indexOf('github.com') != -1: %>
+        <% github = project.github or project.link %>
+        <% github = "https://github.com/nfriedly/" + github unless github.substr(0,4) == 'http' %>
+        <a href="<%= github %>"><i class="icon-github"></i></a>
+    <% end %>
+    <% if project.npm: %>
+        <a href="https://npmjs.org/package/<%= project.npm %>"><img src="http://badge.fury.io/js/<%= project.npm %>.png" alt="<%= project.title %> on NPM"></a>
+    <% end %>
+    <% if project.bower: %>
+        <img src="http://badge.fury.io/bo/<%= project.bower %>.svg" alt="<%= project.title %> on Bower">
+    <% end %>
+    <% if project.travis: %>
+        <a href="https://travis-ci.org/nfriedly/<%= project.travis %>"><img src="https://travis-ci.org/nfriedly/<%= project.travis %>.png?branch=master" alt="<%= project.title %>'s build status"></a>
+    <% end %>
+    Tagged 
+    <%- @linkTags(project.tags) %>
+</p>
