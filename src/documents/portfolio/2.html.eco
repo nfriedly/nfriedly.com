@@ -17,7 +17,7 @@ scripts:
 <% projects = @getCollection('projects').toJSON() %>
 
 <h1>Portfolio Part 2</h1>
-<p><a><i class="icon-double-angle-left"></i> Back to part 1</a></p>
+<p><a href="/portfolio/"><i class="icon-double-angle-left"></i> Back to part 1</a></p>
 
 <hr>
 
