@@ -2,6 +2,8 @@
 title: Duck Duck Go + Google Suggest OpenSearch Plugin
 link: "http://ddgg.nfriedly.com/"
 picture: /img/portfolio/ddgg.png
+github: node-bang-suggest
+travis: node-bang-suggest
 tags: 
   - Node.js
   - JavaScript
@@ -18,5 +20,3 @@ write: false
 It also supports encrypted searches, and has a proxy built with node.js that corrects !bang's that Google removes from it's suggestions. 
 
 The proxy originally sat behind a high-performance Nginx server, but has since been moved to Heroku.
-
-Open Source: https://github.com/nfriedly/node-bang-suggest

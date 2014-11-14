@@ -3,6 +3,8 @@ title: Node Unblocker
 link: "http://nodeunblocker.com/"
 picture: /img/portfolio/nodeunblocker.png
 thumbnail: /img/portfolio/thumbs/nodeunblocker.png
+github: node-unblocker
+travis: node-unblocker
 tags: 
   - Node.js
   - JavaScript
@@ -23,5 +25,3 @@ Cookies are stored in a Redis database to prevent different sites from clobberin
 Was originally built on Node.js 0.4, and has since been updated to take advantages of changes introduced in 0.6, 0.8, 0.10, and soon 0.12.
 
 Continuos Deployment: After each GitHub push, Travis CI automatically runs the tests and deploys to Heroku if everything passes. Application is then monitored by New Relic, and reportedly serving upwards of 1200 requests per minute on a single Heroku instance.
-
-Open Source: <a href="https://github.com/nfriedly/node-unblocker">https://github.com/nfriedly/node-unblocker</a>

@@ -2,6 +2,7 @@
 title: Redirector plugin for DocPad
 link: "https://github.com/nfriedly/docpad-plugin-redirector"
 icon: "angle-double-right"
+npm: docpad-plugin-redirector
 tags: 
   - DocPad
   - CoffeeScript

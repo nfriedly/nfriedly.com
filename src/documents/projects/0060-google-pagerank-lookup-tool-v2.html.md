@@ -3,6 +3,7 @@ title: Google PageRank Lookup Tool v2
 link: "http://pagerank.nfriedly.com"
 picture: /img/portfolio/pagerank.png
 thumbnail: /img/portfolio/thumbs/pagerank.png
+github: pagerank.nfriedly.com
 tags: 
   - Node.js
   - JavaScript

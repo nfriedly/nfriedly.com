@@ -3,6 +3,7 @@ title: approximate-number
 link: https://github.com/nfriedly/approximate-number
 npm: approximate-number
 bower: approximate-number
+travis: approximate-number
 tags:
   - JavaScript
   - Node.js

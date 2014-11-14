@@ -1,6 +1,6 @@
 ---
 title: Bible People
-link: http://biblepeople.info/
+link: https://github.com/nfriedly/BiblePeople
 picture: /img/portfolio/biblepeople.png
 tags: 
  - Ruby on Rails

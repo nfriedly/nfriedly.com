@@ -2,6 +2,7 @@
 title: "nfriedly.com, v5"
 link: "http://nfriedly.com/"
 picture: "/img/portfolio/nfriedly.com-v5.png"
+github: nfriedly.com
 tags: 
   - HTML
   - Bootstrap

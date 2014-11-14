@@ -3,6 +3,7 @@ title: "JS Mini-Shell"
 link: "http://js-mini-shell.nfriedly.com/"
 picture: "/img/portfolio/js-mini-shell.png"
 thumbnail: "/img/portfolio/thumbs/js-mini-shell.jpg"
+github: js-mini-shell
 tags: 
   - JavaScript
   - Bootstrap

@@ -1,6 +1,7 @@
 ---
 title: PicSync
 picture: /img/portfolio/picsync.png
+github: picsync-server
 tags: 
   - Node.js
   - Java

@@ -1,8 +1,9 @@
 ---
-title: "What's my User Agent?"
-link: "http://whatsmyua.com"
+title: What's my User Agent? v1
+link: http://whatsmyua.com
 picture: /img/portfolio/whatsmyua.png
 thumbnail: /img/portfolio/thumbs/whatsmyua.png
+github: whatsmyua.com-v1
 tags: 
   - Ruby on Rails
   - BlueTrip

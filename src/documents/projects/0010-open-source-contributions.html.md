@@ -3,6 +3,7 @@ title: Open Source Contributions
 tags: 
   - Open Source
   - JavaScript
+  - CoffeeScript
   - Node.js
   - NPM
   - DocPad
@@ -11,6 +12,8 @@ tags:
   - Browserify
   - jQuery
   - Ruby
+  - Bower
+  - DocPad
 write: false
 date: 2014-04-02
 cssClass: "open-source-projects tripple"
@@ -36,6 +39,7 @@ I frequently make small improvements to Open Source projects that I work with. H
      - [coffeelint](https://github.com/jking90/docpad-plugin-coffeelint "Windows support")
      - [jshint](https://github.com/jking90/docpad-plugin-jshint "Windows support")
      - [basicauth](https://github.com/mikeumus/docpad-plugin-basicauth "Added compatibility with current DocPad releases")
+     - [partials](https://github.com/docpad/docpad-plugin-partials "Added compatibility with current DocPad releases")
  
  - **[ejs-mate](https://github.com/JacksonTian/ejs-mate)**: Added support for blocks and improved the documentation.
  

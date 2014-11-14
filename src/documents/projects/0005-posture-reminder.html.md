@@ -3,6 +3,7 @@ title: Posture Reminder
 link: http://nfriedly.github.io/posture-reminder/
 picture: "/img/portfolio/posture-reminder.png"
 date: 2014-03-26
+github: posture-reminder
 tags:
  - HTML
  - CSS

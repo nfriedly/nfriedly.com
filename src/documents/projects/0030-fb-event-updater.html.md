@@ -4,6 +4,7 @@ link: https://sociablelabs.github.io/facebook-event-updater/
 source: https://github.com/SociableLabs/facebook-event-updater
 picture: "/img/portfolio/fb-event-updater.png"
 date: 2014-03-27
+github: https://github.com/SociableLabs/facebook-event-updater
 tags:
  - HTML
  - CSS

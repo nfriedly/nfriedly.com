@@ -3,6 +3,7 @@ title: Whats my IP API
 link: "http://ip.nfriedly.com/"
 picture: "/img/portfolio/whats-my-ip.png"
 thumbnail: "/img/portfolio/thumbs/whats-my-ip.jpg"
+github: node-whats-my-ip
 tags: 
   - Node.js
   - CORS
