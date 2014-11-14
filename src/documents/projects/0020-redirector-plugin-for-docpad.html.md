@@ -1,7 +1,7 @@
 ---
 title: Redirector plugin for DocPad
 link: "https://github.com/nfriedly/docpad-plugin-redirector"
-icon: "angle-double-right"
+icon: "double-angle-right"
 npm: docpad-plugin-redirector
 tags: 
   - DocPad

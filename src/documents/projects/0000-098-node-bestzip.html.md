@@ -2,6 +2,8 @@
 title: node-bestzip
 link: https://github.com/nfriedly/node-bestzip
 npm: bestzip
+date: 2014-11-05
+icon: archive
 tags:
   - JavaScript
   - Node.js

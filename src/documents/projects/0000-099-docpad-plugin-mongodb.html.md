@@ -3,6 +3,7 @@ title: MongoDB plugin for DocPad
 link: https://github.com/nfriedly/docpad-plugin-mongodb
 travis: docpad-plugin-mongodb
 npm: docpad-plugin-mongodb
+date: 2014-10-15
 tags:
   - DocPad
   - CoffeeScript

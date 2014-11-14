@@ -2,6 +2,7 @@
 title: IBM Watson Developer Cloud
 link: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/
 picture: /img/portfolio/ibm-wdc.png
+date: 2014-10-8
 tags:
   - AngularJS
   - SASS

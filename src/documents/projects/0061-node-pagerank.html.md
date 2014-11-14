@@ -4,6 +4,7 @@ link: "https://npmjs.org/package/pagerank"
 npm: pagerank
 github: node-pagerank
 travis: node-pagerank
+icon: bar-chart
 tags: 
   - Node.js
   - JavaScript

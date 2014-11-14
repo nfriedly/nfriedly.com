@@ -2,6 +2,8 @@
 title: Elance Automatic Withdrawal Bot
 link: https://github.com/nfriedly/elance-withdrawal
 npm: elance-withdrawal
+date: 2014-04-16
+icon: dollar
 tags: 
     - JavaScript
     - CasperJS
@@ -10,7 +12,7 @@ tags:
     - NPM
 ---
 
-<i class="icon-dollar pull-right icon-4x"></i> I occasionally <a href="https://www.elance.com/s/nfriedly/">take on side projects via Elance</a>, and their payment system is really great at reliably getting funds into my Elance account.
+I occasionally <a href="https://www.elance.com/s/nfriedly/">take on side projects via Elance</a>, and their payment system is really great at reliably getting funds into my Elance account.
 And then they just sit there until I remember to withdrawal them to my bank. So, I built this bot.
 
 The bot uses CasperJS to log into the site as me, check if I have any available funds, and immediately transfer them to my bank if I do.

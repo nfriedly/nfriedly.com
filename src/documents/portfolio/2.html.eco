@@ -22,5 +22,5 @@ scripts:
 <hr>
 
 <div class="projects" id="projects2">
-    <%- @partial('projects', {projects: projects.slice(20)}) %>
+    <%- @partial('partial-projects', {projects: projects.slice(20)}) %>
 </div>

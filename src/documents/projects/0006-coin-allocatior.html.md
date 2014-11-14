@@ -3,6 +3,7 @@ title: Coin Allocator: Bitcoin & Altcoin algorithmic trading
 link: https://github.com/nfriedly/Coin-Allocator
 npm: coin-allocator
 travis: Coin-Allocator
+date: 2014-02-11
 tags:
  - Bitcoin
  - Node.js

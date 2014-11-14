@@ -1,6 +1,7 @@
 ---
 title: "Twitter @Mention Monitor"
 link: "http://twittermentionmonitor.com/"
+icon: twitter icon-flip-horizontal
 tags: 
   - Ruby on Rails
   - Twitter

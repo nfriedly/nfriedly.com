@@ -2,6 +2,8 @@
 title: grunt-swf
 link: https://github.com/nfriedly/grunt-swf
 npm: grunt-swf
+date: 2014-11-11
+icon: magic
 tags:
   - JavaScript
   - Node.js

@@ -54,7 +54,7 @@ scripts:
 <hr>
 
 <div class="projects">
-    <%- @partial('projects', {projects: projects.slice(0, 20)}) %>
+    <%- @partial('partial-projects', {projects: projects.slice(0, 20)}) %>
     <div id="more-projects">
         <p class="link"><a href="2/">Load more...</a></p>
         <p class="loading"><i class="icon-spinner icon-spin"></i> Loading...</p>

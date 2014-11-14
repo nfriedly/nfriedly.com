@@ -6,6 +6,9 @@
         <%- project.title %>
     <% end %>
 </h2>
+<% if project.icon: %>
+    <i class="icon-<%= project.icon%> pull-right icon-4x"></i>
+<% end %>
 <%- project.contentRendered %>
 <p class="meta">
     <% if project.github or project.link and project.link.indexOf('github.com') != -1: %>
@@ -14,13 +17,13 @@
         <a href="<%= github %>"><i class="icon-github"></i></a>
     <% end %>
     <% if project.npm: %>
-        <a href="https://npmjs.org/package/<%= project.npm %>"><img src="http://badge.fury.io/js/<%= project.npm %>.png" alt="<%= project.title %> on NPM"></a>
+        <a href="https://npmjs.org/package/<%= project.npm %>" class="project-badge"><img src="http://badge.fury.io/js/<%= project.npm %>.png" alt="<%= project.title %> on NPM"></a>
     <% end %>
     <% if project.bower: %>
         <img src="http://badge.fury.io/bo/<%= project.bower %>.svg" alt="<%= project.title %> on Bower">
     <% end %>
     <% if project.travis: %>
-        <a href="https://travis-ci.org/nfriedly/<%= project.travis %>"><img src="https://travis-ci.org/nfriedly/<%= project.travis %>.png?branch=master" alt="<%= project.title %>'s build status"></a>
+        <a href="https://travis-ci.org/nfriedly/<%= project.travis %>" class="project-badge"><img src="https://travis-ci.org/nfriedly/<%= project.travis %>.png?branch=master" alt="<%= project.title %>'s build status"></a>
     <% end %>
     Tagged 
     <%- @linkTags(project.tags) %>

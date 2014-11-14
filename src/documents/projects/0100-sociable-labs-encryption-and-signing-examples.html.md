@@ -2,6 +2,7 @@
 title: Sociable Labs encryption and signing examples
 github: SLSignPageData
 npm: SLSignPageData
+icon: code
 tags: 
   - "C#"
   - Node.js

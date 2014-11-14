@@ -4,6 +4,7 @@ link: http://odb-ii.meteor.com/
 picture: /img/portfolio/odb-ii.png
 github: Meteor-ODB-II
 travis: Meteor-ODB-II
+date: 2013-12-09
 tags:
  - Meteor
  - JavaScript

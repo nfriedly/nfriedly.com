@@ -4,6 +4,7 @@ link: "http://ddgg.nfriedly.com/"
 picture: /img/portfolio/ddgg.png
 github: node-bang-suggest
 travis: node-bang-suggest
+date: 2011-03-14
 tags: 
   - Node.js
   - JavaScript
