@@ -29,7 +29,7 @@ scripts:
 
 <div class="row">
 	<div class="col-sm-4 portfolio-intro">
-		<p><strong>Nathan Friedly</strong> is a web developer with a strong focus on JavaScript and Node.js.</p>
+		<p><strong>Nathan Friedly</strong> is a full stack web developer with a strong focus on JavaScript and Node.js.</p>
 		<p>He loves working on open source, automating repetitive tasks, and shipping results.</p>
 		<ul class="links">
 		    <li><a href="https://github.com/nfriedly"><i class="icon-github"></i>GitHub</a></li>
