@@ -22,15 +22,14 @@ tags:
 featured: true
 ---
 
-<div class="alert alert-danger"><h1>IMPORTANT SECURITY NOTICE</h1><p>Versions 1.9 and older are vulnerable to a XSS attack. Please upgrade to 1.9.1 or newer immediately!</p></div>
-
 <img class="right" title="325990_chocolate_chip_cookies_2" src="http://nfriedly.com/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.
   
 However, I was surprisingly unable to find any complete library or how-to guide for connecting flash cookies to javascript. So I dusted off my flash skills and built one, and and now you get to enjoy the fruit of my labor:
 
 <!--more-->
 
-<div class="well well-large">[<i class="icon-download"></i> Download the swf, js, and source code from github][zip]</div>
+<div class="well well-large"><p>[<i class="icon-download"></i> Download the swf, js, and source code from github][zip]</p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre><code>bower install javascript-flash-cookies</code></pre></div>
+
 
 This is an .swf file that communicates with JavaScript via flash&#8217;s <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/external/ExternalInterface.html">ExternalInerface</a> to read and write to a Local <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/net/SharedObject.html">SharedObject</a> (LSO). Essentially, it&#8217;s cross-domain cookies for javascript.
 
@@ -83,7 +82,7 @@ $(function(){
 
 		// .swf, all other sites should load it from the first one
 
-		swf_url: 'http://site.com/PATH/TO/storage.swf', 
+		swf_url: //site.com/PATH/TO/storage.swf', 
 		// Logs messages to the console if available, a div at the
 
 		// bottom of the page otherwise. 
@@ -131,6 +130,12 @@ $(function(){
 
 A copy of storage.swf located on one domain may be embedded on pages from one or more other domains, allowing cross-domain cookie access.
 
+### Security notes
+
+By default, any website on the internet can access the data stored in these flashcookies.
+
+Also, versions prior to 1.9.1 were vulnerable to an XSS bug and should not be used.
+
 ### Troubleshooting <img src="http://farm3.staticflickr.com/2705/4317168441_0c4652aaf6_n.jpg" class="right" alt="Flash Mob">
 
 * Be sure the <span class="highlight">urls</span> to the .swf file and .js file are both correct.
@@ -142,15 +147,8 @@ A copy of storage.swf located on one domain may be embedded on pages from one or
 * Do not set `display:none` on the swf or any of it's parent elements, this will cause the file to not render and the timeout will be fired. Disable debug and it will be rendered off screen.
 * The error `this.swf.set is not a function` has been known to occur when the FlashFirebug plugin is enabled in Firefox / Firebug...
 	
-### Patches
-	
+### Bugs and patches
 
-Although my JS is solid, my Flash / ActionScript skills leave something to be desired. Patches to either are more than welcome at <a href="http://github.com/nfriedly/Javascript-Flash-Cookies">github</a> (preferred), or just send me an email.
-
-	
-### Featured Deployments
-
-If you're using SwfStore in a production site, feel free to send me an email with a link to the site.  Reciprocal links are not required, but are always appreciated.
-	  
+Bug reports and patches are always welcome at <a href="http://github.com/nfriedly/Javascript-Flash-Cookies">github</a> (preferred), or just send me an email. I'll also consider new features, but I'm generally going to prioritize keeping this library small and simple, so most new features will be refused.
 
 [zip]: http://github.com/nfriedly/Javascript-Flash-Cookies/zipball/master
