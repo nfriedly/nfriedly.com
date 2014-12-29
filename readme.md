@@ -30,7 +30,7 @@ Build instructions
 
 1. Download and install node.js from http://www.nodejs.org/
 2. Install DocPad: http://docpad.org/docs/install
-3. Install ImageMagic: http://www.imagemagick.org/script/binary-releases.php
+3. Install ImageMagic: http://www.imagemagick.org/script/binary-releases.php (or `brew install imagemagick` on OS X w/ homebrew)
 4. Recompile plugins (if necessary): `npm rebuild`
 5. Run `docpad run` in this directory to compile and view the site locally
 6. Edit or remove `src/files/CNAME` and then run `docpad deploy-ghpages` to deploy to GitHub
