@@ -21,11 +21,6 @@ module.exports = {
 		preferredMethods: ['watchFile','watch']
 	},
 	plugins: {
-		sunny: {
-			// deploy command: NODE_ENV=production docpad generate
-			configFromEnv: true,
-			envPrefixes: ['NF_']
-		},
 		ghpages: {
 			quiet: true
 		},
