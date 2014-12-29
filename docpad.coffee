@@ -54,6 +54,7 @@ module.exports =
 				"/px/invisiproxy/index.php": "http://nodeunblocker.com/"
 				"/px/phpr0xi": "http://nodeunblocker.com/"
 				"/px/phpr0xi/index.php": "http://nodeunblocker.com/"
+				"/stuff/africa/": "https://nfriedly.github.io/africa/"
 
 			# onsite, but easier this way
 				"/files/Nathan-Friedly-Resume.pdf": "http://nfriedly.com/Nathan-Friedly-Resume.pdf"

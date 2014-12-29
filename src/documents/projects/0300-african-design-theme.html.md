@@ -1,12 +1,14 @@
 ---
 title: African Design / Theme
-link: /stuff/africa/
+link: https://nfriedly.github.io/africa/
 picture: /img/portfolio/africa.png
 thumbnail: /img/portfolio/thumbs/africa.png
+github: africa
 tags: 
   - Photoshop
   - HTML
   - CSS
+  - Open Source
 write: false
 ---
 
