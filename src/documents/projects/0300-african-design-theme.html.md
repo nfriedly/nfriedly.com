@@ -9,7 +9,7 @@ tags:
   - HTML
   - CSS
   - Open Source
-write: false
 ---
 
-A design I put together with a bit of help from a tutorial. (When it comes to design, I have taste, but not as much skill.) I might make it into a free template some day.
+A design I put together (with a bit of help from a tutorial.)
+Free for anyone to use, although I do request that a credit link is kept.
