@@ -55,9 +55,9 @@ urls:
 	</div>
 	
 	<div class="col-md-4 github">
-		<h2><a href="https://github.com/nfriedly"><i class="icon-github"></i> Github Activity</a></h2>
+		<h2><a href="https://github.com/nfriedly"><i class="icon-github"></i> GitHub Activity</a></h2>
 		<ul class="icons-ul">
-			<li class="muted"><i class="icon-li icon-spinner icon-spin"></i> Loading latest Github feed...</li>
+			<li class="muted"><i class="icon-li icon-spinner icon-spin"></i> Loading latest GitHub feed...</li>
 		</ul>
 	</div>
 </section>
