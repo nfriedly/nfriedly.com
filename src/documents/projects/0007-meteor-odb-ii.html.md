@@ -12,7 +12,7 @@ tags:
  - CSS
  - Handlebars.js
  - Open Source
- - Mongo DB
+ - MongoDB
  - Mobile First
  - Continuous Integration
  - CasperJS

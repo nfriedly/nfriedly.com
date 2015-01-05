@@ -2,6 +2,9 @@
 title: nfriedly.com v4
 link: https://github.com/nfriedly/nfriedly.com-v4
 picture: /img/portfolio/nfriedly.com-v4.jpg
+extraPictures:
+ - /img/portfolio/nfriedly-com-v4-instant-estimate.png
+ - /img/portfolio/nfriedly-com-v4-techblog.png
 tags: 
   - CodeIgniter
   - WordPress
@@ -26,12 +29,6 @@ The site served to introduce and support myself and my freelance business. Featu
 * YUI-based "Instant Estimate" form that gave a hassle-free way of estimating a project's cost.
 * [Spam-proof contact form]
 * Technical demos of working with various APIs from Google, Twitter, Facebook, etc.
-
-<div class="row thumbs">
-    <div class="col-xs-6"><a class="thumb" href="/img/portfolio/nfriedly-com-v4-instant-estimate.png" rel="lightbox"><img src="<%= @getThumbnail('/img/portfolio/nfriedly-com-v4-instant-estimate.png', 'zoomcrop', { w: 350, h: 280, q: 70 }) %>" alt="" class="img-thumbnail" /></a></div>
-    <div class="col-xs-6"><a class="thumb" href="/img/portfolio/nfriedly-com-v4-techblog.png" rel="lightbox"><img src="<%= @getThumbnail('/img/portfolio/nfriedly-com-v4-techblog.png', 'zoomcrop', { w: 350, h: 280, q: 70 }) %>" alt="" class="img-thumbnail" /></a></div>
-</div>
-
 
 [Charley Skira]: http://charleyskira.com/graphic-design/nfriedly-layout/
 [technical blog]: /techblog

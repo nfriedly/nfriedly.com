@@ -10,6 +10,13 @@
     <i class="icon-<%= project.icon%> pull-right icon-4x"></i>
 <% end %>
 <%- project.contentRendered %>
+<% if project.extraPictures: %>
+    <div class="row thumbs">
+        <% for pic in project.extraPictures: %>
+            <div class="col-xs-6"><a class="thumb" href="<%= pic %>" rel="lightbox"><img src="<%= @getThumbnail(pic, 'zoomcrop', { w: 350, h: 280, q: 70 }) %>" alt="" class="img-thumbnail" /></a></div>
+        <% end %>
+    </div>
+<% end %>
 <p class="meta">
     <% if project.github or project.link and project.link.indexOf('github.com') != -1: %>
         <% github = project.github or project.link %>
