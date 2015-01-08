@@ -36,7 +36,7 @@ $(function() {
     function setFilter() {
         var filter = window.location.hash;
         $projects.removeClass('filtered');
-        if (filter == '#' || filter == '') return false;
+        if (filter == '#' || filter === '') return false;
         $projects.not(':has(p.meta a[href=' + filter + '])').addClass('filtered');
         loadMore(); // if a tag is set, automatically load all remaining projects regardless of browser size and loading status
         return false;

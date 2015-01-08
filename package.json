@@ -11,6 +11,7 @@
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-eco": "~2.1.0",
     "docpad-plugin-highlightjs": "~2.2.2",
+    "docpad-plugin-jshint": "^2.2.0",
     "docpad-plugin-less": "~2.4.1",
     "docpad-plugin-livereload": "~2.6.0",
     "docpad-plugin-marked": "~2.2.1",

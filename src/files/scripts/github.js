@@ -31,7 +31,7 @@
 		'default':  'icon-gears'
 	
 		// todo: icon-check  for issue closed
-	}
+	};
 	
 	var repoIcons = {
 		'nfriedly.com': 'icon-home',
@@ -61,7 +61,7 @@
 		'True-Tile-Site': 'icon-th',
 		'Arduino-Fan-Controler': 'icon-asterisk icon-spin', // :D
 		'space-jump': 'icon-rocket'
-	}
+	};
 
 	function handleGH(response) {
 		var $list = $('div.github ul');
@@ -95,18 +95,18 @@
 				repos[name] = data;
 			});
 			return promise;
-		}).values().value()
+		}).values().value();
 
 		$.when.apply($, repoRequests).then(function() {
 
 			eventsByRepo.map(function(repoEvents) {
 				// sub-group the events by eventType
-				return _(repoEvents).groupBy(eventType)
+				return _(repoEvents).groupBy(eventType);
 			}).map(function(repoEvents, name) {
 				// extract the repo data and render a summary of the events
 				var repoName = _(repoEvents).toArray()[0][0].repo.name;
 				var repo = repos[repoName];
-				repo.starredOnly = (_.keys(repoEvents).length == 1 && repoEvents['WatchEvent']);
+				repo.starredOnly = (_.keys(repoEvents).length == 1 && repoEvents.WatchEvent);
 				repo.events = _.chain(repoEvents).map(renderSumary).toArray().value().reverse().join(', ');
 				var eventType = _(repoEvents).keys()[0];
 				repo.icon = repoIcons[repo.name] || eventIcons[eventType] || eventIcons['default'];
