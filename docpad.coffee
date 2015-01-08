@@ -55,6 +55,14 @@ module.exports =
 				"/px/phpr0xi": "http://nodeunblocker.com/"
 				"/px/phpr0xi/index.php": "http://nodeunblocker.com/"
 				"/stuff/africa/": "https://nfriedly.github.io/africa/"
+				"/stuff/bubblegum/": "https://github.com/nfriedly/bubblegum"
+				"/stuff/bubblegum/step1.htm": "https://github.com/nfriedly/bubblegum"
+				"/stuff/bubblegum/step2.htm": "https://github.com/nfriedly/bubblegum"
+				"/stuff/bubblegum/step3.htm": "https://github.com/nfriedly/bubblegum"
+				"/stuff/bubblegum/step4.htm": "https://github.com/nfriedly/bubblegum"
+				"/stuff/bubblegum/step5.htm": "https://github.com/nfriedly/bubblegum"
+				"/stuff/bubblegum/step6.htm": "https://github.com/nfriedly/bubblegum"
+				"/stuff/bubblegum_pub/": "https://github.com/nfriedly/bubblegum"
 
 			# onsite, but easier this way
 				"/files/Nathan-Friedly-Resume.pdf": "http://nfriedly.com/Nathan-Friedly-Resume.pdf"
