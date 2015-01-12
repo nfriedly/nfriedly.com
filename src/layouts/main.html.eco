@@ -185,7 +185,12 @@ function loadBackupJS(url) {
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
 	<!--<![endif]-->
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js" defer></script>
-	<script src="/Users/nfriedly/nfriedly.com/src/files/bower_components/jquery/dist/jquery.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<%- @getBlock("scripts").add('/scripts/email.js').add(@getDocument().get('scripts') or []).toHTML() %>
+
+
 <% if @getEnvironment() isnt 'development': %>
 	<script type="text/javascript">
       var _gaq = _gaq || [];
@@ -199,7 +204,6 @@ function loadBackupJS(url) {
     </script>
 <% end %>
 
-<%- @getBlock("scripts").add('/scripts/email.js').add(@getDocument().get('scripts') or []).toHTML() %>
 
 </body>
 </html>

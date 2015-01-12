@@ -23,12 +23,12 @@ urls:
 	</div>
 	<div class="col-md-8 pics">
 		<img src="/img/home-thumbs/nathan-nathan-christmass-tree.jpg" alt="Picture of Erin, Maizy, and Nathan in the Tipp City park" class="img-thumbnail"/>
-		<div class="instagram nathanothniel"><p><i class="fa fa-spinner fa-spin"></i> Loading the latest #nathanothniel instagram...</p></div>
+		<div class="instagram nathanothniel"><p class="loading"><i class="fa fa-spinner fa-spin"></i> Loading the latest #nathanothniel instagram...</p></div>
 		<img src="/img/home-thumbs/maizy.jpg" class="img-thumbnail portrait" alt="Picture of Maizy, the cutest dog in the world">
 	
 		<img src="/img/home-thumbs/family-smiles.jpg" class="img-thumbnail portrait" alt="Picture of Nathan leaning against a tree">
 		<img src="/img/home-thumbs/temp-o-matic.jpg" class="img-thumbnail" alt="Picture of the Temp-O-Matic digital thermitor that Nathan Built">
-		<div class="instagram maizygram"><p><i class="fa fa-spinner fa-spin"></i> Loading the latest #maizygram...</p></div>
+		<div class="instagram maizygram"><p class="loading"><i class="fa fa-spinner fa-spin"></i> Loading the latest #maizygram...</p></div>
 	</div>
 </section>
 

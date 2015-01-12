@@ -102,10 +102,10 @@
 
 			eventsByRepo.map(function(repoEvents) {
 				// sub-group the events by eventType
-				return _(repoEvents).groupBy(eventType);
+				return _.groupBy(repoEvents, eventType);
 			}).map(function(repoEvents, name) {
 				// extract the repo data and render a summary of the events
-				var repoName = _(repoEvents).toArray()[0][0].repo.name;
+				var repoName = _.values(repoEvents)[0][0].repo.name;
 				var repo = repos[repoName];
 				repo.starredOnly = (_.keys(repoEvents).length == 1 && repoEvents.WatchEvent);
 				repo.events = _.chain(repoEvents).map(renderSumary).toArray().value().reverse().join(', ');
