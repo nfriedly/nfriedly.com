@@ -1,10 +1,10 @@
 (function(exports, $) {
 	"use strict";
 
-	var renderRepoSummary = _.template('<li><h3><i class="icon-li <%= icon %>"></i> <a href="<%= html_url %>"><%= name %></a></h3><p><%= description %></p><%= homepage %><p class="muted"><%= events %></p></li>');
-	var renderStar = _.template('<li><h3 title="<%= description %>"><i class="icon-li icon-star"></i> Starred <a href="<%= url %>"><%= name %></a></h3></li>');
+	var renderRepoSummary = _.template('<li><h3><i class="fa fa-li <%= icon %>"></i> <a href="<%= html_url %>"><%= name %></a></h3><p><%= description %></p><%= homepage %><p class="muted"><%= events %></p></li>');
+	var renderStar = _.template('<li><h3 title="<%= description %>"><i class="fa fa-li fa-star"></i> Starred <a href="<%= url %>"><%= name %></a></h3></li>');
 
-	var icon = '<i class="<%= icon %>"></i> ';
+	var icon = '<i class="fa <%= icon %>"></i> ';
 	var eventTemplates = {
 		PushEvent: _.template(icon + '<a href="<%= events[0].repo.url %>/commits?author=nfriedly"><%= events.length %> code push<%= events.length == 1 ? "" : "es"%></a>'),
 		CreateEvent: _.template(icon + '<a href="<%= events[0].repo.url %>">repo created</a>'),
@@ -17,50 +17,51 @@
 	};
 
 	var eventIcons = {
-		CreateEvent: 'icon-code-fork',
-		PushEvent: 'icon-upload', // 'icon-circle-arrow-up',
-		ForkEvent: 'icon-code-fork',
-		//GistEvent: 'icon-file-alt',
-		IssuesEvent: 'icon-bug',
-		IssueCommentEvent: 'icon-comment-alt',
-		PullRequestEvent: 'icon-wrench',
-		PullRequestReviewCommentEvent: 'icon-comment',
-		WatchEvent: 'icon-star',
-		FollowEvent: 'icon-plane',
-		MemberEvent: 'icon-user',
-		'default':  'icon-gears'
+		CreateEvent: 'fa-code-fork',
+		PushEvent: 'fa-upload', // 'fa-circle-arrow-up',
+		ForkEvent: 'fa-code-fork',
+		//GistEvent: 'fa-file-o',
+		IssuesEvent: 'fa-bug',
+		IssueCommentEvent: 'fa-comment-o',
+		PullRequestEvent: 'fa-wrench',
+		PullRequestReviewCommentEvent: 'fa-comment',
+		WatchEvent: 'fa-star',
+		FollowEvent: 'fa-plane',
+		MemberEvent: 'fa-user',
+		'default':  'fa-gears'
 	
-		// todo: icon-check  for issue closed
+		// todo: fa-check  for issue closed
 	};
 	
 	var repoIcons = {
-		'nfriedly.com': 'icon-home',
-		'JS-Mini-Shell': 'icon-javascript',
-		'facebook-js-sdk': 'icon-facebook',
-		'node-unblocker': 'icon-globe',
-		'spam-free-php-contact-form': 'icon-envelope-alt',
-		'node-bang-suggest': 'icon-exclamation',
-		'Javascript-Flash-Cookies': 'icon-food',
-		'node-pagerank': 'icon-signal',
-		'pagerank.nfriedly.com': 'icon-signal',
-		'node-whats-my-ip': 'icon-desktop',
-		'air-force-game': 'icon-fighter-jet',
-		'Twitter-Mention-Monitor': 'icon-twitter',
-		'Coin-Allocator': 'icon-bitcoin',
-		'node-gatling': 'icon-asterisk',
-		'picsync-android-client': 'icon-android',
-		'picsync-server': 'icon-iphone',
-		'nathananderin.com': 'icon-heart',
-		'Meteor-ODB-II': 'icon-dashboard',
-		'ypool-xpm-miner-watcher': 'icon-gears',
-		'posture-reminder': 'icon-male',
-		'facebook-event-updater': 'icon-facebook-sign',
-		'whatsmyua.com-v1': 'icon-desktop',
-		'whatsmyua.com': 'icon-desktop',
-		'elance-withdrawal': 'icon-dollar',
-		'True-Tile-Site': 'icon-th',
-		'Arduino-Fan-Controler': 'icon-asterisk icon-spin', // :D
-		'space-jump': 'icon-rocket'
+		'nfriedly.com': 'fa-home',
+		'JS-Mini-Shell': 'fa-javascript',
+		'facebook-js-sdk': 'fa-facebook',
+		'node-unblocker': 'fa-globe',
+		'spam-free-php-contact-form': 'fa-envelope-o',
+		'node-bang-suggest': 'fa-exclamation',
+		'Javascript-Flash-Cookies': 'fa-food',
+		'node-pagerank': 'fa-signal',
+		'pagerank.nfriedly.com': 'fa-signal',
+		'node-whats-my-ip': 'fa-desktop',
+		'air-force-game': 'fa-fighter-jet',
+		'Twitter-Mention-Monitor': 'fa-twitter',
+		'Coin-Allocator': 'fa-bitcoin',
+		'node-gatling': 'fa-asterisk',
+		'picsync-android-client': 'fa-android',
+		'picsync-server': 'fa-iphone',
+		'nathananderin.com': 'fa-heart',
+		'Meteor-ODB-II': 'fa-dashboard',
+		'ypool-xpm-miner-watcher': 'fa-gears',
+		'posture-reminder': 'fa-male',
+		'facebook-event-updater': 'fa-facebook-square',
+		'whatsmyua.com-v1': 'fa-desktop',
+		'whatsmyua.com': 'fa-desktop',
+		'elance-withdrawal': 'fa-dollar',
+		'True-Tile-Site': 'fa-th',
+		'Arduino-Fan-Controler': 'fa-asterisk fa-spin', // :D
+		'space-jump': 'fa-rocket',
+		'GarageRemote': 'fa-car'
 	};
 
 	function handleGH(response) {

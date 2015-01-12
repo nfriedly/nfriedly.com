@@ -68,9 +68,9 @@ img.left, img.alignleft {
 
 .meta { background-color: #F4F4F4; padding: 4px;}
 
-.icons-ul {margin-left: 2.142857142857143em;} // I think this changed between bootstrap 2 & 3 and font-awesome hasn't been updated yet
+.fa-ul {margin-left: 2.142857142857143em;} // I think this changed between bootstrap 2 & 3 and font-awesome hasn't been updated yet
 
-a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
+a [class^="fa"], a [class*=" fa"] { text-decoration: none; }
 
 .navbar-container {
 	a { text-decoration: none; }
@@ -83,7 +83,7 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 		text-decoration: none;
 		color: @gray;
 		&:hover, &:focus, &:active { color: white; background-color: inherit; }
-		.icon-stack-base { color: black; opacity: 0.8; }
+		.fa-stack .fa { color: black; opacity: 0.8; }
 	}
 
 	.navbar {
@@ -95,7 +95,7 @@ a [class^="icon-"], a [class*=" icon-"] { text-decoration: none; }
 	}
 	
 	.nav { 
-		i[class^="icon-"]:before, i[class*=" icon-"]:before { min-width: 1.3em; }
+		i[class^="fa"]:before, i[class*=" fa"]:before { min-width: 1.3em; }
 	} 
 }
 
@@ -242,7 +242,7 @@ main li { margin-top: 1em; }
 		list-style-type: none;
 	}
 	li { animation: fadein 1s;  margin-top: 20px; }
-	i.icon-li { top: 2px; }
+	i.fa-li { top: 2px; }
 	h3, p { margin-bottom: 5px; }
 	.muted a { text-decoration: none; }
 }
@@ -397,7 +397,7 @@ footer {
 	a { color: @gray; }
 	a:hover { color: white; background-color: inherit; }
 	ul { margin:0; padding:0; }
-	ul.icons-ul { margin-left: 1.65em; }
+	ul.fa-ul { margin-left: 1.65em; }
 	.contact {
 		font-size: 160%; 
 		li { 

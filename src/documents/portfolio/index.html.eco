@@ -32,10 +32,10 @@ scripts:
 		<p><strong>Nathan Friedly</strong> is a full stack web developer with a strong focus on JavaScript and Node.js.</p>
 		<p>He loves working on open source, automating repetitive tasks, and shipping results.</p>
 		<ul class="links">
-		    <li><a href="https://github.com/nfriedly"><i class="icon-github"></i>GitHub</a></li>
-		    <li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="icon-stackexchange fa-stack-exchange"></i>Stack Overflow</a></li>
-		    <li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="icon-linkedin"></i>LinkedIn</a></li>
-		    <li><a href="/Nathan-Friedly-Resume.pdf" rel="nofollow noindex"><i class="icon-file-text"></i>Resum&eacute;</a></li>
+		    <li><a href="https://github.com/nfriedly"><i class="fa fa-github"></i>GitHub</a></li>
+		    <li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="fa fa-stack-overflow"></i>Stack Overflow</a></li>
+		    <li><a href="https://www.linkedin.com/in/nathanfriedly"><i class="fa fa-linkedin"></i>LinkedIn</a></li>
+		    <li><a href="/Nathan-Friedly-Resume.pdf" rel="nofollow noindex"><i class="fa fa-file-text"></i>Resum&eacute;</a></li>
 		</ul>
 	</div>
 	<div class="col-sm-8">
@@ -57,6 +57,6 @@ scripts:
     <%- @partial('partial-projects', {projects: projects.slice(0, 20)}) %>
     <div id="more-projects">
         <p class="link"><a href="2/">Load more...</a></p>
-        <p class="loading"><i class="icon-spinner icon-spin"></i> Loading...</p>
+        <p class="loading"><i class="fa fa-spinner fa-spin"></i> Loading...</p>
     </div>
 </div>

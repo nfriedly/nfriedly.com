@@ -23,24 +23,24 @@ urls:
 	</div>
 	<div class="col-md-8 pics">
 		<img src="/img/home-thumbs/nathan-nathan-christmass-tree.jpg" alt="Picture of Erin, Maizy, and Nathan in the Tipp City park" class="img-thumbnail"/>
-		<div class="instagram nathanothniel"><p><i class="icon-spinner icon-spin"></i> Loading the latest #nathanothniel instagram...</p></div>
+		<div class="instagram nathanothniel"><p><i class="fa fa-spinner fa-spin"></i> Loading the latest #nathanothniel instagram...</p></div>
 		<img src="/img/home-thumbs/maizy.jpg" class="img-thumbnail portrait" alt="Picture of Maizy, the cutest dog in the world">
 	
 		<img src="/img/home-thumbs/family-smiles.jpg" class="img-thumbnail portrait" alt="Picture of Nathan leaning against a tree">
 		<img src="/img/home-thumbs/temp-o-matic.jpg" class="img-thumbnail" alt="Picture of the Temp-O-Matic digital thermitor that Nathan Built">
-		<div class="instagram maizygram"><p><i class="icon-spinner icon-spin"></i> Loading the latest #maizygram...</p></div>
+		<div class="instagram maizygram"><p><i class="fa fa-spinner fa-spin"></i> Loading the latest #maizygram...</p></div>
 	</div>
 </section>
 
 <blockquote class="biblequote row">
-	<i class="icon-book icon-4x pull-left"></i>
+	<i class="fa fa-book fa fa-4x pull-left"></i>
 	<p>And now, dear brothers and sisters, one final thing. Fix your thoughts on what is true, and honorable, and right, and pure, and lovely, and admirable. Think about things that are excellent and worthy of praise.</p>
 	<cite>Philippians 4:8, New Living Translation</cite>
 </blockquote>
 
 <section class="feeds row">
 	<div class="col-md-8 techblog">
-		<h2><a href="/techblog"><i class="icon-terminal"></i> Latest on the Tech Blog</a></h2>
+		<h2><a href="/techblog"><i class="fa fa-terminal"></i> Latest on the Tech Blog</a></h2>
 		<ul>
 			<% for model in @getCollection('techblog').findAll({featured: true}).models.slice(0, 4): %>
 				<% post = model.toJSON(); body = model.getOutContent(); %>
@@ -50,14 +50,14 @@ urls:
 					<%- @getStrippedPreview(post) %>
 				</a></li>
 			<% end %>
-			<li class="archives"><strong><a href="/techblog">More Tech Blog articles <i class="icon-chevron-right"></i></a></strong></li>
+			<li class="archives"><strong><a href="/techblog">More Tech Blog articles <i class="fa fa-chevron-right"></i></a></strong></li>
 		</ul>
 	</div>
 	
 	<div class="col-md-4 github">
-		<h2><a href="https://github.com/nfriedly"><i class="icon-github"></i> GitHub Activity</a></h2>
-		<ul class="icons-ul">
-			<li class="muted"><i class="icon-li icon-spinner icon-spin"></i> Loading latest GitHub feed...</li>
+		<h2><a href="https://github.com/nfriedly"><i class="fa fa-github"></i> GitHub Activity</a></h2>
+		<ul class="fa-ul">
+			<li class="muted"><i class="fa-li fa fa-spinner fa-spin"></i> Loading latest GitHub feed...</li>
 		</ul>
 	</div>
 </section>

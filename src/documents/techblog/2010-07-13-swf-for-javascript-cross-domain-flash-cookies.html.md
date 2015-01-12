@@ -28,7 +28,7 @@ However, I was surprisingly unable to find any complete library or how-to guide 
 
 <!--more-->
 
-<div class="well well-large"><p>[<i class="icon-download"></i> Download the swf, js, and source code from github][zip]</p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre><code>bower install javascript-flash-cookies</code></pre></div>
+<div class="well well-large"><p>[<i class="fa fa-download"></i> Download the swf, js, and source code from github][zip]</p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre><code>bower install javascript-flash-cookies</code></pre></div>
 
 
 This is an .swf file that communicates with JavaScript via flash&#8217;s <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/external/ExternalInterface.html">ExternalInerface</a> to read and write to a Local <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/net/SharedObject.html">SharedObject</a> (LSO). Essentially, it&#8217;s cross-domain cookies for javascript.

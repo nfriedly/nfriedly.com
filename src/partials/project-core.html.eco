@@ -7,7 +7,7 @@
     <% end %>
 </h2>
 <% if project.icon: %>
-    <i class="icon-<%= project.icon%> pull-right icon-4x"></i>
+    <i class="fa fa-<%= project.icon%> pull-right fa fa-4x"></i>
 <% end %>
 <%- project.contentRendered %>
 <% if project.extraPictures: %>
@@ -21,7 +21,7 @@
     <% if project.github or project.link and project.link.indexOf('github.com') != -1: %>
         <% github = project.github or project.link %>
         <% github = "https://github.com/nfriedly/" + github unless github.substr(0,4) == 'http' %>
-        <a href="<%= github %>"><i class="icon-github"></i></a>
+        <a href="<%= github %>"><i class="fa fa-github"></i></a>
     <% end %>
     <% if project.npm: %>
         <a href="https://npmjs.org/package/<%= project.npm %>" class="project-badge"><img src="http://badge.fury.io/js/<%= project.npm %>.png" alt="<%= project.title %> on NPM"></a>
