@@ -81,9 +81,15 @@ a [class^="fa"], a [class*=" fa"] { text-decoration: none; }
 		right: 15px;
 		font-size: 20px;
 		text-decoration: none;
-		color: @gray;
-		&:hover, &:focus, &:active { color: white; background-color: inherit; }
-		.fa-stack .fa { color: black; opacity: 0.8; }
+        color: @gray;
+        &:hover, &:focus, &:active { color: white; background-color: inherit; }
+        &[aria-expanded="false"] {
+          color: white;
+          background-color: rgba(0,0,0,0.8);
+          padding: 2px 0 3px 4px;
+          border-radius: 10px;
+          &:hover, &:active, &:focus { background-color: @hoverLinkColor; }
+        }
 	}
 
 	.navbar {
@@ -116,10 +122,13 @@ header.jumbotron {
 	h2 { font-size: 40%;  line-height: 150%;}
 
 	a, span {background: rgba(0,0,0,0.8); padding-top: 0.25%; padding-bottom: 0.25%}
-	span a {background: transparent;}
-	a { color: white;  padding-left: 10px; padding-right: 10px; }
-	
-	span {color: #888; }
+	a, .sub-heading { color: white;  padding-left: 10px; padding-right: 10px; }
+
+    .sub-heading-with-links a {background: transparent;}
+    .sub-heading-with-links {color: #888; }
+
+
+
 	a:hover { color: #ddd; text-decoration:none;}
 	a:hover, a:active, a:focus { background-color: @hoverLinkColor; }
 }
