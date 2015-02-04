@@ -44,8 +44,8 @@ body {font-family: 'Raleway', sans-serif; }
 }
 
 a { color: @linkColor; padding: 3px 1px 0 1px; text-decoration: underline;}
-a:hover, a:hover:before, a:focus, a:active { color: white; background-color: @hoverLinkColor; text-decoration: none;  }
-a, a:hover { transition:all 0.5s }
+a:hover, a:hover:before, a:focus, a:active, a.active { color: white; background-color: @hoverLinkColor; text-decoration: none;  }
+a, a:hover, a.active { transition:all 0.5s }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {text-decoration: none;}
 
@@ -329,7 +329,6 @@ main li { margin-top: 1em; }
         padding-top: 20px;
         h2 { margin-top: 0; }
         opacity: 1;
-        max-height: 3000px;
         @media(min-width: @screen-sm) {
             max-height: 600px;
             &.open-source-projects {
@@ -342,11 +341,7 @@ main li { margin-top: 1em; }
         transition: all 1s;
         overflow: hidden;
         &.filtered {
-            margin-top: 0;
-            padding-top: 0;
-            opacity: 0;
-            max-height: 0;
-            transition: all 1s;
+            display: none;
         }
         .thumbs {
           margin-bottom: 20px;

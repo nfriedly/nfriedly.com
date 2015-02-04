@@ -1,7 +1,9 @@
 $(function() {
 
     var $moreContainer = $('#more-projects');
+    var $projectsContainer = $('div.projects');
     var $projects = $('div.projects > article');
+    var $tagCloud = $('.tag-cloud a');
 
     /* defer loading of everything after the first 20 or so projects */
 
@@ -12,7 +14,7 @@ $(function() {
             var $moreProjects = $body.find('div.projects article');
             $moreContainer.replaceWith($moreProjects);
             $projects = $projects.add($moreProjects);
-            setFilter(); // show/hide projects as necessary
+            applyFilter(); // show/hide projects as necessary
         });
         $moreContainer.find('p.link').hide();
         $moreContainer.find('p.loading').fadeIn();
@@ -33,16 +35,38 @@ $(function() {
 
     /* Filter by tags */
 
-    function setFilter() {
-        var filter = window.location.hash;
+    function getFilter() {
+        return location.hash;
+    }
+
+    function isFiltered() {
+        return !!getFilter().replace('#', '');
+    }
+
+    function applyFilter() {
         $projects.removeClass('filtered');
-        if (filter == '#' || filter === '') return false;
-        $projects.not(':has(p.meta a[href=' + filter + '])').addClass('filtered');
-        loadMore(); // if a tag is set, automatically load all remaining projects regardless of browser size and loading status
+        $tagCloud.removeClass('active');
+        if (isFiltered())  {
+            var filter = getFilter();
+            $projects.not(':has(p.meta a[href=' + filter + '])').addClass('filtered');
+            $tagCloud.filter('a[href=' + filter + ']').addClass('active');
+            loadMore(); // if a tag is set, automatically load all remaining projects regardless of browser size and loading status
+        }
+    }
+
+    function animateFilter() {
+        $tagCloud.removeClass('active');
+        $projectsContainer.slideUp('slow', function() {
+            applyFilter();
+            $projectsContainer.slideDown('slow');
+        });
         return false;
     }
-    $(window).bind( 'hashchange', setFilter);
-    setFilter();
+    $(window).bind( 'hashchange', animateFilter);
+
+    if (isFiltered()) {
+        animateFilter();
+    }
 
     $('a.show-small-tags').click(function() {
         $('div.tag-cloud').removeClass('hide-small-tags');
