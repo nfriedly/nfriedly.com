@@ -1,8 +1,8 @@
 (function(exports, $) {
 	"use strict";
 
-	var renderRepoSummary = _.template('<li><h3><i class="fa fa-li <%= icon %>"></i> <a href="<%= html_url %>"><%= name %></a></h3><p><%= description %></p><%= homepage %><p class="muted"><%= events %></p></li>');
-	var renderStar = _.template('<li><h3 title="<%= description %>"><i class="fa fa-li fa-star"></i> Starred <a href="<%= html_url %>"><%= name %></a></h3></li>');
+	var renderRepoSummary = _.template('<li><h3><i class="fa fa-li <%= icon %>"></i> <a href="<%= html_url %>"><%- name %></a></h3><p><%- description %></p><%= homepage %><p class="muted"><%= events %></p></li>');
+	var renderStar = _.template('<li><h3 title="<%- description %>"><i class="fa fa-li fa-star"></i> Starred <a href="<%= html_url %>"><%- name %></a></h3></li>');
 
 	var icon = '<i class="fa <%= icon %>"></i> ';
 	var eventTemplates = {
