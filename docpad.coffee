@@ -71,7 +71,7 @@ module.exports =
 			trailingSlashes: true # this is to avoid having github pages redirect users from the cloudfront domain to the github domain just to add the slash to the end of the url.
 
 		jshint:
-			ignorePaths: ['scripts/lightbox/', 'stuff/jquery-requirejs-noconflict-issue']
+			ignorePaths: ['scripts/lightbox/', 'stuff/jquery-requirejs-noconflict-issue', 'bower_components/']
 
 	collections:
 		techblog: ->
