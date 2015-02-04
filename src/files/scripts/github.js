@@ -14,7 +14,7 @@
 		PullRequestEvent: _.template(icon + '<a href="<%= event.payload.pull_request.html_url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
 		WatchEvent: _.template(icon + '<a href="<%= repo.html_url %>">Starred</a>'),
 		ForkEvent: _.template(icon + '<a href="<%= event.payload.forkee.html_url %>">forked repo</a>'),
-        'default':  _.template(icon + '<a href="<%= event.url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
+        'default':  _.template(icon + '<a href="<%= repo.html_url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
 	};
 
 	var eventIcons = {
