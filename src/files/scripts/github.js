@@ -6,14 +6,15 @@
 
 	var icon = '<i class="fa <%= icon %>"></i> ';
 	var eventTemplates = {
-		PushEvent: _.template(icon + '<a href="<%= events[0].repo.url %>/commits?author=nfriedly"><%= events.length %> code push<%= events.length == 1 ? "" : "es"%></a>'),
-		CreateEvent: _.template(icon + '<a href="<%= events[0].repo.url %>">repo created</a>'),
-		IssueCommentEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> issue comment<%= events.length == 1 ? "" : "s"%></a>'),
-		IssuesEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> issue<%= events.length == 1 ? "" : "s"%> created</a>'),
-		MemberEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> contributor<%= events.length == 1 ? "" : "s"%> added</a>'),
-		PullRequestEvent: _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
-		WatchEvent: _.template(icon + '<a href="<%= events[0].url %>">Starred</a>'),
-		'default':  _.template(icon + '<a href="<%= events[0].url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
+		PushEvent: _.template(icon + '<a href="<%= repo.html_url %>/commits?author=nfriedly"><%= events.length %> code push<%= events.length == 1 ? "" : "es"%></a>'),
+		CreateEvent: _.template(icon + '<a href="<%= repo.html_url %>">repo created</a>'),
+		IssueCommentEvent: _.template(icon + '<a href="<%= event.payload.issue.html_url %>"><%= events.length %> issue comment<%= events.length == 1 ? "" : "s"%></a>'),
+		IssuesEvent: _.template(icon + '<a href="<%= event.payload.issue.html_url %>"><%= events.length %> issue<%= events.length == 1 ? "" : "s"%> created</a>'),
+		MemberEvent: _.template(icon + '<a href="<%= repo.html_url %>"><%= events.length %> contributor<%= events.length == 1 ? "" : "s"%> added</a>'),
+		PullRequestEvent: _.template(icon + '<a href="<%= event.payload.pull_request.html_url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
+		WatchEvent: _.template(icon + '<a href="<%= repo.html_url %>">Starred</a>'),
+		ForkEvent: _.template(icon + '<a href="<%= event.payload.forkee.html_url %>">forked repo</a>'),
+        'default':  _.template(icon + '<a href="<%= event.url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
 	};
 
 	var eventIcons = {
@@ -74,7 +75,9 @@
 		function renderSumary(events, type) {
 			var et = eventTemplates,
 				data = {
+                    repo: repos[events[0].repo.name],
 					events: events,
+                    event: events[0],
 					icon: eventIcons[type] || eventIcons['default']
 				};
 			return et[type] ? et[type](data) : et['default'](data);
