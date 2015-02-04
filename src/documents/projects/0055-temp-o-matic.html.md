@@ -3,6 +3,7 @@ title: Temp-O-Matic
 picture: /img/portfolio/temp-o-matic.jpg
 tags:
  - Arduino
+ - hardware
 write: false
 ---
 
