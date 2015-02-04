@@ -132,14 +132,14 @@ document.forms.join(", "); // throws a type error. this is not an array.
 typeof document.forms; // returns "object"
 ```
 
-Did you know you can send any number of parameters you want to a javascript function? They&#8217;re all stored in an array-like object named `arguments`.
+Did you know you can send any number of arguments you want to a javascript function? They're all stored in an array-like object named `arguments`.
 
 ``` javascript
 function takesTwoParams(a, b){
-	// arguments is an  array-like variable inside of all functions
+	// arguments is an array-like variable that is automatically created
 	// arguments.length works great
 
-	alert ("you gave me "+arguments.length+" parameters");  
+	alert ("you gave me "+arguments.length+" arguments"); 
 
 	for(i=0; i&lt; arguments.length; i++){
 		alert("parameter " + i + " = " + arguments[i]); 
@@ -147,12 +147,18 @@ function takesTwoParams(a, b){
 }
 
 takesTwoParams("one","two","three");
-// alerts "you gave me 3 parameter", 
+// alerts "you gave me 3 arguments",
 // then "parameter 0 = one" 
 // etc. 
 ```
 
-This works great. But that&#8217;s about as far as you can go with array-like objects. The flowing example does not work:
+<div class="alert alert-info">
+**Tip:**
+*Parameters* are the named variables in a function's signature: `a` and `b` in the previous example.<br />
+*Arguments*, by contrast, are the expressions that are used when calling the function: `"one"`, `"two"`, and `"three"` in this case.
+</div>
+
+This works great. But that's about as far as you can go with array-like objects. The flowing example does not work:
 
 ``` javascript
 function takesTwoParams(a, b){
