@@ -40,8 +40,8 @@ But, since it doesn't turn sound bar back on, I still have to get out my sound b
 
 The TV has a couple of USB ports on the back. These were intended for plugging in an external HDD to play movies off of, but they provide more than enough power for an Arduino, and, importantly, they only provide power when the TV is on.
 
-For my initial solution, I put together a regular [Arduino Uno R3] and an [IR Shield]. (I purchased mine from [Electrodragon], which has fantastically low prices and incredibly slow shipping.
-For faster delivery, you might want to check out the [LinkSprite Infrared Shield])
+For my initial solution, I put together a regular [Arduino Uno R3] and an [IR Shield].
+(That shield comes from [Electrodragon], who I highly recommend, but be aware that they ship from China so it takes a little while to arrive.)
 
 <center>
 ![Arduino Uno and IR Shield side-by-side"](/img/blog/arduino-ir/arduino-ir-parts.jpg)
@@ -137,7 +137,6 @@ Updating to that got me back instantaneous, automatic sound bar power!
 [Arduino Uno R3]: http://www.amazon.com/gp/product/B006H06TVG/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B006H06TVG&linkCode=as2&tag=nfriedly-20&linkId=65LVBGKDBEAGVMAO
 [Electrodragon]: http://www.electrodragon.com/
 [IR Shield]: http://www.electrodragon.com/product/arduino-ir-infrared-shield/
-[LinkSprite Infrared Shield]: http://store.linksprite.com/linksprite-infrared-shield-for-arduino/
 [Arduino IRemote library]: https://github.com/shirriff/Arduino-IRremote
 [Digisparks]: http://digistump.com/products/1
 [micronucleus]: https://github.com/micronucleus/micronucleus
