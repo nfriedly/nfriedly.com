@@ -15,7 +15,7 @@ tags:
  - IR
 ---
 
-<style> center { margin: 20px 0; } </style>
+<style> center img { margin: 20px 0; } </style>
 
 <img class="left" src="/img/blog/arduino-ir/arduino-ir-assembled-small.jpg" alt="Arduino Uno and IR Shield assembled" />
 *"Snatching defeat from the jaws of victory."*
@@ -137,7 +137,7 @@ Updating to that got me back instantaneous, automatic sound bar power!
 [Arduino Uno R3]: http://www.amazon.com/gp/product/B006H06TVG/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B006H06TVG&linkCode=as2&tag=nfriedly-20&linkId=65LVBGKDBEAGVMAO
 [Electrodragon]: http://www.electrodragon.com/
 [IR Shield]: http://www.electrodragon.com/product/arduino-ir-infrared-shield/
-[LinkSprite Infared Shield]: http://store.linksprite.com/linksprite-infrared-shield-for-arduino/
+[LinkSprite Infrared Shield]: http://store.linksprite.com/linksprite-infrared-shield-for-arduino/
 [Arduino IRemote library]: https://github.com/shirriff/Arduino-IRremote
 [Digisparks]: http://digistump.com/products/1
 [micronucleus]: https://github.com/micronucleus/micronucleus
