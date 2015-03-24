@@ -44,7 +44,7 @@ For my initial solution, I put together a regular [Arduino Uno R3] and an [IR Sh
 (That shield comes from [Electrodragon], who I highly recommend, but be aware that they ship from China so it takes a little while to arrive. LinkSprite offers a [similar shield](http://store.linksprite.com/linksprite-infrared-shield-for-arduino/) that ships from Colorado and would presumably work just as well.)
 
 <center>
-![Arduino Uno and IR Shield side-by-side"](/img/blog/arduino-ir/arduino-ir-parts.jpg)
+![Arduino Uno and IR Shield side-by-side](/img/blog/arduino-ir/arduino-ir-parts.jpg)
 </center>
 
 I used Ken Shirriff's awesome [Arduino IRemote library] and initially it had some conflicts.
