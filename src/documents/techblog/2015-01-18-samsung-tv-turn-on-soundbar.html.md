@@ -94,8 +94,8 @@ I "installed" it on the back of my TV (A.K.A. set it on top of the wall mount po
 Total time: < 20 minutes.
 
 <center>
-![Arduino Uno and IR Shield assembled together"](/img/blog/arduino-ir/arduino-ir-assembled.jpg)
-![Arduino Uno and IR Shield installed on TV"](/img/blog/arduino-ir/arduino-ir-installed.jpg)
+![Arduino Uno and IR Shield assembled together](/img/blog/arduino-ir/arduino-ir-assembled.jpg)
+![Arduino Uno and IR Shield installed on TV](/img/blog/arduino-ir/arduino-ir-installed.jpg)
 </center>
 
 
@@ -106,7 +106,7 @@ I was stoked with how well my new setup worked, but it still kind of annoyed me 
 So after a week or so, I rebuilt it and recovered my Arduino.
 
 <center>
-![Digispark, IR Shield, and parts to make a dupont cable"](/img/blog/arduino-ir/digispark-ir-parts.jpg)
+![Digispark, IR Shield, and parts to make a dupont cable](/img/blog/arduino-ir/digispark-ir-parts.jpg)
 </center>
 
 There was a bit of trouble with the IRremote library wanting to use timers that The Arduino's ATmega 328 processor had but the Digispark's Attiny85 did not.
@@ -117,7 +117,7 @@ I should clean it up and send a Pull Request sometime soon here...
 After that, I made myself a male-to-female dupont cable (probably the hardest part) and "re-installed" it.
 
 <center>
-![Digispark + IR Shield"](/img/blog/arduino-ir/digispark-ir-assembled.jpg)
+![Digispark + IR Shield](/img/blog/arduino-ir/digispark-ir-assembled.jpg)
 </center>
 
 Out of the box, Digispark's have a 5-second delay between powering on and running your program. This is to allow the IDE to recognize it and upload a new sketch, but I found it a little bit annoying.
@@ -125,9 +125,9 @@ Fortunately, the [micronucleus] bootloader has an alternate mode where it runs y
 Updating to that got me back instantaneous, automatic sound bar power!
 
 <center>
-![IR Shield installed on TV"](/img/blog/arduino-ir/ir-installed.jpg)
-![Overview of Digispark and IR Shield installed on TV"](/img/blog/arduino-ir/digispark-ir-installed.jpg)
-![Digispark installed on TV"](/img/blog/arduino-ir/digispark-installed.jpg)
+![IR Shield installed on TV](/img/blog/arduino-ir/ir-installed.jpg)
+![Overview of Digispark and IR Shield installed on TV](/img/blog/arduino-ir/digispark-ir-installed.jpg)
+![Digispark installed on TV](/img/blog/arduino-ir/digispark-installed.jpg)
 </center>
 
 
