@@ -4,7 +4,9 @@ heading: Portfolio
 layout: main
 icon: laptop
 cssClass: portfolio
-scripts: /scripts/lightbox/lightbox-min.js
+scripts:
+    - /scripts/lightbox/lightbox-min.js
+    - /scripts/portfolio.js
 stylesheets: /scripts/lightbox/lightbox.css
 headerImage: /img/temp-o-matic-crop.jpg
 priority: 1

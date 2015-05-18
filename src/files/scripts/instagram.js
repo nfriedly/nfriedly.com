@@ -8,8 +8,10 @@ $(document).ready(function() {
 		var pic = _.find(pics, function(pic) {
 			return _.contains(pic.tags, tag);
 		});
-		//console.log(pic);
-		if (!pic) return null;
+		// if we don't have a picture matching the request, then just use the first one
+		if (!pic) {
+			pic = pics.shift();
+		}
 		var i = $('<img/>');
 		i.on('load', function() {
 			$('div.' + tag).html(render(pic));

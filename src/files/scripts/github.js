@@ -84,9 +84,12 @@
 		}
 	
 		 var eventsByRepo = _.chain(response.data).filter(function(event ){
-				// filter out events that aren't attached to a repo
-				return event.repo;
-			}).groupBy(function(event) {
+			// filter out events that aren't attached to a repo
+			return event.repo;
+		 }).filter(function(event) {
+			 // this one got moved and the original URL now 404s, breaking the rest of my script.
+			 return event.repo.name != 'nfriedly/arduino-pi-badge-demo';
+		 }).groupBy(function(event) {
 			 // group the events by repo name
 			 return event.repo.name;
 		 });
