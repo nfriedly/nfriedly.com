@@ -1,6 +1,7 @@
 ---
 title: Express Rate Limit
-github: express-rate-limit
+link: https://npmjs.org/package/express-rate-limit
+npm: express-rate-limit
 date: 2014-12-10
 icon: tachometer
 tags:
