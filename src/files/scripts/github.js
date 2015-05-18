@@ -62,7 +62,10 @@
 		'True-Tile-Site': 'fa-th',
 		'Arduino-Fan-Controler': 'fa-asterisk fa-spin', // :D
 		'space-jump': 'fa-rocket',
-		'GarageRemote': 'fa-car'
+		'GarageRemote': 'fa-car',
+		'node-tts-player': 'fa-volume-up',
+		'rpi-time-weather-demo': 'fa-bolt',
+		'arduino-pi-badge-demo': 'fa-pie-chart'
 	};
 
 	function handleGH(response) {
@@ -115,7 +118,7 @@
 				var repo = repos[repoName];
 				repo.starredOnly = (_.keys(repoEvents).length == 1 && repoEvents.WatchEvent);
 				repo.events = _.chain(repoEvents).map(renderSumary).toArray().value().reverse().join(', ');
-				var eventType = _(repoEvents).keys()[0];
+				var eventType = _.keys(repoEvents)[0];
 				repo.icon = repoIcons[repo.name] || eventIcons[eventType] || eventIcons['default'];
 				repo.homepage = repo.homepage ? '<p class="home"><a href="' + repo.homepage + '">' + repo.homepage + '</a></p>' : '';
 				return repo;
