@@ -1,5 +1,5 @@
 ---
-title: Watson/Raspberry Pi Time and Weather Speech Demo
+title: Time and Weather Announcer
 github: https://github.com/watson-developer-cloud/rpi-time-weather-demo
 picture: /img/portfolio/time-weather.jpg
 date: 2015-05-03
@@ -12,7 +12,7 @@ tags:
   - Open Source
 ---
 
-My first in a series of Watson/<abbr title="Internet of Things">IoT</abbr> demos, this one emplys a Raspberry Pi that 
+My first in a series of Watson/<abbr title="Internet of Things">IoT</abbr> demos, this one employs a Raspberry Pi that 
 announces the current time and weather over the system speakers at the press of a button. Uses Node.js and the newer 
 Linux userspace GPIO support to avoid needing to run as root.
 
