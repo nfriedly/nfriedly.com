@@ -7,15 +7,15 @@
     "npm": "1.3"
   },
   "dependencies": {
-    "docpad": "~6.69.1",
+    "docpad": "~6.78.1",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-eco": "~2.1.0",
-    "docpad-plugin-highlightjs": "~2.2.2",
-    "docpad-plugin-jshint": "^2.2.0",
+    "docpad-plugin-highlightjs": "~2.3.0",
+    "docpad-plugin-jshint": "~2.2.1",
     "docpad-plugin-less": "~2.4.1",
-    "docpad-plugin-livereload": "~2.6.0",
-    "docpad-plugin-marked": "~2.2.1",
-    "docpad-plugin-partials": "~2.9.1",
+    "docpad-plugin-livereload": "~2.6.1",
+    "docpad-plugin-marked": "~2.3.0",
+    "docpad-plugin-partials": "~2.9.2",
     "docpad-plugin-redirector": "~2.0.1",
     "docpad-plugin-sitemap": "~2.2.0",
     "docpad-plugin-thumbnails": "~2.1.2",
@@ -28,6 +28,6 @@
   "license": "MIT",
   "repository": "https://github.com/nfriedly/nfriedly.com",
   "devDependencies": {
-    "docpad-plugin-ghpages": "~2.4.3"
+    "docpad-plugin-ghpages": "~2.4.4"
   }
 }

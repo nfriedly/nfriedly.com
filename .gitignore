@@ -3,3 +3,4 @@
 .idea/tasks.xml
 Thumbs.db
 .DS_Store
+node_modules/
