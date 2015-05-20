@@ -1,6 +1,6 @@
 ---
 title: Personality Insights Badge
-github: https://github.com/watson-developer-cloud/arduino-pi-badge-demo
+link: https://github.com/watson-developer-cloud/arduino-pi-badge-demo
 picture: /img/portfolio/watson-pi-twitter-badge.jpg
 date: 2015-05-10
 

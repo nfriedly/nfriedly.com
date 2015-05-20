@@ -1,6 +1,6 @@
 ---
 title: Time and Weather Announcer
-github: https://github.com/watson-developer-cloud/rpi-time-weather-demo
+link: https://github.com/watson-developer-cloud/rpi-time-weather-demo
 picture: /img/portfolio/time-weather.jpg
 date: 2015-05-03
 

@@ -120,7 +120,7 @@ module.exports =
 			).join ", "
 
 		normalizeTag: (tag) ->
-			tag.toLowerCase().replace(/[^a-z0-9]/g, " ").trim().replace RegExp(" +", "g"), "-"
+			tag.toLowerCase().replace('++', 'pp').replace('#', '-sharp').replace(/[^a-z0-9]/g, " ").trim().replace RegExp(" +", "g"), "-"
 
 		linkPhotoCredits: (links) ->
 			# turn the object into an array
