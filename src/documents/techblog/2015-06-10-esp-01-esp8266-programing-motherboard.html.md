@@ -16,8 +16,8 @@ tags:
 ---
 
 <img class="right" src="/img/blog/esp-mb/zoom.jpg" style="max-width: 300px;" alt="ESP-01" />[NodeMCU](http://nodemcu.com/index_en.html) and other ESP8266 modules are starting to become very popular because they offer an embedded development 
-platform with a CPU+RAM+Storage+WiFi all in one for (considerably) less than the price of an Arduino. There are a number of 
-[breadboard][huzzah]-[friendly][espthing] [modules][nodemcu] with all pins exposed (and [more][oak] coming soon.)
+platform with a CPU+RAM+Storage+WiFi all in one for (considerably) less than the price of an Arduino. There are a [number][huzzah] of 
+[breadboard][espthing]-[friendly][nodemcu] [modules][cactus] with all pins exposed (and [more][oak] coming soon.)
 
 However, this post is about the breadboard-unfriendly ESP-01 module. It only has two GPIO pins (four if you include the
 TX & RX pins), but it's smaller and most importantly, cheaper. <!--more-->[US][adafruit] [vendors][sparkfun] tend to charge around 
@@ -142,6 +142,7 @@ Happy hacking!
 [huzzah]: https://www.adafruit.com/product/2471
 [espthing]: https://www.sparkfun.com/products/13231
 [nodemcu]: http://www.electrodragon.com/product/nodemcu-lua-amica-r2-esp8266-wifi-board/
+[cactus]: https://www.tindie.com/products/AprilBrother/cactus-micro-rev2-arduino-compatible-plus-esp8266/
 [oak]: https://www.kickstarter.com/projects/digistump/oak-by-digistump-wi-fi-for-all-things-arduino-comp
 
 [adafruit]: https://www.adafruit.com/product/2282
