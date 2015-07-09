@@ -79,7 +79,7 @@ When uploading your sketch, you have to be a little carefule about the order and
 4. Watch the status line in the Arduino IDE. When it changes from "Compiling..." to "Uploading..." release the RESET button
 5. After you see it starting to print the upload status in red text, release the PROGRAM button.
 
-Here's an example program to make use of the PROGRAM button on `GPIO00`:
+Here's an example program to make use of the PROGRAM button on `GPIO 0`:
 
 ```C++
 const int buttonPin = 0;
