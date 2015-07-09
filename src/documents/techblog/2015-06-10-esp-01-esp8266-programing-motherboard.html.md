@@ -27,30 +27,56 @@ The biggest problem with the ESP-01 is that it's annoying to wire up and program
 
 ## Parts
 
-* <img class="right" src="/img/blog/esp-mb/parts.jpg" style="max-width: 300px;" alt="ESP-01 motherboard parts" /> __ESP-01 module__: The reason were going through all this trouble
-* __USB-Serial TTL programmer__: I'm using an Adafruit FTDI Friend, although I'm hesitant to recommend FTDI products after they shipped mallware with their Windows drivers...
-* __3.3v Voltage Regulator__: Needs to be a slightly beefy one because the ESP8266EX chips can reportedly draw as much as 350-400mA. I'm using a LM2937ET-3.3/NOPB from TI.
-* __10 μF Capacitor__: For the 3.3v side of the voltage regulator
-* __0.1 μF Capacitor__: (100nf) For the vin/5v side of the voltage regulator
-* __2x button__: SPST (Single Pole, Single Throw) momentary on switches. I'm using Omron B3F buttons.
-* __10k Ω Resistor__: Pull-up for the Program button on `GPIO0`
-* __1k Ω Resistor__: Pull-up for the `CH_PD` pin that enables the ESP-01 module
-* __2*4 Female Pin Headers__: For connecting the ESP-01 module. (But nobody will look down on you if you just break off two 1x4 pieces of single-row pin headers and solder them side-by-side ;)
+![ESP-01 motherboard parts](/img/blog/esp-mb/parts.jpg)
+
+* __ESP-01 module__: The reason were going through all this trouble. [$3.50 @ Electrodragon][electrodragon]
+* __USB-Serial TTL programmer__: I'm using an Adafruit FTDI Friend, although I'm hesitant to recommend FTDI products after they shipped mallware with their Windows drivers... 
+  [$14.75 @ Adafruit](http://www.adafruit.com/product/284)
+  or an alternative option that I *think* will work: [$3.30 @ Electrodragon](http://www.electrodragon.com/product/pl2303ta-usb-ttl-usb-serial-cable-win-88-1-compatible/)
+* __3.3v Voltage Regulator__: Needs to be a slightly beefy one because the ESP8266EX chips can reportedly draw as much as 350-400mA. I'm using a LM2937ET-3.3/NOPB from TI. 
+  [$1.61 @ Texas Instruments](http://www.ti.com/product/LM2937-3.3/samplebuy) (Or request a free sample)
+* __10 μF Capacitor__: For the 3.3v side of the voltage regulator. 
+  [$0.02 each @ Tayda electronics](http://www.taydaelectronics.com/10uf-25v-105c-radial-electrolytic-capacitor-5x11mm.html) 
+  or [$3.30 kit @ Electrodragon](http://www.electrodragon.com/product/radial-electrolytic-capacitor-1uf-470uf-12-kinds-10pcs/)
+* __0.1 μF Capacitor__: (100nf) For the vin/5v side of the voltage regulator. 
+  [$0.02 each @ Tayda Electronics](http://www.taydaelectronics.com/0-1uf-50v-105c-radial-electrolytic-capacitor-5x11mm.html) 
+  (Or use the 0.2uf Capacitor from the [Electrodragon kit](http://www.electrodragon.com/product/radial-electrolytic-capacitor-1uf-470uf-12-kinds-10pcs/)
+* __Two Buttons__: SPST (Single Pole, Single Throw) momentary on switches. I'm using Omron B3F buttons.
+  [$0.04 each @ Tayda Electronics](http://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/tact-switch-6x6mm-5mm-through-hole-spst-no.html)
+  or [$1.20 for 50 @ Electrodragon](http://s1.electrodragon.com/wp-content/uploads/2011/12/button1.jpg)
+* __10k Ω Resistor__: Pull-up for the Program button on `GPIO 0`. 
+  [$0.10 for 10 @ Tayda Electronics](http://www.taydaelectronics.com/resistors/1-4w-carbon-film-resistors/10-x-resistor-10k-ohm-1-4w-5-carbon-film-pkg-of-10.html)
+  or [$0.90 for 100 @ Electrodragon](http://www.electrodragon.com/product/metal-membrane-resistors-different-value-available-100pcs/)
+  or [$3 kit @ Electrodragon](http://www.electrodragon.com/product/14w-resistor-kit-accuracy-in-1-2020pcs/)
+* __1k Ω Resistor__: Pull-up for the `CH_PD` pin that enables the ESP-01 module.
+  [$0.10 for 10 @ Tayda Electronics](http://www.taydaelectronics.com/resistors/1-4w-carbon-film-resistors/10-x-resistor-1k-ohm-1-4w-5-carbon-film-pkg-of-10.html)
+  or [$0.90 for 100 @ Electrodragon](http://www.electrodragon.com/product/metal-membrane-resistors-different-value-available-100pcs/)
+  or [$3 kit @ Electrodragon](http://www.electrodragon.com/product/14w-resistor-kit-accuracy-in-1-2020pcs/)
+* __2x4 Female Pin Headers__: For connecting the ESP-01 module. 
+  (I'm not even sure where to buy these, I think mine was a free sample from [Samtec](https://www.samtec.com/technical-specifications/default.aspx?SeriesMaster=SSW) that was leftover from a different project.
+  Nobody will look down on you if you just break off two 1x4 pieces of single-row pin headers and solder them side-by-side ;)
 * __Male and Female Breakaway Pin Headers__: For connecting USB-Serial TTL programmer and connecting to the GPIO pins.
-* __Stripboard__: The "board" part of our motherboard
+  [$0.90 (male) & $1.70 (female) @ Electrodragon](http://www.electrodragon.com/product/break-away-header/) 
+  + [$1.40 (male, right-angle - optional) @ Electrodragon](http://www.electrodragon.com/product/10pcs-2-54mm-90-degree-break-away-pin-header/)
+* __Stripboard__: The "board" part of our motherboard.
+  [$0.66 @ Tayda Electronics](http://www.taydaelectronics.com/small-stripboard-94x53mm-copper.html)
 * __Misc Wire__: A few short pieces of wire, probably less than 2 inches total.
-
-I also added brass spacers to my board after I built it.
-
+  [$0.10 per foot @ Tayda Electronics](http://www.taydaelectronics.com/hardware/cable-wire.html)
+  or [$1.60 for 10 meters @ Electrodragon](http://www.electrodragon.com/product/24awg-wires-cables-1-meter-variablecolors/)
+* __Brass Spacers__: Optional but keeps the board from potentially shorting out on your desk/whatever.
+  [$0.90 for 10 @ Electrodragon](http://www.electrodragon.com/product/m3-brazz-bolt-different-length-available/)
+  
+Total cost: ~$12 + shipping to go with the cheapest options. Be aware that Tayda Electronics has a minimum order of $5, so with that and shipping you'll probably have to spend $20-25 to get everything.
 
 ## Tools
 
 ![ESP-01 motherboard parts & tools](/img/blog/esp-mb/parts-tools.jpg)
 
 * __Soldering Iron & Solder__: I recently upgraded to a [Weller WESD51] and I am *loving* it.
-* __Wire Cutter / Strippers__: For cutting stripping the few bits of wire we need.
+* __Flush Cutters__: To cut the leads off after soldering each part in. These are also handy for "breakaway" female pin headers.
+* __Wire Strippers__: For cutting stripping the few bits of wire we need.
 * __X-Acto Knife__: Necessary for cutting the stripboard track between the two rows of pins on the ESP-01 module, and a fallback option for the other cuts.
-* __Drill w/ 4mm drill bit__: Makes all of the other stripboard cuts much easier.
+* __Drill w/ 4mm drill bit__: Makes all of the other stripboard cuts much easier. Just position the drill in the center of an unused pin hole and spin it for a few moments to strip away the copper.
 
 ## Building
 
@@ -62,13 +88,17 @@ Connect everything as shown in the diagram. Be sure to cut the stripboard tracks
 
 I changed the spacing a bit when I assembled mine to give my fingers more room to connect and disconnect things from the pin headers.
 
-![ESP-01 motherboard top-down, unconnected](/img/blog/esp-mb/top-unconnected.jpg)
+![ESP-01 motherboard front-angled](/img/blog/esp-mb/front-angle.jpg)
 
-(This pic is from a previous revision where I used a bit of red wire for `CH_PD` instead of the 1k Ω resistor. It's since been corrected.)
+![ESP-01 motherboard back-angled](/img/blog/esp-mb/back-angle-2.jpg)
+
+![ESP-01 motherboard behind connector](/img/blog/esp-mb/back-angle.jpg)
+
+![ESP-01 motherboard bottom](/img/blog/esp-mb/bottom.jpg)
 
 ## Programing
 
-There are a few ways to program the ESP-8266, but my favorite is to use the [Arduino IDE] with the [ESP8266][addon] from
+There are a few ways to program the ESP-8266, but my favorite is to use the [Arduino IDE] with the [ESP8266][addon] board from
  [esp8266.com](http://www.esp8266.com/). Adafruit has a [nice guide] for installing it.
 
 When uploading your sketch, you have to be a little carefule about the order and timing of the button presses:
@@ -79,7 +109,7 @@ When uploading your sketch, you have to be a little carefule about the order and
 4. Watch the status line in the Arduino IDE. When it changes from "Compiling..." to "Uploading..." release the RESET button
 5. After you see it starting to print the upload status in red text, release the PROGRAM button.
 
-Here's an example program to make use of the PROGRAM button on `GPIO 0`:
+Here's an example sketch to use PROGRAM button on `GPIO 0` as a regular input:
 
 ```C++
 const int buttonPin = 0;
@@ -95,7 +125,7 @@ void loop() {
   
   Serial.print("Button is ");
   int status = digitalRead(buttonPin);
-  // because of the way the board is wired, the pin state is reversed
+  // because of the pullup resistor, the pin state is reversed: button pressed = LOW, button released = HIGH
   if (status == LOW) {
     Serial.println("pressed");
   } else {
