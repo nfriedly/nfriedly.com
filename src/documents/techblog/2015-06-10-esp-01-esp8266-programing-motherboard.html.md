@@ -28,7 +28,7 @@ The biggest problem with the ESP-01 is that it's annoying to wire up and program
 ## Parts
 
 * <img class="right" src="/img/blog/esp-mb/parts.jpg" style="max-width: 300px;" alt="ESP-01 motherboard parts" /> __ESP-01 module__: The reason were going through all this trouble
-* __USB-tty programmer__: I'm using an Adafruit FTDI Friend, although I'm hesitant to recommend FTDI products after they shipped mallware with their Windows drivers...
+* __USB-Serial TTL programmer__: I'm using an Adafruit FTDI Friend, although I'm hesitant to recommend FTDI products after they shipped mallware with their Windows drivers...
 * __3.3v Voltage Regulator__: Needs to be a slightly beefy one because the ESP8266EX chips can reportedly draw as much as 350-400mA. I'm using a LM2937ET-3.3/NOPB from TI.
 * __10 μF Capacitor__: For the 3.3v side of the voltage regulator
 * __0.1 μF Capacitor__: (100nf) For the vin/5v side of the voltage regulator
@@ -36,7 +36,7 @@ The biggest problem with the ESP-01 is that it's annoying to wire up and program
 * __10k Ω Resistor__: Pull-up for the Program button on `GPIO0`
 * __1k Ω Resistor__: Pull-up for the `CH_PD` pin that enables the ESP-01 module
 * __2*4 Female Pin Headers__: For connecting the ESP-01 module. (But nobody will look down on you if you just break off two 1x4 pieces of single-row pin headers and solder them side-by-side ;)
-* __Male and Female Breakaway Pin Headers__: For connecting USB-tty programmer and connecting to the GPIO pins.
+* __Male and Female Breakaway Pin Headers__: For connecting USB-Serial TTL programmer and connecting to the GPIO pins.
 * __Stripboard__: The "board" part of our motherboard
 * __Misc Wire__: A few short pieces of wire, probably less than 2 inches total.
 
