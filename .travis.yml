@@ -1,6 +1,7 @@
 language: node_js
 node_js:
 - '0.10'
+sudo: false # this enables faster builds - http://docs.travis-ci.com/user/migrating-from-legacy/
 before_script:
 - ./predeploy.sh
 script:
