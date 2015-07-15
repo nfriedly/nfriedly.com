@@ -82,7 +82,6 @@ module.exports =
 					cssClass: "post"
 					layout: "main"
 
-				return
 
 
 		projects: ->
