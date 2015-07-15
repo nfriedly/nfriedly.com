@@ -23,7 +23,8 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server"
+    "start": "node_modules/docpad/bin/docpad-server",
+    "deploy": "docpad deploy-ghpages --env static"
   },
   "license": "MIT",
   "repository": "https://github.com/nfriedly/nfriedly.com",

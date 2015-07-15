@@ -4,7 +4,7 @@ node_js:
 before_script:
 - ./predeploy.sh
 script:
-- docpad deploy-ghpages --env static
+- npm run deploy
 env:
   global:
   - GH_REPO="nfriedly/nfriedly.com"
