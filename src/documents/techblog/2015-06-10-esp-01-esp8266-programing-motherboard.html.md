@@ -32,8 +32,10 @@ The biggest problem with the ESP-01 is that it's annoying to wire up and program
 * __ESP-01 module__: The reason were going through all this trouble. [$3.50 @ Electrodragon][electrodragon]
 * __USB-Serial TTL programmer__: I'm using an Adafruit FTDI Friend, although I'm hesitant to recommend FTDI products after they shipped mallware with their Windows drivers... 
   [$14.75 @ Adafruit](http://www.adafruit.com/product/284).
-  Update: I've confirmed that a CP2102 USB-TLL UART also works well on OS X. You can either use the included cable, or switch the pin headers from male to female. 
-  [$2.20 @ Electrodragon](http://www.electrodragon.com/product/cp2102-usb-ttl-uart-module-v2/)
+  
+  *Update:* I've confirmed that a CP2102 USB-TLL UART also works well on OS X:
+  [$2.20 @ Electrodragon](http://www.electrodragon.com/product/cp2102-usb-ttl-uart-module-v2/).
+  You can either use the included cable, or switch the pin headers on the motherboard to female for a direct connection. (All relevant pins are in the same position.)
 * __3.3v Voltage Regulator__: Needs to be a slightly beefy one because the ESP8266EX chips can reportedly draw as much as 350-400mA. I'm using a LM2937ET-3.3/NOPB from TI. 
   [$1.61 @ Texas Instruments](http://www.ti.com/product/LM2937-3.3/samplebuy) (Or request a free sample)
 * __10 μF Capacitor__: For the 3.3v side of the voltage regulator. 
