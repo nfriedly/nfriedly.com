@@ -31,8 +31,9 @@ The biggest problem with the ESP-01 is that it's annoying to wire up and program
 
 * __ESP-01 module__: The reason were going through all this trouble. [$3.50 @ Electrodragon][electrodragon]
 * __USB-Serial TTL programmer__: I'm using an Adafruit FTDI Friend, although I'm hesitant to recommend FTDI products after they shipped mallware with their Windows drivers... 
-  [$14.75 @ Adafruit](http://www.adafruit.com/product/284)
-  or an alternative option that I *think* will work: [$3.30 @ Electrodragon](http://www.electrodragon.com/product/pl2303ta-usb-ttl-usb-serial-cable-win-88-1-compatible/)
+  [$14.75 @ Adafruit](http://www.adafruit.com/product/284).
+  Update: I've confirmed that a CP2102 USB-TLL UART also works well on OS X. You can either use the included cable, or switch the pin headers from male to female. 
+  [$2.20 @ Electrodragon](http://www.electrodragon.com/product/cp2102-usb-ttl-uart-module-v2/)
 * __3.3v Voltage Regulator__: Needs to be a slightly beefy one because the ESP8266EX chips can reportedly draw as much as 350-400mA. I'm using a LM2937ET-3.3/NOPB from TI. 
   [$1.61 @ Texas Instruments](http://www.ti.com/product/LM2937-3.3/samplebuy) (Or request a free sample)
 * __10 μF Capacitor__: For the 3.3v side of the voltage regulator. 
@@ -114,14 +115,13 @@ Here's an example sketch to use PROGRAM button on `GPIO 0` as a regular input:
 const int buttonPin = 0;
 
 void setup() {
-  // put your setup code here, to run once:
  Serial.begin(9600);
- pinMode(buttonPin, INPUT);
+ // Normally the button will take the pin from "floating" (not connected to anything) to grounded
+ // This enables the internal pullup resistor so that the default state is high rather than floating.
+ pinMode(buttonPin, INPUT_PULLUP);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  
   Serial.print("Button is ");
   int status = digitalRead(buttonPin);
   // because of the pullup resistor, the pin state is reversed: button pressed = LOW, button released = HIGH
