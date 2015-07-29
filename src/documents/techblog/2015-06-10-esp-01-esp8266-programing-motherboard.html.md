@@ -76,7 +76,7 @@ Total cost: ~$12 + shipping to go with the cheapest options. Be aware that Tayda
 
 * __Soldering Iron & Solder__: I recently upgraded to a [Weller WESD51] and I am *loving* it.
 * __Flush Cutters__: To cut the leads off after soldering each part in. These are also handy for "breakaway" female pin headers.
-* __Wire Strippers__: For cutting stripping the few bits of wire we need.
+* __Wire Strippers__: For cutting and stripping the few bits of wire we need.
 * __X-Acto Knife__: Necessary for cutting the stripboard track between the two rows of pins on the ESP-01 module, and a fallback option for the other cuts.
 * __Drill w/ 4mm drill bit__: Makes all of the other stripboard cuts much easier. Just position the drill in the center of an unused pin hole and spin it for a few moments to strip away the copper.
 
