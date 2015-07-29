@@ -47,7 +47,7 @@ The biggest problem with the ESP-01 is that it's annoying to wire up and program
 * __Two Buttons__: SPST (Single Pole, Single Throw) momentary on switches. I'm using Omron B3F buttons.
   [$0.04 each @ Tayda Electronics](http://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/tact-switch-6x6mm-5mm-through-hole-spst-no.html)
   or [$1.20 for 50 @ Electrodragon](http://s1.electrodragon.com/wp-content/uploads/2011/12/button1.jpg)
-* __10k Ω Resistor__: Pull-up for the Program button on `GPIO 0`. 
+* __10k Ω Resistor__: Pull-up for the Reset button. (Note: depending on your usage, your may also want a second one for the Program button on `GPIO 0`.) 
   [$0.10 for 10 @ Tayda Electronics](http://www.taydaelectronics.com/resistors/1-4w-carbon-film-resistors/10-x-resistor-10k-ohm-1-4w-5-carbon-film-pkg-of-10.html)
   or [$0.90 for 100 @ Electrodragon](http://www.electrodragon.com/product/metal-membrane-resistors-different-value-available-100pcs/)
   or [$3 for a 600-piece kit @ Electrodragon](http://www.electrodragon.com/product/14w-resistor-kit-accuracy-in-1-2020pcs/)
