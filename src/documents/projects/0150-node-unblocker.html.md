@@ -5,6 +5,7 @@ picture: /img/portfolio/nodeunblocker.png
 thumbnail: /img/portfolio/thumbs/nodeunblocker.png
 github: node-unblocker
 travis: node-unblocker
+npm: unblocker
 tags: 
   - Node.js
   - JavaScript

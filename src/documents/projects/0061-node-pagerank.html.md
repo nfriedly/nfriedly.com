@@ -14,6 +14,6 @@ tags:
 write: false
 ---
 
-A JavaScript library that calculates the correct hash checksum and calls Google's PageRank API for any given URL.
+Node.js library that fetches the Google PageRank of a given site. Serves as the basis of [pagerank.nfriedly.com](http://pagerank.nfriedly.com).
 
-Automatically runs unit tests on each push curtsey of Travis CI.
+(PageRank represents Google's view of how popular and authoritative a website is. It's one of a number of data points that go into ranking search results.)
