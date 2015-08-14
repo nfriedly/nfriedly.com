@@ -93,12 +93,12 @@ function loadBackupCSS(url) {
 				
 				<ul>
 					<li>
-						<a id="email">
+						<a class="email">
 							<span class="fa-stack">
 								<i class="fa fa-square-o fa-stack-2x"></i>
 								<i class="fa fa-envelope fa-stack-1x"></i>
 							</span>
-							<span id="email-text">nathan @ (this website)</span>
+							<span class="email-text">nathan @ (this website)</span>
 						</a>
 					</li>
 					<li>

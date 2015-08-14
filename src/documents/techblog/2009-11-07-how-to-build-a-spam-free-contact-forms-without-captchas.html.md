@@ -210,11 +210,19 @@ For a live demo, see <http://spam-free-contact-example.herokuapp.com/simple/cont
 
 I found that there is an anti-spam plugin for WordPress that uses similar methods to the ones I describe here: <http://wordpress.org/extend/plugins/nospamnx/> &#8211; I installed it on this blog and it&#8217;s stopped nearly 30,000 spam comments so far.
 
+## Need help?
+
+I can help you get set up and/or connect you to other competent developers. 
+A typical installation would be around $500 for me to perform it, but you can likely find a lower-cost option by posting a job on [elance](https://www.elance.com/?rid=1IFCM). 
+(Link to this page in the job description and then search for developers with `php` and `email` skills and invite them to submit a bid.)
+
 ## About the Author
 
-[<img class=" wp-image-549 alignleft" alt="Nathan Friedly in Cincinnati during the winter" src="http://nfriedly.com/techblog/wp-content/uploads/2009/11/Nathan-Cincinnati-winter.jpg" width="131" height="175" />][3] [Nathan][3] is an experienced Web Developer with a sharp eye for security and a zeal for User Experience. He currently works primarily on JavaScript and Node.js.
+[<img class=" wp-image-549 alignleft" alt="Nathan Friedly in Cincinnati during the winter" src="http://nfriedly.com/techblog/wp-content/uploads/2009/11/Nathan-Cincinnati-winter.jpg" width="131" height="175" />][3] 
+[Nathan][3] is an experienced Web Developer with a sharp eye for security and a zeal for User Experience. 
+He currently works primarily on JavaScript and Node.js.
 
-However, the focus has never been on the technology &#8211; it&#8217;s about solving problems and meeting needs. &#8220;Computers work for us, not the other way around.&#8221;
+However, the focus has never been on the technology &#8211; it's about solving problems and meeting needs. &#8220;Computers work for us, not the other way around.&#8221;
 
  [1]: https://github.com/nfriedly/spam-free-php-contact-form/archive/master.zip
  [2]: https://github.com/nfriedly/spam-free-php-contact-form
