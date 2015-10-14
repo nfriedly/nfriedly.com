@@ -32,7 +32,7 @@ function loadBackupCSS(url) {
 </script>
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
 
 <%- @getBlock("styles").add(["/styles/styles.css"]).add(@getDocument().get('stylesheets') or []).toHTML() %>
 
@@ -140,7 +140,13 @@ function loadBackupCSS(url) {
 					<li>
 						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
 							<i class="fa fa-square-o fa-stack-2x"></i>
-							<i class="fa fa-gamepad fa-stack-1x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
 						</a>
 					</li>
 				</ul>
