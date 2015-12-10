@@ -3,6 +3,7 @@
 notIndex = (model, cleanedSearchString) ->
 	model.get("filename").substr(0, 6) isnt "index."
 _ = require("underscore")
+path = require("path")
 reImages = /<img [^>]+>/g
 reHW = /(height|width)="\d+"/g
 reClass = /class="[^"]+"/
@@ -111,6 +112,13 @@ module.exports =
 
 		getStrippedPreview: (post) ->
 			@getPreview(post).replace(reLinks, "").replace reImages, ""
+
+		# no need to shrink svg images
+		thumbnail: (src, opts) ->
+			if path.extname(src) is ".svg"
+				src
+			else
+				@getThumbnail(src, opts)
 
 		linkTags: (tags) ->
 			self = this

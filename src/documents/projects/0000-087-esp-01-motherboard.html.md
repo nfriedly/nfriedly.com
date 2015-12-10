@@ -9,6 +9,8 @@ tags:
   - C++
   - hardware
   - Open Source
+  - IoT
+  - ESP8266
 ---
 
 I've been playing with the ESP8266EX modules that include WiFi, CPU, RAM, and Flash all in one. 

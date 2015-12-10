@@ -31,7 +31,9 @@
         <img src="http://badge.fury.io/bo/<%= project.bower %>.svg" alt="<%= project.title %> on Bower">
     <% end %>
     <% if project.travis: %>
-        <a href="https://travis-ci.org/nfriedly/<%= project.travis %>" class="project-badge"><img src="https://travis-ci.org/nfriedly/<%= project.travis %>.png?branch=master" alt="<%= project.title %>'s build status"></a>
+        <% travis = project.travis %>
+        <% travis = "https://travis-ci.org/nfriedly/" + travis unless travis.substr(0,4) == 'http' %>
+        <a href="<%= travis %>" class="project-badge"><img src="<%= travis %>.png?branch=master" alt="<%= project.title %>'s build status"></a>
     <% end %>
     Tagged 
     <%- @linkTags(project.tags) %>
