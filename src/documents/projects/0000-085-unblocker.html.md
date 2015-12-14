@@ -16,7 +16,7 @@ write: false
 
 After seeing significant interest in using my Node Unblocker website's source as the basis for other projects, I reworked it into an [express](http://expressjs.com/)-friendly node.js module.
 
-I added and API to allow custom middleware to be easily inserted into the processing and re-wrote nearly all of the internals to use the new API.
+I added an API to allow custom middleware to be easily inserted into the processing and re-wrote nearly all of the internals to use the new API.
 
 Other notable changes included re-writing the cookie-handling to not require a database, reworking the charset decoding for greater speed and reliability, and even more automated tests.
 
