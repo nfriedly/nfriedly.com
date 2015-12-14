@@ -1,5 +1,5 @@
 ---
-title: IBM Watson Developer Cloud
+title: IBM Watson Developer Cloud Website v1
 link: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/
 picture: /img/portfolio/ibm-wdc.png
 date: 2014-10-08
@@ -14,6 +14,8 @@ tags:
   - CouchDB
   - MongoDB
   - SEO
+  - JavaScript
+  - CoffeeScript
 ---
 
 My first project at IBM was getting the WDC website ready for launch. This included some design changes and
