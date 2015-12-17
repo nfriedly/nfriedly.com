@@ -19,7 +19,7 @@ ITEAD has an <a href="https://www.indiegogo.com/projects/sonoff-slampher-low-cos
 in progress for their latest products, Sonoff and Slampher, and they sent me pre-release samples of each to review.
 
 The two devices are fairly similar, they're both essentially smart power switches. 
-Both can be remote controlled via the included remote and a smartphone app, and both can be assigned a schedule through the same app.
+Both can be remote controlled via the included remote and/or via a Android or iOS app, and both can be assigned a schedule through said app.
 
 The only real difference is the connectors and amount of amperage the devices can handle: 
 Sonoff is hard-wired via screw terminals, and can handle up to 10 amps
