@@ -2,14 +2,6 @@
 <html lang="en">
 <head>
 <title><%= @document.title %></title>
-<script>
-    // Github pages will send redirects to live.nfriedly.com, bypassing cloudfront. 
-    // This is to catch that and redirect the user back to cloudfront.
-    var l = window.location;
-    if (l.hostname == "live.nfriedly.com" && (l.href + document.cookie).indexOf('force-live') == -1) {
-        l.hostname = "nfriedly.com";
-    }
-</script>
 
 <% if @getEnvironment() == 'development': %>
     <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script><![endif]-->
