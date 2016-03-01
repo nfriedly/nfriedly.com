@@ -7,7 +7,7 @@ icon: archive
 tags:
   - JavaScript
   - Node.js
-  - NPM
+  - npm
   - Open Source
 ---
 

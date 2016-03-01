@@ -6,7 +6,7 @@ icon: code
 tags: 
   - "C#"
   - Node.js
-  - NPM
+  - npm
   - Open Source
 write: false
 ---

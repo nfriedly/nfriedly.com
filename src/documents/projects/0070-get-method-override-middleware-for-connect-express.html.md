@@ -5,7 +5,7 @@ icon: cloud-upload
 tags: 
   - JavaScript
   - Express
-  - NPM
+  - npm
   - Open Source
 write: false
 ---

@@ -5,7 +5,7 @@ tags:
   - JavaScript
   - CoffeeScript
   - Node.js
-  - NPM
+  - npm
   - DocPad
   - AWS
   - Require.js

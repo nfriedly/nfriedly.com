@@ -8,7 +8,7 @@ icon: bar-chart
 tags: 
   - Node.js
   - JavaScript
-  - NPM
+  - npm
   - Open Source
   - Continuous Integration
 write: false

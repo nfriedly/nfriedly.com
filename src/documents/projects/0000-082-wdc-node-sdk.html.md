@@ -9,6 +9,7 @@ tags:
   - Node.js
   - JavaScript
   - Continuous Integration
+  - npm
 ---
 
 <img class="right" src="/img/portfolio/watson.svg" width="150" height="150" alt="" /> The `watson-developer-cloud` module on npm is currently the most popular way of accessing Watson APIs. 

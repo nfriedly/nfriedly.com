@@ -10,7 +10,7 @@ tags:
  - JavaScript
  - Open Source
  - Continuous Integration
- - NPM
+ - npm
  - Heroku
 ---
 <img src="/img/portfolio/bitcoin.png" class="right"> A low-frequency trading tool, taking the principles from 

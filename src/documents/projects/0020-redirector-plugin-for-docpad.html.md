@@ -7,7 +7,7 @@ tags:
   - DocPad
   - CoffeeScript
   - Continuous Integration
-  - NPM
+  - npm
   - Open Source
 write: false
 ---

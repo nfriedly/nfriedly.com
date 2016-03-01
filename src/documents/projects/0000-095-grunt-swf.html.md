@@ -7,7 +7,7 @@ icon: magic
 tags:
   - JavaScript
   - Node.js
-  - NPM
+  - npm
   - Flash / ActionScript
   - Open Source
 ---

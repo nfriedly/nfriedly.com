@@ -8,7 +8,7 @@ date: 2015-07-08
 tags:
   - JavaScript
   - Node.js
-  - NPM
+  - npm
   - Bower
   - Open Source
 ---

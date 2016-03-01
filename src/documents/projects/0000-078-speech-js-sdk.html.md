@@ -9,6 +9,7 @@ icon: microphone
 tags:
   - JavaScript
   - Continuous Integration
+  - npm
 ---
 
 Easy to use <abbr title="Software Development Kit">SDK</abbr> for working with the Watson Speech-to-Text and Text-to-Speech services in web browsers.

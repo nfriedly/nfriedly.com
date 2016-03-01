@@ -8,7 +8,7 @@ tags:
   - DocPad
   - CoffeeScript
   - Continuous Integration
-  - NPM
+  - npm
   - Open Source
   - MongoDB
 ---
