@@ -23,7 +23,7 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server",
+    "start": "docpad run",
     "deploy": "docpad deploy-ghpages --env static"
   },
   "license": "MIT",
