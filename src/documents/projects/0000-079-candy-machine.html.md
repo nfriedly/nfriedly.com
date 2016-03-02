@@ -16,4 +16,4 @@ depending on if one said nice things or mean things.
 
 I worked on both the hardware side, programing an Arduino and a Motor Shield to control the machines, 
 and the software side developing the Watson Speech JS SDK that was used to capture and transcribe the user's voice.
-There was also a python script running in the background that orchestrated everything
+There was also a python script running in the background that orchestrated everything.
