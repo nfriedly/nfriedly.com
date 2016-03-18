@@ -1,6 +1,7 @@
 ---
 title: Naughty or Nice Candy Machine
-link: https://github.com/boxcarton/say-something-nice
+link: https://medium.com/@joshzheng/how-to-build-a-candy-machine-with-feelings-922285a475c8#.79slgjwur
+github: https://github.com/boxcarton/say-something-nice
 picture: /img/portfolio/candy-machine.jpg
 date: 2016-02-24
 tags:
