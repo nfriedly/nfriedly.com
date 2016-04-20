@@ -7,6 +7,13 @@
             <div class="col-sm-8">
                 <%- @partial('project-core', {project: project}) %>
             </div>
+        <% else if project.youtube: %>
+            <div class="col-xs-4">
+                <div class="thumb youtube"><iframe width="360" height="203" src="https://www.youtube.com/embed/<%= project.youtube %>" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+            <div class="col-sm-8">
+                <%- @partial('project-core', {project: project}) %>
+            </div>
         <% else: %>
             <div class="col-xs-12">
                 <%- @partial('project-core', {project: project}) %>
