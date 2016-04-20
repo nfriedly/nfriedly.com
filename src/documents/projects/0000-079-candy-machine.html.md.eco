@@ -12,7 +12,7 @@ tags:
   - JavaScript
 ---
 
-<a class="thumb" href="/img/portfolio/candy-machine-whoopi-goldberg.jpg" rel="lightbox"><img src="<%= @thumbnail('/img/portfolio/candy-machine-whoopi-goldberg.jpg', { w: 165, h: 220, q: 70 }) %>" alt="" class="right" style="height: 220px; width: 165px; " /></a>
+<a class="thumb" href="/img/portfolio/candy-machine-whoopi-goldberg.jpg" rel="lightbox" title="Whoopi Goldberg trying out the Candy Machine"><img src="<%= @thumbnail('/img/portfolio/candy-machine-whoopi-goldberg.jpg', { w: 165, h: 220, q: 70 }) %>" alt="Whoopi Goldberg trying out the Candy Machine" class="right" style="height: 220px; width: 165px; " /></a>
 We built a Watson-powered candy machine: it gives sweet or sour candy 
 depending on the semtiment of one's statement. 
 It was initially built for IBM's 2016 InterConnect event and then displayed at subsequent events including the Tribeca Film Festival.
