@@ -31,7 +31,7 @@ $(document).ready(function() {
 	
 	var callbackFnName = 'handleInstagrams';
 	window[callbackFnName] = handleInstagrams;
-	var instagramApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=5308686.473ac98.7c15354b874849a3951c79fbbb9c18b9&callback=' + callbackFnName;
+	var instagramApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=246834140.473ac98.90ed8c32f46b4c84a18d3d9a4e32b261&callback=' + callbackFnName;
 	
 	$.getScript(instagramApiUrl);
 	
