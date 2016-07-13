@@ -27,6 +27,8 @@ whereas Slampher is intended for lightbulbs (see the "lamp" in the name?) with a
 
 <!--more-->
 
+Update: the final versions of both devices are now available for purchase: [Sonoff](https://www.itead.cc/sonoff-wifi-wireless-switch.html) ($4.85 USD), [Slampher](https://www.itead.cc/slampher-wifi-wireless-light-holder.html) ($8.50). This review, however, is still of the pre-release versions.
+
 ## Slampher
 
 ![Slampher side](/img/blog/itead/slampher-side.jpg)![Slampher button](/img/blog/itead/slampher-button.jpg)
