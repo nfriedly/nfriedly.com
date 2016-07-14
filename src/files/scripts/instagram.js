@@ -31,7 +31,10 @@ $(document).ready(function() {
 	
 	var callbackFnName = 'handleInstagrams';
 	window[callbackFnName] = handleInstagrams;
-	var instagramApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=246834140.473ac98.90ed8c32f46b4c84a18d3d9a4e32b261&callback=' + callbackFnName;
+
+	// erin's access token (because she has more and better pictures)
+	var accessToken = '5308686.539b3c7.9d35c8cc943d41b89ae35647fd59932b';
+	var instagramApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + accessToken + '&callback=' + callbackFnName;
 	
 	$.getScript(instagramApiUrl);
 	
