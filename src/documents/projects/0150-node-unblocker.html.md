@@ -1,6 +1,6 @@
 ---
 title: Node Unblocker
-link: "http://nodeunblocker.com/"
+link: https://github.com/nfriedly/node-unblocker
 picture: /img/portfolio/nodeunblocker.png
 thumbnail: /img/portfolio/thumbs/nodeunblocker.png
 github: node-unblocker
