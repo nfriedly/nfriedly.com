@@ -142,11 +142,8 @@ module.exports =
 			hits =
 				"Node.js": 5
 				AngularJS: 5
+				React: 5
 				"Mobile First": 4
-				"Backbone.js": 4
-				DocPad: 3
-				Jasmine: 3
-				Meteor: 3
 				"Flash / ActionScript": -1
 				Twitter: -1
 				WordPress: -1
