@@ -10,6 +10,7 @@ headerImage: /img/grapes-up.jpg
 priority: 1
 urls:
 	- /contact
+section: home
 ---
 
 <section class="intro row">

@@ -3,6 +3,7 @@ title: Tech Blog
 layout: main
 icon: terminal
 referencesOthers: true
+section: techblog
 ---
 
 <div class="container techblog archives">

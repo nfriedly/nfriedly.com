@@ -12,6 +12,7 @@ referencesOthers: true
 scripts:
     - /scripts/lightbox/lightbox-min.js
     - /scripts/portfolio.js
+section: portfolio
 ---
 
 <% projects = @getCollection('projects').toJSON() %>

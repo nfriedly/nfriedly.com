@@ -98,6 +98,9 @@ module.exports =
 			projects
 
 	templateData:
+		activeAttrIf: (menuSection) ->
+			'class="active"' if @document.section is menuSection
+
 		getFirstImage: (post) ->
 			images = post.contentRenderedWithoutLayouts.match(reImages)
 			return ""  unless images

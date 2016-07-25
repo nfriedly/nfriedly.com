@@ -7,6 +7,7 @@ standalone: true
 @darkPurple: #291822;
 @lightPurple: lighten(@darkPurple, 15%);
 @gray: #999999;
+@navbarGrey: #9d9d9d;
 
 @linkColor: @lightPurple;
 @hoverLinkColor: @lightPurple;
@@ -76,41 +77,17 @@ img.left, img.alignleft {
 
 a [class^="fa"], a [class*=" fa"] { text-decoration: none; }
 
-.navbar-container {
-	a { text-decoration: none; }
-	& > .container { height: 0;}
-	.menu-button {
-		z-index: 1200;
-		top: 3px;
-		right: 15px;
-		font-size: 20px;
-		text-decoration: none;
-        color: @gray;
-        &:hover, &:focus, &:active { color: white; background-color: inherit; }
-        &[aria-expanded="false"] {
-          color: white;
-          background-color: rgba(0,0,0,0.8);
-          padding: 2px 0 3px 4px;
-          border-radius: 10px;
-          &:hover, &:active, &:focus { background-color: @hoverLinkColor; }
-        }
-	}
 
-	.navbar {
-		margin: 0;
-		position: absolute;
-		width: 100%;
-		&.collapsing {min-height: 0;}
-		background-color: @darkPurple;
+.navbar.navbar-inverse {
+	background-color: @darkPurple;
+	li.active {
+		background-color: darken(@darkPurple, 5%);
+		a {color: lighten(@navbarGrey, 10%);}
 	}
-	
-	.nav { 
-		i[class^="fa"]:before, i[class*=" fa"]:before { min-width: 1.3em; }
-	} 
-}
+	margin-bottom: 0;
+	i[class^="fa"]:before, i[class*=" fa"]:before { min-width: 1.3em; }
+	a { text-decoration: none} // isn't this built-into bootstrap?
 
-@media(max-width: @screen-sm) {
-	.navbar-container .nav { clear: both; margin-left: 0; } // normally the built-in stuff handles this, but it makes it difficult to hide the navbar on desktop.
 }
 
 header.jumbotron {

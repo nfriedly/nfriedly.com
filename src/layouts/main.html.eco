@@ -23,8 +23,8 @@ function loadBackupCSS(url) {
 }
 </script>
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
 
 <%- @getBlock("styles").add(["/styles/styles.css"]).add(@getDocument().get('stylesheets') or []).toHTML() %>
 
@@ -36,26 +36,29 @@ function loadBackupCSS(url) {
 
 <div class="over-footer">
 
-<div class="navbar-container">
+
+<nav class="navbar navbar-inverse navbar-static-top">
 	<div class="container">
-		<a class="fa-stack menu-button pull-right" data-toggle="collapse" data-target="nav" href="#" title="Toggle navigation" aria-expanded="false">
-			<i class="fa fa-square-o fa-stack-2x"></i>
-			<i class="fa fa-bars fa-stack-1x"></i>
-			<span class="sr-only">Toggle navigation</span>
-		</a>
-	</div>
-	<nav class="navbar collapse navbar-inverse navbar-static-top" role="navigation">
-		<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-				<li><a href="/about/"><i class="fa fa-android"></i> About</a></li>
-				<li><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
-				<li><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+				<li <%- @activeAttrIf('home') %>><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li <%- @activeAttrIf('about') %>><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li <%- @activeAttrIf('portfolio') %>><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li <%- @activeAttrIf('techblog') %>><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
 			</ul>
 		</div>
-	</nav>
-</div>
+	</div>
+</nav>
+
 
 <header class="jumbotron" <%- "style=\"background-image: url(#{@document.headerImage});\"" if @document.headerImage %>>
 	<div class="container">
@@ -184,7 +187,7 @@ function loadBackupJS(url) {
 	<!--[if gte IE 9]><!-->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
 	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js" defer></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js" defer></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
 <% else: %>
 	<!--[if lt IE 9]>
@@ -193,7 +196,7 @@ function loadBackupJS(url) {
 	<!--[if gte IE 9]><!-->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
 	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" defer></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
 <% end %>
 

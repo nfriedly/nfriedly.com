@@ -7,6 +7,7 @@ icon: android
 urls:
     - /fellowship
 priority: 0.8
+section: about
 ---
 
 <h1>About</h1>

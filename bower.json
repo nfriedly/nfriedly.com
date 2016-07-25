@@ -18,8 +18,11 @@
     "tests"
   ],
   "dependencies": {
-    "font-awesome": "~4.2.0",
+    "font-awesome": "4.6.3",
     "bootstrap": "~3.3.1",
     "lodash": "~2.4.1"
+  },
+  "resolutions": {
+    "font-awesome": "4.6.3"
   }
 }
