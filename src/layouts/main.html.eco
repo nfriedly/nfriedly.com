@@ -181,6 +181,7 @@ function loadBackupJS(url) {
 </script>
 
 <% if @getEnvironment() == 'development': %>
+	<!-- todo: update to current jquery once bootstrap is updated to play nice with it -->
 	<!--[if lt IE 9]>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
 	<![endif]-->

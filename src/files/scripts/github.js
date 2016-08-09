@@ -7,14 +7,14 @@
 	var icon = '<i class="fa <%= icon %>"></i> ';
 	var eventTemplates = {
 		PushEvent: _.template(icon + '<a href="<%= repo.html_url %>/commits?author=nfriedly"><%= events.length %> code push<%= events.length == 1 ? "" : "es"%></a>'),
-		CreateEvent: _.template(icon + '<a href="<%= repo.html_url %>">repo created</a>'),
+		CreateEvent: _.template(icon + '<a href="<%= repo.html_url %>"><%= event.payload.ref_type === "branch" ? "branch" : "repo" %> created</a>'),
 		IssueCommentEvent: _.template(icon + '<a href="<%= event.payload.issue.html_url %>"><%= events.length %> issue comment<%= events.length == 1 ? "" : "s"%></a>'),
 		IssuesEvent: _.template(icon + '<a href="<%= event.payload.issue.html_url %>"><%= events.length %> issue<%= events.length == 1 ? "" : "s"%> created</a>'),
 		MemberEvent: _.template(icon + '<a href="<%= repo.html_url %>"><%= events.length %> contributor<%= events.length == 1 ? "" : "s"%> added</a>'),
 		PullRequestEvent: _.template(icon + '<a href="<%= event.payload.pull_request.html_url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
 		WatchEvent: _.template(icon + '<a href="<%= repo.html_url %>">Starred</a>'),
 		ForkEvent: _.template(icon + '<a href="<%= event.payload.forkee.html_url %>">forked repo</a>'),
-		DeleteEvent: _.template(icon + '<a href="<%= repo.html_url %>">Deleted</a>'),
+		DeleteEvent: _.template(icon + '<a href="<%= repo.html_url %>"><%= event.payload.ref_type === "branch" ? "branch" : "repo" %> Deleted</a>'),
         'default':  _.template(icon + '<a href="<%= repo.html_url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
 	};
 
@@ -98,26 +98,31 @@
 			// filter out events that aren't attached to a repo
 			return event.repo;
 		 }).filter(function(event) {
-			 // this one got moved and the original URL now 404s, breaking the rest of my script.
-			 return event.repo.name != 'nfriedly/arduino-pi-badge-demo';
+		 	// remove greenkeeper stuff
+		 	return !(event.payload && event.payload.ref && event.payload.ref.substr(0,11) === 'greenkeeper');
 		 }).groupBy(function(event) {
 			 // group the events by repo name
 			 return event.repo.name;
-		 });
+		 }).value();
 
 		var repos = {};
 
-		var repoRequests = eventsByRepo.map(function(events, name){
-			var promise =  $.getJSON(events[0].repo.url);
-			promise.then(function(data) {
-				repos[name] = data;
+		var repoRequests = _.map(eventsByRepo, function(events, name){
+			return new Promise(function(resolve, reject) {
+				$.getJSON(events[0].repo.url).then(function(data) {
+					repos[name] = data;
+					resolve(data);
+				}).fail(function(e) {
+					console.log('failure retrieving details for '+ name +' :'+ e.status +' '+ e.statusText +'\n'+ e.responseText);
+					delete eventsByRepo[name];
+					resolve(); // resolve, not reject so that $.when still works.
+				});
 			});
-			return promise;
-		}).values().value();
+		});
 
-		$.when.apply($, repoRequests).then(function() {
+		Promise.all(repoRequests).then(function() {
 
-			eventsByRepo.map(function(repoEvents) {
+			_(eventsByRepo).chain().map(function(repoEvents) {
 				// sub-group the events by eventType
 				return _.groupBy(repoEvents, eventType);
 			}).map(function(repoEvents, name) {
