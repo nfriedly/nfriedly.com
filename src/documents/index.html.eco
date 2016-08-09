@@ -17,10 +17,19 @@ section: home
 	<!-- div>Header height: <span id="headerHeight"></span>. Page width: <span id="pageWidth"></span>.</div -->
 	<div class="col-md-4">
 		<h3>Hi, I'm Nathan, nice to meet you!</h3>
-		<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>; we have an amazing baby boy and the cutest dog in the world. We live on a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
-		<p>I'm a Christian and a minister for the Lord Jesus Christ. If you ever need anything, I'd be more than happy to provide prayer and support.</p>
-		<p>I also do a lot of stuff with computers both for work and for fun. That mostly entails JavaScript and node.js programming these days. I currently work as a software engineer on IBM's <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/">Watson</a> team, although my unofficial job title is "JavaScript Ninjaneer". (I'm trying to get that on my business cards again!)</p>
-		<p>See my <a href="/about">about page</a> for a little more on my personal life, or take a look at my <a href="/portfolio">portfolio</a> and my <a href="/techblog">Tech Blog</a> for more work/computer-y stuff.</p>
+		<p><a href="http://nathananderin.com/">I'm happily married to my best friend</a>;
+			we have an amazing baby boy and the cutest dog in the world.
+			We live on a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
+		<p>I'm a Christian and a minister for the Lord Jesus Christ.
+			If you ever need anything, I'd be more than happy to provide prayer and support.</p>
+		<p>I also do <a href="/portfolio/">a lot of stuff with computers</a>
+			both for work and for fun.
+			That mostly entails JavaScript/Node.js programming + a fair amount of training and mentoring.
+			I currently work as an Advisory Engineer on the
+			<a href="http://www.ibm.com/watson/developercloud/">IBM Watson</a> team.</p>
+		<p>See my <a href="/about/">about page</a> for a little more on my personal life,
+			or take a look at my <a href="/portfolio/">portfolio</a> and my
+			<a href="/techblog/">Tech Blog</a> for more work/computer-y stuff.</p>
 	</div>
 	<div class="col-md-8 pics">
 		<img src="/img/home-thumbs/nathan-nathan-christmass-tree.jpg" alt="Picture of Erin, Maizy, and Nathan in the Tipp City park" class="img-thumbnail"/>
