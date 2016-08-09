@@ -14,6 +14,7 @@
 		PullRequestEvent: _.template(icon + '<a href="<%= event.payload.pull_request.html_url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
 		WatchEvent: _.template(icon + '<a href="<%= repo.html_url %>">Starred</a>'),
 		ForkEvent: _.template(icon + '<a href="<%= event.payload.forkee.html_url %>">forked repo</a>'),
+		DeleteEvent: _.template(icon + '<a href="<%= repo.html_url %>">Deleted</a>'),
         'default':  _.template(icon + '<a href="<%= repo.html_url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
 	};
 
@@ -29,6 +30,7 @@
 		WatchEvent: 'fa-star',
 		FollowEvent: 'fa-plane',
 		MemberEvent: 'fa-user',
+		DeleteEvent: 'fa-trash',
 		'default':  'fa-gears'
 	
 		// todo: fa-check  for issue closed
@@ -65,7 +67,13 @@
 		'GarageRemote': 'fa-car',
 		'node-tts-player': 'fa-volume-up',
 		'rpi-time-weather-demo': 'fa-bolt',
-		'arduino-pi-badge-demo': 'fa-pie-chart'
+		'arduino-pi-badge-demo': 'fa-pie-chart',
+		'running-average': 'fa-line-chart',
+		'express-rate-limit': 'fa-hand-stop-o',
+		'node-sdk': 'fa-rocket',
+		'speech-to-text-nodejs': 'fa-microphone',
+		'speech-javascript-sdk': 'fa-microphone',
+		'set-cookie-parser': 'fa-cutlery'
 	};
 
 	function handleGH(response) {
