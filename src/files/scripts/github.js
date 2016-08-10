@@ -7,14 +7,14 @@
 	var icon = '<i class="fa <%= icon %>"></i> ';
 	var eventTemplates = {
 		PushEvent: _.template(icon + '<a href="<%= repo.html_url %>/commits?author=nfriedly"><%= events.length %> code push<%= events.length == 1 ? "" : "es"%></a>'),
-		CreateEvent: _.template(icon + '<a href="<%= repo.html_url %>"><%= payload.ref_type || "repo" %> created</a>'),
+		CreateEvent: _.template(icon + '<a href="<%= url %>"><%= payload.ref_type || "repo" %> created</a>'),
 		IssueCommentEvent: _.template(icon + '<a href="<%= event.payload.issue.html_url %>"><%= events.length %> issue comment<%= events.length == 1 ? "" : "s"%></a>'),
 		IssuesEvent: _.template(icon + '<a href="<%= event.payload.issue.html_url %>"><%= events.length %> issue<%= events.length == 1 ? "" : "s"%> created</a>'),
 		MemberEvent: _.template(icon + '<a href="<%= repo.html_url %>"><%= events.length %> contributor<%= events.length == 1 ? "" : "s"%> added</a>'),
 		PullRequestEvent: _.template(icon + '<a href="<%= event.payload.pull_request.html_url %>"><%= events.length %> pull request<%= events.length == 1 ? "" : "s"%></a>'),
 		WatchEvent: _.template(icon + '<a href="<%= repo.html_url %>">Starred</a>'),
 		ForkEvent: _.template(icon + '<a href="<%= event.payload.forkee.html_url %>">forked repo</a>'),
-		DeleteEvent: _.template(icon + '<a href="<%= repo.html_url %>"><%= payload.ref_type || "repo" %> deleted</a>'),
+		DeleteEvent: _.template(icon + '<%= payload.ref_type || "repo" %> deleted'),
         'default':  _.template(icon + '<a href="<%= repo.html_url %>"><%= events.length %> <%= events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() %><%= events.length == 1 ? "" : "s"%></a>')
 	};
 
@@ -85,12 +85,15 @@
 		}
 		function renderSumary(events, type) {
 			var et = eventTemplates,
+				repo = repos[events[0].repo.name],
+				payload = events[0].payload || {},
 				data = {
-                    repo: repos[events[0].repo.name],
+                    repo: repo,
 					events: events,
                     event: events[0],
 					icon: eventIcons[type] || eventIcons['default'],
-					payload: events[0].payload || {}
+					payload: payload,
+					url: repo.html_url + (payload.ref_type === 'branch' || payload.ref_type === 'tag' ? '/tree/' + payload.ref : '' )
 				};
 			return et[type] ? et[type](data) : et['default'](data);
 		}
