@@ -32,8 +32,9 @@ section: portfolio
 
 <div class="row">
 	<div class="col-sm-4 portfolio-intro">
-		<p><strong>Nathan Friedly</strong> is a full stack web developer with a strong focus on JavaScript and Node.js.</p>
-		<p>He loves working on open source, automating repetitive tasks, and shipping results.</p>
+		<p><strong>Nathan Friedly</strong> is an engineering leader and recognized expert
+            with a history of building companies, managing remote teams, and delivering results.</p>
+		<p>He loves mentoring people, automating tasks, shipping products, and delighting users.</p>
 		<ul class="links">
 		    <li><a href="https://github.com/nfriedly"><i class="fa fa-github"></i>GitHub</a></li>
 		    <li><a href="http://stackoverflow.com/users/933879/nathan-friedly"><i class="fa fa-stack-overflow"></i>Stack Overflow</a></li>

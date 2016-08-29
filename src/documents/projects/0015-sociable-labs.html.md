@@ -6,6 +6,10 @@ tags:
     - JavaScript
     - Java
     - Node.js
+    - C#
+    - Ruby
+    - Python
+    - AngularJS
     - Require.js
     - Jasmine
     - Handlebars.js
@@ -18,10 +22,20 @@ tags:
 write: false
 ---
 
-I Joined Sociable Labs in 2010 and have been defining the field of Social Commerce with them ever since. I built the front-end framework that manages feature placement, cross-domain AJAX (<abbr title="Cross-Origin Resource Sharing">CORS</abbr>), inter-feature communication, analytics, and several other aspects of the applications. I also built and/or supported a variety of the applications including the Gallery, Targeted Referral, Welcome, and others.
+I Joined Sociable Labs in 2010 as one of the first engineers and went on to lead the front-end engineering team.
+I worked on every layer of the technology stack and helped the system grow to handle over a billion API requests per month.
 
-I implemented the Jam.js / Require.js module bundling system that compiles a unique JS file for each customer with their configuration and only the features they use so that their visitors have the smallest download possible. 
+Responsibilities included:
 
-I set up automated unit testing of the front-end code with Jasmine and jasmine-node. as well as code quality and complexity checks with JSHint and js-complexity-viz.
+* Leading a team of ~5 engineers building and supporting the front-end framework and apps
+* Full-stack JavaScript/Java/PostgreSQL app creation and support
+* Extensive analytics, A/B testing, and data analysis
+* Setting up automated code linting and unit testing
+* Recruiting, training, and mentoring team members
+* Supporting customer deployments written in Node.js, C#, Java, Ruby, Python, etc.
 
-I've also written a fair amount of Java code for our Jetty / RESTEasy / PostgreSQL back-end.
+
+ <!--  including:
+  * Gallery - a fully-customized Pinterest-like app (pictured left from Claire's)
+  * Targeted Referral - scans through a user's friends and suggests specific people who are likely to be interested in the product, be it a concert on TicketMaster or a blouse on Kohl's
+  * Activity Stream - live feed of who's doing what, akin to Facebook's activity feed -->
