@@ -23,7 +23,7 @@ write: false
 ---
 
 I Joined Sociable Labs in 2010 as one of the first engineers and went on to lead the front-end engineering team.
-I worked on every layer of the technology stack and helped the system grow to handle over a billion API requests per month.
+I worked on every layer of the technology stack and helped the system grow to handle billions of requests, peaking at nearly 10,000/second.
 
 Responsibilities included:
 
