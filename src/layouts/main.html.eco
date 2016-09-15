@@ -13,6 +13,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <%- @getBlock("meta").add(@getDocument().get('metaTags') or []).toHTML() %>
 <link rel="canonical" href="<%= @site.url + @getDocument().get('url') %>" />
+<% if @document.description: %>
+<meta name="description" content="<%= @document.description %>">
+<% end %>
 
 <script>
 function loadBackupCSS(url) {
