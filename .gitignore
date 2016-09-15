@@ -1,6 +1,5 @@
 /out/
-.idea/workspace.xml
-.idea/tasks.xml
+.idea/
 Thumbs.db
 .DS_Store
 node_modules/
