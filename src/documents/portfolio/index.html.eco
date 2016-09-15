@@ -26,13 +26,14 @@ scripts:
     - /scripts/lightbox/lightbox-min.js
     - /scripts/portfolio.js
 section: portfolio
+#description: Engineering leader and JavaScript Expert. Built companies, led multi-national teams, and shipped software used by millions daily. Force multiplier.
 ---
 
 <% projects = @getCollection('projects').toJSON() %>
 
 <div class="row">
 	<div class="col-sm-4 portfolio-intro">
-		<p><strong>Nathan Friedly</strong> is an engineering leader and recognized expert
+		<p><strong>Nathan Friedly</strong> is an engineering leader and JavaScript expert
             with a history of building companies, managing remote teams, and delivering results.</p>
 		<p>He loves mentoring people, automating tasks, shipping products, and delighting users.</p>
 		<ul class="links">
