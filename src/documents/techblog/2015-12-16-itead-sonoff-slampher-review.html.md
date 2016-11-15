@@ -58,7 +58,7 @@ My best guess is that something in the Slampher takes too long, but if you cance
 
 After I managed to pair the Slampher, I was able to successfully control it from my phone. 
 There's a slight delay from when you tap the button on the phone to when the light pops on, and a more noticeable delay before the UI of the phone app actually updates.
-The worst issue, though, is that the Slampher seem to be offline quite frequently for the first couple of days. To resolve this I have to walk over, unplug it, and plug it back in, then wait a few seconds for it to connect. 
+The worst issue, though, is that the Slampher seemed to be offline quite frequently for the first couple of days. To resolve this I have to walk over, unplug it, and plug it back in, then wait a few seconds for it to connect. 
 However, more recently it's proven to be more reliable, so perhaps a software update came out while I was reviewing it.
 
 
@@ -73,7 +73,7 @@ There's also a pair of green plastic pieces that you can screw down to give your
 
 ![Sonoff installation](/img/blog/itead/sonoff-installation.jpg)
 
-All told, installation is still fairly easy, but it's notably more "destructive" than the Slampher - you can't just remove and forget it if you change your mind, you'll have to do some level or rewiring your device. 
+All told, installation is still fairly easy, but it's notably more "destructive" than the Slampher - you can't just remove and forget it if you change your mind, you'll have to do some rewiring. 
 With that in mind, I decided to just add standard male and female AC plugs to the both ends of my Sonoff.
 
 Pairing went similarly to the Slampher - the keychain remote took a few attempts and the Wi-Fi required some trickery. 
