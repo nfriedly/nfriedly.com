@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Advanced Javascript: Logical Operators and truthy / falsy</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.78.6" />
+<link rel="canonical" href="http://nfriedly.com/techblog/2009/07/advanced-javascript-operators-and-truthy-falsy/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" >
+	<div class="container">
+		<h1><a href="/techblog/2009/07/advanced-javascript-operators-and-truthy-falsy/"> Advanced Javascript: Logical Operators and truthy / falsy</a></h1>
+		
+	</div>
+</header>
+
+
+<main class="container">
+<p><a href="http://www.flickr.com/photos/fleur-design/308974073/"><img class="alignleft" title="speed machine" src="http://farm1.static.flickr.com/104/308974073_9057064747_m.jpg" alt="" width="240" height="160" /></a> Nearly every website on the internet uses javascript in some form or fashion. Yet very few people, even those who write it and teach it, have a clear understanding of how javascript works!</p>
+<p>Logical Operators are a core part of the language. We&#8217;re going to look at what logical operators are, what &#8220;truthy&#8221; and &#8220;falsy&#8221; mean, and <strong>how to use this to write cleaner, faster and more optimized javascript</strong>.</p>
+<!--more-->
+<h2 id="javascript-logical-operators">Javascript Logical Operators</h2>
+<p>In traditional programming, operators such as <code>&amp;&amp;</code> and <code>||</code> returned a boolean value (<code>true</code> or <code>false</code>). This is not the case in javascript. Here it returns the actual <code>object</code>, not a <code>true</code> / <code>false</code>.  To really explain this, I first have to explain what is truthy and what is falsy.</p>
+<h3 id="truthy-or-falsy">Truthy or Falsy</h3>
+<p>When javascript is expecting a <code>boolean</code> and it&#8217;s given something else, it decides whether the something else is &#8220;truthy&#8221; or &#8220;falsy&#8221;.</p>
+<p>An empty string (<code>&#39;&#39;</code>), the number <code>0</code>, <code>null</code>, <code>NaN</code>, a boolean <code>false</code>, and <code>undefined</code> variables are all &#8220;falsy&#8221;. Everything else is &#8220;truthy&#8221;.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> emptyString = <span class="hljs-string">""</span>; <span class="hljs-comment">// falsy</span>
+
+<span class="hljs-keyword">var</span> nonEmptyString = <span class="hljs-string">"this is text"</span>; <span class="hljs-comment">// truthy</span>
+
+<span class="hljs-keyword">var</span> numberZero = <span class="hljs-number">0</span>; <span class="hljs-comment">// falsy</span>
+
+<span class="hljs-keyword">var</span> numberOne = <span class="hljs-number">1</span>; <span class="hljs-comment">// truthy</span>
+
+<span class="hljs-keyword">var</span> emptyArray = []; <span class="hljs-comment">// truthy, BUT []==false is true. More below.</span>
+
+<span class="hljs-keyword">var</span> emptyObject = {}; <span class="hljs-comment">// truthy</span>
+
+<span class="hljs-comment">// NaN is a special javascript object for "Not a Number".</span>
+<span class="hljs-keyword">var</span> notANumber = <span class="hljs-number">5</span> / <span class="hljs-string">"tree"</span>; <span class="hljs-comment">// falsy</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exampleFunction</span><span class="hljs-params">()</span></span>{
+    alert(<span class="hljs-string">"Test"</span>);
+}
+
+<span class="hljs-comment">// examleFunction is truthy</span>
+<span class="hljs-comment">// BUT exampleFunction() is falsy because it has no return (undefined)</span>
+</code></pre>
+<p>Gotchas to watch out for: the strings <code>&quot;0&quot;</code> and <code>&quot;false&quot;</code> are both considered truthy.  You can convert a string to a number with the <code>parseInt()</code> and <code>parseFloat()</code> functions, or by just multiplying it by <code>1</code>.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> test = <span class="hljs-string">"0"</span>; <span class="hljs-comment">// this is a string, not a number</span>
+
+<span class="hljs-keyword">var</span> a = (test == <span class="hljs-literal">false</span>); <span class="hljs-comment">// a is false, meaning that test is truthy</span>
+
+<span class="hljs-keyword">var</span> b = (test * <span class="hljs-number">1</span> == <span class="hljs-literal">false</span>); <span class="hljs-comment">// b is true, meaning that `test * 1` is falsy</span>
+</code></pre>
+<p><code>Array</code>s are particularly weird. If you just test it for truthyness, an empty array is truthy. HOWEVER, if you compare an empty array to a boolean, it becomes falsy:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">if</span> ( [] == <span class="hljs-literal">false</span> ) {
+    <span class="hljs-comment">// this code runs</span>
+}
+
+<span class="hljs-keyword">if</span> ( [] ) {
+    <span class="hljs-comment">// this code also runs</span>
+}
+
+<span class="hljs-keyword">if</span> ([] == <span class="hljs-literal">true</span>) {
+    <span class="hljs-comment">// this code doesn't run</span>
+}
+
+<span class="hljs-keyword">if</span> ( ![] ) {
+    <span class="hljs-comment">// this code also doesn't run</span>
+}
+</code></pre>
+<p>(This is because when you do a comparison, it&#39;s elements are turned to <code>String</code>s and joined. Since it&#39;s empty, it becomes <code>&quot;&quot;</code> which is then falsy. Yea, <a href="https://www.destroyallsoftware.com/talks/wat">it&#39;s weird</a>.)</p>
+<p>If you write any PHP, then there&#39;s an additional gotcha to watch out for: while javascript evaluates empty arrays as true, PHP evaluates them as false.</p>
+<p>PHP also evaluates &#8220;0&#8243; as falsy. (However the string &#8220;false&#8221; is evaluated as truthy by both PHP and javascript.)</p>
+<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-variable">$emptyArray</span> = <span class="hljs-keyword">array</span>(); <span class="hljs-comment">// falsy in PHP</span>
+
+<span class="hljs-variable">$stringZero</span> = <span class="hljs-string">"0"</span>; <span class="hljs-comment">// falsy in PHP</span>
+
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<h3 id="how-logical-operators-work">How Logical Operators Work</h3>
+<h4 id="logical-or-">Logical OR, <code>||</code></h4>
+<p>The logical OR operator, <code>||</code>,  is very simple after you understand what it is doing. If the first object is truthy, that gets returned. Otherwise, the second object gets returned.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> a = (<span class="hljs-string">"test one"</span> || <span class="hljs-string">"test two"</span>); <span class="hljs-comment">// a is "test one"</span>
+
+<span class="hljs-keyword">var</span> b = (<span class="hljs-string">"test one"</span> || <span class="hljs-string">""</span>); <span class="hljs-comment">// b is "test one"</span>
+
+<span class="hljs-keyword">var</span> c = (<span class="hljs-number">0</span> || <span class="hljs-string">"test two"</span>); <span class="hljs-comment">// c is "Test two"</span>
+
+<span class="hljs-keyword">var</span> d = (<span class="hljs-number">0</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// d is false</span>
+</code></pre>
+<p>Where would you ever use this? The OR operator allows you to easily specify default variables in a function.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi</span><span class="hljs-params">(name)</span></span>{
+    name = name || <span class="hljs-string">"Dave"</span>;
+    alert(<span class="hljs-string">"Hi "</span> + name);
+}
+
+sayHi(<span class="hljs-string">"Nathan"</span>); <span class="hljs-comment">// alerts "Hi Nathan";</span>
+
+sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null when the function is started</span>
+</code></pre>
+<h4 id="logical-and-">Logical AND, <code>&amp;&amp;</code></h4>
+<p>The logical AND operator, <code>&amp;&amp;</code>,  works similarly.  If the first object is falsy, it returns that object. If it is truthy, it returns the second object.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> a = (<span class="hljs-string">"test one"</span> &amp;&amp; <span class="hljs-string">"test two"</span>); <span class="hljs-comment">// a is "test two"</span>
+
+<span class="hljs-keyword">var</span> b = (<span class="hljs-string">"test one"</span> &amp;&amp; <span class="hljs-string">""</span>); <span class="hljs-comment">// b is ""</span>
+
+<span class="hljs-keyword">var</span> c = (<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-string">"test two"</span>) <span class="hljs-comment">// c is 0</span>
+</code></pre>
+<p>The logical AND allows you to make one variable dependent on another.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> checkbox = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"agreeToTerms"</span>);
+
+<span class="hljs-keyword">var</span> name = checkbox.checked &amp;&amp; prompt(<span class="hljs-string">"What is your name"</span>);
+
+<span class="hljs-comment">// name is either their name, or false if they haven't checked the AgreeToTerms checkbox</span>
+</code></pre>
+<h4 id="logical-not-">Logical NOT, <code>!</code></h4>
+<p>Unlike <code>&amp;&amp;</code> and <code>||</code>, the <code>!</code> operator DOES turn the value it receives into a boolean. If it receives a truthy value, it returns <code>false</code>, and if it receives a falsy value, it returns <code>true</code>.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> a = (!<span class="hljs-string">"test one"</span> || <span class="hljs-string">"test two"</span>); <span class="hljs-comment">// a is "test two"</span>
+<span class="hljs-comment">// ("test one" gets converted to false and skipped)</span>
+
+<span class="hljs-keyword">var</span> b = (!<span class="hljs-string">"test one"</span> &amp;&amp; <span class="hljs-string">"test two"</span>); <span class="hljs-comment">// b is false</span>
+<span class="hljs-comment">// ("test one" gets converted to false and returned)</span>
+
+<span class="hljs-keyword">var</span> c = (!<span class="hljs-number">0</span> || !<span class="hljs-string">"test two"</span>); <span class="hljs-comment">// c is true</span>
+<span class="hljs-comment">// (0 gets converted to true and returned)</span>
+</code></pre>
+<p>Another useful way to use the <code>!</code> operator is to use two of them &#8211; this way you always get a <code>true</code> or a <code>false</code> no matter what was given to it.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> a = (!!<span class="hljs-string">"test"</span>); <span class="hljs-comment">// a is true</span>
+<span class="hljs-comment">//  "test" is converted to false, then that is converted to true</span>
+
+<span class="hljs-keyword">var</span> b = (!!<span class="hljs-string">""</span>); <span class="hljs-comment">// b is false</span>
+<span class="hljs-comment">// "" is converted to true, and then that true is converted to false</span>
+
+<span class="hljs-keyword">var</span> c = (!!variableThatDoesntExist); <span class="hljs-comment">// c is false even though you're checking an undefined variable.</span>
+</code></pre>
+<h2 id="-javascript-optimization-4-"><a href="http://nfriedly.com/portfolio">Javascript Optimization</a></h2>
+<p>Need any help <a href="http://nfriedly.com/portfolio#javascript">optimizing the Javascript and AJAX on your website</a>? Get in touch with your friendly neighborhood <a href="http://nfriedly.com/portfolio">javascript expert</a> for ideas on how to optimize your site and a free quote.</p>
+
+
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a class="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://plus.google.com/+NathanFriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly 2016</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+				
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery & AMD: timing issue with noConflict()</title>
+<style>
+.success { color: green; }
+.failure { color: red; }
+</style>
+</head>
+<body>
+<div style="padding:0 15px; width:800px;">
+<h1>jQuery & AMD: timing issue with noConflict()</h1>
+<p><a href="https://github.com/jrburke/requirejs/blob/master/require.js#L1381">require.js</a> (and <a href="https://github.com/jrburke/almond/blob/master/almond.js#L366">almond.js</a>) use a 
+4ms <code>setTimeout</code> between when a module's <code>define()</code> callback is 
+called and when the 'main' module's <code>require()</code> callback is called.</p>
+
+<p>jQuery's behavior is to <a href="https://github.com/jquery/jquery/blob/master/src/exports.js#L9">create global objects</a> 
+and let you destroy them later with <code>jQuery.noConflict(true)</code>, <strong>even when in AMD 
+mode</strong>.</p>
+
+<p>When these two behaviors combine, the AMD-loaded copy of jQuery becomes the global one 
+for a few milliseconds, even if <code>jQuery.noConflict(true)</code> is called as soon as 
+possible.</p>
+
+<p>This is particularly an issue when there is alread a global copy of jQuery and a plugin 
+is loaded for use with that global copy. If the plugin loads during that 4ms, it attaches 
+itself to the wrong copy of jQuery.</p>
+
+<p>This page attempts to reproduce the issue by:</p>
+<ul>
+	<li>Loading a normal (global) copy of jQuery</li>
+	<li>Loading a "third-party widget" js file that includes: <ul>
+		<li>requirejs,</li>
+		<li>jQuery,</li>
+		<li>And a main.js file that looks like this: <pre>
+require(["jquery"], function($) {
+	$.noConflict(true);
+	// do stuff
+});
+</pre></li>
+		<li>The widget was built with this command: <code>r.js -o baseUrl=. paths.requireLib=require name=main include=requireLib out=build/widget.js optimize=none</code></li>
+		</ul></li>
+	<li>Loading a <a href="http://www.flotcharts.org/">jQuery plugin</a> that attaches itself to the global copy of jQuery</li>
+	<li>Waiting a second</li>
+	<li>Checking if the plugin is now defined on the global copy of jQuery.</li>
+</ul>
+
+<p>Results: <span id="results">Loading...</span></p>
+
+<p><b>Alternate options</b>: <a href="?patched">Load with a patched copy of jQuery in the widget</a> | <a href="?no-widget">Load without the widget</a> | <a href="?">Reset</a></p>
+
+</div>
+
+<!-- document.write & non-defered script tags so that the load order is defined and the issue is always reproduced -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+	if (location.search == '?patched') {
+		document.write('<script type="text/javascript" src="build/widget-patched-jquery.js"><\/script>');
+	} else if (location.search == '?no-widget') {
+		// do nothing
+	} else {
+		document.write('<script type="text/javascript" src="build/widget.js"><\/script>');
+	}
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flot/0.7/jquery.flot.min.js"></script>
+<script type="text/javascript">
+setTimeout(function() {
+if ($.plot) {
+	$('#results').text('Success: plugin is attached to the global copy of jQuery').addClass('success');
+} else {
+	$('#results').text('Failed: plugin is not attached to the global copy of jQuery').addClass('failure');
+}
+}, 1000);
+</script>
+
+</body>
+</html>

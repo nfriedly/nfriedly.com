@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Advanced Javascript: Objects, Arrays, and Array-Like objects</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.78.6" />
+<link rel="canonical" href="http://nfriedly.com/techblog/2009/06/advanced-javascript-objects-arrays-and-array-like-objects/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" >
+	<div class="container">
+		<h1><a href="/techblog/2009/06/advanced-javascript-objects-arrays-and-array-like-objects/"> Advanced Javascript: Objects, Arrays, and Array-Like objects</a></h1>
+		
+	</div>
+</header>
+
+
+<main class="container">
+<p><a href="http://www.flickr.com/photos/stawarz/2492636763/"><img class="alignleft" title="The other kind of array" src="http://farm4.static.flickr.com/3146/2492636763_788774987e_m.jpg" alt="" width="240" height="160" /></a>Javascript <code>objects</code> and <code>arrays</code> are both incredibly useful. They&#39;re also incredibly easy to confuse with each other. Mix in a few objects that look like arrays and you&#8217;ve got a recipe for confusion!</p>
+<p>We&#39;re going to see what the differences between objects and arrays are, how to work with some of the common array-like objects, and how to get the most performance out of each.</p>
+<!--more-->
+<h2 id="what-objects-are">What Objects Are</h2>
+<p>A javascript object is a basic data structure:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> basicObj = {}; <span class="hljs-comment">// an empty object - {} is a shortcut for "new Object()"</span>
+
+basicObj.suprise= <span class="hljs-string">"cake!"</span>;
+
+basicObj[<span class="hljs-string">'suprise'</span>]; <span class="hljs-comment">// returns "cake!"</span>
+</code></pre>
+<p>Using <code>{}</code> instead of <code>new Object();</code> is know as &#8220;Object Literal&#8221; syntax.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> fancyObj = {
+    favoriteFood: <span class="hljs-string">"pizza"</span>,
+    add: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span></span>{
+        <span class="hljs-keyword">return</span> a + b;
+    }
+};
+
+fancyObj.add(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// returns 5</span>
+
+fancyObj[<span class="hljs-string">'add'</span>](<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// ditto.</span>
+</code></pre>
+<p>As you can see, and probably already knew, properties can be accessed a couple of different ways. However, it&#8217;s an important point that we&#8217;ll come back to in a minute.</p>
+<p>Everything in javascript is an <code>object</code>. Everything. <code>Arrays</code>, <code>functions</code>, even <code>numbers</code>! Because of this, you can do some really interesting things, such as modifying the <code>prototypes</code> of Objects, Arrays, etc.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// an example of something you probably shouldn't do. Ever. Seriously.</span>
+<span class="hljs-built_in">Number</span>.prototype.addto = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span> + x;
+}
+
+(<span class="hljs-number">8</span>).addto(<span class="hljs-number">9</span>); <span class="hljs-comment">// returns 17</span>
+
+<span class="hljs-comment">// other variations:</span>
+
+<span class="hljs-number">8.</span>addto(<span class="hljs-number">9</span>);  <span class="hljs-comment">// gives a syntax error, because the dot is assumed to be a decimal point</span>
+
+<span class="hljs-number">8</span>[<span class="hljs-string">'addto'</span>](<span class="hljs-number">9</span>);  <span class="hljs-comment">// works but is kind of ugly compared to the first method</span>
+
+<span class="hljs-keyword">var</span> eight = <span class="hljs-number">8</span>;
+eight.addto(<span class="hljs-number">9</span>);  <span class="hljs-comment">// works</span>
+</code></pre>
+<h2 id="what-arrays-are">What Arrays Are</h2>
+<p>Javascript arrays are a type of <code>object</code> used for storing multiple values in a single variable. Each value gets numeric index and may be any data type.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [];  <span class="hljs-comment">// this is a shortcut for new Array();</span>
+arr[<span class="hljs-number">0</span>] = <span class="hljs-string">"cat"</span>;
+arr[<span class="hljs-number">1</span>] = <span class="hljs-string">"mouse"</span>;
+</code></pre>
+<p>See how that syntax is so similar to the syntax used for setting object properties? In fact, the only difference is that objects use a string while arrays use a number. This is why arrays get confused with objects so often.</p>
+<h3 id="length">Length</h3>
+<p>Arrays have a <code>length</code> property that tells how many items are in the array and is automatically updated when you add or remove items to the array. </p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [];
+arr[<span class="hljs-number">0</span>] = <span class="hljs-string">"cat"</span>; <span class="hljs-comment">// this adds to the array</span>
+arr[<span class="hljs-number">1</span>] = <span class="hljs-string">"mouse"</span>; <span class="hljs-comment">// this adds to the array</span>
+arr.length; <span class="hljs-comment">// returns 2</span>
+
+arr[<span class="hljs-string">"favoriteFood"</span>] = <span class="hljs-string">"pizza"</span>; <span class="hljs-comment">// this DOES NOT add to the array. Setting a string parameter adds to the underlying object</span>
+arr.length; <span class="hljs-comment">// returns 2, not 3</span>
+</code></pre>
+<p>The length property is only modified when you add an item to the array, not the underlying object.</p>
+<p><strong>The <code>length</code> is always 1 higher than the highest index, even if there are actually fewer items in the array.</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [];
+arr.length; <span class="hljs-comment">// returns 0;</span>
+
+arr[<span class="hljs-number">100</span>] = <span class="hljs-string">"this is the only item in the array"</span>;
+arr.length; <span class="hljs-comment">// returns 101, even though there is only 1 object in the array</span>
+</code></pre>
+<p>This is somewhat counter-intuitive. PHP does more what you would expect:</p>
+<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span>
+arr = <span class="hljs-keyword">array</span>();
+arr[<span class="hljs-number">100</span>] = <span class="hljs-string">"php behaves differently"</span>;
+sizeof(arr); <span class="hljs-comment">// returns 1 in PHP</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>You can manually set the <code>length</code> also. Setting it to 0 is a simple way to empty an array.</p>
+<p>In addition to this length property, arrays have lots of nifty built in functions such as <code>push()</code>, <code>pop()</code>, <code>sort()</code>, <code>slice()</code>, <code>splice()</code>, and more. This is what sets them apart from Array-Like Objects.</p>
+<h2 id="array-like-objects-img-class-alignright-title-it-s-like-an-array-but-made-out-of-lego-src-http-farm4-static-flickr-com-3175-2645497916_386b9b75b8_m-jpg-alt-width-240-height-180-2-">Array-like Objects <a href="http://www.flickr.com/photos/repoort/2645497916/"><img class="alignright" title="It's like an array, but made out of Lego!" src="http://farm4.static.flickr.com/3175/2645497916_386b9b75b8_m.jpg" alt="" width="240" height="180" /></a></h2>
+<p>Array-like objects look like arrays. They have various numbered elements and a length property. But that&#8217;s where the similarity stops. Array-like objects do not have any of Array&#8217;s functions, and for-in loops don&#8217;t even work!</p>
+<p>You&#8217;ll come across these more often than you might expect. A common one is the <code>arguments</code> variable that is present inside of every js function. </p>
+<p>Also included in the category are the HTML node sets returned by <code>document.getElementsByTagName()</code>, <code>document.forms</code>, and basically every other DOM method and property that gives a list of items.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-built_in">document</span>.forms.length; <span class="hljs-comment">// returns 1;</span>
+<span class="hljs-built_in">document</span>.forms[<span class="hljs-number">0</span>]; <span class="hljs-comment">// returns a form element.</span>
+<span class="hljs-built_in">document</span>.forms.join(<span class="hljs-string">", "</span>); <span class="hljs-comment">// throws a type error. this is not an array.</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">document</span>.forms; <span class="hljs-comment">// returns "object"</span>
+</code></pre>
+<p>Did you know you can send any number of arguments you want to a javascript function? They&#39;re all stored in an array-like object named <code>arguments</code>.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">takesTwoParams</span><span class="hljs-params">(a, b)</span></span>{
+    <span class="hljs-comment">// arguments is an array-like variable that is automatically created</span>
+    <span class="hljs-comment">// arguments.length works great</span>
+
+    alert (<span class="hljs-string">"you gave me "</span>+<span class="hljs-built_in">arguments</span>.length+<span class="hljs-string">" arguments"</span>); 
+
+    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i&amp;lt; <span class="hljs-built_in">arguments</span>.length; i++){
+        alert(<span class="hljs-string">"parameter "</span> + i + <span class="hljs-string">" = "</span> + <span class="hljs-built_in">arguments</span>[i]); 
+    }
+}
+
+takesTwoParams(<span class="hljs-string">"one"</span>,<span class="hljs-string">"two"</span>,<span class="hljs-string">"three"</span>);
+<span class="hljs-comment">// alerts "you gave me 3 arguments",</span>
+<span class="hljs-comment">// then "parameter 0 = one" </span>
+<span class="hljs-comment">// etc.</span>
+</code></pre>
+<div class="alert alert-info">
+<strong>Tip:</strong>
+<em>Parameters</em> are the named variables in a function&#39;s signature: <code>a</code> and <code>b</code> in the previous example.<br />
+<em>Arguments</em>, by contrast, are the expressions that are used when calling the function: <code>&quot;one&quot;</code>, <code>&quot;two&quot;</code>, and <code>&quot;three&quot;</code> in this case.
+</div>
+
+<p>This works great. But that&#39;s about as far as you can go with array-like objects. The flowing example does not work:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">takesTwoParams</span><span class="hljs-params">(a, b)</span></span>{
+    alert(<span class="hljs-string">" your parameters were "</span> + <span class="hljs-built_in">arguments</span>.join(<span class="hljs-string">", "</span>)); 
+    <span class="hljs-comment">// throws a type error because arguments.join doesn't exist</span>
+}
+</code></pre>
+<h3 id="so-what-can-you-do-">So what can you do?</h3>
+<p>Well you could make your own <code>join()</code> function, but that adds a lot of unnecessary overhead to your code because it has to loop over everything. If only there were a quick way to get an array out of an array like object&#8230;</p>
+<p>It turns out there is.</p>
+<p>The array functions can be called on non-array objects as long as you know where to find the function (usually they&#8217;re attached to the array, but this isn&#8217;t an array remember <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p><code>Prototype</code> to the win:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">takesTwoParams</span><span class="hljs-params">(a, b)</span></span>{
+    <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>);
+    alert(<span class="hljs-string">" your parameters were "</span> + args.join(<span class="hljs-string">", "</span>)); 
+    <span class="hljs-comment">// yay, this works!</span>
+}
+</code></pre>
+<p>Let&#8217;s take a look at that a bit more in-depth:</p>
+<p><code>Array</code>: This object is the original array that all other arrays inherit their properties from.</p>
+<p><code>Array.prototype</code>:This gives us access to all the methods properties that each array inherits</p>
+<p><code>Array.prototype.slice</code>: The original slice method that is given to all arrays via the prototype chain. We can&#8217;t call it directly though, because when it runs internally, it looks at the <code>this</code> keyword, and calling it here would make <code>this</code> point to <code>Array</code>, not our <code>arguments</code> variable.</p>
+<p><code>Array.prototype.slice.call()</code>: <code>call()</code> and <code>apply()</code> are prototype methods of the <code>Function</code> object, meaning that they can be called on every function in javascript. These allow you to change what the <code>this</code> variable points to inside a given function.</p>
+<p>And finally, you get a regular <code>array</code> back! This works because javascript returns a new object of type Array rather than whatever you gave it. This causes a lot of headaches for a <a href="http://dean.edwards.name/weblog/2006/11/hooray/">few</a> <a href="http://webreflection.blogspot.com/2008/03/sorry-dean-but-i-subclassed-array-again.html">people</a> who are trying to make subclasses of Array, but it&#8217;s very handy in our case!</p>
+<h2 id="-a-name-gotchas-a-gotchas"><a name="gotchas"></a>Gotchas</h2>
+<p>First, in Internet Explorer, DOM <code>NodeLists</code> are not considered to be javascript objects, so you cannot call <code>Array.prototype.slice</code> on them. If you want an array, you&#8217;ll have to loop through it the old fashioned way. Or use a hybrid function that tries it the fast way first, then the slow way if that doesn&#8217;t work. </p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hybridToArray</span><span class="hljs-params">(nodes)</span></span>{
+    <span class="hljs-keyword">try</span>{
+        <span class="hljs-comment">// works in every browser except IE</span>
+        <span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">Array</span>.prototype.slice.call(nodes);
+        <span class="hljs-keyword">return</span> arr;
+    } <span class="hljs-keyword">catch</span>(err){
+        <span class="hljs-comment">// slower, but works in IE</span>
+        <span class="hljs-keyword">var</span> arr = [],
+            length = nodes.length;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i &amp;lt; length; i++){
+            arr.push(nodes[i]);
+        }
+        <span class="hljs-keyword">return</span> arr;
+    }
+}
+</code></pre>
+<p>See an example here: <a href="http://nfriedly.com/demos/ie-nodelist-to-array">http://nfriedly.com/demos/ie-nodelist-to-array</a>.</p>
+<p>Second, arrays are objects, so you can do this, but it can get you some serious inconsistencies:</p>
+<pre class="highlight"><code class="hljs javascript">arr = [];
+arr[<span class="hljs-number">0</span>] = <span class="hljs-string">"first element"</span>; <span class="hljs-comment">// adds item to the array</span>
+arr.length; <span class="hljs-comment">// returns 1</span>
+
+arr.two = <span class="hljs-string">"second element"</span>; <span class="hljs-comment">// adds an item to the underlying object that array is built on top of.</span>
+arr.length; <span class="hljs-comment">// still returns 1 !</span>
+
+<span class="hljs-comment">// BUT...</span>
+<span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> arr){
+    <span class="hljs-comment">// this will hit both 0 and "two"</span>
+}
+</code></pre>
+<h3 id="another-solution-wrap-arrays-in-an-object-if-you-need-both-worlds">Another solution: wrap arrays in an object if you need both worlds</h3>
+<p>This is basically a less efficient method of the array subclassing links I mentioned above. While less efficient, it has the advantage of being simple and reliable.</p>
+<p>That said, I wouldn&#8217;t recommend that you use this in most cases due to issues with speed and extra code requirements. It&#8217;s provided here as an example.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// an example of a wrapper for an array.</span>
+<span class="hljs-comment">// not recommended for most situations.</span>
+
+<span class="hljs-keyword">var</span> ArrayContainer = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(arr)</span></span>{
+    <span class="hljs-keyword">this</span>.arr = arr || [];
+    <span class="hljs-keyword">this</span>.length = <span class="hljs-keyword">this</span>.arr.length;
+};
+
+ArrayContainer.prototype.add=  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(item)</span></span>{
+    index = <span class="hljs-keyword">this</span>.arr.length;
+    <span class="hljs-keyword">this</span>.arr[index] = item;
+    <span class="hljs-keyword">this</span>.length = <span class="hljs-keyword">this</span>.arr.length;
+    <span class="hljs-keyword">return</span> index;
+};
+
+ArrayContainer.prototype.get=  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index)</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.arr[index];
+};
+
+ArrayContainer.prototype.forEach=  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(fn)</span></span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.arr.forEach) <span class="hljs-keyword">this</span>.arr.forEach(fn);<span class="hljs-comment">// use native code if it's there</span>
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.arr){
+            fn( i, <span class="hljs-keyword">this</span>.arr[i], <span class="hljs-keyword">this</span>.arr );
+        }
+    }
+};
+
+<span class="hljs-keyword">var</span> mySuperDooperArray = <span class="hljs-keyword">new</span> ArrayContainer();
+</code></pre>
+<p>Now that your array is (somewhat) protected on the inside, you can loop through it&#8217;s items with <code>forEach()</code> and know that they will match it&#8217;s length. You can also add arbitrary properties to <code>ArrayContainer</code> or <code>mySuperDooperArray</code> and they <strong>won&#8217;t</strong> get pulled into your <code>forEach()</code> loop.</p>
+<p>This example could be extended to completely protect the array if the need arose. </p>
+<h2 id="an-even-better-solution-hire-a-javascript-expert-5-">An Even Better Solution: <a href="http://nfriedly.com/webdev">Hire a javascript expert</a>.</h2>
+<p>nFriedly Web Development is a top ranked <a href="http://nfriedly.com/webdev/javascript">Javascript and AJAX ninja</a> with an extensive portfolio of proven results. I can bring your project to life and make it run faster than you ever imagined.  <a href="http://nfriedly.com/contact">Get in touch</a> with me or get a free <a href="http://nfriedly.com/estimate">instant estimate</a> for new projects.</p>
+
+
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a class="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://plus.google.com/+NathanFriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly 2016</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+				
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+
+</body>
+</html>

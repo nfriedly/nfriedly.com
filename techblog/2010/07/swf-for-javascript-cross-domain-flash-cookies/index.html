@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript library and .swf for cross-domain flash cookies</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.78.6" />
+<link rel="canonical" href="http://nfriedly.com/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" style="background-image: url(http://farm4.staticflickr.com/3438/3762193048_ecaa18a3a1_b.jpg);">
+	<div class="container">
+		<h1><a href="/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/"> JavaScript library and .swf for cross-domain flash cookies</a></h1>
+		
+	</div>
+</header>
+
+
+<main class="container">
+<p><img class="right" title="325990_chocolate_chip_cookies_2" src="http://nfriedly.com/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.</p>
+<p>However, I was surprisingly unable to find any complete library or how-to guide for connecting flash cookies to javascript. So I dusted off my flash skills and built one, and and now you get to enjoy the fruit of my labor:</p>
+<!--more-->
+<div class="well well-large"><p><a href="http://github.com/nfriedly/Javascript-Flash-Cookies/zipball/master"><i class="fa fa-download"></i> Download the swf, js, and source code from github</a></p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre class="highlight"><code class="hljs cmake">bower <span class="hljs-keyword">install</span> javascript-flash-cookies</code></pre></div>
+
+
+<p>This is an .swf file that communicates with JavaScript via flash&#8217;s <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/external/ExternalInterface.html">ExternalInerface</a> to read and write to a Local <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/net/SharedObject.html">SharedObject</a> (LSO). Essentially, it&#8217;s cross-domain cookies for javascript.</p>
+<p>It also includes an (optional) javascript library that handles embedding, communication, error checking, and logging.</p>
+<p>The project is hosted at github: <a href="http://github.com/nfriedly/Javascript-Flash-Cookies">http://github.com/nfriedly/Javascript-Flash-Cookies</a></p>
+<div class="well"><em>You might also be interested in <a href="http://nfriedly.com/techblog/2010/08/how-facebook-sets-and-uses-cross-domain-cookies/">How Facebook Sets and uses cross-Domain cookies</a></em></div>
+
+<h3 id="working-example">Working Example</h3>
+<p>See <a href="http://nfriedly.com/stuff/swfstore-example/">https://nfriedly.com/stuff/swfstore-example/</a> and <a href="http://nfriedly.github.com/Javascript-Flash-Cookies/">http://nfriedly.github.com/Javascript-Flash-Cookies/</a> for a working example.</p>
+<h3 id="quick-start-guide">Quick start guide</h3>
+<p>To use the library, upload the storage.swf &amp; swfstore.js files to your web server and put this HTML and JavaScript into your web page(s):</p>
+<h4 id="the-html">The HTML</h4>
+<pre class="highlight"><code class="hljs xml">
+<span class="hljs-comment">&lt;!-- This example uses jquery, but SwfStore does not require jquery to work. --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/PATH/TO/swfstore.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"dataInput"</span> /&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"saveBtn"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Save"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"status"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h4 id="and-the-javascript">And The JavaScript</h4>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// wait until the page has finished loading before starting</span>
+
+$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">// first disable things while the swfStore is initializing</span>
+
+    $(<span class="hljs-string">'input'</span>).attr(<span class="hljs-string">"disabled"</span>,<span class="hljs-string">"disabled"</span>);
+
+    $(<span class="hljs-string">'#status'</span>).text(<span class="hljs-string">'Loading...'</span>);
+    <span class="hljs-keyword">var</span> mySwfStore = <span class="hljs-keyword">new</span> SwfStore({
+        <span class="hljs-comment">// Optional but recommended. Try to choose something unique.</span>
+
+        namespace: <span class="hljs-string">'myExample'</span>, 
+        <span class="hljs-comment">// To work cross-domain, only one of your sites should have the</span>
+
+        <span class="hljs-comment">// .swf, all other sites should load it from the first one</span>
+
+        swf_url: <span class="hljs-comment">//site.com/PATH/TO/storage.swf', </span>
+        <span class="hljs-comment">// Logs messages to the console if available, a div at the</span>
+
+        <span class="hljs-comment">// bottom of the page otherwise. </span>
+
+        debug: <span class="hljs-literal">true</span>,
+        onready: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+            <span class="hljs-comment">// Now that the swfStore was loaded successfully, re-enable</span>
+
+            $(<span class="hljs-string">'input'</span>).removeAttr(<span class="hljs-string">"disabled"</span>);
+            <span class="hljs-comment">// Read the existing value (if any)</span>
+
+            $(<span class="hljs-string">'#dataInput'</span>).val(mySwfStore.get(<span class="hljs-string">'myKey'</span>));
+            <span class="hljs-comment">// Set up an onclick handler to save the text to the </span>
+
+            <span class="hljs-comment">// swfStore whenever the Save button is clicked</span>
+
+            $(<span class="hljs-string">'#saveBtn'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+                mySwfStore.set(<span class="hljs-string">'myKey'</span>, $(<span class="hljs-string">'#dataInput'</span>).val() );
+
+                $(<span class="hljs-string">'#status'</span>).text(<span class="hljs-string">'Saved!'</span>)
+
+            });
+            $(<span class="hljs-string">'#status'</span>).text(<span class="hljs-string">'Loaded'</span>);
+
+        },
+        onerror: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+            <span class="hljs-comment">// In case we had an error. (The most common cause is that </span>
+
+            <span class="hljs-comment">// the user disabled flash cookies.)</span>
+
+            $(<span class="hljs-string">'#status'</span>).text(<span class="hljs-string">'Error'</span>);
+
+        }
+
+    });
+
+});
+</code></pre>
+<h3 id="cross-domain-usage">Cross-domain usage</h3>
+<p>A copy of storage.swf located on one domain may be embedded on pages from one or more other domains, allowing cross-domain cookie access.</p>
+<h3 id="security-notes">Security notes</h3>
+<p>By default, any website on the internet can access the data stored in these flashcookies.</p>
+<p>Also, versions prior to 1.9.1 were vulnerable to an XSS bug and should not be used.</p>
+<h3 id="troubleshooting-img-src-http-farm3-staticflickr-com-2705-4317168441_0c4652aaf6_n-jpg-class-right-alt-flash-mob-">Troubleshooting <img src="http://farm3.staticflickr.com/2705/4317168441_0c4652aaf6_n.jpg" class="right" alt="Flash Mob"></h3>
+<ul>
+<li>Be sure the <span class="highlight">urls</span> to the .swf file and .js file are both correct.</li>
+<li>If the .swf file is unable to communicate with the JavaScript, it will <span  class="highlight">display log messages on the flash object</span>. If debug is enabled, this this should be visible on the page.</li>
+<li>To <span class="highlight">hide the flash object</span> and disable the <span class="highlight">log messages appending to the bottom of the page</span>, set debug to false</span>. (Log messages are added to a <code>&lt;div&gt;</code> if no console is found).</li>
+<li>If the user does not have flash installed, the onerror function will be called after a (configurable) 10 second timeout. You may want to use a library such as <a href="http://www.featureblend.com/javascript-flash-detection-library.html">Flash Detect</a> to check for this more quickly. <span  class="highlight">Flash Player 9.0.31.0</span> or newer is required.</li>
+<li>If you pass a <span class="highlight">non-string data</span> as the key or value, things may break. Your best bet is to use strings and/or use <a href="http://json.org">JSON</a> to encode objects as strings.</li>
+<li>If you see the error <code>uncaught exception: Error in Actionscript. Use a try/catch block to find error.</code>, try using <code>//</code> in the .swf URL rather than <code>https://</code>. See <a href="https://github.com/nfriedly/Javascript-Flash-Cookies/issues/14">https://github.com/nfriedly/Javascript-Flash-Cookies/issues/14</a> for more information.</li>
+<li>Do not set <code>display:none</code> on the swf or any of it&#39;s parent elements, this will cause the file to not render and the timeout will be fired. Disable debug and it will be rendered off screen.</li>
+<li>The error <code>this.swf.set is not a function</code> has been known to occur when the FlashFirebug plugin is enabled in Firefox / Firebug...</li>
+</ul>
+<h3 id="bugs-and-patches">Bugs and patches</h3>
+<p>Bug reports and patches are always welcome at <a href="http://github.com/nfriedly/Javascript-Flash-Cookies">github</a> (preferred), or just send me an email. I&#39;ll also consider new features, but I&#39;m generally going to prioritize keeping this library small and simple, so most new features will be refused.</p>
+
+
+
+	<p class="meta"><small class="photocredit"><b>Photo Credits:</b> 
+		<a href="http://www.flickr.com/photos/snowpeak/3762193048/">Lightning header photo by John Fowler</a>, <a href="http://www.flickr.com/photos/jdhancock/4317168441/">Flash Mob photo by JD Hancock</a>
+	</small></p>
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a class="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://plus.google.com/+NathanFriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly 2016</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+				
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+
+</body>
+</html>

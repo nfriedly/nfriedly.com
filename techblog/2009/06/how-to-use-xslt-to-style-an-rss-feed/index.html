@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>How to use XSLT to style an RSS feed</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.78.6" />
+<link rel="canonical" href="http://nfriedly.com/techblog/2009/06/how-to-use-xslt-to-style-an-rss-feed/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" style="background-image: url(http://farm3.staticflickr.com/2103/2205813608_e9b0db0c05_b.jpg);">
+	<div class="container">
+		<h1><a href="/techblog/2009/06/how-to-use-xslt-to-style-an-rss-feed/"> How to use XSLT to style an RSS feed</a></h1>
+		
+	</div>
+</header>
+
+
+<main class="container">
+<p><a href="http://www.flickr.com/photos/gogdog/2240855570/"><img class="alignright" src="http://farm3.static.flickr.com/2097/2240855570_4529cf9f6d_m.jpg" alt="Take this!" /></a>XSLT is a fairly well-supported technology. It allows you to take any XML file &#8211; including RSS &#8211; and <em>transform</em> it into a styled HTML document. It&#8217;s kind of like CSS on steroids.</p>
+<p>Unfortunately, most browsers think they know better and go off and do their own thing on RSS feeds.</p>
+<p>We&#8217;re going to look at how and which browsers can be brought into line, and how to use XSLT to improve the look of your RSS feed in those browsers.</p>
+<!--more-->
+<h2 id="the-rss-problem">The RSS problem</h2>
+<p>In most browsers, XML and XSLT are supported in every single case *except* RSS. By default, Internet Explorer, Firefox, Safari, and Opera all ignore XSLT files and do their own thing with RSS. In fact, Google Chrome is the *only* browser I tested that got it right without tinkering.</p>
+<p>To their credit, Microsoft at least gave their users the option to turn off the &#8220;feature&#8221;. No other browser even gives this option.</p>
+<p>During my tests, I have found a way to &#8220;trick&#8221; Firefox into rendering RSS with XSLT correctly. Currently there seems to be no solution for other browsers except to try and detect them on the server and send the user an HTML file if they&#8217;re in a browser that doesn&#8217;t work properly.</p>
+<h3 id="internet-explorer">Internet Explorer</h3>
+<p>IE requires that the user specifically choose to disable their take-liberties-with-rss &#8220;feature&#8221;. I would point out that this really isn&#8217;t good enough because 99% of users will never get that far, but sadly, it&#8217;s the closest thing to getting it right out of any browser on the market! (Aside from Google Chrome.)</p>
+<p>Here&#8217;s how:</p>
+<ol>
+<li>Click on the <strong>Tools</strong> menu,</li>
+<li>Click on the <strong>Internet Options</strong> sub-menu,</li>
+<li>Click on the <strong>Content</strong> tab,</li>
+<li>Click on the <strong>Settings</strong> button of the <strong>Feed</strong> section to bring up Feed Settings dialog box,</li>
+<li>Un-check the <strong>Turn On Feed Reading View</strong> option.</li>
+<li>Click OK all the way to close all opened dialog boxes.</li>
+<li>Restart Internet Explorer</li>
+</ol>
+<h3 id="-img-class-alignright-src-http-farm3-static-flickr-com-2172-2240065731_86c22f48c1_m-jpg-alt-transform-2-firefox"><a href="http://www.flickr.com/photos/gogdog/2240065731/"><img class="alignright" src="http://farm3.static.flickr.com/2172/2240065731_86c22f48c1_m.jpg" alt="Transform!" /></a>Firefox</h3>
+<p>Firefox can be tricked into working because it decides fairly early on in the rendering process whether to treat the page in a standard way or to fly off the handle with it. In fact, it makes this decision before even completely downloading the RSS file.</p>
+<p>Because of the early decision process, we can insert 512 characters of white space in between the <code>&lt;?xml ?&gt;</code> declaration and the opening <code>&lt;rss&gt;</code> tag. Firefox is then &#8220;tricked&#8221; into doing the right thing and rendering the feed correctly.</p>
+<h2 id="working-around-it">Working around it</h2>
+<p>Although not practical in most cases currently, I&#8217;ve included an example of a script that will take any RSS feed and add a style sheet to it.  It includes the hack to work in firefox and instructions for enabling it in Internet Explorer.</p>
+<p><a href="http://nfriedly.com/stuff/rss/?url=http://nfriedly.com/techblog/feed/">http://nfriedly.com/stuff/rss/?url=http://nfriedly.com/techblog/feed/</a></p>
+<p>Code for index.php:</p>
+<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-comment">// grab the url</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">'url'</span>])) <span class="hljs-variable">$url</span> = <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">'url'</span>];
+<span class="hljs-keyword">else</span> <span class="hljs-variable">$url</span> = <span class="hljs-keyword">false</span>;
+
+<span class="hljs-comment">// make sure the url is good (no local files)</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$url</span> &amp;&amp; substr(<span class="hljs-variable">$url</span>,<span class="hljs-number">0</span>,<span class="hljs-number">7</span>) != <span class="hljs-string">"http://"</span>) <span class="hljs-keyword">exit</span>(<span class="hljs-string">"Please start urls with 'http://'"</span>);
+
+<span class="hljs-comment">// make the stylesheet link</span>
+<span class="hljs-variable">$xsl_file</span> = <span class="hljs-string">'xsl.php'</span>;
+
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$url</span>) <span class="hljs-variable">$xsl_file</span> .= <span class="hljs-string">'?url='</span>.urlencode(<span class="hljs-variable">$url</span>);
+
+define(<span class="hljs-string">'XSL_LINK'</span>,<span class="hljs-string">'&lt;?xml-stylesheet href="'</span>.<span class="hljs-variable">$xsl_file</span>.<span class="hljs-string">'" type="text/xsl" ?&gt;'</span>);
+
+<span class="hljs-comment">// if we don't have a url, use the home page</span>
+<span class="hljs-keyword">if</span>(!<span class="hljs-variable">$url</span>) <span class="hljs-variable">$url</span> = <span class="hljs-string">"home.xml"</span>;
+
+<span class="hljs-comment">// download the rss feed</span>
+<span class="hljs-variable">$rss</span> = file_get_contents(<span class="hljs-variable">$url</span>);
+
+<span class="hljs-comment">// xml header so firefox doesn't decide it's text</span>
+header(<span class="hljs-string">'content-type: text/xml'</span>);
+
+<span class="hljs-comment">//echo out the header right away, if there is one</span>
+<span class="hljs-keyword">if</span>(substr(<span class="hljs-variable">$rss</span>,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>) == <span class="hljs-string">'&lt;?xml '</span>){
+    <span class="hljs-variable">$header_end</span> = strpos(<span class="hljs-variable">$rss</span>,<span class="hljs-string">'?&gt;'</span>) +<span class="hljs-number">2</span>;
+    <span class="hljs-keyword">echo</span> substr(<span class="hljs-variable">$rss</span>,<span class="hljs-number">0</span>,<span class="hljs-variable">$header_end</span>);
+    <span class="hljs-variable">$rss</span> = substr(<span class="hljs-variable">$rss</span>,<span class="hljs-variable">$header_end</span>);
+}
+
+<span class="hljs-comment">//otherwise echo a default header:</span>
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;?xml version="1.0" ?'</span>.<span class="hljs-string">'&gt;'</span>;
+
+<span class="hljs-comment">// remove any existing stylesheet</span>
+<span class="hljs-variable">$rss</span> = preg_replace(<span class="hljs-string">'/&lt;\?xml-stylesheet([^?]|\?(?!&gt;))*\?'</span>.<span class="hljs-string">'&gt;/'</span>,<span class="hljs-string">''</span>,<span class="hljs-variable">$rss</span>);  <span class="hljs-comment">// uses lookahead</span>
+
+<span class="hljs-comment">// add in our stylesheet</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"\r\n"</span> . XSL_LINK . <span class="hljs-string">"\r\n"</span>;
+
+<span class="hljs-comment">// toss in 512 bytes of nothing to throw off firefox</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "</span>;
+
+<span class="hljs-comment">//finally, pass along the content</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$rss</span>;
+
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source by looking at <a href="http://nfriedly.com/stuff/rss/xsl.php">http://nfriedly.com/stuff/rss/xsl.php</a>. You could simply save that as an .xml file and have a working copy.</p>
+<p>You can also view the <a href="http://nfriedly.com/stuff/rss/theme/style.css">CSS</a> and <a href="http://nfriedly.com/stuff/rss/scripts.js">Javascript</a> used to make everything look nice.</p>
+<h2 id="hire-me-for-web-development">Hire me for web development</h2>
+<p>Need an <a href="http://nfriedly.com/webdev">expert web programmer</a> to research and solve some off-the-wall problem like this? I&#8217;m available. I&#8217;m good solving run-of-the-mill problems too &#8211; <a href="http://nfriedly.com/webdev/javascript">Javascript and AJAX development</a> is my specialty. <a href="http://nfriedly.com/contact">Get in touch with me</a> for more information and a free quote.</p>
+<p> *[XSLT]: Extensible Stylesheet Language Transformations</p>
+
+
+
+	<p class="meta"><small class="photocredit"><b>Photo Credits:</b> 
+		<a href="http://www.flickr.com/photos/gogdog/sets/72157603753867140/with/2240855570/">SOC GX-34 GunBuster photos by GogDog</a>
+	</small></p>
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a class="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://plus.google.com/+NathanFriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly 2016</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+				
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+
+</body>
+</html>

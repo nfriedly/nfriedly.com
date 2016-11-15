@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DIY ESP8266 ESP-01 Programing / Test board</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.78.6" />
+<link rel="canonical" href="http://nfriedly.com/techblog/2015/07/build-a-diy-esp8266ex-esp-01-dev-test-programming-board/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" style="background-image: url(/img/blog/esp-mb/header-bg.jpg);">
+	<div class="container">
+		<h1><a href="/techblog/2015/07/build-a-diy-esp8266ex-esp-01-dev-test-programming-board/"> DIY ESP-01 Motherboard</a></h1>
+		<h2><span class="sub-heading ">Build a simple dev board to make programing ESP-01 (ESP8266EX) chips fast and easy</span></h2>
+	</div>
+</header>
+
+
+<main class="container">
+<p><img class="right" src="/img/blog/esp-mb/zoom.jpg" style="max-width: 300px;" alt="ESP-01" /><a href="http://nodemcu.com/index_en.html">NodeMCU</a> and other ESP8266 modules are starting to become very popular because they offer an embedded development 
+platform with a CPU+RAM+Storage+WiFi all in one for (considerably) less than the price of an Arduino. There are a <a href="https://www.adafruit.com/product/2471">number</a> of 
+<a href="https://www.sparkfun.com/products/13231">breadboard</a>-<a href="http://www.electrodragon.com/product/nodemcu-lua-amica-r2-esp8266-wifi-board/">friendly</a> <a href="https://www.tindie.com/products/AprilBrother/cactus-micro-rev2-arduino-compatible-plus-esp8266/">modules</a> with all pins exposed (and <a href="https://www.kickstarter.com/projects/digistump/oak-by-digistump-wi-fi-for-all-things-arduino-comp">more</a> coming soon.)</p>
+<p>However, this post is about the breadboard-unfriendly ESP-01 module. It only has two GPIO pins (four if you include the
+TX &amp; RX pins), but it&#39;s smaller and most importantly, cheaper. <!--more--><a href="https://www.adafruit.com/product/2282">US</a> <a href="https://www.sparkfun.com/products/13252">vendors</a> tend to charge around 
+$7, but if you don&#39;t mind importing, they can be <a href="http://www.electrodragon.com/product/esp8266-wi07c-wifi-module/">had for $3.50</a> <a href="http://www.ebay.com/sch/i.html?_sop=15&amp;_nkw=esp-01">or less</a>.</p>
+<p>The biggest problem with the ESP-01 is that it&#39;s annoying to wire up and program, so that&#39;s what we&#39;re solving today.</p>
+<h2 id="parts">Parts</h2>
+<p><img src="/img/blog/esp-mb/parts.jpg" alt="ESP-01 motherboard parts"></p>
+<ul>
+<li><strong>ESP-01 module</strong>: The reason were going through all this trouble. <a href="http://www.electrodragon.com/product/esp8266-wi07c-wifi-module/">$3.50 @ Electrodragon</a></li>
+<li><p><strong>USB-Serial TTL programmer</strong>: I&#39;m using an Adafruit FTDI Friend, although I&#39;m hesitant to recommend FTDI products after they shipped mallware with their Windows drivers... 
+<a href="http://www.adafruit.com/product/284">$14.75 @ Adafruit</a>.</p>
+<p><em>Update:</em> I&#39;ve confirmed that a CP2102 USB-TLL UART also works well on OS X:
+<a href="http://www.electrodragon.com/product/cp2102-usb-ttl-uart-module-v2/">$2.20 @ Electrodragon</a>.
+You can either use the included cable, or switch the pin headers on the motherboard to female for a direct connection. (All relevant pins are in the same position.)</p>
+</li>
+<li><strong>3.3v Voltage Regulator</strong>: Needs to be a slightly beefy one because the ESP8266EX chips can reportedly draw as much as 350-400mA. I&#39;m using a LM2937ET-3.3/NOPB from TI. 
+<a href="http://www.ti.com/product/LM2937-3.3/samplebuy">$1.61 @ Texas Instruments</a> (Or request a free sample)</li>
+<li><strong>10 μF Capacitor</strong>: For the 3.3v side of the voltage regulator. 
+<a href="http://www.taydaelectronics.com/10uf-25v-105c-radial-electrolytic-capacitor-5x11mm.html">$0.02 each @ Tayda Electronics</a> 
+or <a href="http://www.electrodragon.com/product/radial-electrolytic-capacitor-1uf-470uf-12-kinds-10pcs/">$3.30 for a 120-piece kit @ Electrodragon</a></li>
+<li><strong>0.1 μF Capacitor</strong>: (100nf) For the vin/5v side of the voltage regulator. 
+<a href="http://www.taydaelectronics.com/0-1uf-50v-105c-radial-electrolytic-capacitor-5x11mm.html">$0.02 each @ Tayda Electronics</a> 
+(Or use the 0.2uf Capacitor from the aforementioned <a href="http://www.electrodragon.com/product/radial-electrolytic-capacitor-1uf-470uf-12-kinds-10pcs/">Electrodragon kit</a></li>
+<li><strong>Two Buttons</strong>: SPST (Single Pole, Single Throw) momentary on switches. I&#39;m using Omron B3F buttons.
+<a href="http://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/tact-switch-6x6mm-5mm-through-hole-spst-no.html">$0.04 each @ Tayda Electronics</a>
+or <a href="http://s1.electrodragon.com/wp-content/uploads/2011/12/button1.jpg">$1.20 for 50 @ Electrodragon</a></li>
+<li><strong>10k Ω Resistor</strong>: Pull-up for the Reset button. (Note: depending on your usage, your may also want a second one for the Program button on <code>GPIO 0</code>.) 
+<a href="http://www.taydaelectronics.com/resistors/1-4w-carbon-film-resistors/10-x-resistor-10k-ohm-1-4w-5-carbon-film-pkg-of-10.html">$0.10 for 10 @ Tayda Electronics</a>
+or <a href="http://www.electrodragon.com/product/metal-membrane-resistors-different-value-available-100pcs/">$0.90 for 100 @ Electrodragon</a>
+or <a href="http://www.electrodragon.com/product/14w-resistor-kit-accuracy-in-1-2020pcs/">$3 for a 600-piece kit @ Electrodragon</a></li>
+<li><strong>1k Ω Resistor</strong>: Pull-up for the <code>CH_PD</code> pin that enables the ESP-01 module.
+<a href="http://www.taydaelectronics.com/resistors/1-4w-carbon-film-resistors/10-x-resistor-1k-ohm-1-4w-5-carbon-film-pkg-of-10.html">$0.10 for 10 @ Tayda Electronics</a>
+or <a href="http://www.electrodragon.com/product/metal-membrane-resistors-different-value-available-100pcs/">$0.90 for 100 @ Electrodragon</a>
+or the aforementioned <a href="http://www.electrodragon.com/product/14w-resistor-kit-accuracy-in-1-2020pcs/">$3 600-piece kit @ Electrodragon</a></li>
+<li><strong>2x4 Female Pin Headers</strong>: For connecting the ESP-01 module. 
+(I&#39;m not even sure where to buy these, I think mine was a free sample from <a href="https://www.samtec.com/technical-specifications/default.aspx?SeriesMaster=SSW">Samtec</a> that was leftover from a different project.
+Nobody will look down on you if you just break off two 1x4 pieces of single-row pin headers and solder them side-by-side ;)</li>
+<li><strong>Male and Female Breakaway Pin Headers</strong>: For connecting USB-Serial TTL programmer and connecting to the GPIO pins.
+<a href="http://www.electrodragon.com/product/break-away-header/">$0.90 (male) &amp; $1.70 (female) @ Electrodragon</a> + <a href="http://www.electrodragon.com/product/10pcs-2-54mm-90-degree-break-away-pin-header/">$1.40 (male, right-angle - optional) @ Electrodragon</a></li>
+<li><strong>Stripboard</strong>: The &quot;board&quot; part of our motherboard.
+<a href="http://www.taydaelectronics.com/small-stripboard-94x53mm-copper.html">$0.66 @ Tayda Electronics</a></li>
+<li><strong>Misc Wire</strong>: A few short pieces of wire, probably less than 2 inches total.
+<a href="http://www.taydaelectronics.com/hardware/cable-wire.html">$0.10 per foot @ Tayda Electronics</a>
+or <a href="http://www.electrodragon.com/product/24awg-wires-cables-1-meter-variablecolors/">$1.60 for 10 meters @ Electrodragon</a></li>
+<li><strong>Brass Spacers</strong>: Optional but keeps the board from potentially shorting out on your desk/whatever.
+<a href="http://www.electrodragon.com/product/m3-brazz-bolt-different-length-available/">$0.90 for 10 @ Electrodragon</a></li>
+</ul>
+<p>Total cost: ~$12 + shipping to go with the cheapest options. Be aware that Tayda Electronics has a minimum order of $5, so with that and shipping you&#39;ll probably have to spend $20-25 to get everything.</p>
+<h2 id="tools">Tools</h2>
+<p><img src="/img/blog/esp-mb/parts-tools.jpg" alt="ESP-01 motherboard parts &amp; tools"></p>
+<ul>
+<li><strong>Soldering Iron &amp; Solder</strong>: I recently upgraded to a <a href="http://www.amazon.com/gp/product/B000ARU9PO/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B000ARU9PO&amp;linkCode=as2&amp;tag=nfriedly-20&amp;linkId=F4NKRV7MHUBFOMA5">Weller WESD51</a> and I am <em>loving</em> it.</li>
+<li><strong>Flush Cutters</strong>: To cut the leads off after soldering each part in. These are also handy for &quot;breakaway&quot; female pin headers.</li>
+<li><strong>Wire Strippers</strong>: For cutting and stripping the few bits of wire we need.</li>
+<li><strong>X-Acto Knife</strong>: Necessary for cutting the stripboard track between the two rows of pins on the ESP-01 module, and a fallback option for the other cuts.</li>
+<li><strong>Drill w/ 4mm drill bit</strong>: Makes all of the other stripboard cuts much easier. Just position the drill in the center of an unused pin hole and spin it for a few moments to strip away the copper.</li>
+</ul>
+<h2 id="building">Building</h2>
+<p><img src="/img/blog/esp-mb/fritzing.png" alt="ESP-01 motherboard Wiring Diagram">
+(<a href="https://www.dropbox.com/s/c5nzxps1d0y40xp/esp-01%20programing%20board.fzz?dl=0">Fritzing .fzz file</a>, uses Yan Donelly&#39;s <a href="https://github.com/ydonnelly/ESP8266_fritzing">ESP-01 Fritzing part</a>)</p>
+<p>Connect everything as shown in the diagram. Be sure to cut the stripboard tracks between the two rows of pins where the ESP-01 connects. 
+(And the other locations - the <code>CH_PD</code> track and a few on either side of the power tracks - but you can see each of those cuts in the graphic.)</p>
+<p>I changed the spacing a bit when I assembled mine to give my fingers more room to connect and disconnect things from the pin headers.</p>
+<p><img src="/img/blog/esp-mb/front-angle.jpg" alt="ESP-01 motherboard front-angled"></p>
+<p><img src="/img/blog/esp-mb/back-angle-2.jpg" alt="ESP-01 motherboard back-angled"></p>
+<p><img src="/img/blog/esp-mb/back-angle.jpg" alt="ESP-01 motherboard behind connector"></p>
+<p><img src="/img/blog/esp-mb/bottom.jpg" alt="ESP-01 motherboard bottom"></p>
+<h2 id="programing">Programing</h2>
+<p>There are a few ways to program the ESP-8266, but my favorite is to use the <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a> with the <a href="https://github.com/esp8266/Arduino">ESP8266</a> board from
+ <a href="http://www.esp8266.com/">esp8266.com</a>. Adafruit has a <a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-arduino-ide">nice guide</a> for installing it.</p>
+<p>When uploading your sketch, you have to be a little carefule about the order and timing of the button presses:</p>
+<ol>
+<li>Click upload in the Arduino IDE</li>
+<li>Quickly press and hold the RESET button (the one farther from the ESP-01)</li>
+<li>Quickly press and hold the PROGRAM button</li>
+<li>Watch the status line in the Arduino IDE. When it changes from &quot;Compiling...&quot; to &quot;Uploading...&quot; release the RESET button</li>
+<li>After you see it starting to print the upload status in red text, release the PROGRAM button.</li>
+</ol>
+<p>Here&#39;s an example sketch to use PROGRAM button on <code>GPIO 0</code> as a regular input:</p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> buttonPin = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">void</span> setup() {
+ Serial.begin(<span class="hljs-number">9600</span>);
+ <span class="hljs-comment">// Normally the button will take the pin from "floating" (not connected to anything) to grounded</span>
+ <span class="hljs-comment">// This enables the internal pullup resistor so that the default state is high rather than floating.</span>
+ pinMode(buttonPin, INPUT_PULLUP);
+}
+
+<span class="hljs-keyword">void</span> loop() {
+  Serial.print(<span class="hljs-string">"Button is "</span>);
+  <span class="hljs-keyword">int</span> status = digitalRead(buttonPin);
+  <span class="hljs-comment">// because of the pullup resistor, the pin state is reversed: button pressed = LOW, button released = HIGH</span>
+  <span class="hljs-keyword">if</span> (status == LOW) {
+    Serial.println(<span class="hljs-string">"pressed"</span>);
+  } <span class="hljs-keyword">else</span> {
+    Serial.println(<span class="hljs-string">"released"</span>);
+  }
+  delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
+<p>Happy hacking! Discuss on <a href="http://www.esp8266.com/viewtopic.php?f=6&amp;t=3968">esp8266.com</a>.</p>
+<p><img src="/img/blog/esp-mb/top.jpg" alt="ESP-01 motherboard top-down, connected"></p>
+
+
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a class="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://plus.google.com/+NathanFriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly 2016</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+				
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+
+</body>
+</html>
