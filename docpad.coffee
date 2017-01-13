@@ -143,15 +143,16 @@ module.exports =
 
 			# pre-fill the hits collection to emphasize/de-emphasize the items I'd like to do more/less work with
 			hits =
+				React: 15
 				"Node.js": 5
 				AngularJS: 5
-				React: 5
 				"Mobile First": 4
 				"Flash / ActionScript": -1
 				Twitter: -1
 				WordPress: -1
 				CodeIgniter: -2
 				SEO: -2
+				CoffeeScript: -3 # ironic, I know
 				"e-Commerce": -4
 				CSS: -5
 				HTML: -5
