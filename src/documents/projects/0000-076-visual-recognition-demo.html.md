@@ -1,5 +1,5 @@
 ---
-title: Watson Visual Recognition Demo
+title: Visual Recognition Demo
 link: http://visual-recognition-demo.mybluemix.net/
 github: https://github.com/watson-developer-cloud/visual-recognition-nodejs
 picture: /img/portfolio/visual-recognition-demo.png
