@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>How to make Apache Ant tasks run in a default directory</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.79.0" />
+<link rel="canonical" href="http://nfriedly.com/techblog/2012/02/how-to-make-ant-tasks-run-in-a-default-directory/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" style="background-image: url(http://farm6.staticflickr.com/5538/9104824720_cd4bffffd2_h.jpg);">
+	<div class="container">
+		<h1><a href="/techblog/2012/02/how-to-make-ant-tasks-run-in-a-default-directory/"> How to make Apache Ant tasks run in a default directory</a></h1>
+		
+	</div>
+</header>
+
+
+<main class="container">
+<p><img src="http://farm8.staticflickr.com/7020/6668518895_0700a12958_m.jpg" width="240" height="160" alt="Apache takeoff" title="The other Apache, image courtesy of The U.S. Army" class="right" />I often open a new tab in my Terminal to run an <a href="http://ant.apache.org/">Ant</a> task, and often as not I forget to <code>cd</code> into the correct directory first and so I am greeted with this error:</p>
+<pre class="highlight"><code class="hljs armasm">$ ant compile
+<span class="hljs-keyword">Buildfile: </span><span class="hljs-keyword">build.xml </span>does not exist!
+<span class="hljs-keyword">Build </span>failed
+</code></pre><p>On my system, there&#8217;s only one main project that uses ant, so I almost always intend for ant tasks to be run against that project&#8217;s build.xml. So, I created a function that makes ant tasks &#8220;just work&#8221; no matter what directory I am in.</p>
+<!--more-->
+<h3 id="the-code">The code</h3>
+<p>First you&#8217;ll need to edit your <code>.profile</code> file. To do so, run the following command:</p>
+<p><code>nano ~/.profile</code></p>
+<p>Then copy-paste in this code, changing the <code>DEFAULT_ANT_DIR</code> to the path to your project (whatever folder has the build.xml file in it):</p>
+<pre class="highlight"><code class="hljs bash"><span class="hljs-comment"># make ant commands run in the default directory if</span>
+<span class="hljs-comment"># there is no build.xml in the current directory</span>
+
+<span class="hljs-built_in">export</span> DEFAULT_ANT_DIR = /path/to/your/projects/folder/
+
+<span class="hljs-keyword">function</span> magic-<span class="hljs-function"><span class="hljs-title">ant</span></span>() {
+  <span class="hljs-keyword">if</span> [ <span class="hljs-_">-e</span> ./build.xml ]
+    <span class="hljs-keyword">then</span>
+      ant <span class="hljs-variable">$@</span>                                                                    
+    <span class="hljs-keyword">else</span>
+      <span class="hljs-built_in">pushd</span> DEFAULT_ANT_DIR
+      ant <span class="hljs-variable">$@</span>
+      <span class="hljs-built_in">popd</span>
+  <span class="hljs-keyword">fi</span>
+}
+
+<span class="hljs-comment"># reset ant to avoid loops if you ever run `source ~/.profile` again</span>
+<span class="hljs-built_in">alias</span> ant=`<span class="hljs-built_in">which</span> ant`
+<span class="hljs-built_in">alias</span> ant=<span class="hljs-string">"magic-ant"</span>
+</code></pre>
+<p>Press <code>[Control]-O</code> then <code>[Enter]</code> to save and <code>[Control]-X</code> to exit nano.</p>
+<p>Lastly, run this command to import your changes (or just close and reopen your terminal):</p>
+<p><code>source ~/.profile</code></p>
+<h3 id="how-it-works">How it works</h3>
+<p>First, we define the path in a shell variable with the path to the default ant project. This isn&#8217;t absolutely required, but it keeps things tidy and simple.</p>
+<p><img src="http://farm1.staticflickr.com/95/235488979_24ead7f4dc_m.jpg" width="240" height="159" alt="Ant" class="left" />Next, we create the <code>magic-ant</code> function which checks if there is a build.xml file in the current directory. If so, it uses that one, otherwise it calls <code>pushd</code> to temporarily change directories to our default one, runs the ant command, and then calls <code>popd</code> to get back to whatever directory you started in. <code>$@</code> is an automatic variable that includes whatever parameters this function was called with.</p>
+<p>After that we use alias to reset the ant command in order to avoid endless loops where our magic-ant function calls itself instead of the real ant if you source. The command <code>which</code> returns the path to the program with the given name. Putting it in backticks (`) makes bash execute the command and return the result.</p>
+<p>Finally we alias <code>ant</code> to point to our new <code>magic-ant</code> function when run from the command line.</p>
+<p>The only downside is that I haven&#8217;t yet figured out how to make <a href="http://matthew.mceachen.us/blog/ant-bash-completion-on-mac-os-x-43.html">Ant task tab completion</a> work with this when you&#8217;re not in the project directory.</p>
+<p class="meta"><small class="photocredit"><b>Photo Credits:</b> 
+Apache feather photo by <a href="http://www.flickr.com/photos/rbowen/9104824720/">Rich Bowen</a>, 
+Apache helicopter photo by <a href="http://www.flickr.com/photos/soldiersmediacenter/6668518895/">The U.S. Army</a>,
+plexiglass ant photo by <a href="http://www.flickr.com/photos/dasqfamily/235488979/">Qfamily</a>
+</small></p>
+
+
+
+
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a class="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://plus.google.com/+NathanFriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly 2017</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+				
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+
+</body>
+</html>

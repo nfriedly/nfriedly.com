@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Automatically unit testing client-side JavaScript with Jasmine and Node.js</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.79.0" />
+<link rel="canonical" href="http://nfriedly.com/techblog/2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195"> 
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" style="background-image: url(http://farm3.staticflickr.com/2376/2243034754_0a9b40d2ff_b.jpg);">
+	<div class="container">
+		<h1><a href="/techblog/2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/"> Automatically unit testing client-side JavaScript with Jasmine and Node.js</a></h1>
+		
+	</div>
+</header>
+
+
+<main class="container">
+<p><img src="http://nfriedly.com/techblog/wp-content/uploads/2013/02/jasmine_flower.png" alt="jasmine_logo" width="91" height="90" class="alignleft left size-full wp-image-478" /> At <a href="http://sociablelabs.com">Sociable Labs</a>, we have hundreds JavaScript unit tests that run on every checkin. They output a <a href="http://www.junit.org/">JUnit</a>-compatible report that <a href="https://www.atlassian.com/software/bamboo/overview">Bamboo</a> can use to track stats and email us if anything failed. Here&#8217;s how we do it.</p>
+<!--more-->
+<p>Our JavaScript &#8220;build&#8221; process is basically a script that concatenated all of our JS files into a single big file.<sup><a href="#note-1">[1]</a></sup> We added a flag to that process that would skip the <code>init.js</code> file and instead add a <code>module.exports</code> statement for easy inclusion in <a href="http://nodejs.org/">node.js</a>.</p>
+<p>With this setup, we can quickly run hundreds of <a href="http://pivotal.github.com/jasmine/">jasmine</a> specs from the command line in any environment we need &#8211; no browser necessary. Our full suite currently takes about 5 seconds to run.</p>
+<p>To start off, we installed the <a href="https://npmjs.org/package/jasmine-node">jasmine-node</a> and <a href="https://npmjs.org/package/jsdom">jsdom</a> NPM modules:</p>
+<pre class="highlight"><code class="hljs crmsh">npm install jasmine-<span class="hljs-keyword">node</span>
+<span class="hljs-title">npm</span> install jsdom
+</code></pre><p>This is the relevant part of our directory structure, the node_modules folder is top-level:</p>
+<pre class="highlight"><code class="hljs haml">build/
+node_modules/
+ -<span class="ruby"> ...
+</span>test/js/
+ -<span class="ruby"> environment/
+</span>   -<span class="ruby"> jasmine_helper.js
+</span> -<span class="ruby"> util/
+</span>   -<span class="ruby"> install_jsdom.sh
+</span> -<span class="ruby"> gallery_spec.js
+</span> -<span class="ruby"> ajax_spec.js
+</span> -<span class="ruby"> etc.
+</span></code></pre><p><code>environment/jasmine_helper.js</code> is where most of the magic is:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> jsdom = <span class="hljs-built_in">require</span>(<span class="hljs-string">"jsdom"</span>);
+
+<span class="hljs-built_in">window</span> = jsdom.jsdom(<span class="hljs-string">'&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;div id="rondavu_container"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</span>).createWindow();
+
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">Object</span>.keys(<span class="hljs-built_in">window</span>).length === <span class="hljs-number">0</span>) {
+    <span class="hljs-comment">// this hapens if contextify, one of jsdom's dependencies doesn't install correctly</span>
+    <span class="hljs-comment">// (it installs different code depending on the OS, so it cannot get checked in.);</span>
+    <span class="hljs-keyword">throw</span> <span class="hljs-string">"jsdom failed to create a usable environment, try uninstalling and reinstalling it"</span>;
+}
+
+global.window = <span class="hljs-built_in">window</span>;
+
+global.document = <span class="hljs-built_in">window</span>.document;
+
+<span class="hljs-keyword">var</span> R = global.R = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../build/rondavu_test_mode.js'</span>);
+</code></pre>
+<p>First we create a jsdom environment and verify that it works. (We&#8217;ll come back to that in a minute). Next we make the <code>window</code> and <code>document</code> variables global. Finally we include the slightly modified version of our compiled JS and set it in a global variable so that tests can hit it&#8217;s internal methods. Jasmine always runs all helper files before the spec files, so the global variables are guaranteed to exist by the time our tests run.</p>
+<p><code>util/install_jsdom.sh</code> is necessary because one of jsdom&#8217;s dependencies, contextify, installs differently on different operating systems. Because of that, we added node_modules/jsdom to the <code>.gitignore</code> file and run this script before running the js unit tests:</p>
+<pre class="highlight"><code class="hljs bash"><span class="hljs-meta">#!/bin/bash
+</span>
+<span class="hljs-comment"># One of JSDOM's dependencies, contextify, cannot be checked in because it installs differently depending on the OS.</span>
+<span class="hljs-comment"># This script checks for the presence of JSDOM and installs it if it's missing</span>
+<span class="hljs-comment"># this line searches npm's local repository for jsdom</span>
+<span class="hljs-comment"># 2&gt; /dev/null is becuse NPM likes to complain about missing readme files in third-party packages</span>
+<span class="hljs-comment"># tr removes the blank line that npm puts out if jsdom isn't found</span>
+
+LS_RESULTS=$(npm --parseable ls jsdom 2&gt;/dev/null | tr <span class="hljs-_">-d</span> <span class="hljs-string">'\n\'</span>)
+
+<span class="hljs-keyword">if</span> [[ -n <span class="hljs-variable">$LS_RESULTS</span> ]]; <span class="hljs-keyword">then</span>     <span class="hljs-comment"># -n tests to see if the argument is non empty</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"jsdom is already installed, skipping"</span>
+<span class="hljs-keyword">else</span>
+    npm install jsdom
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<p>Note: the <em>correct</em> way to do the above is to check in the source and run <code>npm rebuild</code>. However, at the time I put this together, there was a bug that prevented that from working.</p>
+<p>Next up, the <code>*_spec.js</code> files. Basically, any file that ends in &#8220;_spec.js&#8221; will be run automatically by jasmine-node. These are just basic <a href="http://pivotal.github.com/jasmine/">jasmine</a> test suites. </p>
+<p>If you already have some jasmine specs written, theres&#8217;s a good chance they&#8217;ll just work. If not, now&#8217;s a great time to start <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Here&#8217;s a quick example from one of ours:</p>
+<pre class="highlight"><code class="hljs javascript">describe(<span class="hljs-string">"Gallery"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> instance;
+
+    beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        instance = <span class="hljs-keyword">new</span> R.Module.Gallery(getConfig());
+    });
+
+    afterEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        instance.destroy();
+        instance = <span class="hljs-literal">null</span>;
+    });
+
+    describe(<span class="hljs-string">"getTemplateData"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> data;
+        beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+           data = {<span class="hljs-attr">mos</span>: []};
+        });
+
+        it(<span class="hljs-string">"should include the current FB user ID"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-keyword">var</span> USER_ID = <span class="hljs-string">"1234"</span>;
+            spyOn(R.FB,<span class="hljs-string">"getCurrentUserId"</span>).andReturn(USER_ID);
+
+            instance.getTemplateData(data);
+
+            expect(R.FB.getCurrentUserId).toHaveBeenCalled();
+            expect(data.current_user_id).toBe(USER_ID);
+        });
+
+        it(<span class="hljs-string">"should shuffle the mos when Gallery.ShuffleMos is true"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-keyword">var</span> config = getConfig();
+            setParam(config, <span class="hljs-string">"Gallery.ShuffleMos"</span>, <span class="hljs-literal">true</span>);
+            spyOn(R.Util, <span class="hljs-string">"shuffle"</span>);
+
+            instance = <span class="hljs-keyword">new</span> R.Module.Gallery(config);
+            instance.getTemplateData(data);
+
+            expect(R.Util.shuffle).not.toHaveBeenCalled();
+        });
+    });
+
+    <span class="hljs-comment">// etc.</span>
+});
+</code></pre>
+<p>Running the tests is easy: </p>
+<ol>
+<li>Compile your JS file &#8211; <code>build/rondavu_test_mode.js</code> in our case.</li>
+<li>Ensure jsdom is installed locally by running <code>util/install_jsdom.sh</code>.</li>
+<li>Run the tests: <code>node_modules/jasmine-node/bin/jasmine-node test/js --forceexit</code></li>
+</ol>
+<p>The <code>--forceexit</code> option cuts a few seconds of idling off the end of the tests. If you want the JUnit-compatible XML report, add <code>--junitreport --output build/js-test-results.xml</code>. (You will likely need to change the path of the output file to wherever your build system is expecting it to be.)</p>
+<p>Finally, the process exit code will tell you if the tests passed or not, making it extremely easy to integrate into build systems. Here is our <a href="https://ant.apache.org/">ant</a> task:</p>
+<pre class="highlight"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"js.test"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"builds a slightly modified version of our rondavu.js (skipping the init.js
+        file and adding a 'module.exports=R;') and then runs all test/js/*_spec.js unit tests."</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">exec</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"scripts/js_builder/build_js.js"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${basedir}"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--test_mode"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--outfile"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"build/rondavu_test_mode.js"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--verbose"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">exec</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- some of jsdom's dependencies are environment-specific, so we'll install it here if it's not already present --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">chmod</span> <span class="hljs-attr">file</span>=<span class="hljs-string">"test/js/util/install_jsdom.sh"</span> <span class="hljs-attr">perm</span>=<span class="hljs-string">"ugo+rx"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">exec</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"test/js/util/install_jsdom.sh"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>/&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">mkdir</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${build.test.unit.output}"</span>/&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">exec</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"node_modules/jasmine-node/bin/jasmine-node"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--forceexit"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"test/js/"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--junitreport"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--output"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${build.test.unit.output}/TEST-javascript-results.xml"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">exec</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+</code></pre>
+<p>And there you have it. Happy testing!</p>
+<hr style="margin: 30px 0;" />
+
+<p><sup id="note-1">[1]</sup> It&#8217;s actually a bit more complex that that &#8211; we generate a separate file for each customer with their configuration and whatever features they use. </p> 
+Also, we&#8217;ve recently switched from our custom js build script to <a href="http://requirejs.org/">require.js</a> and <a href="http://jamjs.org/">jam.js</a>, but we&#8217;re still working out the final kinks. Expect a followup post once we&#8217;re fully confident with the new setup <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </i></p>
+<p class="meta"><small class="photocredit"><b>Photo Credits:</b> Header photo by <a href="http://www.flickr.com/photos/calliope/2243034754/">liz west</a>.</small></p>
+
+
+
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3>Contact Nathan</h3>
+				
+				<ul>
+					<li>
+						<a class="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://plus.google.com/+NathanFriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-4 info">
+				<p>&copy; Nathan Friedly 2017</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+				
+				<p>Built with <a href="http://docpad.org">DocPad</a>, 
+					<a href="http://getbootstrap.com/">Bootstrap</a>, 
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+
+</body>
+</html>

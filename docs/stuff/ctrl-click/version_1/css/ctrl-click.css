@@ -1,0 +1,123 @@
+/* CSS by Nathan Friedly - http://nfriedly.com 
+ * Uses blueprint - http://www.blueprintcss.org/
+*/
+
+
+html {
+	background: #160702 url('../img/sitebg.jpg') top left no-repeat;
+}
+
+html, body {
+	color: #d0bbb3;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:15px; /* boost the font size for yahoo */
+	background-clor:#160702;
+}
+
+/* fix font sizes */
+#aboutme, #networks, #ft { font-size:12px; }
+
+b {
+	color: #fff;
+}
+
+a {
+	text-decoration:none;
+	color:#d0bbb3;
+}
+
+a:hover {
+	color: #fff;
+	font-weight:bold;
+}
+
+#doc3 {
+	margin-left:40px;
+	max-width:1050px;
+}
+
+#logo {
+	margin-top:53px;
+	margin-left:28px;
+}
+
+#logo h1 {
+	color: #fff;
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+
+#logo h2 {
+	font-size: 11px;
+	color: #aac73d;
+	font-weight: bold;
+	margin-bottom: 42px;
+}
+
+/* left side column - about Christopher & social networking links  */
+
+
+#aboutme {
+	padding:47px 0 40px 30px;
+	line-height:140%;
+}
+
+
+#networks {
+	padding:40px 28px;
+}
+
+#networks a {
+	background-image: url('../img/networks.png');
+	background-repeat:no-repeat;
+	padding-left:26px;
+	line-height:200%;
+}
+
+#networks a:hover:after, #ft a:hover:after {
+	content: url('../img/doublearrow.png');
+}
+
+#twit{ background-position:0 -25px; }
+
+#fb { background-position:0 -48px; }
+
+
+/* right side - portfolio */
+
+.site {
+	display:block;
+	float:left;
+	height:119px;
+	width:170px;
+	margin-top:48px;
+	margin-left:48px;
+	background-image: url('../img/sites.png');
+}
+
+.site1 {background-position:0 0;}
+.site1:hover {background-position:0 -119px;}
+
+.site2 {background-position:0 -238px;}
+.site2:hover {background-position:0 -357px;}
+
+.site3 {background-position:0 -476px;}
+.site3:hover {background-position:0 -595px;}
+
+.site4 {background-position:0 -714px;}
+.site4:hover {background-position:0 -833px;}
+
+.site5 {background-position:0 -952px;}
+.site5:hover {background-position:0 -1071px;}
+
+.site6 {background-position:0 -1190px;;}
+.site6:hover {background-position:0 -1309px;}
+
+
+
+#ft {
+	margin-top: 48px;
+	background: url('../img/divider.png') top left no-repeat;
+	padding:40px 40px;
+	font-size:11px;
+}
