@@ -21,7 +21,7 @@
   "scripts": {
     "start": "docpad run",
     "build": "docpad generate --env static --out docs/",
-    "deploy": "npm run build; git commit docs/ -m 'Deploying on `date`'; git push"
+    "deploy": "npm run build; git add --all docs/; git commit -m 'Deploying on `date`'; git push"
   },
   "license": "MIT",
   "repository": "https://github.com/nfriedly/nfriedly.com",
