@@ -12,7 +12,7 @@
     "docpad-plugin-livereload": "~2.7.1",
     "docpad-plugin-marked": "~2.3.0",
     "docpad-plugin-partials": "~2.9.2",
-    "docpad-plugin-redirector": "~2.0.1",
+    "docpad-plugin-redirector": "~2.0.3",
     "docpad-plugin-sitemap": "~2.2.0",
     "docpad-plugin-thumbnails": "~2.1.2",
     "underscore": "^1.8.3"
