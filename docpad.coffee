@@ -116,13 +116,6 @@ module.exports =
 		getStrippedPreview: (post) ->
 			@getPreview(post).replace(reLinks, "").replace reImages, ""
 
-		# no need to shrink svg images
-		thumbnail: (src, opts) ->
-			if path.extname(src) is ".svg"
-				src
-			else
-				@getThumbnail(src, opts)
-
 		linkTags: (tags) ->
 			self = this
 			_(tags).map((tag) ->
