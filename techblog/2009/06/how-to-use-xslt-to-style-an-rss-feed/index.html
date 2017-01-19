@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/techblog/2009/06/how-to-use-xslt-to-style-an-rss-feed/" />
 
 
@@ -95,43 +95,43 @@ function loadBackupCSS(url) {
 <p>Although not practical in most cases currently, I&#8217;ve included an example of a script that will take any RSS feed and add a style sheet to it.  It includes the hack to work in firefox and instructions for enabling it in Internet Explorer.</p>
 <p><a href="http://nfriedly.com/stuff/rss/?url=http://nfriedly.com/techblog/feed/">http://nfriedly.com/stuff/rss/?url=http://nfriedly.com/techblog/feed/</a></p>
 <p>Code for index.php:</p>
-<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span>
+<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-comment">// grab the url</span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">'url'</span>])) <span class="hljs-variable">$url</span> = <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">'url'</span>];
-<span class="hljs-keyword">else</span> <span class="hljs-variable">$url</span> = <span class="hljs-keyword">false</span>;
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_REQUEST[<span class="hljs-string">'url'</span>])) $url = $_REQUEST[<span class="hljs-string">'url'</span>];
+<span class="hljs-keyword">else</span> $url = <span class="hljs-keyword">false</span>;
 
 <span class="hljs-comment">// make sure the url is good (no local files)</span>
-<span class="hljs-keyword">if</span> (<span class="hljs-variable">$url</span> &amp;&amp; substr(<span class="hljs-variable">$url</span>,<span class="hljs-number">0</span>,<span class="hljs-number">7</span>) != <span class="hljs-string">"http://"</span>) <span class="hljs-keyword">exit</span>(<span class="hljs-string">"Please start urls with 'http://'"</span>);
+<span class="hljs-keyword">if</span> ($url &amp;&amp; substr($url,<span class="hljs-number">0</span>,<span class="hljs-number">7</span>) != <span class="hljs-string">"http://"</span>) <span class="hljs-keyword">exit</span>(<span class="hljs-string">"Please start urls with 'http://'"</span>);
 
 <span class="hljs-comment">// make the stylesheet link</span>
-<span class="hljs-variable">$xsl_file</span> = <span class="hljs-string">'xsl.php'</span>;
+$xsl_file = <span class="hljs-string">'xsl.php'</span>;
 
-<span class="hljs-keyword">if</span>(<span class="hljs-variable">$url</span>) <span class="hljs-variable">$xsl_file</span> .= <span class="hljs-string">'?url='</span>.urlencode(<span class="hljs-variable">$url</span>);
+<span class="hljs-keyword">if</span>($url) $xsl_file .= <span class="hljs-string">'?url='</span>.urlencode($url);
 
-define(<span class="hljs-string">'XSL_LINK'</span>,<span class="hljs-string">'&lt;?xml-stylesheet href="'</span>.<span class="hljs-variable">$xsl_file</span>.<span class="hljs-string">'" type="text/xsl" ?&gt;'</span>);
+define(<span class="hljs-string">'XSL_LINK'</span>,<span class="hljs-string">'&lt;?xml-stylesheet href="'</span>.$xsl_file.<span class="hljs-string">'" type="text/xsl" ?&gt;'</span>);
 
 <span class="hljs-comment">// if we don't have a url, use the home page</span>
-<span class="hljs-keyword">if</span>(!<span class="hljs-variable">$url</span>) <span class="hljs-variable">$url</span> = <span class="hljs-string">"home.xml"</span>;
+<span class="hljs-keyword">if</span>(!$url) $url = <span class="hljs-string">"home.xml"</span>;
 
 <span class="hljs-comment">// download the rss feed</span>
-<span class="hljs-variable">$rss</span> = file_get_contents(<span class="hljs-variable">$url</span>);
+$rss = file_get_contents($url);
 
 <span class="hljs-comment">// xml header so firefox doesn't decide it's text</span>
 header(<span class="hljs-string">'content-type: text/xml'</span>);
 
 <span class="hljs-comment">//echo out the header right away, if there is one</span>
-<span class="hljs-keyword">if</span>(substr(<span class="hljs-variable">$rss</span>,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>) == <span class="hljs-string">'&lt;?xml '</span>){
-    <span class="hljs-variable">$header_end</span> = strpos(<span class="hljs-variable">$rss</span>,<span class="hljs-string">'?&gt;'</span>) +<span class="hljs-number">2</span>;
-    <span class="hljs-keyword">echo</span> substr(<span class="hljs-variable">$rss</span>,<span class="hljs-number">0</span>,<span class="hljs-variable">$header_end</span>);
-    <span class="hljs-variable">$rss</span> = substr(<span class="hljs-variable">$rss</span>,<span class="hljs-variable">$header_end</span>);
+<span class="hljs-keyword">if</span>(substr($rss,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>) == <span class="hljs-string">'&lt;?xml '</span>){
+    $header_end = strpos($rss,<span class="hljs-string">'?&gt;'</span>) +<span class="hljs-number">2</span>;
+    <span class="hljs-keyword">echo</span> substr($rss,<span class="hljs-number">0</span>,$header_end);
+    $rss = substr($rss,$header_end);
 }
 
 <span class="hljs-comment">//otherwise echo a default header:</span>
 <span class="hljs-keyword">else</span> <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;?xml version="1.0" ?'</span>.<span class="hljs-string">'&gt;'</span>;
 
 <span class="hljs-comment">// remove any existing stylesheet</span>
-<span class="hljs-variable">$rss</span> = preg_replace(<span class="hljs-string">'/&lt;\?xml-stylesheet([^?]|\?(?!&gt;))*\?'</span>.<span class="hljs-string">'&gt;/'</span>,<span class="hljs-string">''</span>,<span class="hljs-variable">$rss</span>);  <span class="hljs-comment">// uses lookahead</span>
+$rss = preg_replace(<span class="hljs-string">'/&lt;\?xml-stylesheet([^?]|\?(?!&gt;))*\?'</span>.<span class="hljs-string">'&gt;/'</span>,<span class="hljs-string">''</span>,$rss);  <span class="hljs-comment">// uses lookahead</span>
 
 <span class="hljs-comment">// add in our stylesheet</span>
 <span class="hljs-keyword">echo</span> <span class="hljs-string">"\r\n"</span> . XSL_LINK . <span class="hljs-string">"\r\n"</span>;
@@ -140,9 +140,9 @@ header(<span class="hljs-string">'content-type: text/xml'</span>);
 <span class="hljs-keyword">echo</span> <span class="hljs-string">"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "</span>;
 
 <span class="hljs-comment">//finally, pass along the content</span>
-<span class="hljs-keyword">echo</span> <span class="hljs-variable">$rss</span>;
+<span class="hljs-keyword">echo</span> $rss;
 
-<span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-meta">?&gt;</span>
 </code></pre>
 <p>The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source by looking at <a href="http://nfriedly.com/stuff/rss/xsl.php">http://nfriedly.com/stuff/rss/xsl.php</a>. You could simply save that as an .xml file and have a working copy.</p>
 <p>You can also view the <a href="http://nfriedly.com/stuff/rss/theme/style.css">CSS</a> and <a href="http://nfriedly.com/stuff/rss/scripts.js">Javascript</a> used to make everything look nice.</p>
@@ -238,7 +238,7 @@ header(<span class="hljs-string">'content-type: text/xml'</span>);
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				

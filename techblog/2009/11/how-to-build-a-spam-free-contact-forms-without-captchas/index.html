@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/techblog/2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/" />
 
 
@@ -82,34 +82,34 @@ function loadBackupCSS(url) {
 <p>We are going to make a standard contact form with one extra feature: an input named &#8220;url&#8221; and a note beside it that says &#8220;Don&#8217;t type anything here!&#8221;</p>
 <p>The HTML:</p>
 <pre class="highlight"><code class="hljs xml">
-<span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"/submit.php"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/submit.php"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Your name: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"name"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Your name: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Your email: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"email"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Your email: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"antispam"</span>&gt;</span>Leave this empty: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"url"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"antispam"</span>&gt;</span>Leave this empty: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"url"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"message"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"message"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Send"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Send"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
 </code></pre>
 <p>Then we use CSS to hide the input and the note.</p>
 <p>The CSS:</p>
-<pre class="highlight"><code class="hljs css"><span class="hljs-class">.antispam</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;<span class="hljs-rule">}</span></span>
+<pre class="highlight"><code class="hljs css"><span class="hljs-selector-class">.antispam</span> { <span class="hljs-attribute">display</span>:none;}
 </code></pre>
 <p>Then we make a rule in the server that says &#8216;if the user typed anything in the &#8220;url&#8221; box, then throw it out.&#8217;</p>
 <p>The PHP:</p>
-<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span> 
+<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span> 
 <span class="hljs-comment">// if the url field is empty </span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>]) &amp;&amp; <span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
      <span class="hljs-comment">// then send the form to your email</span>
-          mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r(<span class="hljs-variable">$_POST</span>,<span class="hljs-keyword">true</span>) ); 
+          mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r($_POST,<span class="hljs-keyword">true</span>) ); 
 } 
 <span class="hljs-comment">// otherwise, let the spammer think that they got their message through</span>
-<span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-meta">?&gt;</span>
 
 &lt;h1&gt;Thanks&lt;/h1&gt;
 
@@ -128,27 +128,27 @@ We<span class="hljs-string">'ll get back to you as soon as possible
 <p>The HTML:</p>
 <pre class="highlight"><code class="hljs xml">My e-mail address:
 
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
 <span class="hljs-built_in">document</span>.write(<span class="hljs-string">'&lt;a href="mailto:'</span>+first + <span class="hljs-string">'@'</span> + last+<span class="hljs-string">'"&gt;'</span>+first + <span class="hljs-string">'@'</span> + last+<span class="hljs-string">'&lt;\/a&gt;'</span>);
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-title">noscript</span>&gt;</span>
-Please enable javascript or use my <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/contact.php"</span>&gt;</span>contact form<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">noscript</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
+Please enable javascript or use my <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/contact.php"</span>&gt;</span>contact form<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
 </code></pre>
 <p>A regular user will see a regular email address and things just work. A user who happens to have javascript disabled will see an explanation and an alternative solution. And a spammer won&#8217;t see a thing!</p>
 <p>This method can easily be extended to phone numbers and other personal information.</p>
 <h2 id="advanced-version-prettier-message-body-and-a-proper-from-field">Advanced version: Prettier message body and a proper <code>From:</code> field</h2>
 <p>These were the most commonly requested features, so I added an advanced version that changes the <code>From:</code> field of the email to whatever the user typed in the box, and removes all of the <code>Array</code> brackets from the body of the message:</p>
-<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span> 
+<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span> 
 <span class="hljs-comment">// if the url field is empty </span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>]) &amp;&amp; <span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
 
      <span class="hljs-comment">// put your email address here     </span>
-     <span class="hljs-variable">$youremail</span> = <span class="hljs-string">'you@yoursite.com'</span>;
+     $youremail = <span class="hljs-string">'you@yoursite.com'</span>;
 
      <span class="hljs-comment">// prepare a "pretty" version of the message</span>
-     <span class="hljs-variable">$body</span> = <span class="hljs-string">"This is the form that was just submitted:     
+     $body = <span class="hljs-string">"This is the form that was just submitted:     
 Name:  $_POST[name]
 E-Mail: $_POST[email]
 Message: $_POST[message]"</span>; 
@@ -157,51 +157,51 @@ Message: $_POST[message]"</span>;
      <span class="hljs-comment">// (and it isn't trying to hack your form).     </span>
      <span class="hljs-comment">// Otherwise send from your email address.     </span>
 
-     <span class="hljs-keyword">if</span>( <span class="hljs-variable">$_POST</span>[<span class="hljs-string">'email'</span>] &amp;&amp; !preg_match( <span class="hljs-string">"/[\r\n]/"</span>, <span class="hljs-variable">$_POST</span>[<span class="hljs-string">'email'</span>]) ) {
-         <span class="hljs-variable">$headers</span> = <span class="hljs-string">"From: $_POST[email]"</span>;     
+     <span class="hljs-keyword">if</span>( $_POST[<span class="hljs-string">'email'</span>] &amp;&amp; !preg_match( <span class="hljs-string">"/[\r\n]/"</span>, $_POST[<span class="hljs-string">'email'</span>]) ) {
+         $headers = <span class="hljs-string">"From: $_POST[email]"</span>;     
      } <span class="hljs-keyword">else</span> {
-         <span class="hljs-variable">$headers</span> = <span class="hljs-string">"From: $youremail"</span>; 
+         $headers = <span class="hljs-string">"From: $youremail"</span>; 
      }
 
      <span class="hljs-comment">// finally, send the message     </span>
-     mail(<span class="hljs-variable">$youremail</span>, <span class="hljs-string">'Contact Form'</span>, <span class="hljs-variable">$body</span>, <span class="hljs-variable">$headers</span> ); } <span class="hljs-comment">// otherwise, let the spammer think that they got their message through ?&gt;</span>
+     mail($youremail, <span class="hljs-string">'Contact Form'</span>, $body, $headers ); } <span class="hljs-comment">// otherwise, let the spammer think that they got their message through <span class="hljs-meta">?&gt;</span></span>
 </code></pre>
 <p>The <code>preg_match()</code> is there to make sure spammers can&#8217;t abuse your server by injecting extra fields (such as CC and BCC) into the header. Take a look at <a href="http://www.thesitewizard.com/php/protect-script-from-email-injection.shtml">http://www.thesitewizard.com/php/protect-script-from-email-injection.shtml</a> for more info.</p>
 <h2 id="advanced-version-2-don-t-send-blank-emails">Advanced version 2: Don&#39;t send blank emails</h2>
-<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span>
+<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-comment">// if the url field is empty</span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>]) &amp;&amp; <span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
 
-    <span class="hljs-keyword">if</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">"message"</span>] == <span class="hljs-string">""</span> || <span class="hljs-variable">$_POST</span>[<span class="hljs-string">"name"</span>] == <span class="hljs-string">""</span>){
+    <span class="hljs-keyword">if</span>($_POST[<span class="hljs-string">"message"</span>] == <span class="hljs-string">""</span> || $_POST[<span class="hljs-string">"name"</span>] == <span class="hljs-string">""</span>){
         <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;p&gt;Please press the back button and fill in all fields&lt;/p&gt;"</span>;
     } <span class="hljs-keyword">else</span> {
         <span class="hljs-comment">// then send the form to your email</span>
-        mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r(<span class="hljs-variable">$_POST</span>,<span class="hljs-keyword">true</span>) );
+        mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r($_POST,<span class="hljs-keyword">true</span>) );
     }
 }
 
 <span class="hljs-comment">// otherwise, let the spammer think that they got their message through</span>
 
-<span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-meta">?&gt;</span>
 
 &lt;h1&gt;Thanks&lt;/h1&gt;
 &lt;p&gt;We<span class="hljs-string">'ll get back to you as soon as possible&lt;/p&gt;
 </span></code></pre>
 <h2 id="advanced-version-3-redirect-to-a-new-page">Advanced version 3: Redirect to a new page</h2>
-<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span>
+<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-comment">// if the url field is empty </span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>]) &amp;&amp; <span class="hljs-variable">$_POST</span>[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
      <span class="hljs-comment">// then send the form to your email</span>
-          mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r(<span class="hljs-variable">$_POST</span>,<span class="hljs-keyword">true</span>) ); 
+          mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r($_POST,<span class="hljs-keyword">true</span>) ); 
 } 
 <span class="hljs-comment">// otherwise, let the spammer think that they got their message through</span>
 
 header(<span class="hljs-string">'Location: http://www.mysite.com/thankyou.html'</span>);
 <span class="hljs-keyword">exit</span>(<span class="hljs-string">'Redirecting you to http://www.mysite.com/thankyou.html'</span>);
 
-<span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-meta">?&gt;</span>
 </code></pre>
 <h2 id="complete-examples">Complete Examples</h2>
 <p><img class="alignleft" alt="" src="/img/application_put.png" /> A complete working copy of the code is available to <a href="https://github.com/nfriedly/spam-free-php-contact-form">browse on Github</a>  and you can also <a href="https://github.com/nfriedly/spam-free-php-contact-form/archive/master.zip">download a .zip file of the code</a></p>
@@ -306,7 +306,7 @@ He currently works primarily on JavaScript and Node.js.</p>
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				

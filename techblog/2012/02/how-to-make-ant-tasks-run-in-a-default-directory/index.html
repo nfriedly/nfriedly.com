@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/techblog/2012/02/how-to-make-ant-tasks-run-in-a-default-directory/" />
 
 
@@ -69,9 +69,9 @@ function loadBackupCSS(url) {
 
 <main class="container">
 <p><img src="http://farm8.staticflickr.com/7020/6668518895_0700a12958_m.jpg" width="240" height="160" alt="Apache takeoff" title="The other Apache, image courtesy of The U.S. Army" class="right" />I often open a new tab in my Terminal to run an <a href="http://ant.apache.org/">Ant</a> task, and often as not I forget to <code>cd</code> into the correct directory first and so I am greeted with this error:</p>
-<pre class="highlight"><code class="hljs applescript">$ ant compile
-Buildfile: build.xml <span class="hljs-keyword">does</span> <span class="hljs-keyword">not</span> exist!
-Build failed
+<pre class="highlight"><code class="hljs armasm">$ ant compile
+<span class="hljs-keyword">Buildfile: </span><span class="hljs-keyword">build.xml </span>does not exist!
+<span class="hljs-keyword">Build </span>failed
 </code></pre><p>On my system, there&#8217;s only one main project that uses ant, so I almost always intend for ant tasks to be run against that project&#8217;s build.xml. So, I created a function that makes ant tasks &#8220;just work&#8221; no matter what directory I am in.</p>
 <!--more-->
 <h3 id="the-code">The code</h3>
@@ -81,10 +81,10 @@ Build failed
 <pre class="highlight"><code class="hljs bash"><span class="hljs-comment"># make ant commands run in the default directory if</span>
 <span class="hljs-comment"># there is no build.xml in the current directory</span>
 
-<span class="hljs-keyword">export</span> DEFAULT_ANT_DIR = /path/to/your/projects/folder/
+<span class="hljs-built_in">export</span> DEFAULT_ANT_DIR = /path/to/your/projects/folder/
 
 <span class="hljs-keyword">function</span> magic-<span class="hljs-function"><span class="hljs-title">ant</span></span>() {
-  <span class="hljs-keyword">if</span> [ <span class="hljs-operator">-e</span> ./build.xml ]
+  <span class="hljs-keyword">if</span> [ <span class="hljs-_">-e</span> ./build.xml ]
     <span class="hljs-keyword">then</span>
       ant <span class="hljs-variable">$@</span>                                                                    
     <span class="hljs-keyword">else</span>
@@ -95,8 +95,8 @@ Build failed
 }
 
 <span class="hljs-comment"># reset ant to avoid loops if you ever run `source ~/.profile` again</span>
-alias ant=`which ant`
-alias ant=<span class="hljs-string">"magic-ant"</span>
+<span class="hljs-built_in">alias</span> ant=`<span class="hljs-built_in">which</span> ant`
+<span class="hljs-built_in">alias</span> ant=<span class="hljs-string">"magic-ant"</span>
 </code></pre>
 <p>Press <code>[Control]-O</code> then <code>[Enter]</code> to save and <code>[Control]-X</code> to exit nano.</p>
 <p>Lastly, run this command to import your changes (or just close and reopen your terminal):</p>
@@ -199,7 +199,7 @@ plexiglass ant photo by <a href="http://www.flickr.com/photos/dasqfamily/2354889
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				

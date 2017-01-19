@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/techblog/2009/07/advanced-javascript-operators-and-truthy-falsy/" />
 
 
@@ -91,7 +91,7 @@ function loadBackupCSS(url) {
 <span class="hljs-comment">// NaN is a special javascript object for "Not a Number".</span>
 <span class="hljs-keyword">var</span> notANumber = <span class="hljs-number">5</span> / <span class="hljs-string">"tree"</span>; <span class="hljs-comment">// falsy</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exampleFunction</span><span class="hljs-params">()</span></span>{
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exampleFunction</span>(<span class="hljs-params"></span>)</span>{
     alert(<span class="hljs-string">"Test"</span>);
 }
 
@@ -125,13 +125,13 @@ function loadBackupCSS(url) {
 <p>(This is because when you do a comparison, it&#39;s elements are turned to <code>String</code>s and joined. Since it&#39;s empty, it becomes <code>&quot;&quot;</code> which is then falsy. Yea, <a href="https://www.destroyallsoftware.com/talks/wat">it&#39;s weird</a>.)</p>
 <p>If you write any PHP, then there&#39;s an additional gotcha to watch out for: while javascript evaluates empty arrays as true, PHP evaluates them as false.</p>
 <p>PHP also evaluates &#8220;0&#8243; as falsy. (However the string &#8220;false&#8221; is evaluated as truthy by both PHP and javascript.)</p>
-<pre class="highlight"><code class="hljs php"><span class="hljs-preprocessor">&lt;?php</span>
+<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 
-<span class="hljs-variable">$emptyArray</span> = <span class="hljs-keyword">array</span>(); <span class="hljs-comment">// falsy in PHP</span>
+$emptyArray = <span class="hljs-keyword">array</span>(); <span class="hljs-comment">// falsy in PHP</span>
 
-<span class="hljs-variable">$stringZero</span> = <span class="hljs-string">"0"</span>; <span class="hljs-comment">// falsy in PHP</span>
+$stringZero = <span class="hljs-string">"0"</span>; <span class="hljs-comment">// falsy in PHP</span>
 
-<span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-meta">?&gt;</span>
 </code></pre>
 <h3 id="how-logical-operators-work">How Logical Operators Work</h3>
 <h4 id="logical-or-">Logical OR, <code>||</code></h4>
@@ -145,7 +145,7 @@ function loadBackupCSS(url) {
 <span class="hljs-keyword">var</span> d = (<span class="hljs-number">0</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// d is false</span>
 </code></pre>
 <p>Where would you ever use this? The OR operator allows you to easily specify default variables in a function.</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi</span><span class="hljs-params">(name)</span></span>{
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi</span>(<span class="hljs-params">name</span>)</span>{
     name = name || <span class="hljs-string">"Dave"</span>;
     alert(<span class="hljs-string">"Hi "</span> + name);
 }
@@ -276,7 +276,7 @@ sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null whe
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				

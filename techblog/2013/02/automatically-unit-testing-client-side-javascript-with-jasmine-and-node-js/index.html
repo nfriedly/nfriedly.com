@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/techblog/2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/" />
 
 
@@ -73,8 +73,8 @@ function loadBackupCSS(url) {
 <p>Our JavaScript &#8220;build&#8221; process is basically a script that concatenated all of our JS files into a single big file.<sup><a href="#note-1">[1]</a></sup> We added a flag to that process that would skip the <code>init.js</code> file and instead add a <code>module.exports</code> statement for easy inclusion in <a href="http://nodejs.org/">node.js</a>.</p>
 <p>With this setup, we can quickly run hundreds of <a href="http://pivotal.github.com/jasmine/">jasmine</a> specs from the command line in any environment we need &#8211; no browser necessary. Our full suite currently takes about 5 seconds to run.</p>
 <p>To start off, we installed the <a href="https://npmjs.org/package/jasmine-node">jasmine-node</a> and <a href="https://npmjs.org/package/jsdom">jsdom</a> NPM modules:</p>
-<pre class="highlight"><code class="hljs cmake">npm <span class="hljs-keyword">install</span> jasmine-node
-npm <span class="hljs-keyword">install</span> jsdom
+<pre class="highlight"><code class="hljs crmsh">npm install jasmine-<span class="hljs-keyword">node</span>
+<span class="hljs-title">npm</span> install jsdom
 </code></pre><p>This is the relevant part of our directory structure, the node_modules folder is top-level:</p>
 <pre class="highlight"><code class="hljs haml">build/
 node_modules/
@@ -106,7 +106,7 @@ global.document = <span class="hljs-built_in">window</span>.document;
 </code></pre>
 <p>First we create a jsdom environment and verify that it works. (We&#8217;ll come back to that in a minute). Next we make the <code>window</code> and <code>document</code> variables global. Finally we include the slightly modified version of our compiled JS and set it in a global variable so that tests can hit it&#8217;s internal methods. Jasmine always runs all helper files before the spec files, so the global variables are guaranteed to exist by the time our tests run.</p>
 <p><code>util/install_jsdom.sh</code> is necessary because one of jsdom&#8217;s dependencies, contextify, installs differently on different operating systems. Because of that, we added node_modules/jsdom to the <code>.gitignore</code> file and run this script before running the js unit tests:</p>
-<pre class="highlight"><code class="hljs bash"><span class="hljs-shebang">#!/bin/bash
+<pre class="highlight"><code class="hljs bash"><span class="hljs-meta">#!/bin/bash
 </span>
 <span class="hljs-comment"># One of JSDOM's dependencies, contextify, cannot be checked in because it installs differently depending on the OS.</span>
 <span class="hljs-comment"># This script checks for the presence of JSDOM and installs it if it's missing</span>
@@ -114,7 +114,7 @@ global.document = <span class="hljs-built_in">window</span>.document;
 <span class="hljs-comment"># 2&gt; /dev/null is becuse NPM likes to complain about missing readme files in third-party packages</span>
 <span class="hljs-comment"># tr removes the blank line that npm puts out if jsdom isn't found</span>
 
-LS_RESULTS=$(npm --parseable ls jsdom <span class="hljs-number">2</span>&gt;/dev/null | tr <span class="hljs-operator">-d</span> <span class="hljs-string">'\n\'</span>)
+LS_RESULTS=$(npm --parseable ls jsdom 2&gt;/dev/null | tr <span class="hljs-_">-d</span> <span class="hljs-string">'\n\'</span>)
 
 <span class="hljs-keyword">if</span> [[ -n <span class="hljs-variable">$LS_RESULTS</span> ]]; <span class="hljs-keyword">then</span>     <span class="hljs-comment"># -n tests to see if the argument is non empty</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">"jsdom is already installed, skipping"</span>
@@ -126,25 +126,25 @@ LS_RESULTS=$(npm --parseable ls jsdom <span class="hljs-number">2</span>&gt;/dev
 <p>Next up, the <code>*_spec.js</code> files. Basically, any file that ends in &#8220;_spec.js&#8221; will be run automatically by jasmine-node. These are just basic <a href="http://pivotal.github.com/jasmine/">jasmine</a> test suites. </p>
 <p>If you already have some jasmine specs written, theres&#8217;s a good chance they&#8217;ll just work. If not, now&#8217;s a great time to start <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
 <p>Here&#8217;s a quick example from one of ours:</p>
-<pre class="highlight"><code class="hljs javascript">describe(<span class="hljs-string">"Gallery"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<pre class="highlight"><code class="hljs javascript">describe(<span class="hljs-string">"Gallery"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">var</span> instance;
 
-    beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
         instance = <span class="hljs-keyword">new</span> R.Module.Gallery(getConfig());
     });
 
-    afterEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    afterEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
         instance.destroy();
         instance = <span class="hljs-literal">null</span>;
     });
 
-    describe(<span class="hljs-string">"getTemplateData"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    describe(<span class="hljs-string">"getTemplateData"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
         <span class="hljs-keyword">var</span> data;
-        beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
-           data = {mos: []};
+        beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+           data = {<span class="hljs-attr">mos</span>: []};
         });
 
-        it(<span class="hljs-string">"should include the current FB user ID"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        it(<span class="hljs-string">"should include the current FB user ID"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
             <span class="hljs-keyword">var</span> USER_ID = <span class="hljs-string">"1234"</span>;
             spyOn(R.FB,<span class="hljs-string">"getCurrentUserId"</span>).andReturn(USER_ID);
 
@@ -154,7 +154,7 @@ LS_RESULTS=$(npm --parseable ls jsdom <span class="hljs-number">2</span>&gt;/dev
             expect(data.current_user_id).toBe(USER_ID);
         });
 
-        it(<span class="hljs-string">"should shuffle the mos when Gallery.ShuffleMos is true"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        it(<span class="hljs-string">"should shuffle the mos when Gallery.ShuffleMos is true"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
             <span class="hljs-keyword">var</span> config = getConfig();
             setParam(config, <span class="hljs-string">"Gallery.ShuffleMos"</span>, <span class="hljs-literal">true</span>);
             spyOn(R.Util, <span class="hljs-string">"shuffle"</span>);
@@ -177,29 +177,29 @@ LS_RESULTS=$(npm --parseable ls jsdom <span class="hljs-number">2</span>&gt;/dev
 </ol>
 <p>The <code>--forceexit</code> option cuts a few seconds of idling off the end of the tests. If you want the JUnit-compatible XML report, add <code>--junitreport --output build/js-test-results.xml</code>. (You will likely need to change the path of the output file to wherever your build system is expecting it to be.)</p>
 <p>Finally, the process exit code will tell you if the tests passed or not, making it extremely easy to integrate into build systems. Here is our <a href="https://ant.apache.org/">ant</a> task:</p>
-<pre class="highlight"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">target</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"js.test"</span> <span class="hljs-attribute">description</span>=<span class="hljs-value">"builds a slightly modified version of our rondavu.js (skipping the init.js
+<pre class="highlight"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"js.test"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"builds a slightly modified version of our rondavu.js (skipping the init.js
         file and adding a 'module.exports=R;') and then runs all test/js/*_spec.js unit tests."</span>&gt;</span>
 
-        <span class="hljs-tag">&lt;<span class="hljs-title">exec</span> <span class="hljs-attribute">executable</span>=<span class="hljs-value">"scripts/js_builder/build_js.js"</span> <span class="hljs-attribute">dir</span>=<span class="hljs-value">"${basedir}"</span> <span class="hljs-attribute">failonerror</span>=<span class="hljs-value">"true"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"--test_mode"</span>/&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"--outfile"</span>/&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"build/rondavu_test_mode.js"</span>/&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"--verbose"</span>/&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">exec</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">exec</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"scripts/js_builder/build_js.js"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${basedir}"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--test_mode"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--outfile"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"build/rondavu_test_mode.js"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--verbose"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">exec</span>&gt;</span>
 
         <span class="hljs-comment">&lt;!-- some of jsdom's dependencies are environment-specific, so we'll install it here if it's not already present --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">chmod</span> <span class="hljs-attribute">file</span>=<span class="hljs-value">"test/js/util/install_jsdom.sh"</span> <span class="hljs-attribute">perm</span>=<span class="hljs-value">"ugo+rx"</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">exec</span> <span class="hljs-attribute">executable</span>=<span class="hljs-value">"test/js/util/install_jsdom.sh"</span> <span class="hljs-attribute">failonerror</span>=<span class="hljs-value">"true"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">chmod</span> <span class="hljs-attr">file</span>=<span class="hljs-string">"test/js/util/install_jsdom.sh"</span> <span class="hljs-attr">perm</span>=<span class="hljs-string">"ugo+rx"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">exec</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"test/js/util/install_jsdom.sh"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>/&gt;</span>
 
-        <span class="hljs-tag">&lt;<span class="hljs-title">mkdir</span> <span class="hljs-attribute">dir</span>=<span class="hljs-value">"${build.test.unit.output}"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mkdir</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${build.test.unit.output}"</span>/&gt;</span>
 
-        <span class="hljs-tag">&lt;<span class="hljs-title">exec</span> <span class="hljs-attribute">executable</span>=<span class="hljs-value">"node_modules/jasmine-node/bin/jasmine-node"</span> <span class="hljs-attribute">failonerror</span>=<span class="hljs-value">"true"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"--forceexit"</span>/&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"test/js/"</span>/&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"--junitreport"</span>/&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"--output"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"${build.test.unit.output}/TEST-javascript-results.xml"</span>/&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">exec</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">target</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">exec</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"node_modules/jasmine-node/bin/jasmine-node"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--forceexit"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"test/js/"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--junitreport"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--output"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${build.test.unit.output}/TEST-javascript-results.xml"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">exec</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
 </code></pre>
 <p>And there you have it. Happy testing!</p>
 <hr style="margin: 30px 0;" />
@@ -293,7 +293,7 @@ Also, we&#8217;ve recently switched from our custom js build script to <a href="
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				

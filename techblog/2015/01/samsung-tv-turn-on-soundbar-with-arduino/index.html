@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/" />
 
 
@@ -101,8 +101,8 @@ repeat; ignoring.
 </code></pre>
 <p>Success! I now had the code to turn on my sound bar.</p>
 <p>Inspecting the code revealed that the &quot;repeat&quot; code is actually <code>0xFFFFFFFF</code>, and some trial and error revealed that a sketch with one repeat is sufficient to turn on my sound bar:</p>
-<pre class="highlight"><code class="hljs c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;IRremote.h&gt;</span>
-<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;avr/sleep.h&gt;</span>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IRremote.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/sleep.h&gt;</span></span>
 
 <span class="hljs-comment">/*
  * Turn on a Vizio Soundbar via an IR shield when the Arduino receives power
@@ -110,8 +110,8 @@ repeat; ignoring.
  */</span>
 
 
-<span class="hljs-keyword">void</span> setup()
-{
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
   IRsend irsend;
   delay(<span class="hljs-number">100</span>);
 
@@ -121,7 +121,7 @@ repeat; ignoring.
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);  <span class="hljs-comment">// waste not.</span>
 }
 
-<span class="hljs-keyword">void</span> loop() {
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
 }
 </code></pre>
 <p>I &quot;installed&quot; it on the back of my TV (A.K.A. set it on top of the wall mount pointing vaguely in the direction of the sound bar), and viola! I could now control everything from just my TV&#39;s remote.</p>
@@ -244,7 +244,7 @@ Updating to that got me back instantaneous, automatic sound bar power!</p>
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				

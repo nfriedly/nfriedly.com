@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/techblog/2009/06/javascript-security-ajax-json-and-twitter-callbacks/" />
 
 
@@ -83,24 +83,24 @@ function loadBackupCSS(url) {
 <h3 id="remotely-hosted-javascript-files">Remotely hosted javascript files</h3>
 <p>Scripts stored on other websites can be included on a page. As long as the script doesn&#8217;t need to call home after the initial load, everything works great. This is how a basic twitter function works: you load a script from twitter&#8217;s website and it communicates with your site via the callback feature. This is what the Simple part of my <a href="http://nfriedly.com/demos/twitter">twitter demo</a> does.</p>
 <p>Here is a very basic page that uses Twitter&#8217;s callback feature and a remotely loaded javascript file to show my twitter status &#8211; remote data &#8211; on my website, by interacting with local javascript.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">"http://www.w3.org/1999/xhtml"</span>  <span class="hljs-attribute">dir</span>=<span class="hljs-value">"ltr"</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en-US"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Simple Twitter Status<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>  <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-US"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Simple Twitter Status<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>My Twitter Status:<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>My Twitter Status:<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"twitter_status"</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"twitter_status"</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Put scripts down here for speed --&gt;</span>
 
 
 <span class="hljs-comment">&lt;!-- this must come before we load the twitter script --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showStatus</span><span class="hljs-params">(json)</span></span>{
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showStatus</span>(<span class="hljs-params">json</span>)</span>{
     json = json[<span class="hljs-number">0</span>]; <span class="hljs-comment">// we only care about the most recent status;</span>
     <span class="hljs-keyword">var</span> myDiv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'twitter_status'</span>);
     myDiv.innerHTML = <span class="hljs-string">'&lt;img src="'</span>
@@ -109,16 +109,16 @@ function loadBackupCSS(url) {
         + json.text;
 }
 
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 
 
 <span class="hljs-comment">&lt;!-- now load the twitter file --&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;amp;callback=showStatus&amp;amp;random=<span class="php"><span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-keyword">echo</span> time(); <span class="hljs-preprocessor">?&gt;</span></span>"</span> /&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;amp;callback=showStatus&amp;amp;random=&lt;?php echo time(); ?&gt;"</span> /&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 <p>You can see a live copy of this code at <a href="http://nfriedly.com/demos/twitter-extra-simple">http://nfriedly.com/demos/twitter-extra-simple</a>.</p>
 <h2 id="digging-into-twitter-8217-s-callback-method">Digging into Twitter&#8217;s callback method</h2>
@@ -224,7 +224,7 @@ showStatus([{"in_reply_to_screen_name":null,"text":" [ Lots of information that 
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				

@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.78.6" />
+<meta name="generator" content="DocPad v6.79.0" />
 <link rel="canonical" href="http://nfriedly.com/portfolio/2/" />
 
 
@@ -77,6 +77,120 @@ function loadBackupCSS(url) {
 
 <div class="projects" id="projects2">
     
+    <article class="row ">
+        
+            <div class="col-xs-12">
+                
+<h2>
+    
+        <a href="https://github.com/nfriedly/express-rate-limit">Express Rate Limit</a>
+    
+</h2>
+
+    <i class="fa fa-tachometer pull-right fa fa-4x"></i>
+
+<p>I needed a simple rate-limiter for a project and I didn&#39;t see anything that fit the bill, so I put this one together.</p>
+<p>It&#39;s fairly flexible, however it does not share any state across processes/servers due to the complexity that adds.</p>
+
+
+<p class="meta">
+    
+        
+        
+        <a href="https://github.com/nfriedly/express-rate-limit"><i class="fa fa-github"></i></a>
+    
+    
+        <a href="https://npmjs.org/package/express-rate-limit" class="project-badge"><img src="http://badge.fury.io/js/express-rate-limit.svg" alt="Express Rate Limit on NPM"></a>
+        <a href="https://npmjs.org/package/express-rate-limit" class="project-badge"><img src="https://img.shields.io/npm/dm/express-rate-limit.svg" alt="Express Rate Limit downloads"></a>
+    
+    
+    
+        
+        
+        <a href="https://travis-ci.org/nfriedly/express-rate-limit" class="project-badge"><img src="https://travis-ci.org/nfriedly/express-rate-limit.png?branch=master" alt="Express Rate Limit's build status"></a>
+    
+    Tagged 
+    <a href="#javascript">JavaScript</a>, <a href="#node-js">Node.js</a>, <a href="#express">Express</a>, <a href="#open-source">Open Source</a>, <a href="#continuous-integration">Continuous Integration</a>
+</p>
+
+            </div>
+        
+    </article>
+
+    <article class="row ">
+        
+            <div class="col-xs-4">
+                <a class="thumb" href="/img/blog/arduino-ir/arduino-ir-assembled.jpg" rel="lightbox"><img src="/img/blog/arduino-ir/arduino-ir-assembled.thumb_default_w360h500q70.jpg" alt="" class="img-thumbnail" /></a>
+            </div>
+            <div class="col-sm-8">
+                
+<h2>
+    
+        <a href="/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/">Arduino IR Blaster</a>
+    
+</h2>
+
+<p>I used an Arduino and an IR Shield to fix a major annoyance with my TV:
+it would turn the sound bar <em>off</em> but wouldn&#39;t turn it back <em>on.</em>
+Now the Arduino is powered up whenever the TV comes on, and it in turn signals the sound bar to turn on.</p>
+<p>I later rebuilt it with a Digispark to reduce free up my Arduino for other projects.</p>
+
+
+<p class="meta">
+    
+    
+    
+    
+    Tagged 
+    <a href="#arduino">Arduino</a>, <a href="#cpp">C++</a>, <a href="#hardware">hardware</a>, <a href="#open-source">Open Source</a>
+</p>
+
+            </div>
+        
+    </article>
+
+    <article class="row ">
+        
+            <div class="col-xs-4">
+                <a class="thumb" href="/img/portfolio/space-jump.png" rel="lightbox"><img src="/img/portfolio/space-jump.thumb_default_w360h500q70.png" alt="" class="img-thumbnail" /></a>
+            </div>
+            <div class="col-sm-8">
+                
+<h2>
+    
+        <a href="http://nfriedly.github.io/space-jump/">Space Jump</a>
+    
+</h2>
+
+<p>Fun little browser-based game, sort of a cross between Doodle Jump and Moon Lander.
+I put it together over my Christmas vacation with the primary goals of having some fun and getting more experience rendering 2d graphics.</p>
+<p>While I&#39;m normally a big proponent of building on top of existing tools and frameworks, I decided to go &quot;bare metal&quot; with this one: the game itself is written in vanilla JavaScript with no dependencies whatsoever.</p>
+<p>The background image is from NASA; all graphics are either hand drawn or prodecuraly generated. The levels themselves are procedurally generated.</p>
+<p>On a desktop browser, the game uses arrow keys to navigate. However, on a mobile device, it use touch + tilt controls via the HTML5  <code>touchstart</code>/<code>touchend</code> and <code>deviceorientation</code> APIs.</p>
+<p>Renders at a smooth 60 FPS on every device I&#39;ve tested on.</p>
+
+
+<p class="meta">
+    
+        
+        
+        <a href="https://github.com/nfriedly/space-jump"><i class="fa fa-github"></i></a>
+    
+    
+    
+    
+        
+        
+        <a href="https://travis-ci.org/nfriedly/space-jump" class="project-badge"><img src="https://travis-ci.org/nfriedly/space-jump.png?branch=master" alt="Space Jump's build status"></a>
+    
+    Tagged 
+    <a href="#javascript">JavaScript</a>, <a href="#canvas">Canvas</a>, <a href="#gulp-js">gulp.js</a>, <a href="#mobile-first">Mobile First</a>, <a href="#continuous-integration">Continuous Integration</a>
+</p>
+
+            </div>
+        
+    </article>
+
     <article class="row ">
         
             <div class="col-xs-12">
@@ -713,7 +827,7 @@ other small things.</p>
 </li>
 <li><p><strong><a href="http://masonry.desandro.com/">Masonry</a></strong>: Fixed some accidental global variable references.</p>
 </li>
-<li><p><strong><a href="http://nodejs.org/">Node.js</a></strong>: Fixed a bug in the REPL, added unit tests.</p>
+<li><p><strong><a href="http://nodejs.org/">Node.js</a></strong>: Fixed several issues in REPL, HTTP, tests, etc.</p>
 </li>
 <li><p><strong><a href="https://github.com/nfriedly/node-memwatch">node-memwatch</a></strong>: Improved documentation.</p>
 </li>
@@ -2423,7 +2537,7 @@ Free for anyone to use, although I do request that a credit link is kept.</p>
 			</div>
 			
 			<div class="col-md-4 info">
-				<p>&copy; Nathan Friedly 2016</p>
+				<p>&copy; Nathan Friedly 2017</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 				
