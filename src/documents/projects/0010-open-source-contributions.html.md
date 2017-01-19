@@ -55,7 +55,7 @@ I frequently make small improvements to Open Source projects that I work with. H
 
  - **[Masonry](http://masonry.desandro.com/)**: Fixed some accidental global variable references.
 
- - **[Node.js](http://nodejs.org/)**: Fixed a bug in the REPL, added unit tests.
+ - **[Node.js](http://nodejs.org/)**: Fixed several issues in REPL, HTTP, tests, etc.
  
  - **[node-memwatch](https://github.com/nfriedly/node-memwatch)**: Improved documentation.
  
