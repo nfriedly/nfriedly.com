@@ -102,13 +102,11 @@ header.jumbotron {
 	h1 { font-size: 100%; line-height: 150%;}
 	h2 { font-size: 40%;  line-height: 150%;}
 
-	a, span {background: rgba(0,0,0,0.8); padding-top: 0.25%; padding-bottom: 0.25%}
-	a, .sub-heading { color: white;  padding-left: 10px; padding-right: 10px; }
+	a, span {background: rgba(0,0,0,0.8); padding-top: 0.25%; padding-bottom: 0.25%; box-decoration-break: clone;; }
+	a, .sub-heading { color: white;  padding-left: 10px; padding-right: 10px; box-decoration-break: clone; }
 
     .sub-heading-with-links a {background: transparent;}
     .sub-heading-with-links {color: #888; }
-
-
 
 	a:hover { color: #ddd; text-decoration:none;}
 	a:hover, a:active, a:focus { background-color: @hoverLinkColor; }
