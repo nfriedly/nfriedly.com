@@ -14,7 +14,7 @@ tags:
 Library to connect an [Adafruit SSD1351 1.5" Color OLED](https://www.adafruit.com/products/1431) breakout board to a
 [Particle Photon](https://www.particle.io/products/hardware/photon-wifi-dev-kit).
 
-I built on top of the work by Adafruit and the Particle communities; taking the working driver, adding a bit of polish, and publishing it.
+I built on top of the working driver created by Adafruit and the Particle community, filling in the gaps and adding polish.
 
-My contributions included packaging it in the Particle library format, adding and tweaking the example,
-adding wiring instructions, and generally improving the documentation.
+My contributions included adding wiring instructions, adding and tweaking the example,
+packaging it in the Particle library format, and generally improving the documentation.
