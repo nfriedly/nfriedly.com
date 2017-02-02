@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url> <loc>http://nfriedly.com/</loc> <changefreq>monthly</changefreq> <priority>1</priority> </url>
-<url> <loc>http://nfriedly.com/portfolio/2/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/portfolio/</loc> <changefreq>monthly</changefreq> <priority>1</priority> </url>
+<url> <loc>http://nfriedly.com/portfolio/2/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/about/</loc> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>http://nfriedly.com/techblog/2009/07/advanced-javascript-operators-and-truthy-falsy/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://nfriedly.com/techblog/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/11/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/06/users-cant-see-https-website/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/06/advanced-javascript-objects-arrays-and-array-like-objects/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/06/javascript-security-ajax-json-and-twitter-callbacks/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/06/how-to-use-xslt-to-style-an-rss-feed/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://nfriedly.com/techblog/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://nfriedly.com/techblog/2009/07/advanced-javascript-operators-and-truthy-falsy/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2010/08/how-facebook-sets-and-uses-cross-domain-cookies/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
