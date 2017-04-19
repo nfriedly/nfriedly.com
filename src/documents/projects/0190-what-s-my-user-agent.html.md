@@ -1,14 +1,12 @@
 ---
 title: What's my User Agent? v1
-link: http://whatsmyua.com
+link: http://user-agent.io
 picture: /img/portfolio/whatsmyua.png
-thumbnail: /img/portfolio/thumbs/whatsmyua.png
-github: whatsmyua.com-v1
+github: user-agent.io-v1
 tags: 
   - Ruby on Rails
   - BlueTrip
   - SQLite
-write: false
 ---
 
 Reports the visitors UserAgent string and also breaks it down and explains each portion of the string. The site also provides simple, user and search-engine friendly links to view or share the breakdown of other UA strings.
