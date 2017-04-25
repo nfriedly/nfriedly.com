@@ -10,19 +10,8 @@ scripts:
 stylesheets: /scripts/lightbox/lightbox.css
 headerImage: /img/temp-o-matic-crop.jpg
 priority: 1
-urls: 
-    - /webdev
-    - /webdev/javascript
-    - /webdev/marketing
-    - /webdev/php
-    - /demos
-    - /demos/twitter
-    - /quote
-    - /estimate
-    - /clients
-    - /blb
 referencesOthers: true
-scripts: 
+scripts:
     - /scripts/lightbox/lightbox-min.js
     - /scripts/portfolio.js
 section: portfolio
