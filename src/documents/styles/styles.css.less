@@ -92,13 +92,13 @@ a [class^="fa"], a [class*=" fa"] { text-decoration: none; }
 
 header.jumbotron {
 	background-image: url(/img/grapes-up.jpg);
-	background-repeat: no-repeat; 
-	background-size: cover; 
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-attachment: scroll;
 	background-position: center center;
-	
-	font-size: 40px; 
-	padding: 50px 0; 
+
+	font-size: 40px;
+	padding: 50px 0;
 	h1 { font-size: 100%; line-height: 150%;}
 	h2 { font-size: 40%;  line-height: 150%;}
 
@@ -114,8 +114,8 @@ header.jumbotron {
 
 @media (min-width: @screen-md) {
 	.homepage .jumbotron, .about .jumbotron { padding: 100px; }
-	header.jumbotron { 
-		font-size: 100px; 
+	header.jumbotron {
+		font-size: 100px;
 	}
 }
 
@@ -144,12 +144,12 @@ header.jumbotron {
 	.instagram {
 		width: @homepageImageReducedHeight; // width = height because this image is always square
 		display: inline-block;
-	
+
 		p {
 			color: #ccc;
 			text-align: center;
 		}
-	
+
 		img { animation: fadein 1s; }
 	}
 }
@@ -178,18 +178,18 @@ header.jumbotron {
 .techblog {
 	ul { margin-left: 0; }
 	li {
-		list-style-type: none; 
+		list-style-type: none;
 		clear: left;
 		clear: both;
 		margin-top: 20px;
-		
-		a { 
+
+		a {
 			text-decoration: none;
 			display: block;
 			padding: 2px;
 		}
-		
-		
+
+
 		p { margin: 10px 0 0 0; color: black; transition: all 0.5s;}
 		a:hover p { color: white; transition: all 0.5s; }
 	}
@@ -214,8 +214,8 @@ main li { margin-top: 1em; }
 
 .techblog.archives {
 	article { clear: both; margin-bottom: 40px;}
-	h2 { 
-		border-bottom: 1px solid grey; 
+	h2 {
+		border-bottom: 1px solid grey;
 		a { text-decoration: none; }
 	}
 }
@@ -229,7 +229,7 @@ main li { margin-top: 1em; }
 }
 
 .github {
-	ul { 
+	ul {
 		list-style-type: none;
 	}
 	li { animation: fadein 1s;  margin-top: 20px; }
@@ -238,16 +238,21 @@ main li { margin-top: 1em; }
 	.muted a { text-decoration: none; }
 }
 
+// make up your own font-awesome icons FTW
+.fa-incline::before {
+	content: "◢";
+}
+
 .muted a { color: inherit; }
 .muted a:hover { color: white; }
 
 .2-col {
-    columns: 2; -webkit-columns: 2; -moz-columns: 2; 
+    columns: 2; -webkit-columns: 2; -moz-columns: 2;
     column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
 }
 
 .3-col {
-    columns: 3; -webkit-columns: 3; -moz-columns: 3; 
+    columns: 3; -webkit-columns: 3; -moz-columns: 3;
     column-gap: 2em; -webkit-column-gap: 2em; -moz-column-gap: 2em;
 }
 
@@ -302,13 +307,13 @@ main li { margin-top: 1em; }
     img.thumb, a.thumb img {
         width: 100%;
     }
-    
-    
+
+
     a.thumb:hover, a.project-badge:hover { background-color: inherit; }
     a.thumb:hover img { background-color: @hoverLinkColor; }
 
 
-  article { 
+  article {
         padding-top: 20px;
         h2 { margin-top: 0; }
         opacity: 1;
@@ -366,25 +371,25 @@ main li { margin-top: 1em; }
 @media (min-width: @screen-md) {
     @footerPadding: 50px;
     @footerHeight: 271px + (@footerPadding * 2);
-	.over-footer { 
-		position: relative; 
-		background-color: white; 
-		z-index: 2; 
-		margin-bottom: @footerHeight; 
-		padding-bottom: 20px; 
+	.over-footer {
+		position: relative;
+		background-color: white;
+		z-index: 2;
+		margin-bottom: @footerHeight;
+		padding-bottom: 20px;
 		box-shadow: 0 18px 18px -12px #310A03;
 		min-height: calc(~"100% - " @footerHeight);
 	}
 	body,html{ height:100%; } // make the min-height of over-footer work correctly
-	footer { 
-		position: fixed; bottom: 0; left: 0; right: 0; 
-		z-index: 1; 
-		padding: @footerPadding 0; 
-		height: @footerHeight; 
+	footer {
+		position: fixed; bottom: 0; left: 0; right: 0;
+		z-index: 1;
+		padding: @footerPadding 0;
+		height: @footerHeight;
 	}
 }
 
-footer { 
+footer {
 	color: @gray;
 	background-color: @darkPurple;
 	a { color: @gray; }
@@ -392,11 +397,11 @@ footer {
 	ul { margin:0; padding:0; }
 	ul.fa-ul { margin-left: 1.65em; }
 	.contact {
-		font-size: 160%; 
-		li { 
-			list-style-type: none; 
-			display: inline-block; 
-			&:first-child { display: block; }	
+		font-size: 160%;
+		li {
+			list-style-type: none;
+			display: inline-block;
+			&:first-child { display: block; }
 			a { text-decoration:none; }
 		}
 		#email-text {padding-left: 0.5ex;}
@@ -405,8 +410,8 @@ footer {
 		ul { font-size: 130%; }
 		a { text-decoration: none; }
 	}
-	.info { 
-		padding-top:3ex; 
+	.info {
+		padding-top:3ex;
 		img { padding: 5px 5px 5px 0; }
 	}
 }
