@@ -32,11 +32,12 @@
 		MemberEvent: 'fa-user',
 		DeleteEvent: 'fa-trash',
 		'default':  'fa-gears'
-	
+
 		// todo: fa-check  for issue closed
 	};
-	
+
 	var repoIcons = {
+		'inclinesystems.github.io': 'fa-incline',
 		'nfriedly.com': 'fa-home',
 		'JS-Mini-Shell': 'fa-javascript',
 		'facebook-js-sdk': 'fa-facebook',
@@ -79,8 +80,8 @@
 	function handleGH(response) {
 		var $list = $('div.github ul');
 		$list.empty();
-	
-		function eventType(event) { 
+
+		function eventType(event) {
 			return event.type;
 		}
 		function renderSumary(events, type) {
@@ -97,7 +98,7 @@
 				};
 			return et[type] ? et[type](data) : et['default'](data);
 		}
-	
+
 		 var eventsByRepo = _.chain(response.data).filter(function(event ){
 			// filter out events that aren't attached to a repo
 			return event.repo;
