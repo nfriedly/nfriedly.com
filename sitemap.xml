@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url> <loc>http://nfriedly.com/about/</loc> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>http://nfriedly.com/</loc> <changefreq>monthly</changefreq> <priority>1</priority> </url>
 <url> <loc>http://nfriedly.com/portfolio/2/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/portfolio/</loc> <changefreq>monthly</changefreq> <priority>1</priority> </url>
-<url> <loc>http://nfriedly.com/</loc> <changefreq>monthly</changefreq> <priority>1</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/11/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://nfriedly.com/techblog/2009/06/users-cant-see-https-website/</loc> <changefreq>monthly</changefreq> <priority>0.5</priority> </url>
