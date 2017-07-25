@@ -20,7 +20,9 @@ platform with a CPU+RAM+Storage+WiFi all in one for (considerably) less than the
 [breadboard][espthing]-[friendly][nodemcu] [modules][cactus] with all pins exposed (and [more][oak] coming soon.)
 
 However, this post is about the breadboard-unfriendly ESP-01 module. It only has two GPIO pins (four if you include the
-TX & RX pins), but it's smaller and most importantly, cheaper. <!--more-->[US][adafruit] [vendors][sparkfun] tend to charge around 
+TX & RX pins), but it's smaller and most importantly, cheaper. 
+
+<!--more-->[US][adafruit] [vendors][sparkfun] tend to charge around 
 $7, but if you don't mind importing, they can be [had for $3.50][electrodragon] [or less][ebay].
 
 The biggest problem with the ESP-01 is that it's annoying to wire up and program, so that's what we're solving today.
