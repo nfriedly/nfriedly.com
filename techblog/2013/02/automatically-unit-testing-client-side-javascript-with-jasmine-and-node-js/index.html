@@ -119,7 +119,7 @@ global.document = <span class="hljs-built_in">window</span>.document;
 <span class="hljs-comment"># 2&gt; /dev/null is becuse NPM likes to complain about missing readme files in third-party packages</span>
 <span class="hljs-comment"># tr removes the blank line that npm puts out if jsdom isn't found</span>
 
-LS_RESULTS=$(npm --parseable ls jsdom 2&gt;/dev/null | tr <span class="hljs-_">-d</span> <span class="hljs-string">'\n\'</span>)
+LS_RESULTS=$(npm --parseable ls jsdom 2&gt;/dev/null | tr -d <span class="hljs-string">'\n\'</span>)
 
 <span class="hljs-keyword">if</span> [[ -n <span class="hljs-variable">$LS_RESULTS</span> ]]; <span class="hljs-keyword">then</span>     <span class="hljs-comment"># -n tests to see if the argument is non empty</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">"jsdom is already installed, skipping"</span>

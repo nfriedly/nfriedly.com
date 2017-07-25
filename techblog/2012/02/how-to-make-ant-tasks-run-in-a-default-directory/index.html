@@ -89,7 +89,7 @@ function loadBackupCSS(url) {
 <span class="hljs-built_in">export</span> DEFAULT_ANT_DIR = /path/to/your/projects/folder/
 
 <span class="hljs-keyword">function</span> magic-<span class="hljs-function"><span class="hljs-title">ant</span></span>() {
-  <span class="hljs-keyword">if</span> [ <span class="hljs-_">-e</span> ./build.xml ]
+  <span class="hljs-keyword">if</span> [ -e ./build.xml ]
     <span class="hljs-keyword">then</span>
       ant <span class="hljs-variable">$@</span>                                                                    
     <span class="hljs-keyword">else</span>
