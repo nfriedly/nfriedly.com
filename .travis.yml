@@ -6,4 +6,6 @@ script:
 - npm run deploy
 env:
   global:
-  - secure: fG41sOxkTIPOSgln7QBnWAwng+v/AitVPu+yBkolXbXFj1q9oNbrZP06TFcfcrhQyEhPTnlBx2b6PY6+g9BEm1fwvFAcEZ/lXDpwyuV9OuIt6dOymYa8GO/fWy0Er9Za8DahTmZ8oEXaIiaX2WVq9ONWUBwJATWF2HVCsRel2dw=
+  - GH_NAME="Nathan Friedly (via Travis CI)"
+  - GH_EMAIL="nathan@nfriedly.com"
+  # GH_TOKEN is set in travis's web ui
