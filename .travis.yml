@@ -6,6 +6,4 @@ script:
 - npm run deploy
 env:
   global:
-  - GH_NAME="Nathan Friedly (via Travis CI)"
-  - GH_EMAIL="nathan@nfriedly.com"
-  # GH_TOKEN is set in travis's web ui
+  # GH_TOKEN is set in travis's web ui now, username & email are set in scripts/deploy.sh

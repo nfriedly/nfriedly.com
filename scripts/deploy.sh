@@ -32,7 +32,7 @@ if [ "$TRAVIS_REPO_SLUG" == "$GH_REPO" ] && [ "$TRAVIS_PULL_REQUEST" == "false" 
 
   echo "Running $BUILD_COMMAND"
 
-  $BUILD_COMMAND || { echo "\nBuild failed, stopping deploy.\n" ; exit 1; }
+  $BUILD_COMMAND || { echo "Build failed, stopping deploy." ; exit 1; }
 
   echo "Done! Entering $OUT_DIR and committing changes to $OUT_BRANCH."
 
@@ -41,11 +41,11 @@ if [ "$TRAVIS_REPO_SLUG" == "$GH_REPO" ] && [ "$TRAVIS_PULL_REQUEST" == "false" 
     # add all changes to git, including deleted files
     git add -f -A .
     git commit -m "Updating $OUT_BRANCH for commit $TRAVIS_COMMIT on $IN_BRANCH"
-    git push -q origin $OUT_BRANCH || { echo "\nPush failed\n" ; exit 1; }
+    git push -q origin $OUT_BRANCH || { echo "Push failed" ; exit 1; }
 
   popd
 
-  echo -e "Updated $OUT_BRANCH!\n"
+  echo -e "Updated $OUT_BRANCH!"
 
 else
 
