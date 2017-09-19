@@ -64,7 +64,7 @@ function loadBackupCSS(url) {
 </nav>
 
 
-<header class="jumbotron" style="background-image: url(/img/blog/arduino-ir/bg.jpg);">
+<header class="jumbotron" style="background-image: url(/img/blog/arduino-ir/tv-back.jpg);">
 	<div class="container">
 		<h1><a href="/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/"> Making a &quot;Smart&quot; TV Smarter</a></h1>
 		<h2><span class="sub-heading ">Using an Arduino to Automatically Turn On the Sound Bar with the TV</span></h2>
@@ -96,7 +96,7 @@ But, since it doesn&#39;t turn sound bar back on, I still have to get out my sou
 </center>
 
 <p>I used Ken Shirriff&#39;s awesome <a href="https://github.com/shirriff/Arduino-IRremote">Arduino IRemote library</a> and initially it had some conflicts.
-It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only relieve a single format and can&#39;t transmit anything, but they neglected to rename anything.
+It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only receive a single format and can&#39;t transmit anything, but they neglected to rename anything.
 You can delete the <code>examples/RobotIRemote</code> folder or just go back to the Arduino IDE 1.0.6.</p>
 <p>After getting that sorted, I loaded the IRecord example sketch onto my Arduino. I opened the Serial Monitor, pointed my sound bar remote at the IR Shield, and pressed power:</p>
 <pre class="highlight"><code class="hljs no-highlight">Received NEC: FF02FD
@@ -163,6 +163,13 @@ Updating to that got me back instantaneous, automatic sound bar power!</p>
 <img src="/img/blog/arduino-ir/digispark-installed.jpg" alt="Digispark installed on TV">
 </center>
 
+<h2 id="now-with-lighting-control-">Now with lighting control!</h2>
+<p>I have a strand of icicle-style christmas lights strung above my TV that I had been manually plugging in and unplugging. 
+After a while, I decided to automate this! 
+With the help of a <a href="https://www.adafruit.com/product/268">Power Switch Tail 2</a> and a couple of free pins on the arduino, I was able to set this up in under 20 minutes with no code changes!</p>
+<center>
+<img src="/img/blog/arduino-ir/tv-back.jpg" alt="With the lighting control connected #notilter">
+</center>
 
 
 
