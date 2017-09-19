@@ -5,7 +5,7 @@ subHeading: Using an Arduino to Automatically Turn On the Sound Bar with the TV
 
 url: /techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/
 
-headerImage: /img/blog/arduino-ir/bg.jpg
+headerImage: /img/blog/arduino-ir/tv-back.jpg
 
 featured: true
 
@@ -48,7 +48,7 @@ For my initial solution, I put together a regular [Arduino Uno R3] and an [IR Sh
 </center>
 
 I used Ken Shirriff's awesome [Arduino IRemote library] and initially it had some conflicts.
-It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only relieve a single format and can't transmit anything, but they neglected to rename anything.
+It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only receive a single format and can't transmit anything, but they neglected to rename anything.
 You can delete the `examples/RobotIRemote` folder or just go back to the Arduino IDE 1.0.6.
 
 After getting that sorted, I loaded the IRecord example sketch onto my Arduino. I opened the Serial Monitor, pointed my sound bar remote at the IR Shield, and pressed power:
@@ -130,6 +130,15 @@ Updating to that got me back instantaneous, automatic sound bar power!
 ![Digispark installed on TV](/img/blog/arduino-ir/digispark-installed.jpg)
 </center>
 
+## Now with lighting control!
+
+I have a strand of icicle-style christmas lights strung above my TV that I had been manually plugging in and unplugging. 
+After a while, I decided to automate this! 
+With the help of a [Power Switch Tail 2] and a couple of free pins on the arduino, I was able to set this up in under 20 minutes with no code changes!
+
+<center>
+![With the lighting control connected #notilter](/img/blog/arduino-ir/tv-back.jpg)
+</center>
 
 [HDMI CEC]: https://en.wikipedia.org/wiki/HDMI#CEC
 [my TV]: http://www.amazon.com/gp/product/B007BG4F5C/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B007BG4F5C&linkCode=as2&tag=nfriedly-20&linkId=XLTMI57TA3XPSFQ3
@@ -140,3 +149,4 @@ Updating to that got me back instantaneous, automatic sound bar power!
 [Arduino IRemote library]: https://github.com/shirriff/Arduino-IRremote
 [Digisparks]: http://digistump.com/products/1
 [micronucleus]: https://github.com/micronucleus/micronucleus
+[Power Switch Tail 2]: https://www.adafruit.com/product/268
