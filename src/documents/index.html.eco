@@ -21,15 +21,12 @@ section: home
 			We live on a spiffy little homestead just south of Pleasant Hill, Ohio.</p>
 		<p>I'm a Christian and a minister for the Lord Jesus Christ.
 			If you ever need anything, I'd be more than happy to provide prayer and support.</p>
-		<p>I run <a href="http://www.incline.systems/">Incline</a>,
-			which is a digital agency that builds websites and apps.
-			I'm also currently work as an Advisory Engineer for
-			<a href="http://www.ibm.com/watson/developercloud/">IBM Watson</a>
-			where I advise and engineer.</p>
+		<p>I currently work for <a href="https://www.tanium.com/">Tanium</a>, helping the US government and many of our
+			largest enterprises secure their computers.
+			Prior to that I worked for IBM Watson, and several startups including one of my own.</p>
 		<p>See my <a href="/about/">about page</a> for a little more on my personal life,
 			or take a look at my <a href="/portfolio/">portfolio</a>,
-			<a href="/techblog/">Tech Blog</a>, and
-			<a href="http://www.incline.systems/">company</a> for more work/computer-y stuff.</p>
+			<a href="/techblog/">Tech Blog</a> for more work/computer-y stuff.</p>
 	</div>
 	<div class="col-md-8 pics">
 		<img src="/img/home-thumbs/nathan-nathan-christmass-tree.jpg" alt="Picture of Erin, Maizy, and Nathan in the Tipp City park" class="img-thumbnail"/>
