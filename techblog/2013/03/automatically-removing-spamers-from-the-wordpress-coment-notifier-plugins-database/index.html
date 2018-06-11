@@ -86,11 +86,11 @@ function loadBackupCSS(url) {
 );
 </code></pre>
 <p>Obviously, you&#8217;ll need to change the table name prefix (<code>wp_YOUR_PREFIX_</code>) to whatever your install of WP uses.</p>
-<h2 id="step-3-add-an-index-7-on-the-comments-comment_author_email-column">Step 3: Add an <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_index">index</a> on the <code>comments.comment_author_email</code> column</h2>
+<h2 id="step-3-add-an-index-on-the-comments-comment_author_email-column">Step 3: Add an <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_index">index</a> on the <code>comments.comment_author_email</code> column</h2>
 <p>This is required in order to add the Foreign Key constraint in next step. It makes MySQL keep a sorted list of emails in the comments table and automatically update it any time a comment is added or deleted.</p>
 <pre class="highlight"><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`wp_YOUR_PREFIX_comments`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">INDEX</span> ( <span class="hljs-string">`comment_author_email`</span> );
 </code></pre>
-<h2 id="step-4-add-a-foreign-key-8-constraint-that-automatically-deletes-spammers-from-the-comment_notifier-table">Step 4: Add a <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_foreign_key">Foreign Key</a> constraint that automatically deletes spammers from the <code>comment_notifier</code> table</h2>
+<h2 id="step-4-add-a-foreign-key-constraint-that-automatically-deletes-spammers-from-the-comment_notifier-table">Step 4: Add a <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_foreign_key">Foreign Key</a> constraint that automatically deletes spammers from the <code>comment_notifier</code> table</h2>
 <p>This instructs MySQL to enforce a link between the <code>comment_notifier</code> table and the <code>comments</code> table so that any email address in the <code>comment_notifier</code> table must also be in the comments table, and if it gets deleted from the <code>comments</code> table, then automatically delete it from the <code>comment_notifier</code> table also.</p>
 <pre class="highlight"><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`wp_YOUR_PREFIX_comment_notifier`</span> 
   <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`auto_delete_spammers`</span> 

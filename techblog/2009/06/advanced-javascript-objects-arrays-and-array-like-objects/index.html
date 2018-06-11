@@ -145,10 +145,11 @@ arr = <span class="hljs-keyword">array</span>();
 arr[<span class="hljs-number">100</span>] = <span class="hljs-string">"php behaves differently"</span>;
 sizeof(arr); <span class="hljs-comment">// returns 1 in PHP</span>
 <span class="hljs-meta">?&gt;</span>
+
 </code></pre>
 <p>You can manually set the <code>length</code> also. Setting it to 0 is a simple way to empty an array.</p>
 <p>In addition to this length property, arrays have lots of nifty built in functions such as <code>push()</code>, <code>pop()</code>, <code>sort()</code>, <code>slice()</code>, <code>splice()</code>, and more. This is what sets them apart from Array-Like Objects.</p>
-<h2 id="array-like-objects-img-class-alignright-title-it-s-like-an-array-but-made-out-of-lego-src-http-farm4-static-flickr-com-3175-2645497916_386b9b75b8_m-jpg-alt-width-240-height-180-2-">Array-like Objects <a href="http://www.flickr.com/photos/repoort/2645497916/"><img class="alignright" title="It's like an array, but made out of Lego!" src="http://farm4.static.flickr.com/3175/2645497916_386b9b75b8_m.jpg" alt="" width="240" height="180" /></a></h2>
+<h2 id="array-like-objects-img-class-alignright-title-it-s-like-an-array-but-made-out-of-lego-src-http-farm4-static-flickr-com-3175-2645497916_386b9b75b8_m-jpg-alt-width-240-height-180-">Array-like Objects <a href="http://www.flickr.com/photos/repoort/2645497916/"><img class="alignright" title="It's like an array, but made out of Lego!" src="http://farm4.static.flickr.com/3175/2645497916_386b9b75b8_m.jpg" alt="" width="240" height="180" /></a></h2>
 <p>Array-like objects look like arrays. They have various numbered elements and a length property. But that&#8217;s where the similarity stops. Array-like objects do not have any of Array&#8217;s functions, and for-in loops don&#8217;t even work!</p>
 <p>You&#8217;ll come across these more often than you might expect. A common one is the <code>arguments</code> variable that is present inside of every js function. </p>
 <p>Also included in the category are the HTML node sets returned by <code>document.getElementsByTagName()</code>, <code>document.forms</code>, and basically every other DOM method and property that gives a list of items.</p>
@@ -172,7 +173,7 @@ sizeof(arr); <span class="hljs-comment">// returns 1 in PHP</span>
 takesTwoParams(<span class="hljs-string">"one"</span>,<span class="hljs-string">"two"</span>,<span class="hljs-string">"three"</span>);
 <span class="hljs-comment">// alerts "you gave me 3 arguments",</span>
 <span class="hljs-comment">// then "parameter 0 = one" </span>
-<span class="hljs-comment">// etc.</span>
+<span class="hljs-comment">// etc. </span>
 </code></pre>
 <div class="alert alert-info">
 <strong>Tip:</strong>
@@ -270,7 +271,7 @@ ArrayContainer.prototype.forEach=  <span class="hljs-function"><span class="hljs
 </code></pre>
 <p>Now that your array is (somewhat) protected on the inside, you can loop through it&#8217;s items with <code>forEach()</code> and know that they will match it&#8217;s length. You can also add arbitrary properties to <code>ArrayContainer</code> or <code>mySuperDooperArray</code> and they <strong>won&#8217;t</strong> get pulled into your <code>forEach()</code> loop.</p>
 <p>This example could be extended to completely protect the array if the need arose. </p>
-<h2 id="an-even-better-solution-hire-a-javascript-expert-5-">An Even Better Solution: <a href="http://nfriedly.com/webdev">Hire a javascript expert</a>.</h2>
+<h2 id="an-even-better-solution-hire-a-javascript-expert-">An Even Better Solution: <a href="http://nfriedly.com/webdev">Hire a javascript expert</a>.</h2>
 <p>nFriedly Web Development is a top ranked <a href="http://nfriedly.com/webdev/javascript">Javascript and AJAX ninja</a> with an extensive portfolio of proven results. I can bring your project to life and make it run faster than you ever imagined.  <a href="http://nfriedly.com/contact">Get in touch</a> with me or get a free <a href="http://nfriedly.com/estimate">instant estimate</a> for new projects.</p>
 
 

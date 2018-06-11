@@ -109,6 +109,7 @@ function loadBackupCSS(url) {
 <span class="hljs-keyword">var</span> a = (test == <span class="hljs-literal">false</span>); <span class="hljs-comment">// a is false, meaning that test is truthy</span>
 
 <span class="hljs-keyword">var</span> b = (test * <span class="hljs-number">1</span> == <span class="hljs-literal">false</span>); <span class="hljs-comment">// b is true, meaning that `test * 1` is falsy</span>
+
 </code></pre>
 <p><code>Array</code>s are particularly weird. If you just test it for truthyness, an empty array is truthy. HOWEVER, if you compare an empty array to a boolean, it becomes falsy:</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">if</span> ( [] == <span class="hljs-literal">false</span> ) {
@@ -126,6 +127,7 @@ function loadBackupCSS(url) {
 <span class="hljs-keyword">if</span> ( ![] ) {
     <span class="hljs-comment">// this code also doesn't run</span>
 }
+
 </code></pre>
 <p>(This is because when you do a comparison, it&#39;s elements are turned to <code>String</code>s and joined. Since it&#39;s empty, it becomes <code>&quot;&quot;</code> which is then falsy. Yea, <a href="https://www.destroyallsoftware.com/talks/wat">it&#39;s weird</a>.)</p>
 <p>If you write any PHP, then there&#39;s an additional gotcha to watch out for: while javascript evaluates empty arrays as true, PHP evaluates them as false.</p>
@@ -148,6 +150,7 @@ $stringZero = <span class="hljs-string">"0"</span>; <span class="hljs-comment">/
 <span class="hljs-keyword">var</span> c = (<span class="hljs-number">0</span> || <span class="hljs-string">"test two"</span>); <span class="hljs-comment">// c is "Test two"</span>
 
 <span class="hljs-keyword">var</span> d = (<span class="hljs-number">0</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// d is false</span>
+
 </code></pre>
 <p>Where would you ever use this? The OR operator allows you to easily specify default variables in a function.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi</span>(<span class="hljs-params">name</span>)</span>{
@@ -158,6 +161,7 @@ $stringZero = <span class="hljs-string">"0"</span>; <span class="hljs-comment">/
 sayHi(<span class="hljs-string">"Nathan"</span>); <span class="hljs-comment">// alerts "Hi Nathan";</span>
 
 sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null when the function is started</span>
+
 </code></pre>
 <h4 id="logical-and-">Logical AND, <code>&amp;&amp;</code></h4>
 <p>The logical AND operator, <code>&amp;&amp;</code>,  works similarly.  If the first object is falsy, it returns that object. If it is truthy, it returns the second object.</p>
@@ -166,6 +170,7 @@ sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null whe
 <span class="hljs-keyword">var</span> b = (<span class="hljs-string">"test one"</span> &amp;&amp; <span class="hljs-string">""</span>); <span class="hljs-comment">// b is ""</span>
 
 <span class="hljs-keyword">var</span> c = (<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-string">"test two"</span>) <span class="hljs-comment">// c is 0</span>
+
 </code></pre>
 <p>The logical AND allows you to make one variable dependent on another.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> checkbox = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"agreeToTerms"</span>);
@@ -184,6 +189,7 @@ sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null whe
 
 <span class="hljs-keyword">var</span> c = (!<span class="hljs-number">0</span> || !<span class="hljs-string">"test two"</span>); <span class="hljs-comment">// c is true</span>
 <span class="hljs-comment">// (0 gets converted to true and returned)</span>
+
 </code></pre>
 <p>Another useful way to use the <code>!</code> operator is to use two of them &#8211; this way you always get a <code>true</code> or a <code>false</code> no matter what was given to it.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> a = (!!<span class="hljs-string">"test"</span>); <span class="hljs-comment">// a is true</span>
@@ -194,7 +200,7 @@ sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null whe
 
 <span class="hljs-keyword">var</span> c = (!!variableThatDoesntExist); <span class="hljs-comment">// c is false even though you're checking an undefined variable.</span>
 </code></pre>
-<h2 id="-javascript-optimization-4-"><a href="http://nfriedly.com/portfolio">Javascript Optimization</a></h2>
+<h2 id="javascript-optimization"><a href="http://nfriedly.com/portfolio">Javascript Optimization</a></h2>
 <p>Need any help <a href="http://nfriedly.com/portfolio#javascript">optimizing the Javascript and AJAX on your website</a>? Get in touch with your friendly neighborhood <a href="http://nfriedly.com/portfolio">javascript expert</a> for ideas on how to optimize your site and a free quote.</p>
 
 
