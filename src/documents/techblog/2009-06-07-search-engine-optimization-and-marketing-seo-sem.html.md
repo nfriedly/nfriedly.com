@@ -15,7 +15,7 @@ tags:
   - sem
   - seo
 ---
-<p><img class="size-thumbnail wp-image-78 alignright" title="King Philip III of Spain" src="http://nfriedly.com/techblog/wp-content/uploads/2009/06/king_felipe_iii-150x150.jpg" alt="King Philip III of Spain" width="150" height="150" />SEO and SEM is all the rage these days.  You can do all kinds of modifications to your website, but the age-old adage still holds true:</p>
+<p><img class="size-thumbnail wp-image-78 alignright" title="King Philip III of Spain" src="/techblog/wp-content/uploads/2009/06/king_felipe_iii-150x150.jpg" alt="King Philip III of Spain" width="150" height="150" />SEO and SEM is all the rage these days.  You can do all kinds of modifications to your website, but the age-old adage still holds true:</p>
 <h2>Content is king.</h2>
 <p>Unique, interesting, well-written content is what makes your site stand out. Well written content will have key words, but won&#8217;t feel spammy. It will naturally attract high quality links back to it.</p>
 <p>That said, there are <strong>several factors you can keep in mind while writing your content</strong>&#8230;</p>
@@ -43,7 +43,7 @@ tags:
 <p>Look for links that go to pages you no longer have and either put something there or have those links 301 redirect to a page you do have. Don&#8217;t let them go to waste. The <a href="https://www.google.com/webmasters/tools/">Google Webmaster Tools</a> are great for finding these.</p>
 <p>Obviously, you would need to have descriptive category and product names for this to give the most benefit. I have heard people claim that using .html on the end of your files gets a better ranking than using .php, but my experience shows that there is no difference.  </p>
 <h2>It is what you say, but how you say it matters too.</h2>
-<h3><img class="alignleft size-thumbnail wp-image-83" title="It's what you say AND how you say it." src="http://nfriedly.com/techblog/wp-content/uploads/2009/06/80s_phone_call-150x150.jpg" alt="It's what you say AND how you say it." width="150" height="150" />Use Keyword Targeting on each page.</h3>
+<h3><img class="alignleft size-thumbnail wp-image-83" title="It's what you say AND how you say it." src="/techblog/wp-content/uploads/2009/06/80s_phone_call-150x150.jpg" alt="It's what you say AND how you say it." width="150" height="150" />Use Keyword Targeting on each page.</h3>
 <p>Target each page on your site to a few or even a single specific keyword or phrases. The free <a href="https://adwords.google.com/select/KeywordToolExternal">Google Adwords Keyword Tool </a>can help you find related keywords that will be worth targeting.</p>
 <p>You don&#8217;t always have to go for the big ones either, targeting some of the smaller keywords can actually bring in more business than the bigger ones because you&#8217;ll be higher ranked.</p>
 <h3>Have a good keyword density in your content.</h3>
@@ -57,7 +57,7 @@ tags:
 <h4>Bold</h4>
 <p>Making a keyword <strong>bold </strong>once or twice is ok, especially if you can&#8217;t work it into the title tag.  Don&#8217;t overdo it, once is enough and twice is plenty.</p>
 <h2>Try adding a blog.</h2>
-<p><img class="alignright size-thumbnail wp-image-86" title="young businessman" src="http://nfriedly.com/techblog/wp-content/uploads/2009/06/young_businessman-150x150.jpg" alt="young businessman" width="150" height="150" />Search engines love fresh unique content, so if your site doesn&#8217;t get a lot of that then you want a blog.  Even if you do get a lot of fresh content, a blog might be good for your business.</p>
+<p><img class="alignright size-thumbnail wp-image-86" title="young businessman" src="/techblog/wp-content/uploads/2009/06/young_businessman-150x150.jpg" alt="young businessman" width="150" height="150" />Search engines love fresh unique content, so if your site doesn&#8217;t get a lot of that then you want a blog.  Even if you do get a lot of fresh content, a blog might be good for your business.</p>
 <h3>Get the CEO to post blogs, read comments, and respond to comments.</h3>
 <p>People LOVE it when the President of a company takes time to respond to their blog comments. This will help you get those valuable incoming links.</p>
 <h3>Use Social Media and viral marketing.</h3>
@@ -68,7 +68,7 @@ tags:
 <p>I always try to add at least one image to each blog post. Studies have shown that blogs with images get more readers.</p>
 <p>Some great sources for free images include <a href="http://www.sxc.hu/">sxc.hu</a> and <a href="http://www.flickr.com/creativecommons/">Flickr&#8217;s Creative Commons search</a>.</p>
 <h3>Flash, frames, and AJAX are like pictures, but worse.</h3>
-<p><img class="size-thumbnail wp-image-77 alignleft" title="Content is king" src="http://nfriedly.com/techblog/wp-content/uploads/2009/06/three_diamonds-150x150.jpg" alt="Content is king" width="150" height="150" />Flash, frames, and AJAX don&#8217;t have an alt tag, so a search engine has no idea what they&#8217;re there for.</p>
+<p><img class="size-thumbnail wp-image-77 alignleft" title="Content is king" src="/techblog/wp-content/uploads/2009/06/three_diamonds-150x150.jpg" alt="Content is king" width="150" height="150" />Flash, frames, and AJAX don&#8217;t have an alt tag, so a search engine has no idea what they&#8217;re there for.</p>
 <p>If you use flash, try to have a reasonable amount of text around it to explain what&#8217;s going on.</p>
 <p>Don&#8217;t use frames unless you really have to.</p>
 <p>AJAX is great, but it breaks the way browsers traditionally work. You need to realize this and account for it in your site design and SEO plans. Also, you alienate some portion of your visitors when your site requires JavaScript and AJAX to work.</p>

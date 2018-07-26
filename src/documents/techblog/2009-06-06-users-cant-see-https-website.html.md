@@ -15,7 +15,7 @@ tags:
   - ssl
   - tls
 ---
-<img class="alignleft size-thumbnail wp-image-41" title="lock_small" src="http://nfriedly.com/techblog/wp-content/uploads/2009/06/lock_small-128x150.jpg" alt="lock_small" width="128" height="150" />Recently a client of mine had me pulling my hair out trying to figure out why some users couldn&#8217;t see the the secure https sections of their website.
+<img class="alignleft size-thumbnail wp-image-41" title="lock_small" src="/techblog/wp-content/uploads/2009/06/lock_small-128x150.jpg" alt="lock_small" width="128" height="150" />Recently a client of mine had me pulling my hair out trying to figure out why some users couldn&#8217;t see the the secure https sections of their website.
 
 As it turned out,  the server had been upgraded to TLS only for PCI-compliance, and some users had TLS disabled.
 

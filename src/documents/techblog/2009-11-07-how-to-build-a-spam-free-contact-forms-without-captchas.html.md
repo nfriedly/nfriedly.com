@@ -17,7 +17,7 @@ tags:
   - ux
 featured: true
 ---
-<img class="alignright size-thumbnail wp-image-39" title="data_security_3" alt="data_security_3" src="http://nfriedly.com/techblog/wp-content/uploads/2009/06/data_security_3-150x150.jpg" width="150" height="150" />Most anti-spam methods used by websites today are annoying at best. They use impossible-to-read captcha images, or they make users jump through some kind of hoop to get the email address instead of just clicking on it. **This can mean lost sales and opportunities for you, because each hurdle turns away more users. **
+<img class="alignright size-thumbnail wp-image-39" title="data_security_3" alt="data_security_3" src="/techblog/wp-content/uploads/2009/06/data_security_3-150x150.jpg" width="150" height="150" />Most anti-spam methods used by websites today are annoying at best. They use impossible-to-read captcha images, or they make users jump through some kind of hoop to get the email address instead of just clicking on it. **This can mean lost sales and opportunities for you, because each hurdle turns away more users. **
 
 This article looks at how to use some simple HTML, CSS, & Javascript to protect your private information without making your guests jump through hoops.
 
@@ -218,7 +218,7 @@ A typical installation would be around $500 for me to perform it, but you can li
 
 ## About the Author
 
-[<img class=" wp-image-549 alignleft" alt="Nathan Friedly in Cincinnati during the winter" src="http://nfriedly.com/techblog/wp-content/uploads/2009/11/Nathan-Cincinnati-winter.jpg" width="131" height="175" />][3] 
+[<img class=" wp-image-549 alignleft" alt="Nathan Friedly in Cincinnati during the winter" src="/techblog/wp-content/uploads/2009/11/Nathan-Cincinnati-winter.jpg" width="131" height="175" />][3]
 [Nathan][3] is an experienced Web Developer with a sharp eye for security and a zeal for User Experience. 
 He currently works primarily on JavaScript and Node.js.
 
