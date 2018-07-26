@@ -76,9 +76,9 @@ function loadBackupCSS(url) {
 <p><img src="http://farm8.staticflickr.com/7020/6668518895_0700a12958_m.jpg" width="240" height="160" alt="Apache takeoff" title="The other Apache, image courtesy of The U.S. Army" class="right" />I often open a new tab in my Terminal to run an <a href="http://ant.apache.org/">Ant</a> task, and often as not I forget to <code>cd</code> into the correct directory first and so I am greeted with this error:</p>
 <pre class="highlight"><code class="hljs armasm">$ ant compile
 <span class="hljs-keyword">Buildfile: </span><span class="hljs-keyword">build.xml </span>does not exist!
-<span class="hljs-keyword">Build </span>failed
-</code></pre><p>On my system, there&#8217;s only one main project that uses ant, so I almost always intend for ant tasks to be run against that project&#8217;s build.xml. So, I created a function that makes ant tasks &#8220;just work&#8221; no matter what directory I am in.</p>
+<span class="hljs-keyword">Build </span>failed</code></pre><p>On my system, there&#8217;s only one main project that uses ant, so I almost always intend for ant tasks to be run against that project&#8217;s build.xml. So, I created a function that makes ant tasks &#8220;just work&#8221; no matter what directory I am in.</p>
 <!--more-->
+
 <h3 id="the-code">The code</h3>
 <p>First you&#8217;ll need to edit your <code>.profile</code> file. To do so, run the following command:</p>
 <p><code>nano ~/.profile</code></p>
@@ -101,8 +101,7 @@ function loadBackupCSS(url) {
 
 <span class="hljs-comment"># reset ant to avoid loops if you ever run `source ~/.profile` again</span>
 <span class="hljs-built_in">alias</span> ant=`<span class="hljs-built_in">which</span> ant`
-<span class="hljs-built_in">alias</span> ant=<span class="hljs-string">"magic-ant"</span>
-</code></pre>
+<span class="hljs-built_in">alias</span> ant=<span class="hljs-string">"magic-ant"</span></code></pre>
 <p>Press <code>[Control]-O</code> then <code>[Enter]</code> to save and <code>[Control]-X</code> to exit nano.</p>
 <p>Lastly, run this command to import your changes (or just close and reopen your terminal):</p>
 <p><code>source ~/.profile</code></p>

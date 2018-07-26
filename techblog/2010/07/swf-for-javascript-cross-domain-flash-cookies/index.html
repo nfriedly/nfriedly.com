@@ -73,10 +73,11 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<p><img class="right" title="325990_chocolate_chip_cookies_2" src="http://nfriedly.com/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.</p>
+<p><img class="right" title="325990_chocolate_chip_cookies_2" src="/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.</p>
 <p>However, I was surprisingly unable to find any complete library or how-to guide for connecting flash cookies to javascript. So I dusted off my flash skills and built one, and and now you get to enjoy the fruit of my labor:</p>
 <!--more-->
-<div class="well well-large"><p><a href="http://github.com/nfriedly/Javascript-Flash-Cookies/zipball/master"><i class="fa fa-download"></i> Download the swf, js, and source code from github</a></p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre class="highlight"><code class="hljs mipsasm"><span class="hljs-keyword">bower </span><span class="hljs-keyword">install </span><span class="hljs-keyword">javascript-flash-cookies</span></code></pre></div>
+
+<div class="well well-large"><p>[<i class="fa fa-download"></i> Download the swf, js, and source code from github][zip]</p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre class="highlight"><code class="hljs mipsasm"><span class="hljs-keyword">bower </span><span class="hljs-keyword">install </span><span class="hljs-keyword">javascript-flash-cookies</span></code></pre></div>
 
 
 <p>This is an .swf file that communicates with JavaScript via flash&#8217;s <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/external/ExternalInterface.html">ExternalInerface</a> to read and write to a Local <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/net/SharedObject.html">SharedObject</a> (LSO). Essentially, it&#8217;s cross-domain cookies for javascript.</p>
@@ -98,7 +99,6 @@ function loadBackupCSS(url) {
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dataInput"</span> /&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"saveBtn"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Save"</span> /&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"status"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-
 </code></pre>
 <h4 id="and-the-javascript">And The JavaScript</h4>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// wait until the page has finished loading before starting</span>
@@ -158,7 +158,6 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
     });
 
 });
-
 </code></pre>
 <h3 id="cross-domain-usage">Cross-domain usage</h3>
 <p>A copy of storage.swf located on one domain may be embedded on pages from one or more other domains, allowing cross-domain cookie access.</p>

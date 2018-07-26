@@ -73,10 +73,11 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<p><img class="alignleft" alt="" src="http://nfriedly.com/img/portfolio/facebook.png" />I&#8217;ve seen a lot of confusion about this lately, so I thought I&#8217;d make a quick writeup to explain how facebook does it. (I&#8217;ll also give a quick tip on how you can do it yourself.)</p>
+<p><img class="alignleft" alt="" src="/img/portfolio/facebook.png" />I&#8217;ve seen a lot of confusion about this lately, so I thought I&#8217;d make a quick writeup to explain how facebook does it. (I&#8217;ll also give a quick tip on how you can do it yourself.)</p>
 <h3 id="what-facebook-does">What Facebook Does</h3>
 <p>Facebook is in a unique position compared to many developers looking to set cross domain cookies: The user visits both facebook.com and the other website.</p>
 <!--more-->
+
 <p><img src="http://farm9.staticflickr.com/8456/7890051894_64a3a7796f.jpg" alt="Picture frames" title="Framed!" class="right" /> Facebook never actually sets cookies cross-domain, they only read cookies cross-domain. They set cookies on facebook.com when the user visits facebook.com and they set cookies on the other example.com (or any other website) when the user visits example.com.<sup><a href="#note-1">1</a></sup></p>
 <p>Doing things this way avoids all of the browser security issues because cookies that were already set when the user visited facebook.com can still be read when example.com loads facebook.com in an iframe. This is worth repeating: <strong>Cookies can be read in an iframe if they were set outside of the iframe</strong>.<sup><a href="#note-2">2</a></sup></p>
 <h3 id="what-about-when-the-user-is-not-logged-into-facebook-">What about when the user is not logged into Facebook?</h3>

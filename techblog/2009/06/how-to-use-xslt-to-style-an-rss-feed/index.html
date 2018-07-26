@@ -77,6 +77,7 @@ function loadBackupCSS(url) {
 <p>Unfortunately, most browsers think they know better and go off and do their own thing on RSS feeds.</p>
 <p>We&#8217;re going to look at how and which browsers can be brought into line, and how to use XSLT to improve the look of your RSS feed in those browsers.</p>
 <!--more-->
+
 <h2 id="the-rss-problem">The RSS problem</h2>
 <p>In most browsers, XML and XSLT are supported in every single case *except* RSS. By default, Internet Explorer, Firefox, Safari, and Opera all ignore XSLT files and do their own thing with RSS. In fact, Google Chrome is the *only* browser I tested that got it right without tinkering.</p>
 <p>To their credit, Microsoft at least gave their users the option to turn off the &#8220;feature&#8221;. No other browser even gives this option.</p>
@@ -147,8 +148,7 @@ $rss = preg_replace(<span class="hljs-string">'/&lt;\?xml-stylesheet([^?]|\?(?!&
 <span class="hljs-comment">//finally, pass along the content</span>
 <span class="hljs-keyword">echo</span> $rss;
 
-<span class="hljs-meta">?&gt;</span>
-</code></pre>
+<span class="hljs-meta">?&gt;</span></code></pre>
 <p>The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source by looking at <a href="http://nfriedly.com/stuff/rss/xsl.php">http://nfriedly.com/stuff/rss/xsl.php</a>. You could simply save that as an .xml file and have a working copy.</p>
 <p>You can also view the <a href="http://nfriedly.com/stuff/rss/theme/style.css">CSS</a> and <a href="http://nfriedly.com/stuff/rss/scripts.js">Javascript</a> used to make everything look nice.</p>
 <h2 id="hire-me-for-web-development">Hire me for web development</h2>

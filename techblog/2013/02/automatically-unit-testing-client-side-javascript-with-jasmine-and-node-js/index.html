@@ -73,14 +73,14 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<p><img src="http://nfriedly.com/techblog/wp-content/uploads/2013/02/jasmine_flower.png" alt="jasmine_logo" width="91" height="90" class="alignleft left size-full wp-image-478" /> At <a href="http://sociablelabs.com">Sociable Labs</a>, we have hundreds JavaScript unit tests that run on every checkin. They output a <a href="http://www.junit.org/">JUnit</a>-compatible report that <a href="https://www.atlassian.com/software/bamboo/overview">Bamboo</a> can use to track stats and email us if anything failed. Here&#8217;s how we do it.</p>
+<p><img src="/techblog/wp-content/uploads/2013/02/jasmine_flower.png" alt="jasmine_logo" width="91" height="90" class="alignleft left size-full wp-image-478" /> At <a href="http://sociablelabs.com">Sociable Labs</a>, we have hundreds JavaScript unit tests that run on every checkin. They output a <a href="http://www.junit.org/">JUnit</a>-compatible report that <a href="https://www.atlassian.com/software/bamboo/overview">Bamboo</a> can use to track stats and email us if anything failed. Here&#8217;s how we do it.</p>
 <!--more-->
+
 <p>Our JavaScript &#8220;build&#8221; process is basically a script that concatenated all of our JS files into a single big file.<sup><a href="#note-1">[1]</a></sup> We added a flag to that process that would skip the <code>init.js</code> file and instead add a <code>module.exports</code> statement for easy inclusion in <a href="http://nodejs.org/">node.js</a>.</p>
 <p>With this setup, we can quickly run hundreds of <a href="http://pivotal.github.com/jasmine/">jasmine</a> specs from the command line in any environment we need &#8211; no browser necessary. Our full suite currently takes about 5 seconds to run.</p>
 <p>To start off, we installed the <a href="https://npmjs.org/package/jasmine-node">jasmine-node</a> and <a href="https://npmjs.org/package/jsdom">jsdom</a> NPM modules:</p>
 <pre class="highlight"><code class="hljs crmsh">npm install jasmine-<span class="hljs-keyword">node</span>
-<span class="hljs-title">npm</span> install jsdom
-</code></pre><p>This is the relevant part of our directory structure, the node_modules folder is top-level:</p>
+<span class="hljs-title">npm</span> install jsdom</code></pre><p>This is the relevant part of our directory structure, the node_modules folder is top-level:</p>
 <pre class="highlight"><code class="hljs haml">build/
 node_modules/
  -<span class="ruby"> ...
@@ -91,8 +91,7 @@ node_modules/
 </span>   -<span class="ruby"> install_jsdom.sh
 </span> -<span class="ruby"> gallery_spec.js
 </span> -<span class="ruby"> ajax_spec.js
-</span> -<span class="ruby"> etc.
-</span></code></pre><p><code>environment/jasmine_helper.js</code> is where most of the magic is:</p>
+</span> -<span class="ruby"> etc.</span></code></pre><p><code>environment/jasmine_helper.js</code> is where most of the magic is:</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> jsdom = <span class="hljs-built_in">require</span>(<span class="hljs-string">"jsdom"</span>);
 
 <span class="hljs-built_in">window</span> = jsdom.jsdom(<span class="hljs-string">'&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;div id="rondavu_container"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</span>).createWindow();
@@ -107,8 +106,7 @@ global.window = <span class="hljs-built_in">window</span>;
 
 global.document = <span class="hljs-built_in">window</span>.document;
 
-<span class="hljs-keyword">var</span> R = global.R = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../build/rondavu_test_mode.js'</span>);
-</code></pre>
+<span class="hljs-keyword">var</span> R = global.R = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../build/rondavu_test_mode.js'</span>);</code></pre>
 <p>First we create a jsdom environment and verify that it works. (We&#8217;ll come back to that in a minute). Next we make the <code>window</code> and <code>document</code> variables global. Finally we include the slightly modified version of our compiled JS and set it in a global variable so that tests can hit it&#8217;s internal methods. Jasmine always runs all helper files before the spec files, so the global variables are guaranteed to exist by the time our tests run.</p>
 <p><code>util/install_jsdom.sh</code> is necessary because one of jsdom&#8217;s dependencies, contextify, installs differently on different operating systems. Because of that, we added node_modules/jsdom to the <code>.gitignore</code> file and run this script before running the js unit tests:</p>
 <pre class="highlight"><code class="hljs bash"><span class="hljs-meta">#!/bin/bash
@@ -125,8 +123,7 @@ LS_RESULTS=$(npm --parseable ls jsdom 2&gt;/dev/null | tr -d <span class="hljs-s
     <span class="hljs-built_in">echo</span> <span class="hljs-string">"jsdom is already installed, skipping"</span>
 <span class="hljs-keyword">else</span>
     npm install jsdom
-<span class="hljs-keyword">fi</span>
-</code></pre>
+<span class="hljs-keyword">fi</span></code></pre>
 <p>Note: the <em>correct</em> way to do the above is to check in the source and run <code>npm rebuild</code>. However, at the time I put this together, there was a bug that prevented that from working.</p>
 <p>Next up, the <code>*_spec.js</code> files. Basically, any file that ends in &#8220;_spec.js&#8221; will be run automatically by jasmine-node. These are just basic <a href="http://pivotal.github.com/jasmine/">jasmine</a> test suites. </p>
 <p>If you already have some jasmine specs written, theres&#8217;s a good chance they&#8217;ll just work. If not, now&#8217;s a great time to start <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
@@ -172,8 +169,7 @@ LS_RESULTS=$(npm --parseable ls jsdom 2&gt;/dev/null | tr -d <span class="hljs-s
     });
 
     <span class="hljs-comment">// etc.</span>
-});
-</code></pre>
+});</code></pre>
 <p>Running the tests is easy: </p>
 <ol>
 <li>Compile your JS file &#8211; <code>build/rondavu_test_mode.js</code> in our case.</li>
@@ -204,8 +200,7 @@ LS_RESULTS=$(npm --parseable ls jsdom 2&gt;/dev/null | tr -d <span class="hljs-s
             <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--junitreport"</span>/&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--output"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${build.test.unit.output}/TEST-javascript-results.xml"</span>/&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">exec</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
-</code></pre>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span></code></pre>
 <p>And there you have it. Happy testing!</p>
 <hr style="margin: 30px 0;" />
 
