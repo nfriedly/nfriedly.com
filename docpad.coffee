@@ -80,7 +80,7 @@ module.exports =
 				"/pagerank.js": "http://incline.digital"
 
 			# onsite, but easier this way
-				"/files/Nathan-Friedly-Resume.pdf": "http://nfriedly.com/Nathan-Friedly-Resume.pdf"
+				"/files/Nathan-Friedly-Resume.pdf": "https://www.nfriedly.com/Nathan-Friedly-Resume.pdf"
 
 		cleanurls:
 			trailingSlashes: true # this is to avoid having github pages redirect users from the cloudfront domain to the github domain just to add the slash to the end of the url.
@@ -202,7 +202,7 @@ module.exports =
 
 
 		site:
-			url: "http://nfriedly.com"
+			url: "https://www.nfriedly.com"
 
 #
 #			posts.renderPreviews = function() {
