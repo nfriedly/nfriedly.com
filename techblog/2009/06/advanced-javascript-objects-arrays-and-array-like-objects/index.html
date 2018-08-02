@@ -181,7 +181,7 @@ takesTwoParams(<span class="hljs-string">"one"</span>,<span class="hljs-string">
 <h3 id="so-what-can-you-do-">So what can you do?</h3>
 <p>Well you could make your own <code>join()</code> function, but that adds a lot of unnecessary overhead to your code because it has to loop over everything. If only there were a quick way to get an array out of an array like object&#8230;</p>
 <p>It turns out there is.</p>
-<p>The array functions can be called on non-array objects as long as you know where to find the function (usually they&#8217;re attached to the array, but this isn&#8217;t an array remember <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>The array functions can be called on non-array objects as long as you know where to find the function (usually they&#8217;re attached to the array, but this isn&#8217;t an array remember ;)</p>
 <p><code>Prototype</code> to the win:</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">takesTwoParams</span>(<span class="hljs-params">a, b</span>)</span>{
     <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>);
@@ -211,7 +211,6 @@ takesTwoParams(<span class="hljs-string">"one"</span>,<span class="hljs-string">
         <span class="hljs-keyword">return</span> arr;
     }
 }</code></pre>
-<p>See an example here: <a href="http://nfriedly.com/demos/ie-nodelist-to-array">http://nfriedly.com/demos/ie-nodelist-to-array</a>.</p>
 <p>Second, arrays are objects, so you can do this, but it can get you some serious inconsistencies:</p>
 <pre class="highlight"><code class="hljs javascript">arr = [];
 arr[<span class="hljs-number">0</span>] = <span class="hljs-string">"first element"</span>; <span class="hljs-comment">// adds item to the array</span>
@@ -235,18 +234,18 @@ arr.length; <span class="hljs-comment">// still returns 1 !</span>
     <span class="hljs-keyword">this</span>.length = <span class="hljs-keyword">this</span>.arr.length;
 };
 
-ArrayContainer.prototype.add=  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
-    index = <span class="hljs-keyword">this</span>.arr.length;
+ArrayContainer.prototype.add = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
+    <span class="hljs-keyword">var</span> index = <span class="hljs-keyword">this</span>.arr.length;
     <span class="hljs-keyword">this</span>.arr[index] = item;
     <span class="hljs-keyword">this</span>.length = <span class="hljs-keyword">this</span>.arr.length;
     <span class="hljs-keyword">return</span> index;
 };
 
-ArrayContainer.prototype.get=  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">index</span>)</span>{
+ArrayContainer.prototype.get = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">index</span>)</span>{
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.arr[index];
 };
 
-ArrayContainer.prototype.forEach=  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn</span>)</span>{
+ArrayContainer.prototype.forEach = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn</span>)</span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.arr.forEach) <span class="hljs-keyword">this</span>.arr.forEach(fn);<span class="hljs-comment">// use native code if it's there</span>
     <span class="hljs-keyword">else</span> {
         <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.arr){
@@ -258,8 +257,8 @@ ArrayContainer.prototype.forEach=  <span class="hljs-function"><span class="hljs
 <span class="hljs-keyword">var</span> mySuperDooperArray = <span class="hljs-keyword">new</span> ArrayContainer();</code></pre>
 <p>Now that your array is (somewhat) protected on the inside, you can loop through it&#8217;s items with <code>forEach()</code> and know that they will match it&#8217;s length. You can also add arbitrary properties to <code>ArrayContainer</code> or <code>mySuperDooperArray</code> and they <strong>won&#8217;t</strong> get pulled into your <code>forEach()</code> loop.</p>
 <p>This example could be extended to completely protect the array if the need arose. </p>
-<h2 id="an-even-better-solution-hire-a-javascript-expert-">An Even Better Solution: <a href="http://nfriedly.com/webdev">Hire a javascript expert</a>.</h2>
-<p>nFriedly Web Development is a top ranked <a href="http://nfriedly.com/webdev/javascript">Javascript and AJAX ninja</a> with an extensive portfolio of proven results. I can bring your project to life and make it run faster than you ever imagined.  <a href="http://nfriedly.com/contact">Get in touch</a> with me or get a free <a href="http://nfriedly.com/estimate">instant estimate</a> for new projects.</p>
+<h2 id="an-even-better-solution-hire-a-javascript-expert-">An Even Better Solution: <a href="/portfolio">Hire a javascript expert</a>.</h2>
+<p>Nathan Friedly is a top ranked <a href="/portfolio">Javascript and AJAX ninja</a> with an extensive portfolio of proven results. He can bring your project to life and make it run faster than you ever imagined.  <a href="#contact">Get in touch</a> today!</p>
 
 
 
@@ -271,7 +270,7 @@ ArrayContainer.prototype.forEach=  <span class="hljs-function"><span class="hljs
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 contact">
-				<h3>Contact Nathan</h3>
+				<h3 id="contact">Contact Nathan</h3>
 
 				<ul>
 					<li>

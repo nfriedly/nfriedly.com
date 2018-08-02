@@ -99,7 +99,7 @@ function loadBackupCSS(url) {
 <p>Because of the early decision process, we can insert 512 characters of white space in between the <code>&lt;?xml ?&gt;</code> declaration and the opening <code>&lt;rss&gt;</code> tag. Firefox is then &#8220;tricked&#8221; into doing the right thing and rendering the feed correctly.</p>
 <h2 id="working-around-it">Working around it</h2>
 <p>Although not practical in most cases currently, I&#8217;ve included an example of a script that will take any RSS feed and add a style sheet to it.  It includes the hack to work in firefox and instructions for enabling it in Internet Explorer.</p>
-<p><a href="http://nfriedly.com/stuff/rss/?url=http://nfriedly.com/techblog/feed/">http://nfriedly.com/stuff/rss/?url=http://nfriedly.com/techblog/feed/</a></p>
+<p><a href="https://github.com/nfriedly/rss-xslt">https://github.com/nfriedly/rss-xslt</a></p>
 <p>Code for index.php:</p>
 <pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 
@@ -149,10 +149,10 @@ $rss = preg_replace(<span class="hljs-string">'/&lt;\?xml-stylesheet([^?]|\?(?!&
 <span class="hljs-keyword">echo</span> $rss;
 
 <span class="hljs-meta">?&gt;</span></code></pre>
-<p>The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source by looking at <a href="http://nfriedly.com/stuff/rss/xsl.php">http://nfriedly.com/stuff/rss/xsl.php</a>. You could simply save that as an .xml file and have a working copy.</p>
-<p>You can also view the <a href="http://nfriedly.com/stuff/rss/theme/style.css">CSS</a> and <a href="http://nfriedly.com/stuff/rss/scripts.js">Javascript</a> used to make everything look nice.</p>
+<p>The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source. You could simply save that as an .xml file and have a working copy.</p>
+<p>You can also view the <a href="/stuff/rss/theme/style.css">CSS</a> and <a href="/stuff/rss/scripts.js">Javascript</a> used to make everything look nice.</p>
 <h2 id="hire-me-for-web-development">Hire me for web development</h2>
-<p>Need an <a href="http://nfriedly.com/webdev">expert web programmer</a> to research and solve some off-the-wall problem like this? I&#8217;m available. I&#8217;m good solving run-of-the-mill problems too &#8211; <a href="http://nfriedly.com/webdev/javascript">Javascript and AJAX development</a> is my specialty. <a href="http://nfriedly.com/contact">Get in touch with me</a> for more information and a free quote.</p>
+<p>Need an <a href="/portfolio">expert web programmer</a> to research and solve some off-the-wall problem like this? I&#8217;m available. I&#8217;m good solving run-of-the-mill problems too &#8211; <a href="/portfolio/#javascript">Javascript and AJAX development</a> is my specialty. <a href="#contact">Get in touch with me</a> for more information and a free quote.</p>
 <p> *[XSLT]: Extensible Stylesheet Language Transformations</p>
 
 
@@ -169,7 +169,7 @@ $rss = preg_replace(<span class="hljs-string">'/&lt;\?xml-stylesheet([^?]|\?(?!&
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 contact">
-				<h3>Contact Nathan</h3>
+				<h3 id="contact">Contact Nathan</h3>
 
 				<ul>
 					<li>

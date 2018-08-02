@@ -84,10 +84,10 @@ function loadBackupCSS(url) {
 <h2 id="work-arounds">Work Arounds</h2>
 <p>There are a number of workarounds including iframes, java applets, and flash, but here&#8217;s a couple of the more common methods.</p>
 <h3 id="-img-src-http-www-sxc-hu-pic-m-c-cw-cwmgary-486891_all_lined_up-jpg-alt-line-em-up-class-alignright-proxying-requests"><img src="http://www.sxc.hu/pic/m/c/cw/cwmgary/486891_all_lined_up.jpg" alt="Line em up!" class="alignright" />Proxying Requests</h3>
-<p>The way proxying works is to have a file on your server that grabs the data from a remote server and passes it along. Then for javascript, the data appears to be coming from your server, even though it actually originated at a remote server. This is what the Fancy part of my <a href="http://nfriedly.com/demos/twitter">twitter demo</a> does.</p>
+<p>The way proxying works is to have a file on your server that grabs the data from a remote server and passes it along. Then for javascript, the data appears to be coming from your server, even though it actually originated at a remote server. This is what the Fancy part of my <a href="/demos/twitter">twitter demo</a> does.</p>
 <p>We&#8217;ll look at using a proxy to get remote data in a future article.</p>
 <h3 id="remotely-hosted-javascript-files">Remotely hosted javascript files</h3>
-<p>Scripts stored on other websites can be included on a page. As long as the script doesn&#8217;t need to call home after the initial load, everything works great. This is how a basic twitter function works: you load a script from twitter&#8217;s website and it communicates with your site via the callback feature. This is what the Simple part of my <a href="http://nfriedly.com/demos/twitter">twitter demo</a> does.</p>
+<p>Scripts stored on other websites can be included on a page. As long as the script doesn&#8217;t need to call home after the initial load, everything works great. This is how a basic twitter function works: you load a script from twitter&#8217;s website and it communicates with your site via the callback feature. This is what the Simple part of my <a href="/demos/twitter">twitter demo</a> does.</p>
 <p>Here is a very basic page that uses Twitter&#8217;s callback feature and a remotely loaded javascript file to show my twitter status &#8211; remote data &#8211; on my website, by interacting with local javascript.</p>
 <pre class="highlight"><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>  <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-US"</span>&gt;</span>
@@ -125,7 +125,7 @@ function loadBackupCSS(url) {
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
-<p>You can see a live copy of this code at <a href="http://nfriedly.com/demos/twitter-extra-simple">http://nfriedly.com/demos/twitter-extra-simple</a>.</p>
+<p>You can see a live copy of this code at &lt;/demos/twitter-extra-simple&gt;.</p>
 <h2 id="digging-into-twitter-s-callback-method">Digging into Twitter&#8217;s callback method</h2>
 <p>Below is a trimmed down example of what Twitter&#8217;s API sends back when we make the request in the example above.</p>
 showStatus([{"in_reply_to_screen_name":null,"text":" [ Lots of information that I'm omitting because it's not the point. ] "]);
@@ -140,7 +140,7 @@ showStatus([{"in_reply_to_screen_name":null,"text":" [ Lots of information that 
 <h3 id="it-s-a-beautiful-thing">It&#8217;s a beautiful thing</h3>
 <p>I hope this gave you a little bit better understanding of how AJAX security works and how Twitter gets around it and is still able to interact with your site. In the future, I&#8217;ll have an article on how &#8220;traditional&#8221; callbacks work that will use jQuery and more AJAX to dive a bit deeper into the topic.</p>
 <h2 id="javascript-ninja-for-hire">Javascript Ninja for Hire</h2>
-<p>I have <a href="http://nfriedly.com/portfolio">extensive experience</a> working with AJAX, Twitter, and related technologies. I&#8217;m just the man you need to make your next <a href="http://nfriedly.com/webdev">javascript development</a> project shine!</p>
+<p>I have <a href="/portfolio">extensive experience</a> working with AJAX, Twitter, and related technologies. I&#8217;m just the man you need to make your next <a href="/portfolio">javascript development</a> project shine!</p>
 
 
 
@@ -156,7 +156,7 @@ showStatus([{"in_reply_to_screen_name":null,"text":" [ Lots of information that 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 contact">
-				<h3>Contact Nathan</h3>
+				<h3 id="contact">Contact Nathan</h3>
 
 				<ul>
 					<li>
