@@ -85,8 +85,6 @@ function showStatus(json){
 </html>
 ```
 
-You can see a live copy of this code at </demos/twitter-extra-simple>.
-
 ## Digging into Twitter&#8217;s callback method
 
 Below is a trimmed down example of what Twitter&#8217;s API sends back when we make the request in the example above.
