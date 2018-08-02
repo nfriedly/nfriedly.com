@@ -66,7 +66,7 @@ Flash photo by <a href="http://www.flickr.com/photos/jdhancock/4698846940/">JD H
  [2]: https://developer.mozilla.org/en-US/docs/DOM/window.postMessage
  [3]: http://blogs.msdn.com/b/ieinternals/archive/2009/09/16/bugs-in-ie8-support-for-html5-postmessage-sessionstorage-and-localstorage.aspx
  [4]: http://easyxdm.net/
- [5]: http://nfriedly.com/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/
+ [5]: /techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/
  [6]: http://developers.facebook.com/docs/reference/javascript/
  [7]: http://anantgarg.com/2010/02/18/cross-domain-cookies-in-safari/
  [8]: http://sociablelabs.com

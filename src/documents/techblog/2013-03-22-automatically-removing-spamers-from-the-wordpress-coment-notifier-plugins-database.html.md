@@ -66,7 +66,7 @@ Palm tree photo by <a href="http://secure.flickr.com/photos/8438819@N03/51256259
 Martini photo by <a href="http://www.flickr.com/photos/seriouslyphotographic/507111698/">Seriously Photographic (Jim)</a>
 </small></p>
 
- [1]: http://nfriedly.com/techblog/2013/03/automatically-removing-spamers-from-the-wordpress-coment-notifier-plugins-database/
+ [1]: /techblog/2013/03/automatically-removing-spamers-from-the-wordpress-coment-notifier-plugins-database/
  [2]: http://wordpress.org/
  [3]: http://www.satollo.net/plugins/comment-notifier
  [4]: http://akismet.com/

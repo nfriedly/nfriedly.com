@@ -173,7 +173,7 @@ Well you could make your own `join()` function, but that adds a lot of unnecessa
 
 It turns out there is.
 
-The array functions can be called on non-array objects as long as you know where to find the function (usually they&#8217;re attached to the array, but this isn&#8217;t an array remember <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> 
+The array functions can be called on non-array objects as long as you know where to find the function (usually they&#8217;re attached to the array, but this isn&#8217;t an array remember ;)
 
 `Prototype` to the win:
 
@@ -219,8 +219,6 @@ function hybridToArray(nodes){
 }
 ```
 
-See an example here: <http://nfriedly.com/demos/ie-nodelist-to-array>.
-
 Second, arrays are objects, so you can do this, but it can get you some serious inconsistencies:
 
 ``` javascript
@@ -252,18 +250,18 @@ var ArrayContainer = function(arr){
 	this.length = this.arr.length;
 };
 
-ArrayContainer.prototype.add=  function(item){
-	index = this.arr.length;
+ArrayContainer.prototype.add = function(item){
+	var index = this.arr.length;
 	this.arr[index] = item;
 	this.length = this.arr.length;
 	return index;
 };
 
-ArrayContainer.prototype.get=  function(index){
+ArrayContainer.prototype.get = function(index){
 	return this.arr[index];
 };
 
-ArrayContainer.prototype.forEach=  function(fn){
+ArrayContainer.prototype.forEach = function(fn){
 	if (this.arr.forEach) this.arr.forEach(fn);// use native code if it's there
 	else {
 		for(i in this.arr){
@@ -281,13 +279,12 @@ This example could be extended to completely protect the array if the need arose
 
 ## An Even Better Solution: [Hire a javascript expert][5].
 
-nFriedly Web Development is a top ranked [Javascript and AJAX ninja][6] with an extensive portfolio of proven results. I can bring your project to life and make it run faster than you ever imagined.  [Get in touch][7] with me or get a free [instant estimate][8] for new projects.
+Nathan Friedly is a top ranked [Javascript and AJAX ninja][6] with an extensive portfolio of proven results. He can bring your project to life and make it run faster than you ever imagined.  [Get in touch][7] today!
 
  [1]: http://www.flickr.com/photos/stawarz/2492636763/
  [2]: http://www.flickr.com/photos/repoort/2645497916/
  [3]: http://dean.edwards.name/weblog/2006/11/hooray/
  [4]: http://webreflection.blogspot.com/2008/03/sorry-dean-but-i-subclassed-array-again.html
- [5]: http://nfriedly.com/webdev
- [6]: http://nfriedly.com/webdev/javascript
- [7]: http://nfriedly.com/contact
- [8]: http://nfriedly.com/estimate
+ [5]: /portfolio
+ [6]: /portfolio
+ [7]: #contact

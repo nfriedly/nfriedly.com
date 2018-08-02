@@ -87,5 +87,5 @@ tags:
 <p>I use <a href="http://www.google.com/analytics/">Google Analytics</a> and <a href="http://www.analog.cx/">analog</a>. Google Analytics gives some amazingly in-depth reports, but it can&#8217;t catch everything. PDF&#8217;s, Images, and Users with javascript disabled all slip right past Google Analytics, but nothing gets past analog.</p>
 <h3>Finally, have a call to action.</h3>
 <p>All the marketing in the world doesn&#8217;t get you a thing if visitors see your website and say &#8220;meh.&#8221; Use A/B testing and other methods to optimize your site&#8217;s call to action. The goal is to convert the largest number of visitors into sales as possible.</p>
-<h2><a href="http://nfriedly.com/webdev">Search Engine Optimization</a></h2>
-<p>nFriedly Web Development has years of experience with SEO &amp; SEM as well as other forms of marketing including Pay Per Click (PPC) campaigns, newsletters, and branding. <a href="http://nfriedly.com/contact">Get in touch</a> for a free quote on how I can help you <strong>get a good google ranking and take your traffic through the roof</strong>.</p>
+<h2><a href="/webdev">Search Engine Optimization</a></h2>
+<p>nFriedly Web Development has years of experience with SEO &amp; SEM as well as other forms of marketing including Pay Per Click (PPC) campaigns, newsletters, and branding. <a href="/contact">Get in touch</a> for a free quote on how I can help you <strong>get a good google ranking and take your traffic through the roof</strong>.</p>

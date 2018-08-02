@@ -187,5 +187,5 @@ Need any help [optimizing the Javascript and AJAX on your website][5]? Get in to
 
  [1]: http://www.flickr.com/photos/fleur-design/308974073/
  [3]: http://www.nicollet.net/2009/06/the-truth-of-javascript/
- [4]: http://nfriedly.com/portfolio
- [5]: http://nfriedly.com/portfolio#javascript
+ [4]: /portfolio
+ [5]: /portfolio#javascript

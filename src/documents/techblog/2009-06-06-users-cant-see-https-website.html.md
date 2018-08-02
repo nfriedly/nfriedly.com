@@ -72,5 +72,5 @@ I have *no idea* why that would ever get unchecked, but apparently it happens. 
 
 I have significant experience in [e-commerce][1] and other security heavy areas.  If you need [secure web development][1], I can probably help you out.  I understand https from the high level implementation right down to the [bits and bytes][2] (.doc file).
 
- [1]: http://nfriedly.com/webdev
- [2]: http://nfriedly.com/stuff/Nathan_Friedly_SSL_TLS.doc
+ [1]: /portfolio
+ [2]: /stuff/Nathan_Friedly_SSL_TLS.doc

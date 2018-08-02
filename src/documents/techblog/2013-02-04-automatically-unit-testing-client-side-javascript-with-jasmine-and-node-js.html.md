@@ -88,7 +88,7 @@ Note: the *correct* way to do the above is to check in the source and run `npm r
 
 Next up, the `*_spec.js` files. Basically, any file that ends in &#8220;_spec.js&#8221; will be run automatically by jasmine-node. These are just basic [jasmine][6] test suites. 
 
-If you already have some jasmine specs written, theres&#8217;s a good chance they&#8217;ll just work. If not, now&#8217;s a great time to start <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> 
+If you already have some jasmine specs written, theres&#8217;s a good chance they&#8217;ll just work. If not, now&#8217;s a great time to start ;)
 
 Here&#8217;s a quick example from one of ours:
 
@@ -178,7 +178,7 @@ And there you have it. Happy testing!
 <hr style="margin: 30px 0;" />
 
 <sup id="note-1">[1]</sup> It&#8217;s actually a bit more complex that that &#8211; we generate a separate file for each customer with their configuration and whatever features they use. </p> 
-Also, we&#8217;ve recently switched from our custom js build script to [require.js][10] and [jam.js][11], but we&#8217;re still working out the final kinks. Expect a followup post once we&#8217;re fully confident with the new setup <img src='http://nfriedly.com/techblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </i>
+Also, we&#8217;ve recently switched from our custom js build script to [require.js][10] and [jam.js][11], but we&#8217;re still working out the final kinks. Expect a followup post once we&#8217;re fully confident with the new setup ;) </i>
 
 <p class="meta"><small class="photocredit"><b>Photo Credits:</b> Header photo by <a href="http://www.flickr.com/photos/calliope/2243034754/">liz west</a>.</small></p>
 

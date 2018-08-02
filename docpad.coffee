@@ -36,8 +36,8 @@ module.exports =
 		redirector:
 			redirects:
 				"/eoc": "http://folding.extremeoverclocking.com/?nav=IMAGES"
-				"/pagerank": "http://incline.systems"
-				"/pagerank.js": "http://incline.systems"
+				"/pagerank": "http://incline.digital"
+				"/pagerank.js": "http://incline.digital"
 				"stuff/afgame": "http://air-force-game.nfriedly.com/"
 				"stuff/afgame/index.php": "http://air-force-game.nfriedly.com/"
 				"stuff/arcade.php": "http://air-force-game.nfriedly.com/"
@@ -66,18 +66,18 @@ module.exports =
 				"/stuff/bubblegum_pub/": "https://github.com/nfriedly/bubblegum"
 
 				# incline
-				"webdev": "http://incline.systems"
-				"webdev/javascript": "http://incline.systems/javascript/"
-				"webdev/marketing": "http://incline.systems"
-				"webdev/php": "http://incline.systems"
-				"demos": "http://incline.systems"
-				"demos/twitter": "http://incline.systems"
-				"quote": "http://incline.systems"
-				"estimate": "http://incline.systems"
-				"clients": "http://incline.systems"
-				"blb": "http://incline.systems"
-				"/pagerank": "http://incline.systems"
-				"/pagerank.js": "http://incline.systems"
+				"webdev": "http://incline.digital"
+				"webdev/javascript": "http://incline.digital/javascript/"
+				"webdev/marketing": "http://incline.digital"
+				"webdev/php": "http://incline.digital"
+				"demos": "http://incline.digital"
+				"demos/twitter": "http://incline.digital"
+				"quote": "http://incline.digital"
+				"estimate": "http://incline.digital"
+				"clients": "http://incline.digital"
+				"blb": "http://incline.digital"
+				"/pagerank": "http://incline.digital"
+				"/pagerank.js": "http://incline.digital"
 
 			# onsite, but easier this way
 				"/files/Nathan-Friedly-Resume.pdf": "http://nfriedly.com/Nathan-Friedly-Resume.pdf"

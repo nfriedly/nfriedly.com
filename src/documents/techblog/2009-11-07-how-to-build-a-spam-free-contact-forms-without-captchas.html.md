@@ -226,4 +226,4 @@ However, the focus has never been on the technology &#8211; it's about solving p
 
  [1]: https://github.com/nfriedly/spam-free-php-contact-form/archive/master.zip
  [2]: https://github.com/nfriedly/spam-free-php-contact-form
- [3]: http://nfriedly.com/
+ [3]: /

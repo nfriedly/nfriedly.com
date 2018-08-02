@@ -37,11 +37,11 @@ It also includes an (optional) javascript library that handles embedding, commun
 
 The project is hosted at github: http://github.com/nfriedly/Javascript-Flash-Cookies
 
-<div class="well"><em>You might also be interested in <a href="http://nfriedly.com/techblog/2010/08/how-facebook-sets-and-uses-cross-domain-cookies/">How Facebook Sets and uses cross-Domain cookies</a></em></div>
+<div class="well"><em>You might also be interested in <a href="/techblog/2010/08/how-facebook-sets-and-uses-cross-domain-cookies/">How Facebook Sets and uses cross-Domain cookies</a></em></div>
 
 ### Working Example
 
-See <a href="http://nfriedly.com/stuff/swfstore-example/">https://nfriedly.com/stuff/swfstore-example/</a> and <a href="http://nfriedly.github.com/Javascript-Flash-Cookies/">http://nfriedly.github.com/Javascript-Flash-Cookies/</a> for a working example.
+See <a href="/stuff/swfstore-example/">https://nfriedly.com/stuff/swfstore-example/</a> and <a href="http://nfriedly.github.com/Javascript-Flash-Cookies/">http://nfriedly.github.com/Javascript-Flash-Cookies/</a> for a working example.
 
 ### Quick start guide
 

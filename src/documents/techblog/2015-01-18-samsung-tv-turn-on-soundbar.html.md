@@ -70,7 +70,7 @@ Inspecting the code revealed that the "repeat" code is actually `0xFFFFFFFF`, an
 
 /*
  * Turn on a Vizio Soundbar via an IR shield when the Arduino receives power
- * http://nfriedly.com/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/
+ * https://www.nfriedy.com/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/
  */
 
 

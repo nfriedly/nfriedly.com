@@ -1,6 +1,6 @@
 ---
 title: "nfriedly.com, v5"
-link: "http://nfriedly.com/"
+link: "https://www.nfriedy.com/"
 picture: "/img/portfolio/nfriedly.com-v5.png"
 github: nfriedly.com
 date: 2013-06-12

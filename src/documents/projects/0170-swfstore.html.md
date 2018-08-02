@@ -1,6 +1,6 @@
 ---
 title: "SwfStore - a JavaScript Library for Cross-Domain Flash-Cookies"
-link: "http://nfriedly.com/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/"
+link: "/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/"
 github: Javascript-Flash-Cookies
 travis: Javascript-Flash-Cookies
 bower: javascript-flash-cookies

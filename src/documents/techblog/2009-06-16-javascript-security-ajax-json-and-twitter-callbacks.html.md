@@ -85,7 +85,7 @@ function showStatus(json){
 </html>
 ```
 
-You can see a live copy of this code at <http://nfriedly.com/demos/twitter-extra-simple>.
+You can see a live copy of this code at </demos/twitter-extra-simple>.
 
 ## Digging into Twitter&#8217;s callback method
 
@@ -112,6 +112,6 @@ I hope this gave you a little bit better understanding of how AJAX security work
 I have [extensive experience][3] working with AJAX, Twitter, and related technologies. I&#8217;m just the man you need to make your next [javascript development][4] project shine!
 
  [1]: https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript
- [2]: http://nfriedly.com/demos/twitter
- [3]: http://nfriedly.com/portfolio
- [4]: http://nfriedly.com/webdev
+ [2]: /demos/twitter
+ [3]: /portfolio
+ [4]: /portfolio

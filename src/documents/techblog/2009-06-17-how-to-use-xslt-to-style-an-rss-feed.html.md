@@ -56,7 +56,7 @@ Because of the early decision process, we can insert 512 characters of white spa
 
 Although not practical in most cases currently, I&#8217;ve included an example of a script that will take any RSS feed and add a style sheet to it.  It includes the hack to work in firefox and instructions for enabling it in Internet Explorer.
 
-<http://nfriedly.com/stuff/rss/?url=http://nfriedly.com/techblog/feed/>
+<https://github.com/nfriedly/rss-xslt>
 
 Code for index.php:
 
@@ -111,7 +111,7 @@ echo $rss;
 ?>
 ```
 
-The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source by looking at <http://nfriedly.com/stuff/rss/xsl.php>. You could simply save that as an .xml file and have a working copy.
+The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source. You could simply save that as an .xml file and have a working copy.
 
 You can also view the [CSS][3] and [Javascript][4] used to make everything look nice.
 
@@ -121,10 +121,10 @@ Need an [expert web programmer][5] to research and solve some off-the-wall probl
 
  [1]: http://www.flickr.com/photos/gogdog/2240855570/
  [2]: http://www.flickr.com/photos/gogdog/2240065731/
- [3]: http://nfriedly.com/stuff/rss/theme/style.css
- [4]: http://nfriedly.com/stuff/rss/scripts.js
- [5]: http://nfriedly.com/webdev
- [6]: http://nfriedly.com/webdev/javascript
- [7]: http://nfriedly.com/contact
+ [3]: /stuff/rss/theme/style.css
+ [4]: /stuff/rss/scripts.js
+ [5]: /portfolio
+ [6]: /portfolio/#javascript
+ [7]: #contact
 
  *[XSLT]: Extensible Stylesheet Language Transformations
