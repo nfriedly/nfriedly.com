@@ -31,7 +31,7 @@ module.exports =
 			cachetime: 600000
 			changefreq: "monthly"
 			priority: 0.5
-			hostname: "http://nfriedly.com"
+			hostname: "https://www.nfriedly.com"
 
 		redirector:
 			redirects:
