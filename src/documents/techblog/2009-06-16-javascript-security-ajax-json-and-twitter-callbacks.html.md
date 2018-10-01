@@ -5,9 +5,9 @@ author: nFriedly
 url: /techblog/2009/06/javascript-security-ajax-json-and-twitter-callbacks/
 urls:
     - /2009/06/javascript-security-ajax-json-and-twitter-callbacks/
-headerImage: https://farm5.staticflickr.com/4120/4893939885_ea6c2e08df_b.jpg
+headerImage: https://farm4.staticflickr.com/3064/2368452869_1abfa5c996_o_d.jpg
 imageCredits: 
-	"8 ball header photo by Steve Kaminski": http://www.flickr.com/photos/tequilashooters/4893939885/
+	"8 ball header photo by Shiv Shankar Menon Palat": https://www.flickr.com/photos/shankarmenon/2368452869/
 tags:
   - ajax
   - javascript
