@@ -5,7 +5,7 @@ author: nFriedly
 url: /techblog/2011/09/javascript-changes-for-facebooks-oauth-2-0-upgrade/
 urls:
     - /2011/09/javascript-changes-for-facebooks-oauth-2-0-upgrade/
-headerImage: http://farm5.staticflickr.com/4134/4859806074_0f5d6faa15_b.jpg
+headerImage: https://farm5.staticflickr.com/4134/4859806074_0f5d6faa15_b.jpg
 tags:
   - facebook
   - howto

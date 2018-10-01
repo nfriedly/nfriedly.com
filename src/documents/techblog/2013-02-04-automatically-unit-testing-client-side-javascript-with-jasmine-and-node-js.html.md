@@ -5,7 +5,7 @@ author: nFriedly
 url: /techblog/2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/
 urls:
     - /2013/02/automatically-unit-testing-client-side-javascript-with-jasmine-and-node-js/
-headerImage: http://farm3.staticflickr.com/2376/2243034754_0a9b40d2ff_b.jpg
+headerImage: https://farm3.staticflickr.com/2376/2243034754_0a9b40d2ff_b.jpg
 tags:
   - howto
   - jasmine

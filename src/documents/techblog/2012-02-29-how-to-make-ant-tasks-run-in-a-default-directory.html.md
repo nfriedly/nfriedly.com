@@ -5,7 +5,7 @@ author: nFriedly
 url: /techblog/2012/02/how-to-make-ant-tasks-run-in-a-default-directory/
 urls:
     - /2012/02/how-to-make-ant-tasks-run-in-a-default-directory/
-headerImage: http://farm6.staticflickr.com/5538/9104824720_cd4bffffd2_h.jpg
+headerImage: https://farm6.staticflickr.com/5538/9104824720_cd4bffffd2_h.jpg
 tags:
   - ant
   - apache

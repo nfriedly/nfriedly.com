@@ -5,7 +5,7 @@ author: nFriedly
 url: /techblog/2009/06/users-cant-see-https-website/
 urls:
     - /2009/06/users-cant-see-https-website/
-headerImage: http://farm3.staticflickr.com/2197/2333040774_bb03ca472a_b.jpg
+headerImage: https://farm3.staticflickr.com/2197/2333040774_bb03ca472a_b.jpg
 imageCredits: 
 	"Transparent screen photo by patstip" : http://www.flickr.com/photos/24468787@N05/2333040774/
 tags:

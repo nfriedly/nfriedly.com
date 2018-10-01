@@ -5,7 +5,7 @@ author: nFriedly
 url: /techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/
 urls:
     - /2010/07/swf-for-javascript-cross-domain-flash-cookies/
-headerImage: http://farm4.staticflickr.com/3438/3762193048_ecaa18a3a1_b.jpg
+headerImage: https://farm4.staticflickr.com/3438/3762193048_ecaa18a3a1_b.jpg
 imageCredits:
 	"Lightning header photo by John Fowler": http://www.flickr.com/photos/snowpeak/3762193048/
 	"Flash Mob photo by JD Hancock" : http://www.flickr.com/photos/jdhancock/4317168441/

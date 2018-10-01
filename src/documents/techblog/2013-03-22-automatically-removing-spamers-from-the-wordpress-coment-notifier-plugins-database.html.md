@@ -5,7 +5,7 @@ author: nFriedly
 url: /techblog/2013/03/automatically-removing-spamers-from-the-wordpress-coment-notifier-plugins-database/
 urls:
     - /2013/03/automatically-removing-spamers-from-the-wordpress-coment-notifier-plugins-database/
-headerImage: http://farm8.staticflickr.com/7195/6873017519_843f1642ef_b.jpg
+headerImage: https://farm8.staticflickr.com/7195/6873017519_843f1642ef_b.jpg
 tags:
   - antispam
   - howto
