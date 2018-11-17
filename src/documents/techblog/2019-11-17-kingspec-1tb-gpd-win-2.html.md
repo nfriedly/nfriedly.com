@@ -1,5 +1,5 @@
 ---
-title: KingSped 1TB SSD review for GPD Win 2
+title: KingSpec 1TB SSD review for GPD Win 2
 subHeading: Bigger and better
 
 # todo: breplace this
