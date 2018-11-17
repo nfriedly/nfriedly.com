@@ -39,7 +39,7 @@ Here's a couple of benchmarks from the new and old drives:
   <p><img alt="KingSpec 1TB Crystal Disk Mark" src="/img/blog/win2/kingspec-1tb-cdm.png"/></p>
   </div>
   <div class="col-md-6">
-  <p>Stock [Biwin](http://www.biwin.com.cn/en/) 126GB Crystal Disk Mark:</p>
+  <p>Stock <a href="http://www.biwin.com.cn/en/">Biwin</a> 126GB Crystal Disk Mark:</p>
   <p><img alt="Stock Biwin 126GB Crystal Disk Mark" src="/img/blog/win2/biwin-128gb-cdm.png"/></p>
   </div>
 </div>
@@ -63,7 +63,7 @@ Sometimes, after messing with the SSD, the GPD Win 2's BIOS will revert to booti
 <div class="row">
   <div class="col-md-6">
   <p>Boot Shell Bug:</p>
-  <p><img alt="UEFI shell" src="/img/blog/win2/uefi-shell.png"/></p>
+  <p><img alt="UEFI shell" src="/img/blog/win2/uefi-shell.jpg"/></p>
   </div>
   <div class="col-md-6">
   <p>Set the first boot option to Windows in the BIOS:</p>
