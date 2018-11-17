@@ -64,7 +64,7 @@ function loadBackupCSS(url) {
 </nav>
 
 
-<header class="jumbotron" style="background-image: url(/img/blog/win2/kingspec-1tb.jpg);">
+<header class="jumbotron" style="background-image: url(/img/blog/win2/win2-ssd.jpg);">
 	<div class="container">
 		<h1><a href="/techblog/2019-11-17-kingspec-1tb-gpd-win-2/"> KingSpec 1TB SSD review for GPD Win 2</a></h1>
 		<h2><span class="sub-heading ">Bigger and better</span></h2>
@@ -73,7 +73,7 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<p>The <a href="https://gpd.hk/gdpwin2">GPD Win 2</a> is a small computer designed for gaming on-the-go. It has an upgradeable 128GB M.2 2242 SATA SSD. I decided to upgrade to a larger drive.</p>
+<p><img class="left" src="/img/blog/win2/kingspec-1tb.jpg" alt="KingSpec SSD stock photo" /> The <a href="https://gpd.hk/gdpwin2">GPD Win 2</a> is a small computer designed for gaming on-the-go. It has an upgradeable 128GB M.2 2242 SATA SSD. I decided to upgrade to a larger drive.</p>
 <!--more-->
 
 <p>I bought a <a href="https://www.aliexpress.com/item/Kingspec-120GB-HDD-22-42mm-NGFF-M2-SATA-SSD-Solid-State-Hard-Disk-Harddisk-Drive-for/32465074880.html?spm=a2g0s.9042311.0.0.7b364c4duOdIk5">1 TB KingSpec SSD</a> for my Win 2 on Ali Express. The default free shipping option took 20 days to arrive. I also ordered an <a href="https://www.aliexpress.com/item/2015-New-products-Design-micro-hdd-box-usb-3-0-to-mSATA-2-5-suit-for/32506466451.html?spm=a2g0s.9042311.0.0.7b364c4duOdIk5">M.2 USB enclosure</a> for the old drive which arrived the day after.</p>
@@ -83,13 +83,43 @@ function loadBackupCSS(url) {
 <p>After the installation, Windows spent about 45 minutes downloading and installing updates.</p>
 <p>Everything but the touchscreen worked automatically. I grabbed the <a href="https://www.reddit.com/r/gpdwin/comments/8ichgg/gpd_win_2_touch_driver_march_2018_with_download/">touchscreen driver</a> that <a href="https://www.reddit.com/user/mefaun">u/mefaun</a> posted and installed it without any trouble.</p>
 <p>I installed Steam and a couple of games, and everything just worked.</p>
-<p>I did hit the &quot;boot shell bug&quot; once later on, after swapping the old drive in and out, but it was easy to correct in the BIOS. Just set the SSD to the first boot device.</p>
+<h2 id="benchmarks">Benchmarks</h2>
 <p>Here&#39;s a couple of benchmarks from the new and old drives:</p>
-<p>KingSpec 1TB Crystal Disk Mark:</p>
-<p><img src="/img/blog/win2/kingspec-1tb-cdm.png" alt="KingSpec 1TB Crystal Disk Mark"></p>
-<p>Stock <a href="http://www.biwin.com.cn/en/">Biwin</a> 126GB Crystal Disk Mark:</p>
-<p><img src="/img/blog/win2/biwin-128gb-cdm.png" alt="Stock Biwin 126GB Crystal Disk Mark"></p>
+<div class="row">
+  <div class="col-md-6">
+  <p>KingSpec 1TB Crystal Disk Mark:</p>
+  <p>![KingSpec 1TB Crystal Disk Mark](/img/blog/win2/kingspec-1tb-cdm.png)</p>
+  </div>
+  <div class="col-md-6">
+  <p>Stock [Biwin](http://www.biwin.com.cn/en/) 126GB Crystal Disk Mark:</p>
+  <p>![Stock Biwin 126GB Crystal Disk Mark](/img/blog/win2/biwin-128gb-cdm.png)</p>
+  </div>
+</div>
+
 <p>Note that this wasn&#39;t a perfect apples-to-apples comparison, because the old drive was 85% full and SSD write speeds may decrease as the drive approaches 100% full. However, that&#39;s probably fairly representative of real-world usage (if not slightly less full than normal - I actually deleted 2 games to bring it down to 85%).</p>
+<h2 id="temperature">Temperature</h2>
+<p>I do occasionally notice that the SSD cover is warm to the touch with the new drive. I don&#39;t recall that ever happening with the old one. However, it&#39;s just warm, not uncomforterably hot.</p>
+<h2 id="fixing-the-boot-shell-bug">Fixing the boot-shell bug</h2>
+<p>Sometimes, after messing with the SSD, the GPD Win 2&#39;s BIOS will revert to booting into a UEFI shell by default instead of booting from the SSD. This looks daunting, but is actually an easy fix:</p>
+<ul>
+<li>Turn the Win 2 off</li>
+<li>Turn it on and immediately start pressing [Delete] repeatedly until it loads the BIOS</li>
+<li>In the BIOS, navigate to the Boot tab with the arrow keys</li>
+<li>Set Boot Option #1 to Windows Boot Manager</li>
+<li>Press [F4] to save and exit</li>
+</ul>
+<div class="row">
+  <div class="col-md-6">
+  <p>Boot Shell Bug:</p>
+  <p>![UEFI shell](/img/blog/win2/uefi-shell.png)</p>
+  </div>
+  <div class="col-md-6">
+  <p>Set the first boot option to Windows in the BIOS:</p>
+  <p>![Stock Biwin 126GB Crystal Disk Mark](/img/blog/win2/bios.jpg)</p>
+  </div>
+</div>
+
+<h2 id="summary">Summary</h2>
 <p>In short, I&#39;m very happy with the upgrade.</p>
 
 
