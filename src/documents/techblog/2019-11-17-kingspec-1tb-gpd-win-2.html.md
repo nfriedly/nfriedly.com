@@ -40,7 +40,7 @@ KingSpec 1TB Crystal Disk Mark:
 
 Stock [Biwin](http://www.biwin.com.cn/en/) 126GB Crystal Disk Mark:
 
-![Stock Biwin 126GB Crystal Disk Mark](/img/blog/win2/kingspec-1tb-cdm.png)
+![Stock Biwin 126GB Crystal Disk Mark](/img/blog/win2/biwin-128gb-cdm.png)
 
 
 Note that this wasn't a perfect apples-to-apples comparison, because the old drive was 85% full and SSD write speeds may decrease as the drive approaches 100% full. However, that's probably fairly representative of real-world usage (if not slightly less full than normal - I actually deleted 2 games to bring it down to 85%).
