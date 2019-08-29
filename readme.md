@@ -8,17 +8,10 @@ Built with [DocPad], [Markdown], [Bootstrap], and [Node.js]. Hosted on [GitHub P
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
 Todo:
-* Minify and combine stuff - https://github.com/balupton/buildr
-* Clean up "about me" page - mention bicycling, money, pleasant hill, etc
-* Add instagram feed to about page - maybe just photos by or tagged @nfriedly
+* Switch to Next.js / React
+  * Check out https://www.npmjs.com/package/next-optimized-images / https://nicedoc.io/cyrilwanner/next-optimized-images
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
-* cleanup img/ directory
-* Stop calling it "blog" and start calling it "articles". Relatedly, remove the date from the links.
-* Write an article abut building this site - docpad basics, auto-deployment with travis ci, gh-pages + cloudfront, redirector plugin, bug fixing, etc
-* consider https://github.com/lucor/docpad-plugin-navlinks and http://docpad.org/plugin/related/ for article pages
-* Figure out new project naming / sorting
-* Consider moving site to www. and dropping cloudfront.
-* Make it not generate separate pages for each project
+* Redo naming convention for projects
 
 Build instructions
 ------------------ 
@@ -43,7 +36,7 @@ Note that there are some stock images to which this license does not apply, and 
 MIT License on my code
 ----------------------
 
-Copyright (c) 2013 Nathan Friedly - http://nfriedly.com/
+Copyright (c) 2019 Nathan Friedly - http://nfriedly.com/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
