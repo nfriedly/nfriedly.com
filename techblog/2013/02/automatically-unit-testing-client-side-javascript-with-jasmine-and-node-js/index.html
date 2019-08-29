@@ -81,17 +81,17 @@ function loadBackupCSS(url) {
 <p>To start off, we installed the <a href="https://npmjs.org/package/jasmine-node">jasmine-node</a> and <a href="https://npmjs.org/package/jsdom">jsdom</a> NPM modules:</p>
 <pre class="highlight"><code class="hljs crmsh">npm install jasmine-<span class="hljs-keyword">node</span>
 <span class="hljs-title">npm</span> install jsdom</code></pre><p>This is the relevant part of our directory structure, the node_modules folder is top-level:</p>
-<pre class="highlight"><code class="hljs haml">build/
+<pre class="highlight"><code class="hljs markdown">build/
 node_modules/
- -<span class="ruby"> ...
-</span>test/js/
- -<span class="ruby"> environment/
-</span>   -<span class="ruby"> jasmine_helper.js
-</span> -<span class="ruby"> util/
-</span>   -<span class="ruby"> install_jsdom.sh
-</span> -<span class="ruby"> gallery_spec.js
-</span> -<span class="ruby"> ajax_spec.js
-</span> -<span class="ruby"> etc.</span></code></pre><p><code>environment/jasmine_helper.js</code> is where most of the magic is:</p>
+<span class="hljs-bullet"> - </span>...
+test/js/
+<span class="hljs-bullet"> - </span>environment/
+<span class="hljs-bullet">   - </span>jasmine_helper.js
+<span class="hljs-bullet"> - </span>util/
+<span class="hljs-bullet">   - </span>install_jsdom.sh
+<span class="hljs-bullet"> - </span>gallery_spec.js
+<span class="hljs-bullet"> - </span>ajax_spec.js
+<span class="hljs-bullet"> - </span>etc.</code></pre><p><code>environment/jasmine_helper.js</code> is where most of the magic is:</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> jsdom = <span class="hljs-built_in">require</span>(<span class="hljs-string">"jsdom"</span>);
 
 <span class="hljs-built_in">window</span> = jsdom.jsdom(<span class="hljs-string">'&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;div id="rondavu_container"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</span>).createWindow();
