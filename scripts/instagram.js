@@ -54,7 +54,7 @@ $(document).ready(function() {
   var accessToken = '5308686.539b3c7.9d35c8cc943d41b89ae35647fd59932b';
   var instagramApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + accessToken + '&callback=' + callbackFnName;
 
-  $.getScript(instagramApiUrl);
+  $.getScript(instagramApiUrl).fail(function(){handleInstagrams(false);});
 
   /*
    $(window).resize(function() {
