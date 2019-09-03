@@ -65,7 +65,7 @@ function eventType(event) {
     return event.type;
 }
 function renderSumary(events, type) {
-    var et = eventTemplates,
+    const et = eventTemplates,
         repo = repos[events[0].repo.name],
         payload = events[0].payload || {},
         data = {
@@ -76,25 +76,25 @@ function renderSumary(events, type) {
             payload: payload,
             url: repo.html_url + (payload.ref_type === 'branch' || payload.ref_type === 'tag' ? '/tree/' + payload.ref : '' )
         };
-    return et[type] ? et[type](data) : et['default'](data);
+    const Template = et[type] ? et[type](data) : et['default'];
+    return <Template {...data} />
 }
 
 
-var renderRepoSummary = '<li><h3><i class={"fa fa-li " + icon }></i> <a href={ html_url }>{ name }</a></h3><p>{ description }</p>{ homepage }<p class="muted">{ events }</p></li>';
-var renderStar = '<li><h3 title={ description }><i class="fa fa-li fa-star"></i> Starred <a href={ html_url }>{ name }</a></h3></li>';
+const renderRepoSummary = ({icon, event, <li><h3><i class={"fa fa-li " + icon }></i> <a href={ html_url }>{ name }</a></h3><p>{ description }</p>{ homepage }<p class="muted">{ events }</p></li>';
+const renderStar = '<li><h3 title={ description }><i class="fa fa-li fa-star"></i> Starred <a href={ html_url }>{ name }</a></h3></li>';
 
-var icon = icon => <i class={"fa " + icon }></i>;
-var eventTemplates = {
-    PushEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ repo.html_url + "/commits?author=nfriedly"}>{ events.length } code push{ events.length == 1 ? "" : "es"}</a></span>,
-    CreateEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ url }>{ payload.ref_type || "repo" } created</a></span>,
-    IssueCommentEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ event.payload.issue.html_url }>{ events.length } issue comment{ events.length == 1 ? "" : "s"}</a></span>,
-    IssuesEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ event.payload.issue.html_url }>{ events.length } issue{ events.length == 1 ? "" : "s"} created</a></span>,
-    MemberEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ repo.html_url }>{ events.length } contributor{ events.length == 1 ? "" : "s"} added</a></span>,
-    PullRequestEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ event.payload.pull_request.html_url }>{ events.length } pull request{ events.length == 1 ? "" : "s"}</a></span>,
-    WatchEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ repo.html_url }>Starred</a></span>,
-    ForkEvent: ({ icon, event, events, repo, url }) => <span>{icon} <a href={ event.payload.forkee.html_url }>forked repo</a></span>,
-    DeleteEvent: ({ icon, event, events, repo, url }) => <span>{icon} { payload.ref_type || "repo" } deleted</span>,
-    'default':  ({ icon, event, events, repo, url }) => <span>{icon} <a href={ repo.html_url }>{ events.length } { events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() }{ events.length == 1 ? "" : "s"}</a></span>
+const eventTemplates = {
+    PushEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url + "/commits?author=nfriedly"}>{ events.length } code push{ events.length == 1 ? "" : "es"}</a></span>,
+    CreateEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ url }>{ payload.ref_type || "repo" } created</a></span>,
+    IssueCommentEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.issue.html_url }>{ events.length } issue comment{ events.length == 1 ? "" : "s"}</a></span>,
+    IssuesEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.issue.html_url }>{ events.length } issue{ events.length == 1 ? "" : "s"} created</a></span>,
+    MemberEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url }>{ events.length } contributor{ events.length == 1 ? "" : "s"} added</a></span>,
+    PullRequestEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.pull_request.html_url }>{ events.length } pull request{ events.length == 1 ? "" : "s"}</a></span>,
+    WatchEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url }>Starred</a></span>,
+    ForkEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.forkee.html_url }>forked repo</a></span>,
+    DeleteEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}{ payload.ref_type || "repo" } deleted</span>,
+    'default':  ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url }>{ events.length } { events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() }{ events.length == 1 ? "" : "s"}</a></span>
 };
 
 
@@ -103,7 +103,7 @@ class GithubRepo extends React.Component {
         const res = await fetch('https://api.github.com/users/nfriedly/events');
         const json = await res.json();
         
-        var eventsByRepo = _.chain(json).filter(function(event){
+        const eventsByRepo = _.chain(json).filter(function(event){
             // filter out events that aren't attached to a repo
             return event.repo;
         }).filter(function(event) {
@@ -114,9 +114,9 @@ class GithubRepo extends React.Component {
             return event.repo.name;
         }).value();
 
-        var repos = {};
+        const repos = {};
 
-        var repoRequests = _.map(eventsByRepo, async function(events, name) {
+        const repoRequests = _.map(eventsByRepo, async function(events, name) {
             try {
                 const res = await fetch(events[0].repo.url);
                 const data = await res.json();
@@ -134,13 +134,12 @@ class GithubRepo extends React.Component {
             return _.groupBy(repoEvents, eventType);
         }).map(function(repoEvents, name) {
             // extract the repo data and render a summary of the events
-            var repoName = _.values(repoEvents)[0][0].repo.name;
-            var repo = repos[repoName];
-            repo.starredOnly = (_.keys(repoEvents).length == 1 && repoEvents.WatchEvent);
+            const repoName = _.values(repoEvents)[0][0].repo.name;
+            const repo = repos[repoName];
+            repo.starredOnly = (_.keys(repoEvents).length === 1 && repoEvents.WatchEvent);
             repo.events = _.chain(repoEvents).map(renderSumary).toArray().value().reverse().join(', ');
-            var eventType = _.keys(repoEvents)[0];
+            const eventType = _.keys(repoEvents)[0];
             repo.icon = repoIcons[repo.name] || eventIcons[eventType] || eventIcons['default'];
-            repo.homepage = repo.homepage ? '<p class="home"><a href="' + repo.homepage + '">' + repo.homepage + '</a></p>' : '';
             return repo;
         }).value();
         return feed;

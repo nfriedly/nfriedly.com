@@ -8,7 +8,7 @@ Built with [DocPad], [Markdown], [Bootstrap], and [Node.js]. Hosted on [GitHub P
 [![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
 
 Todo:
-* Switch to Next.js / React
+* Finish switch to Next.js / React
   * Check out https://www.npmjs.com/package/next-optimized-images / https://nicedoc.io/cyrilwanner/next-optimized-images
 * Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
 * Redo naming convention for projects
