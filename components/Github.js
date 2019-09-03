@@ -61,44 +61,53 @@ const repoIcons = {
     'set-cookie-parser': 'fa-cutlery'
 };
 
-function eventType(event) {
-    return event.type;
-}
-function renderSumary(events, type) {
-    const et = eventTemplates,
-        repo = repos[events[0].repo.name],
-        payload = events[0].payload || {},
-        data = {
-            repo: repo,
-            events: events,
-            event: events[0],
-            icon: eventIcons[type] || eventIcons['default'],
-            payload: payload,
-            url: repo.html_url + (payload.ref_type === 'branch' || payload.ref_type === 'tag' ? '/tree/' + payload.ref : '' )
-        };
-    const Template = et[type] ? et[type](data) : et['default'];
-    return <Template {...data} />
-}
-
-
-const renderRepoSummary = ({icon, event, <li><h3><i class={"fa fa-li " + icon }></i> <a href={ html_url }>{ name }</a></h3><p>{ description }</p>{ homepage }<p class="muted">{ events }</p></li>';
-const renderStar = '<li><h3 title={ description }><i class="fa fa-li fa-star"></i> Starred <a href={ html_url }>{ name }</a></h3></li>';
-
 const eventTemplates = {
-    PushEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url + "/commits?author=nfriedly"}>{ events.length } code push{ events.length == 1 ? "" : "es"}</a></span>,
-    CreateEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ url }>{ payload.ref_type || "repo" } created</a></span>,
-    IssueCommentEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.issue.html_url }>{ events.length } issue comment{ events.length == 1 ? "" : "s"}</a></span>,
-    IssuesEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.issue.html_url }>{ events.length } issue{ events.length == 1 ? "" : "s"} created</a></span>,
-    MemberEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url }>{ events.length } contributor{ events.length == 1 ? "" : "s"} added</a></span>,
-    PullRequestEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.pull_request.html_url }>{ events.length } pull request{ events.length == 1 ? "" : "s"}</a></span>,
-    WatchEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url }>Starred</a></span>,
-    ForkEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ event.payload.forkee.html_url }>forked repo</a></span>,
-    DeleteEvent: ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}{ payload.ref_type || "repo" } deleted</span>,
-    'default':  ({ icon, event, events, repo, url }) => <span><i class={"fa " + icon }></i>{' '}<a href={ repo.html_url }>{ events.length } { events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() }{ events.length == 1 ? "" : "s"}</a></span>
+    PushEvent: ({ icon, events, repo_url }) => <span><i className={"fa " + icon }></i>{' '}<a href={ repo_url + "/commits?author=nfriedly"}>{ events.length } code push{ events.length == 1 ? "" : "es"}</a></span>,
+    CreateEvent: ({ icon, url, payload }) => <span><i className={"fa " + icon }></i>{' '}<a href={ url }>{ payload.ref_type || "repo" } created</a></span>,
+    IssueCommentEvent: ({ icon, event, events }) => <span><i className={"fa " + icon }></i>{' '}<a href={ event.payload.issue.html_url }>{ events.length } issue comment{ events.length == 1 ? "" : "s"}</a></span>,
+    IssuesEvent: ({ icon, event, events }) => <span><i className={"fa " + icon }></i>{' '}<a href={ event.payload.issue.html_url }>{ events.length } issue{ events.length == 1 ? "" : "s"} created</a></span>,
+    MemberEvent: ({ icon, events, repo_url }) => <span><i className={"fa " + icon }></i>{' '}<a href={ repo_url }>{ events.length } contributor{ events.length == 1 ? "" : "s"} added</a></span>,
+    PullRequestEvent: ({ icon, event, events }) => <span><i className={"fa " + icon }></i>{' '}<a href={ event.payload.pull_request.html_url }>{ events.length } pull request{ events.length == 1 ? "" : "s"}</a></span>,
+    WatchEvent: ({ icon }) => <span><i className={"fa " + icon }></i>{' '}<a href={ repo.html_url }>Starred</a></span>,
+    ForkEvent: ({ icon, event }) => <span><i className={"fa " + icon }></i>{' '}<a href={ event.payload.forkee.html_url }>forked repo</a></span>,
+    DeleteEvent: ({ icon }) => <span><i className={"fa " + icon }></i>{' '}{ payload.ref_type || "repo" } deleted</span>,
+    'default':  ({ icon,  events, repo_url }) => <span><i className={"fa " + icon }></i>{' '}<a href={ repo_url }>{ events.length } { events[0].type.replace(/([A-Z])/g, " $1").toLowerCase() }{ events.length == 1 ? "" : "s"}</a></span>
 };
 
 
-class GithubRepo extends React.Component {
+function eventType(event) {
+    return event.type;
+}
+function renderSumary(repo_url, events, type) {
+    const et = eventTemplates,
+        payload = events[0].payload || {},
+        data = {
+            repo_url,
+            events,
+            event: events[0],
+            icon: eventIcons[type] || eventIcons['default'],
+            payload: payload,
+            url: repo_url + (payload.ref_type === 'branch' || payload.ref_type === 'tag' ? '/tree/' + payload.ref : '' )
+        };
+    const Template = et[type] ? et[type] : et['default'];
+    return <Template {...data} key={repo_url + ':' + type}/>
+}
+
+const RepoActivity = ({icon, html_url, name, description, homepage, events }) => (
+    <li>
+        <h3><i className={"fa fa-li " + icon }></i> <a href={ html_url }>{ name }</a></h3>
+        <p>{ description }</p>
+        { homepage }
+        <p className="muted">{ _.chain(events).map(renderSumary.bind(null, html_url)).toArray().value().reverse() }</p>
+    </li>
+);
+
+const RepoStar = ({ description, html_url, name }) => (
+    <li>
+        <h3 title={ description }><i className="fa fa-li fa-star"></i> Starred <a href={ html_url }>{ name }</a></h3>
+    </li>);
+
+class Github extends React.Component {
     async getGithubActivityFeed() {
         const res = await fetch('https://api.github.com/users/nfriedly/events');
         const json = await res.json();
@@ -137,7 +146,7 @@ class GithubRepo extends React.Component {
             const repoName = _.values(repoEvents)[0][0].repo.name;
             const repo = repos[repoName];
             repo.starredOnly = (_.keys(repoEvents).length === 1 && repoEvents.WatchEvent);
-            repo.events = _.chain(repoEvents).map(renderSumary).toArray().value().reverse().join(', ');
+            repo.events = repoEvents;
             const eventType = _.keys(repoEvents)[0];
             repo.icon = repoIcons[repo.name] || eventIcons[eventType] || eventIcons['default'];
             return repo;
@@ -146,57 +155,26 @@ class GithubRepo extends React.Component {
     }
     async componentDidMount() {
         const feed = await this.getGithubActivityFeed();
+        console.log( {self: this, feed})
         this.setState({feed});
     }
     render() {
         return (
-            <div className={props.className + " github"}>
+            <div className={this.props.className + " github"}>
                 <h2>
                     <a href="https://github.com/nfriedly">
                         <i className="fa fa-github" /> GitHub Activity
                     </a>
                 </h2>
                 <ul className="fa-ul">
-                    {this.state.feed.map(repo =>
-                        repo.starredOnly ? renderStar(repo) : renderRepoSummary(repo)
-                    )}
+                    {(this.state && this.state.feed.map(repo =>
+                        repo.starredOnly ? <RepoStar {...repo} key={'star:' + repo.html_url}/> : <RepoActivity {...repo} key={repo.html_url}/>
+                    )) || <li className="muted"><i className="fa-li fa fa-spinner fa-spin"></i> Loading latest GitHub feed...</li>}
                 </ul>
             </div>
         );
     }
 }
 
-class Github extends React.Component {
-    render() {
-        return (
-            <li>
-                <a href="/techblog/2015/07/build-a-diy-esp8266ex-esp-01-dev-test-programming-board/">
-                    <div className="clip">
-                        <img
-                            src="/static/img/blog/esp-mb/zoom.jpg"
-                            style={{
-                                maxWidth: "300px"
-                            }}
-                            alt="ESP-01"
-                        />
-                    </div>
-                    <h3>DIY ESP8266 ESP-01 Programing / Test board</h3>
-                    <p>
-                        NodeMCU and other ESP8266 modules are starting to become very
-                        popular because they offer an embedded development platform with a
-                        CPU+RAM+Storage+WiFi all in one for (considerably) less than the
-                        price of an Arduino. There are a number of breadboard-friendly
-                        modules with all pins exposed (and more coming soon.)
-                    </p>
-                    <p>
-                        However, this post is about the breadboard-unfriendly ESP-01 module.
-                        It only has two GPIO pins (four if you include the TX & RX pins),
-                        but it's smaller and most importantly, cheaper.{" "}
-                    </p>
-                </a>
-            </li>
-        );
-    }
-}
 
 export default Github;
