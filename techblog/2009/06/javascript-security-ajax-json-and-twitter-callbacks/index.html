@@ -89,7 +89,7 @@ function loadBackupCSS(url) {
 <h3 id="remotely-hosted-javascript-files">Remotely hosted javascript files</h3>
 <p>Scripts stored on other websites can be included on a page. As long as the script doesn&#8217;t need to call home after the initial load, everything works great. This is how a basic twitter function works: you load a script from twitter&#8217;s website and it communicates with your site via the callback feature. This is what the Simple part of my <a href="/demos/twitter">twitter demo</a> does.</p>
 <p>Here is a very basic page that uses Twitter&#8217;s callback feature and a remotely loaded javascript file to show my twitter status &#8211; remote data &#8211; on my website, by interacting with local javascript.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span> <span class="hljs-meta-keyword">PUBLIC</span> <span class="hljs-meta-string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="hljs-meta-string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>  <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-US"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Simple Twitter Status<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -121,7 +121,7 @@ function loadBackupCSS(url) {
 
 <span class="hljs-comment">&lt;!-- now load the twitter file --&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;amp;callback=showStatus&amp;amp;random=&lt;?php echo time(); ?&gt;"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://twitter.com/statuses/user_timeline/nfriedly.json?count=1<span class="hljs-symbol">&amp;amp;</span>callback=showStatus<span class="hljs-symbol">&amp;amp;</span>random=&lt;?php echo time(); ?&gt;"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>

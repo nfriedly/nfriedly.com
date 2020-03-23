@@ -160,22 +160,22 @@ or <a href="http://www.electrodragon.com/product/24awg-wires-cables-1-meter-vari
 <pre class="highlight"><code class="hljs c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> buttonPin = <span class="hljs-number">0</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
- Serial.begin(<span class="hljs-number">9600</span>);
+ <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">9600</span>);
  <span class="hljs-comment">// Normally the button will take the pin from "floating" (not connected to anything) to grounded</span>
  <span class="hljs-comment">// This enables the internal pullup resistor so that the default state is high rather than floating.</span>
- pinMode(buttonPin, INPUT_PULLUP);
+ <span class="hljs-built_in">pinMode</span>(buttonPin, <span class="hljs-literal">INPUT_PULLUP</span>);
 }
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
-  Serial.print(<span class="hljs-string">"Button is "</span>);
-  <span class="hljs-keyword">int</span> status = digitalRead(buttonPin);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"Button is "</span>);
+  <span class="hljs-keyword">int</span> status = <span class="hljs-built_in">digitalRead</span>(buttonPin);
   <span class="hljs-comment">// because of the pullup resistor, the pin state is reversed: button pressed = LOW, button released = HIGH</span>
-  <span class="hljs-keyword">if</span> (status == LOW) {
-    Serial.println(<span class="hljs-string">"pressed"</span>);
+  <span class="hljs-keyword">if</span> (status == <span class="hljs-literal">LOW</span>) {
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(<span class="hljs-string">"pressed"</span>);
   } <span class="hljs-keyword">else</span> {
-    Serial.println(<span class="hljs-string">"released"</span>);
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(<span class="hljs-string">"released"</span>);
   }
-  delay(<span class="hljs-number">500</span>);
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">500</span>);
 }</code></pre>
 <p>Happy hacking! Discuss on <a href="http://www.esp8266.com/viewtopic.php?f=6&amp;t=3968">esp8266.com</a>.</p>
 <p><img src="/img/blog/esp-mb/top.jpg" alt="ESP-01 motherboard top-down, connected"></p>

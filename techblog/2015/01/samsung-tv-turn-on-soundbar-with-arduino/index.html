@@ -93,10 +93,7 @@ But, since it doesn&#39;t turn sound bar back on, I still have to get out my sou
 <p>The TV has a couple of USB ports on the back. These were intended for plugging in an external HDD to play movies off of, but they provide more than enough power for an Arduino, and, importantly, they only provide power when the TV is on.</p>
 <p>For my initial solution, I put together a regular <a href="http://www.amazon.com/gp/product/B006H06TVG/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B006H06TVG&amp;linkCode=as2&amp;tag=nfriedly-20&amp;linkId=65LVBGKDBEAGVMAO">Arduino Uno R3</a> and an <a href="http://www.electrodragon.com/product/arduino-ir-infrared-shield/">IR Shield</a>.
 (That shield comes from <a href="http://www.electrodragon.com/">Electrodragon</a>, who I highly recommend, but be aware that they ship from China so it takes a little while to arrive. LinkSprite offers a <a href="http://store.linksprite.com/linksprite-infrared-shield-for-arduino/">similar shield</a> that ships from Colorado and would presumably work just as well.)</p>
-<center>
-![Arduino Uno and IR Shield side-by-side](/img/blog/arduino-ir/arduino-ir-parts.jpg)
-</center>
-
+<p><img src="/img/blog/arduino-ir/arduino-ir-parts.jpg" alt="Arduino Uno and IR Shield side-by-side"></p>
 <p>I used Ken Shirriff&#39;s awesome <a href="https://github.com/shirriff/Arduino-IRremote">Arduino IRemote library</a> and initially it had some conflicts.
 It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only receive a single format and can&#39;t transmit anything, but they neglected to rename anything.
 You can delete the <code>examples/RobotIRemote</code> folder or just go back to the Arduino IDE 1.0.6.</p>
@@ -119,7 +116,7 @@ repeat; ignoring.</code></pre>
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
 </span>{
   IRsend irsend;
-  delay(<span class="hljs-number">100</span>);
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">100</span>);
 
   irsend.sendNEC(<span class="hljs-number">0xFF02FD</span>, <span class="hljs-number">8</span>*<span class="hljs-number">6</span>); <span class="hljs-comment">// Vizio power on code</span>
   irsend.sendNEC(REPEAT, <span class="hljs-number">8</span>*<span class="hljs-number">8</span>); <span class="hljs-comment">// 0xFFFFFFFF - my remote actually sends out 4 of these (?)</span>
@@ -131,46 +128,29 @@ repeat; ignoring.</code></pre>
 }</code></pre>
 <p>I &quot;installed&quot; it on the back of my TV (A.K.A. set it on top of the wall mount pointing vaguely in the direction of the sound bar), and viola! I could now control everything from just my TV&#39;s remote.</p>
 <p>Total time: &lt; 20 minutes.</p>
-<center>
-![Arduino Uno and IR Shield assembled together](/img/blog/arduino-ir/arduino-ir-assembled.jpg)
-![Arduino Uno and IR Shield installed on TV](/img/blog/arduino-ir/arduino-ir-installed.jpg)
-</center>
-
-
-
+<p><img src="/img/blog/arduino-ir/arduino-ir-assembled.jpg" alt="Arduino Uno and IR Shield assembled together">
+<img src="/img/blog/arduino-ir/arduino-ir-installed.jpg" alt="Arduino Uno and IR Shield installed on TV"></p>
 <h2 id="cheaper-version-digispark">Cheaper Version: Digispark</h2>
 <p>I was stoked with how well my new setup worked, but it still kind of annoyed me that I was using my $25 arduino when I had a couple of spare $8 <a href="http://digistump.com/products/1">Digisparks</a> that are more than powerful enough to meet the requirements here.
 So after a week or so, I rebuilt it and recovered my Arduino.</p>
-<center>
-![Digispark, IR Shield, and parts to make a dupont cable](/img/blog/arduino-ir/digispark-ir-parts.jpg)
-</center>
-
+<p><img src="/img/blog/arduino-ir/digispark-ir-parts.jpg" alt="Digispark, IR Shield, and parts to make a dupont cable"></p>
 <p>There was a bit of trouble with the IRremote library wanting to use timers that The Arduino&#39;s ATmega 328 processor had but the Digispark&#39;s Attiny85 did not.
 However, TKJElectronics made a <a href="https://github.com/TKJElectronics/ATtinyRemote">fork</a> (with the same naming conflicts <em>again</em>) that works on a Digispark.
 It didn&#39;t have support for the NEC format that I needed, but copy-pasting everything NEC-related from the IRRemote library got me a working build.
 I should clean it up and send a Pull Request sometime soon here...</p>
 <p>After that, I made myself a male-to-female dupont cable (probably the hardest part) and &quot;re-installed&quot; it.</p>
-<center>
-![Digispark + IR Shield](/img/blog/arduino-ir/digispark-ir-assembled.jpg)
-</center>
-
+<p><img src="/img/blog/arduino-ir/digispark-ir-assembled.jpg" alt="Digispark + IR Shield"></p>
 <p>Out of the box, Digispark&#39;s have a 5-second delay between powering on and running your program. This is to allow the IDE to recognize it and upload a new sketch, but I found it a little bit annoying.
 Fortunately, the <a href="https://github.com/micronucleus/micronucleus">micronucleus</a> bootloader has an alternate mode where it runs your sketch immediately unless pin 0 is pulled low at power on.
 Updating to that got me back instantaneous, automatic sound bar power!</p>
-<center>
-![IR Shield installed on TV](/img/blog/arduino-ir/ir-installed.jpg)
-![Overview of Digispark and IR Shield installed on TV](/img/blog/arduino-ir/digispark-ir-installed.jpg)
-![Digispark installed on TV](/img/blog/arduino-ir/digispark-installed.jpg)
-</center>
-
+<p><img src="/img/blog/arduino-ir/ir-installed.jpg" alt="IR Shield installed on TV">
+<img src="/img/blog/arduino-ir/digispark-ir-installed.jpg" alt="Overview of Digispark and IR Shield installed on TV">
+<img src="/img/blog/arduino-ir/digispark-installed.jpg" alt="Digispark installed on TV"></p>
 <h2 id="now-with-lighting-control-">Now with lighting control!</h2>
 <p>I have a strand of icicle-style christmas lights strung above my TV that I had been manually plugging in and unplugging. 
 After a while, I decided to automate this! 
 With the help of a <a href="https://www.adafruit.com/product/268">Power Switch Tail 2</a> and a couple of free pins on the arduino, I was able to set this up in under 20 minutes with no code changes!</p>
-<center>
-![With the lighting control connected #notilter](/img/blog/arduino-ir/tv-back.jpg)
-</center>
-
+<p><img src="/img/blog/arduino-ir/tv-back.jpg" alt="With the lighting control connected #notilter"></p>
 
 
 
