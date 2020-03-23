@@ -43,9 +43,7 @@ The TV has a couple of USB ports on the back. These were intended for plugging i
 For my initial solution, I put together a regular [Arduino Uno R3] and an [IR Shield].
 (That shield comes from [Electrodragon], who I highly recommend, but be aware that they ship from China so it takes a little while to arrive. LinkSprite offers a [similar shield](http://store.linksprite.com/linksprite-infrared-shield-for-arduino/) that ships from Colorado and would presumably work just as well.)
 
-<center>
 ![Arduino Uno and IR Shield side-by-side](/img/blog/arduino-ir/arduino-ir-parts.jpg)
-</center>
 
 I used Ken Shirriff's awesome [Arduino IRemote library] and initially it had some conflicts.
 It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only receive a single format and can't transmit anything, but they neglected to rename anything.
@@ -93,11 +91,8 @@ I "installed" it on the back of my TV (A.K.A. set it on top of the wall mount po
 
 Total time: < 20 minutes.
 
-<center>
 ![Arduino Uno and IR Shield assembled together](/img/blog/arduino-ir/arduino-ir-assembled.jpg)
 ![Arduino Uno and IR Shield installed on TV](/img/blog/arduino-ir/arduino-ir-installed.jpg)
-</center>
-
 
 
 ## Cheaper Version: Digispark
@@ -105,9 +100,7 @@ Total time: < 20 minutes.
 I was stoked with how well my new setup worked, but it still kind of annoyed me that I was using my $25 arduino when I had a couple of spare $8 [Digisparks] that are more than powerful enough to meet the requirements here.
 So after a week or so, I rebuilt it and recovered my Arduino.
 
-<center>
 ![Digispark, IR Shield, and parts to make a dupont cable](/img/blog/arduino-ir/digispark-ir-parts.jpg)
-</center>
 
 There was a bit of trouble with the IRremote library wanting to use timers that The Arduino's ATmega 328 processor had but the Digispark's Attiny85 did not.
 However, TKJElectronics made a [fork](https://github.com/TKJElectronics/ATtinyRemote) (with the same naming conflicts *again*) that works on a Digispark.
@@ -116,19 +109,15 @@ I should clean it up and send a Pull Request sometime soon here...
 
 After that, I made myself a male-to-female dupont cable (probably the hardest part) and "re-installed" it.
 
-<center>
 ![Digispark + IR Shield](/img/blog/arduino-ir/digispark-ir-assembled.jpg)
-</center>
 
 Out of the box, Digispark's have a 5-second delay between powering on and running your program. This is to allow the IDE to recognize it and upload a new sketch, but I found it a little bit annoying.
 Fortunately, the [micronucleus] bootloader has an alternate mode where it runs your sketch immediately unless pin 0 is pulled low at power on.
 Updating to that got me back instantaneous, automatic sound bar power!
 
-<center>
 ![IR Shield installed on TV](/img/blog/arduino-ir/ir-installed.jpg)
 ![Overview of Digispark and IR Shield installed on TV](/img/blog/arduino-ir/digispark-ir-installed.jpg)
 ![Digispark installed on TV](/img/blog/arduino-ir/digispark-installed.jpg)
-</center>
 
 ## Now with lighting control!
 
@@ -136,9 +125,7 @@ I have a strand of icicle-style christmas lights strung above my TV that I had b
 After a while, I decided to automate this! 
 With the help of a [Power Switch Tail 2] and a couple of free pins on the arduino, I was able to set this up in under 20 minutes with no code changes!
 
-<center>
 ![With the lighting control connected #notilter](/img/blog/arduino-ir/tv-back.jpg)
-</center>
 
 [HDMI CEC]: https://en.wikipedia.org/wiki/HDMI#CEC
 [my TV]: http://www.amazon.com/gp/product/B007BG4F5C/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B007BG4F5C&linkCode=as2&tag=nfriedly-20&linkId=XLTMI57TA3XPSFQ3
