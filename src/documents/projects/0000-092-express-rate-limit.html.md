@@ -8,6 +8,7 @@ icon: tachometer
 tags:
   - JavaScript
   - Node.js
+  - npm
   - Express
   - Open Source
   - Continuous Integration
