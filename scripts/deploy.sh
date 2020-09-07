@@ -34,9 +34,16 @@ if [ "$TRAVIS_REPO_SLUG" == "$GH_REPO" ] && [ "$TRAVIS_PULL_REQUEST" == "false" 
 
   $BUILD_COMMAND || { echo "Build failed, stopping deploy." ; exit 1; }
 
-  echo "Done! Entering $OUT_DIR and committing changes to $OUT_BRANCH."
+  echo "Done! Entering $OUT_DIR and validating"
 
   pushd $OUT_DIR
+
+  if grep -q '<%=' "index.html"; then
+    echo 'Error: template code detected in output, aborting!'
+    exit 1;
+  fi 
+  
+  echo "Validated, committing changes to $OUT_BRANCH."
 
     # add all changes to git, including deleted files
     git add -f -A .
