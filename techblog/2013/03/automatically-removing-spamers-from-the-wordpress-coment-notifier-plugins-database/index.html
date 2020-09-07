@@ -77,25 +77,27 @@ function loadBackupCSS(url) {
 <p>However, it has a slight problem with spam. When spammers leave comments, my combination of <a href="http://akismet.com/">Akismet</a> and <a href="http://wordpress.org/extend/plugins/nospamnx/">NoSpamNX</a> do a pretty good job of keeping spam comments of of the site, but not before their (usually fake) email gets added to the Comment Notifier database. </p>
 <p>Recently, I realized that my server was trying to send out several hundred failing emails any time someone left a comment. I shot a short feature request (and a small donation) to the Comment Notifier plugin&#8217;s author, but then decided that this was one I could take on myself. Here&#8217;s how I did it:</p>
 <!--more-->
-
 <h2 id="step-1-back-up-your-database">Step 1: BACK UP YOUR DATABASE</h2>
 <p>I&#8217;m using the <a href="http://hmn.md/backupwordpress/">BackUpWordPress</a> so this happens automatically, but I went and ran an extra backup and downloaded the files to my laptop just to be safe.</p>
 <h2 id="step-2-clean-up-the-old-data">Step 2: Clean up the old data</h2>
 <p>This SQL query deletes every email in the <code>comment_notifier</code> table that doesn&#8217;t have a corresponding comment. (Most likely because the comment was already deleted as spam.)</p>
 <pre class="highlight"><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> <span class="hljs-string">`wp_YOUR_PREFIX_comment_notifier`</span> <span class="hljs-keyword">WHERE</span> email <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">IN</span> (
   <span class="hljs-keyword">SELECT</span> comment_author_email <span class="hljs-keyword">FROM</span> <span class="hljs-string">`wp_YOUR_PREFIX_comments`</span>
-);</code></pre>
+);
+</code></pre>
 <p>Obviously, you&#8217;ll need to change the table name prefix (<code>wp_YOUR_PREFIX_</code>) to whatever your install of WP uses.</p>
-<h2 id="step-3-add-an-index-on-the-comments-comment_author_email-column">Step 3: Add an <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_index">index</a> on the <code>comments.comment_author_email</code> column</h2>
+<h2 id="step-3-add-an-index-7-on-the-comments-comment_author_email-column">Step 3: Add an <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_index">index</a> on the <code>comments.comment_author_email</code> column</h2>
 <p>This is required in order to add the Foreign Key constraint in next step. It makes MySQL keep a sorted list of emails in the comments table and automatically update it any time a comment is added or deleted.</p>
-<pre class="highlight"><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`wp_YOUR_PREFIX_comments`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">INDEX</span> ( <span class="hljs-string">`comment_author_email`</span> );</code></pre>
-<h2 id="step-4-add-a-foreign-key-constraint-that-automatically-deletes-spammers-from-the-comment_notifier-table">Step 4: Add a <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_foreign_key">Foreign Key</a> constraint that automatically deletes spammers from the <code>comment_notifier</code> table</h2>
+<pre class="highlight"><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`wp_YOUR_PREFIX_comments`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">INDEX</span> ( <span class="hljs-string">`comment_author_email`</span> );
+</code></pre>
+<h2 id="step-4-add-a-foreign-key-8-constraint-that-automatically-deletes-spammers-from-the-comment_notifier-table">Step 4: Add a <a href="http://dev.mysql.com/doc/refman/5.6/en/glossary.html#glos_foreign_key">Foreign Key</a> constraint that automatically deletes spammers from the <code>comment_notifier</code> table</h2>
 <p>This instructs MySQL to enforce a link between the <code>comment_notifier</code> table and the <code>comments</code> table so that any email address in the <code>comment_notifier</code> table must also be in the comments table, and if it gets deleted from the <code>comments</code> table, then automatically delete it from the <code>comment_notifier</code> table also.</p>
 <pre class="highlight"><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`wp_YOUR_PREFIX_comment_notifier`</span> 
   <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`auto_delete_spammers`</span> 
-    <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`email`</span>) 
+    FOREIGN <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`email`</span>) 
     <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`wp_YOUR_PREFIX_comments`</span> (<span class="hljs-string">`comment_author_email`</span>) 
-    <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">CASCADE</span>;</code></pre>
+    <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">CASCADE</span>;
+</code></pre>
 <h2 id="step-5-relax-and-enjoy-img-src-http-farm1-staticflickr-com-231-507111698_72ef071130_m-jpg-class-right-">Step 5: Relax and enjoy <img src="http://farm1.staticflickr.com/231/507111698_72ef071130_m.jpg" class="right"></h2>
 <p>Any time a comment is deleted as spam (or for any other reason), your Comment Notifier will no longer try to send emails to that comment&#8217;s author. Your email server will thank you.</p>
 <p class="meta"><small class="photocredit"><b>Photo Credits:</b> 

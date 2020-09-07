@@ -76,8 +76,7 @@ function loadBackupCSS(url) {
 <p><img class="right" title="325990_chocolate_chip_cookies_2" src="/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" width="300" height="224" />I&#8217;m working on a project that has a legitimate (non-spammy) reason to need cross-domain cookies, and we settled on flash as a good way to accomplish this.</p>
 <p>However, I was surprisingly unable to find any complete library or how-to guide for connecting flash cookies to javascript. So I dusted off my flash skills and built one, and and now you get to enjoy the fruit of my labor:</p>
 <!--more-->
-
-<div class="well well-large"><p>[<i class="fa fa-download"></i> Download the swf, js, and source code from github][zip]</p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre class="highlight"><code class="hljs mipsasm"><span class="hljs-keyword">bower </span><span class="hljs-keyword">install </span><span class="hljs-keyword">javascript-flash-cookies</span></code></pre></div>
+<div class="well well-large"><p><a href="http://github.com/nfriedly/Javascript-Flash-Cookies/zipball/master"><i class="fa fa-download"></i> Download the swf, js, and source code from github</a></p><p>Or install via <a href="http://bower.io">Bower</a>:</p><pre class="highlight"><code class="hljs mipsasm"><span class="hljs-keyword">bower </span><span class="hljs-keyword">install </span><span class="hljs-keyword">javascript-flash-cookies</span></code></pre></div>
 
 
 <p>This is an .swf file that communicates with JavaScript via flash&#8217;s <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/external/ExternalInterface.html">ExternalInerface</a> to read and write to a Local <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/net/SharedObject.html">SharedObject</a> (LSO). Essentially, it&#8217;s cross-domain cookies for javascript.</p>
@@ -92,9 +91,9 @@ function loadBackupCSS(url) {
 <h4 id="the-html">The HTML</h4>
 <pre class="highlight"><code class="hljs xml">
 <span class="hljs-comment">&lt;!-- This example uses jquery, but SwfStore does not require jquery to work. --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/PATH/TO/swfstore.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/PATH/TO/swfstore.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dataInput"</span> /&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"saveBtn"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Save"</span> /&gt;</span>
 
@@ -112,12 +111,12 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
     <span class="hljs-keyword">var</span> mySwfStore = <span class="hljs-keyword">new</span> SwfStore({
         <span class="hljs-comment">// Optional but recommended. Try to choose something unique.</span>
 
-        <span class="hljs-attr">namespace</span>: <span class="hljs-string">'myExample'</span>, 
+        namespace: <span class="hljs-string">'myExample'</span>, 
         <span class="hljs-comment">// To work cross-domain, only one of your sites should have the</span>
 
         <span class="hljs-comment">// .swf, all other sites should load it from the first one</span>
 
-        <span class="hljs-attr">swf_url</span>: <span class="hljs-comment">//site.com/PATH/TO/storage.swf', </span>
+        swf_url: <span class="hljs-comment">//site.com/PATH/TO/storage.swf', </span>
         <span class="hljs-comment">// Logs messages to the console if available, a div at the</span>
 
         <span class="hljs-comment">// bottom of the page otherwise. </span>

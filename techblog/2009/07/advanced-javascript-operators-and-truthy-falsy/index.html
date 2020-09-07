@@ -76,7 +76,6 @@ function loadBackupCSS(url) {
 <p><a href="http://www.flickr.com/photos/fleur-design/308974073/"><img class="alignleft" title="speed machine" src="http://farm1.static.flickr.com/104/308974073_9057064747_m.jpg" alt="" width="240" height="160" /></a> Nearly every website on the internet uses javascript in some form or fashion. Yet very few people, even those who write it and teach it, have a clear understanding of how javascript works!</p>
 <p>Logical Operators are a core part of the language. We&#8217;re going to look at what logical operators are, what &#8220;truthy&#8221; and &#8220;falsy&#8221; mean, and <strong>how to use this to write cleaner, faster and more optimized javascript</strong>.</p>
 <!--more-->
-
 <h2 id="javascript-logical-operators">Javascript Logical Operators</h2>
 <p>In traditional programming, operators such as <code>&amp;&amp;</code> and <code>||</code> returned a boolean value (<code>true</code> or <code>false</code>). This is not the case in javascript. Here it returns the actual <code>object</code>, not a <code>true</code> / <code>false</code>.  To really explain this, I first have to explain what is truthy and what is falsy.</p>
 <h3 id="truthy-or-falsy">Truthy or Falsy</h3>
@@ -102,7 +101,8 @@ function loadBackupCSS(url) {
 }
 
 <span class="hljs-comment">// examleFunction is truthy</span>
-<span class="hljs-comment">// BUT exampleFunction() is falsy because it has no return (undefined)</span></code></pre>
+<span class="hljs-comment">// BUT exampleFunction() is falsy because it has no return (undefined)</span>
+</code></pre>
 <p>Gotchas to watch out for: the strings <code>&quot;0&quot;</code> and <code>&quot;false&quot;</code> are both considered truthy.  You can convert a string to a number with the <code>parseInt()</code> and <code>parseFloat()</code> functions, or by just multiplying it by <code>1</code>.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> test = <span class="hljs-string">"0"</span>; <span class="hljs-comment">// this is a string, not a number</span>
 
@@ -136,7 +136,8 @@ $emptyArray = <span class="hljs-keyword">array</span>(); <span class="hljs-comme
 
 $stringZero = <span class="hljs-string">"0"</span>; <span class="hljs-comment">// falsy in PHP</span>
 
-<span class="hljs-meta">?&gt;</span></code></pre>
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
 <h3 id="how-logical-operators-work">How Logical Operators Work</h3>
 <h4 id="logical-or-">Logical OR, <code>||</code></h4>
 <p>The logical OR operator, <code>||</code>,  is very simple after you understand what it is doing. If the first object is truthy, that gets returned. Otherwise, the second object gets returned.</p>
@@ -171,7 +172,8 @@ sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null whe
 
 <span class="hljs-keyword">var</span> name = checkbox.checked &amp;&amp; prompt(<span class="hljs-string">"What is your name"</span>);
 
-<span class="hljs-comment">// name is either their name, or false if they haven't checked the AgreeToTerms checkbox</span></code></pre>
+<span class="hljs-comment">// name is either their name, or false if they haven't checked the AgreeToTerms checkbox</span>
+</code></pre>
 <h4 id="logical-not-">Logical NOT, <code>!</code></h4>
 <p>Unlike <code>&amp;&amp;</code> and <code>||</code>, the <code>!</code> operator DOES turn the value it receives into a boolean. If it receives a truthy value, it returns <code>false</code>, and if it receives a falsy value, it returns <code>true</code>.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> a = (!<span class="hljs-string">"test one"</span> || <span class="hljs-string">"test two"</span>); <span class="hljs-comment">// a is "test two"</span>
@@ -190,8 +192,9 @@ sayHi(); <span class="hljs-comment">// alerts "Hi Dave", name is set to null whe
 <span class="hljs-keyword">var</span> b = (!!<span class="hljs-string">""</span>); <span class="hljs-comment">// b is false</span>
 <span class="hljs-comment">// "" is converted to true, and then that true is converted to false</span>
 
-<span class="hljs-keyword">var</span> c = (!!variableThatDoesntExist); <span class="hljs-comment">// c is false even though you're checking an undefined variable.</span></code></pre>
-<h2 id="javascript-optimization"><a href="/portfolio">Javascript Optimization</a></h2>
+<span class="hljs-keyword">var</span> c = (!!variableThatDoesntExist); <span class="hljs-comment">// c is false even though you're checking an undefined variable.</span>
+</code></pre>
+<h2 id="-javascript-optimization-4-"><a href="/portfolio">Javascript Optimization</a></h2>
 <p>Need any help <a href="/portfolio#javascript">optimizing the Javascript and AJAX on your website</a>? Get in touch with your friendly neighborhood <a href="/portfolio">javascript expert</a> for ideas on how to optimize your site and a free quote.</p>
 
 

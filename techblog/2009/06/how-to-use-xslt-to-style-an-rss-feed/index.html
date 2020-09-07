@@ -77,7 +77,6 @@ function loadBackupCSS(url) {
 <p>Unfortunately, most browsers think they know better and go off and do their own thing on RSS feeds.</p>
 <p>We&#8217;re going to look at how and which browsers can be brought into line, and how to use XSLT to improve the look of your RSS feed in those browsers.</p>
 <!--more-->
-
 <h2 id="the-rss-problem">The RSS problem</h2>
 <p>In most browsers, XML and XSLT are supported in every single case *except* RSS. By default, Internet Explorer, Firefox, Safari, and Opera all ignore XSLT files and do their own thing with RSS. In fact, Google Chrome is the *only* browser I tested that got it right without tinkering.</p>
 <p>To their credit, Microsoft at least gave their users the option to turn off the &#8220;feature&#8221;. No other browser even gives this option.</p>
@@ -94,7 +93,7 @@ function loadBackupCSS(url) {
 <li>Click OK all the way to close all opened dialog boxes.</li>
 <li>Restart Internet Explorer</li>
 </ol>
-<h3 id="-img-class-alignright-src-http-farm3-static-flickr-com-2172-2240065731_86c22f48c1_m-jpg-alt-transform-firefox"><a href="http://www.flickr.com/photos/gogdog/2240065731/"><img class="alignright" src="http://farm3.static.flickr.com/2172/2240065731_86c22f48c1_m.jpg" alt="Transform!" /></a>Firefox</h3>
+<h3 id="-img-class-alignright-src-http-farm3-static-flickr-com-2172-2240065731_86c22f48c1_m-jpg-alt-transform-2-firefox"><a href="http://www.flickr.com/photos/gogdog/2240065731/"><img class="alignright" src="http://farm3.static.flickr.com/2172/2240065731_86c22f48c1_m.jpg" alt="Transform!" /></a>Firefox</h3>
 <p>Firefox can be tricked into working because it decides fairly early on in the rendering process whether to treat the page in a standard way or to fly off the handle with it. In fact, it makes this decision before even completely downloading the RSS file.</p>
 <p>Because of the early decision process, we can insert 512 characters of white space in between the <code>&lt;?xml ?&gt;</code> declaration and the opening <code>&lt;rss&gt;</code> tag. Firefox is then &#8220;tricked&#8221; into doing the right thing and rendering the feed correctly.</p>
 <h2 id="working-around-it">Working around it</h2>
@@ -148,7 +147,8 @@ $rss = preg_replace(<span class="hljs-string">'/&lt;\?xml-stylesheet([^?]|\?(?!&
 <span class="hljs-comment">//finally, pass along the content</span>
 <span class="hljs-keyword">echo</span> $rss;
 
-<span class="hljs-meta">?&gt;</span></code></pre>
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
 <p>The xsl.php file is only php to allow for setting the current url in the feed url input box. Ignoring that, you can view it&#8217;s source. You could simply save that as an .xml file and have a working copy.</p>
 <p>You can also view the <a href="/stuff/rss/theme/style.css">CSS</a> and <a href="/stuff/rss/scripts.js">Javascript</a> used to make everything look nice.</p>
 <h2 id="hire-me-for-web-development">Hire me for web development</h2>

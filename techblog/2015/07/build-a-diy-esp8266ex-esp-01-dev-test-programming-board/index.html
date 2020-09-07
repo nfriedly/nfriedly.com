@@ -79,7 +79,6 @@ platform with a CPU+RAM+Storage+WiFi all in one for (considerably) less than the
 <p>However, this post is about the breadboard-unfriendly ESP-01 module. It only has two GPIO pins (four if you include the
 TX &amp; RX pins), but it&#39;s smaller and most importantly, cheaper. </p>
 <!--more-->
-
 <p><a href="https://www.adafruit.com/product/2282">US</a> <a href="https://www.sparkfun.com/products/13252">vendors</a> tend to charge around 
 $7, but if you don&#39;t mind importing, they can be <a href="http://www.electrodragon.com/product/esp8266-wi07c-wifi-module/">had for $3.50</a> <a href="http://www.ebay.com/sch/i.html?_sop=15&amp;_nkw=esp-01">or less</a>.</p>
 <p>The biggest problem with the ESP-01 is that it&#39;s annoying to wire up and program, so that&#39;s what we&#39;re solving today.</p>
@@ -160,23 +159,24 @@ or <a href="http://www.electrodragon.com/product/24awg-wires-cables-1-meter-vari
 <pre class="highlight"><code class="hljs c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> buttonPin = <span class="hljs-number">0</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
- <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">9600</span>);
+ Serial.begin(<span class="hljs-number">9600</span>);
  <span class="hljs-comment">// Normally the button will take the pin from "floating" (not connected to anything) to grounded</span>
  <span class="hljs-comment">// This enables the internal pullup resistor so that the default state is high rather than floating.</span>
- <span class="hljs-built_in">pinMode</span>(buttonPin, <span class="hljs-literal">INPUT_PULLUP</span>);
+ pinMode(buttonPin, INPUT_PULLUP);
 }
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
-  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"Button is "</span>);
-  <span class="hljs-keyword">int</span> status = <span class="hljs-built_in">digitalRead</span>(buttonPin);
+  Serial.print(<span class="hljs-string">"Button is "</span>);
+  <span class="hljs-keyword">int</span> status = digitalRead(buttonPin);
   <span class="hljs-comment">// because of the pullup resistor, the pin state is reversed: button pressed = LOW, button released = HIGH</span>
-  <span class="hljs-keyword">if</span> (status == <span class="hljs-literal">LOW</span>) {
-    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(<span class="hljs-string">"pressed"</span>);
+  <span class="hljs-keyword">if</span> (status == LOW) {
+    Serial.println(<span class="hljs-string">"pressed"</span>);
   } <span class="hljs-keyword">else</span> {
-    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(<span class="hljs-string">"released"</span>);
+    Serial.println(<span class="hljs-string">"released"</span>);
   }
-  <span class="hljs-built_in">delay</span>(<span class="hljs-number">500</span>);
-}</code></pre>
+  delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
 <p>Happy hacking! Discuss on <a href="http://www.esp8266.com/viewtopic.php?f=6&amp;t=3968">esp8266.com</a>.</p>
 <p><img src="/img/blog/esp-mb/top.jpg" alt="ESP-01 motherboard top-down, connected"></p>
 

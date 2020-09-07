@@ -76,7 +76,6 @@ function loadBackupCSS(url) {
 <p><a href="/techblog/wp-content/uploads/2009/11/cart32-error.png" rel="lightbox"><img class="alignleft size-medium wp-image-244" title="cart32-error" src="/techblog/wp-content/uploads/2009/11/cart32-error-300x202.png" alt="cart32-error" width="300" height="202" /></a>One of our Cart32 websites started having a problem recently where it would work great all the way until the last page of the checkout process, where it would give the error &#8220;Bad file name or number Error Number = 52&#8243;.</p>
 <p>Even worse, it charged the customers credit card each time, so a persistent customer could wind up with multiple charges which you would need to undo!</p>
 <!--more-->
-
 <h2 id="the-fix">The Fix</h2>
 <p><a href="/techblog/wp-content/uploads/2009/11/cart32-fix.png" rel="lightbox"><img class="size-medium wp-image-245 alignright" title="cart32-fix" src="/techblog/wp-content/uploads/2009/11/cart32-fix-300x235.png" alt="cart32-fix" width="300" height="235" /></a>Cart32&#8242;s support was not particularly helpful (both the <a href="http://www.cart32.com/kb.asp">Knowledge Base</a> and their phone support), but fortunately the fix was not very hard. The error basically means that it had trouble opening some file.</p>
 <p>In our case the name of the file that orders were saved in (<strong>Orders &gt; Order Setting &gt; Order Output File</strong>) had gotten goofed and was set to the url of the website. The fix was to change it back to &#8220;<strong>orders.txt</strong>&#8220;.</p>

@@ -76,14 +76,14 @@ function loadBackupCSS(url) {
 <p><a href="http://www.flickr.com/photos/stawarz/2492636763/"><img class="alignleft" title="The other kind of array" src="http://farm4.static.flickr.com/3146/2492636763_788774987e_m.jpg" alt="" width="240" height="160" /></a>Javascript <code>objects</code> and <code>arrays</code> are both incredibly useful. They&#39;re also incredibly easy to confuse with each other. Mix in a few objects that look like arrays and you&#8217;ve got a recipe for confusion!</p>
 <p>We&#39;re going to see what the differences between objects and arrays are, how to work with some of the common array-like objects, and how to get the most performance out of each.</p>
 <!--more-->
-
 <h2 id="what-objects-are">What Objects Are</h2>
 <p>A javascript object is a basic data structure:</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> basicObj = {}; <span class="hljs-comment">// an empty object - {} is a shortcut for "new Object()"</span>
 
 basicObj.suprise= <span class="hljs-string">"cake!"</span>;
 
-basicObj[<span class="hljs-string">'suprise'</span>]; <span class="hljs-comment">// returns "cake!"</span></code></pre>
+basicObj[<span class="hljs-string">'suprise'</span>]; <span class="hljs-comment">// returns "cake!"</span>
+</code></pre>
 <p>Using <code>{}</code> instead of <code>new Object();</code> is know as &#8220;Object Literal&#8221; syntax.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> fancyObj = {
     <span class="hljs-attr">favoriteFood</span>: <span class="hljs-string">"pizza"</span>,
@@ -94,7 +94,8 @@ basicObj[<span class="hljs-string">'suprise'</span>]; <span class="hljs-comment"
 
 fancyObj.add(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// returns 5</span>
 
-fancyObj[<span class="hljs-string">'add'</span>](<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// ditto.</span></code></pre>
+fancyObj[<span class="hljs-string">'add'</span>](<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// ditto.</span>
+</code></pre>
 <p>As you can see, and probably already knew, properties can be accessed a couple of different ways. However, it&#8217;s an important point that we&#8217;ll come back to in a minute.</p>
 <p>Everything in javascript is an <code>object</code>. Everything. <code>Arrays</code>, <code>functions</code>, even <code>numbers</code>! Because of this, you can do some really interesting things, such as modifying the <code>prototypes</code> of Objects, Arrays, etc.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// an example of something you probably shouldn't do. Ever. Seriously.</span>
@@ -111,12 +112,14 @@ fancyObj[<span class="hljs-string">'add'</span>](<span class="hljs-number">2</sp
 <span class="hljs-number">8</span>[<span class="hljs-string">'addto'</span>](<span class="hljs-number">9</span>);  <span class="hljs-comment">// works but is kind of ugly compared to the first method</span>
 
 <span class="hljs-keyword">var</span> eight = <span class="hljs-number">8</span>;
-eight.addto(<span class="hljs-number">9</span>);  <span class="hljs-comment">// works</span></code></pre>
+eight.addto(<span class="hljs-number">9</span>);  <span class="hljs-comment">// works</span>
+</code></pre>
 <h2 id="what-arrays-are">What Arrays Are</h2>
 <p>Javascript arrays are a type of <code>object</code> used for storing multiple values in a single variable. Each value gets numeric index and may be any data type.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [];  <span class="hljs-comment">// this is a shortcut for new Array();</span>
 arr[<span class="hljs-number">0</span>] = <span class="hljs-string">"cat"</span>;
-arr[<span class="hljs-number">1</span>] = <span class="hljs-string">"mouse"</span>;</code></pre>
+arr[<span class="hljs-number">1</span>] = <span class="hljs-string">"mouse"</span>;
+</code></pre>
 <p>See how that syntax is so similar to the syntax used for setting object properties? In fact, the only difference is that objects use a string while arrays use a number. This is why arrays get confused with objects so often.</p>
 <h3 id="length">Length</h3>
 <p>Arrays have a <code>length</code> property that tells how many items are in the array and is automatically updated when you add or remove items to the array. </p>
@@ -126,14 +129,16 @@ arr[<span class="hljs-number">1</span>] = <span class="hljs-string">"mouse"</spa
 arr.length; <span class="hljs-comment">// returns 2</span>
 
 arr[<span class="hljs-string">"favoriteFood"</span>] = <span class="hljs-string">"pizza"</span>; <span class="hljs-comment">// this DOES NOT add to the array. Setting a string parameter adds to the underlying object</span>
-arr.length; <span class="hljs-comment">// returns 2, not 3</span></code></pre>
+arr.length; <span class="hljs-comment">// returns 2, not 3</span>
+</code></pre>
 <p>The length property is only modified when you add an item to the array, not the underlying object.</p>
 <p><strong>The <code>length</code> is always 1 higher than the highest index, even if there are actually fewer items in the array.</strong></p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [];
 arr.length; <span class="hljs-comment">// returns 0;</span>
 
 arr[<span class="hljs-number">100</span>] = <span class="hljs-string">"this is the only item in the array"</span>;
-arr.length; <span class="hljs-comment">// returns 101, even though there is only 1 object in the array</span></code></pre>
+arr.length; <span class="hljs-comment">// returns 101, even though there is only 1 object in the array</span>
+</code></pre>
 <p>This is somewhat counter-intuitive. PHP does more what you would expect:</p>
 <pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 arr = <span class="hljs-keyword">array</span>();
@@ -143,14 +148,15 @@ sizeof(arr); <span class="hljs-comment">// returns 1 in PHP</span>
 </code></pre>
 <p>You can manually set the <code>length</code> also. Setting it to 0 is a simple way to empty an array.</p>
 <p>In addition to this length property, arrays have lots of nifty built in functions such as <code>push()</code>, <code>pop()</code>, <code>sort()</code>, <code>slice()</code>, <code>splice()</code>, and more. This is what sets them apart from Array-Like Objects.</p>
-<h2 id="array-like-objects-img-class-alignright-title-it-s-like-an-array-but-made-out-of-lego-src-http-farm4-static-flickr-com-3175-2645497916_386b9b75b8_m-jpg-alt-width-240-height-180-">Array-like Objects <a href="http://www.flickr.com/photos/repoort/2645497916/"><img class="alignright" title="It's like an array, but made out of Lego!" src="http://farm4.static.flickr.com/3175/2645497916_386b9b75b8_m.jpg" alt="" width="240" height="180" /></a></h2>
+<h2 id="array-like-objects-img-class-alignright-title-it-s-like-an-array-but-made-out-of-lego-src-http-farm4-static-flickr-com-3175-2645497916_386b9b75b8_m-jpg-alt-width-240-height-180-2-">Array-like Objects <a href="http://www.flickr.com/photos/repoort/2645497916/"><img class="alignright" title="It's like an array, but made out of Lego!" src="http://farm4.static.flickr.com/3175/2645497916_386b9b75b8_m.jpg" alt="" width="240" height="180" /></a></h2>
 <p>Array-like objects look like arrays. They have various numbered elements and a length property. But that&#8217;s where the similarity stops. Array-like objects do not have any of Array&#8217;s functions, and for-in loops don&#8217;t even work!</p>
 <p>You&#8217;ll come across these more often than you might expect. A common one is the <code>arguments</code> variable that is present inside of every js function. </p>
 <p>Also included in the category are the HTML node sets returned by <code>document.getElementsByTagName()</code>, <code>document.forms</code>, and basically every other DOM method and property that gives a list of items.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-built_in">document</span>.forms.length; <span class="hljs-comment">// returns 1;</span>
 <span class="hljs-built_in">document</span>.forms[<span class="hljs-number">0</span>]; <span class="hljs-comment">// returns a form element.</span>
 <span class="hljs-built_in">document</span>.forms.join(<span class="hljs-string">", "</span>); <span class="hljs-comment">// throws a type error. this is not an array.</span>
-<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">document</span>.forms; <span class="hljs-comment">// returns "object"</span></code></pre>
+<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">document</span>.forms; <span class="hljs-comment">// returns "object"</span>
+</code></pre>
 <p>Did you know you can send any number of arguments you want to a javascript function? They&#39;re all stored in an array-like object named <code>arguments</code>.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">takesTwoParams</span>(<span class="hljs-params">a, b</span>)</span>{
     <span class="hljs-comment">// arguments is an array-like variable that is automatically created</span>
@@ -166,18 +172,20 @@ sizeof(arr); <span class="hljs-comment">// returns 1 in PHP</span>
 takesTwoParams(<span class="hljs-string">"one"</span>,<span class="hljs-string">"two"</span>,<span class="hljs-string">"three"</span>);
 <span class="hljs-comment">// alerts "you gave me 3 arguments",</span>
 <span class="hljs-comment">// then "parameter 0 = one" </span>
-<span class="hljs-comment">// etc. </span></code></pre>
+<span class="hljs-comment">// etc.</span>
+</code></pre>
 <div class="alert alert-info">
-**Tip:**
-*Parameters* are the named variables in a function's signature: `a` and `b` in the previous example.<br />
-*Arguments*, by contrast, are the expressions that are used when calling the function: `"one"`, `"two"`, and `"three"` in this case.
+<strong>Tip:</strong>
+<em>Parameters</em> are the named variables in a function&#39;s signature: <code>a</code> and <code>b</code> in the previous example.<br />
+<em>Arguments</em>, by contrast, are the expressions that are used when calling the function: <code>&quot;one&quot;</code>, <code>&quot;two&quot;</code>, and <code>&quot;three&quot;</code> in this case.
 </div>
 
 <p>This works great. But that&#39;s about as far as you can go with array-like objects. The flowing example does not work:</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">takesTwoParams</span>(<span class="hljs-params">a, b</span>)</span>{
     alert(<span class="hljs-string">" your parameters were "</span> + <span class="hljs-built_in">arguments</span>.join(<span class="hljs-string">", "</span>)); 
     <span class="hljs-comment">// throws a type error because arguments.join doesn't exist</span>
-}</code></pre>
+}
+</code></pre>
 <h3 id="so-what-can-you-do-">So what can you do?</h3>
 <p>Well you could make your own <code>join()</code> function, but that adds a lot of unnecessary overhead to your code because it has to loop over everything. If only there were a quick way to get an array out of an array like object&#8230;</p>
 <p>It turns out there is.</p>
@@ -187,7 +195,8 @@ takesTwoParams(<span class="hljs-string">"one"</span>,<span class="hljs-string">
     <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>);
     alert(<span class="hljs-string">" your parameters were "</span> + args.join(<span class="hljs-string">", "</span>)); 
     <span class="hljs-comment">// yay, this works!</span>
-}</code></pre>
+}
+</code></pre>
 <p>Let&#8217;s take a look at that a bit more in-depth:</p>
 <p><code>Array</code>: This object is the original array that all other arrays inherit their properties from.</p>
 <p><code>Array.prototype</code>:This gives us access to all the methods properties that each array inherits</p>
@@ -210,7 +219,8 @@ takesTwoParams(<span class="hljs-string">"one"</span>,<span class="hljs-string">
         }
         <span class="hljs-keyword">return</span> arr;
     }
-}</code></pre>
+}
+</code></pre>
 <p>Second, arrays are objects, so you can do this, but it can get you some serious inconsistencies:</p>
 <pre class="highlight"><code class="hljs javascript">arr = [];
 arr[<span class="hljs-number">0</span>] = <span class="hljs-string">"first element"</span>; <span class="hljs-comment">// adds item to the array</span>
@@ -222,7 +232,8 @@ arr.length; <span class="hljs-comment">// still returns 1 !</span>
 <span class="hljs-comment">// BUT...</span>
 <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> arr){
     <span class="hljs-comment">// this will hit both 0 and "two"</span>
-}</code></pre>
+}
+</code></pre>
 <h3 id="another-solution-wrap-arrays-in-an-object-if-you-need-both-worlds">Another solution: wrap arrays in an object if you need both worlds</h3>
 <p>This is basically a less efficient method of the array subclassing links I mentioned above. While less efficient, it has the advantage of being simple and reliable.</p>
 <p>That said, I wouldn&#8217;t recommend that you use this in most cases due to issues with speed and extra code requirements. It&#8217;s provided here as an example.</p>
@@ -254,10 +265,11 @@ ArrayContainer.prototype.forEach = <span class="hljs-function"><span class="hljs
     }
 };
 
-<span class="hljs-keyword">var</span> mySuperDooperArray = <span class="hljs-keyword">new</span> ArrayContainer();</code></pre>
+<span class="hljs-keyword">var</span> mySuperDooperArray = <span class="hljs-keyword">new</span> ArrayContainer();
+</code></pre>
 <p>Now that your array is (somewhat) protected on the inside, you can loop through it&#8217;s items with <code>forEach()</code> and know that they will match it&#8217;s length. You can also add arbitrary properties to <code>ArrayContainer</code> or <code>mySuperDooperArray</code> and they <strong>won&#8217;t</strong> get pulled into your <code>forEach()</code> loop.</p>
 <p>This example could be extended to completely protect the array if the need arose. </p>
-<h2 id="an-even-better-solution-hire-a-javascript-expert-">An Even Better Solution: <a href="/portfolio">Hire a javascript expert</a>.</h2>
+<h2 id="an-even-better-solution-hire-a-javascript-expert-5-">An Even Better Solution: <a href="/portfolio">Hire a javascript expert</a>.</h2>
 <p>Nathan Friedly is a top ranked <a href="/portfolio">Javascript and AJAX ninja</a> with an extensive portfolio of proven results. He can bring your project to life and make it run faster than you ever imagined.  <a href="#contact">Get in touch</a> today!</p>
 
 

@@ -75,13 +75,11 @@ function loadBackupCSS(url) {
 <main class="container">
 <style> center img { margin: 20px 0; } </style>
 
-<img class="left" src="/img/blog/arduino-ir/arduino-ir-assembled-small.jpg" alt="Arduino Uno and IR Shield assembled" />
-*"Snatching defeat from the jaws of victory."*
-That summarizes Samsung's implementation of HDMI CEC ("Anynet+") in their "Smart" TVs - everything works except the power button.
-
+<p><img class="left" src="/img/blog/arduino-ir/arduino-ir-assembled-small.jpg" alt="Arduino Uno and IR Shield assembled" />
+<em>&quot;Snatching defeat from the jaws of victory.&quot;</em>
+That summarizes Samsung&#39;s implementation of HDMI CEC (&quot;Anynet+&quot;) in their &quot;Smart&quot; TVs - everything works except the power button.</p>
 <p>However, with help from an Arduino and an IR Shield, I was able to add in the missing parts and make things work properly.</p>
 <!--more-->
-
 <h2 id="background">Background</h2>
 <p>The <abbr title="High-Definition Multimedia Interface Consumer Electronics Control"><a href="https://en.wikipedia.org/wiki/HDMI#CEC">HDMI CEC</a></abbr>
 protocol allows various pieces of home theater equipment to send each other commands with the idea being that your TV remote can control everything.
@@ -101,7 +99,8 @@ You can delete the <code>examples/RobotIRemote</code> folder or just go back to 
 <pre class="highlight"><code class="hljs no-highlight">Received NEC: FF02FD
 repeat; ignoring.
 repeat; ignoring.
-repeat; ignoring.</code></pre>
+repeat; ignoring.
+</code></pre>
 <p>Success! I now had the code to turn on my sound bar.</p>
 <p>Inspecting the code revealed that the &quot;repeat&quot; code is actually <code>0xFFFFFFFF</code>, and some trial and error revealed that a sketch with one repeat is sufficient to turn on my sound bar:</p>
 <pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IRremote.h&gt;</span></span>
@@ -116,7 +115,7 @@ repeat; ignoring.</code></pre>
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
 </span>{
   IRsend irsend;
-  <span class="hljs-built_in">delay</span>(<span class="hljs-number">100</span>);
+  delay(<span class="hljs-number">100</span>);
 
   irsend.sendNEC(<span class="hljs-number">0xFF02FD</span>, <span class="hljs-number">8</span>*<span class="hljs-number">6</span>); <span class="hljs-comment">// Vizio power on code</span>
   irsend.sendNEC(REPEAT, <span class="hljs-number">8</span>*<span class="hljs-number">8</span>); <span class="hljs-comment">// 0xFFFFFFFF - my remote actually sends out 4 of these (?)</span>
@@ -125,7 +124,8 @@ repeat; ignoring.</code></pre>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
-}</code></pre>
+}
+</code></pre>
 <p>I &quot;installed&quot; it on the back of my TV (A.K.A. set it on top of the wall mount pointing vaguely in the direction of the sound bar), and viola! I could now control everything from just my TV&#39;s remote.</p>
 <p>Total time: &lt; 20 minutes.</p>
 <p><img src="/img/blog/arduino-ir/arduino-ir-assembled.jpg" alt="Arduino Uno and IR Shield assembled together">
