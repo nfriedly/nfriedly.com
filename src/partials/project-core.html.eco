@@ -24,11 +24,11 @@
         <a href="<%= github %>"><i class="fa fa-github"></i></a>
     <% end %>
     <% if project.npm: %>
-        <a href="https://npmjs.org/package/<%= project.npm %>" class="project-badge"><img src="http://badge.fury.io/js/<%= project.npm %>.svg" alt="<%= project.title %> on NPM"></a>
+        <a href="https://npmjs.org/package/<%= project.npm %>" class="project-badge"><img src="https://badge.fury.io/js/<%= project.npm %>.svg" alt="<%= project.title %> on NPM"></a>
         <a href="https://npmjs.org/package/<%= project.npm %>" class="project-badge"><img src="https://img.shields.io/npm/dm/<%= project.npm %>.svg" alt="<%= project.title %> downloads"></a>
     <% end %>
     <% if project.bower: %>
-        <img src="http://badge.fury.io/bo/<%= project.bower %>.svg" alt="<%= project.title %> on Bower">
+        <img src="https://badge.fury.io/bo/<%= project.bower %>.svg" alt="<%= project.title %> on Bower">
     <% end %>
     <% if project.travis: %>
         <% travis = project.travis %>
