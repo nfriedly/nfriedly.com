@@ -17,6 +17,6 @@ Library to allow Node.js (and other non-browser JS environments such as React Na
 
 Most Set-Cookie headers are straightforward to parse, but the HTTP spec allows for headers to be combined into a single comma-separated string, which adds some significant complexity to parsing. 
 
-set-cookie-parser is well-tested and widely deployed both in apps and as a dependency in other over 100 other libraries with over 1 million monthly downloads.
+set-cookie-parser is well-tested and widely deployed both in apps and as a dependency in over 100 other libraries with over 1 million monthly downloads.
 
-This library was initially part of [unblocker](https://github.com/nfriedly/node-unblocker), but was spun off due to it's complexity and gnereral usefullness. 
+This library was initially part of [unblocker](https://github.com/nfriedly/node-unblocker), but was spun off due to its complexity and general usefulness.
