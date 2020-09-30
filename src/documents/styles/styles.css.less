@@ -332,10 +332,12 @@ main li { margin-top: 1em; }
             display: none;
         }
         .thumbs {
-          margin-bottom: 20px;
-		  &.youtube iframe {
-			  max-width: 100%;
-		  }
+            & > div {
+                margin-bottom: 10px;
+            }
+            &.youtube iframe {
+                max-width: 100%;
+            }
         }
     }
 
