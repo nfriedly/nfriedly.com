@@ -1,9 +1,5 @@
 language: node_js
 node_js:
 - 10
-sudo: false # this enables faster builds - http://docs.travis-ci.com/user/migrating-from-legacy/
 script:
 - npm run deploy
-env:
-  global:
-  # GH_TOKEN is set in travis's web ui now, username & email are set in scripts/deploy.sh
