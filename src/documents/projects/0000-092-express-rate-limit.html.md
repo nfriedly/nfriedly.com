@@ -2,7 +2,8 @@
 title: Express Rate Limit
 link: https://github.com/nfriedly/express-rate-limit
 npm: express-rate-limit
-travis: express-rate-limit
+# todo: rename 'travis' to something generic like 'ci'
+travis: https://github.com/nfriedly/express-rate-limit/workflows/Node.js%20CI/badge.svg
 date: 2014-12-10
 icon: tachometer
 tags:
