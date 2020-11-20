@@ -3,7 +3,7 @@ title: running-average
 link: https://github.com/nfriedly/running-average
 npm: running-average
 bower: running-average
-travis: running-average
+travis: https://github.com/nfriedly/running-average/workflows/Node.js%20CI/badge.svg
 date: 2015-07-08
 tags:
   - JavaScript
