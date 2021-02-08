@@ -3,6 +3,7 @@ title: "nfriedly.com, v5"
 link: "https://www.nfriedy.com/"
 picture: "/img/portfolio/nfriedly.com-v5.png"
 github: nfriedly.com
+travis: nfriedly.com
 date: 2013-06-12
 tags: 
   - HTML
