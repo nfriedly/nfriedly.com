@@ -15,7 +15,7 @@
     "docpad-plugin-redirector": "~2.1.0",
     "docpad-plugin-sitemap": "^2.4.0",
     "docpad-plugin-thumbnails": "~2.1.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.12.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
