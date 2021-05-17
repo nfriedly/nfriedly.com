@@ -14,6 +14,13 @@
             <div class="col-sm-8">
                 <%- @partial('project-core', {project: project}) %>
             </div>
+        <% else if project.video: %>
+            <div class="col-xs-4">
+                <div class="thumb"><video src="<%= project.video %>" controls></video></div>
+            </div>
+            <div class="col-sm-8">
+                <%- @partial('project-core', {project: project}) %>
+            </div>
         <% else: %>
             <div class="col-xs-12">
                 <%- @partial('project-core', {project: project}) %>
