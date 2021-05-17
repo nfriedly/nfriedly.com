@@ -16,7 +16,7 @@
             </div>
         <% else if project.video: %>
             <div class="col-xs-4">
-                <div class="thumb"><video src="<%= project.video %>" controls></video></div>
+                <video class="thumb" src="<%= project.video %>" controls></video>
             </div>
             <div class="col-sm-8">
                 <%- @partial('project-core', {project: project}) %>
