@@ -33,7 +33,8 @@ standalone: true
 
 // general styles
 h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; line-height: 1.3; }
-body {font-family: 'Raleway', sans-serif; }
+body {font-family: 'Raleway', sans-serif; background: @darkPurple; color: white; }
+.over-footer { background-color: white; color: black; }
 
 // code, pre {font-family: 'Monda'; }
 
@@ -375,7 +376,6 @@ main li { margin-top: 1em; }
     @footerHeight: 271px + (@footerPadding * 2);
 	.over-footer {
 		position: relative;
-		background-color: white;
 		z-index: 2;
 		margin-bottom: @footerHeight;
 		padding-bottom: 20px;
