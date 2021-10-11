@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>How I fixed USB-C charging on my Powkiddy V90 for $0.01</title>
+<title>Fixing USB-C charging on the Powkiddy V90 for $0.01</title>
 
 
     <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
@@ -66,14 +66,14 @@ function loadBackupCSS(url) {
 
 <header class="jumbotron" style="background-image: url(/img/blog/v90/header-bg.jpg);">
 	<div class="container">
-		<h1><a href="/techblog/2021-10-10-v90-usb-c/"> How I fixed USB-C charging on my Powkiddy V90 for $0.01</a></h1>
+		<h1><a href="/techblog/2021-10-10-v90-usb-c/"> Fixing USB-C charging on the Powkiddy V90 for $0.01</a></h1>
 		<h2><span class="sub-heading ">Or: Dear Powkiddy, please do this at your factory</span></h2>
 	</div>
 </header>
 
 
 <main class="container">
-<p>I recently acquired a <a href="https://powkiddy.com/products/powkiddy-v90-3-inch-ips-screen-flip-handheld-console-dual-open-system-game-console-16-simulators-retro-ps1-kids-gift-3d-new-game">Powkiddy V90</a>, which is a Linux-powered handheld retro gaming device.  It&#39;s reminiscent of a Game Boy Advance SP,  and it is capable of playing most GBA games in addition to many other consoles including NES, SNES, Genesis, and even some PS1 games! It retails for $30-40 and comes ready-to-play, although you&#39;ll probably also want to buy a name-brand microSD card and install the <a href="https://github.com/TriForceX/MiyooCFW">Miyoo custom firmware</a> on it.</p>
+<p><img class="right" src="/img/blog/v90/0-v90.jpg" alt="Powkiddy V90" /> I recently acquired a <a href="https://powkiddy.com/products/powkiddy-v90-3-inch-ips-screen-flip-handheld-console-dual-open-system-game-console-16-simulators-retro-ps1-kids-gift-3d-new-game">Powkiddy V90</a>, which is a Linux-powered handheld retro gaming device.  It&#39;s reminiscent of a Game Boy Advance SP,  and it is capable of playing most GBA games in addition to many other consoles including NES, SNES, Genesis, and even some PS1 games! <!--more--> It retails for $30-40 and comes ready-to-play, although you&#39;ll probably also want to buy a name-brand microSD card and install the <a href="https://github.com/TriForceX/MiyooCFW">Miyoo custom firmware</a> on it.</p>
 <p>I really love this device, but, it&#39;s cheap. Like, <em>really</em> cheap. The CPU is the same one that&#39;s in the &lt;$3 <a href="https://www.thirtythreeforty.net/posts/2019/12/my-business-card-runs-linux/">business card that runs Linux</a>.  Furthermore, through ignorance, apathy, or cost-savings (probably some of all three), they only connected the power and ground pins on the USB port. This is good enough when charging via a USB-A ports, because they always provide power. But, when charging from a USB-C port, this doesn&#39;t work because when connecting from one USB-C port to another, they first have to decide <em>which</em> side supplies the power.</p>
 <p>I was vaguely aware that this could be done with resistors after reading about the Raspberry Pi 4 fiasco. (Short version: the spec calls for two resistors, the Pi 4 used one, it worked sometimes but not always.) <a href="https://medium.com/@leung.benson/how-to-design-a-proper-usb-c-power-sink-hint-not-the-way-raspberry-pi-4-did-it-f470d7a5910">Benson Leung has a good article</a> that explained that situation and gave me a good head start on what I needed to do here. That led me to reading (part of) the actual <a href="https://www.usb.org/sites/default/files/USB%20Type-C%20Spec%20R2.0%20-%20August%202019_0.pdf">USB-C specification</a>, specifically Section 4.5.1.3.2 Sink Configuration Channel Functional Model and Table 4-25 Sink CC Termination (Rd) Requirements.</p>
 <p>For a device that is only a sink (meaning it only takes power and never supplies power), and only needs 5 volts and no more than 3 amps (15 watts), the setup is fairly simple. The CC1 and CC2 pins each need to be connected to ground (pulled down) via 5.1 kΩ resistors. I happened to have some of these resistors that I got in a <a href="https://www.electrodragon.com/product/14w-resistor-kit-accuracy-in-1-2020pcs/">kit from electrodragon</a> (600 resistors for $3, or $0.005 per resistor.)</p>
