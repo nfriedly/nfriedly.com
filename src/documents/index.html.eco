@@ -4,7 +4,7 @@ layout: main
 scripts: ['/scripts/instagram.js', '/scripts/github.js']
 referencesOthers: true
 heading: Nathan Friedly
-subHeading: <a href="/about">Husband</a> // <a href="/about">Minister</a> // <a href="/portfolio">JavaScript Ninjaneer</a>
+subHeading: <a href="/about">Husband</a> // <a href="/about">Minister</a> // <a href="/portfolio">Software Ninjaneer</a>
 cssClass: homepage
 headerImage: /img/grapes-up.jpg
 priority: 1
