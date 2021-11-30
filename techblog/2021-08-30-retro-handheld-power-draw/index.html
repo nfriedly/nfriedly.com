@@ -67,7 +67,7 @@ function loadBackupCSS(url) {
 <header class="jumbotron" style="background-image: url(/img/blog/power-draw/header-bg.jpg);">
 	<div class="container">
 		<h1><a href="/techblog/2021-08-30-retro-handheld-power-draw/"> Power measurements for handheld gaming systems</a></h1>
-		<h2><span class="sub-heading ">PowKiddy V90, RGB10 Max, Anbernic RG351P, GPD Win Max (1st gen)</span></h2>
+		<h2><span class="sub-heading ">PowKiddy V90, RGB10 Max, Anbernic RG351P, GPD Win Max</span></h2>
 	</div>
 </header>
 
@@ -82,7 +82,7 @@ function loadBackupCSS(url) {
 </ul>
 <!--more-->
 <h1 id="powkiddy-v90">PowKiddy V90</h1>
-<p><img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I was curious why my V90 seemed to die within a few hours if I did a software shutdown but didn&#39;t flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.</p>
+<p><img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I was curious why my <a href="https://powkiddy.com/products/powkiddy-v90-3-inch-ips-screen-flip-handheld-console-dual-open-system-game-console-16-simulators-retro-ps1-kids-gift-3d-new-game">V90</a> seemed to die within a few hours if I did a software shutdown but didn&#39;t flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.</p>
 <h2 id="interesting-tidbits">Interesting tidbits</h2>
 <ul>
 <li>Gaming is going to draw give-or-take 1W, depending more on screen brightness than anything else.<ul>
@@ -130,7 +130,7 @@ function loadBackupCSS(url) {
 <p>(<a href="https://www.reddit.com/r/SBCGaming/comments/pejfl3/v90_power_draw_information/">Original Post</a>)</p>
 <h1 id="powkiddy-rgb10-max">PowKiddy RGB10 Max</h1>
 <p><img src="/img/blog/power-draw/rgb10-max.jpg" alt="PowKiddy RGB10 Max"></p>
-<p>I took some measurements of the power draw of the PowKiddy RGB10 Max (running the OGS build of EmuELEC 4.2), here&#39;s a few interesting take-aways:</p>
+<p>I took some measurements of the power draw of the <a href="https://powkiddy.com/products/powkiddy-rgb10-max-handheld-game-players">PowKiddy RGB10 Max</a> (running the OGS build of EmuELEC 4.2), here&#39;s a few interesting take-aways:</p>
 <ul>
 <li>The on-screen battery charge level is slow to update. Based on my measurements, it actually stopped charging when it was reporting 73% charged. Later on it reported 100%.</li>
 <li>In EmulationStation, the power draw depends on how much activity is on screen. <ul>
@@ -152,6 +152,7 @@ function loadBackupCSS(url) {
 <p>Unlike when <a href="#powkiddy-v90">I tested my V90</a>, I did not remove the battery from my RGB10 Max during testing, so it may be contributing somewhat to the &quot;noise&quot; I mentioned above. </p>
 <p>(<a href="https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/">Original Post</a>)</p>
 <h1 id="anbernic-rg351p">Anbernic RG351P</h1>
+<p>The <a href="https://anbernic.com/products/rg351p-anbernic-retro-game-ps1-rk3326-64g-open-source-system-3-5-inch-ips-screen-portable-handheld-game-console-rg351gift-2401">Anbernic RG351P</a> has the same CPU as the above RGB10 line, so these number should be inline with the above device, or perhaps a little lower due to the smaller screen.</p>
 <p><img src="/img/blog/power-draw/rg351p.jpg" alt="Anbernic RG351P"></p>
 <p>Recorded numbers are power draw from wall, with the battery disconnected.</p>
 <ul>
@@ -204,18 +205,19 @@ function loadBackupCSS(url) {
 </li>
 </ul>
 <h1 id="gpd-win-max-1st-gen-">GPD Win Max (1st gen)</h1>
-<p><img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> </p>
+<p><img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> The <a href="https://www.gpd.hk/gpdwinmax2021">GPD Win Max</a> is basically a small Windows laptop with active cooling, so it&#39;s in a completely different league than the above devices. Nonetheless, it&#39;s a handheld gaming device, so I think it fits here. (Note: that link is for the 2021 edition, I have the 2020 version, which has a previous-gen CPU, but is otherwise largely similar.) </p>
 <h2 id="can-it-be-charged-with-an-apple-usb-c-charger-">Can it be charged with an Apple USB-C Charger?</h2>
-<p>Original post: <a href="https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/">https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/</a></p>
 <p>Yes, it works fine. I just tested it with my 87 watt MacBook pro charger. My Win Max&#39;s battery is at about 50% and sleeping, and the power draw at the wall is 51w. I fired up Halo Reach in the power draw jumped all the way up to 85 watts.</p>
+<p>But as far as I know, Apple follows the standards, so the GPD should work fine with any Apple laptop charger.</p>
+<h3 id="what-about-a-nintendo-switch-charger-">What about a Nintendo Switch charger?</h3>
 <p>Nintendo did a really shoddy job with the USB-C power delivery on the Switch. Because they didn&#39;t follow the standard correctly, it&#39;s potentially a fire hazard, or more often just doesn&#39;t work with devices that do follow the standard.</p>
-<p>But as far as I know, Apple follows the standards, so it should work fine with an Apple charger.</p>
 <p>I don&#39;t own a Switch, but I have tested my Win Max with a handful of other chargers, and everything 30 watts and higher that I tried seems to work fine. (Obviously the 30w one charges more slowly.)</p>
+<p>(<a href="https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/">Original post</a>)</p>
 <h2 id="are-the-thunderbolt-3-and-usb-c-ports-equivalent-when-it-comes-to-charging-">Are the Thunderbolt 3 and USB-C ports equivalent when it comes to charging?</h2>
 <p>I don&#39;t think so. For context, the GPD Win Max supports charging at 15v and 20v. The USB PD 1.0 specification allows the voltage to be negotiated to one of 5v, 12v, or 20v. The USB PD 2.0 spec split the 12v option into 9v and 15v. So the Win Max supports 20v only on the USB PD 1.0 spec, but both 15v and 20v on the USB 2.0 spec.</p>
 <p>The USB-C (only) port definitely supports 15v charging, but the TB3 port sometimes gets stuck at 12v, and then it doesn&#39;t actually charge. My guess is that perhaps it only supports USB PD 1.0(?)</p>
-<p>Wayback machine link for my charger, since the amazon page seems to be dead now: <a href="https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q">https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q</a></p>
-<p>Original post: <a href="https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/">https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/</a></p>
+<p><a href="https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q">Wayback machine link for my 27W charger</a>, since the amazon page seems to be dead now.</p>
+<p>(<a href="https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/">Original post</a>)</p>
 
 
 
