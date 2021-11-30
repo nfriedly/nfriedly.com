@@ -14,12 +14,12 @@ tags:
 
 I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4232) to record the power draw of a few handheld retro gaming devices. I've previously posted a lot of this information in various threads on reddit, but I've decided to collect them here as the new canonical source.
 
+<!--more-->
+
 * [PowKiddy V90](#powkiddy-v90)
 * [PowKiddy RGB 10 Max](#powkiddy-rgb10-max)
 * [Anbernic RG351P](#anbernic-rg351p)
 * [GPD Win Max](#gpd-win-max-1st-gen-)
-
-<!--more-->
 
 # PowKiddy V90
 
