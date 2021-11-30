@@ -12,7 +12,7 @@ tags:
  - retro-handheld
 ---
 
-<img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4232) to record the power draw of a few handheld retro gaming devices. I've previously posted a lot of this information in various threads on reddit, but I've decided to collect them here as the new canonical source.
+I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4232) to record the power draw of a few handheld retro gaming devices. I've previously posted a lot of this information in various threads on reddit, but I've decided to collect them here as the new canonical source.
 
 * [PowKiddy V90](#powkiddy-v90)
 * [PowKiddy RGB 10 Max](#powkiddy-rgb10-max)
@@ -23,16 +23,14 @@ tags:
 
 # PowKiddy V90
 
-Original Post: https://www.reddit.com/r/SBCGaming/comments/pejfl3/v90_power_draw_information/
+<img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I was curious why my V90 seemed to die within a few hours if I did a software shutdown but didn't flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.
 
-I was curious why my V90 seemed to die within a few hours if I did a software shutdown but didn't flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.
-
-Interesting tidbits:
+## Interesting tidbits
 
 * Gaming is going to draw give-or-take 1W, depending more on screen brightness than anything else.
    * Volume is second place for determining power draw, system and game complexity doesn't seem to have much effect.
    * The range seems to be about 0.7 - 1.3W.
-* Miyoo draws a little less power than the stock firmware in the menu, Suspend, and software shutdown modes. About the same in gaming.
+* [Miyoo] draws a little less power than the stock firmware in the menu, Suspend, and software shutdown modes. About the same in gaming.
 * Software shutdown draws slightly *more* power than suspend mode (?)
 * Both are essentially the same reduction you'd get from just turning off the display while in the menu - the CPU seems to continue operating at full speed.
 * The battery charges at about 2.5W
@@ -40,20 +38,25 @@ Interesting tidbits:
 
 This was connected to an official raspberry Pi USB-C power supply - I chose this one because it's rated for over 15W, and it provides power regardless of what's connected to it.
 
-(Amusingly, the initial batch of Raspberry Pi 4's had the same issue as the V90 where they wouldn't charge from a USB-C port. But, unlike Powkiddy, the Raspberry Pi foundation quickly fixed that mistake.)
+(Amusingly, the initial batch of [Raspberry Pi 4's had the same issue](https://hackaday.com/2019/07/16/exploring-the-raspberry-pi-4-usb-c-issue-in-depth/) as the V90 where they wouldn't charge from a USB-C port. But, unlike Powkiddy, the Raspberry Pi foundation quickly fixed that mistake.)
 
-More details:
+Update: I [added the missing resistors](/techblog/2021-10-10-v90-usb-c/) and fixed USB-C charging on mine!
 
-When playing Crash Bandicoot on PS1:
+## More details
+
+### When playing Crash Bandicoot on PS1
 
 * Maximum power draw was 1.3W with the screen brightness and volume maxed out. The power ranged from about 1.1W to 1.3W depending on how loud the ambient noise in the game was (I was standing by the beech.)
 * With the volume turned down to 0 and the brightness at the lowest visible setting, it went down to 0.68W
 
-When playing Asteroids for Game Boy, power draw ranged from 0.73 to 1.15, depending on volume and brightness. It didn't seem to get as loud as Crash Bandicoot, even at maximum volume.
+### When playing Asteroids for Game Boy
 
-Stock vs Miyoo
+* Power draw ranged from 0.73 to 1.15, depending on volume and brightness.
+* It didn't seem to get as loud as Crash Bandicoot, even at maximum volume.
 
-* Menus are lower in Miyoo, 0.62-0.89W, depending on brightness. 0.47W if you turn the brightness down to 0.
+### Stock Firmware vs Miyoo Custom Firmware
+
+* Menus are lower in [Miyoo], 0.62-0.89W, depending on brightness. 0.47W if you turn the brightness down to 0.
    * Stock Firmware is about 1.09W in the menu, I'm not sure how to change the brightness.
 * Suspend mode draws 0.47W steadily in Miyoo (same as awake but screen off)
    * Stock draws 0.68W in suspend mode.
@@ -62,13 +65,11 @@ Stock vs Miyoo
    * (In both cases, it bounced between those two numbers. The real number is probably somewhere in between, but my meter isn't quite precise enough to detect it.)
 * In-game was about the same with the stock also going up to 1.3W
 
-Here's a picture of my testing setup if anyone is curious: https://imgur.com/a/dryoQII - I'm using this tester: https://www.adafruit.com/product/4232
+([Original Post](https://www.reddit.com/r/SBCGaming/comments/pejfl3/v90_power_draw_information/))
 
 # PowKiddy RGB10 Max
 
 ![PowKiddy RGB10 Max](/img/blog/power-draw/rgb10-max.jpg)
-
-Original Post: https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/
 
 I took some measurements of the power draw of the PowKiddy RGB10 Max (running the OGS build of EmuELEC 4.2), here's a few interesting take-aways:
 
@@ -85,41 +86,49 @@ I took some measurements of the power draw of the PowKiddy RGB10 Max (running th
 * When in sleep mode, the power draw is a steadily ~0.26W (with the battery installed but at 100%). Wi-fi does not cause any additional power draw when the unit is sleeping.
 * The highest power draw I saw when it was sleeping and charging was 4.4W, but the battery was already fairly full. So it may draw more when the battery level is lower. Charging rate  decreased over time, as the battery was approaching 100% charged (despite the UI claiming 73% every time I checked).
 
-Unlike when [I tested my V90](https://www.reddit.com/r/PowKiddy/comments/pejfyh/v90_power_draw_information/), I did not remove the battery from my RGB10 Max during testing, so it may be contributing somewhat to the "noise" I mentioned above. 
+Unlike when [I tested my V90](#powkiddy-v90), I did not remove the battery from my RGB10 Max during testing, so it may be contributing somewhat to the "noise" I mentioned above. 
 
-This is the tester I used: https://www.adafruit.com/product/4232  and here is a picture of it in action: https://imgur.com/a/mKa1NGo
-
+([Original Post](https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/))
 # Anbernic RG351P
 
 ![Anbernic RG351P](/img/blog/power-draw/rg351p.jpg)
 
-(This content was never published anywhere else.)
+Recorded numbers are power draw from wall, with the battery disconnected.
 
-From wall, with battery disconnected. 
+* Off: 0.21W 🤷‍♂️
 
-* Off: 0.21W
+## Stock Firmware
+* Home screen, 100% brightness: 1.77-1.87W
+* In-game in Ridge Racer for psp: 2.39-3.88W
+* Sleeping: 0.21-0.31W
 
-Stock FW
-* home, 100% brightness: 1.77-1.87W
-* ridge racer psp: 2.39-3.88W
-* sleeping: 0.21-0.31W
-* Home, stock wifi attached: 2.08-2.39W, one spike to 3.12 - breaks controls
-* Home, 3rd-party wifi attached, connected to 2.4ghz: 2.49-2.65W
-	* sleeping: 0.21-0.31w
+### With Wi-Fi dongle attached 
+* Home, stock wifi attached: 2.08-2.39W, one spike to 3.12
+   * This seems to break the controls sometimes, I think when it is in the OTG port but not when it's in the DC port (?)
+* Home, 3rd-party 2.4/5Ghz wifi attached, connected to 2.4ghz: 2.49-2.65W
+	* Sleeping: 0.21-0.31w
 * Internal wifi power goes from 3.3v with screen on to 0v when sleeping
 * It also goes to 0v when "enable wifi" is turned off in the menu
 
-* 351Elec menu, 100% brightness: 1.71-1.82W after settling down (initial spikes up to 2.29W while browsing through)
-  * 1% Brightness: 1.46-1.51W
-		* With factory Wifi: 1.25-2.66W, mostly 1.7-2
-	* 100% brightness w/ factory wifi dongle: 1.92-2.39W - breaks controls
-	* 100% brightness, 3rd-party wifi, enabled, not connected: 2.34-2.44
-		* Connected to 2.4 ghz: 2.34-2.39
-		* Disabled in menu: no change
-		* Sleeping: 0.21-0.31w
-* sleeping: 0.21-0.31W
+## 351Elec Firmware
+* Home
+   * 100% brightness: 1.71-1.82W after settling down (initial spikes up to 2.29W while browsing through)
+   * 1% Brightness: 1.46-1.51W
+* Sleeping: 0.21-0.31W
 * Internal wifi power goes from 3.3v with screen on to 0v with screen off
-* However, it remains at 3.3v with the screen on when "enable wifi" is turned off in the menu
+* However, it remains at 3.3v with the screen on when "enable wifi" is turned off in the menu. So an internal dongle will always draw power on 351Elec, vs only drawing power when in use on the stock firmware. I [opened a ticket](https://github.com/351ELEC/351ELEC/issues/624), but it was closed as "won't fix".
+
+
+### With Wi-Fi
+* Factory wifi dongle
+   * 1% brightness: 1.25-2.66W, mostly 1.7-2
+   * 100% brightness: 1.92-2.39W
+   * WiFi dongle also seems to break the controls in 351Elec sometimes
+* 3rd-party wifi, 100% brightness 
+   * Enabled, not connected: 2.34-2.44
+   * Disabled in menu: no change
+   * Connected to 2.4 ghz: 2.34-2.39
+   * Sleeping: 0.21-0.31w
 
 # GPD Win Max (1st gen)
 
@@ -146,3 +155,5 @@ The USB-C (only) port definitely supports 15v charging, but the TB3 port sometim
 Wayback machine link for my charger, since the amazon page seems to be dead now: https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q
 
 Original post: https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/
+
+[Miyoo]: https://github.com/TriForceX/MiyooCFW
