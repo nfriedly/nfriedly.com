@@ -19,7 +19,7 @@ tags:
 * [Anbernic RG351P](#anbernic-rg351p)
 * [GPD Win Max](#gpd-win-max-1st-gen)
 
-<!-- more -->
+<!--more-->
 
 # PowKiddy V90
 
