@@ -1,7 +1,7 @@
 ---
 title: Power measurements for the PowKiddy V90, RGB10 Max, Anbernic RG351P, and GPD Win Max
 heading: Power measurements for handheld gaming systems
-subHeading: PowKiddy V90, RGB10 Max, Anbernic RG351P, GPD Win Max (1st gen)
+subHeading: PowKiddy V90, RGB10 Max, Anbernic RG351P, GPD Win Max
 
 headerImage: /img/blog/power-draw/header-bg.jpg
 
@@ -23,7 +23,7 @@ I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4
 
 # PowKiddy V90
 
-<img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I was curious why my V90 seemed to die within a few hours if I did a software shutdown but didn't flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.
+<img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I was curious why my [V90](https://powkiddy.com/products/powkiddy-v90-3-inch-ips-screen-flip-handheld-console-dual-open-system-game-console-16-simulators-retro-ps1-kids-gift-3d-new-game) seemed to die within a few hours if I did a software shutdown but didn't flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.
 
 ## Interesting tidbits
 
@@ -71,7 +71,7 @@ Update: I [added the missing resistors](/techblog/2021-10-10-v90-usb-c/) and fix
 
 ![PowKiddy RGB10 Max](/img/blog/power-draw/rgb10-max.jpg)
 
-I took some measurements of the power draw of the PowKiddy RGB10 Max (running the OGS build of EmuELEC 4.2), here's a few interesting take-aways:
+I took some measurements of the power draw of the [PowKiddy RGB10 Max](https://powkiddy.com/products/powkiddy-rgb10-max-handheld-game-players) (running the OGS build of EmuELEC 4.2), here's a few interesting take-aways:
 
 * The on-screen battery charge level is slow to update. Based on my measurements, it actually stopped charging when it was reporting 73% charged. Later on it reported 100%.
 * In EmulationStation, the power draw depends on how much activity is on screen. 
@@ -90,6 +90,8 @@ Unlike when [I tested my V90](#powkiddy-v90), I did not remove the battery from 
 
 ([Original Post](https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/))
 # Anbernic RG351P
+
+The [Anbernic RG351P](https://anbernic.com/products/rg351p-anbernic-retro-game-ps1-rk3326-64g-open-source-system-3-5-inch-ips-screen-portable-handheld-game-console-rg351gift-2401) has the same CPU as the above RGB10 line, so these number should be inline with the above device, or perhaps a little lower due to the smaller screen.
 
 ![Anbernic RG351P](/img/blog/power-draw/rg351p.jpg)
 
@@ -132,19 +134,20 @@ Recorded numbers are power draw from wall, with the battery disconnected.
 
 # GPD Win Max (1st gen)
 
-<img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> 
+<img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> The [GPD Win Max](https://www.gpd.hk/gpdwinmax2021) is basically a small Windows laptop with active cooling, so it's in a completely different league than the above devices. Nonetheless, it's a handheld gaming device, so I think it fits here. (Note: that link is for the 2021 edition, I have the 2020 version, which has a previous-gen CPU, but is otherwise largely similar.) 
 
 ## Can it be charged with an Apple USB-C Charger?
 
-Original post: https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/
-
 Yes, it works fine. I just tested it with my 87 watt MacBook pro charger. My Win Max's battery is at about 50% and sleeping, and the power draw at the wall is 51w. I fired up Halo Reach in the power draw jumped all the way up to 85 watts.
 
+But as far as I know, Apple follows the standards, so the GPD should work fine with any Apple laptop charger.
+
+### What about a Nintendo Switch charger?
 Nintendo did a really shoddy job with the USB-C power delivery on the Switch. Because they didn't follow the standard correctly, it's potentially a fire hazard, or more often just doesn't work with devices that do follow the standard.
 
-But as far as I know, Apple follows the standards, so it should work fine with an Apple charger.
-
 I don't own a Switch, but I have tested my Win Max with a handful of other chargers, and everything 30 watts and higher that I tried seems to work fine. (Obviously the 30w one charges more slowly.)
+
+([Original post](https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/))
 
 ## Are the Thunderbolt 3 and USB-C ports equivalent when it comes to charging?
 
@@ -152,8 +155,8 @@ I don't think so. For context, the GPD Win Max supports charging at 15v and 20v.
 
 The USB-C (only) port definitely supports 15v charging, but the TB3 port sometimes gets stuck at 12v, and then it doesn't actually charge. My guess is that perhaps it only supports USB PD 1.0(?)
 
-Wayback machine link for my charger, since the amazon page seems to be dead now: https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q
+[Wayback machine link for my 27W charger](https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q), since the amazon page seems to be dead now.
 
-Original post: https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/
+([Original post](https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/))
 
 [Miyoo]: https://github.com/TriForceX/MiyooCFW
