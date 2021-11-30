@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Power measurements for the PowKiddy V90, RGB10 Max, Anbernic RG351P, and GPD Win Max</title>
+
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="DocPad v6.79.4" />
+<link rel="canonical" href="https://www.nfriedly.com/techblog/2021-08-30-retro-handheld-power-draw/" />
+
+
+<script>
+function loadBackupCSS(url) {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = url;
+	document.head.appendChild(l);
+}
+</script>
+<link href='//fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+
+<link  rel="stylesheet" href="/styles/styles.css" />
+
+<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195">
+
+</head>
+<body class="post">
+
+<div class="over-footer">
+
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Nathan Friedly</a>
+		</div>
+		<div id="nav-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li ><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+			</ul>
+			<!-- div class="navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="http://www.incline.digital/">◢ Incline</a></li>
+				</ul>
+			</div -->
+		</div>
+	</div>
+</nav>
+
+
+<header class="jumbotron" style="background-image: url(/img/blog/power-draw/header-bg.jpg);">
+	<div class="container">
+		<h1><a href="/techblog/2021-08-30-retro-handheld-power-draw/"> Power measurements for handheld gaming systems</a></h1>
+		<h2><span class="sub-heading ">PowKiddy V90, RGB10 Max, Anbernic RG351P, GPD Win Max (1st gen)</span></h2>
+	</div>
+</header>
+
+
+<main class="container">
+<img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4232) to record the power draw of a few handheld retro gaming devices. I've previously posted a lot of this information in various threads on reddit, but I've decided to collect them here as the new canonical source.
+
+* [PowKiddy V90](#powkiddy-v90)
+* [PowKiddy RGB 10 Max](#powkiddy-rgb10-max)
+* [Anbernic RG351P](#anbernic-rg351p)
+* [GPD Win Max](#gpd-win-max-1st-gen)
+
+<!-- more -->
+
+# PowKiddy V90
+
+Original Post: https://www.reddit.com/r/SBCGaming/comments/pejfl3/v90_power_draw_information/
+
+I was curious why my V90 seemed to die within a few hours if I did a software shutdown but didn't flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.
+
+Interesting tidbits:
+
+* Gaming is going to draw give-or-take 1W, depending more on screen brightness than anything else.
+   * Volume is second place for determining power draw, system and game complexity doesn't seem to have much effect.
+   * The range seems to be about 0.7 - 1.3W.
+* Miyoo draws a little less power than the stock firmware in the menu, Suspend, and software shutdown modes. About the same in gaming.
+* Software shutdown draws slightly *more* power than suspend mode (?)
+* Both are essentially the same reduction you'd get from just turning off the display while in the menu - the CPU seems to continue operating at full speed.
+* The battery charges at about 2.5W
+* The maximum power it will draw from the wall, when gaming and charging, is around 3.5W
+
+This was connected to an official raspberry Pi USB-C power supply - I chose this one because it's rated for over 15W, and it provides power regardless of what's connected to it.
+
+(Amusingly, the initial batch of Raspberry Pi 4's had the same issue as the V90 where they wouldn't charge from a USB-C port. But, unlike Powkiddy, the Raspberry Pi foundation quickly fixed that mistake.)
+
+More details:
+
+When playing Crash Bandicoot on PS1:
+
+* Maximum power draw was 1.3W with the screen brightness and volume maxed out. The power ranged from about 1.1W to 1.3W depending on how loud the ambient noise in the game was (I was standing by the beech.)
+* With the volume turned down to 0 and the brightness at the lowest visible setting, it went down to 0.68W
+
+When playing Asteroids for Game Boy, power draw ranged from 0.73 to 1.15, depending on volume and brightness. It didn't seem to get as loud as Crash Bandicoot, even at maximum volume.
+
+Stock vs Miyoo
+
+* Menus are lower in Miyoo, 0.62-0.89W, depending on brightness. 0.47W if you turn the brightness down to 0.
+   * Stock Firmware is about 1.09W in the menu, I'm not sure how to change the brightness.
+* Suspend mode draws 0.47W steadily in Miyoo (same as awake but screen off)
+   * Stock draws 0.68W in suspend mode.
+* After a software shutdown but before flipping the switch, it draws 0.47-0.52W in Miyoo.
+   * Stock draws 0.68-0.73W.
+   * (In both cases, it bounced between those two numbers. The real number is probably somewhere in between, but my meter isn't quite precise enough to detect it.)
+* In-game was about the same with the stock also going up to 1.3W
+
+Here's a picture of my testing setup if anyone is curious: https://imgur.com/a/dryoQII - I'm using this tester: https://www.adafruit.com/product/4232
+
+# PowKiddy RGB10 Max
+
+![PowKiddy RGB10 Max](/img/blog/power-draw/rgb-10-max.jpg)
+
+Original Post: https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/
+
+I took some measurements of the power draw of the PowKiddy RGB10 Max (running the OGS build of EmuELEC 4.2), here's a few interesting take-aways:
+
+* The on-screen battery charge level is slow to update. Based on my measurements, it actually stopped charging when it was reporting 73% charged. Later on it reported 100%.
+* In EmulationStation, the power draw depends on how much activity is on screen. 
+  * A basic screen draws ~1-2W
+  * A screen with video playing and scrolling text draws 2~3.5W
+* When gaming, power draw depends somewhat on the game. 
+  * The Legend of Zelda on NES draws 1-2W
+  * Valkyria Chronicles 2 on PSP draws ~1.5-2.5W in 2D parts and 2-3W in 3D parts
+* In general, the power draw is very jumpy when awake, going up and down from one second to the next
+* Brightness and volume seems to have a fairly small effect. I'm sure they make some difference, like maybe 0.15W to go from 5% brightness to 100%, but it mostly seems to be getting lost in the noise.
+* **Wi-Fi does make a noticeable impact**, something like 0.5-1W of additional power draw
+* When in sleep mode, the power draw is a steadily ~0.26W (with the battery installed but at 100%). Wi-fi does not cause any additional power draw when the unit is sleeping.
+* The highest power draw I saw when it was sleeping and charging was 4.4W, but the battery was already fairly full. So it may draw more when the battery level is lower. Charging rate  decreased over time, as the battery was approaching 100% charged (despite the UI claiming 73% every time I checked).
+
+Unlike when [I tested my V90](https://www.reddit.com/r/PowKiddy/comments/pejfyh/v90_power_draw_information/), I did not remove the battery from my RGB10 Max during testing, so it may be contributing somewhat to the "noise" I mentioned above. 
+
+This is the tester I used: https://www.adafruit.com/product/4232  and here is a picture of it in action: https://imgur.com/a/mKa1NGo
+
+# Anbernic RG351P
+
+![Anbernic RG351P](/img/blog/power-draw/rg351p.jpg)
+
+(This content was never published anywhere else.)
+
+From wall, with battery disconnected. 
+
+* Off: 0.21W
+
+Stock FW
+* home, 100% brightness: 1.77-1.87W
+* ridge racer psp: 2.39-3.88W
+* sleeping: 0.21-0.31W
+* Home, stock wifi attached: 2.08-2.39W, one spike to 3.12 - breaks controls
+* Home, 3rd-party wifi attached, connected to 2.4ghz: 2.49-2.65W
+	* sleeping: 0.21-0.31w
+* Internal wifi power goes from 3.3v with screen on to 0v when sleeping
+* It also goes to 0v when "enable wifi" is turned off in the menu
+
+* 351Elec menu, 100% brightness: 1.71-1.82W after setteling down (initial spikes up to 2.29W while browsing through)
+  * 1% Brightness: 1.46-1.51W
+		* With factory Wifi: 1.25-2.66W, mostly 1.7-2
+	* 100% brightness w/ factory wifi dongle: 1.92-2.39W - breaks controls
+	* 100% brightness, 3rd-party wifi, enabled, not connected: 2.34-2.44
+		* Connected to 2.4 ghz: 2.34-2.39
+		* Disabled in menu: no change
+		* Sleeping: 0.21-0.31w
+* sleeping: 0.21-0.31W
+* Internal wifi power goes from 3.3v with screen on to 0v with screen off
+* However, it remains at 3.3v with the screen on when "enable wifi" is turned off in the menu
+
+# GPD Win Max (1st gen)
+
+<img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> 
+
+## Can it be charged with an Apple USB-C Charger?
+
+Original post: https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/
+
+Yes, it works fine. I just tested it with my 87 watt MacBook pro charger. My Win Max's battery is at about 50% and sleeping, and the power draw at the wall is 51w. I fired up Halo Reach in the power draw jumped all the way up to 85 watts.
+
+Nintendo did a really shoddy job with the USB-C power delivery on the Switch. Because they didn't follow the standard correctly, it's potentially a fire hazard, or more often just doesn't work with devices that do follow the standard.
+
+But as far as I know, Apple follows the standards, so it should work fine with an Apple charger.
+
+I don't own a Switch, but I have tested my Win Max with a handful of other chargers, and everything 30 watts and higher that I tried seems to work fine. (Obviously the 30w one charges more slowly.)
+
+## Are the Thunderbolt 3 and USB-C ports equivalent when it comes to charging?
+
+I don't think so. For context, the GPD Win Max supports charging at 15v and 20v. The USB PD 1.0 specification allows the voltage to be negotiated to one of 5v, 12v, or 20v. The USB PD 2.0 spec split the 12v option into 9v and 15v. So the Win Max supports 20v only on the USB PD 1.0 spec, but both 15v and 20v on the USB 2.0 spec.
+
+The USB-C (only) port definitely supports 15v charging, but the TB3 port sometimes gets stuck at 12v, and then it doesn't actually charge. My guess is that perhaps it only supports USB PD 1.0(?)
+
+Wayback machine link for my charger, since the amazon page seems to be dead now: https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q
+
+Original post: https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/
+
+
+</main>
+
+</div> <!-- .over-footer -->
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact">
+				<h3 id="contact">Contact Nathan</h3>
+
+				<ul>
+					<li>
+						<a class="email" title="email">
+							<span class="fa-stack">
+								<i class="fa fa-square-o fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x"></i>
+							</span>
+							<span class="email-text">nathan @ (this website)</span>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://github.com/nfriedly" title="GitHub">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-github fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly" title="Stack Overflow">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-stack-overflow fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly" title="LinkedIn">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly" title="Facebook">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://twitter.com/nfriedly" title="Twitter">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.last.fm/user/nfriedly" title="Last.fm">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-lastfm fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly" title="Steam">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-steam fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly" title="Hacker News">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-yc fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.goodreads.com/user/show/63990321-nathan-friedly" title="Goodreads">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-book fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://angel.co/nathan-friedly" title="AngelList">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-angellist fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://www.reddit.com/user/nfriedly" title="Reddit">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-reddit fa-stack-1x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-md-3 sitemap">
+				<h3>Site Map</h3>
+				<ul class="fa-ul">
+					<li><a href="/"><i class="fa-li fa fa-home"></i> Home</a></li>
+					<li><a href="/about/"><i class="fa-li fa fa-android"></i>About</a></li>
+					<li><a href="/portfolio/"><i class="fa-li fa fa-laptop"></i>Portfolio</a></li>
+					<li><a href="/techblog/"><i class="fa-li fa fa-terminal"></i>Tech blog</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-4 info">
+				<p><a href="http://www.nfriedly.com" title="Nathan Friedly: JavaScript &amp; Node.js Expert">Website by Nathan Friedly</a></p>
+				<!-- p><a href="http://www.incline.systems">◢ Incline: JavaScript &amp; Node.js Experts</a></p -->
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
+				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+
+				<p>Built with <a href="http://docpad.org">DocPad</a>,
+					<a href="http://getbootstrap.com/">Bootstrap</a>,
+					and <a href="http://www.nodejs.org/">Node.js</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="chromefix"></div>
+
+<script>
+function loadBackupJS(url) {
+	var s = document.createElement('script');
+	s.src = url;
+	document.head.appendChild(s);
+}
+</script>
+
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+	<!--<![endif]-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+
+
+<script defer="defer"  src="/scripts/email.js"></script>
+
+
+
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1735765-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+    <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+window['_fs_org'] = 'ZMV7P';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+    g.anonymize=function(){g.identify(!!0)};
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+    g.log = function(a,b){g("log",[a,b])};
+    g.consent=function(a){g("consent",!arguments.length||a)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(){};
+    g.setVars=function(n, p){g('setVars',[n,p]);};
+    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+    g._v="1.3.0";
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
+
+
+
+</body>
+</html>
