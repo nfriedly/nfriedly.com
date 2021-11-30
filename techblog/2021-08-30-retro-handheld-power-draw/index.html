@@ -73,140 +73,134 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4232) to record the power draw of a few handheld retro gaming devices. I've previously posted a lot of this information in various threads on reddit, but I've decided to collect them here as the new canonical source.
-
-* [PowKiddy V90](#powkiddy-v90)
-* [PowKiddy RGB 10 Max](#powkiddy-rgb10-max)
-* [Anbernic RG351P](#anbernic-rg351p)
-* [GPD Win Max](#gpd-win-max-1st-gen)
-
+<p><img class="right" src="/img/blog/power-draw/v90.jpg" alt="PowKiddy V90" /> I used a <a href="https://www.adafruit.com/product/4232">Multifunctional USB Digital Tester</a> to record the power draw of a few handheld retro gaming devices. I&#39;ve previously posted a lot of this information in various threads on reddit, but I&#39;ve decided to collect them here as the new canonical source.</p>
+<ul>
+<li><a href="#powkiddy-v90">PowKiddy V90</a></li>
+<li><a href="#powkiddy-rgb10-max">PowKiddy RGB 10 Max</a></li>
+<li><a href="#anbernic-rg351p">Anbernic RG351P</a></li>
+<li><a href="#gpd-win-max-1st-gen">GPD Win Max</a></li>
+</ul>
 <!--more-->
+<h1 id="powkiddy-v90">PowKiddy V90</h1>
+<p>Original Post: <a href="https://www.reddit.com/r/SBCGaming/comments/pejfl3/v90_power_draw_information/">https://www.reddit.com/r/SBCGaming/comments/pejfl3/v90_power_draw_information/</a></p>
+<p>I was curious why my V90 seemed to die within a few hours if I did a software shutdown but didn&#39;t flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.</p>
+<p>Interesting tidbits:</p>
+<ul>
+<li>Gaming is going to draw give-or-take 1W, depending more on screen brightness than anything else.<ul>
+<li>Volume is second place for determining power draw, system and game complexity doesn&#39;t seem to have much effect.</li>
+<li>The range seems to be about 0.7 - 1.3W.</li>
+</ul>
+</li>
+<li>Miyoo draws a little less power than the stock firmware in the menu, Suspend, and software shutdown modes. About the same in gaming.</li>
+<li>Software shutdown draws slightly <em>more</em> power than suspend mode (?)</li>
+<li>Both are essentially the same reduction you&#39;d get from just turning off the display while in the menu - the CPU seems to continue operating at full speed.</li>
+<li>The battery charges at about 2.5W</li>
+<li>The maximum power it will draw from the wall, when gaming and charging, is around 3.5W</li>
+</ul>
+<p>This was connected to an official raspberry Pi USB-C power supply - I chose this one because it&#39;s rated for over 15W, and it provides power regardless of what&#39;s connected to it.</p>
+<p>(Amusingly, the initial batch of Raspberry Pi 4&#39;s had the same issue as the V90 where they wouldn&#39;t charge from a USB-C port. But, unlike Powkiddy, the Raspberry Pi foundation quickly fixed that mistake.)</p>
+<p>More details:</p>
+<p>When playing Crash Bandicoot on PS1:</p>
+<ul>
+<li>Maximum power draw was 1.3W with the screen brightness and volume maxed out. The power ranged from about 1.1W to 1.3W depending on how loud the ambient noise in the game was (I was standing by the beech.)</li>
+<li>With the volume turned down to 0 and the brightness at the lowest visible setting, it went down to 0.68W</li>
+</ul>
+<p>When playing Asteroids for Game Boy, power draw ranged from 0.73 to 1.15, depending on volume and brightness. It didn&#39;t seem to get as loud as Crash Bandicoot, even at maximum volume.</p>
+<p>Stock vs Miyoo</p>
+<ul>
+<li>Menus are lower in Miyoo, 0.62-0.89W, depending on brightness. 0.47W if you turn the brightness down to 0.<ul>
+<li>Stock Firmware is about 1.09W in the menu, I&#39;m not sure how to change the brightness.</li>
+</ul>
+</li>
+<li>Suspend mode draws 0.47W steadily in Miyoo (same as awake but screen off)<ul>
+<li>Stock draws 0.68W in suspend mode.</li>
+</ul>
+</li>
+<li>After a software shutdown but before flipping the switch, it draws 0.47-0.52W in Miyoo.<ul>
+<li>Stock draws 0.68-0.73W.</li>
+<li>(In both cases, it bounced between those two numbers. The real number is probably somewhere in between, but my meter isn&#39;t quite precise enough to detect it.)</li>
+</ul>
+</li>
+<li>In-game was about the same with the stock also going up to 1.3W</li>
+</ul>
+<p>Here&#39;s a picture of my testing setup if anyone is curious: <a href="https://imgur.com/a/dryoQII">https://imgur.com/a/dryoQII</a> - I&#39;m using this tester: <a href="https://www.adafruit.com/product/4232">https://www.adafruit.com/product/4232</a></p>
+<h1 id="powkiddy-rgb10-max">PowKiddy RGB10 Max</h1>
+<p><img src="/img/blog/power-draw/rgb-10-max.jpg" alt="PowKiddy RGB10 Max"></p>
+<p>Original Post: <a href="https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/">https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/</a></p>
+<p>I took some measurements of the power draw of the PowKiddy RGB10 Max (running the OGS build of EmuELEC 4.2), here&#39;s a few interesting take-aways:</p>
+<ul>
+<li>The on-screen battery charge level is slow to update. Based on my measurements, it actually stopped charging when it was reporting 73% charged. Later on it reported 100%.</li>
+<li>In EmulationStation, the power draw depends on how much activity is on screen. <ul>
+<li>A basic screen draws ~1-2W</li>
+<li>A screen with video playing and scrolling text draws 2~3.5W</li>
+</ul>
+</li>
+<li>When gaming, power draw depends somewhat on the game. <ul>
+<li>The Legend of Zelda on NES draws 1-2W</li>
+<li>Valkyria Chronicles 2 on PSP draws ~1.5-2.5W in 2D parts and 2-3W in 3D parts</li>
+</ul>
+</li>
+<li>In general, the power draw is very jumpy when awake, going up and down from one second to the next</li>
+<li>Brightness and volume seems to have a fairly small effect. I&#39;m sure they make some difference, like maybe 0.15W to go from 5% brightness to 100%, but it mostly seems to be getting lost in the noise.</li>
+<li><strong>Wi-Fi does make a noticeable impact</strong>, something like 0.5-1W of additional power draw</li>
+<li>When in sleep mode, the power draw is a steadily ~0.26W (with the battery installed but at 100%). Wi-fi does not cause any additional power draw when the unit is sleeping.</li>
+<li>The highest power draw I saw when it was sleeping and charging was 4.4W, but the battery was already fairly full. So it may draw more when the battery level is lower. Charging rate  decreased over time, as the battery was approaching 100% charged (despite the UI claiming 73% every time I checked).</li>
+</ul>
+<p>Unlike when <a href="https://www.reddit.com/r/PowKiddy/comments/pejfyh/v90_power_draw_information/">I tested my V90</a>, I did not remove the battery from my RGB10 Max during testing, so it may be contributing somewhat to the &quot;noise&quot; I mentioned above. </p>
+<p>This is the tester I used: <a href="https://www.adafruit.com/product/4232">https://www.adafruit.com/product/4232</a>  and here is a picture of it in action: <a href="https://imgur.com/a/mKa1NGo">https://imgur.com/a/mKa1NGo</a></p>
+<h1 id="anbernic-rg351p">Anbernic RG351P</h1>
+<p><img src="/img/blog/power-draw/rg351p.jpg" alt="Anbernic RG351P"></p>
+<p>(This content was never published anywhere else.)</p>
+<p>From wall, with battery disconnected. </p>
+<ul>
+<li>Off: 0.21W</li>
+</ul>
+<p>Stock FW</p>
+<ul>
+<li>home, 100% brightness: 1.77-1.87W</li>
+<li>ridge racer psp: 2.39-3.88W</li>
+<li>sleeping: 0.21-0.31W</li>
+<li>Home, stock wifi attached: 2.08-2.39W, one spike to 3.12 - breaks controls</li>
+<li>Home, 3rd-party wifi attached, connected to 2.4ghz: 2.49-2.65W<ul>
+<li>sleeping: 0.21-0.31w</li>
+</ul>
+</li>
+<li>Internal wifi power goes from 3.3v with screen on to 0v when sleeping</li>
+<li><p>It also goes to 0v when &quot;enable wifi&quot; is turned off in the menu</p>
+</li>
+<li><p>351Elec menu, 100% brightness: 1.71-1.82W after setteling down (initial spikes up to 2.29W while browsing through)</p>
+<ul>
+<li>1% Brightness: 1.46-1.51W<pre class="highlight"><code class="hljs css">* <span class="hljs-selector-tag">With</span> <span class="hljs-selector-tag">factory</span> <span class="hljs-selector-tag">Wifi</span>: 1<span class="hljs-selector-class">.25-2</span><span class="hljs-selector-class">.66W</span>, <span class="hljs-selector-tag">mostly</span> 1<span class="hljs-selector-class">.7-2</span>
+</code></pre><ul>
+<li>100% brightness w/ factory wifi dongle: 1.92-2.39W - breaks controls</li>
+<li>100% brightness, 3rd-party wifi, enabled, not connected: 2.34-2.44<ul>
+<li>Connected to 2.4 ghz: 2.34-2.39</li>
+<li>Disabled in menu: no change</li>
+<li>Sleeping: 0.21-0.31w</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sleeping: 0.21-0.31W</li>
+<li>Internal wifi power goes from 3.3v with screen on to 0v with screen off</li>
+<li>However, it remains at 3.3v with the screen on when &quot;enable wifi&quot; is turned off in the menu</li>
+</ul>
+<h1 id="gpd-win-max-1st-gen-">GPD Win Max (1st gen)</h1>
+<p><img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> </p>
+<h2 id="can-it-be-charged-with-an-apple-usb-c-charger-">Can it be charged with an Apple USB-C Charger?</h2>
+<p>Original post: <a href="https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/">https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/</a></p>
+<p>Yes, it works fine. I just tested it with my 87 watt MacBook pro charger. My Win Max&#39;s battery is at about 50% and sleeping, and the power draw at the wall is 51w. I fired up Halo Reach in the power draw jumped all the way up to 85 watts.</p>
+<p>Nintendo did a really shoddy job with the USB-C power delivery on the Switch. Because they didn&#39;t follow the standard correctly, it&#39;s potentially a fire hazard, or more often just doesn&#39;t work with devices that do follow the standard.</p>
+<p>But as far as I know, Apple follows the standards, so it should work fine with an Apple charger.</p>
+<p>I don&#39;t own a Switch, but I have tested my Win Max with a handful of other chargers, and everything 30 watts and higher that I tried seems to work fine. (Obviously the 30w one charges more slowly.)</p>
+<h2 id="are-the-thunderbolt-3-and-usb-c-ports-equivalent-when-it-comes-to-charging-">Are the Thunderbolt 3 and USB-C ports equivalent when it comes to charging?</h2>
+<p>I don&#39;t think so. For context, the GPD Win Max supports charging at 15v and 20v. The USB PD 1.0 specification allows the voltage to be negotiated to one of 5v, 12v, or 20v. The USB PD 2.0 spec split the 12v option into 9v and 15v. So the Win Max supports 20v only on the USB PD 1.0 spec, but both 15v and 20v on the USB 2.0 spec.</p>
+<p>The USB-C (only) port definitely supports 15v charging, but the TB3 port sometimes gets stuck at 12v, and then it doesn&#39;t actually charge. My guess is that perhaps it only supports USB PD 1.0(?)</p>
+<p>Wayback machine link for my charger, since the amazon page seems to be dead now: <a href="https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q">https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q</a></p>
+<p>Original post: <a href="https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/">https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/</a></p>
 
-# PowKiddy V90
-
-Original Post: https://www.reddit.com/r/SBCGaming/comments/pejfl3/v90_power_draw_information/
-
-I was curious why my V90 seemed to die within a few hours if I did a software shutdown but didn't flip the power switch, so I got out a USB-C power meter and took some measurements of the power draw in different scenarios.
-
-Interesting tidbits:
-
-* Gaming is going to draw give-or-take 1W, depending more on screen brightness than anything else.
-   * Volume is second place for determining power draw, system and game complexity doesn't seem to have much effect.
-   * The range seems to be about 0.7 - 1.3W.
-* Miyoo draws a little less power than the stock firmware in the menu, Suspend, and software shutdown modes. About the same in gaming.
-* Software shutdown draws slightly *more* power than suspend mode (?)
-* Both are essentially the same reduction you'd get from just turning off the display while in the menu - the CPU seems to continue operating at full speed.
-* The battery charges at about 2.5W
-* The maximum power it will draw from the wall, when gaming and charging, is around 3.5W
-
-This was connected to an official raspberry Pi USB-C power supply - I chose this one because it's rated for over 15W, and it provides power regardless of what's connected to it.
-
-(Amusingly, the initial batch of Raspberry Pi 4's had the same issue as the V90 where they wouldn't charge from a USB-C port. But, unlike Powkiddy, the Raspberry Pi foundation quickly fixed that mistake.)
-
-More details:
-
-When playing Crash Bandicoot on PS1:
-
-* Maximum power draw was 1.3W with the screen brightness and volume maxed out. The power ranged from about 1.1W to 1.3W depending on how loud the ambient noise in the game was (I was standing by the beech.)
-* With the volume turned down to 0 and the brightness at the lowest visible setting, it went down to 0.68W
-
-When playing Asteroids for Game Boy, power draw ranged from 0.73 to 1.15, depending on volume and brightness. It didn't seem to get as loud as Crash Bandicoot, even at maximum volume.
-
-Stock vs Miyoo
-
-* Menus are lower in Miyoo, 0.62-0.89W, depending on brightness. 0.47W if you turn the brightness down to 0.
-   * Stock Firmware is about 1.09W in the menu, I'm not sure how to change the brightness.
-* Suspend mode draws 0.47W steadily in Miyoo (same as awake but screen off)
-   * Stock draws 0.68W in suspend mode.
-* After a software shutdown but before flipping the switch, it draws 0.47-0.52W in Miyoo.
-   * Stock draws 0.68-0.73W.
-   * (In both cases, it bounced between those two numbers. The real number is probably somewhere in between, but my meter isn't quite precise enough to detect it.)
-* In-game was about the same with the stock also going up to 1.3W
-
-Here's a picture of my testing setup if anyone is curious: https://imgur.com/a/dryoQII - I'm using this tester: https://www.adafruit.com/product/4232
-
-# PowKiddy RGB10 Max
-
-![PowKiddy RGB10 Max](/img/blog/power-draw/rgb-10-max.jpg)
-
-Original Post: https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/
-
-I took some measurements of the power draw of the PowKiddy RGB10 Max (running the OGS build of EmuELEC 4.2), here's a few interesting take-aways:
-
-* The on-screen battery charge level is slow to update. Based on my measurements, it actually stopped charging when it was reporting 73% charged. Later on it reported 100%.
-* In EmulationStation, the power draw depends on how much activity is on screen. 
-  * A basic screen draws ~1-2W
-  * A screen with video playing and scrolling text draws 2~3.5W
-* When gaming, power draw depends somewhat on the game. 
-  * The Legend of Zelda on NES draws 1-2W
-  * Valkyria Chronicles 2 on PSP draws ~1.5-2.5W in 2D parts and 2-3W in 3D parts
-* In general, the power draw is very jumpy when awake, going up and down from one second to the next
-* Brightness and volume seems to have a fairly small effect. I'm sure they make some difference, like maybe 0.15W to go from 5% brightness to 100%, but it mostly seems to be getting lost in the noise.
-* **Wi-Fi does make a noticeable impact**, something like 0.5-1W of additional power draw
-* When in sleep mode, the power draw is a steadily ~0.26W (with the battery installed but at 100%). Wi-fi does not cause any additional power draw when the unit is sleeping.
-* The highest power draw I saw when it was sleeping and charging was 4.4W, but the battery was already fairly full. So it may draw more when the battery level is lower. Charging rate  decreased over time, as the battery was approaching 100% charged (despite the UI claiming 73% every time I checked).
-
-Unlike when [I tested my V90](https://www.reddit.com/r/PowKiddy/comments/pejfyh/v90_power_draw_information/), I did not remove the battery from my RGB10 Max during testing, so it may be contributing somewhat to the "noise" I mentioned above. 
-
-This is the tester I used: https://www.adafruit.com/product/4232  and here is a picture of it in action: https://imgur.com/a/mKa1NGo
-
-# Anbernic RG351P
-
-![Anbernic RG351P](/img/blog/power-draw/rg351p.jpg)
-
-(This content was never published anywhere else.)
-
-From wall, with battery disconnected. 
-
-* Off: 0.21W
-
-Stock FW
-* home, 100% brightness: 1.77-1.87W
-* ridge racer psp: 2.39-3.88W
-* sleeping: 0.21-0.31W
-* Home, stock wifi attached: 2.08-2.39W, one spike to 3.12 - breaks controls
-* Home, 3rd-party wifi attached, connected to 2.4ghz: 2.49-2.65W
-	* sleeping: 0.21-0.31w
-* Internal wifi power goes from 3.3v with screen on to 0v when sleeping
-* It also goes to 0v when "enable wifi" is turned off in the menu
-
-* 351Elec menu, 100% brightness: 1.71-1.82W after setteling down (initial spikes up to 2.29W while browsing through)
-  * 1% Brightness: 1.46-1.51W
-		* With factory Wifi: 1.25-2.66W, mostly 1.7-2
-	* 100% brightness w/ factory wifi dongle: 1.92-2.39W - breaks controls
-	* 100% brightness, 3rd-party wifi, enabled, not connected: 2.34-2.44
-		* Connected to 2.4 ghz: 2.34-2.39
-		* Disabled in menu: no change
-		* Sleeping: 0.21-0.31w
-* sleeping: 0.21-0.31W
-* Internal wifi power goes from 3.3v with screen on to 0v with screen off
-* However, it remains at 3.3v with the screen on when "enable wifi" is turned off in the menu
-
-# GPD Win Max (1st gen)
-
-<img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> 
-
-## Can it be charged with an Apple USB-C Charger?
-
-Original post: https://www.reddit.com/r/gpdwin/comments/in453a/charging_gpd_win_max_with_apple_usb_c_chargers/g462gur/
-
-Yes, it works fine. I just tested it with my 87 watt MacBook pro charger. My Win Max's battery is at about 50% and sleeping, and the power draw at the wall is 51w. I fired up Halo Reach in the power draw jumped all the way up to 85 watts.
-
-Nintendo did a really shoddy job with the USB-C power delivery on the Switch. Because they didn't follow the standard correctly, it's potentially a fire hazard, or more often just doesn't work with devices that do follow the standard.
-
-But as far as I know, Apple follows the standards, so it should work fine with an Apple charger.
-
-I don't own a Switch, but I have tested my Win Max with a handful of other chargers, and everything 30 watts and higher that I tried seems to work fine. (Obviously the 30w one charges more slowly.)
-
-## Are the Thunderbolt 3 and USB-C ports equivalent when it comes to charging?
-
-I don't think so. For context, the GPD Win Max supports charging at 15v and 20v. The USB PD 1.0 specification allows the voltage to be negotiated to one of 5v, 12v, or 20v. The USB PD 2.0 spec split the 12v option into 9v and 15v. So the Win Max supports 20v only on the USB PD 1.0 spec, but both 15v and 20v on the USB 2.0 spec.
-
-The USB-C (only) port definitely supports 15v charging, but the TB3 port sometimes gets stuck at 12v, and then it doesn't actually charge. My guess is that perhaps it only supports USB PD 1.0(?)
-
-Wayback machine link for my charger, since the amazon page seems to be dead now: https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q
-
-Original post: https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/
 
 
 </main>
