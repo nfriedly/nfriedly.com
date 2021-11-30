@@ -17,7 +17,7 @@ tags:
 * [PowKiddy V90](#powkiddy-v90)
 * [PowKiddy RGB 10 Max](#powkiddy-rgb10-max)
 * [Anbernic RG351P](#anbernic-rg351p)
-* [GPD Win Max](#gpd-win-max-1st-gen)
+* [GPD Win Max](#gpd-win-max-1st-gen-)
 
 <!--more-->
 
@@ -66,7 +66,7 @@ Here's a picture of my testing setup if anyone is curious: https://imgur.com/a/d
 
 # PowKiddy RGB10 Max
 
-![PowKiddy RGB10 Max](/img/blog/power-draw/rgb-10-max.jpg)
+![PowKiddy RGB10 Max](/img/blog/power-draw/rgb10-max.jpg)
 
 Original Post: https://www.reddit.com/r/SBCGaming/comments/pjv0fu/powkiddy_rgb10_max_power_draw_measurements/
 
@@ -109,7 +109,7 @@ Stock FW
 * Internal wifi power goes from 3.3v with screen on to 0v when sleeping
 * It also goes to 0v when "enable wifi" is turned off in the menu
 
-* 351Elec menu, 100% brightness: 1.71-1.82W after setteling down (initial spikes up to 2.29W while browsing through)
+* 351Elec menu, 100% brightness: 1.71-1.82W after settling down (initial spikes up to 2.29W while browsing through)
   * 1% Brightness: 1.46-1.51W
 		* With factory Wifi: 1.25-2.66W, mostly 1.7-2
 	* 100% brightness w/ factory wifi dongle: 1.92-2.39W - breaks controls
