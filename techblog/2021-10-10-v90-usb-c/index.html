@@ -103,7 +103,7 @@ Specification</a>, specifically <code>Section 4.5.1.3.2 Sink Configuration Chann
 <h1 id="conclusion">Conclusion</h1>
 <p>In summary, I&#39;m happy that my V90 now works with any USB-C charger, but I really wish PowKiddy had just done this at the factory. I would have gladly paid the extra $0.01.</p>
 <hr>
-<p>P.S. If you&#39;re reading this PowKiddy, please also connect the USB 2.0 Data pins - there&#39;s a controller built into the CPU, so you&#39;d just need to run the traces which should be ~free.</p>
+<p>P.S. If you&#39;re reading this PowKiddy, please also connect the USB 2.0 Data pins - there&#39;s a controller built into the CPU, so you&#39;d just need to run the traces which should be ~free. (This would allow it to behave as a USB Gadget; OTG mode would probably require a bit more hardware.)</p>
 <p>Additionally, if you <em>really</em> want to make my day, please also replace the power <strong>switch</strong> with a power <strong>button</strong> that can trigger a software shutdown <em>and</em> circuitry to cut the power to the entire system upon shutdown. I know that won&#39;t be free, but it would fix the common issue of corrupted firmware from flipping the switch without doing a software shutdown and the <em>other</em> common issue of having the battery die after doing a software shutdown and then forgetting to flip the switch.</p>
 <p>And, finally, if we&#39;re going <em>hog-wild</em>, maybe add a sensor to detect when the lid is shut so that it could do something smart, like at least turn off the screen backlight. (I realize that the choice of an application processor that doesn&#39;t appear to have a sleep mode makes this less useful, but hey, you could always upgrade the processor too!)</p>
 
