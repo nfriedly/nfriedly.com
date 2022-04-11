@@ -3,9 +3,9 @@
 
 My personal website. Introduces me, shows off a bit of my work. 
 
-Built with [DocPad], [Markdown], [Bootstrap], and [Node.js]. Hosted on [GitHub Pages] and accelerated by [Amazon CloudFront]. Continuously deployed by [Travis CI].
+Built with [DocPad], [Markdown], [Bootstrap], and [Node.js]. Hosted on [GitHub Pages].
 
-[![Build Status](https://travis-ci.org/nfriedly/nfriedly.com.png)](https://travis-ci.org/nfriedly/nfriedly.com)
+[![pages-build-deployment](https://github.com/nfriedly/nfriedly.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/nfriedly/nfriedly.com/actions/workflows/pages/pages-build-deployment)
 
 Todo:
 * Finish conversion to React / Next.js
