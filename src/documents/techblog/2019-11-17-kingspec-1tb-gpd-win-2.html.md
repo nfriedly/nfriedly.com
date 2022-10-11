@@ -74,3 +74,7 @@ Sometimes, after messing with the SSD, the GPD Win 2's BIOS will revert to booti
 ## Summary
 
 In short, I'm very happy with the upgrade.
+
+## 6 Month Update
+
+Six months later, the KingSpec SSD is still going strong - it hasn't given me trouble at all.
