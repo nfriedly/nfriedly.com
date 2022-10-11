@@ -77,4 +77,6 @@ In short, I'm very happy with the upgrade.
 
 ## 6 Month Update
 
-Six months later, the KingSpec SSD is still going strong - it hasn't given me trouble at all.
+Six months later the KingSpec SSD was still going strong; it hadn't given me any trouble at all. 
+
+I sold my Win 2 shortly after that, so this is the last update I'll provide.
