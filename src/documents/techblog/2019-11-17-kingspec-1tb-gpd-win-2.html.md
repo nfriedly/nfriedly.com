@@ -79,4 +79,4 @@ In short, I'm very happy with the upgrade.
 
 Six months later the KingSpec SSD was still going strong; it hadn't given me any trouble at all. 
 
-I sold my Win 2 shortly after that, so this is the last update I'll provide.
+I sold my Win 2 shortly after that, so this is the last update I'll provide. (The sale was to fund the purchase of a GPD Win Max, not because of any issue with the Win 2. In fact, I still kind of miss it, and I'm GPD will release a new device with a similar size and formfactor.)
