@@ -163,7 +163,7 @@ The USB-C (only) port definitely supports 15v charging, but the TB3 port sometim
 
 # GPD Win Max 2
 
-# While charging the battery
+## While charging the battery
 
 The max power draw I was able to get on my WM2 was 85W with an average more like 75-80W. This was running borderlands pre-sequel at stock TDP (24W, I think) and the video set to 1600p with the framerate uncapped, while charging the battery from about 50%.
 
