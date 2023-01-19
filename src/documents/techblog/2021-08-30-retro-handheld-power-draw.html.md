@@ -160,3 +160,29 @@ The USB-C (only) port definitely supports 15v charging, but the TB3 port sometim
 ([Original post](https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/))
 
 [Miyoo]: https://github.com/TriForceX/MiyooCFW
+
+# GPD Win Max 2
+
+# While charging the battery
+
+The max power draw I was able to get on my WM2 was 85W with an average more like 75-80W. This was running borderlands pre-sequel at stock TDP (24W, I think) and the video set to 1600p with the framerate uncapped, while charging the battery from about 50%.
+
+<!-- todo: photo - https://nc.home.nfriedly.com/s/kKnkYfddaDMsPKi -->
+
+I also maxed out the brightness and volume, but they didn't seem to make much difference.
+
+Going in the other direction, pressing FN+Shift to enable "silent fan mode" (15W TDP), the peak dropped to 81W, but the average was about the same. It did seem less "jumpy".
+
+Initial testing done with the USB 3.2 port with an Apple 140W PD3.1 charger, and a 100W e-marked cable (I don't have any higher rated USB-C cables right now). I then re-tested in the USB4 port and with the stock 100W charger and cable, and got essentially the same results each time.
+
+Given all that, I think the charging circuitry is probably designed for 80-85W and you're not going to get much more than that from any charger. I think when the system's power demands increase, it just lowers the battery charging rate in order to stay within this envelope.
+
+## On a full charge
+
+* Peak power draw I saw with a charged battery was 52W, with an average probably around 40~45W.
+
+* In "silent fan mode", the peak power draw I saw was 38W with typical being around 25~30W.
+
+Brightness and volume probably made some difference, but it was small enough to be mostly lost in the noise.
+
+([Original post](https://www.reddit.com/r/gpdwin/comments/103wzyp/comment/j32bcjk/))
