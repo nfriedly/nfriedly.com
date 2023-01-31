@@ -5,7 +5,7 @@ My personal website. Introduces me, shows off a bit of my work.
 
 Built with [DocPad], [Markdown], [Bootstrap], and [Node.js].
 
-[![Build Status](https://app.travis-ci.com/nfriedly/nfriedly.com.svg?branch=master)](https://app.travis-ci.com/nfriedly/nfriedly.com) [![pages-build-deployment](https://github.com/nfriedly/nfriedly.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/nfriedly/nfriedly.com/actions/workflows/pages/pages-build-deployment)
+[![Build Static Site](https://github.com/nfriedly/nfriedly.com/actions/workflows/build.yml/badge.svg)](https://github.com/nfriedly/nfriedly.com/actions/workflows/build.yml)
 
 Todo:
 * Finish conversion to React / Next.js
@@ -50,5 +50,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [Markdown]: http://daringfireball.net/projects/markdown/
 [Bootstrap]: http://getbootstrap.com/
 [GitHub Pages]: http://pages.github.com/
-[Travis CI]: https://travis-ci.org/
-[Amazon CloudFront]: https://aws.amazon.com/cloudfront/

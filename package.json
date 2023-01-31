@@ -19,8 +19,7 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "docpad run",
-    "deploy": "./scripts/deploy.sh"
+    "start": "docpad run"
   },
   "license": "MIT",
   "repository": "https://github.com/nfriedly/nfriedly.com",
