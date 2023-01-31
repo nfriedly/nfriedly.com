@@ -39,4 +39,4 @@ jobs:
         git config --global user.name "GH Actions Bot"
         git add -f -A .
         git commit -m "Updating gh-pages"
-        it push origin gh-pages
+        git push origin gh-pages
