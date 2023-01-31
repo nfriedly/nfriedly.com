@@ -30,11 +30,11 @@ jobs:
         path: 'out/'
     - run: npx docpad generate --env static --out out/
     - run: | 
-           | pushd out/
-           | if grep -q '<%=' "index.html"; then
-           |   echo 'Error: template code detected in output, aborting!'
-           |   exit 1;
-           | fi
-           | git add -f -A .
-           | git commit -m "Updating gh-pages"
-           | it push origin gh-pages
+        pushd out/
+        if grep -q '<%=' "index.html"; then
+        echo 'Error: template code detected in output, aborting!'
+        exit 1;
+        fi
+        git add -f -A .
+        git commit -m "Updating gh-pages"
+        it push origin gh-pages
