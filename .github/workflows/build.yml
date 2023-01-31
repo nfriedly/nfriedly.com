@@ -35,6 +35,8 @@ jobs:
         echo 'Error: template code detected in output, aborting!'
         exit 1;
         fi
+        git config --global user.email "actions_bot@github.com"
+        git config --global user.name "GH Actions Bot"
         git add -f -A .
         git commit -m "Updating gh-pages"
         it push origin gh-pages
