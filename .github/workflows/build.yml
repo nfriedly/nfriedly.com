@@ -13,13 +13,13 @@ jobs:
     steps:
     # first checkout the source
     - uses: actions/checkout@v3
-    - name: Build and push
+    - name: Build
       uses: actions/setup-node@v3
       with:
         node-version: 10.x
         cache: 'npm'
     - run: npm ci
-    - run: npx docpad generate --env static --out out/
+    - run: npx docpad generate --env static --output out/
     - run: | 
         if grep -q '<%=' "out/index.html"; then
         echo 'Error: template code detected in output, aborting!'
