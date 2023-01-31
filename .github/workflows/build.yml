@@ -1,0 +1,35 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Build Static Site
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and push
+      uses: actions/setup-node@v3
+      with:
+        node-version: 10.x
+        cache: 'npm'
+    - run: npm ci
+    - run: git clone --quiet --branch=gh-pages git://git@github.com:nfriedly/nfriedly.com.git out/
+    - run: npx docpad generate --env static --out out/
+    - run: | 
+           | pushd out/
+           | if grep -q '<%=' "index.html"; then
+           |   echo 'Error: template code detected in output, aborting!'
+           |   exit 1;
+           | fi
+           | git add -f -A .
+           | git commit -m "Updating gh-pages"
+           | it push origin gh-pages
