@@ -218,6 +218,23 @@ function loadBackupCSS(url) {
 <p>The USB-C (only) port definitely supports 15v charging, but the TB3 port sometimes gets stuck at 12v, and then it doesn&#39;t actually charge. My guess is that perhaps it only supports USB PD 1.0(?)</p>
 <p><a href="https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q">Wayback machine link for my 27W charger</a>, since the amazon page seems to be dead now.</p>
 <p>(<a href="https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/">Original post</a>)</p>
+<h1 id="gpd-win-max-2">GPD Win Max 2</h1>
+<h2 id="while-charging-the-battery">While charging the battery</h2>
+<p>The max power draw I was able to get on my WM2 was 85W with an average more like 75-80W. This was running borderlands pre-sequel at stock TDP (24W, I think) and the video set to 1600p with the framerate uncapped, while charging the battery from about 50%.</p>
+<!-- todo: photo - https://nc.home.nfriedly.com/s/kKnkYfddaDMsPKi -->
+<p>I also maxed out the brightness and volume, but they didn&#39;t seem to make much difference.</p>
+<p>Going in the other direction, pressing FN+Shift to enable &quot;silent fan mode&quot; (15W TDP), the peak dropped to 81W, but the average was about the same. It did seem less &quot;jumpy&quot;.</p>
+<p>Initial testing done with the USB 3.2 port with an Apple 140W PD3.1 charger, and a 100W e-marked cable (I don&#39;t have any higher rated USB-C cables right now). I then re-tested in the USB4 port and with the stock 100W charger and cable, and got essentially the same results each time.</p>
+<p>Given all that, I think the charging circuitry is probably designed for 80-85W and you&#39;re not going to get much more than that from any charger. I think when the system&#39;s power demands increase, it just lowers the battery charging rate in order to stay within this envelope.</p>
+<h2 id="on-a-full-charge">On a full charge</h2>
+<ul>
+<li><p>Peak power draw I saw with a charged battery was 52W, with an average probably around 40~45W.</p>
+</li>
+<li><p>In &quot;silent fan mode&quot;, the peak power draw I saw was 38W with typical being around 25~30W.</p>
+</li>
+</ul>
+<p>Brightness and volume probably made some difference, but it was small enough to be mostly lost in the noise.</p>
+<p>(<a href="https://www.reddit.com/r/gpdwin/comments/103wzyp/comment/j32bcjk/">Original post</a>)</p>
 
 
 
