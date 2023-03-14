@@ -27,7 +27,7 @@ function loadBackupCSS(url) {
 </script>
 <link href='//fonts.googleapis.com/css?family=Raleway:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/bootstrap/dist/css/bootstrap.min.css')">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
+<link href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" rel="stylesheet" onerror="loadBackupCSS('/bower_components/font-awesome/css/font-awesome.min.css')">
 
 <%- @getBlock("styles").add(["/styles/styles.css"]).add(@getDocument().get('stylesheets') or []).toHTML() %>
 
@@ -105,69 +105,75 @@ function loadBackupCSS(url) {
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://github.com/nfriedly" title="GitHub">
+						<a class="fa-stack" href="https://github.com/nfriedly" title="GitHub" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-github fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly" title="Stack Overflow">
+						<a class="fa-stack" href="http://stackoverflow.com/users/933879/nathan-friedly" title="Stack Overflow" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-stack-overflow fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly" title="LinkedIn">
+						<a class="fa-stack" href="https://www.linkedin.com/in/nathanfriedly" title="LinkedIn" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-linkedin fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://www.facebook.com/nfriedly" title="Facebook">
+						<a class="fa-stack" href="https://www.facebook.com/nfriedly" title="Facebook" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-facebook fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://twitter.com/nfriedly" title="Twitter">
+						<a class="fa-stack" href="https://twitter.com/nfriedly" title="Twitter" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-twitter fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://www.last.fm/user/nfriedly" title="Last.fm">
+						<a class="fa-stack" href="https://www.last.fm/user/nfriedly" title="Last.fm" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-lastfm fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly" title="Steam">
+						<a class="fa-stack" href="http://steamcommunity.com/id/nfriedly" title="Steam" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-steam fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly" title="Hacker News">
+						<a class="fa-stack" href="https://news.ycombinator.com/user?id=nfriedly" title="Hacker News" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-yc fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://www.goodreads.com/user/show/63990321-nathan-friedly" title="Goodreads">
+						<a class="fa-stack" href="https://www.goodreads.com/user/show/63990321-nathan-friedly" title="Goodreads" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
-							<i class="fa fa-book fa-stack-1x"></i>
+							<i class="fa fa-goodreads fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://angel.co/nathan-friedly" title="AngelList">
+						<a class="fa-stack" href="https://angel.co/nathan-friedly" title="AngelList" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-angellist fa-stack-1x"></i>
 						</a>
 					</li>
 					<li>
-						<a class="fa-stack" href="https://www.reddit.com/user/nfriedly" title="Reddit">
+						<a class="fa-stack" href="https://www.reddit.com/user/nfriedly" title="Reddit" rel="me">
 							<i class="fa fa-square-o fa-stack-2x"></i>
 							<i class="fa fa-reddit fa-stack-1x"></i>
+						</a>
+					</li>
+					<li>
+						<a class="fa-stack" href="https://mastodon.nfriedly.com/@nfriedly" title="Mastodon" rel="me">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-mastodon fa-stack-1x"></i>
 						</a>
 					</li>
 				</ul>
