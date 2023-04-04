@@ -194,7 +194,9 @@ Brightness and volume probably made some difference, but it was small enough to 
 
 ## Low Power Charging
 
-Does not work well. On my Aukey 27W charger (that seems to actually deliver more like 21W) and an Apple 30W charger, the system will enter an "ultra low power mode" where the CPU runs at ~4W and the entire system feels sluggish and undresponsive. I believe it does this in order to ensure it does not use more total system power than the charger can provide; it does not appear to be able to combine power from the battery and the wall at the same time.
+Does not work well. On my Aukey 27W charger (that seems to actually deliver more like 21W) and an Apple 30W charger, the system will enter an "ultra low power mode" where the CPU runs at ~4W and the entire system feels sluggish and undresponsive. I believe it does this in order to ensure it does not use more total system power than the charger can provide; it does not appear to be able to combine power from the battery and the wall at the same time. 
+
+60W and above worked well for me and, while I don't have anything in between 30W and 60W, I believe I've read that 45W is sufficient to avoide the ultra low power mode.
 
 I've seen some reports that the system can errantly enter this mode even with higher-powered chargers, but I have not been able to reproduce this. Tested with chargers from Anker, Apple, and others.
 
