@@ -12,7 +12,7 @@ tags:
  - retro-handheld
 ---
 
-I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4232) to record the power draw of a few handheld retro gaming devices. I've previously posted a lot of this information in various threads on reddit, but I've decided to collect them here as the new canonical source.
+I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4232) to record the power draw of a few handheld gaming devices. I've previously posted a lot of this information in various threads on reddit, but I've decided to collect them here as the new canonical source.
 
 <!--more-->
 
@@ -20,6 +20,7 @@ I used a [Multifunctional USB Digital Tester](https://www.adafruit.com/product/4
 * [PowKiddy RGB 10 Max](#powkiddy-rgb10-max)
 * [Anbernic RG351P](#anbernic-rg351p)
 * [GPD Win Max](#gpd-win-max-1st-gen-)
+* [GPD Win Max 2](#gpd-win-max-2)
 
 # PowKiddy V90
 
@@ -134,7 +135,7 @@ Recorded numbers are power draw from wall, with the battery disconnected.
 
 # GPD Win Max (1st gen)
 
-<img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="GPD Win Max" /> The [GPD Win Max](https://www.gpd.hk/gpdwinmax2021) is basically a small Windows laptop with active cooling, so it's in a completely different league than the above devices. Nonetheless, it's a handheld gaming device, so I think it fits here. (Note: that link is for the 2021 edition, I have the 2020 version, which has a previous-gen CPU, but is otherwise largely similar.) 
+<img class="right" src="/img/blog/power-draw/gpd-win-max.jpg" alt="Photo of my GPD Win Max handheld gaming laptop" /> The [GPD Win Max](https://www.gpd.hk/gpdwinmax2021) is basically a small Windows laptop with active cooling, so it's in a completely different league than the above devices. Nonetheless, it's a handheld gaming device, so I think it fits here. (Note: that link is for the 2021 edition, I have the 2020 version, which has a previous-gen CPU, but is otherwise largely similar.) 
 
 ## Can it be charged with an Apple USB-C Charger?
 
@@ -157,17 +158,23 @@ The USB-C (only) port definitely supports 15v charging, but the TB3 port sometim
 
 [Wayback machine link for my 27W charger](https://web.archive.org/web/20201220051812/https://www.amazon.com/AUKEY-Delivery-Ultra-Slim-Compatible-More-Black/dp/B07LBG1C3Q), since the amazon page seems to be dead now.
 
+## Low Power Charging
+
+Works great with a 27W charger. The system will alternate between charging the battery in less demanding applications and running from combined wall and battery power in more demanding scenarios.
+
 ([Original post](https://www.reddit.com/r/gpdwin/comments/kp9jqw/gpd_win_max_cant_charge_from_the_genki_covert_dock/gi3ses1/))
 
 [Miyoo]: https://github.com/TriForceX/MiyooCFW
 
 # GPD Win Max 2
 
+<img class="right" src="/img/blog/power-draw/gpd-win-max-2.jpg" alt="Photo of my GPD Win Max 2 handheld gaming laptop" /> The Win Max 2 is an upgrade to the original in just about every concievable aspect: better performance, larger battery, larger and higher resolution screen, improved keyboard, more storage options, etc. Low-power charging seems to be the one exception here.
+
 ## While charging the battery
 
 The max power draw I was able to get on my WM2 was 85W with an average more like 75-80W. This was running borderlands pre-sequel at stock TDP (24W, I think) and the video set to 1600p with the framerate uncapped, while charging the battery from about 50%.
 
-<!-- todo: photo - https://nc.home.nfriedly.com/s/kKnkYfddaDMsPKi -->
+<!-- alternate photo - https://nc.home.nfriedly.com/s/kKnkYfddaDMsPKi -->
 
 I also maxed out the brightness and volume, but they didn't seem to make much difference.
 
@@ -185,4 +192,10 @@ Given all that, I think the charging circuitry is probably designed for 80-85W a
 
 Brightness and volume probably made some difference, but it was small enough to be mostly lost in the noise.
 
-([Original post](https://www.reddit.com/r/gpdwin/comments/103wzyp/comment/j32bcjk/))
+## Low Power Charging
+
+Does not work well. On my Aukey 27W charger (that seems to actually deliver more like 21W) and an Apple 30W charger, the system will enter an "ultra low power mode" where the CPU runs at ~4W and the entire system feels sluggish and undresponsive. I believe it does this in order to ensure it does not use more total system power than the charger can provide; it does not appear to be able to combine power from the battery and the wall at the same time.
+
+I've seen some reports that the system can errantly enter this mode even with higher-powered chargers, but I have not been able to reproduce this. Tested with chargers from Anker, Apple, and others.
+
+([Original power draw post](https://www.reddit.com/r/gpdwin/comments/103wzyp/comment/j32bcjk/), [orginal ultra low power mode post](https://www.reddit.com/r/gpdwin/comments/z9j30m/comment/iyilg3q/?utm_source=reddit&utm_medium=web2x&context=3))
