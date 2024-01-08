@@ -8,6 +8,7 @@ urls:
 headerImage: https://farm4.staticflickr.com/3064/2368452869_1abfa5c996_o_d.jpg
 imageCredits: 
 	"8 ball header photo by Shiv Shankar Menon Palat": https://www.flickr.com/photos/shankarmenon/2368452869/
+	"Other images used with permission from sxc.hu": "http://www.sxc.hu"
 tags:
   - ajax
   - javascript
@@ -16,7 +17,7 @@ tags:
   - twitter
 featured: true
 ---
-<img class="alignleft" title="Breaking javascript - the right way" src="http://www.sxc.hu/pic/m/s/si/simonok/323276_game_of_pool.jpg" alt="" width="141" height="188" />The twitter callback feature is nice &#8211; it makes it extremely easy to to add a twitter feed to a page. But to get the most benefit out of it, you really need to understand what it&#8217;s doing.
+<img class="alignleft" title="Breaking javascript - the right way" src="/techblog/wp-content/uploads/2009/06/game_of_pool.jpg" alt="" width="141" height="188" />The twitter callback feature is nice &#8211; it makes it extremely easy to to add a twitter feed to a page. But to get the most benefit out of it, you really need to understand what it&#8217;s doing.
 
 We&#8217;re going to look at how AJAX security works, specifically the Same Origin Policy, how Twitter gets around it, and the type of callback that twitter uses.
 
@@ -34,7 +35,7 @@ Worth noting, if the website is at site1.com, no scripts can communicate with an
 
 There are a number of workarounds including iframes, java applets, and flash, but here&#8217;s a couple of the more common methods.
 
-### <img src="http://www.sxc.hu/pic/m/c/cw/cwmgary/486891_all_lined_up.jpg" alt="Line em up!" class="alignright" />Proxying Requests
+### <img src="/techblog/wp-content/uploads/2009/06/all_lined_up.jpg" alt="Line em up!" class="alignright" />Proxying Requests
 
 The way proxying works is to have a file on your server that grabs the data from a remote server and passes it along. Then for javascript, the data appears to be coming from your server, even though it actually originated at a remote server. This is what the Fancy part of my [twitter demo][2] does.
 
@@ -95,7 +96,7 @@ Below is a trimmed down example of what Twitter&#8217;s API sends back when we m
 
 Now, don&#8217;t worry about the jazz in the middle, just look at that showStatus(); that&#8217;s wrapped around it. First of all, how does Twitter even know that we have a function named show status? Because we said so in the url to the file -see how we added `&callback=showStatus`? That&#8217;s where the magic is.  (Ok, technically we said `&amp;` not just `&`, but that was just to pass XHTML validation. )
 
-<img class="alignright" title="The break!" src="http://www.sxc.hu/pic/m/l/lj/ljweb/490307_pool_break.jpg" alt="" width="300" height="168" />
+<img class="alignright" title="The break!" src="/techblog/wp-content/uploads/2009/06/pool_break.jpg" alt="" width="300" height="168" />
 
 ### Cross-domain!
 
