@@ -78,7 +78,7 @@ function loadBackupCSS(url) {
 <h3 id="what-facebook-does">What Facebook Does</h3>
 <p>Facebook is in a unique position compared to many developers looking to set cross domain cookies: The user visits both facebook.com and the other website.</p>
 <!--more-->
-<p><img src="http://farm9.staticflickr.com/8456/7890051894_64a3a7796f.jpg" alt="Picture frames" title="Framed!" class="right" /> Facebook never actually sets cookies cross-domain, they only read cookies cross-domain. They set cookies on facebook.com when the user visits facebook.com and they set cookies on the other example.com (or any other website) when the user visits example.com.<sup><a href="#note-1">1</a></sup></p>
+<p><img src="https://farm9.staticflickr.com/8456/7890051894_64a3a7796f.jpg" alt="Picture frames" title="Framed!" class="right" /> Facebook never actually sets cookies cross-domain, they only read cookies cross-domain. They set cookies on facebook.com when the user visits facebook.com and they set cookies on the other example.com (or any other website) when the user visits example.com.<sup><a href="#note-1">1</a></sup></p>
 <p>Doing things this way avoids all of the browser security issues because cookies that were already set when the user visited facebook.com can still be read when example.com loads facebook.com in an iframe. This is worth repeating: <strong>Cookies can be read in an iframe if they were set outside of the iframe</strong>.<sup><a href="#note-2">2</a></sup></p>
 <h3 id="what-about-when-the-user-is-not-logged-into-facebook-">What about when the user is not logged into Facebook?</h3>
 <p><strong>(This is how you can do it!)</strong></p>
@@ -89,7 +89,7 @@ function loadBackupCSS(url) {
 <h3 id="cross-domain-communication">Cross-domain communication</h3>
 <p>If you need to communicate between domains, <a href="http://caniuse.com/#feat=x-doc-messaging">modern browsers</a> allow you to use <a href="https://developer.mozilla.org/en-US/docs/DOM/window.postMessage">postMessage</a> to send data between web pages (although it <a href="http://blogs.msdn.com/b/ieinternals/archive/2009/09/16/bugs-in-ie8-support-for-html5-postmessage-sessionstorage-and-localstorage.aspx">doesn&#8217;t work with popups in Internet Explorer</a>).</p>
 <p>If you need to support older browsers, you can include the excellent <a href="http://easyxdm.net/">easyXDM</a> library for iframe-parent communication. You might need to combine a popup + one or more iframes in some situations.</p>
-<h3 id="an-alternate-method-for-of-cross-domain-cookies-flash-img-src-http-farm5-staticflickr-com-4063-4698846940_7043976b6f_n-jpg-alt-the-flash-class-right-">An alternate method for of cross-domain cookies: flash <img src="http://farm5.staticflickr.com/4063/4698846940_7043976b6f_n.jpg" alt="THE Flash" class="right"></h3>
+<h3 id="an-alternate-method-for-of-cross-domain-cookies-flash-img-src-https-farm5-staticflickr-com-4063-4698846940_7043976b6f_n-jpg-alt-the-flash-class-right-">An alternate method for of cross-domain cookies: flash <img src="https://farm5.staticflickr.com/4063/4698846940_7043976b6f_n.jpg" alt="THE Flash" class="right"></h3>
 <p>If you&#8217;re looking for a flash-based method of setting cross-domain cookies, or would otherwise like to avoid popups, you may want to check out my previous article, which includes source code: <a href="/techblog/2010/07/swf-for-javascript-cross-domain-flash-cookies/">.swf for JavaScript cross-domain flash cookies</a></p>
 <h3 id="notes">Notes</h3>
 <ol>

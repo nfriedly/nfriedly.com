@@ -74,7 +74,7 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<p><img src="http://farm8.staticflickr.com/7020/6668518895_0700a12958_m.jpg" width="240" height="160" alt="Apache takeoff" title="The other Apache, image courtesy of The U.S. Army" class="right" />I often open a new tab in my Terminal to run an <a href="http://ant.apache.org/">Ant</a> task, and often as not I forget to <code>cd</code> into the correct directory first and so I am greeted with this error:</p>
+<p><img src="/techblog/wp-content/uploads/2012/02/apache.jpg" width="240" height="160" alt="Apache takeoff" title="The other Apache, image courtesy of The U.S. Army" class="right" />I often open a new tab in my Terminal to run an <a href="http://ant.apache.org/">Ant</a> task, and often as not I forget to <code>cd</code> into the correct directory first and so I am greeted with this error:</p>
 <pre class="highlight"><code class="hljs armasm">$ ant compile
 <span class="hljs-keyword">Buildfile: </span><span class="hljs-keyword">build.xml </span>does not exist!
 <span class="hljs-keyword">Build </span>failed
@@ -109,7 +109,7 @@ function loadBackupCSS(url) {
 <p><code>source ~/.profile</code></p>
 <h3 id="how-it-works">How it works</h3>
 <p>First, we define the path in a shell variable with the path to the default ant project. This isn&#8217;t absolutely required, but it keeps things tidy and simple.</p>
-<p><img src="http://farm1.staticflickr.com/95/235488979_24ead7f4dc_m.jpg" width="240" height="159" alt="Ant" class="left" />Next, we create the <code>magic-ant</code> function which checks if there is a build.xml file in the current directory. If so, it uses that one, otherwise it calls <code>pushd</code> to temporarily change directories to our default one, runs the ant command, and then calls <code>popd</code> to get back to whatever directory you started in. <code>$@</code> is an automatic variable that includes whatever parameters this function was called with.</p>
+<p><img src="https://farm1.staticflickr.com/95/235488979_24ead7f4dc_m.jpg" width="240" height="159" alt="Ant" class="left" />Next, we create the <code>magic-ant</code> function which checks if there is a build.xml file in the current directory. If so, it uses that one, otherwise it calls <code>pushd</code> to temporarily change directories to our default one, runs the ant command, and then calls <code>popd</code> to get back to whatever directory you started in. <code>$@</code> is an automatic variable that includes whatever parameters this function was called with.</p>
 <p>After that we use alias to reset the ant command in order to avoid endless loops where our magic-ant function calls itself instead of the real ant if you source. The command <code>which</code> returns the path to the program with the given name. Putting it in backticks (`) makes bash execute the command and return the result.</p>
 <p>Finally we alias <code>ant</code> to point to our new <code>magic-ant</code> function when run from the command line.</p>
 <p>The only downside is that I haven&#8217;t yet figured out how to make <a href="http://matthew.mceachen.us/blog/ant-bash-completion-on-mac-os-x-43.html">Ant task tab completion</a> work with this when you&#8217;re not in the project directory.</p>
