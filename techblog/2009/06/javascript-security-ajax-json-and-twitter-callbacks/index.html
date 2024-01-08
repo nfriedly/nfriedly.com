@@ -74,7 +74,7 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<p><img class="alignleft" title="Breaking javascript - the right way" src="http://www.sxc.hu/pic/m/s/si/simonok/323276_game_of_pool.jpg" alt="" width="141" height="188" />The twitter callback feature is nice &#8211; it makes it extremely easy to to add a twitter feed to a page. But to get the most benefit out of it, you really need to understand what it&#8217;s doing.</p>
+<p><img class="alignleft" title="Breaking javascript - the right way" src="/img/techblog/game_of_pool.jpg" alt="" width="141" height="188" />The twitter callback feature is nice &#8211; it makes it extremely easy to to add a twitter feed to a page. But to get the most benefit out of it, you really need to understand what it&#8217;s doing.</p>
 <p>We&#8217;re going to look at how AJAX security works, specifically the Same Origin Policy, how Twitter gets around it, and the type of callback that twitter uses.</p>
 <p>Note: the callback that twitter uses is entirely different from callback in the sense of passing a javascript function around as a variable. We&#8217;ll look at that in a future article.</p>
 <!--more-->
@@ -133,7 +133,7 @@ showStatus([{"in_reply_to_screen_name":null,"text":" [ Lots of information that 
 
 
 <p>Now, don&#8217;t worry about the jazz in the middle, just look at that showStatus(); that&#8217;s wrapped around it. First of all, how does Twitter even know that we have a function named show status? Because we said so in the url to the file -see how we added <code>&amp;callback=showStatus</code>? That&#8217;s where the magic is.  (Ok, technically we said <code>&amp;amp;</code> not just <code>&amp;</code>, but that was just to pass XHTML validation. )</p>
-<p><img class="alignright" title="The break!" src="http://www.sxc.hu/pic/m/l/lj/ljweb/490307_pool_break.jpg" alt="" width="300" height="168" /></p>
+<p><img class="alignright" title="The break!" src="/img/techblog/pool_break.jpg" alt="" width="300" height="168" /></p>
 <h3 id="cross-domain-">Cross-domain!</h3>
 <p>There&#8217;s a second important thing going on here &#8211; javascript from two different domains are interacting with each other. This is allowed because of how the Same Origin Policy works &#8211; everything is restricted to the local domain, but that means that everything can work together on the same plane.</p>
 <h3 id="it-8217-s-a-beautiful-thing">It&#8217;s a beautiful thing</h3>
@@ -144,7 +144,7 @@ showStatus([{"in_reply_to_screen_name":null,"text":" [ Lots of information that 
 
 
 	<p class="meta"><small class="photocredit"><b>Photo Credits:</b>
-		<a href="https://www.flickr.com/photos/shankarmenon/2368452869/">8 ball header photo by Shiv Shankar Menon Palat</a>
+		<a href="https://www.flickr.com/photos/shankarmenon/2368452869/">8 ball header photo by Shiv Shankar Menon Palat</a>, <a href="http://www.sxc.hu">Other images from sxc.hu</a>
 	</small></p>
 
 </main>
