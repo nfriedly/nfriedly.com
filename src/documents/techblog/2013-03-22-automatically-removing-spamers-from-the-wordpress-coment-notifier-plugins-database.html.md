@@ -56,7 +56,7 @@ ALTER TABLE `wp_YOUR_PREFIX_comment_notifier`
     ON DELETE CASCADE;
 ```
 
-## Step 5: Relax and enjoy <img src="http://farm1.staticflickr.com/231/507111698_72ef071130_m.jpg" class="right"> 
+## Step 5: Relax and enjoy <img src="https://farm1.staticflickr.com/231/507111698_72ef071130_m.jpg" class="right"> 
 
 Any time a comment is deleted as spam (or for any other reason), your Comment Notifier will no longer try to send emails to that comment&#8217;s author. Your email server will thank you.
 

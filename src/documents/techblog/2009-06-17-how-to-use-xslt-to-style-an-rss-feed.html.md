@@ -16,7 +16,7 @@ tags:
   - xml
   - xslt
 ---
-[<img class="alignright" src="http://farm3.static.flickr.com/2097/2240855570_4529cf9f6d_m.jpg" alt="Take this!" />][1]XSLT is a fairly well-supported technology. It allows you to take any XML file &#8211; including RSS &#8211; and *transform* it into a styled HTML document. It&#8217;s kind of like CSS on steroids.
+[<img class="alignright" src="https://farm3.static.flickr.com/2097/2240855570_4529cf9f6d_m.jpg" alt="Take this!" />][1]XSLT is a fairly well-supported technology. It allows you to take any XML file &#8211; including RSS &#8211; and *transform* it into a styled HTML document. It&#8217;s kind of like CSS on steroids.
 
 Unfortunately, most browsers think they know better and go off and do their own thing on RSS feeds.
 
@@ -46,7 +46,7 @@ Here&#8217;s how:
 6.  Click OK all the way to close all opened dialog boxes.
 7.  Restart Internet Explorer
 
-### [<img class="alignright" src="http://farm3.static.flickr.com/2172/2240065731_86c22f48c1_m.jpg" alt="Transform!" />][2]Firefox
+### [<img class="alignright" src="https://farm3.static.flickr.com/2172/2240065731_86c22f48c1_m.jpg" alt="Transform!" />][2]Firefox
 
 Firefox can be tricked into working because it decides fairly early on in the rendering process whether to treat the page in a standard way or to fly off the handle with it. In fact, it makes this decision before even completely downloading the RSS file.
 

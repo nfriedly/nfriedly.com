@@ -80,7 +80,7 @@ function showStatus(json){
 
 <!-- now load the twitter file -->
 
-<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;callback=showStatus&amp;random=<?php echo time(); ?>" /></script>
+<script type="text/javascript" src="https://twitter.com/statuses/user_timeline/nfriedly.json?count=1&amp;callback=showStatus&amp;random=<?php echo time(); ?>" /></script>
 
 </body>
 </html>

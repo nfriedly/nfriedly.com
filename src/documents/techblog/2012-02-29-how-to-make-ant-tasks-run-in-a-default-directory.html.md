@@ -15,7 +15,7 @@ tags:
   - shell
 featured: false
 ---
-<img src="http://farm8.staticflickr.com/7020/6668518895_0700a12958_m.jpg" width="240" height="160" alt="Apache takeoff" title="The other Apache, image courtesy of The U.S. Army" class="right" />I often open a new tab in my Terminal to run an [Ant][2] task, and often as not I forget to `cd` into the correct directory first and so I am greeted with this error:
+<img src="/techblog/wp-content/uploads/2012/02/apache.jpg" width="240" height="160" alt="Apache takeoff" title="The other Apache, image courtesy of The U.S. Army" class="right" />I often open a new tab in my Terminal to run an [Ant][2] task, and often as not I forget to `cd` into the correct directory first and so I am greeted with this error:
 
 	$ ant compile
 	Buildfile: build.xml does not exist!
@@ -65,7 +65,7 @@ Lastly, run this command to import your changes (or just close and reopen your t
 
 First, we define the path in a shell variable with the path to the default ant project. This isn&#8217;t absolutely required, but it keeps things tidy and simple.
 
-<img src="http://farm1.staticflickr.com/95/235488979_24ead7f4dc_m.jpg" width="240" height="159" alt="Ant" class="left" />Next, we create the `magic-ant` function which checks if there is a build.xml file in the current directory. If so, it uses that one, otherwise it calls `pushd` to temporarily change directories to our default one, runs the ant command, and then calls `popd` to get back to whatever directory you started in. `$@` is an automatic variable that includes whatever parameters this function was called with.
+<img src="https://farm1.staticflickr.com/95/235488979_24ead7f4dc_m.jpg" width="240" height="159" alt="Ant" class="left" />Next, we create the `magic-ant` function which checks if there is a build.xml file in the current directory. If so, it uses that one, otherwise it calls `pushd` to temporarily change directories to our default one, runs the ant command, and then calls `popd` to get back to whatever directory you started in. `$@` is an automatic variable that includes whatever parameters this function was called with.
 
 After that we use alias to reset the ant command in order to avoid endless loops where our magic-ant function calls itself instead of the real ant if you source. The command `which` returns the path to the program with the given name. Putting it in backticks (\`) makes bash execute the command and return the result.
 

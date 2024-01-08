@@ -12,7 +12,7 @@ tags:
   - optimization
 featured: true
 ---
-[<img class="alignleft" title="speed machine" src="http://farm1.static.flickr.com/104/308974073_9057064747_m.jpg" alt="" width="240" height="160" />][1] Nearly every website on the internet uses javascript in some form or fashion. Yet very few people, even those who write it and teach it, have a clear understanding of how javascript works!
+[<img class="alignleft" title="speed machine" src="https://farm1.static.flickr.com/104/308974073_9057064747_m.jpg" alt="" width="240" height="160" />][1] Nearly every website on the internet uses javascript in some form or fashion. Yet very few people, even those who write it and teach it, have a clear understanding of how javascript works!
 
 Logical Operators are a core part of the language. We&#8217;re going to look at what logical operators are, what &#8220;truthy&#8221; and &#8220;falsy&#8221; mean, and **how to use this to write cleaner, faster and more optimized javascript**.
 

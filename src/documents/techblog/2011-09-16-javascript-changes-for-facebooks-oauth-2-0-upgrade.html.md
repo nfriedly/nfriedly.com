@@ -13,7 +13,7 @@ tags:
   - oauth2.0
   - php
 ---
-<img class="alignright" src="http://oauth.net/images/oauth-2-sm.png" alt="" width="124" height="123" style="margin-bottom: 0;" />I just finished a writeup on the necessary JS changes to support Facebook's OAuth 2.0 upgrade, and then Hilary did a followup post on the server-side. 
+<img class="alignright" src="https://oauth.net/images/oauth-2-sm.png" alt="" width="124" height="123" style="margin-bottom: 0;" />I just finished a writeup on the necessary JS changes to support Facebook's OAuth 2.0 upgrade, and then Hilary did a followup post on the server-side. 
 
 The upgrade enabled right now, but it gets forced out on October 1st. These two posts should give you all you need to know to get your site ready for Facebook's upgrade:
 

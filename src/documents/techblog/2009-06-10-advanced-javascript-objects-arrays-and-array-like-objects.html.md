@@ -9,7 +9,7 @@ tags:
   - javascript
 featured: true
 ---
-[<img class="alignleft" title="The other kind of array" src="http://farm4.static.flickr.com/3146/2492636763_788774987e_m.jpg" alt="" width="240" height="160" />][1]Javascript `objects` and `arrays` are both incredibly useful. They're also incredibly easy to confuse with each other. Mix in a few objects that look like arrays and you&#8217;ve got a recipe for confusion!
+[<img class="alignleft" title="The other kind of array" src="https://farm4.static.flickr.com/3146/2492636763_788774987e_m.jpg" alt="" width="240" height="160" />][1]Javascript `objects` and `arrays` are both incredibly useful. They're also incredibly easy to confuse with each other. Mix in a few objects that look like arrays and you&#8217;ve got a recipe for confusion!
 
 We're going to see what the differences between objects and arrays are, how to work with some of the common array-like objects, and how to get the most performance out of each.
 
@@ -117,7 +117,7 @@ You can manually set the `length` also. Setting it to 0 is a simple way to empty
 
 In addition to this length property, arrays have lots of nifty built in functions such as `push()`, `pop()`, `sort()`, `slice()`, `splice()`, and more. This is what sets them apart from Array-Like Objects.
 
-## Array-like Objects [<img class="alignright" title="It's like an array, but made out of Lego!" src="http://farm4.static.flickr.com/3175/2645497916_386b9b75b8_m.jpg" alt="" width="240" height="180" />][2]
+## Array-like Objects [<img class="alignright" title="It's like an array, but made out of Lego!" src="https://farm4.static.flickr.com/3175/2645497916_386b9b75b8_m.jpg" alt="" width="240" height="180" />][2]
 
 Array-like objects look like arrays. They have various numbered elements and a length property. But that&#8217;s where the similarity stops. Array-like objects do not have any of Array&#8217;s functions, and for-in loops don&#8217;t even work!
 

@@ -53,7 +53,7 @@ To use the library, upload the storage.swf & swfstore.js files to your web serve
 ``` html
 
 <!-- This example uses jquery, but SwfStore does not require jquery to work. -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
 <script src="/PATH/TO/swfstore.js"></script>
 
@@ -136,7 +136,7 @@ By default, any website on the internet can access the data stored in these flas
 
 Also, versions prior to 1.9.1 were vulnerable to an XSS bug and should not be used.
 
-### Troubleshooting <img src="http://farm3.staticflickr.com/2705/4317168441_0c4652aaf6_n.jpg" class="right" alt="Flash Mob">
+### Troubleshooting <img src="https://farm3.staticflickr.com/2705/4317168441_0c4652aaf6_n.jpg" class="right" alt="Flash Mob">
 
 * Be sure the <span class="highlight">urls</span> to the .swf file and .js file are both correct.
 * If the .swf file is unable to communicate with the JavaScript, it will <span  class="highlight">display log messages on the flash object</span>. If debug is enabled, this this should be visible on the page.
