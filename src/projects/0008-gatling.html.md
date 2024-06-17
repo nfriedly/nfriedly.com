@@ -1,5 +1,5 @@
 ---
-title: Gatling: Node.js app server
+title: "Gatling: Node.js app server"
 link: "https://github.com/nfriedly/node-gatling"
 npm: gatling
 travis: node-gatling

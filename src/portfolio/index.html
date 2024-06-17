@@ -10,15 +10,11 @@ scripts:
 stylesheets: /scripts/lightbox/lightbox.css
 headerImage: /img/temp-o-matic-crop.jpg
 priority: 1
-referencesOthers: true
-scripts:
-    - /scripts/lightbox/lightbox-min.js
-    - /scripts/portfolio.js
 section: portfolio
-#description: Engineering leader and JavaScript Expert. Built companies, led multi-national teams, and shipped software used by millions daily. Force multiplier.
+eleventyImport:
+  collections:
+    - projects
 ---
-
-<% projects = @getCollection('projects').toJSON() %>
 
 <div class="row">
 	<div class="col-sm-4 portfolio-intro">
@@ -36,9 +32,9 @@ section: portfolio
 	    <div class="panel panel-default tag-cloud hide-small-tags">
             <div class="panel-heading">Click a tag to filter the portfolio <a class="clear-tag" href="#">Clear Filter [X]</a></div>
             <div class="panel-body tag-cloud">
-                <% for ts in @generateTagCloud(projects): %>
-                    <a href="#<%= @normalizeTag(ts.tag) %>" style="font-size: <%= 70 + 100*ts.size %>%" <% if ts.count < 5: %>class="small-tag"<% end %>><%= ts.tag %></a>
-                <% end %>
+                {% for ts in tagCloud %}
+                    <a href="{%- normalizeTag ts.tag -%}" style="font-size: {{ ts.size }}%" {% if ts.minimize %}class="small-tag"{% endif %}>{{ ts.tag }}</a>
+                {% endfor %}
                 <p><a class="show-small-tags">[Show more tags]</a></p>
             </div>
 	    </div>

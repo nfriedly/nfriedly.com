@@ -1,5 +1,5 @@
 ---
-title: Coin Allocator: Bitcoin & Altcoin algorithmic trading
+title: "Coin Allocator: Bitcoin & Altcoin algorithmic trading"
 link: https://github.com/nfriedly/Coin-Allocator
 npm: coin-allocator
 travis: Coin-Allocator
