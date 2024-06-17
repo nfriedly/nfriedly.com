@@ -1,5 +1,5 @@
 ---
-title: Pleasant Hill, OH Police Dept: Permanently Closed
+title: "Pleasant Hill, OH Police Dept: Permanently Closed"
 link: https://nfriedly.github.io/pleasant-hill-ohio-police-department/
 github: pleasant-hill-ohio-police-department
 picture: /img/portfolio/ph-pd.png

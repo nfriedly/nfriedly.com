@@ -1,0 +1,26 @@
+---
+title: Tech Blog
+layout: main
+icon: terminal
+section: techblog
+eleventyImport:
+  collections:
+    - techblog
+eleventyComputed:
+  headerImage: "{%- latestHeaderImage collections.techblog -%}"
+---
+
+<div class="container techblog archives">
+	<div class="row">
+		{%- for post in collections.techblog reversed -%}
+			<article>
+				<h2><a href="{{ post.page.url }}">{{ post.data.title }}</a></h2>
+				{%- getPreview post -%}
+				<p><a href="{{ post.page.url }}">Continue reading...</a></p>
+				<!-- todo: make these links or get rid of them -->
+				<p class="meta">Tagged {{ post.data.tags | join: ', ' }}</p>
+			</article>
+		{%- endfor -%}
+	</div>
+</div>
+
