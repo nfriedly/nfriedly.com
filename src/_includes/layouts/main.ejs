@@ -1,21 +1,25 @@
+---
+title: ''
+icon: false
+heading: false
+subHeading: false
+headerImage: false
+imageCredits: false
+section: ''
+scripts: false
+cssClass: ""
+metaTags: ""
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><%= @document.title %></title>
-
-<% if @getEnvironment() == 'development': %>
-    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script><![endif]-->
-<% else: %>
-    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
-<% end %>
+<title><%= title %></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<%- @getBlock("meta").add(@getDocument().get('metaTags') or []).toHTML() %>
-<link rel="canonical" href="<%= @site.url + @getDocument().get('url') %>" />
-<% if @document.description: %>
-<meta name="description" content="<%= @document.description %>">
-<% end %>
+<link rel="canonical" href="https://www.nfriedly.com<%= page.url %>" />
+<%- metaTags %>
 
 <script>
 function loadBackupCSS(url) {
@@ -30,13 +34,13 @@ function loadBackupCSS(url) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-shims.min.css" integrity="sha512-h2Z3EnLjRZp3KQxGYzT6SyqPrWIlmjnlJz/8q3BoZo2IN51insCNN7nmA4WHoe9eu1H5B3xLdLwKiVF8kF+Ewg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<%- @getBlock("styles").add(["/styles/styles.css"]).add(@getDocument().get('stylesheets') or []).toHTML() %>
+<link href='/styles/styles.css' rel='stylesheet' type='text/css'>
 
 <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
 <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195">
 
 </head>
-<body class="<%= @document.cssClass %>">
+<body class="<%= cssClass %>">
 
 <div class="over-footer">
 
@@ -54,10 +58,17 @@ function loadBackupCSS(url) {
 		</div>
 		<div id="nav-menu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li <%- @activeAttrIf('home') %>><a href="/"><i class="fa fa-home"></i> Home</a></li>
-				<li <%- @activeAttrIf('about') %>><a href="/about/"><i class="fa fa-android"></i> About</a></li>
-				<li <%- @activeAttrIf('portfolio') %>><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
-				<li <%- @activeAttrIf('techblog') %>><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
+				<%_ function activeAttrIf(menuSection) {
+					if (section === menuSection) {
+					  return 'class="active"';
+					}
+					return '';
+				} _%>
+				<!-- todo @ home/about/etc.--> <!--  -->
+				<li <%- activeAttrIf('home') -%>><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				<li <%- activeAttrIf('about') -%>><a href="/about/"><i class="fa fa-android"></i> About</a></li>
+				<li <%- activeAttrIf('portfolio') -%>><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
+				<li <%- activeAttrIf('techblog') -%>><a href="/techblog/"><i class="fa fa-terminal"></i> Tech blog</a></li>
 			</ul>
 			<!-- div class="navbar-right">
 				<ul class="nav navbar-nav">
@@ -69,22 +80,22 @@ function loadBackupCSS(url) {
 </nav>
 
 
-<header class="jumbotron" <%- "style=\"background-image: url(#{@document.headerImage});\"" if @document.headerImage %>>
+<header class="jumbotron" <% if (headerImage) { %>style="background-image: url(<%- headerImage %>);" <% } %>>
 	<div class="container">
-		<h1><a href="<%= @document.url %>"><%- "<i class=\"fa fa-#{@document.icon}\"></i>" if @document.icon %> <%= @document.heading || @document.title %></a></h1>
-		<% if @document.subHeading: %><h2><span class="sub-heading<%= '-with-links' if @document.subHeading.indexOf('<a') != -1 %> "><%- @document.subHeading %></span></h2><% end %>
+		<h1><a href="<%= page.url %>"><% if (icon) { %><i class="fa fa-<%= icon %>"></i> <% } %> <%= heading || title %></a></h1>
+		<% if (subHeading) { %><h2><span class="sub-heading<% if (subHeading.indexOf('<a') != -1) { %>-with-links<% } %> "><%- subHeading %></span></h2><% } %>
 	</div>
 </header>
 
 
 <main class="container">
-<%- @content %>
+<%- content %>
 
-<% if @document.imageCredits: %>
+<% if (imageCredits) { %>
 	<p class="meta"><small class="photocredit"><b>Photo Credits:</b>
-		<%- @linkPhotoCredits(@document.imageCredits) %>
+		<%- Object.entries(imageCredits).forEach(([text, link]) => `<a href="${link}">${text}</a>`).join(', ') %>
 	</small></p>
-<% end %>
+<% } %>
 </main>
 
 </div> <!-- .over-footer -->
@@ -214,32 +225,15 @@ function loadBackupJS(url) {
 }
 </script>
 
-<% if @getEnvironment() == 'development': %>
-	<!-- todo: update to current jquery once bootstrap is updated to play nice with it -->
-	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
-	<![endif]-->
-	<!--[if gte IE 9]><!-->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
-	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js" defer></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
-<% else: %>
-	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<![endif]-->
-	<!--[if gte IE 9]><!-->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
-	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
-<% end %>
 
-<%- @getBlock("scripts").add('/scripts/email.js').add(@getDocument().get('scripts') or []).toHTML() %>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="/scripts/email.js" defer></script>
+<% if (scripts) { for (const script of scripts) { %>
+<script src="<%= script %>" defer></script>
+<% } } %>
 
-
-<% if @getEnvironment() isnt 'development': %>
-    
 <script>
 window['_fs_debug'] = false;
 window['_fs_host'] = 'relay.nfriedly.com'; // goes to rs.staging.fullstory.com
@@ -281,8 +275,6 @@ window['_fs_namespace'] = 'FS';
   })();
 </script>
 <!-- End Matomo Code -->
-<% end %>
-
 
 </body>
 </html>
