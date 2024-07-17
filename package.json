@@ -4,6 +4,7 @@
   "description": "Personal website of Nathan Friedly, built with eleventy",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.8",
     "docpad": "~6.79.0",
     "docpad-plugin-cleanurls": "^2.10.0",
     "docpad-plugin-eco": "^2.2.1",
@@ -18,6 +19,7 @@
     "docpad-plugin-thumbnails": "~2.1.2",
     "ejs": "^3.1.10",
     "ejs-lint": "^2.0.0",
+    "eleventy-plugin-less": "^1.0.1",
     "underscore": "^1.12.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",

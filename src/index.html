@@ -54,7 +54,7 @@ eleventyImport:
 		<ul>
 			{%- for post in collections.featuredPosts -%}
 				<li><a href="{{ post.page.url }}">
-					<div class="clip">{%- getFirstImage post %}</div>
+					<div class="clip">{%- getFirstImage post, 200 %}</div>
 					<h3>{{ post.data.title }}</h3>
 					{%- getStrippedPreview post -%}
 				</a></li>
