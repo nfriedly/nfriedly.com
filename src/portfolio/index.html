@@ -48,8 +48,9 @@ eleventyImport:
 <article class="row {{ project.data.cssClass  }}">
     {% if project.data.picture %}
         <div class="col-xs-4">
-            <!-- todo: generate thumbnails -->
-            <a class="thumb" href="{{ project.data.picture }}" rel="lightbox"><img src="{{ project.data.picture }}" alt="" class="img-thumbnail" /></a>
+            <a class="thumb" href="{{ project.data.picture }}" rel="lightbox">
+                {%- projectImage project.data.picture -%}
+            </a>
         </div>
         <div class="col-sm-8">
     {% elsif project.data.youtube %}
@@ -79,8 +80,11 @@ eleventyImport:
             {% if project.data.extraPictures %}
                 <div class="row thumbs">
                     {% for pic in project.data.extraPictures %}
-                        <!-- todo @getThumbnail(pic, 'zoomcrop', { w: 350, h: 280, q: 70 }) -->
-                        <div class="col-xs-6"><a class="thumb" href="{{ pic }}" rel="lightbox"><img src="{{ pic }}" alt="" class="img-thumbnail" /></a></div>
+                        <!-- todo figure out a zoomcrop setting to make these all 350 wide & 280 tall -->
+                        <!-- todo: make the lightbox max out at 100% of the viewport size -->
+                        <div class="col-xs-6"><a class="thumb" href="{{ pic }}" rel="lightbox">
+                            {%- projectImage pic -%}
+                        </a></div>
                     {% endfor %}
                 </div>
             {% endif %}
