@@ -1,0 +1,31 @@
+---
+title: "Nathan Friedly's Portfolio (2)"
+heading: Portfolio
+layout: main
+icon: laptop
+cssClass: portfolio
+scripts:
+    - /scripts/lightbox/lightbox-min.js
+    - /scripts/portfolio.js
+stylesheets: /scripts/lightbox/lightbox.css
+headerImage: /img/temp-o-matic-crop.jpg
+priority: 1
+section: portfolio
+eleventyImport:
+  collections:
+    - projectsEnd
+---
+
+<div class="row">
+	<div class="col-sm-4 portfolio-intro">
+		<p><a href="../">Back to page 1</a>
+	</div>
+</div>
+
+<hr>
+
+<div class="projects">
+{% assign projects = collections.projectsEnd %}
+
+{% include '_projects.html' %}
+</div>
