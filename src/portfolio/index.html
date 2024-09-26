@@ -78,15 +78,16 @@ eleventyImport:
             {% endif %}
             {{ project.content }}
             {% if project.data.extraPictures %}
-                <div class="row thumbs">
-                    {% for pic in project.data.extraPictures %}
-                        <!-- todo figure out a zoomcrop setting to make these all 350 wide & 280 tall -->
-                        <!-- todo: make the lightbox max out at 100% of the viewport size -->
-                        <div class="col-xs-6"><a class="thumb" href="{{ pic }}" rel="lightbox">
-                            {%- projectImage pic -%}
-                        </a></div>
-                    {% endfor %}
-                </div>
+                <!-- todo figure out a zoomcrop setting to make these all 350 wide & 280 tall -->
+                <!-- todo: make the lightbox max out at 100% of the viewport size -->
+                <!-- todo: fix this to work correctly with odd numbers of pictures -->
+                {% for pic in project.data.extraPictures -%}
+                    {% cycle "startrow": '<div class="row thumbs">', "" %}
+                    <div class="col-xs-6"><a class="thumb" href="{{ pic }}" rel="lightbox">
+                        {%- projectImage pic -%}
+                    </a></div>
+                    {% cycle "endrow": "", "</div>" %}
+                {%- endfor %}
             {% endif %}
             <p class="meta">
                 {%- projectBadges project %}

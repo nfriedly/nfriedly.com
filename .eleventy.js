@@ -32,7 +32,7 @@ module.exports = function (eleventyConfig) {
 	// widths should be an array, it can contain numbers and null for the original width
 	eleventyConfig.addShortcode("projectImage", async function (src, alt="") {
 		// 3 different breakpoints (the smallest size just makes it a 1/3 of the width, so use the 210px image for that)
-		const widths = [350, 283, 210];
+		const widths = [350, 284, 210];
 
 		// the eleventy-img plugin doesn't know about the input dir setting
 		if (!src.includes('//')) {
