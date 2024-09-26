@@ -1,0 +1,54 @@
+
+    {% for project in projects %}
+<article class="row {{ project.data.cssClass  }}">
+    {% if project.data.picture %}
+        <div class="col-xs-4">
+            <a class="thumb" href="{{ project.data.picture }}" rel="lightbox">
+                {%- projectImage project.data.picture -%}
+            </a>
+        </div>
+        <div class="col-sm-8">
+    {% elsif project.data.youtube %}
+        <div class="col-xs-4">
+            <div class="thumb youtube"><iframe width="360" height="203" src="https://www.youtube.com/embed/{{ project.data.youtube }}" frameborder="0" allowfullscreen></iframe></div>
+        </div>
+        <div class="col-sm-8">
+    {% elsif project.data.video %}
+        <div class="col-xs-4">
+            <video class="thumb" src="{{ project.data.video }}" controls></video>
+        </div>
+        <div class="col-sm-8">
+    {% else %}
+        <div class="col-xs-12">
+    {% endif %}
+            <h2>
+                {% if project.data.link %}
+                    <a href="{{ project.data.link }}">{{ project.data.title }}</a>
+                {% else %}
+                    {{ project.data.title }}
+                {% endif %}
+            </h2>
+            {% if project.data.icon %}
+                <i class="fa fa-{{ project.data.icon }} pull-right fa fa-4x"></i>
+            {% endif %}
+            {{ project.content }}
+            {% if project.data.extraPictures %}
+                <!-- todo figure out a zoomcrop setting to make these all 350 wide & 280 tall -->
+                <!-- todo: make the lightbox max out at 100% of the viewport size -->
+                <!-- todo: fix this to work correctly with odd numbers of pictures -->
+                {% for pic in project.data.extraPictures -%}
+                    {% cycle "startrow": '<div class="row thumbs">', "" %}
+                    <div class="col-xs-6"><a class="thumb" href="{{ pic }}" rel="lightbox">
+                        {%- projectImage pic -%}
+                    </a></div>
+                    {% cycle "endrow": "", "</div>" %}
+                {%- endfor %}
+            {% endif %}
+            <p class="meta">
+                {%- projectBadges project %}
+                Tagged 
+                {% linkTags project %}
+            </p>
+        </div>
+</article>
+{% endfor %}
