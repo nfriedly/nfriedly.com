@@ -26,7 +26,7 @@ jobs:
       with:
         ref: 'gh-pages'
         path: 'out/'
-    - run: npx docpad generate --env static --out out/
+    - run: npx docpad generate --env static
     - run: | 
         pushd out/
         if grep -q '<%=' "index.html"; then
