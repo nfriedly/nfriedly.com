@@ -3,5 +3,3 @@ Disallow: /img
 Disallow: /files
 Disallow: /scripts
 Disallow: /styles
-
-sitemap: http://nfriedly.com/sitemap.xml
