@@ -17,9 +17,9 @@ tags:
 
 <style> center img { margin: 20px 0; } </style>
 
-<img class="left" src="/img/blog/arduino-ir/arduino-ir-assembled-small.jpg" alt="Arduino Uno and IR Shield assembled" />
-*"Snatching defeat from the jaws of victory."*
-That summarizes Samsung's implementation of HDMI CEC ("Anynet+") in their "Smart" TVs - everything works except the power button.
+<p><img class="left" src="/img/blog/arduino-ir/arduino-ir-assembled-small.jpg" alt="Arduino Uno and IR Shield assembled" />
+<i>"Snatching defeat from the jaws of victory."</i>
+That summarizes Samsung's implementation of HDMI CEC ("Anynet+") in their "Smart" TVs - everything works except the power button.</p>
 
 However, with help from an Arduino and an IR Shield, I was able to add in the missing parts and make things work properly.
 
