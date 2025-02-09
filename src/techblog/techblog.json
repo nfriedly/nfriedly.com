@@ -1,4 +1,5 @@
 {
     "layout": "main",
+    "cssClass": "post",
     "tags": ["techblog"]
 }
