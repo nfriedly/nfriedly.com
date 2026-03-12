@@ -3,7 +3,7 @@ title: DIY ESP8266 ESP-01 Programing / Test board
 heading: DIY ESP-01 Motherboard
 subHeading: Build a simple dev board to make programing ESP-01 (ESP8266EX) chips fast and easy
 
-url: /techblog/2015/07/build-a-diy-esp8266ex-esp-01-dev-test-programming-board/
+permalink: /techblog/2015/07/build-a-diy-esp8266ex-esp-01-dev-test-programming-board/
 
 headerImage: /img/blog/esp-mb/header-bg.jpg
 

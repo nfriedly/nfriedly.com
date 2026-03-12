@@ -2,7 +2,7 @@
 title: 'Search Engine Optimization and Marketing (SEO & SEM)'
 author: nFriedly
 
-url: /techblog/2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/
+permalink: /techblog/2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/
 urls:
     - /2009/06/users-cant-see-https-website//2009/06/search-engine-optimization-and-marketing-seo-sem/
 headerImage: https://farm6.staticflickr.com/5550/9195944224_611dc4dc79_b.jpg

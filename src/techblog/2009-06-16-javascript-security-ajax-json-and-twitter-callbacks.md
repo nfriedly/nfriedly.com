@@ -2,7 +2,7 @@
 title: How AJAX Security and Twitter callbacks work
 author: nFriedly
 
-url: /techblog/2009/06/javascript-security-ajax-json-and-twitter-callbacks/
+permalink: /techblog/2009/06/javascript-security-ajax-json-and-twitter-callbacks/
 urls:
     - /2009/06/javascript-security-ajax-json-and-twitter-callbacks/
 headerImage: https://farm4.staticflickr.com/3064/2368452869_1abfa5c996_o_d.jpg

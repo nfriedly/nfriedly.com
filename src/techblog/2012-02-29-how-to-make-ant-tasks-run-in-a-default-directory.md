@@ -2,7 +2,7 @@
 title: How to make Apache Ant tasks run in a default directory
 author: nFriedly
 
-url: /techblog/2012/02/how-to-make-ant-tasks-run-in-a-default-directory/
+permalink: /techblog/2012/02/how-to-make-ant-tasks-run-in-a-default-directory/
 urls:
     - /2012/02/how-to-make-ant-tasks-run-in-a-default-directory/
 headerImage: https://farm6.staticflickr.com/5538/9104824720_cd4bffffd2_h.jpg
