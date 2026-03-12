@@ -20,6 +20,7 @@ metaTags: ""
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="canonical" href="https://www.nfriedly.com<%= page.url %>" />
 <%- metaTags %>
+<meta name="generator" content="Eleventy">
 
 <script>
 function loadBackupCSS(url) {
@@ -93,7 +94,7 @@ function loadBackupCSS(url) {
 
 <% if (imageCredits) { %>
 	<p class="meta"><small class="photocredit"><b>Photo Credits:</b>
-		<%- Object.entries(imageCredits).forEach(([text, link]) => `<a href="${link}">${text}</a>`).join(', ') %>
+		<%- Object.entries(imageCredits).map(([text, link]) => `<a href="${link}">${text}</a>`).join(', ') %>
 	</small></p>
 <% } %>
 </main>
@@ -207,7 +208,7 @@ function loadBackupCSS(url) {
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 
-				<p>Built with <a href="http://docpad.org">DocPad</a>,
+				<p>Built with <a href="https://www.11ty.dev/">Eleventy</a>,
 					<a href="http://getbootstrap.com/">Bootstrap</a>,
 					and <a href="http://www.nodejs.org/">Node.js</a>.
 				</p>

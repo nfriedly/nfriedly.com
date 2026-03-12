@@ -1,3 +1,4 @@
+const ejsPlugin = require("@11ty/eleventy-plugin-ejs");
 const Image = require("@11ty/eleventy-img");
 // const img2picture = require("eleventy-plugin-img2picture");
 const pluginLess = require("eleventy-plugin-less");
@@ -26,6 +27,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/techblog/wp-content/")
 	eleventyConfig.addPassthroughCopy("src/stuff");
 	
+	eleventyConfig.addPlugin(ejsPlugin);
 	eleventyConfig.addPlugin(pluginLess);
 
 	// https://www.11ty.dev/docs/plugins/image/
@@ -71,7 +73,7 @@ module.exports = function (eleventyConfig) {
 	// 	// Eg: imagesOutputDir with `_site/images` likely need urlPath as `/images/`
 	// 	urlPath: "/",
 	// });
-
+	
 	eleventyConfig.addCollection("featuredPosts", function (collectionApi) {
 		// get unsorted items
 		return collectionApi.getFilteredByTag("techblog").filter(p => p.data.featured).reverse().slice(0,4);
