@@ -3,7 +3,7 @@ title: Using an Arduino and an IR Shield to connect a TV and Sound Bar
 heading: Making a "Smart" TV Smarter
 subHeading: Using an Arduino to Automatically Turn On the Sound Bar with the TV
 
-url: /techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/
+permalink: /techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/
 
 headerImage: /img/blog/arduino-ir/tv-back.jpg
 

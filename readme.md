@@ -9,9 +9,9 @@ Built with [DocPad], [Markdown], [Bootstrap], and [Node.js].
 
 Todo:
 * Eleventy upgrade:
-  * Fix techblog urls ending in .html/
   * Fix image thumbnails
   * Check redirects
+  * remove docpad config & dependencies
 * Redo naming convention for projects
 * Add a separate section for reviews
 * Switch to ESM?
