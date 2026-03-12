@@ -7,7 +7,7 @@ urls:
     - /2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/
 headerImage: https://farm9.staticflickr.com/8007/7489893336_c5b3011e15_b.jpg
 imageCredits: 
-	"Telephone cord by Pete" : http://www.flickr.com/photos/comedynose/7489893336/
+  "Telephone cord by Pete" : http://www.flickr.com/photos/comedynose/7489893336/
 tags:
   - antispam
   - howto

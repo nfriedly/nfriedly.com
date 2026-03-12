@@ -31,10 +31,10 @@ Using `{}` instead of `new Object();` is know as &#8220;Object Literal&#8221; sy
 
 ``` javascript
 var fancyObj = {
-	favoriteFood: "pizza",
-	add: function(a, b){
-		return a + b;
-	}
+  favoriteFood: "pizza",
+  add: function(a, b){
+    return a + b;
+  }
 };
 
 fancyObj.add(2,3); // returns 5
@@ -49,7 +49,7 @@ Everything in javascript is an `object`. Everything. `Arrays`, `functions`, even
 ``` javascript
 // an example of something you probably shouldn't do. Ever. Seriously.
 Number.prototype.addto = function(x){
-	return this + x;
+  return this + x;
 }
 
 (8).addto(9); // returns 17
@@ -136,14 +136,14 @@ Did you know you can send any number of arguments you want to a javascript funct
 
 ``` javascript
 function takesTwoParams(a, b){
-	// arguments is an array-like variable that is automatically created
-	// arguments.length works great
+  // arguments is an array-like variable that is automatically created
+  // arguments.length works great
 
-	alert ("you gave me "+arguments.length+" arguments"); 
+  alert ("you gave me "+arguments.length+" arguments"); 
 
-	for(i=0; i&lt; arguments.length; i++){
-		alert("parameter " + i + " = " + arguments[i]); 
-	}
+  for(i=0; i&lt; arguments.length; i++){
+    alert("parameter " + i + " = " + arguments[i]); 
+  }
 }
 
 takesTwoParams("one","two","three");
@@ -162,8 +162,8 @@ This works great. But that's about as far as you can go with array-like objects.
 
 ``` javascript
 function takesTwoParams(a, b){
-	alert(" your parameters were " + arguments.join(", ")); 
-	// throws a type error because arguments.join doesn't exist
+  alert(" your parameters were " + arguments.join(", ")); 
+  // throws a type error because arguments.join doesn't exist
 }
 ```
 
@@ -179,9 +179,9 @@ The array functions can be called on non-array objects as long as you know where
 
 ``` javascript
 function takesTwoParams(a, b){
-	var args = Array.prototype.slice.call(arguments);
-	alert(" your parameters were " + args.join(", ")); 
-	// yay, this works!
+  var args = Array.prototype.slice.call(arguments);
+  alert(" your parameters were " + args.join(", ")); 
+  // yay, this works!
 }
 ```
 
@@ -203,19 +203,19 @@ First, in Internet Explorer, DOM `NodeLists` are not considered to be javascript
 
 ``` javascript
 function hybridToArray(nodes){
-	try{
-		// works in every browser except IE
-		var arr = Array.prototype.slice.call(nodes);
-		return arr;
-	} catch(err){
-		// slower, but works in IE
-		var arr = [],
-		    length = nodes.length;
-		for(var i=0; i &lt; length; i++){
-			arr.push(nodes[i]);
-		}
-		return arr;
-	}
+  try{
+    // works in every browser except IE
+    var arr = Array.prototype.slice.call(nodes);
+    return arr;
+  } catch(err){
+    // slower, but works in IE
+    var arr = [],
+        length = nodes.length;
+    for(var i=0; i &lt; length; i++){
+      arr.push(nodes[i]);
+    }
+    return arr;
+  }
 }
 ```
 
@@ -231,7 +231,7 @@ arr.length; // still returns 1 !
 
 // BUT...
 for(i in arr){
-	// this will hit both 0 and "two"
+  // this will hit both 0 and "two"
 }
 ```
 
@@ -246,28 +246,28 @@ That said, I wouldn&#8217;t recommend that you use this in most cases due to iss
 // not recommended for most situations.
 
 var ArrayContainer = function(arr){
-	this.arr = arr || [];
-	this.length = this.arr.length;
+  this.arr = arr || [];
+  this.length = this.arr.length;
 };
 
 ArrayContainer.prototype.add = function(item){
-	var index = this.arr.length;
-	this.arr[index] = item;
-	this.length = this.arr.length;
-	return index;
+  var index = this.arr.length;
+  this.arr[index] = item;
+  this.length = this.arr.length;
+  return index;
 };
 
 ArrayContainer.prototype.get = function(index){
-	return this.arr[index];
+  return this.arr[index];
 };
 
 ArrayContainer.prototype.forEach = function(fn){
-	if (this.arr.forEach) this.arr.forEach(fn);// use native code if it's there
-	else {
-		for(i in this.arr){
-			fn( i, this.arr[i], this.arr );
-		}
-	}
+  if (this.arr.forEach) this.arr.forEach(fn);// use native code if it's there
+  else {
+    for(i in this.arr){
+      fn( i, this.arr[i], this.arr );
+    }
+  }
 };
 
 var mySuperDooperArray = new ArrayContainer();

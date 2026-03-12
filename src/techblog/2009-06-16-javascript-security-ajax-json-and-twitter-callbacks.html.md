@@ -7,8 +7,8 @@ urls:
     - /2009/06/javascript-security-ajax-json-and-twitter-callbacks/
 headerImage: https://farm4.staticflickr.com/3064/2368452869_1abfa5c996_o_d.jpg
 imageCredits: 
-	"8 ball header photo by Shiv Shankar Menon Palat": https://www.flickr.com/photos/shankarmenon/2368452869/
-	"Other images used with permission from sxc.hu": "http://www.sxc.hu"
+  "8 ball header photo by Shiv Shankar Menon Palat": https://www.flickr.com/photos/shankarmenon/2368452869/
+  "Other images used with permission from sxc.hu": "http://www.sxc.hu"
 tags:
   - ajax
   - javascript

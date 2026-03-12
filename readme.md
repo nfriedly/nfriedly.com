@@ -8,10 +8,13 @@ Built with [DocPad], [Markdown], [Bootstrap], and [Node.js].
 [![Build Static Site](https://github.com/nfriedly/nfriedly.com/actions/workflows/build.yml/badge.svg)](https://github.com/nfriedly/nfriedly.com/actions/workflows/build.yml)
 
 Todo:
-* Finish conversion to React / Next.js
-  * Check out https://www.npmjs.com/package/next-optimized-images / https://nicedoc.io/cyrilwanner/next-optimized-images
-* Favicon(s) - <link rel="shortcut icon" href="/favicon.ico" />
+* Eleventy upgrade:
+  * Fix techblog urls ending in .html/
+  * Fix image thumbnails
+  * Check redirects
 * Redo naming convention for projects
+* Add a separate section for reviews
+* Switch to ESM?
 
 Build instructions
 ------------------ 
