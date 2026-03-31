@@ -9,9 +9,9 @@ Built with [Eleventy], [Markdown], [Bootstrap], and [Node.js].
 
 Todo:
 * Eleventy upgrade:
-  * Fix image thumbnails
   * Check redirects
   * remove docpad config & dependencies
+  * test and release raw permalinks update to less plugin
 * Redo naming convention for projects
 * Add a separate section for reviews
 * Switch to ESM?
