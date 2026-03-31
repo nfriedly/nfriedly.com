@@ -3,8 +3,8 @@
   "version": "5.0.0",
   "description": "Personal website of Nathan Friedly, built with eleventy",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-img": "^3.1.8",
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-ejs": "^1.0.0",
     "docpad": "~6.79.0",
     "docpad-plugin-cleanurls": "^2.10.0",

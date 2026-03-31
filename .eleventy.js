@@ -31,27 +31,18 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginLess);
 
 	// https://www.11ty.dev/docs/plugins/image/
-	// widths should be an array, it can contain numbers and null for the original width
 	eleventyConfig.addShortcode("projectImage", async function (src, alt="") {
 		// 3 different breakpoints (the smallest size just makes it a 1/3 of the width, so use the 210px image for that)
-		const widths = [350, 284, 210];
+		let widths = [350, 284, 210];
+		widths = widths.concat(widths.map(w => w*2)); // add in 2x sizes for high-dpi displays
 
-		// the eleventy-img plugin doesn't know about the input dir setting
+		// the eleventy-img plugin doesn't know about the input & output directories (at least not when used this way)
 		if (!src.includes('//')) {
 			src = settings.dir.input + '/' + src;
 		}
+		const outputDir = settings.dir.output + '/' + 'img/';
 
-		let metadata = await Image(src, {
-			// add in 2x sizes for hi-dpi displays
-			widths: widths.concat(widths.map(w => w*2)),
-			formats: ["avif", "jpeg"],
-			outputDir: settings.dir.output + '/' + 'img/',
-		});
-
-		// keep the large 1x jpeg as a fallback, nuke the rest
-		metadata.jpeg && (metadata.jpeg = metadata.jpeg?.filter?.(m => m.width === 350));
-
-		let imageAttributes = {
+		let imgAttributes = {
 			alt,
 			sizes: "auto",
 			loading: "lazy",
@@ -59,20 +50,16 @@ module.exports = function (eleventyConfig) {
 			class: "img-thumbnail"
 		};
 
-		return Image.generateHTML(metadata, imageAttributes);
+		return await Image(src, {
+			widths,
+			returnType: "html", // Added in v6.0
+			outputDir,
+			htmlOptions: {
+				imgAttributes,
+			}
+		});
 	});
-	// eleventyConfig.addPlugin(img2picture, {
-	// 	// Should be same as Eleventy input folder set using `dir.input`.
-	// 	eleventyInputDir: settings.dir.input,
 
-	// 	// Output folder for optimized images.
-	// 	imagesOutputDir: settings.dir.output + '/img',
-
-	// 	// URL prefix for images src URLS.
-	// 	// It should match with path suffix in `imagesOutputDir`.
-	// 	// Eg: imagesOutputDir with `_site/images` likely need urlPath as `/images/`
-	// 	urlPath: "/",
-	// });
 	
 	eleventyConfig.addCollection("featuredPosts", function (collectionApi) {
 		// get unsorted items
