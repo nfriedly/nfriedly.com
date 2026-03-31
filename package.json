@@ -19,7 +19,7 @@
     "docpad-plugin-sitemap": "^2.4.0",
     "docpad-plugin-thumbnails": "~2.1.2",
     "ejs-lint": "^2.0.0",
-    "eleventy-plugin-less": "^1.0.1",
+    "eleventy-plugin-less": "^1.1.0",
     "underscore": "^1.12.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
