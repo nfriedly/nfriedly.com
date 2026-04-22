@@ -2,6 +2,7 @@ const ejsPlugin = require("@11ty/eleventy-plugin-ejs");
 const Image = require("@11ty/eleventy-img");
 // const img2picture = require("eleventy-plugin-img2picture");
 const pluginLess = require("eleventy-plugin-less");
+const redirectsPlugin = require('eleventy-plugin-redirects');
 const util = require('node:util');
 
 const reImages = /<img [^>]+>/g
@@ -29,6 +30,9 @@ module.exports = function (eleventyConfig) {
 	
 	eleventyConfig.addPlugin(ejsPlugin);
 	eleventyConfig.addPlugin(pluginLess);
+	eleventyConfig.addPlugin(redirectsPlugin, {
+		template: 'clientSide' // netlify, vercel or clientSide
+	})
 
 	// https://www.11ty.dev/docs/plugins/image/
 	eleventyConfig.addShortcode("projectImage", async function (src, alt="") {

@@ -3,7 +3,7 @@ title: Why some users can't see a https website
 author: nFriedly
 
 permalink: /techblog/2009/06/users-cant-see-https-website/
-urls:
+aliases:
     - /2009/06/users-cant-see-https-website/
 headerImage: https://farm3.staticflickr.com/2197/2333040774_bb03ca472a_b.jpg
 imageCredits: 
