@@ -3,7 +3,7 @@ title: How to build a spam-free contact form without captchas
 author: nFriedly
 
 permalink: /techblog/2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/
-urls:
+aliases:
     - /2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/
 headerImage: https://farm9.staticflickr.com/8007/7489893336_c5b3011e15_b.jpg
 imageCredits: 
