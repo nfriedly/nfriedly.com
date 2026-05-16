@@ -31,7 +31,55 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(ejsPlugin);
 	eleventyConfig.addPlugin(pluginLess);
 	eleventyConfig.addPlugin(redirectsPlugin, {
-		template: 'clientSide' // netlify, vercel or clientSide
+		template: 'clientSide', // netlify, vercel or clientSide
+		redirects: {
+			"/eoc": "http://folding.extremeoverclocking.com/?nav=IMAGES",
+			"/pagerank": "http://incline.digital",
+			"/pagerank.js": "http://incline.digital",
+			"stuff/afgame": "http://air-force-game.nfriedly.com/",
+			"stuff/afgame/index.php": "http://air-force-game.nfriedly.com/",
+			"stuff/arcade.php": "http://air-force-game.nfriedly.com/",
+			"/stuff/ddgg-da": "http://ddgg.nfriedly.com/",
+			"/stuff/duckduckgoogle": "http://ddgg.nfriedly.com/",
+			"/stuff/rss-xslt": "http://rss-xslt.herokuapp.com/",
+			"/stuff/jquery-requirejs-noconflict-issue/": "https://github.com/nfriedly/nfriedly.com-v4/tree/master/stuff/jquery-requirejs-noconflict-issue",
+			"/px": "https://github.com/nfriedly/node-unblocker",
+			"/px/index.php": "https://github.com/nfriedly/node-unblocker",
+			"/px/poxy/": "https://github.com/nfriedly/node-unblocker",
+			"/px/poxy/index.php": "https://github.com/nfriedly/node-unblocker",
+			"/px/a2/": "https://github.com/nfriedly/node-unblocker",
+			"/px/a2/index.php": "https://github.com/nfriedly/node-unblocker",
+			"/px/invisiproxy": "https://github.com/nfriedly/node-unblocker",
+			"/px/invisiproxy/index.php": "https://github.com/nfriedly/node-unblocker",
+			"/px/phpr0xi": "https://github.com/nfriedly/node-unblocker",
+			"/px/phpr0xi/index.php": "https://github.com/nfriedly/node-unblocker",
+			"/stuff/africa/": "https://nfriedly.github.io/africa/",
+			"/stuff/bubblegum/": "https://github.com/nfriedly/bubblegum",
+			"/stuff/bubblegum/step1.htm": "https://github.com/nfriedly/bubblegum",
+			"/stuff/bubblegum/step2.htm": "https://github.com/nfriedly/bubblegum",
+			"/stuff/bubblegum/step3.htm": "https://github.com/nfriedly/bubblegum",
+			"/stuff/bubblegum/step4.htm": "https://github.com/nfriedly/bubblegum",
+			"/stuff/bubblegum/step5.htm": "https://github.com/nfriedly/bubblegum",
+			"/stuff/bubblegum/step6.htm": "https://github.com/nfriedly/bubblegum",
+			"/stuff/bubblegum_pub/": "https://github.com/nfriedly/bubblegum",
+
+			// incline
+			"webdev": "http://incline.digital",
+			"webdev/javascript": "http://incline.digital/javascript/",
+			"webdev/marketing": "http://incline.digital",
+			"webdev/php": "http://incline.digital",
+			"demos": "http://incline.digital",
+			"demos/twitter": "http://incline.digital",
+			"quote": "http://incline.digital",
+			"estimate": "http://incline.digital",
+			"clients": "http://incline.digital",
+			"blb": "http://incline.digital",
+			"/pagerank": "http://incline.digital",
+			"/pagerank.js": "http://incline.digital",
+
+			// onsite, but easier this way
+			"/files/Nathan-Friedly-Resume.pdf": "/Nathan-Friedly-Resume.pdf",
+		}
 	})
 
 	// https://www.11ty.dev/docs/plugins/image/
