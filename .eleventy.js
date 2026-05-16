@@ -27,6 +27,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy("src/techblog/wp-content/")
 	eleventyConfig.addPassthroughCopy("src/stuff");
+	eleventyConfig.addPassthroughCopy("src/CNAME");
+	eleventyConfig.addPassthroughCopy("src/Nathan-Friedly-Resume.pdf");
 	
 	eleventyConfig.addPlugin(ejsPlugin);
 	eleventyConfig.addPlugin(pluginLess);
