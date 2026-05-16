@@ -9,7 +9,7 @@ Built with [Eleventy], [Markdown], [Bootstrap], and [Node.js].
 
 Todo:
 * Eleventy upgrade:
-  * Check redirects
+  * fix resume file
   * remove docpad config & dependencies
 * Redo naming convention for projects
 * Add a separate section for reviews

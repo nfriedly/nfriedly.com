@@ -20,7 +20,7 @@
     "docpad-plugin-thumbnails": "~2.1.2",
     "ejs-lint": "^2.0.0",
     "eleventy-plugin-less": "^1.1.0",
-    "eleventy-plugin-redirects": "^1.0.0",
+    "eleventy-plugin-redirects": "^1.1.0",
     "underscore": "^1.12.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
