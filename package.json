@@ -1,6 +1,6 @@
 {
   "name": "nfriedly.com",
-  "version": "1.0.0",
+  "version": "5.0.0",
   "description": "Personal website of Nathan Friedly, built with DocPad",
   "dependencies": {
     "docpad": "~6.79.0",
