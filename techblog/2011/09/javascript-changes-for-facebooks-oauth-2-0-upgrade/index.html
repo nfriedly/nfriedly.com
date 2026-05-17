@@ -1,17 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>How to get your apps ready for Facebook's OAuth 2.0 upgrade</title>
-
-
-    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
-
+<title>How to get your apps ready for Facebook&#39;s OAuth 2.0 upgrade</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.79.4" />
 <link rel="canonical" href="https://www.nfriedly.com/techblog/2011/09/javascript-changes-for-facebooks-oauth-2-0-upgrade/" />
 
+<meta name="generator" content="Eleventy">
 
 <script>
 function loadBackupCSS(url) {
@@ -26,7 +23,7 @@ function loadBackupCSS(url) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-shims.min.css" integrity="sha512-h2Z3EnLjRZp3KQxGYzT6SyqPrWIlmjnlJz/8q3BoZo2IN51insCNN7nmA4WHoe9eu1H5B3xLdLwKiVF8kF+Ewg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link  rel="stylesheet" href="/styles/styles.css" />
+<link href='/styles/styles.css' rel='stylesheet' type='text/css'>
 
 <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
 <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195">
@@ -50,6 +47,7 @@ function loadBackupCSS(url) {
 		</div>
 		<div id="nav-menu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
+				<!-- todo @ home/about/etc.--> <!--  -->
 				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
 				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
 				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
@@ -65,23 +63,22 @@ function loadBackupCSS(url) {
 </nav>
 
 
-<header class="jumbotron" style="background-image: url(https://farm5.staticflickr.com/4134/4859806074_0f5d6faa15_b.jpg);">
+<header class="jumbotron" style="background-image: url(https://farm5.staticflickr.com/4134/4859806074_0f5d6faa15_b.jpg);" >
 	<div class="container">
-		<h1><a href="/techblog/2011/09/javascript-changes-for-facebooks-oauth-2-0-upgrade/"> How to get your apps ready for Facebook's OAuth 2.0 upgrade</a></h1>
+		<h1><a href="/techblog/2011/09/javascript-changes-for-facebooks-oauth-2-0-upgrade/"> How to get your apps ready for Facebook&#39;s OAuth 2.0 upgrade</a></h1>
 		
 	</div>
 </header>
 
 
 <main class="container">
-<p><img class="alignright" src="https://oauth.net/images/oauth-2-sm.png" alt="" width="124" height="123" style="margin-bottom: 0;" />I just finished a writeup on the necessary JS changes to support Facebook&#39;s OAuth 2.0 upgrade, and then Hilary did a followup post on the server-side. </p>
-<p>The upgrade enabled right now, but it gets forced out on October 1st. These two posts should give you all you need to know to get your site ready for Facebook&#39;s upgrade:</p>
+<p><img class="alignright" src="https://oauth.net/images/oauth-2-sm.png" alt="" width="124" height="123" style="margin-bottom: 0;" />I just finished a writeup on the necessary JS changes to support Facebook's OAuth 2.0 upgrade, and then Hilary did a followup post on the server-side.</p>
+<p>The upgrade enabled right now, but it gets forced out on October 1st. These two posts should give you all you need to know to get your site ready for Facebook's upgrade:</p>
 <!--more-->
-<p>Part 1: JavaScript - <a href="http://blog.sociablelabs.com/2011/09/16/javascript-changes-facebook-pauth-2-0-upgrade/">JavaScript changes for Facebook&#39;s OAuth 2.0 upgrade</a></p>
-<p>Part 2: PHP / Backend - <a href="http://blog.sociablelabs.com/2011/09/19/server-side-changes-facebook-oauth-2-0-upgrade/">Server Side changes for Facebook&#39;s OAuth 2.0 upgrade</a></p>
-<p>Also worth noting, there&#39;s a lot of good information on <a href="https://developers.facebook.com/blog/">Facebook&#39;s Developer Blog</a>.</p>
+<p>Part 1: JavaScript - <a href="http://blog.sociablelabs.com/2011/09/16/javascript-changes-facebook-pauth-2-0-upgrade/">JavaScript changes for Facebook's OAuth 2.0 upgrade</a></p>
+<p>Part 2: PHP / Backend - <a href="http://blog.sociablelabs.com/2011/09/19/server-side-changes-facebook-oauth-2-0-upgrade/">Server Side changes for Facebook's OAuth 2.0 upgrade</a></p>
+<p>Also worth noting, there's a lot of good information on <a href="https://developers.facebook.com/blog/">Facebook's Developer Blog</a>.</p>
 <p class="meta"><small class="photocredit">Header photo by <a href="http://www.flickr.com/photos/johanl/4859806074/in/photostream/">Johan Larsson</a></small></p>
-
 
 
 
@@ -196,7 +193,7 @@ function loadBackupCSS(url) {
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 
-				<p>Built with <a href="http://docpad.org">DocPad</a>,
+				<p>Built with <a href="https://www.11ty.dev/">Eleventy</a>,
 					<a href="http://getbootstrap.com/">Bootstrap</a>,
 					and <a href="http://www.nodejs.org/">Node.js</a>.
 				</p>
@@ -215,21 +212,12 @@ function loadBackupJS(url) {
 </script>
 
 
-	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<![endif]-->
-	<!--[if gte IE 9]><!-->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
-	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="/scripts/email.js" defer></script>
 
 
-<script defer="defer"  src="/scripts/email.js"></script>
-
-
-
-    
 <script>
 window['_fs_debug'] = false;
 window['_fs_host'] = 'relay.nfriedly.com'; // goes to rs.staging.fullstory.com
@@ -271,8 +259,6 @@ window['_fs_namespace'] = 'FS';
   })();
 </script>
 <!-- End Matomo Code -->
-
-
 
 </body>
 </html>

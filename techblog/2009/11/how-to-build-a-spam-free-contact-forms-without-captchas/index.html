@@ -1,17 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>How to build a spam-free contact form without captchas</title>
 
-
-    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.79.4" />
 <link rel="canonical" href="https://www.nfriedly.com/techblog/2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/" />
 
+<meta name="generator" content="Eleventy">
 
 <script>
 function loadBackupCSS(url) {
@@ -26,7 +23,7 @@ function loadBackupCSS(url) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-shims.min.css" integrity="sha512-h2Z3EnLjRZp3KQxGYzT6SyqPrWIlmjnlJz/8q3BoZo2IN51insCNN7nmA4WHoe9eu1H5B3xLdLwKiVF8kF+Ewg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link  rel="stylesheet" href="/styles/styles.css" />
+<link href='/styles/styles.css' rel='stylesheet' type='text/css'>
 
 <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
 <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195">
@@ -50,6 +47,7 @@ function loadBackupCSS(url) {
 		</div>
 		<div id="nav-menu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
+				<!-- todo @ home/about/etc.--> <!--  -->
 				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
 				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
 				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
@@ -65,7 +63,7 @@ function loadBackupCSS(url) {
 </nav>
 
 
-<header class="jumbotron" style="background-image: url(https://farm9.staticflickr.com/8007/7489893336_c5b3011e15_b.jpg);">
+<header class="jumbotron" style="background-image: url(https://farm9.staticflickr.com/8007/7489893336_c5b3011e15_b.jpg);" >
 	<div class="container">
 		<h1><a href="/techblog/2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/"> How to build a spam-free contact form without captchas</a></h1>
 		
@@ -74,155 +72,155 @@ function loadBackupCSS(url) {
 
 
 <main class="container">
-<p><img class="alignright size-thumbnail wp-image-39" title="data_security_3" alt="data_security_3" src="/techblog/wp-content/uploads/2009/06/data_security_3-150x150.jpg" width="150" height="150" />Most anti-spam methods used by websites today are annoying at best. They use impossible-to-read captcha images, or they make users jump through some kind of hoop to get the email address instead of just clicking on it. <strong>This can mean lost sales and opportunities for you, because each hurdle turns away more users. </strong></p>
+<p><img class="alignright size-thumbnail wp-image-39" title="data_security_3" alt="data_security_3" src="/techblog/wp-content/uploads/2009/06/data_security_3-150x150.jpg" width="150" height="150" />Most anti-spam methods used by websites today are annoying at best. They use impossible-to-read captcha images, or they make users jump through some kind of hoop to get the email address instead of just clicking on it. **This can mean lost sales and opportunities for you, because each hurdle turns away more users. **</p>
 <p>This article looks at how to use some simple HTML, CSS, &amp; Javascript to protect your private information without making your guests jump through hoops.</p>
 <!--more-->
 <p><a href="https://github.com/nfriedly/spam-free-php-contact-form/archive/master.zip"><img class="alignleft" alt="" src="/img/application_put.png" /> Download a working copy of the contact form discussed here.</a></p>
-<h2 id="the-goal">The Goal</h2>
+<h2>The Goal</h2>
 <p>I want users to be able to contact me simple and easy, no captchas, no math problems, just a regular contact form, clickable email address, and everything copy-paste-able.</p>
-<h2 id="the-problem">The Problem</h2>
+<h2>The Problem</h2>
 <p>Spammers love captcha-free forms and clickable email addresses. I do not want to receive a ton of spam!</p>
-<h2 id="the-solution">The Solution</h2>
+<h2>The Solution</h2>
 <p>With a little bit of CSS and JavaScript wizardry, we can make a simple, easy-to-use contact page that will block almost all automated contact form spam.</p>
-<h3 id="part-1-the-contact-form">Part 1: The Contact Form</h3>
-<p>We are going to make a standard contact form with one extra feature: an input named &#8220;url&#8221; and a note beside it that says &#8220;Don&#8217;t type anything here!&#8221;</p>
+<h3>Part 1: The Contact Form</h3>
+<p>We are going to make a standard contact form with one extra feature: an input named “url” and a note beside it that says “Don’t type anything here!”</p>
 <p>The HTML:</p>
-<pre class="highlight"><code class="hljs xml">
-<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/submit.php"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+<pre><code class="language-html">
+&lt;form action=&quot;/submit.php&quot; method=&quot;post&quot;&gt;
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Your name: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	&lt;p&gt;Your name: &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;&lt;/p&gt;
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Your email: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	&lt;p&gt;Your email: &lt;input type=&quot;text&quot; name=&quot;email&quot; /&gt;&lt;/p&gt;
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"antispam"</span>&gt;</span>Leave this empty: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"url"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	&lt;p class=&quot;antispam&quot;&gt;Leave this empty: &lt;input type=&quot;text&quot; name=&quot;url&quot; /&gt;&lt;/p&gt;
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"message"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	&lt;p&gt;&lt;textarea name=&quot;message&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Send"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+	&lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Send&quot; /&gt;&lt;/p&gt;
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+&lt;/form&gt;
 </code></pre>
 <p>Then we use CSS to hide the input and the note.</p>
 <p>The CSS:</p>
-<pre class="highlight"><code class="hljs css"><span class="hljs-selector-class">.antispam</span> { <span class="hljs-attribute">display</span>:none;}
+<pre><code class="language-css">.antispam { display:none;}
 </code></pre>
-<p>Then we make a rule in the server that says &#8216;if the user typed anything in the &#8220;url&#8221; box, then throw it out.&#8217;</p>
+<p>Then we make a rule in the server that says ‘if the user typed anything in the “url” box, then throw it out.’</p>
 <p>The PHP:</p>
-<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span> 
-<span class="hljs-comment">// if the url field is empty </span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
-     <span class="hljs-comment">// then send the form to your email</span>
-          mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r($_POST,<span class="hljs-keyword">true</span>) ); 
+<pre><code class="language-php">&lt;?php 
+// if the url field is empty 
+if(isset($_POST['url']) &amp;&amp; $_POST['url'] == ''){
+ 	// then send the form to your email
+ 	 	mail( 'you@yoursite.com', 'Contact Form', print_r($_POST,true) ); 
 } 
-<span class="hljs-comment">// otherwise, let the spammer think that they got their message through</span>
-<span class="hljs-meta">?&gt;</span>
+// otherwise, let the spammer think that they got their message through
+?&gt;
 
 &lt;h1&gt;Thanks&lt;/h1&gt;
 
-We<span class="hljs-string">'ll get back to you as soon as possible
-</span></code></pre>
-<p>A regular person won&#8217;t even see the box normally, and will therefore leave it blank without even thinking about it. If the CSS fails to load, they get a note explaining what to do.</p>
-<p>However, when a spam bot looks at this, it sees a good spot to stick whatever spammy url they&#8217;re trying to advertise.</p>
-<p>Now the php script on the server can tell who is a spammer and who isn&#8217;t. The regular people get sent to your email, the spammers get ignored!</p>
-<h3 id="part-2-click-able-email-address">Part 2:  Click-able Email Address</h3>
-<p>Spammers steal your email address by scanning through the source code of the site and grabbing anything that looks like an email address. So we&#8217;re going to make sure that there is no email address in the source code and instead generate it by JavaScript.</p>
+We'll get back to you as soon as possible
+</code></pre>
+<p>A regular person won’t even see the box normally, and will therefore leave it blank without even thinking about it. If the CSS fails to load, they get a note explaining what to do.</p>
+<p>However, when a spam bot looks at this, it sees a good spot to stick whatever spammy url they’re trying to advertise.</p>
+<p>Now the php script on the server can tell who is a spammer and who isn’t. The regular people get sent to your email, the spammers get ignored!</p>
+<h3>Part 2:  Click-able Email Address</h3>
+<p>Spammers steal your email address by scanning through the source code of the site and grabbing anything that looks like an email address. So we’re going to make sure that there is no email address in the source code and instead generate it by JavaScript.</p>
 <p>The Javascript:</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> first = <span class="hljs-string">"yourname"</span>;
+<pre><code class="language-js">var first = &quot;yourname&quot;;
 
-<span class="hljs-keyword">var</span> last = <span class="hljs-string">"yoursite.com"</span>;
+var last = &quot;yoursite.com&quot;;
 </code></pre>
 <p>The HTML:</p>
-<pre class="highlight"><code class="hljs xml">My e-mail address:
+<pre><code class="language-html">My e-mail address:
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
-<span class="hljs-built_in">document</span>.write(<span class="hljs-string">'&lt;a href="mailto:'</span>+first + <span class="hljs-string">'@'</span> + last+<span class="hljs-string">'"&gt;'</span>+first + <span class="hljs-string">'@'</span> + last+<span class="hljs-string">'&lt;\/a&gt;'</span>);
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+&lt;script type=&quot;text/javascript&quot;&gt;
+document.write('&lt;a href=&quot;mailto:'+first + '@' + last+'&quot;&gt;'+first + '@' + last+'&lt;\/a&gt;');
+&lt;/script&gt;
 
-<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
-Please enable javascript or use my <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/contact.php"</span>&gt;</span>contact form<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+&lt;noscript&gt;
+Please enable javascript or use my &lt;a href=&quot;/contact.php&quot;&gt;contact form&lt;/a&gt;
+&lt;/noscript&gt;
 </code></pre>
-<p>A regular user will see a regular email address and things just work. A user who happens to have javascript disabled will see an explanation and an alternative solution. And a spammer won&#8217;t see a thing!</p>
+<p>A regular user will see a regular email address and things just work. A user who happens to have javascript disabled will see an explanation and an alternative solution. And a spammer won’t see a thing!</p>
 <p>This method can easily be extended to phone numbers and other personal information.</p>
-<h2 id="advanced-version-prettier-message-body-and-a-proper-from-field">Advanced version: Prettier message body and a proper <code>From:</code> field</h2>
+<h2>Advanced version: Prettier message body and a proper <code>From:</code> field</h2>
 <p>These were the most commonly requested features, so I added an advanced version that changes the <code>From:</code> field of the email to whatever the user typed in the box, and removes all of the <code>Array</code> brackets from the body of the message:</p>
-<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span> 
-<span class="hljs-comment">// if the url field is empty </span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
+<pre><code class="language-php">&lt;?php 
+// if the url field is empty 
+if(isset($_POST['url']) &amp;&amp; $_POST['url'] == ''){
 
-     <span class="hljs-comment">// put your email address here     </span>
-     $youremail = <span class="hljs-string">'you@yoursite.com'</span>;
-
-     <span class="hljs-comment">// prepare a "pretty" version of the message</span>
-     $body = <span class="hljs-string">"This is the form that was just submitted:     
+ 	// put your email address here 	
+ 	$youremail = 'you@yoursite.com';
+ 	
+ 	// prepare a &quot;pretty&quot; version of the message
+ 	$body = &quot;This is the form that was just submitted: 	
 Name:  $_POST[name]
 E-Mail: $_POST[email]
-Message: $_POST[message]"</span>; 
-
-     <span class="hljs-comment">// Use the submitters email if they supplied one     </span>
-     <span class="hljs-comment">// (and it isn't trying to hack your form).     </span>
-     <span class="hljs-comment">// Otherwise send from your email address.     </span>
-
-     <span class="hljs-keyword">if</span>( $_POST[<span class="hljs-string">'email'</span>] &amp;&amp; !preg_match( <span class="hljs-string">"/[\r\n]/"</span>, $_POST[<span class="hljs-string">'email'</span>]) ) {
-         $headers = <span class="hljs-string">"From: $_POST[email]"</span>;     
-     } <span class="hljs-keyword">else</span> {
-         $headers = <span class="hljs-string">"From: $youremail"</span>; 
-     }
-
-     <span class="hljs-comment">// finally, send the message     </span>
-     mail($youremail, <span class="hljs-string">'Contact Form'</span>, $body, $headers ); } <span class="hljs-comment">// otherwise, let the spammer think that they got their message through <span class="hljs-meta">?&gt;</span></span>
+Message: $_POST[message]&quot;; 
+ 		
+ 	// Use the submitters email if they supplied one 	
+ 	// (and it isn't trying to hack your form). 	
+ 	// Otherwise send from your email address. 	
+ 	
+ 	if( $_POST['email'] &amp;&amp; !preg_match( &quot;/[\r\n]/&quot;, $_POST['email']) ) {
+ 		$headers = &quot;From: $_POST[email]&quot;; 	
+ 	} else {
+ 		$headers = &quot;From: $youremail&quot;; 
+ 	}
+ 	
+ 	// finally, send the message 	
+ 	mail($youremail, 'Contact Form', $body, $headers ); } // otherwise, let the spammer think that they got their message through ?&gt;
 </code></pre>
-<p>The <code>preg_match()</code> is there to make sure spammers can&#8217;t abuse your server by injecting extra fields (such as CC and BCC) into the header. Take a look at <a href="http://www.thesitewizard.com/php/protect-script-from-email-injection.shtml">http://www.thesitewizard.com/php/protect-script-from-email-injection.shtml</a> for more info.</p>
-<h2 id="advanced-version-2-don-t-send-blank-emails">Advanced version 2: Don&#39;t send blank emails</h2>
-<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<p>The <code>preg_match()</code> is there to make sure spammers can’t abuse your server by injecting extra fields (such as CC and BCC) into the header. Take a look at <a href="http://www.thesitewizard.com/php/protect-script-from-email-injection.shtml">http://www.thesitewizard.com/php/protect-script-from-email-injection.shtml</a> for more info.</p>
+<h2>Advanced version 2: Don't send blank emails</h2>
+<pre><code class="language-php">&lt;?php
 
-<span class="hljs-comment">// if the url field is empty</span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
+// if the url field is empty
+if(isset($_POST['url']) &amp;&amp; $_POST['url'] == ''){
 
-    <span class="hljs-keyword">if</span>($_POST[<span class="hljs-string">"message"</span>] == <span class="hljs-string">""</span> || $_POST[<span class="hljs-string">"name"</span>] == <span class="hljs-string">""</span>){
-        <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;p&gt;Please press the back button and fill in all fields&lt;/p&gt;"</span>;
-    } <span class="hljs-keyword">else</span> {
-        <span class="hljs-comment">// then send the form to your email</span>
-        mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r($_POST,<span class="hljs-keyword">true</span>) );
+    if($_POST[&quot;message&quot;] == &quot;&quot; || $_POST[&quot;name&quot;] == &quot;&quot;){
+        echo &quot;&lt;p&gt;Please press the back button and fill in all fields&lt;/p&gt;&quot;;
+    } else {
+        // then send the form to your email
+        mail( 'you@yoursite.com', 'Contact Form', print_r($_POST,true) );
     }
 }
 
-<span class="hljs-comment">// otherwise, let the spammer think that they got their message through</span>
+// otherwise, let the spammer think that they got their message through
 
-<span class="hljs-meta">?&gt;</span>
+?&gt;
 
 &lt;h1&gt;Thanks&lt;/h1&gt;
-&lt;p&gt;We<span class="hljs-string">'ll get back to you as soon as possible&lt;/p&gt;
-</span></code></pre>
-<h2 id="advanced-version-3-redirect-to-a-new-page">Advanced version 3: Redirect to a new page</h2>
-<pre class="highlight"><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
-
-<span class="hljs-comment">// if the url field is empty </span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'url'</span>]) &amp;&amp; $_POST[<span class="hljs-string">'url'</span>] == <span class="hljs-string">''</span>){
-     <span class="hljs-comment">// then send the form to your email</span>
-          mail( <span class="hljs-string">'you@yoursite.com'</span>, <span class="hljs-string">'Contact Form'</span>, print_r($_POST,<span class="hljs-keyword">true</span>) ); 
-} 
-<span class="hljs-comment">// otherwise, let the spammer think that they got their message through</span>
-
-header(<span class="hljs-string">'Location: http://www.mysite.com/thankyou.html'</span>);
-<span class="hljs-keyword">exit</span>(<span class="hljs-string">'Redirecting you to http://www.mysite.com/thankyou.html'</span>);
-
-<span class="hljs-meta">?&gt;</span>
+&lt;p&gt;We'll get back to you as soon as possible&lt;/p&gt;
 </code></pre>
-<h2 id="complete-examples">Complete Examples</h2>
-<p><img class="alignleft" alt="" src="/img/application_put.png" /> A complete working copy of the code is available to <a href="https://github.com/nfriedly/spam-free-php-contact-form">browse on Github</a>  and you can also <a href="https://github.com/nfriedly/spam-free-php-contact-form/archive/master.zip">download a .zip file of the code</a></p>
+<h2>Advanced version 3: Redirect to a new page</h2>
+<pre><code class="language-php">&lt;?php
+
+// if the url field is empty 
+if(isset($_POST['url']) &amp;&amp; $_POST['url'] == ''){
+ 	// then send the form to your email
+ 	 	mail( 'you@yoursite.com', 'Contact Form', print_r($_POST,true) ); 
+} 
+// otherwise, let the spammer think that they got their message through
+
+header('Location: http://www.mysite.com/thankyou.html');
+exit('Redirecting you to http://www.mysite.com/thankyou.html');
+
+?&gt;
+</code></pre>
+<h2>Complete Examples</h2>
+<p><img class="alignleft" alt="" src="/img/application_put.png" /> A complete working copy of the code is available to <a href="https://github.com/nfriedly/spam-free-php-contact-form">browse on Github</a>  and you can also <a href="https://github.com/nfriedly/spam-free-php-contact-form/archive/master.zip">download a .zip file of the code</a></p>
 <p>For a live demo, see <a href="http://spam-free-contact-example.herokuapp.com/simple/contact.htm">http://spam-free-contact-example.herokuapp.com/simple/contact.htm</a></p>
-<h3 id="wordpress-version">WordPress version</h3>
-<p>I found that there is an anti-spam plugin for WordPress that uses similar methods to the ones I describe here: <a href="http://wordpress.org/extend/plugins/nospamnx/">http://wordpress.org/extend/plugins/nospamnx/</a> &#8211; I installed it on this blog and it&#8217;s stopped nearly 30,000 spam comments so far.</p>
-<h2 id="need-help-">Need help?</h2>
-<p>I can help you get set up and/or connect you to other competent developers. 
-A typical installation would be around $500 for me to perform it, but you can likely find a lower-cost option by posting a job on <a href="https://www.elance.com/?rid=1IFCM">elance</a>. 
+<h3>WordPress version</h3>
+<p>I found that there is an anti-spam plugin for WordPress that uses similar methods to the ones I describe here: <a href="http://wordpress.org/extend/plugins/nospamnx/">http://wordpress.org/extend/plugins/nospamnx/</a> – I installed it on this blog and it’s stopped nearly 30,000 spam comments so far.</p>
+<h2>Need help?</h2>
+<p>I can help you get set up and/or connect you to other competent developers.
+A typical installation would be around $500 for me to perform it, but you can likely find a lower-cost option by posting a job on <a href="https://www.elance.com/?rid=1IFCM">elance</a>.
 (Link to this page in the job description and then search for developers with <code>php</code> and <code>email</code> skills and invite them to submit a bid.)</p>
-<h2 id="about-the-author">About the Author</h2>
+<h2>About the Author</h2>
 <p><a href="/"><img class=" wp-image-549 alignleft" alt="Nathan Friedly in Cincinnati during the winter" src="/techblog/wp-content/uploads/2009/11/Nathan-Cincinnati-winter.jpg" width="131" height="175" /></a>
-<a href="/">Nathan</a> is an experienced Web Developer with a sharp eye for security and a zeal for User Experience. 
+<a href="/">Nathan</a> is an experienced Web Developer with a sharp eye for security and a zeal for User Experience.
 He currently works primarily on JavaScript and Node.js.</p>
-<p>However, the focus has never been on the technology &#8211; it&#39;s about solving problems and meeting needs. &#8220;Computers work for us, not the other way around.&#8221;</p>
+<p>However, the focus has never been on the technology – it's about solving problems and meeting needs. “Computers work for us, not the other way around.”</p>
 
 
 
@@ -341,7 +339,7 @@ He currently works primarily on JavaScript and Node.js.</p>
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 
-				<p>Built with <a href="http://docpad.org">DocPad</a>,
+				<p>Built with <a href="https://www.11ty.dev/">Eleventy</a>,
 					<a href="http://getbootstrap.com/">Bootstrap</a>,
 					and <a href="http://www.nodejs.org/">Node.js</a>.
 				</p>
@@ -360,21 +358,12 @@ function loadBackupJS(url) {
 </script>
 
 
-	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<![endif]-->
-	<!--[if gte IE 9]><!-->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
-	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="/scripts/email.js" defer></script>
 
 
-<script defer="defer"  src="/scripts/email.js"></script>
-
-
-
-    
 <script>
 window['_fs_debug'] = false;
 window['_fs_host'] = 'relay.nfriedly.com'; // goes to rs.staging.fullstory.com
@@ -416,8 +405,6 @@ window['_fs_namespace'] = 'FS';
   })();
 </script>
 <!-- End Matomo Code -->
-
-
 
 </body>
 </html>

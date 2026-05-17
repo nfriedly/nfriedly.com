@@ -1,17 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>How to fix Cart 32 &quot;Bad file name or number Error Number = 52&quot;</title>
-
-
-    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
-
+<title>How to fix Cart 32 &#34;Bad file name or number Error Number = 52&#34;</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.79.4" />
 <link rel="canonical" href="https://www.nfriedly.com/techblog/2009/11/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/" />
 
+<meta name="generator" content="Eleventy">
 
 <script>
 function loadBackupCSS(url) {
@@ -26,7 +23,7 @@ function loadBackupCSS(url) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-shims.min.css" integrity="sha512-h2Z3EnLjRZp3KQxGYzT6SyqPrWIlmjnlJz/8q3BoZo2IN51insCNN7nmA4WHoe9eu1H5B3xLdLwKiVF8kF+Ewg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link  rel="stylesheet" href="/styles/styles.css" />
+<link href='/styles/styles.css' rel='stylesheet' type='text/css'>
 
 <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
 <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195">
@@ -50,6 +47,7 @@ function loadBackupCSS(url) {
 		</div>
 		<div id="nav-menu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
+				<!-- todo @ home/about/etc.--> <!--  -->
 				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
 				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
 				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
@@ -65,24 +63,24 @@ function loadBackupCSS(url) {
 </nav>
 
 
-<header class="jumbotron" style="background-image: url(https://farm9.staticflickr.com/8453/7968029824_1d1eb20771_b.jpg);">
+<header class="jumbotron" style="background-image: url(https://farm9.staticflickr.com/8453/7968029824_1d1eb20771_b.jpg);" >
 	<div class="container">
-		<h1><a href="/techblog/2009/11/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/"> How to fix Cart 32 &quot;Bad file name or number Error Number = 52&quot;</a></h1>
+		<h1><a href="/techblog/2009/11/how-to-fix-cart-32-bad-file-name-or-number-error-number-52/"> How to fix Cart 32 &#34;Bad file name or number Error Number = 52&#34;</a></h1>
 		
 	</div>
 </header>
 
 
 <main class="container">
-<p><a href="/techblog/wp-content/uploads/2009/11/cart32-error.png" rel="lightbox"><img class="alignleft size-medium wp-image-244" title="cart32-error" src="/techblog/wp-content/uploads/2009/11/cart32-error-300x202.png" alt="cart32-error" width="300" height="202" /></a>One of our Cart32 websites started having a problem recently where it would work great all the way until the last page of the checkout process, where it would give the error &#8220;Bad file name or number Error Number = 52&#8243;.</p>
+<p><a href="/techblog/wp-content/uploads/2009/11/cart32-error.png" rel="lightbox"><img class="alignleft size-medium wp-image-244" title="cart32-error" src="/techblog/wp-content/uploads/2009/11/cart32-error-300x202.png" alt="cart32-error" width="300" height="202" /></a>One of our Cart32 websites started having a problem recently where it would work great all the way until the last page of the checkout process, where it would give the error “Bad file name or number Error Number = 52″.</p>
 <p>Even worse, it charged the customers credit card each time, so a persistent customer could wind up with multiple charges which you would need to undo!</p>
 <!--more-->
-<h2 id="the-fix">The Fix</h2>
-<p><a href="/techblog/wp-content/uploads/2009/11/cart32-fix.png" rel="lightbox"><img class="size-medium wp-image-245 alignright" title="cart32-fix" src="/techblog/wp-content/uploads/2009/11/cart32-fix-300x235.png" alt="cart32-fix" width="300" height="235" /></a>Cart32&#8242;s support was not particularly helpful (both the <a href="http://www.cart32.com/kb.asp">Knowledge Base</a> and their phone support), but fortunately the fix was not very hard. The error basically means that it had trouble opening some file.</p>
-<p>In our case the name of the file that orders were saved in (<strong>Orders &gt; Order Setting &gt; Order Output File</strong>) had gotten goofed and was set to the url of the website. The fix was to change it back to &#8220;<strong>orders.txt</strong>&#8220;.</p>
-<h2 id="did-it-work-for-you-">Did it work for you?</h2>
+<h2>The Fix</h2>
+<p><a href="/techblog/wp-content/uploads/2009/11/cart32-fix.png" rel="lightbox"><img class="size-medium wp-image-245 alignright" title="cart32-fix" src="/techblog/wp-content/uploads/2009/11/cart32-fix-300x235.png" alt="cart32-fix" width="300" height="235" /></a>Cart32′s support was not particularly helpful (both the <a href="http://www.cart32.com/kb.asp">Knowledge Base</a> and their phone support), but fortunately the fix was not very hard. The error basically means that it had trouble opening some file.</p>
+<p>In our case the name of the file that orders were saved in (<strong>Orders &gt; Order Setting &gt; Order Output File</strong>) had gotten goofed and was set to the url of the website. The fix was to change it back to “<strong>orders.txt</strong>“.</p>
+<h2>Did it work for you?</h2>
 <p>Please let me know if you found this helpful. If you have some other website issue, cart 32 related or not, <a href="/portfolio">I may be able to help</a>.</p>
-<p>Doing impossible things with <a href="/portfolio/#javascript">JavaScript and AJAX</a> is my specialty.  My contact info is in the footer.</p>
+<p>Doing impossible things with <a href="/portfolio/#javascript">JavaScript and AJAX</a> is my specialty.  My contact info is in the footer.</p>
 
 
 
@@ -201,7 +199,7 @@ function loadBackupCSS(url) {
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 
-				<p>Built with <a href="http://docpad.org">DocPad</a>,
+				<p>Built with <a href="https://www.11ty.dev/">Eleventy</a>,
 					<a href="http://getbootstrap.com/">Bootstrap</a>,
 					and <a href="http://www.nodejs.org/">Node.js</a>.
 				</p>
@@ -220,21 +218,12 @@ function loadBackupJS(url) {
 </script>
 
 
-	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<![endif]-->
-	<!--[if gte IE 9]><!-->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
-	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="/scripts/email.js" defer></script>
 
 
-<script defer="defer"  src="/scripts/email.js"></script>
-
-
-
-    
 <script>
 window['_fs_debug'] = false;
 window['_fs_host'] = 'relay.nfriedly.com'; // goes to rs.staging.fullstory.com
@@ -276,8 +265,6 @@ window['_fs_namespace'] = 'FS';
   })();
 </script>
 <!-- End Matomo Code -->
-
-
 
 </body>
 </html>

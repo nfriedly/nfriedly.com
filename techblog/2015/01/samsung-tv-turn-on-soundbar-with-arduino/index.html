@@ -1,17 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Using an Arduino and an IR Shield to connect a TV and Sound Bar</title>
 
-
-    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="DocPad v6.79.4" />
 <link rel="canonical" href="https://www.nfriedly.com/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/" />
 
+<meta name="generator" content="Eleventy">
 
 <script>
 function loadBackupCSS(url) {
@@ -26,7 +23,7 @@ function loadBackupCSS(url) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-shims.min.css" integrity="sha512-h2Z3EnLjRZp3KQxGYzT6SyqPrWIlmjnlJz/8q3BoZo2IN51insCNN7nmA4WHoe9eu1H5B3xLdLwKiVF8kF+Ewg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link  rel="stylesheet" href="/styles/styles.css" />
+<link href='/styles/styles.css' rel='stylesheet' type='text/css'>
 
 <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
 <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/4dbfb008-6890-4127-8778-d8bcd0031195">
@@ -50,6 +47,7 @@ function loadBackupCSS(url) {
 		</div>
 		<div id="nav-menu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
+				<!-- todo @ home/about/etc.--> <!--  -->
 				<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
 				<li ><a href="/about/"><i class="fa fa-android"></i> About</a></li>
 				<li ><a href="/portfolio/"><i class="fa fa-laptop"></i> Portfolio</a></li>
@@ -65,9 +63,9 @@ function loadBackupCSS(url) {
 </nav>
 
 
-<header class="jumbotron" style="background-image: url(/img/blog/arduino-ir/tv-back.jpg);">
+<header class="jumbotron" style="background-image: url(/img/blog/arduino-ir/tv-back.jpg);" >
 	<div class="container">
-		<h1><a href="/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/"> Making a &quot;Smart&quot; TV Smarter</a></h1>
+		<h1><a href="/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/"> Making a &#34;Smart&#34; TV Smarter</a></h1>
 		<h2><span class="sub-heading ">Using an Arduino to Automatically Turn On the Sound Bar with the TV</span></h2>
 	</div>
 </header>
@@ -75,81 +73,80 @@ function loadBackupCSS(url) {
 
 <main class="container">
 <style> center img { margin: 20px 0; } </style>
-
 <p><img class="left" src="/img/blog/arduino-ir/arduino-ir-assembled-small.jpg" alt="Arduino Uno and IR Shield assembled" />
-<em>&quot;Snatching defeat from the jaws of victory.&quot;</em>
-That summarizes Samsung&#39;s implementation of HDMI CEC (&quot;Anynet+&quot;) in their &quot;Smart&quot; TVs - everything works except the power button.</p>
+<i>"Snatching defeat from the jaws of victory."</i>
+That summarizes Samsung's implementation of HDMI CEC ("Anynet+") in their "Smart" TVs - everything works except the power button.</p>
 <p>However, with help from an Arduino and an IR Shield, I was able to add in the missing parts and make things work properly.</p>
 <!--more-->
-<h2 id="background">Background</h2>
+<h2>Background</h2>
 <p>The <abbr title="High-Definition Multimedia Interface Consumer Electronics Control"><a href="https://en.wikipedia.org/wiki/HDMI#CEC">HDMI CEC</a></abbr>
 protocol allows various pieces of home theater equipment to send each other commands with the idea being that your TV remote can control everything.
 It allows your TV to turn your connected equipment on and off, play/pause your DVD player, adjust the volume on your sound system, etc.
 On <a href="http://www.amazon.com/gp/product/B007BG4F5C/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B007BG4F5C&amp;linkCode=as2&amp;tag=nfriedly-20&amp;linkId=XLTMI57TA3XPSFQ3">my TV</a>, Samsung got everything right except the first step: turning things on.</p>
 <p>The TV forwards volume up/down commands to <a href="http://www.amazon.com/gp/product/B005P99KX4/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B007BG4F5C&amp;linkCode=as2&amp;tag=nfriedly-20&amp;linkId=XLTMI57TA3XPSFQ3">my sound bar</a> and, critically, it also automatically turns the sound bar off when I turn off the TV.
-But, since it doesn&#39;t turn sound bar back on, I still have to get out my sound bar&#39;s remote any time I want to watch TV.</p>
-<h2 id="easy-version-arduino-uno-ir-shield">Easy Version: Arduino Uno + IR Shield</h2>
+But, since it doesn't turn sound bar back on, I still have to get out my sound bar's remote any time I want to watch TV.</p>
+<h2>Easy Version: Arduino Uno + IR Shield</h2>
 <p>The TV has a couple of USB ports on the back. These were intended for plugging in an external HDD to play movies off of, but they provide more than enough power for an Arduino, and, importantly, they only provide power when the TV is on.</p>
 <p>For my initial solution, I put together a regular <a href="http://www.amazon.com/gp/product/B006H06TVG/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B006H06TVG&amp;linkCode=as2&amp;tag=nfriedly-20&amp;linkId=65LVBGKDBEAGVMAO">Arduino Uno R3</a> and an <a href="http://www.electrodragon.com/product/arduino-ir-infrared-shield/">IR Shield</a>.
 (That shield comes from <a href="http://www.electrodragon.com/">Electrodragon</a>, who I highly recommend, but be aware that they ship from China so it takes a little while to arrive. LinkSprite offers a <a href="http://store.linksprite.com/linksprite-infrared-shield-for-arduino/">similar shield</a> that ships from Colorado and would presumably work just as well.)</p>
 <p><img src="/img/blog/arduino-ir/arduino-ir-parts.jpg" alt="Arduino Uno and IR Shield side-by-side"></p>
-<p>I used Ken Shirriff&#39;s awesome <a href="https://github.com/shirriff/Arduino-IRremote">Arduino IRemote library</a> and initially it had some conflicts.
-It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only receive a single format and can&#39;t transmit anything, but they neglected to rename anything.
+<p>I used Ken Shirriff's awesome <a href="https://github.com/shirriff/Arduino-IRremote">Arduino IRemote library</a> and initially it had some conflicts.
+It seems that the Arduino IDE 1.5 beta includes a butchered copy of the library that can only receive a single format and can't transmit anything, but they neglected to rename anything.
 You can delete the <code>examples/RobotIRemote</code> folder or just go back to the Arduino IDE 1.0.6.</p>
 <p>After getting that sorted, I loaded the IRecord example sketch onto my Arduino. I opened the Serial Monitor, pointed my sound bar remote at the IR Shield, and pressed power:</p>
-<pre class="highlight"><code class="hljs no-highlight">Received NEC: FF02FD
+<pre><code class="language-none">Received NEC: FF02FD
 repeat; ignoring.
 repeat; ignoring.
 repeat; ignoring.
 </code></pre>
 <p>Success! I now had the code to turn on my sound bar.</p>
 <p>Inspecting the code revealed that the &quot;repeat&quot; code is actually <code>0xFFFFFFFF</code>, and some trial and error revealed that a sketch with one repeat is sufficient to turn on my sound bar:</p>
-<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IRremote.h&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/sleep.h&gt;</span></span>
+<pre><code class="language-c++">#include &lt;IRremote.h&gt;
+#include &lt;avr/sleep.h&gt;
 
-<span class="hljs-comment">/*
+/*
  * Turn on a Vizio Soundbar via an IR shield when the Arduino receives power
  * https://www.nfriedy.com/techblog/2015/01/samsung-tv-turn-on-soundbar-with-arduino/
- */</span>
+ */
 
 
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
-</span>{
+void setup()
+{
   IRsend irsend;
-  delay(<span class="hljs-number">100</span>);
+  delay(100);
 
-  irsend.sendNEC(<span class="hljs-number">0xFF02FD</span>, <span class="hljs-number">8</span>*<span class="hljs-number">6</span>); <span class="hljs-comment">// Vizio power on code</span>
-  irsend.sendNEC(REPEAT, <span class="hljs-number">8</span>*<span class="hljs-number">8</span>); <span class="hljs-comment">// 0xFFFFFFFF - my remote actually sends out 4 of these (?)</span>
+  irsend.sendNEC(0xFF02FD, 8*6); // Vizio power on code
+  irsend.sendNEC(REPEAT, 8*8); // 0xFFFFFFFF - my remote actually sends out 4 of these (?)
 
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN);  <span class="hljs-comment">// waste not.</span>
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);  // waste not.
 }
 
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+void loop() {
 }
 </code></pre>
-<p>I &quot;installed&quot; it on the back of my TV (A.K.A. set it on top of the wall mount pointing vaguely in the direction of the sound bar), and viola! I could now control everything from just my TV&#39;s remote.</p>
+<p>I &quot;installed&quot; it on the back of my TV (A.K.A. set it on top of the wall mount pointing vaguely in the direction of the sound bar), and viola! I could now control everything from just my TV's remote.</p>
 <p>Total time: &lt; 20 minutes.</p>
 <p><img src="/img/blog/arduino-ir/arduino-ir-assembled.jpg" alt="Arduino Uno and IR Shield assembled together">
 <img src="/img/blog/arduino-ir/arduino-ir-installed.jpg" alt="Arduino Uno and IR Shield installed on TV"></p>
-<h2 id="cheaper-version-digispark">Cheaper Version: Digispark</h2>
+<h2>Cheaper Version: Digispark</h2>
 <p>I was stoked with how well my new setup worked, but it still kind of annoyed me that I was using my $25 arduino when I had a couple of spare $8 <a href="http://digistump.com/products/1">Digisparks</a> that are more than powerful enough to meet the requirements here.
 So after a week or so, I rebuilt it and recovered my Arduino.</p>
 <p><img src="/img/blog/arduino-ir/digispark-ir-parts.jpg" alt="Digispark, IR Shield, and parts to make a dupont cable"></p>
-<p>There was a bit of trouble with the IRremote library wanting to use timers that The Arduino&#39;s ATmega 328 processor had but the Digispark&#39;s Attiny85 did not.
+<p>There was a bit of trouble with the IRremote library wanting to use timers that The Arduino's ATmega 328 processor had but the Digispark's Attiny85 did not.
 However, TKJElectronics made a <a href="https://github.com/TKJElectronics/ATtinyRemote">fork</a> (with the same naming conflicts <em>again</em>) that works on a Digispark.
-It didn&#39;t have support for the NEC format that I needed, but copy-pasting everything NEC-related from the IRRemote library got me a working build.
+It didn't have support for the NEC format that I needed, but copy-pasting everything NEC-related from the IRRemote library got me a working build.
 I should clean it up and send a Pull Request sometime soon here...</p>
 <p>After that, I made myself a male-to-female dupont cable (probably the hardest part) and &quot;re-installed&quot; it.</p>
 <p><img src="/img/blog/arduino-ir/digispark-ir-assembled.jpg" alt="Digispark + IR Shield"></p>
-<p>Out of the box, Digispark&#39;s have a 5-second delay between powering on and running your program. This is to allow the IDE to recognize it and upload a new sketch, but I found it a little bit annoying.
+<p>Out of the box, Digispark's have a 5-second delay between powering on and running your program. This is to allow the IDE to recognize it and upload a new sketch, but I found it a little bit annoying.
 Fortunately, the <a href="https://github.com/micronucleus/micronucleus">micronucleus</a> bootloader has an alternate mode where it runs your sketch immediately unless pin 0 is pulled low at power on.
 Updating to that got me back instantaneous, automatic sound bar power!</p>
 <p><img src="/img/blog/arduino-ir/ir-installed.jpg" alt="IR Shield installed on TV">
 <img src="/img/blog/arduino-ir/digispark-ir-installed.jpg" alt="Overview of Digispark and IR Shield installed on TV">
 <img src="/img/blog/arduino-ir/digispark-installed.jpg" alt="Digispark installed on TV"></p>
-<h2 id="now-with-lighting-control-">Now with lighting control!</h2>
-<p>I have a strand of icicle-style christmas lights strung above my TV that I had been manually plugging in and unplugging. 
-After a while, I decided to automate this! 
+<h2>Now with lighting control!</h2>
+<p>I have a strand of icicle-style christmas lights strung above my TV that I had been manually plugging in and unplugging.
+After a while, I decided to automate this!
 With the help of a <a href="https://www.adafruit.com/product/268">Power Switch Tail 2</a> and a couple of free pins on the arduino, I was able to set this up in under 20 minutes with no code changes!</p>
 <p><img src="/img/blog/arduino-ir/tv-back.jpg" alt="With the lighting control connected #notilter"></p>
 
@@ -266,7 +263,7 @@ With the help of a <a href="https://www.adafruit.com/product/268">Power Switch T
 				<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/3.0/88x31.png" class="pull-left" /></a> Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution</a>.</p>
 				<p><a href="https://github.com/nfriedly/nfriedly.com"><i class="fa fa-github"></i> Source code available on Github</a> under a <a href="http://opensource.org/licenses/MIT">MIT License</a></p>
 
-				<p>Built with <a href="http://docpad.org">DocPad</a>,
+				<p>Built with <a href="https://www.11ty.dev/">Eleventy</a>,
 					<a href="http://getbootstrap.com/">Bootstrap</a>,
 					and <a href="http://www.nodejs.org/">Node.js</a>.
 				</p>
@@ -285,21 +282,12 @@ function loadBackupJS(url) {
 </script>
 
 
-	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<![endif]-->
-	<!--[if gte IE 9]><!-->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
-	<!--<![endif]-->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" onerror="loadBackupJS('/bower_components/jquery/dist/jquery.min.js')"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" onerror="loadBackupJS('/bower_components/lodash/dist/lodash.min.js')"></script>
+<script src="/scripts/email.js" defer></script>
 
 
-<script defer="defer"  src="/scripts/email.js"></script>
-
-
-
-    
 <script>
 window['_fs_debug'] = false;
 window['_fs_host'] = 'relay.nfriedly.com'; // goes to rs.staging.fullstory.com
@@ -341,8 +329,6 @@ window['_fs_namespace'] = 'FS';
   })();
 </script>
 <!-- End Matomo Code -->
-
-
 
 </body>
 </html>

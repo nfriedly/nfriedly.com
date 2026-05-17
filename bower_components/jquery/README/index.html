@@ -1,0 +1,40 @@
+<h1>jQuery</h1>
+<blockquote>
+<p>jQuery is a fast, small, and feature-rich JavaScript library.</p>
+</blockquote>
+<p>For information on how to get started and how to use jQuery, please see <a href="http://api.jquery.com/">jQuery's documentation</a>.
+For source files and issues, please visit the <a href="https://github.com/jquery/jquery">jQuery repo</a>.</p>
+<h2>Including jQuery</h2>
+<p>Below are some of the most common ways to include jQuery.</p>
+<h3>Browser</h3>
+<h4>Script tag</h4>
+<pre><code class="language-html">&lt;script src=&quot;https://code.jquery.com/jquery-2.2.0.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h4>Babel</h4>
+<p><a href="http://babeljs.io/">Babel</a> is a next generation JavaScript compiler. One of the features is the ability to use ES6/ES2015 modules now, even though browsers do not yet support this feature natively.</p>
+<pre><code class="language-js">import $ from &quot;jquery&quot;;
+</code></pre>
+<h4>Browserify/Webpack</h4>
+<p>There are several ways to use <a href="http://browserify.org/">Browserify</a> and <a href="https://webpack.github.io/">Webpack</a>. For more information on using these tools, please refer to the corresponding project's documention. In the script, including jQuery will usually look like this...</p>
+<pre><code class="language-js">var $ = require(&quot;jquery&quot;);
+</code></pre>
+<h4>AMD (Asynchronous Module Definition)</h4>
+<p>AMD is a module format built for the browser. For more information, we recommend <a href="http://requirejs.org/docs/whyamd.html">require.js' documentation</a>.</p>
+<pre><code class="language-js">define([&quot;jquery&quot;], function($) {
+
+});
+</code></pre>
+<h3>Node</h3>
+<p>To include jQuery in <a href="nodejs.org">Node</a>, first install with npm.</p>
+<pre><code class="language-sh">npm install jquery
+</code></pre>
+<p>For jQuery to work in Node, a window with a document is required. Since no such window exists natively in Node, one can be mocked by tools such as <a href="https://github.com/tmpvar/jsdom">jsdom</a>. This can be useful for testing purposes.</p>
+<pre><code class="language-js">require(&quot;jsdom&quot;).env(&quot;&quot;, function(err, window) {
+	if (err) {
+		console.error(err);
+		return;
+	}
+
+	var $ = require(&quot;jquery&quot;)(window);
+});
+</code></pre>

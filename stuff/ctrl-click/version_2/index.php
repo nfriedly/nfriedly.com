@@ -6,7 +6,7 @@ include 'includes/header.php'; ?>
 
 	<div id="welcome">
 		<p>Hello, my name is Christopher Skillicorn and this is my personal portfolio<br />
-Iï¿½m a freelance web designer passionate about creating clean, modern and elegant websites</p>
+I’m a freelance web designer passionate about creating clean, modern and elegant websites</p>
 	</div>
 	
 <?php include 'includes/gallery.php'; ?>

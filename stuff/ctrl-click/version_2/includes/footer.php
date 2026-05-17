@@ -1,10 +1,10 @@
 	<div id="footer">
 	
 		<p id="contact">
-			Iï¿½m currently available for freelance<br />
+			I’m currently available for freelance<br />
 			<a href="http://www.linkedin.com/pub/christopher-skillicorn/13/1b3/b1">LinkedIn</a>
-			  ï¿½  <a href="http://twitter.com/ctrlclick/">Twitter</a>
-			  ï¿½  <a href="http://ctrl-click.deviantart.com">deviantART</a>
+			  ·  <a href="http://twitter.com/ctrlclick/">Twitter</a>
+			  ·  <a href="http://ctrl-click.deviantart.com">deviantART</a>
 		</p>
 		
 		<p>
