@@ -8,8 +8,6 @@ Built with [Eleventy], [Markdown], [Bootstrap], and [Node.js].
 [![Build Static Site](https://github.com/nfriedly/nfriedly.com/actions/workflows/build.yml/badge.svg)](https://github.com/nfriedly/nfriedly.com/actions/workflows/build.yml)
 
 Todo:
-* Eleventy upgrade:
-  * remove docpad config & dependencies
 * Redo naming convention for projects
 * Add a separate section for reviews
 * Switch to ESM?
