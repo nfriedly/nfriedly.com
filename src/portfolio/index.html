@@ -33,7 +33,7 @@ eleventyImport:
             <div class="panel-heading">Click a tag to filter the portfolio <a class="clear-tag" href="#">Clear Filter [X]</a></div>
             <div class="panel-body tag-cloud">
                 {% for ts in tagCloud %}
-                    <a href="{%- normalizeTag ts.tag -%}" style="font-size: {{ ts.size }}%" {% if ts.minimize %}class="small-tag"{% endif %}>{{ ts.tag }}</a>
+                    <a href="#{%- normalizeTag ts.tag -%}" style="font-size: {{ ts.size }}%" {% if ts.minimize %}class="small-tag"{% endif %}>{{ ts.tag }}</a>
                 {% endfor %}
                 <p><a class="show-small-tags">[Show more tags]</a></p>
             </div>
