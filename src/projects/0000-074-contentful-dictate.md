@@ -9,6 +9,7 @@ tags:
  - JavaScript
  - Open Source
  - Express
+index: 90
 ---
 
 [Contentful] is a hosted <abbr title="Content Management System">CMS</abbr> with a friendly-yet-powerful back-end UI, and an API-only front-end.

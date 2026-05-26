@@ -5,6 +5,7 @@ tags:
  - Arduino
  - hardware
 write: false
+index: 42
 ---
 
 A digital thermometer that varies the color of the backlight from green for "just right" to blue for cold and red for hot.

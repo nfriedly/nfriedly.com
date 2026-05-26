@@ -4,6 +4,7 @@ picture: /img/portfolio/ycs.png
 tags: 
   - email
   - HTML
+index: 3
 ---
 
 YCS does customized new home construction preforming some of the work directly and overseeing contractors for the reaming portion. I supported their email and contact form.

@@ -12,6 +12,7 @@ tags:
  - jQuery
  - Mobile First
  - Open Source
+index: 54
 ---
 A little web app that I put together one morning to annoy myself into having better posture. It asks how your posture is every so often. If it's good, then it waits a little longer before asking you again. But if your posture isn't so great, then it asks you much sooner the next time.
 

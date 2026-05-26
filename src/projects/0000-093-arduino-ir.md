@@ -9,6 +9,7 @@ tags:
   - C++
   - hardware
   - Open Source
+index: 68
 ---
 
 I used an Arduino and an IR Shield to fix a major annoyance with my TV:

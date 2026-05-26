@@ -9,6 +9,7 @@ tags:
   - SASS
   - HTML
   - Mobile First
+index: 84
 ---
 
 The Klofer Building, where [Incline's](http://www.incline.digital/) offices are located, 

@@ -13,6 +13,7 @@ tags:
  - Continuous Integration
  - Open Source
  - Mobile First
+index: 93
 ---
 
 The Speech to Text demo allows live transcription of microphone input, user-provided audio files,

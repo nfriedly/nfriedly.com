@@ -10,6 +10,7 @@ tags:
  - Node.js
  - JavaScript
  
+index: 87
 ---
 
 I gave an internal presentation at IBM on the Watson Developer Cloud Node.js <abbr title="Software Development Kit">SDK</abbr>

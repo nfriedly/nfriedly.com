@@ -17,6 +17,7 @@ tags:
   - Mobile First
   - Open Source
 write: false
+index: 50
 ---
 
 I rebuilt my personal website from scratch with a state of the art mobile-first design made for speed and usability. I like to say that I have more taste than skill when it comes to design, so I'm really happy with myself when I can build something that I think looks good, and I think I did that here. 

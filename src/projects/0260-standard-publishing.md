@@ -9,6 +9,7 @@ tags:
   - CSS
   - HTML
 write: false
+index: 19
 ---
 
 I updated their Flashed based header and image-rotator to a Search-Engine-Friendly, easier to manage version build with jQuery, HTML, and CSS.

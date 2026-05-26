@@ -15,6 +15,7 @@ tags:
   - Redis
   - Mobile First
 write: false
+index: 30
 ---
 
 My second web proxy, this one built in Node.js and designed from the ground up to be faster and compatible with more sites - try out Google Instant Search for an example.

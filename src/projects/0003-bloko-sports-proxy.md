@@ -10,6 +10,7 @@ tags:
  - Backbone.js
  - AJAX
  - AWS
+index: 55
 ---
 The Bloko Sports Proxy allows you to browse the internet without fear of "spoilers" telling you the final score of a game you were looking forward to watching later.
 

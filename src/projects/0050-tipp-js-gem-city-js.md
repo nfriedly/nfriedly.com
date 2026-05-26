@@ -14,6 +14,7 @@ tags:
   - DocPad
   - Presentation
 write: false
+index: 43
 ---
 
 <img class="right" src="/img/portfolio/gem-city-js.png" alt="" />After moving to Tipp City and not finding any local JavaScript User Group, I founded Tipp JS and started hosting meetups. I later joined forces with Sparkbox in Dayton to create Gem City JS.

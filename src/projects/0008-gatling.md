@@ -12,6 +12,7 @@ tags:
   - Open Source
   - Continuous Integration
 write: false
+index: 51
 ---
 
 I built Gatling to abstract some of the repetitive work I saw myself doing with each Node.js 

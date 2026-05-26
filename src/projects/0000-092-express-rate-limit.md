@@ -13,6 +13,7 @@ tags:
   - Express
   - Open Source
   - Continuous Integration
+index: 69
 ---
 
 I needed a simple rate-limiter for a project and I didn't see anything that fit the bill, so I put this one together.

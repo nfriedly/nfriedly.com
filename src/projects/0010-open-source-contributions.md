@@ -17,6 +17,7 @@ tags:
 write: false
 date: 2014-04-02
 cssClass: "open-source-projects tripple"
+index: 49
 ---
 
 I frequently make small improvements to Open Source projects that I work with. Here's a not-quite-comprehensive list:

@@ -18,6 +18,7 @@ tags:
   - Open Source
   - e-Commerce
 write: false
+index: 41
 ---
 
 A Google PageRank tool uses my <a href="https://github.com/nfriedly/node-pagerank">node-pagerank</a> library. 

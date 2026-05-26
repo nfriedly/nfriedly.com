@@ -7,6 +7,7 @@ tags:
   - WordPress
   - CSS
 write: false
+index: 25
 ---
 
 Joel's personal website that I assisted with polishing. Built with WordPress and a few plugins including WP Super Cache and BackUpWordPress. 

@@ -11,6 +11,7 @@ tags:
   - CSS
   - Flash / ActionScript
 write: false
+index: 31
 ---
 
 I built the Veryfine product database and search system including the Nutrition Facts CSS. I also enhanced the site's design to include support for older browsers.

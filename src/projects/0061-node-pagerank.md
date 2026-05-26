@@ -12,6 +12,7 @@ tags:
   - Open Source
   - Continuous Integration
 write: false
+index: 40
 ---
 
 Node.js library that fetches the Google PageRank of a given site. Serves as the basis of [pagerank.nfriedly.com](http://pagerank.nfriedly.com).

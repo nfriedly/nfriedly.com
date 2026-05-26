@@ -7,6 +7,7 @@ tags:
   - WordPress
   - SEO
 write: false
+index: 33
 ---
 
 Launched a WordPress site with a customized template for the Turtle St. B &amp; B to use as blog and contact site advertising their Bed and Breakfast and Extended stay offerings as well as other attractions local to Syracuse, NY.

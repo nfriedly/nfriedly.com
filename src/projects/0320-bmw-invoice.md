@@ -9,6 +9,7 @@ tags:
   - jQuery
   - MySQL
 write: false
+index: 13
 ---
 
 <img class="right" alt="" src="/img/portfolio/bmw_flipped.png" />I created a web app for customized orders that included an index of what was available, pricing options, and images. Also included a back-end inventory management system.

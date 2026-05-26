@@ -8,6 +8,7 @@ tags:
   - AJAX
   - YUI
 write: false
+index: 11
 ---
 
 I created a complete end-to-end system for managing agent->client business emails. AJAX-driven interface loads templates and sender information, allows you to modify the template, then sends the email. 

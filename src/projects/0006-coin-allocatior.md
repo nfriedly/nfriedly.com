@@ -12,6 +12,7 @@ tags:
  - Continuous Integration
  - npm
  - Heroku
+index: 53
 ---
 <img src="/img/portfolio/bitcoin.png" class="right"> A low-frequency trading tool, taking the principles from 
 [The Intelligent Asset Allocator](http://www.amazon.com/gp/product/0071362363/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=0071362363&linkCode=as2&tag=nfriedly-20) 

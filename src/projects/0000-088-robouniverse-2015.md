@@ -10,6 +10,7 @@ tags:
  - hardware
  - Arduino
  
+index: 73
 ---
 
 I was invited to speak at the RoboUniverse 2015 conference; I hosted a workshop titled "Knowledge Engines – Building Smart Applications that Learn":

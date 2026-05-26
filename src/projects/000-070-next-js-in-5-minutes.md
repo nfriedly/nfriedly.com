@@ -11,6 +11,7 @@ tags:
  - JavaScript
  - Next.js
  - React
+index: 95
 ---
 
 This is a Lightning Talk I gave at Tanium's October 2018 Dev Week with a quick overview of [Next.js](https://nextjs.org/).

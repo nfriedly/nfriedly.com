@@ -9,6 +9,7 @@ tags:
   - IoT
   - hardware
   - Open Source
+index: 92
 ---
 
 Library to connect an [Adafruit SSD1351 1.5" Color OLED](https://www.adafruit.com/products/1431) breakout board to a

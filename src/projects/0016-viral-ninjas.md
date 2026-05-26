@@ -12,6 +12,7 @@ tags:
     - AJAX
     - email
 date: 2014-03-01
+index: 47
 ---
 
 <img src="/img/portfolio/viral-ninja.png" class="right">Sociable Labs joined forces with Viral Ninjas, and I began working on their node.js / AngularJS application. 

@@ -11,6 +11,7 @@ tags:
   - gulp.js
   - Mobile First
   - Continuous Integration
+index: 67
 ---
 
 Fun little browser-based game, sort of a cross between Doodle Jump and Moon Lander.

@@ -14,6 +14,7 @@ tags:
   - Heroku
   - Continuous Integration
 write: false
+index: 22
 ---
 
 <img class="right" src="/img/portfolio/ddg.png" alt="" />An OpenSearch plugin that allows visitors to add option to their browser's built-in search bar that uses Google Suggestions but performs the searches on <a href="http://duckduckgo.com">Duck Duck Go</a>.

@@ -8,6 +8,7 @@ tags:
   - CSS
   - SQLite
 write: false
+index: 23
 ---
 
 <div class="right"><span title="PageRank: 7/10" style="text-decoration: none; color: inherit; display: block; padding: 10px; margin-left: 10px; border: 1px solid rgb(204, 204, 204);"><div style="width: 40px; margin-top:7px; position: relative;padding: 0; background: #D9D9D9; float:left; margin:10px 5px 0 0;" class="prbar"><strong style="width: 70%; display: block; position: relative; background: #5EAA5E; text-align: center; color: #333; height: 4px; line-height: 4px;"><span></span></strong></div> 7</span></div>

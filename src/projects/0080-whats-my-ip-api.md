@@ -10,6 +10,7 @@ tags:
   - Heroku
   - Open Source
 write: false
+index: 38
 ---
 
 Super-simple service I built to inform visitors what their internet-facing IP is. Supports HTML, Text, JSON, JSONP, and CORS (Cross-Origin Resource Sharing).

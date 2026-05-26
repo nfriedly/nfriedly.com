@@ -7,6 +7,7 @@ tags:
   - Ruby on Rails
   - BlueTrip
   - SQLite
+index: 26
 ---
 
 Reports the visitors UserAgent string and also breaks it down and explains each portion of the string. The site also provides simple, user and search-engine friendly links to view or share the breakdown of other UA strings.

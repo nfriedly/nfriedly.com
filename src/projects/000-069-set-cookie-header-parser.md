@@ -11,6 +11,7 @@ tags:
  - Open Source
  - React
  - Continuous Integration
+index: 96
 ---
 
 Library to allow Node.js (and other non-browser JS environments such as React Native) to parse Set-Cookie headers sent by other servers. 

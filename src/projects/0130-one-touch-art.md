@@ -8,6 +8,7 @@ tags:
   - CSS
   - Apache
 write: false
+index: 32
 ---
 
 I assisted in the sites development, providing various tweaks, bug fixes, and performance optimizations. 

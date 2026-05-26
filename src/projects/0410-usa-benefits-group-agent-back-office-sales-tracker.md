@@ -9,6 +9,7 @@ tags:
   - AJAX
   - YUI
 write: false
+index: 7
 ---
 
 A comprehensive agency management system with extensive sales tracking and reporting. The sales numbers are also used regularly for contests and rewards.

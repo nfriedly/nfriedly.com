@@ -6,6 +6,7 @@ tags:
   - JavaScript
   - CSS
   - PHP
+index: 18
 ---
 
 I researched how different browsers handle RSS feeds and found work-arounds to display RSS with XSLT stylesheets in Firefox and Internet Explorer.

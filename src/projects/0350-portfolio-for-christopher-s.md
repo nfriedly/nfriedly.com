@@ -8,6 +8,7 @@ tags:
   - CSS
   - Photoshop
 write: false
+index: 12
 ---
 
 I took his photoshop design and coded it into clean XHTML & CSS

@@ -9,6 +9,7 @@ tags:
   - Node.js
   - npm
   - Open Source
+index: 62
 ---
 
 I needed a simple `zip` command that worked both on Windows and Mac. 

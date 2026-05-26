@@ -7,6 +7,7 @@ tags:
   - Drupal
   - Flash / ActionScript
 write: false
+index: 34
 ---
 
 I built a custom Drupal module and an Actionscript 3.0 flash loader for the Rookie Arcade section of BYS's new website. 

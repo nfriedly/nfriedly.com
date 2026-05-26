@@ -16,6 +16,7 @@ tags:
  - Mobile First
  - Continuous Integration
  - CasperJS
+index: 52
 ---
 I built this to look up ODB-II diagnostic codes from my phone. (And also because I wanted to learn <a href="http://www.meteor.com/">Meteor</a> a bit better.)
 

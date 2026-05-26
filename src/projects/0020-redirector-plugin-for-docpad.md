@@ -10,6 +10,7 @@ tags:
   - npm
   - Open Source
 write: false
+index: 46
 ---
 
 Creates the static equivalent of 301/302 redirects for static websites (0-second meta refreshes) via configuration.

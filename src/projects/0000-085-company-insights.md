@@ -12,6 +12,7 @@ tags:
   - AngularJS
   - Gulp
   - Continuous Integration
+index: 77
 ---
 
 I worked with a small team to create a sample application that uses a number of Watson services to show how your 

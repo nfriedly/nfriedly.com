@@ -12,6 +12,7 @@ tags:
   - Continuous Integration
   - Bower
 write: false
+index: 28
 ---
 
 <img class="left" width="160" src="/techblog/wp-content/uploads/2010/07/325990_chocolate_chip_cookies_2.jpg" alt="" />This is a library that allows JavaScript to read and set cookies cross-domain by using flash.

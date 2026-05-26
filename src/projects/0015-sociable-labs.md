@@ -20,6 +20,7 @@ tags:
     - PostgreSQL
     - Memcached
 write: false
+index: 48
 ---
 
 I Joined Sociable Labs in 2010 as one of the first engineers and went on to lead the front-end engineering team.

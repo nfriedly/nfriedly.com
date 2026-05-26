@@ -7,6 +7,7 @@ tags:
   - "e-Commerce"
   - Apache
 write: false
+index: 5
 ---
 
 Zen Cart based website with a customized template. I handled instillation, security, and maintenance and also moved the site from it's original Linux/Apache server to a Windows/IIS for the client.

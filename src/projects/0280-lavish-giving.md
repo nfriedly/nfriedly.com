@@ -8,6 +8,7 @@ tags:
   - Apache
   - WordPress
 write: false
+index: 17
 ---
 
 I worked with Apache mod_rewrite and Pinnacle Shopping Cart to give the site search-engine friendly urls. I also edited the WordPress template.

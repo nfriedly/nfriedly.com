@@ -10,6 +10,7 @@ tags:
   - jQuery
   - AJAX
 write: false
+index: 9
 ---
 
 The automatic setup system I built for iBoomerang. When a customer signs up for a new tool, if they are a current customer, it adds the tool to their account, otherwise it creates them a new account.

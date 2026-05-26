@@ -9,6 +9,7 @@ tags:
   - AJAX
   - jQuery
 write: false
+index: 6
 ---
 
 Searches as you type. Uses an in-house lookup system, but could easily be adapted to a 3rd party API.

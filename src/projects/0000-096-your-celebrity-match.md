@@ -14,6 +14,7 @@ tags:
   - Express
   - HTML
   - CSS
+index: 64
 ---
 
 I worked on a small team to build this app as a demo to show how to use some of the [Watson](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/) services.

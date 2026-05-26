@@ -10,6 +10,7 @@ tags:
   - npm
   - Flash / ActionScript
   - Open Source
+index: 66
 ---
 
 Grunt plugin that uses the [Apache Flex SDK](https://flex.apache.org/) to automatically compile ActionScript files (.as) into Flash files (.swf).

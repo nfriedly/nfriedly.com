@@ -16,6 +16,7 @@ tags:
   - SEO
   - JavaScript
   - CoffeeScript
+index: 59
 ---
 
 My first project at IBM was getting the WDC website ready for launch. This included some design changes and

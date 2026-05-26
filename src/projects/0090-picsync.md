@@ -15,6 +15,7 @@ tags:
   - JavaScript
   - Open Source
 write: false
+index: 37
 ---
 
 <img class="right" src="/img/portfolio/picsync-phone-shadow.png" alt="" />PicSync automatically uploads photos you take on your Android phone to a private album. It will then remind you about the photos the next time you log into Facebook allowing you to review and post your favorites.

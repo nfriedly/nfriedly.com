@@ -10,6 +10,7 @@ tags:
   - Arduino
   - Python
   - JavaScript
+index: 83
 ---
 
 <a class="thumb" href="/img/portfolio/candy-machine-whoopi-goldberg.jpg" rel="lightbox" title="Whoopi Goldberg trying out the Candy Machine"><img src="<%= @getThumbnail('/img/portfolio/candy-machine-whoopi-goldberg.jpg', { w: 165, h: 220, q: 70 }) %>" alt="Whoopi Goldberg trying out the Candy Machine" class="right" style="height: 220px; width: 165px; " /></a>

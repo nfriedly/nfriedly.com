@@ -12,6 +12,7 @@ tags:
   - hardware
   - Open Source
   - Twitter
+index: 72
 ---
 
 My second Watson/<abbr title="Internet of Things">IoT</abbr> demo, this one uses an Arduino Yún to pull my recent tweets,

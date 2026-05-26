@@ -4,6 +4,7 @@ link: "http://fellowlaborers.org/"
 tags: 
   - WordPress
 write: false
+index: 0
 ---
 
 <img src="/img/portfolio/thumbs/fellowlaborers.jpg" alt="" class="right oldthumb">I set up and managed the blog for the ministry/mentoring/leadership training program I was a part of during 2008-2009.

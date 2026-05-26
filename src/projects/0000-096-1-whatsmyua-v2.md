@@ -9,6 +9,7 @@ tags:
   - JavaScript
   - HTML
   - SEO
+index: 65
 ---
 
 I simplified the app, switching from Ruby on Rails to single-page app and from a complete breakdown of every detail to a no-nonsense identification of the browser and OS. 

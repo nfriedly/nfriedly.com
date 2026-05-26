@@ -11,6 +11,7 @@ tags:
   - npm
   - Open Source
   - CouchDB
+index: 71
 ---
 
 <img src="https://avatars0.githubusercontent.com/u/44642?v=3&s=120" class="right clearfix thumbnail" alt=""> Imports documents from a <a href="https://cloudant.com/">Cloudant</a> database to a [DocPad](https://docpad.org/) collection.

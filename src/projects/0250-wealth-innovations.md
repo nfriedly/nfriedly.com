@@ -10,6 +10,7 @@ tags:
   - HTML
   - PHP
 write: false
+index: 20
 ---
 
 We built a new website for Wealth Innovations using embedded OpenType fonts (.otf &amp; .eot), AJAX navigation, and an animated user interface to create a standards-based experience on par with flash websites.

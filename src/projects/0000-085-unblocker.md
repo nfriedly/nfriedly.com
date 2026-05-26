@@ -12,6 +12,7 @@ tags:
   - Continuous Integration
   - Express
 write: false
+index: 76
 ---
 
 After seeing significant interest in using my Node Unblocker website's source as the basis for other projects, I reworked it into an [express](http://expressjs.com/)-friendly node.js module.

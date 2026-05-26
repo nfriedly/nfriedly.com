@@ -10,6 +10,7 @@ tags:
   - IoT
   - hardware
   - Open Source
+index: 70
 ---
 
 My first in a series of Watson/<abbr title="Internet of Things">IoT</abbr> demos, this one employs a Raspberry Pi that 

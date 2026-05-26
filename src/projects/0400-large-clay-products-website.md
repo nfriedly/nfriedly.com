@@ -11,6 +11,7 @@ tags:
   - MySQL
   - CodeIgniter
 write: false
+index: 8
 ---
 
 I oversaw a five-man team that rebuilt the shopping cart and database of a major clay products website.

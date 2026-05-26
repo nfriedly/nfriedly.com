@@ -11,6 +11,7 @@ tags:
  - Bootstrap
  - Mobile First
  - SEO
+index: 57
 ---
 True Tile is a local (Dayton / Troy, Ohio) tile installation service. They wanted a website where they could show off their work and also have a centralized source for services and contact information.
 

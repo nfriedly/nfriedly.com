@@ -9,6 +9,7 @@ tags:
   - JavaScript
   - Twitter
 write: false
+index: 10
 ---
 
 I built this website from scratch. The home page imports the owners twitter and blog RSS feed. The site also features a complex menu, integrated google search, an amazon.com library, and a client area where the owners can provide private information.

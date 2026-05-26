@@ -8,6 +8,7 @@ date: 2016-07-29
 tags:
  - HTML
  - Bootstrap
+index: 56
 ---
 
 The little town that I live near closed their Police Department a few years before I moved in.

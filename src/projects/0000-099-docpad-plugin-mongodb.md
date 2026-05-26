@@ -11,6 +11,7 @@ tags:
   - npm
   - Open Source
   - MongoDB
+index: 61
 ---
 
 <img src="https://avatars3.githubusercontent.com/u/45120?v=2&amp;s=86" class="right clearfix thumbnail" alt=""> Imports a collection of documents from a MongoDB collection to a DocPad collection.

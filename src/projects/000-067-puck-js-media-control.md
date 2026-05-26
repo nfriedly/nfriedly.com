@@ -8,6 +8,7 @@ tags:
   - hardware
   - Open Source
   - IoT
+index: 98
 ---
 
 This is a [Puck.js](https://www.puck-js.com/) device running the [Espruino](https://www.espruino.com/) JavaScript environment and a script that I wrote to control media playback.

@@ -12,6 +12,7 @@ tags:
  - Open Source
  - Continuous Integration
  - Express
+index: 86
 ---
 
 A sample app that shows off the capabilities of the IBM Watson Visual Recognition service.

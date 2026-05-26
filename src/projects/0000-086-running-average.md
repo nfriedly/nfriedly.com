@@ -11,6 +11,7 @@ tags:
   - npm
   - Bower
   - Open Source
+index: 75
 ---
 
 <i class="pull-right fa-line-chart fa fa-4x"></i>Simple module to accept an unlimited quantity of numbers and provide the average of all numbers received so far. 

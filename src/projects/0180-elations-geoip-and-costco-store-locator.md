@@ -7,6 +7,7 @@ tags:
   - JavaScript
   - PHP
 write: false
+index: 27
 ---
 
 I worked with the MaxMind GeoIP service to customize the Elations home page based on your location. Also built a store locator that integrates with Google Maps.

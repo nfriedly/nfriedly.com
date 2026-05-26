@@ -10,6 +10,7 @@ tags:
     - Heroku
     - Open Source
     - npm
+index: 58
 ---
 
 I occasionally <a href="https://www.elance.com/s/nfriedly/">take on side projects via Elance</a>, and their payment system is really great at reliably getting funds into my Elance account.
