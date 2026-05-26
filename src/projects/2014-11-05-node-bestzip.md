@@ -13,6 +13,6 @@ index: 62
 ---
 
 I needed a simple `zip` command that worked both on Windows and Mac. 
-Windows has no native `zip` command, so `bestzip` uses a Node.js implimentation there.
+Windows has no native `zip` command, so `bestzip` uses a Node.js implementation there.
 However, Mac OS X includes a native `zip` command that is both faster than the Node.js implementations and produces smaller files, 
 so `bestzip` will use that one whenever possible.

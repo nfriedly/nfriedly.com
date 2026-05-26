@@ -15,4 +15,4 @@ index: 23
 I needed a reliable pagerank lookup tool and all of the existing ones were unreliable and/or spammy. 
 I built myself a clean, straightforward pagerank lookup tool that allows for multiple urls to be checked at once and also offers a JavaScript bookmarklet to check any individual page.
 
-The tool stores results in an SQLite database to avoid repetedly hitting Google's servers and keeps a "recent history" in the user's session.
+The tool stores results in an SQLite database to avoid repeatedly hitting Google's servers and keeps a "recent history" in the user's session.

@@ -15,6 +15,6 @@ index: 45
 
 A super-lightweight interactive JavaScript shell that fits in a bookmarklet and and runs everywhere, including older versions of IE.
 
-Buit to help me debug some things in IE 8 where turning on developer tools changes the behavior of the page in subtle ways.
+Built to help me debug some things in IE 8 where turning on developer tools changes the behavior of the page in subtle ways.
 
 Website is a mobile-first design that opens with some fun CSS animations if your browser supports them unprefixed.

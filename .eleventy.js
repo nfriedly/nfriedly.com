@@ -132,11 +132,11 @@ module.exports = function (eleventyConfig) {
 	// })
 
 	eleventyConfig.addCollection("projectsStart", function(collectionApi) {
-		return projectsCollection(collectionApi).sort((a,b) => a.page.inputPath.localeCompare(b.page.inputPath)).slice(0,20)
+		return projectsCollection(collectionApi).sort((a,b) => b.data.index - a.data.index).slice(0,20)
 	})
 
 	eleventyConfig.addCollection("projectsEnd", function(collectionApi) {
-		return projectsCollection(collectionApi).sort((a,b) => a.page.inputPath.localeCompare(b.page.inputPath)).slice(20)
+		return projectsCollection(collectionApi).sort((a,b) => b.data.index - a.data.index).slice(20)
 	})
 
 	eleventyConfig.addShortcode("getFirstImage", async function(post, width=200) {

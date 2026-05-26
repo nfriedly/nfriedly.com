@@ -68,4 +68,4 @@ I frequently make small improvements to Open Source projects that I work with. H
 
  - **[sitemap.js](https://github.com/ekalinin/sitemap.js)**: Fixed a bug with URLs that contain the string 'http', added unit tests, improved performance by ~4%.
 
- - **[string.js](https://github.com/jprichardson/string.js)**: Added suport for padding with numbers and associated unit tests.
+ - **[string.js](https://github.com/jprichardson/string.js)**: Added support for padding with numbers and associated unit tests.
