@@ -88,6 +88,59 @@ function loadBackupCSS(url) {
     
 <article class="row ">
     
+        <div class="col-xs-12">
+    
+            <h2>
+                
+                    <a href="https://www.npmjs.com/package/watson-developer-cloud">Watson Developer Cloud Node.js SDK</a>
+                
+            </h2>
+            
+            <img class="right" src="/img/portfolio/watson.svg" width="150" height="150" alt="" /> 
+The `watson-developer-cloud` module on npm is currently the most popular way of accessing Watson APIs. 
+It provides idiomatic Node.js access to every single public Watson API in a single consistent and easy-to-use package.
+<p>I took on responsibility for the overall library shortly after it's initial release, and have since authored a fair portion of it
+including several of the services, automated testing, documentation, and publishing.</p>
+
+            
+            <p class="meta"><a href="https://github.com/watson-developer-cloud/node-sdk"><i class="fa fa-github"></i></a>
+<a href="https://npmjs.org/package/watson-developer-cloud" class="project-badge"><img src="https://badge.fury.io/js/watson-developer-cloud.svg" alt="Watson Developer Cloud Node.js SDK on NPM" loading="lazy" decoding="async"></a>
+<a href="https://npmjs.org/package/watson-developer-cloud" class="project-badge"><img src="https://img.shields.io/npm/dm/watson-developer-cloud.svg" alt="Watson Developer Cloud Node.js SDK downloads" loading="lazy" decoding="async"></a>
+                Tagged 
+                <a href="#node-js">Node.js</a>, <a href="#javascript">JavaScript</a>, <a href="#continuous-integration">Continuous Integration</a>, <a href="#npm">npm</a>
+            </p>
+        </div>
+</article>
+
+<article class="row ">
+    
+        <div class="col-xs-4">
+            <a class="thumb" href="/img/portfolio/oaky.png" rel="lightbox"><picture><source type="image/webp" srcset="/img/8drwFUsm8J-210.webp 210w, /img/8drwFUsm8J-284.webp 284w, /img/8drwFUsm8J-350.webp 350w, /img/8drwFUsm8J-420.webp 420w, /img/8drwFUsm8J-568.webp 568w, /img/8drwFUsm8J-700.webp 700w" sizes="auto"><img alt="" loading="lazy" decoding="async" class="img-thumbnail" src="/img/8drwFUsm8J-210.jpeg" width="700" height="517" srcset="/img/8drwFUsm8J-210.jpeg 210w, /img/8drwFUsm8J-284.jpeg 284w, /img/8drwFUsm8J-350.jpeg 350w, /img/8drwFUsm8J-420.jpeg 420w, /img/8drwFUsm8J-568.jpeg 568w, /img/8drwFUsm8J-700.jpeg 700w" sizes="auto"></picture></a>
+        </div>
+        <div class="col-sm-8">
+    
+            <h2>
+                
+                    Internal Service Management Tool
+                
+            </h2>
+            
+            <p>An IBM internal web app to assist with bringing new Watson APIs public.
+Connects to various services and servers including LDAP, DataPower, Eureka, Zuul, our Bluemix Service Broker, and others to ensure everything is aware of and correctly handling a given API.</p>
+<p>My contributions included dockerizing the app and scaling it out to multiple processes/servers,
+adding support for moving an API through the Experimental/Beta/General availability stages, and numerous bug fixes and performance enhancements.</p>
+<p>I also set up automated testing both with mocha-based unit tests and CasperJS-based UI and integration tests that run on each commit and report results to the team's Slack channel.</p>
+
+            
+            <p class="meta">
+                Tagged 
+                <a href="#node-js">Node.js</a>, <a href="#javascript">JavaScript</a>, <a href="#express">Express</a>, <a href="#jade">Jade</a>, <a href="#casperjs">CasperJS</a>, <a href="#continuous-integration">Continuous Integration</a>
+            </p>
+        </div>
+</article>
+
+<article class="row ">
+    
         <div class="col-xs-4">
             <div class="thumb youtube"><iframe width="360" height="203" src="https://www.youtube.com/embed/rtHDviv25Zw" frameborder="0" allowfullscreen></iframe></div>
         </div>
@@ -383,34 +436,6 @@ Now the Arduino is powered up whenever the TV comes on, and it in turn signals t
 
 <article class="row ">
     
-        <div class="col-xs-4">
-            <a class="thumb" href="/img/portfolio/space-jump.png" rel="lightbox"><picture><source type="image/webp" srcset="/img/1KW3O5A5nu-210.webp 210w, /img/1KW3O5A5nu-284.webp 284w, /img/1KW3O5A5nu-350.webp 350w, /img/1KW3O5A5nu-420.webp 420w, /img/1KW3O5A5nu-568.webp 568w, /img/1KW3O5A5nu-700.webp 700w" sizes="auto"><img alt="" loading="lazy" decoding="async" class="img-thumbnail" src="/img/1KW3O5A5nu-210.jpeg" width="700" height="701" srcset="/img/1KW3O5A5nu-210.jpeg 210w, /img/1KW3O5A5nu-284.jpeg 284w, /img/1KW3O5A5nu-350.jpeg 350w, /img/1KW3O5A5nu-420.jpeg 420w, /img/1KW3O5A5nu-568.jpeg 568w, /img/1KW3O5A5nu-700.jpeg 700w" sizes="auto"></picture></a>
-        </div>
-        <div class="col-sm-8">
-    
-            <h2>
-                
-                    <a href="http://nfriedly.github.io/space-jump/">Space Jump</a>
-                
-            </h2>
-            
-            <p>Fun little browser-based game, sort of a cross between Doodle Jump and Moon Lander.
-I put it together over my Christmas vacation with the primary goals of having some fun and getting more experience rendering 2d graphics.</p>
-<p>While I'm normally a big proponent of building on top of existing tools and frameworks, I decided to go &quot;bare metal&quot; with this one: the game itself is written in vanilla JavaScript with no dependencies whatsoever.</p>
-<p>The background image is from NASA; all graphics are either hand drawn or prodecuraly generated. The levels themselves are procedurally generated.</p>
-<p>On a desktop browser, the game uses arrow keys to navigate. However, on a mobile device, it use touch + tilt controls via the HTML5  <code>touchstart</code>/<code>touchend</code> and <code>deviceorientation</code> APIs.</p>
-<p>Renders at a smooth 60 FPS on every device I've tested on.</p>
-
-            
-            <p class="meta"><a href="https://github.com/nfriedly/space-jump"><i class="fa fa-github"></i></a>
-                Tagged 
-                <a href="#javascript">JavaScript</a>, <a href="#canvas">Canvas</a>, <a href="#gulp-js">gulp.js</a>, <a href="#mobile-first">Mobile First</a>, <a href="#continuous-integration">Continuous Integration</a>
-            </p>
-        </div>
-</article>
-
-<article class="row ">
-    
         <div class="col-xs-12">
     
             <h2>
@@ -489,30 +514,6 @@ My primary contribution was to the initial UI shown below, although I also did s
             <p class="meta"><a href="https://github.com/watson-developer-cloud/yourcelebritymatch"><i class="fa fa-github"></i></a>
                 Tagged 
                 <a href="#node-js">Node.js</a>, <a href="#mongodb">MongoDB</a>, <a href="#twitter">Twitter</a>, <a href="#express">Express</a>, <a href="#html">HTML</a>, <a href="#css">CSS</a>
-            </p>
-        </div>
-</article>
-
-<article class="row ">
-    
-        <div class="col-xs-12">
-    
-            <h2>
-                
-                    <a href="https://github.com/nfriedly/approximate-number">approximate-number</a>
-                
-            </h2>
-            
-            <p><i class="pull-right fa fa-4x">~</i>Converts large numbers into a more human-friendly format, similar to <code>ls -lh</code> or Stack Overflow's reputation numbers. For example, 123456 becomes '123k'.</p>
-<p>Can be used in Node.js, in browsers, or as a command-line utility.</p>
-
-            
-            <p class="meta"><a href="https://github.com/nfriedly/approximate-number"><i class="fa fa-github"></i></a>
-<a href="https://npmjs.org/package/approximate-number" class="project-badge"><img src="https://badge.fury.io/js/approximate-number.svg" alt="approximate-number on NPM" loading="lazy" decoding="async"></a>
-<a href="https://npmjs.org/package/approximate-number" class="project-badge"><img src="https://img.shields.io/npm/dm/approximate-number.svg" alt="approximate-number downloads" loading="lazy" decoding="async"></a>
-<img src="https://badge.fury.io/bo/approximate-number.svg" alt="approximate-number on Bower">
-                Tagged 
-                <a href="#javascript">JavaScript</a>, <a href="#node-js">Node.js</a>, <a href="#npm">npm</a>, <a href="#bower">Bower</a>, <a href="#open-source">Open Source</a>
             </p>
         </div>
 </article>
