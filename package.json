@@ -15,8 +15,8 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
-    "test": "npm run lint",
-    "lint": "npx ejs-lint _includes/",
+    "test": "npm run lint && ./test.sh",
+    "lint": "npx ejs-lint src/_includes/",
     "deploy": "docpad deploy-ghpages"
   },
   "license": "MIT",

@@ -23,22 +23,9 @@ jobs:
       with:
         ref: 'gh-pages'
         path: '_site/'
-    # build the site
+    # build & test the site
     - run: npm run build
-    # push it to gh-pages
-    - run: | 
-        pushd _site/
-        if grep -q '<%=' "index.html"; then
-        echo 'Error: template code detected in output, aborting!'
-        exit 1;
-        fi
-        # Only commit and push if there are changes
-        if ! git diff-index --quiet HEAD --; then
-          git config --global user.email "actions_bot@github.com"
-          git config --global user.name "GH Actions Bot"
-          git add -f -A .
-          git commit -m "Updating gh-pages: ${{ github.event.head_commit.message }}"
-          git push origin gh-pages
-        else
-          echo "No changes to deploy"
-        fi
+    - run: npm test
+    # push it to gh-pages if there are changes (dependency bumps generally don't change the built site)
+    - run: ./.github/workflows/push-if-changes.sh
+        
