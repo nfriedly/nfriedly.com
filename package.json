@@ -4,7 +4,7 @@
   "description": "Personal website of Nathan Friedly, built with eleventy",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-img": "^7.0.0",
     "@11ty/eleventy-plugin-ejs": "^1.0.0",
     "ejs-lint": "^2.0.0",
     "eleventy-plugin-less": "^1.1.0",
