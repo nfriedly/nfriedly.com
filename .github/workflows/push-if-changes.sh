@@ -9,7 +9,7 @@ if [[ `git status --porcelain` ]]; then
     git config --global user.email "actions_bot@github.com"
     git config --global user.name "GH Actions Bot"
     git add -f -A .
-    git commit -m "Updating gh-pages: ${{ github.event.head_commit.message }}"
+    git commit -m "Updating gh-pages: $COMMIT_MESSAGE"
     git push origin gh-pages
 else
     echo "No changes to deploy"

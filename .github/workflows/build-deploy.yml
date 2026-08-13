@@ -28,4 +28,6 @@ jobs:
     - run: npm test
     # push it to gh-pages if there are changes (dependency bumps generally don't change the built site)
     - run: ./.github/workflows/push-if-changes.sh
+      env:
+        COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         
