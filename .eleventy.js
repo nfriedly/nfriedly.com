@@ -1,5 +1,5 @@
 const ejsPlugin = require("@11ty/eleventy-plugin-ejs");
-const Image = require("@11ty/eleventy-img");
+const Image = require("@11ty/eleventy-img").default;
 // const img2picture = require("eleventy-plugin-img2picture");
 const pluginLess = require("eleventy-plugin-less");
 const redirectsPlugin = require('eleventy-plugin-redirects');
