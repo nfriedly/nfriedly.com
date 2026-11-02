@@ -12,14 +12,14 @@ jobs:
 
     steps:
     # first checkout the source
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Build and push
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v7
       with:
         node-version: lts/*
     - run: npm ci
     # then checkout the destination
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         ref: 'gh-pages'
         path: '_site/'
